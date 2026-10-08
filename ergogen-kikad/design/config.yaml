@@ -1,5 +1,7 @@
 meta:
   engine: 4.2.1
+  version: 0.0.1
+  author: Logan Campbell
 
 units:
   column_pitch: 18
@@ -13,23 +15,23 @@ points:
       columns:
         c0:
           rows:
-            bottom: {net: K4}
-            top: {net: K0}
+            bottom: {net: D7}
+            top: {net: D6}
         c1:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: K5}
-            top: {net: K1}
+            bottom: {net: D8}
+            top: {net: D5}
         c2:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: K6}
-            top: {net: K2}
+            bottom: {net: D9}
+            top: {net: D4}
         c3:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: K7}
-            top: {net: K3}
+            bottom: {net: D10}
+            top: {net: D3}
       rows:
         bottom:
         top:
@@ -49,14 +51,26 @@ pcbs:
       main:
         outline: board
     footprints:
-      switches:
+      top_switches:
         what: choc_v1_15u_portrait
-        where: true
+        where: /_top$/
         adjust:
           rotate: 90
         params:
           from: GND
           to: '{{net}}'
+          label: '{{net}}'
+          label_offset: 14.5
+      bottom_switches:
+        what: choc_v1_15u_portrait
+        where: /_bottom$/
+        adjust:
+          rotate: 90
+        params:
+          from: '{{net}}'
+          to: GND
+          label: '{{net}}'
+          label_offset: -14.5
       controller:
         what: xiao_nrf52840
         where:
@@ -65,12 +79,12 @@ pcbs:
         adjust:
           rotate: -90
         params:
-          D0: K0
-          D1: K1
-          D2: K2
-          D3: K3
-          D4: K4
-          D5: K5
-          D6: K6
-          D7: K7
+          D3: D3
+          D4: D4
+          D5: D5
+          D6: D6
+          D7: D7
+          D8: D8
+          D9: D9
+          D10: D10
           GND: GND

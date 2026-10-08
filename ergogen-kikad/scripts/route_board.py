@@ -6,6 +6,7 @@ stale traces connected to the wrong pads.
 """
 
 from pathlib import Path
+from datetime import date
 import math
 
 import pcbnew as pcb
@@ -13,6 +14,17 @@ import pcbnew as pcb
 
 BOARD = Path('generated/pcbs/macropad.kicad_pcb')
 WIDTH_MM = 0.30
+CORNER_MITER_MM = 0.75
+PAGE_OFFSET_MM = (181.5, 173.5)  # Center the 75 x 82 mm board on A3.
+DRAWING_TITLE = 'QBF Wireless Split Perkins Keyboard'
+GROUND_CHANNEL_SAMPLES = {
+    'D6/D5': (40.0, -34.9),
+    'D5/D4': (40.0, -36.7),
+    'D4/D3': (50.5, -38.5),
+    'D7/D8': (40.0, -14.1),
+    'D8/D9': (40.0, -12.3),
+    'D9/D10': (51.6, -10.5),
+}
 
 
 def point(xy):
@@ -60,6 +72,12 @@ def check_board(board):
         raise RuntimeError('Expected filled GND zones on both copper layers')
     if not all(zone.IsFilled() for zone in zones):
         raise RuntimeError('One or more GND zones are not filled')
+    front_zone = next(zone for zone in zones if zone.GetLayer() == pcb.F_Cu)
+    front_fill = front_zone.GetFilledPolysList(pcb.F_Cu)
+    for channel, xy in GROUND_CHANNEL_SAMPLES.items():
+        position = point((xy[0] + PAGE_OFFSET_MM[0], xy[1] + PAGE_OFFSET_MM[1]))
+        if not front_fill.Contains(position):
+            raise RuntimeError(f'No front GND copper between {channel} traces')
 
     for track in tracks:
         start, end = mm_point(track.GetStart()), mm_point(track.GetEnd())
@@ -73,7 +91,9 @@ def check_board(board):
                 continue
             clearance = point_to_segment_distance(mm_point(pad.GetPosition()), start, end) - radius - half_width
             if clearance < 0.25 - 1e-5:
-                raise RuntimeError(f'{track.GetNetname()} trace too close to pad or hole: {clearance:.3f} mm')
+                raise RuntimeError(f'{track.GetNetname()} trace {start}->{end} too close to '
+                                   f'{pad.GetParentFootprint().GetReference()} pad {pad.GetNumber()} '
+                                   f'at {mm_point(pad.GetPosition())}: {clearance:.3f} mm')
 
     for index, first in enumerate(tracks):
         for second in tracks[index + 1:]:
@@ -87,9 +107,17 @@ def check_board(board):
 
 
 def route(board, net, layer, coordinates):
+    previous_direction = None
     for start, end in zip(coordinates, coordinates[1:]):
         if start == end:
             continue
+        direction = (round(end[0] - start[0], 6), round(end[1] - start[1], 6))
+        if previous_direction and abs(sum(a * b for a, b in zip(previous_direction, direction))) < 1e-9:
+            raise RuntimeError(f'90-degree turn in {net.GetNetname()} at {start}')
+        dx = round(abs(end[0] - start[0]), 6)
+        dy = round(abs(end[1] - start[1]), 6)
+        if dx and dy and dx != dy:
+            raise RuntimeError(f'Non-45-degree track in {net.GetNetname()}: {start}->{end}')
         track = pcb.PCB_TRACK(board)
         track.SetStart(point(start))
         track.SetEnd(point(end))
@@ -97,6 +125,19 @@ def route(board, net, layer, coordinates):
         track.SetLayer(layer)
         track.SetNetCode(net.GetNetCode())
         board.Add(track)
+        previous_direction = direction
+
+
+def fan_in(start, lane_y, target):
+    """Join a horizontal lane and the header approach with 45-degree bends."""
+    target_x, target_y = target
+    diagonal = abs(lane_y - start[1])
+    knee_x = round(start[0] + diagonal, 2)
+    if knee_x >= target_x - CORNER_MITER_MM or abs(target_y - lane_y) <= CORNER_MITER_MM:
+        raise RuntimeError(f'Not enough space for 45-degree bends: {start}->{target}')
+    turn_y = round(lane_y + math.copysign(CORNER_MITER_MM, target_y - lane_y), 2)
+    return [(knee_x, lane_y), (round(target_x - CORNER_MITER_MM, 2), lane_y),
+            (target_x, turn_y)]
 
 
 def add_ground_zone(board, ground, layer):
@@ -106,6 +147,7 @@ def add_ground_zone(board, ground, layer):
     zone.SetLocalClearance(pcb.FromMM(0.25))
     zone.SetThermalReliefGap(pcb.FromMM(0.30))
     zone.SetThermalReliefSpokeWidth(pcb.FromMM(0.35))
+    zone.SetIslandRemovalMode(pcb.ISLAND_REMOVAL_MODE_ALWAYS)
     polygon = zone.Outline()
     polygon.NewOutline()
     # Inset from the rounded 75 x 82 mm board outline.
@@ -130,14 +172,14 @@ def main():
                 pads.setdefault(name, []).append(mm_point(pad.GetPosition()))
 
     expected = {
-        'K0': [(-5.9, -50.0), (62.62, -32.62)],
-        'K1': [(12.1, -50.0), (60.08, -32.62)],
-        'K2': [(30.1, -50.0), (57.54, -32.62)],
-        'K3': [(48.1, -50.0), (55.0, -32.62)],
-        'K4': [(-5.9, 0.0), (52.46, -32.62)],
-        'K5': [(12.1, 0.0), (49.92, -32.62)],
-        'K6': [(30.1, 0.0), (47.38, -32.62)],
-        'K7': [(48.1, 0.0), (47.38, -17.38)],
+        'D6': [(-5.9, -50.0), (47.38, -32.62)],
+        'D5': [(12.1, -50.0), (49.92, -32.62)],
+        'D4': [(30.1, -50.0), (52.46, -32.62)],
+        'D3': [(48.1, -50.0), (55.0, -32.62)],
+        'D7': [(-3.8, -5.0), (47.38, -17.38)],
+        'D8': [(14.2, -5.0), (49.92, -17.38)],
+        'D9': [(32.2, -5.0), (52.46, -17.38)],
+        'D10': [(50.2, -5.0), (55.0, -17.38)],
     }
     for name, endpoints in expected.items():
         if sorted(pads.get(name, [])) != sorted(endpoints):
@@ -145,31 +187,28 @@ def main():
     if len(pads.get('GND', [])) != 9:
         raise RuntimeError('Expected eight grounded switches and one XIAO GND pad')
 
-    # Top row fans out above the switches, then enters D0-D3 from above.
-    top = {
-        'K0': [(-5.9, -50), (-7.4, -51.5), (-7.4, -62), (62.62, -62), (62.62, -32.62)],
-        'K1': [(12.1, -50), (10.6, -51.5), (10.6, -60.5), (60.08, -60.5), (60.08, -32.62)],
-        'K2': [(30.1, -50), (28.6, -51.5), (28.6, -59), (57.54, -59), (57.54, -32.62)],
-    }
-    for name, coordinates in top.items():
-        route(board, nets[name], pcb.B_Cu, coordinates)
-    # K3 goes around the rightmost switch's three non-plated mounting holes.
-    route(board, nets['K3'], pcb.F_Cu,
-          [(48.1, -50), (46.6, -51.5), (46.6, -57.5),
-           (57.5, -57.5), (57.5, -42.5), (55, -40), (55, -32.62)])
-
-    # Bottom row crosses the gap below the top switches on the front layer.
-    bottom = {
-        'K4': [(-5.9, 0), (-7.4, -1.5), (-7.4, -41), (52.46, -41), (52.46, -32.62)],
-        'K5': [(12.1, 0), (10.6, -1.5), (10.6, -39), (49.92, -39), (49.92, -32.62)],
-        'K6': [(30.1, 0), (28.6, -1.5), (28.6, -37), (47.38, -37), (47.38, -32.62)],
-        'K7': [(48.1, 0), (47.38, -0.72), (47.38, -17.38)],
-    }
-    for name, coordinates in bottom.items():
+    # Both rows leave the switch pads beside their mounting holes, then
+    # approach the header pads from clear lanes between the switch rows.
+    # 1.8 mm lane pitch leaves room for 0.25 mm clearance on each side
+    # of a 0.30 mm trace and a useful strip of GND copper between traces.
+    top_approach = {'D6': -34.0, 'D5': -35.8, 'D4': -37.6, 'D3': -39.4}
+    bottom_approach = {'D7': -15.0, 'D8': -13.2, 'D9': -11.4, 'D10': -9.6}
+    for name, endpoints in expected.items():
+        start, end = endpoints
+        if start[1] == -50:
+            exit_pad = (start[0], -40.0)
+            coordinates = [start, exit_pad] + fan_in(exit_pad, top_approach[name], end) + [end]
+        else:
+            exit_pad = (start[0], -9.0)
+            coordinates = [start, exit_pad] + fan_in(exit_pad, bottom_approach[name], end) + [end]
         route(board, nets[name], pcb.F_Cu, coordinates)
 
     for layer in (pcb.F_Cu, pcb.B_Cu):
         add_ground_zone(board, nets['GND'], layer)
+    board.GetTitleBlock().SetTitle(DRAWING_TITLE)
+    board.GetTitleBlock().SetDate(date.today().isoformat())
+    board.Move(point(PAGE_OFFSET_MM))
+    board.BuildConnectivity()
     pcb.ZONE_FILLER(board).Fill(board.Zones())
     board.BuildConnectivity()
     pcb.SaveBoard(str(BOARD), board)

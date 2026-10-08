@@ -11,14 +11,14 @@
         compatible = "zmk,kscan-gpio-direct";
         wakeup-source;
         // Order matches the keymap: top row left-to-right, then bottom row.
-        input-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-                      <&xiao_d 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-                      <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-                      <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-                      <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        input-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                       <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-                      <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-                      <&xiao_d 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+                      <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                      <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                      <&xiao_d 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                      <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                      <&xiao_d 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                      <&xiao_d 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 
     default_transform: matrix_transform_0 {
@@ -36,3 +36,7 @@
         kscan = <&kscan0>;
     };
 };
+
+// These default peripheral buses share the direct switch pins.
+&xiao_i2c { status = "disabled"; };
+&xiao_spi { status = "disabled"; };

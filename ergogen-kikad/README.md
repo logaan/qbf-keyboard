@@ -15,26 +15,25 @@ An 8-key Choc v1 macro pad for a **Seeed Studio XIAO nRF52840** running ZMK. The
 
 | Key position | PCB net | XIAO pin | Default key |
 | --- | --- | --- | --- |
-| Top left | K0 | D0 | 1 |
-| Top second | K1 | D1 | 2 |
-| Top third | K2 | D2 | 3 |
-| Top right | K3 | D3 | 4 |
-| Bottom left | K4 | D4 | 5 |
-| Bottom second | K5 | D5 | 6 |
-| Bottom third | K6 | D6 | 7 |
-| Bottom right | K7 | D7 | 8 |
+| Top left | D6 | D6 | 1 |
+| Top second | D5 | D5 | 2 |
+| Top third | D4 | D4 | 3 |
+| Top right | D3 | D3 | 4 |
+| Bottom left | D7 | D7 | 5 |
+| Bottom second | D8 | D8 | 6 |
+| Bottom third | D9 | D9 | 7 |
+| Bottom right | D10 | D10 | 8 |
 
-The other terminal of each switch joins GND. ZMK uses its direct GPIO scanner with internal pull-ups and active-low inputs.
+The leg facing the center of the board connects to the labeled GPIO; the outer leg joins GND. The GPIO labels appear on the front silkscreen. ZMK uses its direct GPIO scanner with internal pull-ups and active-low inputs. The shield disables the XIAO's default I²C and SPI peripherals so those shared pins remain available for switches.
 
 ## Regenerate
 
 ```sh
-npm ci --allow-git=all
-npm run generate
+./scripts/generate.sh
 ```
 
-`--allow-git=all` is needed with npm 12 because Ergogen 4.2.1 has Git-hosted dependencies. `npm run generate` creates the layout, routes 0.30 mm signal tracks, fills front and back GND zones, and checks for unconnected nets plus 0.25 mm trace clearance from other pads, non-plated holes, and traces. It requires KiCad's Python `pcbnew` module; on macOS the script uses the bundled interpreter at `/Applications/KiCad`. Set `KICAD_PYTHON` to another interpreter if needed. Regeneration overwrites the generated PCB.
+Run this from the repository root with the KiCad PCB editor closed. The script installs dependencies with `npm ci --allow-git=all` (needed with npm 12 because Ergogen 4.2.1 has Git-hosted dependencies), using an ignored project-local npm cache, then generates the PCB. Generation routes 0.30 mm signal tracks using only horizontal, vertical, and 45° segments, with no 90° turns and 1.8 mm spacing between parallel traces so GND copper fills the gaps. It fills front and back GND zones and checks for unconnected nets, clearance from pads and traces, and GND copper between each adjacent pair of signal traces. It centers the board on the A3 drawing and stamps the generation date in the title block. It requires KiCad's Python `pcbnew` module; on macOS the script uses the bundled interpreter at `/Applications/KiCad`. Set `KICAD_PYTHON` to another interpreter if needed. Regeneration overwrites the generated PCB while preserving the KiCad project settings. KiCad's local `.history` directory is not used for project versioning; use the repository instead.
 
-Before fabrication, run KiCad's full DRC and verify the XIAO header and USB fit against the physical module. The command-line DRC did not start in this environment, and no firmware build or physical PCB validation has been performed.
+Before fabrication, run KiCad's full DRC and verify the XIAO header and USB fit against the physical module. No firmware build or physical PCB validation has been performed.
 
 For ZMK, use the `config` directory as your ZMK user config and build the `qbf_macropad` shield for `xiao_ble//zmk` (see `build.yaml`). The sample keymap sends 1–8 in visual order.

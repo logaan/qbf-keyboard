@@ -306,35 +306,35 @@
       },
       {
         "netclass": "Default",
-        "pattern": "K4"
+        "pattern": "D6"
       },
       {
         "netclass": "Default",
-        "pattern": "K0"
+        "pattern": "D5"
       },
       {
         "netclass": "Default",
-        "pattern": "K5"
+        "pattern": "D4"
       },
       {
         "netclass": "Default",
-        "pattern": "K1"
+        "pattern": "D3"
       },
       {
         "netclass": "Default",
-        "pattern": "K6"
+        "pattern": "D7"
       },
       {
         "netclass": "Default",
-        "pattern": "K2"
+        "pattern": "D8"
       },
       {
         "netclass": "Default",
-        "pattern": "K7"
+        "pattern": "D9"
       },
       {
         "netclass": "Default",
-        "pattern": "K3"
+        "pattern": "D10"
       }
     ]
   },

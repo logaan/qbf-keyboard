@@ -5,7 +5,9 @@ module.exports = {
   params: {
     designator: 'S',
     from: undefined,
-    to: undefined
+    to: undefined,
+    label: '',
+    label_offset: 0
   },
   body: p => `
     (module PG1350_1_5U (layer F.Cu)
@@ -13,6 +15,8 @@ module.exports = {
       (fp_text reference "${p.ref}" (at 0 0) (layer F.SilkS) ${p.ref_hide}
         (effects (font (size 1 1) (thickness 0.15))))
       (fp_text value "Choc v1 1.5U" (at 0 0) (layer F.Fab) hide
+        (effects (font (size 1 1) (thickness 0.15))))
+      (fp_text user "${p.label}" (at ${p.label_offset} 0) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15))))
       (fp_line (start -13.25 -8.25) (end 13.25 -8.25) (layer Dwgs.User) (width 0.15))
       (fp_line (start 13.25 -8.25) (end 13.25 8.25) (layer Dwgs.User) (width 0.15))

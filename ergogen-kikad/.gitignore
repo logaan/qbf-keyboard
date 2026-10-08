@@ -1,2 +1,4 @@
 node_modules/
+.npm-cache/
 *.kicad_prl
+generated/pcbs/.history/
