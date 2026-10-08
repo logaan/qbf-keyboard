@@ -22,11 +22,11 @@ The small halves leave room for an opened [iPhone Duo](https://www.apple.com/iph
 
 The exposed case joins both halves in front of a laptop on a [Roost stand](https://www.therooststand.com/products/roost-v3-roost-laptop-stand). A [Keychron Nape Pro](https://www.keychron.com/products/keychron-nape-pro-wireless-trackball-mouse) trackball sits just in front of the keyboard.
 
-### One-handed on a neck strap
+### Two-handed on a neck strap
 
-![A seated person wearing display smart glasses types on one QBF half hanging from a neck strap](assets/renders/park-neck-strap.png)
+![A seated person wearing display smart glasses types with both hands on a vertically oriented QBF half hanging from a neck strap](assets/renders/park-neck-strap.png)
 
-The side mounting holes make a chest-height, single-half setup possible. Check the strap fittings and cap clearance on a physical build.
+The side mounting holes make a chest-height, single-half setup possible. Turning the board 90° places its landscape 1.5U caps in two columns with a gap between them for two-handed chording. Check the strap fittings and cap clearance on a physical build.
 
 ### Packed in the entryway
 
