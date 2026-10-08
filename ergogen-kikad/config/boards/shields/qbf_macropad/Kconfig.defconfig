@@ -1,0 +1,6 @@
+if SHIELD_QBF_MACROPAD
+
+config ZMK_KEYBOARD_NAME
+    default "QBF Macro Pad"
+
+endif

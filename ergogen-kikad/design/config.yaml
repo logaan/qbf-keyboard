@@ -1,0 +1,76 @@
+meta:
+  engine: 4.2.1
+
+units:
+  column_pitch: 18
+  row_pitch: 50
+
+points:
+  zones:
+    pad:
+      key:
+        padding: row_pitch
+      columns:
+        c0:
+          rows:
+            bottom: {net: K4}
+            top: {net: K0}
+        c1:
+          key: {spread: column_pitch}
+          rows:
+            bottom: {net: K5}
+            top: {net: K1}
+        c2:
+          key: {spread: column_pitch}
+          rows:
+            bottom: {net: K6}
+            top: {net: K2}
+        c3:
+          key: {spread: column_pitch}
+          rows:
+            bottom: {net: K7}
+            top: {net: K3}
+      rows:
+        bottom:
+        top:
+
+outlines:
+  board:
+    - what: rectangle
+      where:
+        ref: pad_c0_bottom
+        shift: [28.5, 25]
+      size: [75, 82]
+      corner: 3
+
+pcbs:
+  macropad:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      switches:
+        what: choc_v1_15u_portrait
+        where: true
+        adjust:
+          rotate: 90
+        params:
+          from: GND
+          to: '{{net}}'
+      controller:
+        what: xiao_nrf52840
+        where:
+          ref: pad_c0_bottom
+          shift: [55, 25]
+        adjust:
+          rotate: -90
+        params:
+          D0: K0
+          D1: K1
+          D2: K2
+          D3: K3
+          D4: K4
+          D5: K5
+          D6: K6
+          D7: K7
+          GND: GND

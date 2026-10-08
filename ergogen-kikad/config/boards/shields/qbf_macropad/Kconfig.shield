@@ -1,0 +1,2 @@
+config SHIELD_QBF_MACROPAD
+    def_bool $(shields_list_contains,qbf_macropad)
