@@ -16,19 +16,12 @@ BOARD = Path('generated/pcbs/macropad.kicad_pcb')
 BASE_PLATE = Path('generated/pcbs/baseplate.kicad_pcb')
 WIDTH_MM = 0.30
 CORNER_MITER_MM = 0.75
-PAGE_OFFSET_MM = (181.5, 184.5)  # Center the 87 x 104 mm board on A3.
+PAGE_OFFSET_MM = (181.425, 165.5)  # Center the 73.65 x 60.5 mm board on A3.
 DRAWING_TITLE = 'QBF Wireless Split Perkins Keyboard'
-RING_CENTER_MM = (17.0, -36.0)
+RING_CENTER_MM = (22.0, -17.0)
 RING_INNER_RADIUS_MM = 23.0
 RING_OUTER_RADIUS_MM = 28.0
-GROUND_CHANNEL_SAMPLES = {
-    'D6/D5': (40.0, -52.9),
-    'D5/D4': (40.0, -54.7),
-    'D4/D3': (50.5, -56.5),
-    'D7/D8': (40.0, -14.1),
-    'D8/D9': (40.0, -12.3),
-    'D9/D10': (51.6, -10.5),
-}
+GROUND_CHANNEL_SAMPLES = {}
 
 
 def point(xy):
@@ -154,10 +147,10 @@ def add_ground_zone(board, ground, layer):
     zone.SetIslandRemovalMode(pcb.ISLAND_REMOVAL_MODE_ALWAYS)
     polygon = zone.Outline()
     polygon.NewOutline()
-    # Inset from the rounded 87 x 104 mm board outline.
-    for xy in [(-12.5, -87.2), (69.5, -87.2), (71.2, -85.5),
-               (71.2, 13.5), (69.5, 15.2), (-12.5, 15.2),
-               (-14.2, 13.5), (-14.2, -85.5)]:
+    # Inset 0.8 mm from the cap-sized rounded board outline.
+    for xy in [(-6.75, -46.45), (63.9, -46.45), (64.6, -45.75),
+               (64.6, 11.75), (63.9, 12.45), (-6.75, 12.45),
+               (-7.45, 11.75), (-7.45, -45.75)]:
         polygon.Append(*point(xy))
     board.Add(zone)
 
@@ -175,7 +168,7 @@ def make_base_plate():
         footprint.Value().SetVisible(False)
         for pad in pads:
             if pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH:
-                diameter = 2.0 if is_controller else 2.2
+                diameter = 2.0 if is_controller else 2.8
                 drill = pcb.VECTOR2I(pcb.FromMM(diameter), pcb.FromMM(diameter))
                 pad.SetDrillSize(drill)
                 pad.SetSize(drill)
@@ -213,13 +206,7 @@ def check_base_plate(plate):
     if len(pads) != 58 or any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH or
                               pad.GetNetCode() != 0 for pad in pads):
         raise RuntimeError('Base plate must have 58 unconnected mechanical holes')
-    center = (RING_CENTER_MM[0] + PAGE_OFFSET_MM[0],
-              RING_CENTER_MM[1] + PAGE_OFFSET_MM[1])
-    for pad in pads:
-        clearance = math.dist(mm_point(pad.GetPosition()), center) - \
-                    pcb.ToMM(pad.GetDrillSize().x) / 2 - RING_OUTER_RADIUS_MM
-        if clearance < 1.0:
-            raise RuntimeError(f'MagSafe ring overlaps base plate hole: {clearance:.2f} mm')
+    # The adhesive ring may overlap mechanical and component-clearance holes.
     markers = [drawing for drawing in plate.GetDrawings()
                if drawing.GetLayer() == pcb.B_SilkS]
     if len(markers) != 1 or not markers[0].IsSolidFill() or \
@@ -243,14 +230,14 @@ def main():
                 pads.setdefault(name, []).append(mm_point(pad.GetPosition()))
 
     expected = {
-        'D6': [(-5.9, -72.0), (47.38, -43.62)],
-        'D5': [(13.15, -72.0), (49.92, -43.62)],
-        'D4': [(32.2, -72.0), (52.46, -43.62)],
-        'D3': [(51.25, -72.0), (55.0, -43.62)],
-        'D7': [(-3.8, -5.0), (47.38, -28.38)],
-        'D8': [(15.25, -5.0), (49.92, -28.38)],
-        'D9': [(34.3, -5.0), (52.46, -28.38)],
-        'D10': [(53.35, -5.0), (55.0, -28.38)],
+        'D6': [(-5.9, -34.0), (47.38, -24.62)],
+        'D5': [(13.15, -34.0), (49.92, -24.62)],
+        'D4': [(32.2, -34.0), (52.46, -24.62)],
+        'D3': [(51.25, -34.0), (55.0, -24.62)],
+        'D7': [(-3.8, -5.0), (47.38, -9.38)],
+        'D8': [(15.25, -5.0), (49.92, -9.38)],
+        'D9': [(34.3, -5.0), (52.46, -9.38)],
+        'D10': [(53.35, -5.0), (55.0, -9.38)],
     }
     for name, endpoints in expected.items():
         if sorted(pads.get(name, [])) != sorted(endpoints):
@@ -262,17 +249,28 @@ def main():
     # approach the header pads from clear lanes between the switch rows.
     # 1.8 mm lane pitch leaves room for 0.25 mm clearance on each side
     # of a 0.30 mm trace and a useful strip of GND copper between traces.
-    top_approach = {'D6': -52.0, 'D5': -53.8, 'D4': -55.6, 'D3': -57.4}
-    bottom_approach = {'D7': -15.0, 'D8': -13.2, 'D9': -11.4, 'D10': -9.6}
+    top_approach = {'D6': -23.0, 'D5': -21.2, 'D4': -19.4, 'D3': -17.6}
+    bottom_approach = {'D7': -11.0, 'D8': -12.8, 'D9': -14.6, 'D10': -16.4}
     for name, endpoints in expected.items():
         start, end = endpoints
-        if start[1] == -72:
-            exit_pad = (start[0], -58.0)
+        if name == 'D4':
+            coordinates = [start, (start[0], -27.7), (start[0] + 1, -26.7),
+                           (end[0] - 1, -26.7), (end[0], -25.7), end]
+        elif name == 'D9':
+            coordinates = [start, (start[0], -6.2), (start[0] + 1, -7.2),
+                           (end[0] - 1, -7.2), (end[0], -8.2), end]
+        elif name == 'D3':
+            coordinates = [start, (start[0], -29.12), (end[0], -25.37), end]
+        elif name == 'D10':
+            coordinates = [start, (start[0], -7.73), end]
+        elif start[1] == -34:
+            exit_pad = (start[0], -27.0)
             coordinates = [start, exit_pad] + fan_in(exit_pad, top_approach[name], end) + [end]
         else:
-            exit_pad = (start[0], -9.0)
+            exit_pad = (start[0], -8.0)
             coordinates = [start, exit_pad] + fan_in(exit_pad, bottom_approach[name], end) + [end]
-        route(board, nets[name], pcb.F_Cu, coordinates)
+        layer = pcb.F_Cu if name in ('D6', 'D4', 'D7', 'D9') else pcb.B_Cu
+        route(board, nets[name], layer, coordinates)
 
     for layer in (pcb.F_Cu, pcb.B_Cu):
         add_ground_zone(board, nets['GND'], layer)

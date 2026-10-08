@@ -29,7 +29,7 @@ module.exports = {
       (pad "" np_thru_hole circle (at 0 0) (size 3.429 3.429) (drill 3.429) (layers *.Cu *.Mask))
       (pad "" np_thru_hole circle (at 5.5 0) (size 1.7018 1.7018) (drill 1.7018) (layers *.Cu *.Mask))
       (pad "" np_thru_hole circle (at -5.5 0) (size 1.7018 1.7018) (drill 1.7018) (layers *.Cu *.Mask))
-      (pad 1 thru_hole circle (at 5 -3.8) (size 2.032 2.032) (drill 1.27) (layers *.Cu *.Mask) ${p.from})
-      (pad 2 thru_hole circle (at 0 -5.9) (size 2.032 2.032) (drill 1.27) (layers *.Cu *.Mask) ${p.to})
+      (pad 1 thru_hole circle (at 5 -3.8) (size 2.4 2.4) (drill 1.6) (layers *.Cu *.Mask) ${p.from})
+      (pad 2 thru_hole circle (at 0 -5.9) (size 2.4 2.4) (drill 1.6) (layers *.Cu *.Mask) ${p.to})
     )`
 };
