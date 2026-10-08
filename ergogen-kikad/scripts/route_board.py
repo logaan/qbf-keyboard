@@ -20,8 +20,6 @@ PAGE_OFFSET_MM = (181.425, 165.5)  # Center the 73.65 x 60.5 mm board on A3.
 DRAWING_TITLE = 'QBF Wireless Split Perkins Keyboard'
 RING_CENTER_MM = (22.0, -17.0)
 RING_INNER_RADIUS_MM = 23.0
-RING_OUTER_RADIUS_MM = 28.0
-GROUND_CHANNEL_SAMPLES = {}
 
 
 def point(xy):
@@ -69,13 +67,6 @@ def check_board(board):
         raise RuntimeError('Expected filled GND zones on both copper layers')
     if not all(zone.IsFilled() for zone in zones):
         raise RuntimeError('One or more GND zones are not filled')
-    front_zone = next(zone for zone in zones if zone.GetLayer() == pcb.F_Cu)
-    front_fill = front_zone.GetFilledPolysList(pcb.F_Cu)
-    for channel, xy in GROUND_CHANNEL_SAMPLES.items():
-        position = point((xy[0] + PAGE_OFFSET_MM[0], xy[1] + PAGE_OFFSET_MM[1]))
-        if not front_fill.Contains(position):
-            raise RuntimeError(f'No front GND copper between {channel} traces')
-
     for track in tracks:
         start, end = mm_point(track.GetStart()), mm_point(track.GetEnd())
         half_width = pcb.ToMM(track.GetWidth()) / 2
@@ -180,17 +171,21 @@ def make_base_plate():
                 graphic.SetLayer(pcb.F_Fab)
     plate.RemoveUnusedNets(None)
 
-    # The filled disc aligns with the inside edge of a 46/56 mm adhesive ring.
-    # The annulus where its adhesive sits remains bare board finish.
-    marker = pcb.PCB_SHAPE(plate)
-    marker.SetShape(pcb.SHAPE_T_CIRCLE)
-    marker.SetStart(point(RING_CENTER_MM))
-    marker.SetEnd(point((RING_CENTER_MM[0] + RING_INNER_RADIUS_MM,
-                         RING_CENTER_MM[1])))
-    marker.SetLayer(pcb.B_SilkS)
-    marker.SetWidth(pcb.FromMM(0.12))
-    marker.SetFilled(True)
-    plate.Add(marker)
+    # Four short ticks locate the inside edge of a 46/56 mm adhesive ring.
+    # They stay clear of holes even though the ring itself may overlap them.
+    cx, cy = RING_CENTER_MM
+    r = RING_INNER_RADIUS_MM
+    for start, end in [((cx - r - 1, cy), (cx - r + 1, cy)),
+                       ((cx + r - 1, cy), (cx + r + 1, cy)),
+                       ((cx, cy - r - 1), (cx, cy - r + 1)),
+                       ((cx, cy + r - 1), (cx, cy + r + 1))]:
+        marker = pcb.PCB_SHAPE(plate)
+        marker.SetShape(pcb.SHAPE_T_SEGMENT)
+        marker.SetStart(point(start))
+        marker.SetEnd(point(end))
+        marker.SetLayer(pcb.B_SilkS)
+        marker.SetWidth(pcb.FromMM(0.16))
+        plate.Add(marker)
 
     plate.GetTitleBlock().SetTitle('QBF Circuit-Free Base Plate')
     plate.GetTitleBlock().SetDate(date.today().isoformat())
@@ -209,9 +204,9 @@ def check_base_plate(plate):
     # The adhesive ring may overlap mechanical and component-clearance holes.
     markers = [drawing for drawing in plate.GetDrawings()
                if drawing.GetLayer() == pcb.B_SilkS]
-    if len(markers) != 1 or not markers[0].IsSolidFill() or \
-            markers[0].GetShape() != pcb.SHAPE_T_CIRCLE:
-        raise RuntimeError('Expected one filled B.SilkS alignment disc')
+    if len(markers) != 4 or any(marker.GetShape() != pcb.SHAPE_T_SEGMENT
+                                for marker in markers):
+        raise RuntimeError('Expected four B.SilkS ring alignment ticks')
 
 
 def main():
@@ -245,10 +240,9 @@ def main():
     if len(pads.get('GND', [])) != 9:
         raise RuntimeError('Expected eight grounded switches and one XIAO GND pad')
 
-    # Both rows leave the switch pads beside their mounting holes, then
-    # approach the header pads from clear lanes between the switch rows.
-    # 1.8 mm lane pitch leaves room for 0.25 mm clearance on each side
-    # of a 0.30 mm trace and a useful strip of GND copper between traces.
+    # Both rows leave their switch pads beside the locating holes.  The
+    # compact layout uses alternating copper layers to reach the header pads
+    # without crossing neighboring signals.
     top_approach = {'D6': -23.0, 'D5': -21.2, 'D4': -19.4, 'D3': -17.6}
     bottom_approach = {'D7': -11.0, 'D8': -12.8, 'D9': -14.6, 'D10': -16.4}
     for name, endpoints in expected.items():

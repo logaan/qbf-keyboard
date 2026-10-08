@@ -11,7 +11,7 @@ module.exports = {
     const pad = (n, x, y, net) =>
       `(pad ${n} thru_hole circle (at ${x} ${y}) (size 1.8 1.8) (drill 1.0) (layers *.Cu *.Mask) ${p[net] || ''})`;
     const label = (name, x, y) =>
-      `(fp_text user "${name}" (at ${x} ${y}) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.12))))`;
+      `(fp_text user "${name}" (at ${x} ${y}) (layer F.Fab) (effects (font (size 0.8 0.8) (thickness 0.12))))`;
     const lines = [];
     for (let i = 0; i < 7; i++) {
       const y = Number((-7.62 + i * 2.54).toFixed(2));
