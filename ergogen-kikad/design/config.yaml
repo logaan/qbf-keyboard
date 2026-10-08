@@ -4,8 +4,8 @@ meta:
   author: Logan Campbell
 
 units:
-  column_pitch: 18
-  row_pitch: 50
+  column_pitch: 19.05
+  row_pitch: 72
 
 points:
   zones:
@@ -41,8 +41,8 @@ outlines:
     - what: rectangle
       where:
         ref: pad_c0_bottom
-        shift: [28.5, 25]
-      size: [75, 82]
+        shift: [28.5, 36]
+      size: [87, 104]
       corner: 3
 
 pcbs:
@@ -75,7 +75,7 @@ pcbs:
         what: xiao_nrf52840
         where:
           ref: pad_c0_bottom
-          shift: [55, 25]
+          shift: [55, 36]
         adjust:
           rotate: -90
         params:
@@ -88,3 +88,23 @@ pcbs:
           D9: D9
           D10: D10
           GND: GND
+      upper_left_mount:
+        what: m2_mount
+        where:
+          ref: pad_c0_bottom
+          shift: [-11, 83.5]
+      upper_right_mount:
+        what: m2_mount
+        where:
+          ref: pad_c0_bottom
+          shift: [68, 83.5]
+      lower_left_mount:
+        what: m2_mount
+        where:
+          ref: pad_c0_bottom
+          shift: [-11, -11.5]
+      lower_right_mount:
+        what: m2_mount
+        where:
+          ref: pad_c0_bottom
+          shift: [68, -11.5]

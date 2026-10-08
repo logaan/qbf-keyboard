@@ -1,4 +1,4 @@
-"""Route the fixed QBF layout produced by Ergogen, then fill GND on both sides.
+"""Build the QBF base plate, route the main PCB, and fill GND on both sides.
 
 Run with KiCad's Python interpreter (or any Python with pcbnew installed).
 The pad-position checks make a layout change fail explicitly rather than leaving
@@ -13,14 +13,18 @@ import pcbnew as pcb
 
 
 BOARD = Path('generated/pcbs/macropad.kicad_pcb')
+BASE_PLATE = Path('generated/pcbs/baseplate.kicad_pcb')
 WIDTH_MM = 0.30
 CORNER_MITER_MM = 0.75
-PAGE_OFFSET_MM = (181.5, 173.5)  # Center the 75 x 82 mm board on A3.
+PAGE_OFFSET_MM = (181.5, 184.5)  # Center the 87 x 104 mm board on A3.
 DRAWING_TITLE = 'QBF Wireless Split Perkins Keyboard'
+RING_CENTER_MM = (17.0, -36.0)
+RING_INNER_RADIUS_MM = 23.0
+RING_OUTER_RADIUS_MM = 28.0
 GROUND_CHANNEL_SAMPLES = {
-    'D6/D5': (40.0, -34.9),
-    'D5/D4': (40.0, -36.7),
-    'D4/D3': (50.5, -38.5),
+    'D6/D5': (40.0, -52.9),
+    'D5/D4': (40.0, -54.7),
+    'D4/D3': (50.5, -56.5),
     'D7/D8': (40.0, -14.1),
     'D8/D9': (40.0, -12.3),
     'D9/D10': (51.6, -10.5),
@@ -150,18 +154,85 @@ def add_ground_zone(board, ground, layer):
     zone.SetIslandRemovalMode(pcb.ISLAND_REMOVAL_MODE_ALWAYS)
     polygon = zone.Outline()
     polygon.NewOutline()
-    # Inset from the rounded 75 x 82 mm board outline.
-    for xy in [(-5.5, -65.2), (62.5, -65.2), (65.2, -62.5),
-               (65.2, 12.5), (62.5, 15.2), (-5.5, 15.2),
-               (-8.2, 12.5), (-8.2, -62.5)]:
+    # Inset from the rounded 87 x 104 mm board outline.
+    for xy in [(-12.5, -87.2), (69.5, -87.2), (71.2, -85.5),
+               (71.2, 13.5), (69.5, 15.2), (-12.5, 15.2),
+               (-14.2, 13.5), (-14.2, -85.5)]:
         polygon.Append(*point(xy))
     board.Add(zone)
+
+
+def make_base_plate():
+    """Copy the board shape and drill positions without any electrical circuit."""
+    plate = pcb.LoadBoard(str(BOARD))
+    if list(plate.GetTracks()) or list(plate.Zones()):
+        raise RuntimeError('Base plate source must be the un-routed Ergogen board')
+
+    for footprint in list(plate.GetFootprints()):
+        is_controller = footprint.GetReference().startswith('MCU')
+        pads = list(footprint.Pads())
+        footprint.Reference().SetVisible(False)
+        footprint.Value().SetVisible(False)
+        for pad in pads:
+            if pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH:
+                diameter = 2.0 if is_controller else 2.2
+                drill = pcb.VECTOR2I(pcb.FromMM(diameter), pcb.FromMM(diameter))
+                pad.SetDrillSize(drill)
+                pad.SetSize(drill)
+            pad.SetAttribute(pcb.PAD_ATTRIB_NPTH)
+            pad.SetNumber('')
+            pad.SetNetCode(0)
+        for graphic in list(footprint.GraphicalItems()):
+            if graphic.GetLayer() in (pcb.F_SilkS, pcb.B_SilkS):
+                graphic.SetLayer(pcb.F_Fab)
+    plate.RemoveUnusedNets(None)
+
+    # The filled disc aligns with the inside edge of a 46/56 mm adhesive ring.
+    # The annulus where its adhesive sits remains bare board finish.
+    marker = pcb.PCB_SHAPE(plate)
+    marker.SetShape(pcb.SHAPE_T_CIRCLE)
+    marker.SetStart(point(RING_CENTER_MM))
+    marker.SetEnd(point((RING_CENTER_MM[0] + RING_INNER_RADIUS_MM,
+                         RING_CENTER_MM[1])))
+    marker.SetLayer(pcb.B_SilkS)
+    marker.SetWidth(pcb.FromMM(0.12))
+    marker.SetFilled(True)
+    plate.Add(marker)
+
+    plate.GetTitleBlock().SetTitle('QBF Circuit-Free Base Plate')
+    plate.GetTitleBlock().SetDate(date.today().isoformat())
+    plate.Move(point(PAGE_OFFSET_MM))
+    pcb.SaveBoard(str(BASE_PLATE), plate)
+    check_base_plate(pcb.LoadBoard(str(BASE_PLATE)))
+
+
+def check_base_plate(plate):
+    if list(plate.GetTracks()) or list(plate.Zones()):
+        raise RuntimeError('Base plate has tracks or copper zones')
+    pads = [pad for footprint in plate.GetFootprints() for pad in footprint.Pads()]
+    if len(pads) != 58 or any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH or
+                              pad.GetNetCode() != 0 for pad in pads):
+        raise RuntimeError('Base plate must have 58 unconnected mechanical holes')
+    center = (RING_CENTER_MM[0] + PAGE_OFFSET_MM[0],
+              RING_CENTER_MM[1] + PAGE_OFFSET_MM[1])
+    for pad in pads:
+        clearance = math.dist(mm_point(pad.GetPosition()), center) - \
+                    pcb.ToMM(pad.GetDrillSize().x) / 2 - RING_OUTER_RADIUS_MM
+        if clearance < 1.0:
+            raise RuntimeError(f'MagSafe ring overlaps base plate hole: {clearance:.2f} mm')
+    markers = [drawing for drawing in plate.GetDrawings()
+               if drawing.GetLayer() == pcb.B_SilkS]
+    if len(markers) != 1 or not markers[0].IsSolidFill() or \
+            markers[0].GetShape() != pcb.SHAPE_T_CIRCLE:
+        raise RuntimeError('Expected one filled B.SilkS alignment disc')
 
 
 def main():
     board = pcb.LoadBoard(str(BOARD))
     if len(list(board.GetTracks())) or len(list(board.Zones())):
         raise RuntimeError('Expected an un-routed Ergogen board; run npm run layout first')
+
+    make_base_plate()
 
     nets = {net.GetNetname(): net for net in board.GetNetInfo().NetsByNetcode().values()}
     pads = {}
@@ -172,14 +243,14 @@ def main():
                 pads.setdefault(name, []).append(mm_point(pad.GetPosition()))
 
     expected = {
-        'D6': [(-5.9, -50.0), (47.38, -32.62)],
-        'D5': [(12.1, -50.0), (49.92, -32.62)],
-        'D4': [(30.1, -50.0), (52.46, -32.62)],
-        'D3': [(48.1, -50.0), (55.0, -32.62)],
-        'D7': [(-3.8, -5.0), (47.38, -17.38)],
-        'D8': [(14.2, -5.0), (49.92, -17.38)],
-        'D9': [(32.2, -5.0), (52.46, -17.38)],
-        'D10': [(50.2, -5.0), (55.0, -17.38)],
+        'D6': [(-5.9, -72.0), (47.38, -43.62)],
+        'D5': [(13.15, -72.0), (49.92, -43.62)],
+        'D4': [(32.2, -72.0), (52.46, -43.62)],
+        'D3': [(51.25, -72.0), (55.0, -43.62)],
+        'D7': [(-3.8, -5.0), (47.38, -28.38)],
+        'D8': [(15.25, -5.0), (49.92, -28.38)],
+        'D9': [(34.3, -5.0), (52.46, -28.38)],
+        'D10': [(53.35, -5.0), (55.0, -28.38)],
     }
     for name, endpoints in expected.items():
         if sorted(pads.get(name, [])) != sorted(endpoints):
@@ -191,12 +262,12 @@ def main():
     # approach the header pads from clear lanes between the switch rows.
     # 1.8 mm lane pitch leaves room for 0.25 mm clearance on each side
     # of a 0.30 mm trace and a useful strip of GND copper between traces.
-    top_approach = {'D6': -34.0, 'D5': -35.8, 'D4': -37.6, 'D3': -39.4}
+    top_approach = {'D6': -52.0, 'D5': -53.8, 'D4': -55.6, 'D3': -57.4}
     bottom_approach = {'D7': -15.0, 'D8': -13.2, 'D9': -11.4, 'D10': -9.6}
     for name, endpoints in expected.items():
         start, end = endpoints
-        if start[1] == -50:
-            exit_pad = (start[0], -40.0)
+        if start[1] == -72:
+            exit_pad = (start[0], -58.0)
             coordinates = [start, exit_pad] + fan_in(exit_pad, top_approach[name], end) + [end]
         else:
             exit_pad = (start[0], -9.0)
@@ -213,6 +284,7 @@ def main():
     board.BuildConnectivity()
     pcb.SaveBoard(str(BOARD), board)
     check_board(pcb.LoadBoard(str(BOARD)))
+    print(f'Generated circuit-free base plate with 58 holes: {BASE_PLATE}')
     print(f'Routed {len(list(board.GetTracks()))} segments and filled two GND zones: {BOARD}')
 
 
