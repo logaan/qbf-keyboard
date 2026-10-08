@@ -18,9 +18,9 @@ The small halves leave room for an opened [iPhone Duo](https://www.apple.com/iph
 
 ### Joined at a café
 
-![Both QBF halves in the exposed case below a laptop on a Roost stand, with a Nape Pro trackball in front](assets/renders/cafe-roost-nape.png)
+![Both QBF halves in the exposed case in front of a large iPad Pro on a café table](assets/renders/cafe-ipad-pro.png)
 
-The exposed case joins both halves in front of a laptop on a [Roost stand](https://www.therooststand.com/products/roost-v3-roost-laptop-stand). A [Keychron Nape Pro](https://www.keychron.com/products/keychron-nape-pro-wireless-trackball-mouse) trackball sits just in front of the keyboard.
+The exposed case joins both halves in front of a large [13-inch iPad Pro](https://www.apple.com/ipad-pro/) on a small café table.
 
 ### Two-handed on a neck strap
 
