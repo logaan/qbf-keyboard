@@ -44,3 +44,7 @@ Flip the assemblies before sliding them into the case so the keys face its solid
 6. **Print the carrier if wanted.** Print two lower rails, two upper rails, and one case from the [mechanical files](mechanical/README.md). Attach each rail pair under a board with thin double-sided tape and its locating pegs. Insert one half rotated 180° so both USB-C ports face outward. Slide in keycaps up for typing, or keycaps down for transport. Remove the rails if using the M2 holes for a neck strap.
 
 The electronics pass KiCad's board checks, and the printed parts are valid FreeCAD solids. The assembled keyboard, fit, and protected-mode clearance still need a physical prototype.
+
+## Mikoto controller diagnostics
+
+The [automated test fixture](diagnostics/mikoto/README.md) uses a SuperMini nRF52840 to reset a Mikoto, enter UF2 mode and simulate four direct keyboard inputs. It includes an [HTML/SVG wiring guide](diagnostics/mikoto/wiring/index.html), SuperMini fixture code, compiled Mikoto test firmware and a macOS checker for USB keyboard press/release events. The software is validated; the physical fixture still needs to be assembled and tested.

@@ -1,0 +1,25 @@
+{
+  "built_on": "2026-10-13",
+  "zmk_revision": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+  "zephyr_revision": "10ba6d0cb38bc3d258775d27982f707599320085",
+  "dependency_lock": "west-frozen.yml",
+  "compiler_image": "zmkfirmware/zmk-build-arm@sha256:edb1c953438c6f720ddb79c3762f3972013b7fbbaf4fff3592fc869983e7afc5",
+  "zephyr_sdk": "0.16.9",
+  "fixture_source_commit": "6322dfb",
+  "mikoto_boards": ["mikoto@5.20.0//zmk", "mikoto@6.1.0//zmk", "mikoto@6.3.0//zmk", "mikoto@7.2.0//zmk"],
+  "revision_6_3_note": "The pinned legacy board lacks its 6.3 overlay. compat/mikoto-6.3.overlay supplies the official v6 GPIO and pinctrl includes.",
+  "supermini_runtime": {
+    "version": "10.3.1",
+    "board": "supermini_nrf52840",
+    "url": "https://downloads.circuitpython.org/bin/supermini_nrf52840/en_US/adafruit-circuitpython-supermini_nrf52840-en_US-10.3.1.uf2",
+    "source": "https://github.com/adafruit/circuitpython/tree/10.3.1",
+    "minimum_bootloader_version": "0.6.1"
+  },
+  "validation": {
+    "software_tests": "9 passed",
+    "mikoto_builds": "4 compiled; UF2 structure, family and write range validated",
+    "macos_hid_observer": "compiled with Apple Swift 6.3.3",
+    "wiring": "HTML opened in browser; embedded SVG circuit and breadboard detail visually inspected",
+    "physical_hardware": "not tested"
+  }
+}
