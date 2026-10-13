@@ -2,6 +2,8 @@
 
 This fixture uses the **SuperMini nRF52840** as an electronic button-presser. Your laptop can reset the Mikoto, enter its UF2 bootloader, install a test keyboard, and check four GPIO inputs through real USB HID press/release events.
 
+**Your confirmed Mikoto revision is 7.2.** Use [mikoto-test-7.2.0.uf2](dist/mikoto-test-7.2.0.uf2); the commands below are set to that image. Its compiled firmware is included, and the recommended wiring applies to this revision.
+
 Start with the [HTML wiring guide](wiring/index.html). It contains an embedded SVG circuit overview, component list and breadboard hole coordinates. The [research notes](RESEARCH.md) link the primary sources and explain the limits of the test.
 
 **Reset is pulled to ground, never powered.** Each controller has its own USB cable; only ground is joined between their power systems. The transistor/resistor circuits in the wiring guide are the recommended arrangement. This tests independent input-to-ground keys, not a row/column switch matrix.
@@ -58,7 +60,7 @@ If no drive appears, inspect USB data cables, GND, the transistor's lead order, 
 
 ## 4. Install the matching Mikoto test keyboard
 
-Check the PCB revision printed on the **Mikoto**. The package provides:
+Your **Mikoto is revision 7.2**. The package also provides images for other boards:
 
 | Physical Mikoto revision | Test image |
 | --- | --- |
@@ -69,10 +71,10 @@ Check the PCB revision printed on the **Mikoto**. The package provides:
 
 Do not infer the PCB revision from `INFO_UF2.TXT`. For earlier/unlisted revisions, check compatibility before selecting an image. The designer marks 7.1 as broken; it is not a supported fixture target.
 
-For example, for a **5.20** PCB:
+For your **7.2** PCB:
 
 ```sh
-.venv/bin/python host/fixture_cli.py --port /dev/cu.usbmodemYOUR_DATA_PORT flash dist/mikoto-test-5.20.0.uf2
+.venv/bin/python host/fixture_cli.py --port /dev/cu.usbmodemYOUR_DATA_PORT flash dist/mikoto-test-7.2.0.uf2
 ```
 
 This replaces the Mikoto's current keyboard application, leaving its reserved bootloader/SoftDevice/storage partitions outside the write range. The test image disables Bluetooth, battery reporting and sleep; it creates a USB keyboard named `Mikoto Test`. It uses the internal pull-ups on:
@@ -97,10 +99,10 @@ The checker repeats each individual key three times, then tests all multi-key co
 To automatically enter UF2, copy a fresh image and then test it in one command:
 
 ```sh
-.venv/bin/python host/fixture_cli.py --port /dev/cu.usbmodemYOUR_DATA_PORT run dist/mikoto-test-5.20.0.uf2 --chords
+.venv/bin/python host/fixture_cli.py --port /dev/cu.usbmodemYOUR_DATA_PORT run dist/mikoto-test-7.2.0.uf2 --chords
 ```
 
-Use the image for your actual revision. No physical Mikoto key presses are involved. A successful file copy alone is not a pass; the HID test establishes that the installed application responds.
+This selects your revision 7.2 image. No physical Mikoto key presses are involved. A successful file copy alone is not a pass; the HID test establishes that the installed application responds.
 
 Other useful commands:
 
