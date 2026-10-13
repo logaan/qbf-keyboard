@@ -1,0 +1,7 @@
+file_format: "1"
+id: mikoto_test
+name: Mikoto diagnostic inputs
+type: shield
+url: https://github.com/zhiayang/mikoto
+requires: [pro_micro]
+features: [keys]

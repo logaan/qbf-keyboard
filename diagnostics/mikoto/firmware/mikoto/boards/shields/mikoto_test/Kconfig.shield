@@ -1,0 +1,2 @@
+config SHIELD_MIKOTO_TEST
+    def_bool $(shields_list_contains,mikoto_test)

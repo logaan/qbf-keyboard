@@ -1,0 +1,4 @@
+if SHIELD_MIKOTO_TEST
+config ZMK_KEYBOARD_NAME
+    default "Mikoto Test"
+endif
