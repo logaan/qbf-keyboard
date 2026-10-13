@@ -1,0 +1,6 @@
+.build/
+.venv/
+__pycache__/
+*.pyc
+host/hid-watch
+reports/
