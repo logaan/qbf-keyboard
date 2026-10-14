@@ -1,4 +1,4 @@
-"""Copy with boot.py and fixture.py onto SuperMini CIRCUITPY, then reset."""
+"""Direct GPIO fixture. Copy all three .py files with signal wires disconnected."""
 import board
 import digitalio
 import json
@@ -14,7 +14,8 @@ try:
     for pin in (board.P0_06, board.P0_08, board.P0_17, board.P0_20, board.P0_22):
         output = digitalio.DigitalInOut(pin)
         outputs.append(output)
-        output.switch_to_output(value=False)
+        # Start released. OPEN_DRAIN turns True into high impedance, not 3.3 V.
+        output.switch_to_output(value=True, drive_mode=digitalio.DriveMode.OPEN_DRAIN)
     controller = Fixture(outputs, time.monotonic)
     stream = usb_cdc.data
     if stream is None:
@@ -52,8 +53,10 @@ try:
                         controller.release()
         time.sleep(0.001)
 finally:
-    if controller is not None:
-        controller.release()
-    for output in outputs:
-        output.value = False
-        output.deinit()
+    try:
+        if controller is not None:
+            controller.release()
+    finally:
+        # Also covers failure partway through configuring the GPIOs.
+        for output in outputs:
+            output.deinit()

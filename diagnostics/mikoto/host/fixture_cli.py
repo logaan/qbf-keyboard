@@ -14,7 +14,8 @@ import threading
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
-PROTOCOL = "mikoto-fixture-v1"
+PROTOCOL = "mikoto-fixture-v2"
+WIRING = "direct-open-drain"
 MIKOTO_BOARD_ID = "nRF52840-mikoto-rev520"
 
 
@@ -27,8 +28,13 @@ class Client:
         self.serial.reset_input_buffer()
         try:
             hello = self.request("hello")
+            if hello.get("protocol") == "mikoto-fixture-v1":
+                raise RuntimeError("Old transistor firmware detected. Disconnect all signal wires, "
+                                   "install the updated SuperMini Python files, then reset it")
             if hello.get("protocol") != PROTOCOL:
                 raise RuntimeError("This is not the fixture data port; try the other SuperMini port")
+            if hello.get("wiring") != WIRING:
+                raise RuntimeError("Fixture wiring mode must be direct-open-drain")
         except BaseException:
             self.serial.close()
             raise

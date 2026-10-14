@@ -1,11 +1,12 @@
-"""Nonblocking fixture controller. Outputs HIGH turn external NPN switches on."""
+"""Direct open-drain fixture: False sinks a signal; True releases it."""
 
-PROTOCOL = "mikoto-fixture-v1"
+PROTOCOL = "mikoto-fixture-v2"
+WIRING = "direct-open-drain"
 
 
 class Fixture:
     def __init__(self, outputs, clock):
-        # outputs: [reset, key1, key2, key3, key4], with a writable .value
+        # outputs: [reset, key1, key2, key3, key4], configured OPEN_DRAIN.
         self.outputs = outputs
         self.clock = clock
         self.steps = []
@@ -14,19 +15,25 @@ class Fixture:
 
     def release(self):
         self.steps = []
+        self.reset_asserted = False
+        self.pressed_keys = []
         for output in self.outputs:
-            output.value = False
+            output.value = True  # high impedance; never actively drive high
 
     def status(self):
-        return {"ok": True, "protocol": PROTOCOL, "busy": bool(self.steps),
-                "reset": bool(self.outputs[0].value),
-                "keys": [i for i in range(1, 5) if self.outputs[i].value]}
+        # Report commanded state. A released pin can still read low if the
+        # target holds it low, so pin.value is not an acknowledgement of a press.
+        return {"ok": True, "protocol": PROTOCOL, "wiring": WIRING,
+                "busy": bool(self.steps), "reset": self.reset_asserted,
+                "keys": list(self.pressed_keys)}
 
     def _apply(self, step):
         reset, keys, milliseconds = step
-        self.outputs[0].value = reset
+        self.reset_asserted = reset
+        self.pressed_keys = list(keys)
+        self.outputs[0].value = not reset
         for i in range(1, 5):
-            self.outputs[i].value = i in keys
+            self.outputs[i].value = i not in keys
         self.deadline = self.clock() + milliseconds / 1000
 
     def tick(self):
