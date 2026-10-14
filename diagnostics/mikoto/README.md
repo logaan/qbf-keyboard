@@ -6,7 +6,17 @@ This fixture uses the **SuperMini nRF52840** as an electronic button-presser. Yo
 
 Start with the [HTML wiring guide](wiring/index.html). It contains an embedded SVG circuit overview, component list and breadboard hole coordinates. The [research notes](RESEARCH.md) link the primary sources and explain the limits of the test.
 
-**Reset is pulled to ground, never powered.** Each controller has its own USB cable; only ground is joined between their power systems. The transistor/resistor circuits in the wiring guide are the recommended arrangement. This tests independent input-to-ground keys, not a row/column switch matrix.
+**Reset is pulled to ground, never powered.** Connect each of the five SuperMini GPIOs to its Mikoto input through one **1 kΩ series resistor**, and join GND directly. The SuperMini uses open-drain GPIOs: low asserts reset/a key; release leaves the wire electrically undriven. Each controller has its own USB cable and their supply rails stay separate. This tests independent input-to-ground keys, not a row/column switch matrix.
+
+## Updating from the earlier transistor design
+
+**Remove all five signal wires before installing the updated code or changing the circuit.** The earlier firmware actively drives high to operate external transistors; it is incompatible with direct GPIO wiring.
+
+If CircuitPython 10.3.1 is already on the SuperMini, replace all three Python files (`boot.py`, `code.py`, `fixture.py`) using [the updated installer](dist/supermini-install.zip), then reset the SuperMini with its signal wires still disconnected. Its CircuitPython UF2 runtime does not need reinstalling. Use the updated laptop tool from this repository too: it checks `mikoto-fixture-v2` and `direct-open-drain` and rejects the earlier firmware.
+
+Unplug both USB cables while rebuilding the breadboard. Remove the external transistors and their base/pull-down resistors, then follow the new hole coordinates in the wiring guide. The Mikoto 7.2 test image and GPIO assignments are unchanged; it does not need reflashing just for this wiring change.
+
+For direct wiring, **keep both boards powered whenever signal wires are attached**. Connect shared ground first, plug in both USB cables with signal wires unattached, then attach the signals. Disconnect all five signal wires before unplugging either USB cable. The resistors limit accidental output-conflict current; they do not isolate an unpowered controller.
 
 ## 1. Set up the SuperMini once
 
@@ -18,7 +28,7 @@ Do this with the inter-board wiring disconnected, so its current firmware cannot
 4. Copy **all three files** from [firmware/supermini](firmware/supermini/) to the root of that SuperMini `CIRCUITPY` drive: `boot.py`, `code.py`, `fixture.py`. No additional CircuitPython libraries are needed.
 5. Unplug and reconnect the SuperMini so `boot.py` can configure USB. It should now expose a console serial port and a separate **data serial port**. It deliberately exposes no HID keyboard interface.
 
-The UF2 installs CircuitPython; the three files provide the fixture logic. They are both needed. For convenience, [supermini-install.zip](dist/supermini-install.zip) contains the runtime and those files. Keep the originals and the current Mikoto firmware if you want to restore them later.
+The UF2 installs CircuitPython; the three files provide the fixture logic. They are both needed. For convenience, [supermini-install.zip](dist/supermini-install.zip) contains the runtime, those files and archive-specific setup instructions. Keep the originals and the current Mikoto firmware if you want to restore them later.
 
 The SuperMini needs that one-time physical setup. Once it is running this code, entering **Mikoto** UF2 mode requires no manual key press or reset gesture.
 
@@ -42,13 +52,13 @@ Choose the SuperMini **data** port from the output (usually `/dev/cu.usbmodem...
 .venv/bin/python host/fixture_cli.py --port /dev/cu.usbmodemYOUR_DATA_PORT status
 ```
 
-A correct reply includes `protocol: mikoto-fixture-v1`. A timeout usually means the console port was selected, `boot.py` has not been applied, or a serial monitor is already using the port. Close serial monitors while running these commands. Baud rate is a nominal USB CDC setting.
+A correct reply includes `protocol: mikoto-fixture-v2`, `wiring: direct-open-drain`, `reset: false` and an empty `keys` list when idle. These fields report the fixture's commanded state, not a voltage measurement or confirmation that the Mikoto registered a key. The HID test provides that confirmation. A timeout usually means the console port was selected, `boot.py` has not been applied, or a serial monitor is already using the port. Close serial monitors while running these commands. Baud rate is a nominal USB CDC setting.
 
 To read keyboard input, macOS may require **System Settings → Privacy & Security → Input Monitoring** permission for the terminal/application running the observer. Grant it yourself, then quit and reopen that application. A permission error is a laptop setup issue, not evidence of a damaged Mikoto. The checker does not bypass this setting or change permissions automatically.
 
 ## 3. Check reset and UF2 first
 
-Build only **Q0**, the reset transistor circuit, plus the shared ground. Connect both USB cables after inspecting the wiring. Leave batteries and power-rail connections out.
+Fit **R0**, the reset signal's 1 kΩ series resistor, and connect the shared ground. After inspecting the wiring, plug both boards into USB with all five signal wires unattached. Check the SuperMini's `status` reply as above, then attach only **SuperMini P0.06 → R0 → Mikoto RST** while both boards are powered. Leave batteries and power-rail connections out.
 
 ```sh
 .venv/bin/python host/fixture_cli.py --port /dev/cu.usbmodemYOUR_DATA_PORT bootloader
@@ -56,7 +66,7 @@ Build only **Q0**, the reset transistor circuit, plus the shared ground. Connect
 
 The SuperMini sinks Mikoto RESET for 50 ms, releases it for 150 ms, then sinks it for another 50 ms. The laptop waits for a drive whose `INFO_UF2.TXT` has Board-ID `nRF52840-mikoto-rev520`. The usual drive name is `MIKOTO-BOOT`. The Board-ID names a bootloader build and may remain `rev520` on a newer physical PCB.
 
-If no drive appears, inspect USB data cables, GND, the transistor's lead order, reset wiring and the target's power. Do not interpret this as a GPIO test result. See the research notes for the SWD recovery boundary.
+If no drive appears, inspect USB data cables, GND, R0, reset wiring, the installed SuperMini code and the target's power. Disconnect signal wires before removing USB power for inspection. Do not interpret a missing boot drive as a key-input test result. See the research notes for the SWD recovery boundary.
 
 ## 4. Install the matching Mikoto test keyboard
 
@@ -86,7 +96,9 @@ This replaces the Mikoto's current keyboard application, leaving its reserved bo
 | 3 | P0.20 | D3 | F15 |
 | 4 | P0.22 | D4 | F16 |
 
-Disconnect both USB cables before adding **Q1–Q4**, then check the wiring and reconnect. The laptop tool accepts only nRF52840 application UF2 blocks inside the Mikoto ZMK application partition. It checks the target drive's exact Board-ID rather than copying to any newly mounted drive. For multiple Mikotos, add `--drive /Volumes/MIKOTO-BOOT` to select an explicit target. If a verified Mikoto uses another Mikoto Board-ID, use `--board-id THE_EXACT_ID` on `flash`/`run`; do not bypass a mismatching SuperMini identifier.
+Fit **R1–R4** for the four key signals while rebuilding the unpowered breadboard. Once the Mikoto test image is installed, keep both controllers powered and the fixture idle while attaching the four key signal wires through their resistors. Disconnect all five signal wires before unplugging either USB cable.
+
+The laptop tool accepts only nRF52840 application UF2 blocks inside the Mikoto ZMK application partition. It checks the target drive's exact Board-ID rather than copying to any newly mounted drive. For multiple Mikotos, add `--drive /Volumes/MIKOTO-BOOT` to select an explicit target. If a verified Mikoto uses another Mikoto Board-ID, use `--board-id THE_EXACT_ID` on `flash`/`run`; do not bypass a mismatching SuperMini identifier.
 
 ## 5. Run the end-to-end test
 
@@ -113,19 +125,20 @@ Other useful commands:
 .venv/bin/python host/fixture_cli.py --port /dev/cu.usbmodemYOUR_DATA_PORT release
 ```
 
-A plain-text serial client can also send newline-terminated JSON such as `{"cmd":"bootloader"}` or `{"cmd":"chord","keys":[1,3],"ms":200}`. Supported commands are `hello`, `status`, `release`, `reset`, `bootloader`, `tap`, `hold`, `chord`. Key duration is bounded to 20–5000 ms. Responses confirm acceptance and current state; poll `status` until `busy` is false to confirm completion. `release` cancels immediately. Disconnecting the data serial connection releases outputs. A two-second hardware watchdog resets the SuperMini if its loop stalls.
+A plain-text serial client can also send newline-terminated JSON such as `{"cmd":"bootloader"}` or `{"cmd":"chord","keys":[1,3],"ms":200}`. Supported commands are `hello`, `status`, `release`, `reset`, `bootloader`, `tap`, `hold`, `chord`. Key duration is bounded to 20–5000 ms. Responses confirm acceptance and commanded state; poll `status` until `busy` is false to confirm completion. `release` cancels immediately. Disconnecting the data serial connection releases outputs to high impedance. A two-second hardware watchdog resets the SuperMini if its loop stalls. Losing serial DTR while the board remains USB-powered is different from physically removing its power: detach signal wires before the latter.
 
 ## Validation and rebuilding
 
-Software tests cover pulse sequencing, all key masks, cancellation, bounded serial framing, event verification and refusing invalid/protected-area UF2 files. The four Mikoto images were compiled against the pinned ZMK source listed in [BUILD.json](dist/BUILD.json). The macOS observer was compiled locally. The wiring SVG was visually checked.
+Sixteen software tests cover low/high-impedance polarity, GPIO startup and cleanup, release on serial disconnect, pulse sequencing, all key masks, cancellation, bounded serial framing, rejecting the old fixture protocol, event verification and refusing invalid/protected-area UF2 files. The CircuitPython entry point is exercised with a GPIO/USB model. The four Mikoto images were compiled against the pinned ZMK source listed in [BUILD.json](dist/BUILD.json); the direct-wiring change only updates the SuperMini application files and laptop compatibility check. The macOS observer was compiled locally. The updated wiring SVG was visually checked.
 
 **Physical validation is still required.** Neither your controllers nor a wired fixture have been tested here. A four-pin pass does not certify all GPIOs, output drivers, Bluetooth, charging or an entire matrix. A failure can be in the fixture, firmware choice, laptop permissions or the target. The guide includes stages to distinguish these.
 
 ```sh
 python3 -m unittest discover -s tests -v
 sh firmware/build-mikoto.sh
+python3 package.py
 ```
 
 The rebuild command uses the official ZMK compiler container, downloads pinned dependencies, and writes all four UF2 files to `dist/`. It needs Docker and network access; its temporary container is removed on completion. The SuperMini runtime comes from the official CircuitPython download rather than a local C build. Its fixture code is readable/editable directly on `CIRCUITPY`.
 
-[SHA256SUMS](dist/SHA256SUMS) records the delivered files. Upstream source and license notices are in [dist/LICENSES](dist/LICENSES/).
+`python3 package.py` refreshes the SuperMini installer and checksums after editing its application files or rebuilding Mikoto images. [SHA256SUMS](dist/SHA256SUMS) records the delivered files. Upstream source and license notices are in [dist/LICENSES](dist/LICENSES/).

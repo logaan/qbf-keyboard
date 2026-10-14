@@ -1,4 +1,4 @@
-# Mikoto automated test fixture — research, 13 October 2026
+# Mikoto automated test fixture — researched 13 October, updated 15 October 2026
 
 The plan is viable **provided the target still has working power, USB, reset and a bootloader**. A SuperMini cannot repair a damaged processor or USB connector by flashing it. Bootloader enumeration is itself a useful first diagnostic.
 
@@ -14,11 +14,17 @@ The plan is viable **provided the target still has working power, USB, reset and
 
 ## Recommended electrical arrangement
 
-Use five **onsemi 2N3904 NPN transistors** (one reset, four direct keys), each with a **4.7 kΩ base resistor**, **100 kΩ base-to-emitter resistor**, and **1 kΩ collector series resistor**. All emitters connect to the shared ground. See the [part datasheet](https://www.onsemi.com/pdf/datasheet/2n3904-d.pdf) for the actual lead numbering. Do not substitute a different transistor by assuming its leads have the same order.
+Use **direct open-drain GPIO connections** with five **1 kΩ series resistors** (one for reset and one per key), plus a direct shared-ground connection. The SuperMini connects each signal to ground to assert it, then releases it to high impedance. The Mikoto's own pull-ups restore the high level. No external transistor or extra pull-up is required for this fixture.
 
-The transistor is an electronically controlled connection to ground: SuperMini output high closes it; low opens it. The base resistor limits SuperMini current (~0.55 mA); the pull-down keeps it off while firmware starts; the collector resistor limits an accidental 3.3 V output conflict to about 3 mA. These values are engineering choices for short, slow, 3.3 V breadboard tests, not a manufacturer's reference fixture. With the Mikoto's internal pull-up enabled, the 1 kΩ series resistance still permits a valid low input. No external pull-up is needed for these keys or for the reset input.
+[CircuitPython's open-drain mode](https://docs.circuitpython.org/en/latest/shared-bindings/digitalio/index.html#digitalio.DriveMode) implements low output and high-impedance release. The updated firmware explicitly selects `OPEN_DRAIN` and starts every pin at `value=True` (released); asserting a signal sets `value=False`. Shutdown deinitializes the pins. Protocol `mikoto-fixture-v2` identifies this wiring, and the updated laptop tool rejects the earlier transistor firmware. Status reports commanded states rather than interpreting a target-held-low pad as a commanded key press.
 
-This avoids a direct driven-high path from one board into the other. It is not galvanic isolation and does not protect against arbitrary miswiring. Grounds are joined; supply rails are not. Connect with USB unplugged, leave batteries disconnected, and inspect solder bridges before powering. A controller that gets hot or causes USB overcurrent needs power removed and physical inspection first.
+At 3.3 V, a 1 kΩ series resistor bounds an accidental output conflict to roughly 3.3 mA. With the Mikoto's internal pull-up enabled, this series resistance still permits a valid low input. These values are engineering choices for short, slow breadboard tests, not a manufacturer's reference fixture. The resistors reduce conflict current; they do not provide galvanic isolation, make GPIOs 5 V tolerant, protect against arbitrary miswiring, or make connections to an unpowered controller safe.
+
+**Keep both boards powered while the five signal wires are connected.** Connect GND first, power both controllers over their own USB cables with signal wires unattached, then attach the signals. Disconnect all signal wires before removing either board's USB power. An unpowered board's allowable GPIO voltage falls with VDD; the powered board's pull-ups can feed current through the unpowered board's protection circuitry. Open-drain release alone does not remove that path. Supply rails stay separate; batteries remain disconnected.
+
+Do breadboard component changes with USB unplugged and signal wires removed. Inspect solder bridges before powering. A controller that gets hot or causes USB overcurrent needs power removed and physical inspection first.
+
+The previous external-transistor design has been replaced. If it was installed, disconnect all signal wires before updating all three SuperMini Python files and rebuilding the circuit. The supplied CircuitPython runtime and Mikoto test images do not need changing for this migration.
 
 **No keyboard diodes are needed** for four independent input-to-ground keys. This does not emulate a scanned row/column matrix: that needs switches between rows and columns (for example suitable analog switches or PhotoMOS relays), and potentially the matrix's normal diodes. Pulling arbitrary matrix pins to ground is not an interchangeable solution.
 

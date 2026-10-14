@@ -5,8 +5,13 @@
   "dependency_lock": "west-frozen.yml",
   "compiler_image": "zmkfirmware/zmk-build-arm@sha256:edb1c953438c6f720ddb79c3762f3972013b7fbbaf4fff3592fc869983e7afc5",
   "zephyr_sdk": "0.16.9",
-  "fixture_source_commit": "6322dfb",
-  "mikoto_boards": ["mikoto@5.20.0//zmk", "mikoto@6.1.0//zmk", "mikoto@6.3.0//zmk", "mikoto@7.2.0//zmk"],
+  "fixture_source_commit": "3a8716d",
+  "mikoto_boards": [
+    "mikoto@5.20.0//zmk",
+    "mikoto@6.1.0//zmk",
+    "mikoto@6.3.0//zmk",
+    "mikoto@7.2.0//zmk"
+  ],
   "revision_6_3_note": "The pinned legacy board lacks its 6.3 overlay. compat/mikoto-6.3.overlay supplies the official v6 GPIO and pinctrl includes.",
   "supermini_runtime": {
     "version": "10.3.1",
@@ -16,10 +21,14 @@
     "minimum_bootloader_version": "0.6.1"
   },
   "validation": {
-    "software_tests": "9 passed",
+    "software_tests": "16 passed, including CircuitPython entry point with modeled GPIO/USB",
     "mikoto_builds": "4 compiled; UF2 structure, family and write range validated",
     "macos_hid_observer": "compiled with Apple Swift 6.3.3",
-    "wiring": "HTML opened in browser; embedded SVG circuit and breadboard detail visually inspected",
+    "wiring": "Updated HTML/SVG overview and five-resistor breadboard placement visually inspected",
     "physical_hardware": "not tested"
-  }
+  },
+  "mikoto_source_commit": "6322dfb",
+  "fixture_updated_on": "2026-10-15",
+  "fixture_protocol": "mikoto-fixture-v2",
+  "fixture_wiring": "direct-open-drain GPIO; 1 k\u03a9 in series with each of five signals; shared GND"
 }
