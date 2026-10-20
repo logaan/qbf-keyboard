@@ -96,3 +96,7 @@ After changing dimensions or mounts, run `./scripts/generate-mechanical.sh` to r
 Both PCBs pass KiCad DRC. Firmware compiles against ZMK revision `4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85`. Physical assembly, display operation, power consumption, cap travel, and Bluetooth antenna performance beneath the display have not been tested.
 
 For ZMK, run `./scripts/build-firmware.sh /path/to/zmk-workspace` with west and the Zephyr SDK available. This builds `qbf_macropad nice_view` for `nice_nano@2.0.0//zmk` (see `build.yaml`). The sample keymap preserves 1–8 on the original keys and assigns 9/0 above/below the controller.
+
+## KiCad 3D views
+
+Run `./scripts/render-3d.sh` after regeneration. `generated/assembly-3d.png` shows resting placement; `generated/inspection-3d.png` hides caps and the display to expose the battery and controller. The saved PCB retains its 3D models for KiCad’s viewer. See [model assumptions](design/models/README.md); the MBK meshes are rendering-only and several components use simplified dimension references. Full-travel clearance beneath caps remains unverified.

@@ -8,6 +8,8 @@ import json
 
 import pcbnew as pcb
 
+from attach_models import attach_models
+
 
 OUTPUT = Path(__file__).resolve().parents[1] / 'ergogen-kikad/generated'
 BOARD = OUTPUT / 'pcbs/macropad.kicad_pcb'
@@ -623,6 +625,7 @@ def main():
         add_ground_zone(board, ground, layer)
     board.GetTitleBlock().SetTitle(DRAWING_TITLE)
     board.GetTitleBlock().SetDate(date.today().isoformat())
+    attach_models(board)
     board.Move(point(PAGE_OFFSET_MM))
     board.BuildConnectivity()
     pcb.ZONE_FILLER(board).Fill(board.Zones())
