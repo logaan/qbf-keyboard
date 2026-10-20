@@ -1,68 +1,69 @@
 meta:
   engine: 4.2.1
-  version: 0.0.1
+  version: 0.0.2
   author: Logan Campbell
 
 units:
   column_pitch: 19.05
-  cap_height: 16.5
-  row_gap: 1
-  row_pitch: cap_height + row_gap
-  extra_x: 3 * column_pitch
-  extra_offset: 30
-  controller_x: 20
-  controller_y: 69.75
-  display_x: 23.1
-  display_y: 69.75
-  layout_width: 80
-  layout_height: 80
-  pcb_border: 0
-  board_width: 80
-  board_height: 80
-  battery_well_length: 32.6
-  battery_well_width: 13.6
+  cap_height: 26.5
+  row_pitch: 27.5
+  fifth_x: 87.1
+  fifth_offset: 18.75
+  midline_y: 48
+  cap_margin: 2.25
+  board_left: 0.4
+  board_right: 98.1
+  board_bottom: 18.75
+  board_top: 77.25
+  board_width: board_right - board_left
+  board_height: board_top - board_bottom
+  controller_x: 87.5
+  controller_y: midline_y
+  power_x: 3.8
+  battery_x: 35.5
+  battery_well_length: 58.1
+  battery_well_width: 11.1
 
 points:
   zones:
     pad:
       anchor:
-        shift: [11.425, 31.25]
+        shift: [10.9, 34.25]
       key:
         padding: row_pitch
       columns:
         c0:
           rows:
-            bottom: {net: P9, label: b1}
-            top: {net: P4, label: t1}
+            bottom: {net: D5, label: b1}
+            top: {net: D0, label: t1}
         c1:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: P10, label: b2}
-            top: {net: P5, label: t2}
+            bottom: {net: D6, label: b2}
+            top: {net: D1, label: t2}
         c2:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: P16, label: b3}
-            top: {net: P6, label: t3}
+            bottom: {net: D7, label: b3}
+            top: {net: D2, label: t3}
         c3:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: P14, label: b4}
-            top: {net: P7, label: t4}
+            bottom: {net: D8, label: b4}
+            top: {net: D3, label: t4}
       rows:
         bottom:
         top:
     extra:
-      key:
-        padding: 2 * extra_offset
       anchor:
-        ref: pad_c0_bottom
-        shift: [extra_x, -21.25]
+        shift: [fifth_x, midline_y - fifth_offset]
+      key:
+        padding: 2 * fifth_offset
       columns:
         c4:
           rows:
-            bottom: {net: P15, label: b5}
-            top: {net: P8, label: t5}
+            bottom: {net: D9, label: b5}
+            top: {net: D4, label: t5}
       rows:
         bottom:
         top:
@@ -71,7 +72,7 @@ outlines:
   board:
     - what: rectangle
       where:
-        shift: [40, 40]
+        shift: [(board_left + board_right) / 2, (board_bottom + board_top) / 2]
       size: [board_width, board_height]
       corner: 1.5
 
@@ -85,29 +86,27 @@ pcbs:
         what: choc_v1_15u_portrait
         where: /^pad_.*_top$/
         adjust:
-          rotate: 0
+          rotate: 90
         params:
           from: GND
           to: '{{net}}'
           label: '{{label}}'
-          cap_length: 17.5
+          cap_length: 26.5
           label_offset: 0
       bottom_switches:
         what: choc_v1_15u_portrait
         where: /^pad_.*_bottom$/
         adjust:
-          rotate: 0
+          rotate: 90
         params:
           from: '{{net}}'
           to: GND
           label: '{{label}}'
-          cap_length: 17.5
+          cap_length: 26.5
           label_offset: 0
       extra_top_switch:
         what: choc_v1_15u_portrait
         where: extra_c4_top
-        adjust:
-          rotate: 0
         params:
           from: GND
           to: '{{net}}'
@@ -117,8 +116,6 @@ pcbs:
       extra_bottom_switch:
         what: choc_v1_15u_portrait
         where: extra_c4_bottom
-        adjust:
-          rotate: 0
         params:
           from: '{{net}}'
           to: GND
@@ -126,77 +123,52 @@ pcbs:
           cap_length: 17.5
           label_offset: 0
       controller:
-        what: nice_nano
+        what: xiao_nrf52840_plus_reference
         where:
           shift: [controller_x, controller_y]
-        adjust:
-          rotate: 90
-        params:
-          P1: LCD_CS
-          P2: LCD_SI
-          P3: LCD_CLK
-          VCC: 3V3
-          RAW: VBAT
-          RST: RST
-      display:
-        what: nice_view
-        where:
-          shift: [display_x, display_y]
-        adjust:
-          rotate: 180
       upper_left_mount:
         what: m2_mount
         where:
-          shift: [20.95, 48.75]
+          shift: [20.425, 72.5]
       upper_right_mount:
         what: m2_mount
         where:
-          shift: [59.05, 48.75]
+          shift: [58.525, 72.5]
       lower_left_mount:
         what: m2_mount
         where:
-          shift: [20.95, 31.25]
+          shift: [20.425, 23.5]
       lower_right_mount:
         what: m2_mount
         where:
-          shift: [59.05, 31.25]
-      upper_outer_mount:
-        what: m2_mount
-        where:
-          shift: [76.5, 59.375]
-      lower_outer_mount:
-        what: m2_mount
-        where:
-          shift: [76.5, 20.625]
+          shift: [58.525, 23.5]
       battery_connector:
-        what: battery_ph
+        what: battery_sh
         where:
-          shift: [50, 10]
+          shift: [71.875, midline_y]
         adjust:
           rotate: -90
       power_switch:
-        what: power_slide
+        what: power_pcm12
         where:
-          shift: [50, 75]
-      reset_switch:
-        what: reset_tact
-        where:
-          shift: [50, 64]
+          shift: [power_x, midline_y]
+        adjust:
+          rotate: -90
       battery_space:
         what: battery_space
         where:
-          shift: [20, 10]
+          shift: [battery_x, midline_y]
         params:
-          length: 32
-          width: 13
+          length: 57.5
+          width: 10.5
           thickness: 3.5
-          capacity: 110
-          model: 301230
+          capacity: 220
+          model: 301055
           bottom_z: -1.4
       battery_well:
         what: battery_well
         where:
-          shift: [20, 10]
+          shift: [battery_x, midline_y]
         params:
           length: battery_well_length
           width: battery_well_width
