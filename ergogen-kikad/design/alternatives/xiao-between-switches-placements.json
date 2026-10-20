@@ -1,0 +1,174 @@
+{
+  "status": "Illustration only; proposed test position, no design changes.",
+  "board_context_mm": [
+    98,
+    96
+  ],
+  "all_key_context": [
+    {
+      "label": "b1",
+      "center": [
+        10.9,
+        34.25
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ]
+    },
+    {
+      "label": "t1",
+      "center": [
+        10.9,
+        61.75
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ]
+    },
+    {
+      "label": "b2",
+      "center": [
+        29.95,
+        34.25
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ]
+    },
+    {
+      "label": "t2",
+      "center": [
+        29.95,
+        61.75
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ]
+    },
+    {
+      "label": "b3",
+      "center": [
+        49,
+        34.25
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ]
+    },
+    {
+      "label": "t3",
+      "center": [
+        49,
+        61.75
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ]
+    },
+    {
+      "label": "b4",
+      "center": [
+        68.05,
+        34.25
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ]
+    },
+    {
+      "label": "t4",
+      "center": [
+        68.05,
+        61.75
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ]
+    },
+    {
+      "label": "b5",
+      "center": [
+        87.1,
+        29.25
+      ],
+      "cap_mm": [
+        17.5,
+        16.5
+      ]
+    },
+    {
+      "label": "t5",
+      "center": [
+        87.1,
+        66.75
+      ],
+      "cap_mm": [
+        17.5,
+        16.5
+      ]
+    }
+  ],
+  "column_four": {
+    "top_switch_center": [
+      68.05,
+      61.75
+    ],
+    "bottom_switch_center": [
+      68.05,
+      34.25
+    ],
+    "keycap_mm": [
+      16.5,
+      26.5
+    ],
+    "switch_shoulder_mm": [
+      15,
+      15
+    ],
+    "switch_center_pitch_mm": 27.5,
+    "shoulder_gap_mm": 12.5
+  },
+  "controller": {
+    "module": "Seeed XIAO nRF52840 Plus",
+    "center": [
+      68.05,
+      48
+    ],
+    "body_mm": [
+      21,
+      17.8
+    ],
+    "bounds": [
+      57.55,
+      39.1,
+      78.55,
+      56.9
+    ],
+    "usb_orientation": "right",
+    "usb_outline": "Schematic projection; excluded from 21 mm body dimension."
+  },
+  "overlap_rectangles": [
+    [
+      60.55,
+      54.25,
+      75.55,
+      56.9
+    ],
+    [
+      60.55,
+      39.1,
+      75.55,
+      41.75
+    ]
+  ],
+  "overlap_into_each_shoulder_mm": 2.65,
+  "dimensions_scope": "Nominal plan-view envelopes. Does not validate actual body geometry, cutout recess, vertical stack or operating clearance."
+}
