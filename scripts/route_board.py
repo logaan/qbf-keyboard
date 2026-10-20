@@ -333,7 +333,7 @@ def check_layout(board, output):
         raise RuntimeError('Expected 19.05 mm horizontal key spacing')
     expected_mounts = {(round((xs[index] + xs[index + 1]) / 2, 4), y)
                        for index in (0, 2) for y in ys}
-    right_mount_x = round(xs[-1] + 24.05 + 26.5 / 2 + 0.3, 4)
+    right_mount_x = round(xs[-1] + 24.05 + 26.5 / 2 - 0.7, 4)
     expected_mounts.update((right_mount_x, round(sum(ys) / 2 + offset, 4))
                            for offset in (-18.75, 18.75))
     if set(mounts) != expected_mounts:

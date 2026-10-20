@@ -17,7 +17,7 @@ units:
   display_height: 14
   display_x: 3 * column_pitch + 8.25 + 0.5 + display_width / 2
   controller_x: display_x + 3.1
-  right_mount_x: extra_x + 26.5 / 2 + 0.3
+  right_mount_x: extra_x + 26.5 / 2 - 0.7
   board_width: controller_x + 18 + 0.5 + 8.75
   board_height: row_pitch + cap_height + 1
   battery_well_length: 58.1
