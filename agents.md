@@ -5,6 +5,6 @@
 5. Key names are t1–t5 and b1–b5, left to right; column 5 contains the controller. Keep outer cap edges aligned across each row; t5/b5 use landscape 1.5U caps with the same 2.55 mm horizontal cap gap.
 6. Keep M2 pairs between columns 1/2 and 3/4 and a third pair between columns 4/5; avoid enlarging the outline for mounts.
 7. Keep switches directly wired to GPIO and GND, with no diodes or matrix.
-8. Keep the protected 301055 battery envelope and side-entry JST-PH between the original switch rows; upward-facing power/reset controls go beside t5/b5. Center reset halfway between the nice!nano top edge and PCB top edge. Switch battery positive before nice!nano RAW; reset shorts RST to GND.
+8. Keep the protected 301055 battery envelope and side-entry JST-PH between the original switch rows; upward-facing power/reset controls go beside t5/b5. Align reset with t5 and power with b5; share their vertical center line halfway between the fifth-column cap right edge and PCB right edge. Switch battery positive before nice!nano RAW; reset shorts RST to GND.
 9. All user soldering must be through-hole. Use ready-made display modules with documented use in an open-source mechanical keyboard; a README or build guide is sufficient evidence.
 10. Socket the nice!view directly into its native five-pin 2.54 mm footprint; keep the socket body clear of the controller. Do not substitute flying wires.

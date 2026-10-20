@@ -62,10 +62,10 @@ BAT1 extends from x = 7.5 to 65 mm in Ergogen coordinates, leaving 0.93 mm befor
 | Position | Part | Connection |
 | --- | --- | --- |
 | Between original rows, left end | JST **S2B-PH-K-S**, 2 mm pitch, side-entry through-hole | J1 pin 1 = battery positive, pin 2 = GND |
-| Beside t5, centered between controller top and PCB top | 6 × 6 mm through-hole tactile, **4.3 mm high**, standard 6.5 × 4.5 mm pin pattern | RST1 momentarily connects nice!nano RST to GND |
+| Beside t5, aligned with its horizontal center | 6 × 6 mm through-hole tactile, **4.3 mm high**, standard 6.5 × 4.5 mm pin pattern | RST1 momentarily connects nice!nano RST to GND |
 | Beside b5, right | C&K **OS102011MS2QN1**, vertical actuator, through-hole | J1 positive → pin 1; common pin 2 → nice!nano RAW; pin 3 unconnected |
 
-Both switches face upward. Reset stays at x = 98.1 mm and moves down to y = 32.075 mm, halfway between the nice!nano top edge (22.9 mm) and PCB top edge (41.25 mm). Its footprint remains rotated 90°. Double-tap reset to enter the nice!nano bootloader. Battery negative stays connected to GND. The power slider disconnects battery positive from RAW in OFF; USB can still power the controller, and the battery only charges with the slider ON. Leave the nice!nano charge-boost jumper open for the 220 mAh candidate. Match the purchased battery plug polarity to J1's +/− markings.
+Both switches face upward and share x = 99.975 mm, halfway between the fifth-column cap right edge (94.45 mm) and PCB right edge (105.5 mm). Reset aligns with t5 at y = 32.5 mm; power aligns with b5 at y = −5 mm. Both footprints remain rotated 90°. Double-tap reset to enter the nice!nano bootloader. Battery negative stays connected to GND. The power slider disconnects battery positive from RAW in OFF; USB can still power the controller, and the battery only charges with the slider ON. Leave the nice!nano charge-boost jumper open for the 220 mAh candidate. Match the purchased battery plug polarity to J1's +/− markings.
 
 The third M2 pair now sits between columns 4/5, leaving the right-hand corners for controls. The outline is 114.25 × 55 mm. The base plate includes clearance slots for the battery and display headers and power-slider leads, plus four reset-lead holes. The carrier follows the revised screw positions.
 

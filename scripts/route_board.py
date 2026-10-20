@@ -352,8 +352,12 @@ def check_layout(board, output):
     if cx + 18 > right - 0.499:
         raise RuntimeError('Controller must clear the right board edge')
     rx, ry = mm_point(parts['RST1'].GetPosition())
-    if abs(ry - (top + cy - 9.15) / 2) > 0.001:
-        raise RuntimeError('Reset must be halfway between the controller top and the PCB top')
+    px, py = mm_point(parts['PWR1'].GetPosition())
+    control_x = (cap_bounds(extra[0])[2] + right) / 2
+    if abs(rx - control_x) > 0.001 or abs(px - control_x) > 0.001:
+        raise RuntimeError('Power and reset must share the midpoint between column five caps and the PCB edge')
+    if abs(ry - min(y for x, y in extra_positions)) > 0.001 or abs(py - max(y for x, y in extra_positions)) > 0.001:
+        raise RuntimeError('Reset must align horizontally with t5 and power with b5')
     controls = []
     battery = next(footprint for footprint in board.GetFootprints()
                    if footprint.GetReference().startswith('BAT'))
