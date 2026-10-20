@@ -8,6 +8,6 @@ if [ ! -x "$kicad_cli" ]; then
     kicad_cli=kicad-cli
 fi
 mkdir -p "$output/checks"
-for board in macropad baseplate; do
+for board in macropad baseplate display; do
     "$kicad_cli" pcb drc --exit-code-violations --output "$output/checks/$board.rpt" "$output/pcbs/$board.kicad_pcb"
 done

@@ -13,7 +13,10 @@ units:
   controller_height: 17.8
   extra_cap_height: 17.5
   extra_offset: row_pitch / 2 + (cap_height - extra_cap_height) / 2
-  board_width: controller_x + 10.5 + 0.5 + 8.75
+  display_width: 25.5
+  display_height: 18
+  display_x: 3 * column_pitch + 8.25 + 0.5 + display_width / 2
+  board_width: display_x + display_width / 2 + 0.5 + 8.75
   board_height: row_pitch + cap_height + 1
 
 points:
@@ -67,6 +70,13 @@ outlines:
         shift: [board_width / 2 - 8.75, controller_y]
       size: [board_width, board_height]
       corner: 1.5
+  display_adapter:
+    - what: rectangle
+      where:
+        ref: pad_c0_bottom
+        shift: [0, 0]
+      size: [display_width, display_height]
+      corner: 0.5
 
 pcbs:
   macropad:
@@ -135,6 +145,17 @@ pcbs:
           D9: D9
           D10: D10
           GND: GND
+          3V3: 3V3
+      display:
+        what: display_stack
+        where:
+          ref: pad_c0_bottom
+          shift: [display_x, controller_y]
+      display_wires:
+        what: display_wires
+        where:
+          ref: pad_c0_bottom
+          shift: [79, controller_y + 4.445]
       upper_left_mount:
         what: m2_mount
         where:
@@ -155,3 +176,14 @@ pcbs:
         where:
           ref: pad_c0_bottom
           shift: [2.5 * column_pitch, 0]
+  display:
+    outlines:
+      main:
+        outline: display_adapter
+    footprints:
+      module:
+        what: display_stack
+        where:
+          ref: pad_c0_bottom
+        params:
+          adapter: true

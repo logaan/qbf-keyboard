@@ -1,6 +1,6 @@
 const left = ['D0', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6'];
 const right = ['5V', 'GND', '3V3', 'D10', 'D9', 'D8', 'D7'];
-const wired = ['D0', 'D1', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10', 'GND'];
+const wired = ['D0', 'D1', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10', 'GND', '3V3'];
 const nets = Object.fromEntries(wired.map(name => [name, { type: 'net', value: name }]));
 
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
         ${p.at}
         (fp_text reference "${p.ref}" (at 0 0) (layer F.SilkS) ${p.ref_hide}
           (effects (font (size 1 1) (thickness 0.15))))
-        (fp_text value "XIAO nRF52840" (at 0 3.5) (layer F.Fab)
+        (fp_text value "XIAO nRF52840 Plus" (at 0 3.5) (layer F.Fab)
           (effects (font (size 1 1) (thickness 0.15))))
         (fp_line (start -8.9 -10.5) (end 8.9 -10.5) (layer F.Fab) (width 0.12))
         (fp_line (start 8.9 -10.5) (end 8.9 10.5) (layer F.Fab) (width 0.12))

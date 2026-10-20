@@ -14,6 +14,7 @@ BOARD = OUTPUT / 'pcbs/macropad.kicad_pcb'
 BASE_PLATE = OUTPUT / 'pcbs/baseplate.kicad_pcb'
 WIDTH_MM = 0.30
 GRID_MM = 0.25
+CLEARANCE_MM = 0.25
 PAGE_OFFSET_MM = (0, 0)
 DRAWING_TITLE = 'QBF Wireless Split Perkins Keyboard'
 RING_INNER_RADIUS_MM = 23.0
@@ -53,6 +54,29 @@ def segment_distance(start1, end1, start2, end2):
                point_to_segment_distance(end2, start1, end1))
 
 
+def pad_distance(pad, start, end):
+    center = mm_point(pad.GetPosition())
+    if pad.GetAttribute() == pcb.PAD_ATTRIB_NPTH:
+        size = pad.GetDrillSize()
+    else:
+        size = pad.GetSize()
+    if pad.GetShape() == pcb.PAD_SHAPE_CIRCLE:
+        return point_to_segment_distance(center, start, end) - pcb.ToMM(size.x) / 2
+    angle = math.radians(pad.GetOrientationDegrees())
+    cosine, sine = math.cos(angle), math.sin(angle)
+    half_x, half_y = pcb.ToMM(size.x) / 2, pcb.ToMM(size.y) / 2
+    def local(position):
+        x, y = position[0] - center[0], position[1] - center[1]
+        return (x * cosine - y * sine, x * sine + y * cosine)
+    first, last = local(start), local(end)
+    if any(abs(x) <= half_x and abs(y) <= half_y for x, y in (first, last)):
+        return 0
+    corners = [(-half_x, -half_y), (half_x, -half_y),
+               (half_x, half_y), (-half_x, half_y)]
+    return min(segment_distance(first, last, corner, corners[(index + 1) % 4])
+               for index, corner in enumerate(corners))
+
+
 def check_board(board):
     tracks = list(board.GetTracks())
     pads = [pad for footprint in board.GetFootprints() for pad in footprint.Pads()]
@@ -67,14 +91,12 @@ def check_board(board):
         start, end = mm_point(track.GetStart()), mm_point(track.GetEnd())
         half_width = pcb.ToMM(track.GetWidth()) / 2
         for pad in pads:
-            if pad.GetAttribute() == pcb.PAD_ATTRIB_NPTH:
-                radius = pcb.ToMM(pad.GetDrillSize().x) / 2
-            elif pad.GetNetname() != track.GetNetname():
-                radius = pcb.ToMM(pad.GetSize().x) / 2
-            else:
+            if pad.GetAttribute() == pcb.PAD_ATTRIB_SMD and not pad.IsOnLayer(track.GetLayer()):
                 continue
-            clearance = point_to_segment_distance(mm_point(pad.GetPosition()), start, end) - radius - half_width
-            if clearance < 0.25 - 1e-5:
+            if pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH and pad.GetNetname() == track.GetNetname():
+                continue
+            clearance = pad_distance(pad, start, end) - half_width
+            if clearance < CLEARANCE_MM - 1e-5:
                 raise RuntimeError(f'{track.GetNetname()} trace {start}->{end} too close to '
                                    f'{pad.GetParentFootprint().GetReference()} pad {pad.GetNumber()} '
                                    f'at {mm_point(pad.GetPosition())}: {clearance:.3f} mm')
@@ -86,7 +108,7 @@ def check_board(board):
             separation = segment_distance(mm_point(first.GetStart()), mm_point(first.GetEnd()),
                                           mm_point(second.GetStart()), mm_point(second.GetEnd()))
             clearance = separation - pcb.ToMM(first.GetWidth() + second.GetWidth()) / 2
-            if clearance < 0.25 - 1e-5:
+            if clearance < CLEARANCE_MM - 1e-5:
                 raise RuntimeError(f'{first.GetNetname()} and {second.GetNetname()} traces too close: {clearance:.3f} mm')
 
 
@@ -116,9 +138,10 @@ def add_ground_zone(board, ground, layer):
     zone = pcb.ZONE(board)
     zone.SetLayer(layer)
     zone.SetNetCode(ground.GetNetCode())
-    zone.SetLocalClearance(pcb.FromMM(0.25))
-    zone.SetThermalReliefGap(pcb.FromMM(0.30))
-    zone.SetThermalReliefSpokeWidth(pcb.FromMM(0.35))
+    zone.SetMinThickness(pcb.FromMM(0.1 if WIDTH_MM < 0.3 else 0.25))
+    zone.SetLocalClearance(pcb.FromMM(CLEARANCE_MM))
+    zone.SetThermalReliefGap(pcb.FromMM(max(0.15, CLEARANCE_MM)))
+    zone.SetThermalReliefSpokeWidth(pcb.FromMM(0.2 if WIDTH_MM < 0.3 else 0.35))
     zone.SetIslandRemovalMode(pcb.ISLAND_REMOVAL_MODE_ALWAYS)
     polygon = zone.Outline()
     polygon.NewOutline()
@@ -139,6 +162,27 @@ def make_base_plate():
     for footprint in list(plate.GetFootprints()):
         is_controller = footprint.GetReference().startswith('MCU')
         pads = list(footprint.Pads())
+        if footprint.GetReference().startswith(('LCD', 'W')):
+            positions = [pad.GetPosition() for pad in pads]
+            center = pcb.VECTOR2I(sum(position.x for position in positions) // len(positions),
+                                 sum(position.y for position in positions) // len(positions))
+            length = max(position.y for position in positions) - min(position.y for position in positions) + pcb.FromMM(1.8)
+            reference = footprint.GetReference()
+            plate.Remove(footprint)
+            footprint = pcb.FOOTPRINT(plate)
+            footprint.SetReference(reference)
+            footprint.SetValue('Header clearance')
+            plate.Add(footprint)
+            slot = pcb.PAD(footprint)
+            slot.SetAttribute(pcb.PAD_ATTRIB_NPTH)
+            slot.SetShape(pcb.PAD_SHAPE_OVAL)
+            slot.SetDrillShape(pcb.PAD_DRILL_SHAPE_OBLONG)
+            slot.SetSize(pcb.VECTOR2I(pcb.FromMM(1.8), length))
+            slot.SetDrillSize(slot.GetSize())
+            slot.SetPosition(center)
+            slot.SetLayerSet(pcb.LSET.AllCuMask())
+            footprint.Add(slot)
+            pads = [slot]
         footprint.Reference().SetVisible(False)
         footprint.Value().SetVisible(False)
         for pad in pads:
@@ -181,9 +225,9 @@ def check_base_plate(plate):
     if list(plate.GetTracks()) or list(plate.Zones()):
         raise RuntimeError('Base plate has tracks or copper zones')
     pads = [pad for footprint in plate.GetFootprints() for pad in footprint.Pads()]
-    if len(pads) != 68 or any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH or
+    if len(pads) != 70 or any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH or
                               pad.GetNetCode() != 0 for pad in pads):
-        raise RuntimeError('Base plate must have 68 unconnected mechanical holes')
+        raise RuntimeError('Base plate must have 70 unconnected mechanical holes or slots')
     markers = [drawing for drawing in plate.GetDrawings()
                if drawing.GetLayer() == pcb.B_SilkS]
     if len(markers) != 4 or any(marker.GetShape() != pcb.SHAPE_T_SEGMENT
@@ -261,9 +305,23 @@ def check_layout(board, output):
     for first, second in itertools.combinations(rectangles, 2):
         if min(first[2], second[2]) > max(first[0], second[0]) and min(first[3], second[3]) > max(first[1], second[1]):
             raise RuntimeError('Overlapping keycaps or controller')
+    displays = [footprint for footprint in board.GetFootprints()
+                if footprint.GetReference().startswith('LCD')]
+    if len(displays) != 1:
+        raise RuntimeError('Expected one stacked display')
+    dx, dy = mm_point(displays[0].GetPosition())
+    display_bounds = (dx - 12.75, dy - 9, dx + 12.75, dy + 9)
+    for cap in caps:
+        if min(cap[2], display_bounds[2]) > max(cap[0], display_bounds[0]) and min(cap[3], display_bounds[3]) > max(cap[1], display_bounds[1]):
+            raise RuntimeError('Display adapter overlaps a keycap')
+    if display_bounds[2] > right - 0.499 or display_bounds[0] < xs[-1] + 8.749:
+        raise RuntimeError('Display adapter must clear the fourth column and board edge')
     geometry = {
         'width': round(right - left, 3),
         'height': round(bottom - top, 3),
+        'display': {'x': round(dx - left, 3), 'y': round(bottom - dy, 3),
+                    'width': 25.5, 'height': 18, 'pcb_underside_z': 8.0,
+                    'pcb_thickness': 0.8, 'panel_thickness': 0.944},
         'hole_x': sorted({round(x - left, 3) for x, y in mounts}),
         'hole_y': sorted({round(bottom - y, 3) for x, y in mounts}),
     }
@@ -392,13 +450,13 @@ def route_signals(board):
         for pad in footprint.Pads():
             if pad.GetNetname() and pad.GetNetname() != 'GND':
                 endpoints.setdefault(pad.GetNetname(), []).append(mm_point(pad.GetPosition()))
-    if len(endpoints) != 10 or any(len(pads) != 2 for pads in endpoints.values()):
-        raise RuntimeError('Expected ten direct GPIO switch nets')
-    ordered = sorted(endpoints, key=lambda name: math.dist(*endpoints[name]))
+    if len(endpoints) != 16 or any(len(pads) != 2 for pads in endpoints.values()):
+        raise RuntimeError('Expected ten direct key nets, five display signals and display power')
+    ordered = sorted(endpoints, key=lambda name: (name.startswith('LCD_') or name == '3V3', math.dist(*endpoints[name])))
     for name in ordered:
         start, end = endpoints[name]
         net = board.FindNet(name)
-        layer = pcb.F_Cu if name in ('D0', 'D6', 'D4', 'D7', 'D9') else pcb.B_Cu
+        layer = pcb.F_Cu if name in ('D0', 'D6', 'D4', 'D7', 'D9', 'LCD_CLK', 'LCD_CS', 'LCD_EN') else pcb.B_Cu
         try:
             path = find_path(board, net, layer, start, end)
         except RuntimeError:
@@ -406,6 +464,41 @@ def route_signals(board):
             path = find_path(board, net, layer, start, end)
         coordinates = terminal(start, path[0]) + path[1:-1] + terminal(path[-1], end)
         route(board, net, layer, smooth_path(coordinates))
+
+
+def make_display_adapter(output):
+    global WIDTH_MM, CLEARANCE_MM
+    WIDTH_MM, CLEARANCE_MM = 0.15, 0.125
+    path = output / 'pcbs/display.kicad_pcb'
+    board = pcb.LoadBoard(str(path))
+    footprint = next(iter(board.GetFootprints()))
+    pads = {int(pad.GetNumber()): mm_point(pad.GetPosition()) for pad in footprint.Pads()}
+    for index in range(1, 9):
+        source = pads[index + 8]
+        target = pads[index]
+        net = next(pad.GetNetname() for pad in footprint.Pads() if pad.GetNumber() == str(index))
+        if not net or net == 'GND':
+            continue
+        delta = abs(target[1] - source[1])
+        route(board, board.FindNet(net), pcb.B_Cu,
+              [source, (5.4, source[1]), (5.4 + delta, target[1]), target])
+    source, target = pads[14], pads[17]
+    delta = abs(source[1] - target[1])
+    route(board, board.FindNet('3V3'), pcb.B_Cu,
+          [source, (1, source[1]), (1 - delta, target[1]), target])
+    route(board, board.FindNet('LCD_EN'), pcb.B_Cu,
+          [pads[13], (1.5, pads[13][1]), (-1.75, -3), pads[19]])
+    for layer in (pcb.F_Cu, pcb.B_Cu):
+        add_ground_zone(board, board.FindNet('GND'), layer)
+    board.GetTitleBlock().SetTitle('QBF JDI Display Adapter')
+    board.GetTitleBlock().SetDate(date.today().isoformat())
+    board.Move(point((210, 148.5)))
+    board.BuildConnectivity()
+    pcb.ZONE_FILLER(board).Fill(board.Zones())
+    pcb.SaveBoard(str(path), board)
+    check_board(pcb.LoadBoard(str(path)))
+    print(f'Generated 25.5 x 18 mm display adapter: {path}')
+    WIDTH_MM, CLEARANCE_MM = 0.30, 0.25
 
 
 def main():
@@ -434,8 +527,9 @@ def main():
     board.BuildConnectivity()
     pcb.SaveBoard(str(BOARD), board)
     check_board(pcb.LoadBoard(str(BOARD)))
-    print(f'Generated circuit-free base plate with 68 holes: {BASE_PLATE}')
+    print(f'Generated circuit-free base plate with 70 holes or slots: {BASE_PLATE}')
     print(f'Routed {len(list(board.GetTracks()))} segments and filled two GND zones: {BOARD}')
+    make_display_adapter(args.output)
 
 
 if __name__ == '__main__':
