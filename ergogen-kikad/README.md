@@ -39,33 +39,33 @@ Use a complete [nice!view module](https://nicekeyboards.com/nice-view/), not a b
 
 Mount the display horizontally above the nice!nano, between t5 and b5. Its 14 mm height leaves 3.5 mm to each landscape cap, and its left edge clears column 4 by 0.5 mm. The controller footprint reserves a conservative 36 × 18.3 mm envelope. Fit the controller component-side up, USB facing right, using its two standard 12-pin rows. Leave the separate B+/B− holes outside those socket strips. The board requires no underside controller-pad soldering.
 
-LCD1 is the vertical five-hole connection beside b5, next to the power slider. Pin 1 is its top end. Use short insulated wires from a through-hole header/socket here to the labeled nice!view pins, matching signal names:
+LCD1 is the vertical five-hole connection beside b5, next to the power slider. Pin 1 is its top end. The five module contacts and required insulated wire harness are drawn on `Cmts.User`; these lines are assembly guides, not PCB copper. This is not a plug-in display socket. Use short insulated wires from a through-hole header/socket here to the labeled nice!view pins, matching signal names:
 
 | LCD1 pad | Signal | nice!nano pin |
 | --- | --- | --- |
-| 1 | GND | GND |
-| 2 | 3V3 | VCC |
-| 3 | LCD_CLK / SCL | D3 / P0.20 |
-| 4 | LCD_SI / SDA | D2 / P0.17 |
+| 1 | LCD_SI / SDA | D2 / P0.17 |
+| 2 | LCD_CLK / SCL | D3 / P0.20 |
+| 3 | 3V3 | VCC |
+| 4 | GND | GND |
 | 5 | LCD_CS / CS | D1 / P0.06 |
 
-The header is displaced below the controller to keep a rigid connector out of the USB plug path. Support the module on insulated spacers, with its underside 8 mm above the PCB and the socketed controller below 6.8 mm. This places the display top at 10.9 mm, within the carrier's modeled 11.3 mm protected clearance. Check the purchased sockets, support height, cap travel, USB plug, and wireless performance on the assembled prototype. No custom display PCB, ribbon connection, or surface-mount component needs soldering.
+The module's header is 1.3 mm from its left end at 2.54 mm pitch, per the [manufacturer dimension drawing](https://nicekeyboards.com/static/2f2592ff1ff8021932814b20cb76e3c4/821da/niceview_dimensions.png). A socket directly below those contacts overlaps the controller envelope, so LCD1 is displaced beside b5 and uses wires. Route these around the switch housing beneath the caps, with strain relief; the drawn paths are illustrative. Support the module on insulated spacers, with its underside 8 mm above the PCB and the socketed controller below 6.8 mm. This places the display top at 10.9 mm, within the carrier's modeled 11.3 mm protected clearance. Check the purchased sockets, support height, cap travel, USB plug, and wireless performance on the assembled prototype. No custom display PCB, ribbon connection, or surface-mount component needs soldering.
 
 Firmware uses ZMK's standard `nice_view` shield with the built-in landscape status screen. The former custom JDI adapter and driver have been removed.
 
 ## Battery, power and reset
 
-Use a protected 3.7 V **301230, 110 mAh LiPo** with a JST-PH 2-pin plug. The selected [VCELL VP301230 specification](https://vcellpower-battery.com/3.7v/3-7v-110mah-301230-mini-lipo-battery-with-connector.html) gives a maximum pack size of **32.5 × 12.5 × 3.2 mm including PCM**, and a 110 mA maximum charge current. Specify a JST-PH plug when ordering this pack; its connector is configurable. [KEEBD](https://keebd.com/products/301230-3-7v-110mah-lipo-battery) also lists a nominal 30 × 12 × 3 mm protected 110 mAh pack with PH connector options. Packs sharing a size code can have different protection boards and charge limits; use the specified envelope and charge rating.
+The longer candidate is the protected **Liter Energy 301055, listed at 220 mAh** (formerly 110 mAh). [theStock's product listing](https://thestock.es/products/bateria-301055-lipo-3-7v-220mah-0-814wh-1s-5c-liter-energy-battery-para-electronica-recargable-telefono-portatil-video-smartwatch-reloj-gps-no-apta-para-radio-control-57x10x3mm-220mah-301055) specifies a PCM-protected pack, **57 × 10 × 3 mm ±0.5 mm**, 25 mm leads, and a 1C maximum charge rate. BAT1 reserves **57.5 × 10.5 × 3.5 mm**, including that tolerance. It is sold without a connector: have the supplier fit a correctly polarized JST-PH PHR-2 plug, or crimp one onto the existing insulated leads. Do not solder to the pouch tabs. Capacity and dimensions are supplier claims; no manufacturer pack drawing was located, and the listing contains inconsistent charge-current boilerplate. Confirm the finished pack envelope and at least 100 mA permissible charging with the supplier before ordering; leave charge boost off.
 
-BAT1 marks the pack envelope on `Cmts.User`, centered between the original switch rows and spanning columns 2/3. The nominal footprint body gap is 13.5 mm, leaving 0.5 mm per side around the 12.5 mm pack envelope. A 0.2 mm insulating adhesive layer puts its top 3.4 mm above the PCB. There are no drilled holes or exposed pads inside this rectangle. The exact cap underside and full-travel clearance still require an assembled fit check; do not use the caps to hold the pouch under pressure. Route the insulated leads through the central channel and beneath the socketed controller to J1, clear of moving keys and the USB port.
+BAT1 extends from x = 7.5 to 65 mm in Ergogen coordinates, leaving 0.9 mm before the controller. The switch-body channel is 13.5 mm wide, leaving 1.5 mm on each side of the reserved pack. A 0.2 mm insulating adhesive layer puts its worst-case top at 3.7 mm. J1 is now between the rows at the left end, facing right toward the battery. Its [JST S2B-PH-K-S through-hole body](https://www.jst-mfg.com/product/pdf/eng/ePH.pdf) is 5.9 × 7.6 mm and 4.8 mm high. A further 6 mm is reserved beyond its mouth for the mated plug and wire exit, followed by 1.75 mm before BAT1. Both pack and connector sit beneath the cap overhangs. Their exact full-travel clearance still needs an assembled fit check; no keycap may press on the pouch or connector. The board outline is unchanged.
 
 | Position | Part | Connection |
 | --- | --- | --- |
-| Beside t5, lower | JST **B2B-PH-K-S**, 2 mm pitch, vertical through-hole | J1 pin 1 = battery positive, pin 2 = GND |
+| Between original rows, left end | JST **S2B-PH-K-S**, 2 mm pitch, side-entry through-hole | J1 pin 1 = battery positive, pin 2 = GND |
 | Beside t5, upper | 6 × 6 mm through-hole tactile, **4.3 mm high**, standard 6.5 × 4.5 mm pin pattern | RST1 momentarily connects nice!nano RST to GND |
 | Beside b5, right | C&K **OS102011MS2QN1**, vertical actuator, through-hole | J1 positive → pin 1; common pin 2 → nice!nano RAW; pin 3 unconnected |
 
-Both switches face upward. The reset footprint is rotated so its leads fit within the existing outline. Double-tap reset to enter the nice!nano bootloader. Battery negative stays connected to GND. The power slider disconnects battery positive from RAW in OFF; USB can still power the controller, and the battery only charges with the slider ON. Leave the nice!nano charge-boost jumper open for the 110 mAh pack. Match the purchased battery plug polarity to J1's +/− markings.
+Both switches face upward. The reset footprint is rotated so its leads fit within the existing outline. Double-tap reset to enter the nice!nano bootloader. Battery negative stays connected to GND. The power slider disconnects battery positive from RAW in OFF; USB can still power the controller, and the battery only charges with the slider ON. Leave the nice!nano charge-boost jumper open for the 220 mAh candidate. Match the purchased battery plug polarity to J1's +/− markings.
 
 The third M2 pair now sits between columns 4/5, leaving the right-hand corners for controls. The outline remains 111.15 × 55 mm. The base plate includes clearance slots for the battery and display headers and power-slider leads, plus four reset-lead holes. The carrier follows the revised screw positions.
 
@@ -89,7 +89,7 @@ The printable bumper rails and reversible two-board case are in [`../mechanical/
 ./scripts/generate.sh
 ```
 
-Run from the repository root with KiCad closed. Requires Node/npm and KiCad; override `KICAD_PYTHON` and `KICAD_CLI` if needed. The script installs missing dependencies, runs Ergogen, routes signals, fills GND, generates the base plate, renders a layout preview, and runs KiCad DRC in a temporary directory before replacing outputs. Project settings are preserved. Reports are in `generated/checks/`. Run `./scripts/check.sh` to repeat DRC.
+Run from the repository root with KiCad closed. Requires Node/npm and KiCad; override `KICAD_PYTHON` and `KICAD_CLI` if needed. The script installs missing dependencies, runs Ergogen, routes signals, fills GND, generates the base plate, exports native KiCad assembly and copper SVG plots (`layout.svg` / `routing.svg`) and rasterizes them to PNG, and runs KiCad DRC in a temporary directory before replacing outputs. Project settings are preserved. Reports are in `generated/checks/`. Run `./scripts/check.sh` to repeat DRC.
 
 After changing dimensions or mounts, run `./scripts/generate-mechanical.sh` to rebuild the carrier from `generated/board_geometry.json`.
 

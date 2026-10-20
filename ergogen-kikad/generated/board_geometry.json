@@ -10,21 +10,21 @@
     "module_thickness": 2.9
   },
   "battery": {
-    "x": 37.325,
+    "x": 45.0,
     "y": 27.5,
-    "length": 32.5,
-    "width": 12.5,
-    "thickness": 3.2,
+    "length": 57.5,
+    "width": 10.5,
+    "thickness": 3.5,
     "adhesive": 0.2,
-    "capacity_mah": 110
+    "capacity_mah": 220
   },
   "controls": [
     {
       "reference": "J1",
-      "x": 104.0,
-      "y": 11.55,
-      "width": 5.9,
-      "height": 4.5
+      "x": 0.9,
+      "y": 24.55,
+      "width": 7.6,
+      "height": 5.9
     },
     {
       "reference": "PWR1",

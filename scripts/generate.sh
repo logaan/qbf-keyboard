@@ -32,15 +32,19 @@ for board in macropad baseplate; do
 done
 if ! "$repo_root/scripts/check.sh" "$stage"; then
     mkdir -p "$project_dir/generated/checks"
-    cp "$stage/checks/"*.rpt "$project_dir/generated/checks/"
+    for report in "$stage/checks/"*.rpt; do
+        if [ -f "$report" ]; then
+            cp "$report" "$project_dir/generated/checks/"
+        fi
+    done
     exit 1
 fi
 "$repo_root/scripts/preview.sh" "$stage"
 check_locks
 mkdir -p "$project_dir/generated/outlines" "$project_dir/generated/checks" "$pcb_dir"
-cp "$stage/board_geometry.json" "$stage/layout.svg" "$project_dir/generated/"
+cp "$stage/board_geometry.json" "$stage/routing.svg" "$stage/layout.svg" "$project_dir/generated/"
 if [ -f "$stage/layout.png" ]; then
-    cp "$stage/layout.png" "$project_dir/generated/"
+    cp "$stage/routing.png" "$stage/layout.png" "$project_dir/generated/"
 fi
 cp "$stage/outlines/board.dxf" "$project_dir/generated/outlines/"
 cp "$stage/pcbs/macropad.kicad_pcb" "$stage/pcbs/baseplate.kicad_pcb" "$pcb_dir/"

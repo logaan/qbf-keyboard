@@ -29,23 +29,23 @@ points:
       columns:
         c0:
           rows:
-            bottom: {net: P9}
-            top: {net: P4}
+            bottom: {net: P9, label: b1}
+            top: {net: P4, label: t1}
         c1:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: P10}
-            top: {net: P5}
+            bottom: {net: P10, label: b2}
+            top: {net: P5, label: t2}
         c2:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: P16}
-            top: {net: P6}
+            bottom: {net: P16, label: b3}
+            top: {net: P6, label: t3}
         c3:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: P14}
-            top: {net: P7}
+            bottom: {net: P14, label: b4}
+            top: {net: P7, label: t4}
       rows:
         bottom:
         top:
@@ -58,8 +58,8 @@ points:
       columns:
         c4:
           rows:
-            bottom: {net: P15}
-            top: {net: P8}
+            bottom: {net: P15, label: b5}
+            top: {net: P8, label: t5}
       rows:
         bottom:
         top:
@@ -87,7 +87,7 @@ pcbs:
         params:
           from: GND
           to: '{{net}}'
-          label: '{{net}}'
+          label: '{{label}}'
           label_offset: 11
       bottom_switches:
         what: choc_v1_15u_portrait
@@ -97,7 +97,7 @@ pcbs:
         params:
           from: '{{net}}'
           to: GND
-          label: '{{net}}'
+          label: '{{label}}'
           label_offset: -11
       extra_top_switch:
         what: choc_v1_15u_portrait
@@ -107,7 +107,7 @@ pcbs:
         params:
           from: GND
           to: '{{net}}'
-          label: '{{net}}'
+          label: '{{label}}'
           label_offset: 8
       extra_bottom_switch:
         what: choc_v1_15u_portrait
@@ -117,7 +117,7 @@ pcbs:
         params:
           from: '{{net}}'
           to: GND
-          label: '{{net}}'
+          label: '{{label}}'
           label_offset: -11
       controller:
         what: nice_nano
@@ -172,7 +172,9 @@ pcbs:
         what: battery_ph
         where:
           ref: pad_c0_bottom
-          shift: [98.2, 28]
+          shift: [-6.5, controller_y]
+        adjust:
+          rotate: 90
       power_switch:
         what: power_slide
         where:
@@ -191,4 +193,4 @@ pcbs:
         what: battery_space
         where:
           ref: pad_c0_bottom
-          shift: [28.575, controller_y]
+          shift: [36.25, controller_y]

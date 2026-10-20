@@ -344,6 +344,13 @@ def check_layout(board, output):
     battery = next(footprint for footprint in board.GetFootprints()
                    if footprint.GetReference().startswith('BAT'))
     bx, by = mm_point(battery.GetPosition())
+    battery_corners = [mm_point(position) for drawing in battery.GraphicalItems()
+                       if isinstance(drawing, pcb.PCB_SHAPE)
+                       for position in (drawing.GetStart(), drawing.GetEnd())]
+    battery_bounds = (min(x for x, y in battery_corners), min(y for x, y in battery_corners),
+                      max(x for x, y in battery_corners), max(y for x, y in battery_corners))
+    battery_length = battery_bounds[2] - battery_bounds[0]
+    battery_width = battery_bounds[3] - battery_bounds[1]
     for footprint in board.GetFootprints():
         if not footprint.GetReference().startswith(('PWR', 'RST', 'J')):
             continue
@@ -352,7 +359,10 @@ def check_layout(board, output):
                    for position in (drawing.GetStart(), drawing.GetEnd())]
         bounds = (min(x for x, y in corners), min(y for x, y in corners),
                   max(x for x, y in corners), max(y for x, y in corners))
-        for other in caps + [(cx - 18, cy - 9.15, cx + 18, cy + 9.15)]:
+        switch_bodies = [(x - 7, y - 7, x + 7, y + 7)
+                         for switch in main for x, y in [mm_point(switch.GetPosition())]]
+        obstacles = switch_bodies + [battery_bounds] if footprint.GetReference() == 'J1' else caps
+        for other in obstacles + [(cx - 18, cy - 9.15, cx + 18, cy + 9.15)]:
             if min(bounds[2], other[2]) > max(bounds[0], other[0]) and min(bounds[3], other[3]) > max(bounds[1], other[1]):
                 raise RuntimeError(f'Control overlaps a keycap or controller: {footprint.GetReference()}')
         if bounds[0] < left or bounds[1] < top or bounds[2] > right or bounds[3] > bottom:
@@ -361,10 +371,13 @@ def check_layout(board, output):
                          'x': round(bounds[0] - left, 3), 'y': round(bounds[1] - top, 3),
                          'width': round(bounds[2] - bounds[0], 3),
                          'height': round(bounds[3] - bounds[1], 3)})
-    if abs(by - cy) > 0.001 or bx + 16.25 > cx - 18:
+    if abs(by - cy) > 0.001 or battery_bounds[0] < left or battery_bounds[2] > cx - 18:
         raise RuntimeError('Battery must sit in the original rows, clear of the controller')
-    if by - 6.25 < ys[0] + 7 or by + 6.25 > ys[1] - 7:
+    if battery_bounds[1] < ys[0] + 7 or battery_bounds[3] > ys[1] - 7:
         raise RuntimeError('Battery pack envelope overlaps the switch bodies')
+    jx, jy = mm_point(parts['J1'].GetPosition())
+    if abs(jy - cy) > 0.001 or jx + 12.25 > battery_bounds[0] - 1:
+        raise RuntimeError('Battery connector and mated plug must fit beside the pack between rows')
     geometry = {
         'width': round(right - left, 3),
         'height': round(bottom - top, 3),
@@ -372,8 +385,8 @@ def check_layout(board, output):
                     'width': 36, 'height': 14, 'module_underside_z': 8.0,
                     'module_thickness': 2.9},
         'battery': {'x': round(bx - left, 3), 'y': round(bottom - by, 3),
-                    'length': 32.5, 'width': 12.5, 'thickness': 3.2, 'adhesive': 0.2,
-                    'capacity_mah': 110},
+                    'length': round(battery_length, 3), 'width': round(battery_width, 3),
+                    'thickness': 3.5, 'adhesive': 0.2, 'capacity_mah': 220},
         'controls': sorted(controls, key=lambda control: control['reference']),
         'hole_x': sorted({round(x - left, 3) for x, y in mounts}),
         'hole_y': sorted({round(bottom - y, 3) for x, y in mounts}),
@@ -528,11 +541,12 @@ def route_signals(board):
             connections.append((name, start, end))
             connected.append(end)
             pending.remove(end)
-    connections.sort(key=lambda connection: (0 if connection[0] in ('VBAT', 'BAT_POS') else
+    connections.sort(key=lambda connection: (0 if connection[0] == 'VBAT' else
+                                              3 if connection[0] == 'BAT_POS' else
                                               2 if connection[0].startswith('LCD_') or connection[0] in ('3V3', 'RST') else 1,
                                               math.dist(*connection[1:])))
     for name, start, end in connections:
-        GRID_MM = 0.1 if name in ('VBAT', 'BAT_POS') else 0.25
+        GRID_MM = 0.1 if name in ('VBAT', 'BAT_POS', 'RST', '3V3') or name.startswith('LCD_') else 0.25
         net = board.FindNet(name)
         layer = pcb.F_Cu if name in ('P4', 'P6', 'P8', 'P9', 'P16', 'LCD_CLK', 'LCD_CS', 'BAT_POS') else pcb.B_Cu
         try:
@@ -542,6 +556,23 @@ def route_signals(board):
             path = find_path(board, net, layer, start, end)
         coordinates = terminal(start, path[0]) + path[1:-1] + terminal(path[-1], end)
         route(board, net, layer, smooth_path(coordinates))
+    ground = board.FindNet('GND')
+    source = next(pad for footprint in board.GetFootprints()
+                  if footprint.GetReference() == 'S10' for pad in footprint.Pads()
+                  if pad.GetNetname() == 'GND')
+    targets = [pad for footprint in board.GetFootprints()
+               if footprint.GetReference().startswith('MCU') for pad in footprint.Pads()
+               if pad.GetNetname() == 'GND']
+    start = mm_point(source.GetPosition())
+    end = min((mm_point(pad.GetPosition()) for pad in targets), key=lambda xy: math.dist(start, xy))
+    GRID_MM = 0.1
+    layer = pcb.B_Cu
+    try:
+        path = find_path(board, ground, layer, start, end)
+    except RuntimeError:
+        layer = pcb.F_Cu
+        path = find_path(board, ground, layer, start, end)
+    route(board, ground, layer, smooth_path(terminal(start, path[0]) + path[1:-1] + terminal(path[-1], end)))
     GRID_MM = 0.25
 
 
@@ -562,7 +593,7 @@ def main():
     route_signals(board)
     ground = board.FindNet('GND')
     for footprint in board.GetFootprints():
-        if footprint.GetReference().startswith('RST'):
+        if footprint.GetReference().startswith('RST') or footprint.GetReference() == 'S10':
             for pad in footprint.Pads():
                 if pad.GetNetname() == 'GND':
                     pad.SetThermalSpokeAngleDegrees(45)
