@@ -45,28 +45,32 @@ def main():
         x, y = position(footprint.GetPosition())
         x, y = x - left, y - top
         if footprint.GetReference().startswith('MCU'):
-            rectangle(x - 10.5, y - 8.9, 21, 17.8, '#eef0f3', '#a4adb7', dash='0.7 0.5')
+            rectangle(x - 18, y - 9.15, 36, 18.3, '#eef0f3', '#a4adb7', dash='0.7 0.5')
         if footprint.GetReference().startswith('H'):
             items.append(f'<circle cx="{x}" cy="{y}" r="1.1" fill="white" stroke="#bf7b22" stroke-width="0.25"/>')
     display = geometry['display']
     dx, dy = display['x'], height - display['y']
-    rectangle(dx - 12.75, dy - 9, 25.5, 18, '#dceaf5', '#427fba')
-    rectangle(dx - 12.005, dy - 6.2275, 24.01, 12.455, '#e9f4f2', '#689593', 0)
-    rectangle(dx - 10.605, dy - 4.8276, 19.3104, 9.6552, '#d1e6de', '#689593', 0)
-    label(dx - 0.8, dy - 0.2, 'JDI memory LCD', 1.65)
-    label(dx - 0.8, dy + 2.4, '144 × 72 · no backlight', 1.2)
+    rectangle(dx - 18, dy - 7, 36, 14, '#dceaf5', '#427fba')
+    rectangle(dx - 14, dy - 5.8, 27, 11.6, '#d1e6de', '#689593', 0)
+    label(dx - 0.8, dy - 0.2, 'nice!view module', 1.65)
+    label(dx - 0.8, dy + 2.4, '160 × 68 · no backlight', 1.2)
+    for footprint in board.GetFootprints():
+        if footprint.GetReference().startswith('LCD'):
+            for pad in footprint.Pads():
+                px, py = position(pad.GetPosition())
+                items.append(f'<circle cx="{px - left}" cy="{py - top}" r="0.65" fill="#427fba"/>')
+            label(width - 12, 7, '5-pin connection', 1.4)
     label(width / 2, height + 4.5, '1 mm between the 1.5U rows · aligned outer cap edges · internal M2 holes', 1.8)
     base_y = height + 23
     side_x = width / 2 - 28
-    rectangle(side_x, base_y, 34, 1.6, '#7a9b86', '#547d61', 0)
-    rectangle(side_x + 3, base_y - 6.8, 21, 6.8, '#d7dce3', '#9aa6b4', 0)
-    rectangle(side_x, base_y - 8.8, 25.5, 0.8, '#c4daeb', '#427fba', 0)
-    rectangle(side_x + 0.745, base_y - 9.744, 24.01, 0.944, '#d1e6de', '#689593', 0)
+    rectangle(side_x, base_y, 39, 1.6, '#7a9b86', '#547d61', 0)
+    rectangle(side_x + 1.5, base_y - 6.8, 36, 6.8, '#d7dce3', '#9aa6b4', 0)
+    rectangle(side_x + 1.5, base_y - 10.9, 36, 2.9, '#d1e6de', '#427fba', 0)
     label(side_x - 3, base_y - 4, 'Side view', 1.8, 'end')
-    label(side_x + 37, base_y - 8.8, 'Display on 0.8 mm adapter', 1.5, 'start')
-    label(side_x + 37, base_y - 5, 'Socketed XIAO Plus below', 1.5, 'start')
-    label(side_x + 37, base_y - 1.2, '8 mm to adapter underside', 1.5, 'start')
-    label(width / 2, height + 29, 'Placement drawing · stack and ribbon fit require a physical prototype', 1.55, color='#788697')
+    label(side_x + 41, base_y - 8.8, 'Ready-made nice!view, 2.9 mm', 1.5, 'start')
+    label(side_x + 41, base_y - 5, 'Socketed nice!nano v2 below', 1.5, 'start')
+    label(side_x + 41, base_y - 1.2, '8 mm to module underside', 1.5, 'start')
+    label(width / 2, height + 29, 'Through-hole assembly only · socket height and USB plug fit require a physical prototype', 1.55, color='#788697')
     items.append('</g></svg>')
     (args.output / 'layout.svg').write_text('\n'.join(items))
 

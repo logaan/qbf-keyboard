@@ -1,14 +1,13 @@
 {
-  "width": 100.65,
+  "width": 111.15,
   "height": 55.0,
   "display": {
-    "x": 87.4,
+    "x": 92.65,
     "y": 27.5,
-    "width": 25.5,
-    "height": 18,
-    "pcb_underside_z": 8.0,
-    "pcb_thickness": 0.8,
-    "panel_thickness": 0.944
+    "width": 36,
+    "height": 14,
+    "module_underside_z": 8.0,
+    "module_thickness": 2.9
   },
   "hole_x": [
     18.275,

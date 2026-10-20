@@ -8,14 +8,15 @@ units:
   cap_height: 26.5
   row_gap: 1
   row_pitch: cap_height + row_gap
-  controller_x: 4 * column_pitch
+  extra_x: 4 * column_pitch
   controller_y: row_pitch / 2
-  controller_height: 17.8
+  controller_height: 18.3
   extra_cap_height: 17.5
   extra_offset: row_pitch / 2 + (cap_height - extra_cap_height) / 2
-  display_width: 25.5
-  display_height: 18
+  display_width: 36
+  display_height: 14
   display_x: 3 * column_pitch + 8.25 + 0.5 + display_width / 2
+  controller_x: display_x
   board_width: display_x + display_width / 2 + 0.5 + 8.75
   board_height: row_pitch + cap_height + 1
 
@@ -27,23 +28,23 @@ points:
       columns:
         c0:
           rows:
-            bottom: {net: D7}
-            top: {net: D6}
+            bottom: {net: P9}
+            top: {net: P4}
         c1:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: D8}
-            top: {net: D5}
+            bottom: {net: P10}
+            top: {net: P5}
         c2:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: D9}
-            top: {net: D4}
+            bottom: {net: P16}
+            top: {net: P6}
         c3:
           key: {spread: column_pitch}
           rows:
-            bottom: {net: D10}
-            top: {net: D3}
+            bottom: {net: P14}
+            top: {net: P7}
       rows:
         bottom:
         top:
@@ -52,12 +53,12 @@ points:
         padding: 2 * extra_offset
       anchor:
         ref: pad_c0_bottom
-        shift: [controller_x, controller_y - extra_offset]
+        shift: [extra_x, controller_y - extra_offset]
       columns:
         c4:
           rows:
-            bottom: {net: D1}
-            top: {net: D0}
+            bottom: {net: P15}
+            top: {net: P8}
       rows:
         bottom:
         top:
@@ -70,13 +71,6 @@ outlines:
         shift: [board_width / 2 - 8.75, controller_y]
       size: [board_width, board_height]
       corner: 1.5
-  display_adapter:
-    - what: rectangle
-      where:
-        ref: pad_c0_bottom
-        shift: [0, 0]
-      size: [display_width, display_height]
-      corner: 0.5
 
 pcbs:
   macropad:
@@ -127,35 +121,22 @@ pcbs:
           label_offset: -7
           cap_length: extra_cap_height
       controller:
-        what: xiao_nrf52840
+        what: nice_nano
         where:
           ref: pad_c0_bottom
           shift: [controller_x, controller_y]
         adjust:
           rotate: -90
         params:
-          D0: D0
-          D1: D1
-          D3: D3
-          D4: D4
-          D5: D5
-          D6: D6
-          D7: D7
-          D8: D8
-          D9: D9
-          D10: D10
-          GND: GND
-          3V3: 3V3
+          P1: LCD_CS
+          P2: LCD_SI
+          P3: LCD_CLK
+          VCC: 3V3
       display:
-        what: display_stack
+        what: nice_view
         where:
           ref: pad_c0_bottom
           shift: [display_x, controller_y]
-      display_wires:
-        what: display_wires
-        where:
-          ref: pad_c0_bottom
-          shift: [79, controller_y + 4.445]
       upper_left_mount:
         what: m2_mount
         where:
@@ -176,14 +157,3 @@ pcbs:
         where:
           ref: pad_c0_bottom
           shift: [2.5 * column_pitch, 0]
-  display:
-    outlines:
-      main:
-        outline: display_adapter
-    footprints:
-      module:
-        what: display_stack
-        where:
-          ref: pad_c0_bottom
-        params:
-          adapter: true
