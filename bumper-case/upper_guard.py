@@ -19,6 +19,17 @@ def _rounded(x, y, z, dx, dy, dz, radius):
     return shape.makeFillet(radius, edges)
 
 
+def _sloping_end(x0, x1, y, depth, bottom, low, high):
+    curve = Part.BezierCurve()
+    span = x1 - x0
+    curve.setPoles([V(x1, y, low), V(x1 - span * 0.35, y, low),
+                    V(x0 + span * 0.35, y, high), V(x0, y, high)])
+    edges = [Part.makeLine(V(x0, y, bottom), V(x1, y, bottom)),
+             Part.makeLine(V(x1, y, bottom), V(x1, y, low)), curve.toShape(),
+             Part.makeLine(V(x0, y, high), V(x0, y, bottom))]
+    return Part.Face(Part.Wire(edges)).extrude(V(0, depth, 0))
+
+
 def guard_mount_specs(parameters, reference):
     top = parameters['plate_top']
     return [dict(reference=mount['reference'], x=mount['x'], y=mount['y'],
@@ -33,8 +44,16 @@ def guard_dimensions(parameters, reference):
     battery = parameters['upper_battery_envelope']
     roof_bottom = max(parameters['plate_top'], battery[2] + battery[5] + parameters.get('upper_battery_roof_clearance', 0.2))
     roof_top = roof_bottom + parameters.get('upper_battery_roof_thickness', 1.0)
+    end_x = parameters['seam_x'] - parameters['seam_gap'] / 2
     return dict(mating_plane_mm=parameters['plate_top'], wall_top_mm=top,
-                wall_mm=parameters['wall'], upright_rail_width_mm=1.0,
+                wall_mm=parameters['wall'], upright_rail_width_mm=0.0,
+                internal_upright_walls=False,
+                perimeter_drop_length_mm=12.0,
+                perimeter_drop_start_x_mm=end_x - 12.0,
+                perimeter_drop_end_x_mm=end_x,
+                perimeter_drop_end_z_mm=parameters['plate_top'] + parameters['plate_thickness'],
+                perimeter_drop_shape='Cubic Bezier with horizontal tangents at both ends',
+                battery_roof_edge_fillet_mm=0.2,
                 battery_envelope_mm=battery,
                 battery_roof_underside_mm=roof_bottom, battery_roof_top_mm=roof_top,
                 battery_roof_thickness_mm=parameters.get('upper_battery_roof_thickness', 1.0),
@@ -73,20 +92,23 @@ def build_upper_guard(parameters, reference, lower_left_shape):
     rim = rim.cut(_rounded(-p['pcb_edge_clearance'], -p['pcb_edge_clearance'], base - 0.1,
                           inner_right + p['pcb_edge_clearance'], height + 2 * p['pcb_edge_clearance'],
                           top - base + 0.2, 1.5 + p['pcb_edge_clearance']))
-    rim = rim.cut(_box(inner_right - 0.1, p['cover_bottom'] - 0.2, base - 0.1,
-                       wall + 0.3, p['cover_top_y'] - p['cover_bottom'] + 0.4, top - base + 0.2))
+    rim = rim.cut(_rounded(0, 0, base - 0.1, r['width'], height, top - base + 0.2, 1.5))
+    drop_start = xmax - 12.0
+    full_height = _box(-extra - 0.1, -extra - 0.1, base - 0.1,
+                       drop_start + extra + 0.1, height + 2 * extra + 0.2, top - base + 0.2)
+    lowered_end = _sloping_end(drop_start, xmax, -extra - 0.1,
+                               height + 2 * extra + 0.2, base - 0.1, base + thickness, top)
+    rim = rim.common(full_height.fuse(lowered_end))
     shapes = [blank, rim]
-    roof = _box(-extra, min(21.45, battery[1] - 0.4), roof_bottom,
-                battery[0] + battery[3] + 0.4 + extra,
-                max(33.55, battery[1] + battery[4] + 0.4) - min(21.45, battery[1] - 0.4),
-                roof_top - roof_bottom)
+    roof = _rounded(-extra, min(21.45, battery[1] - 0.4), roof_bottom,
+                    battery[0] + battery[3] + 0.4 + extra,
+                    max(33.55, battery[1] + battery[4] + 0.4) - min(21.45, battery[1] - 0.4),
+                    roof_top - roof_bottom, 0.3)
+    roof_edges = [edge for edge in roof.Edges
+                  if abs(edge.BoundBox.ZMin - roof_top) < 0.00001
+                  and abs(edge.BoundBox.ZMax - roof_top) < 0.00001]
+    roof = roof.makeFillet(0.2, roof_edges)
     shapes.append(roof)
-    mount_xs = sorted(set(mount['x'] for mount in guard_mount_specs(p, r)))
-    for x in mount_xs:
-        rail = _box(x - 0.5, -extra, base, 1.0, height + 2 * extra, top - base)
-        rail = rail.cut(_box(x - 0.6, battery[1] - 0.2, base - 0.1,
-                             1.2, battery[4] + 0.4, roof_bottom - base + 0.1))
-        shapes.append(rail)
     guard = shapes[0].fuse(shapes[1:]).removeSplitter()
     guard = guard.cut(_box(p['cover_left'] - 0.2, p['cover_bottom'] - 0.2, base - 0.1,
                            xmax - p['cover_left'] + 1, p['cover_top_y'] - p['cover_bottom'] + 0.4,
