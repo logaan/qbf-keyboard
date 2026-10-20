@@ -12,7 +12,7 @@ units:
   controller_y: row_pitch / 2
   controller_height: 17.8
   extra_cap_height: 17.5
-  extra_offset: controller_height / 2 + row_gap + extra_cap_height / 2
+  extra_offset: row_pitch / 2 + (cap_height - extra_cap_height) / 2
   board_width: controller_x + 10.5 + 0.5 + 8.75
   board_height: 60.5
 

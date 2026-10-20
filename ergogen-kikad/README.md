@@ -1,6 +1,6 @@
 # QBF ten-key macro pad
 
-Ten direct-wired Choc v1 switches for a Seeed Studio XIAO nRF52840 running ZMK. The original eight portrait 1.5U caps are 16.5 × 26.5 mm, with 19.05 mm horizontal spacing and 27.5 mm row pitch for a 1 mm cap gap. A fifth column contains the controller with USB facing right and one portrait 1U key above and below it. The 1U caps are 16.5 × 17.5 mm ([MBK dimensions](https://shop.dailycraft.jp/en/products/keycaps_mbk)); each clears the controller by 1 mm. The PCB and base plate measure 95.95 × 60.5 mm.
+Ten direct-wired Choc v1 switches for a Seeed Studio XIAO nRF52840 running ZMK. The original eight portrait 1.5U caps are 16.5 × 26.5 mm, with 19.05 mm horizontal spacing and 27.5 mm row pitch for a 1 mm cap gap. A fifth column contains the controller with USB facing right and one portrait 1U key above and below it. The 1U caps are 16.5 × 17.5 mm ([MBK dimensions](https://shop.dailycraft.jp/en/products/keycaps_mbk)); their outer edges align with the original rows, leaving 0.6 mm to the controller. The PCB and base plate measure 95.95 × 60.5 mm.
 
 ## Files
 

@@ -232,8 +232,8 @@ def check_layout(board, output):
     extra_positions = sorted(mm_point(footprint.GetPosition()) for footprint in extra)
     if any(abs(x - cx) > 0.001 for x, y in extra_positions):
         raise RuntimeError('Extra keys must share the controller column')
-    if any(abs(abs(y - cy) - 18.65) > 0.001 for x, y in extra_positions):
-        raise RuntimeError('Extra keys must clear the controller by 1 mm')
+    if any(abs(abs(y - cy) - 18.25) > 0.001 for x, y in extra_positions):
+        raise RuntimeError('Extra keys must align with the outer row edges')
     if not extra_positions[0][1] < cy < extra_positions[1][1]:
         raise RuntimeError('Expected one extra key above and one below the controller')
     left, top, right, bottom = board_bounds(board)
@@ -247,6 +247,12 @@ def check_layout(board, output):
         if bounds[0] < left or bounds[1] < top or bounds[2] > right or bounds[3] > bottom:
             raise RuntimeError(f'Cap outside board: {footprint.GetReference()}')
         caps.append(bounds)
+    top_edges = [cap_bounds(footprint)[1] for footprint in switches
+                 if mm_point(footprint.GetPosition())[1] < cy]
+    bottom_edges = [cap_bounds(footprint)[3] for footprint in switches
+                    if mm_point(footprint.GetPosition())[1] > cy]
+    if max(top_edges) - min(top_edges) > 0.001 or max(bottom_edges) - min(bottom_edges) > 0.001:
+        raise RuntimeError('All five outer cap edges must align in each row')
     rectangles = caps + [(cx - 10.5, cy - 8.9, cx + 10.5, cy + 8.9)]
     for first, second in itertools.combinations(rectangles, 2):
         if min(first[2], second[2]) > max(first[0], second[0]) and min(first[3], second[3]) > max(first[1], second[1]):
@@ -258,7 +264,7 @@ def check_layout(board, output):
         'hole_y': sorted({round(bottom - y, 3) for x, y in mounts}),
     }
     (output / 'board_geometry.json').write_text(json.dumps(geometry, indent=2) + '\n')
-    print(f"Validated 1 mm row and controller gaps; board {geometry['width']} x {geometry['height']} mm")
+    print(f"Validated aligned outer cap edges and 1 mm main row gap; board {geometry['width']} x {geometry['height']} mm")
 
 
 def grid_point(position):
