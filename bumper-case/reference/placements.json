@@ -1,0 +1,722 @@
+{
+  "coordinate_system": "millimetres, origin at PCB lower left, PCB top z=0",
+  "source_files": {
+    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "658d26ea0a96a3232b7433723844cd4a39da029c0247e402d3e36a187499cfd9",
+    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "42da8ddde5cb044666fc2fb6f60a14be3b38b59ed9aaad7d4282286863ad96ac",
+    "ergogen-kikad/design/models/battery_301055.wrl": "0b33d331c8d421c46668a60f2bf834ee96ff663bca3644910c2fcc2cdfe3262f",
+    "ergogen-kikad/design/models/battery_plug_reference.wrl": "fde40d6e5606130f3fb695c3045188165670abe33d71f6582c9f4b88780d9391",
+    "ergogen-kikad/design/models/nice_view_reference.wrl": "5c7cb187289362a48505090a67c6bd39ec3f1c7a0e438c5910417df058400d7f",
+    "ergogen-kikad/design/models/display_socket.wrl": "d8c3cea629bf45c2713d5f01c4206282fb4e9437437e02b910745d282260642c",
+    "ergogen-kikad/design/models/nice_nano_reference.wrl": "301df7066360b596e4d80496d5ff5f6723baf681720d1613dd9bc1267e79877c",
+    "ergogen-kikad/design/models/choc_reference.wrl": "bfe12e9a05a7d20905777f3d7c9bb243b1a465152548612f79cf8adb1f16c852",
+    "ergogen-kikad/design/models/mbk_15u.wrl": "a4062481fdfc9aaa8c0be3bb4fe13bbb1d436a216869e4448d66e9f096fd41a8"
+  },
+  "footprints": [
+    {
+      "reference": "BAT1",
+      "x": 29.65,
+      "y": 27.5,
+      "rotation": 0.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/battery_301055.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/battery_301055.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "H1",
+      "x": 18.275,
+      "y": 41.25,
+      "rotation": 0.0,
+      "models": []
+    },
+    {
+      "reference": "H2",
+      "x": 56.375,
+      "y": 41.25,
+      "rotation": 0.0,
+      "models": []
+    },
+    {
+      "reference": "H3",
+      "x": 18.275,
+      "y": 13.75,
+      "rotation": 0.0,
+      "models": []
+    },
+    {
+      "reference": "H4",
+      "x": 56.375,
+      "y": 13.75,
+      "rotation": 0.0,
+      "models": []
+    },
+    {
+      "reference": "H5",
+      "x": 75.425,
+      "y": 41.25,
+      "rotation": 0.0,
+      "models": []
+    },
+    {
+      "reference": "H6",
+      "x": 75.425,
+      "y": 13.75,
+      "rotation": 0.0,
+      "models": []
+    },
+    {
+      "reference": "J1",
+      "x": 72.4,
+      "y": 27.5,
+      "rotation": -90.0,
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal.step",
+          "offset": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/battery_plug_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/battery_plug_reference.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "LCD1",
+      "x": 92.65,
+      "y": 27.5,
+      "rotation": 0.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/nice_view_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/nice_view_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/display_socket.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/display_socket.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "MCU1",
+      "x": 95.75,
+      "y": 27.5,
+      "rotation": -90.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/nice_nano_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            180.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/nice_nano_reference.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "PWR1",
+      "x": 108.725,
+      "y": 8.75,
+      "rotation": 90.0,
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_Slide_SPDT_Straight_CK_OS102011MS2Q.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "RST1",
+      "x": 108.725,
+      "y": 46.25,
+      "rotation": 90.0,
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_PUSH_6mm_H4.3mm.step",
+          "offset": [
+            -3.25,
+            2.25,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "S1",
+      "x": 8.75,
+      "y": 41.25,
+      "rotation": 90.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/choc_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/mbk_15u.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "S10",
+      "x": 89.95,
+      "y": 8.75,
+      "rotation": 0.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/choc_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/mbk_15u.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "S2",
+      "x": 27.8,
+      "y": 41.25,
+      "rotation": 90.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/choc_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/mbk_15u.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "S3",
+      "x": 46.85,
+      "y": 41.25,
+      "rotation": 90.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/choc_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/mbk_15u.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "S4",
+      "x": 65.9,
+      "y": 41.25,
+      "rotation": 90.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/choc_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/mbk_15u.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "S5",
+      "x": 8.75,
+      "y": 13.75,
+      "rotation": 90.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/choc_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/mbk_15u.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "S6",
+      "x": 27.8,
+      "y": 13.75,
+      "rotation": 90.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/choc_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/mbk_15u.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "S7",
+      "x": 46.85,
+      "y": 13.75,
+      "rotation": 90.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/choc_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/mbk_15u.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "S8",
+      "x": 65.9,
+      "y": 13.75,
+      "rotation": 90.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/choc_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/mbk_15u.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
+        }
+      ]
+    },
+    {
+      "reference": "S9",
+      "x": 89.95,
+      "y": 46.25,
+      "rotation": 0.0,
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/choc_reference.wrl"
+        },
+        {
+          "filename": "${KIPRJMOD}/../../design/models/mbk_15u.wrl",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
+        }
+      ]
+    }
+  ],
+  "width": 114.25,
+  "height": 55.0,
+  "pcb_thickness": 1.6,
+  "origin_kicad": [
+    152.875,
+    176.0
+  ]
+}
