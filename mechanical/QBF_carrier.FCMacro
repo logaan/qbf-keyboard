@@ -1,16 +1,12 @@
-"""Run in FreeCAD to rebuild and save the reversible keyboard carrier.
-
-The dimensions mirror build_parts.py.  Each object is a native Part solid;
-edit this macro and rerun it to change fit or wall thickness.
-"""
-
 import FreeCAD as App
 import Part
 from pathlib import Path
+import json
 
-W, H, GAP = 73.65, 60.5, 4.0
-FLOOR, SLOT_LOW, SLOT_HIGH, TOP = 2.5, 17.0, 21.5, 22.2
 ROOT = Path(__file__).resolve().parent
+GEOMETRY = json.loads((ROOT.parent / 'ergogen-kikad/generated/board_geometry.json').read_text())
+W, H, GAP = GEOMETRY['width'], GEOMETRY['height'], 4.0
+FLOOR, SLOT_LOW, SLOT_HIGH, TOP = 2.5, 17.0, 21.5, 22.2
 
 
 def box(x, y, z, dx, dy, dz):
@@ -24,8 +20,8 @@ def cylinder(x, y, z, radius, height):
 def rail(upper):
     y = H - 6.5 if upper else -2.5
     shape = box(0, y, 0, W, 9, 4)
-    hole_y = 57.75 if upper else 2.75
-    for x in (3.5, 70.15):
+    hole_y = GEOMETRY['hole_y'][1 if upper else 0]
+    for x in GEOMETRY['hole_x']:
         shape = shape.fuse(cylinder(x, hole_y, 4, 1, 1.4))
     outer_y = H + 2.5 if upper else -2.5
     for x in (6, W - 6):

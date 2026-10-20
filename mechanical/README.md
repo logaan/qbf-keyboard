@@ -15,7 +15,7 @@ The rails sit on the **outside of the base plate**, underneath its long edges in
 - [`generated/bumper_upper.stl`](generated/bumper_upper.stl) — print 2.
 - [`generated/two_board_case.stl`](generated/two_board_case.stl) — print 1.
 - Matching `.step` files are provided for CAD editing.
-- [`QBF_carrier.FCMacro`](QBF_carrier.FCMacro) rebuilds the three native Part solids and saves a FreeCAD document. [`build_parts.py`](build_parts.py) generates the STEP and STL files with FreeCAD's bundled OpenCascade Python runtime.
+- [`QBF_carrier.FCMacro`](QBF_carrier.FCMacro) rebuilds the three native Part solids and saves a FreeCAD document. [`build_parts.py`](build_parts.py) generates the STEP and STL files from the same native solids.
 
 Print the rails flat and the case with its solid floor on the bed. The case grooves have a 2.6 mm horizontal bridge and are designed to print without support. Start with PETG or another slightly compliant material, then test the 0.5 mm vertical slot clearance and the 0.4 mm detent interference on the actual printer before printing a final case.
 
@@ -25,14 +25,16 @@ The PCB and base plate are each nominally 1.6 mm thick. Each 4 mm rail has two 2
 
 The protected orientation places the component face about 13.8 mm above the outside bottom of the case when the PCB and base plate are both fitted. The floor's inside face is at 2.5 mm, leaving **11.3 mm maximum component/cap projection below the PCB face** before contact. Measure the built switch, cap, and socketed XIAO stack before relying on this clearance. If it is taller, increase `SLOT_BOTTOM` and `CASE_TOP` together in the CAD source and regenerate the case. The exposed orientation keeps the case walls outside the board and cap outline.
 
-The outside dimensions of the case are 157.3 × 70.5 × 22.2 mm. The two board outlines are 73.65 × 60.5 mm with a 4 mm middle gap. The PCB mount centers in each side rail are 55 mm apart along the long edge.
+The outside dimensions of the case are 201.9 × 70.5 × 22.2 mm. The two board outlines are 95.95 × 60.5 mm with a 4 mm middle gap. The PCB mount centers in each side rail are 55 mm apart along the long edge.
 
 The parts are geometric prototypes. No physical print, cap-travel, USB-plug, fastener, or drop test has been done.
 
 ## Regenerate
 
-Run the FreeCAD macro in the FreeCAD GUI to produce `QBF_Reversible_Carrier.FCStd`. To regenerate the printable and STEP exports with the bundled Python runtime on macOS:
+Run from the repository root after regenerating the electronics:
 
 ```sh
-/Applications/FreeCAD.app/Contents/Resources/bin/python mechanical/build_parts.py
+./scripts/generate-mechanical.sh
 ```
+
+Requires FreeCAD. Override `FREECAD_PYTHON` and `FREECAD_LIB` if needed. Board dimensions and mount positions come from `ergogen-kikad/generated/board_geometry.json`. This rebuilds the FreeCAD document and STEP/STL exports, checking that every part is a valid solid.
