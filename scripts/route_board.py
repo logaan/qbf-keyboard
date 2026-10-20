@@ -278,10 +278,11 @@ def check_layout(board, output):
         raise RuntimeError('Expected 19.05 mm horizontal key spacing')
     expected_mounts = {(round((xs[index] + xs[index + 1]) / 2, 4), y)
                        for index in (0, 2) for y in ys}
-    right_mount_x = round(xs[-1] + 8.25 + (19.05 - 16.5) / 2, 4)
-    expected_mounts.update((right_mount_x, y) for y in ys)
+    right_mount_x = round(xs[-1] + 24.05 + 26.5 / 2 + 0.3, 4)
+    expected_mounts.update((right_mount_x, round(sum(ys) / 2 + offset, 4))
+                           for offset in (-18.75, 18.75))
     if set(mounts) != expected_mounts:
-        raise RuntimeError('Mounts must sit between columns 1/2 and 3/4 and beside the rightmost keys')
+        raise RuntimeError('Mounts must sit between columns 1/2 and 3/4 and between column 5 and the controls')
     cx, cy = mm_point(controllers[0].GetPosition())
     if abs(cy - sum(ys) / 2) > 0.001 or abs(cx - 87.0) > 0.001:
         raise RuntimeError('Controller must be centered in the next column to the right')
@@ -412,6 +413,8 @@ def check_layout(board, output):
                     'length': round(battery_length, 3), 'width': round(battery_width, 3),
                     'thickness': 3.5, 'adhesive': 0.2, 'capacity_mah': 220},
         'controls': sorted(controls, key=lambda control: control['reference']),
+        'mounts': sorted([{'x': round(x - left, 3), 'y': round(bottom - y, 3)}
+                          for x, y in mounts], key=lambda point: (point['x'], point['y'])),
         'hole_x': sorted({round(x - left, 3) for x, y in mounts}),
         'hole_y': sorted({round(bottom - y, 3) for x, y in mounts}),
     }

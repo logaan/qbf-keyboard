@@ -17,7 +17,7 @@ units:
   display_height: 14
   display_x: 3 * column_pitch + 8.25 + 0.5 + display_width / 2
   controller_x: display_x + 3.1
-  right_mount_x: 3 * column_pitch + 8.25 + (column_pitch - 16.5) / 2
+  right_mount_x: extra_x + 26.5 / 2 + 0.3
   board_width: controller_x + 18 + 0.5 + 8.75
   board_height: row_pitch + cap_height + 1
   controls_x: (extra_x + 26.5 / 2 + board_width - 8.75) / 2
@@ -163,12 +163,12 @@ pcbs:
         what: m2_mount
         where:
           ref: pad_c0_bottom
-          shift: [right_mount_x, row_pitch]
+          shift: [right_mount_x, controller_y + extra_offset]
       lower_outer_mount:
         what: m2_mount
         where:
           ref: pad_c0_bottom
-          shift: [right_mount_x, 0]
+          shift: [right_mount_x, controller_y - extra_offset]
       battery_connector:
         what: battery_ph
         where:

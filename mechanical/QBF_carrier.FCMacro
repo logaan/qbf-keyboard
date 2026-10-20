@@ -20,8 +20,9 @@ def cylinder(x, y, z, radius, height):
 def rail(upper):
     y = H - 6.5 if upper else -2.5
     shape = box(0, y, 0, W, 9, 4)
-    hole_y = GEOMETRY['hole_y'][1 if upper else 0]
-    for x in GEOMETRY['hole_x']:
+    mounts = [m for m in GEOMETRY['mounts'] if (m['y'] > H / 2) == upper]
+    for mount in mounts:
+        x, hole_y = mount['x'], mount['y']
         tab_y = hole_y - 3 if upper else 5.5
         tab_end = y + 1 if upper else hole_y + 3
         tab_x, tab_right = max(0, x - 3), min(W, x + 3)
