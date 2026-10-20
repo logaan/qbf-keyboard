@@ -30,7 +30,11 @@ for board in macropad baseplate; do
         cp "$pcb_dir/$board.kicad_pro" "$stage/pcbs/"
     fi
 done
-"$repo_root/scripts/check.sh" "$stage"
+if ! "$repo_root/scripts/check.sh" "$stage"; then
+    mkdir -p "$project_dir/generated/checks"
+    cp "$stage/checks/"*.rpt "$project_dir/generated/checks/"
+    exit 1
+fi
 "$repo_root/scripts/preview.sh" "$stage"
 check_locks
 mkdir -p "$project_dir/generated/outlines" "$project_dir/generated/checks" "$pcb_dir"

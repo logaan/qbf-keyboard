@@ -17,7 +17,7 @@ units:
   display_height: 14
   display_x: 3 * column_pitch + 8.25 + 0.5 + display_width / 2
   controller_x: display_x
-  right_mount_x: display_x + display_width / 2 - 1.75
+  right_mount_x: 3 * column_pitch + 8.25 + (column_pitch - 16.5) / 2
   board_width: display_x + display_width / 2 + 0.5 + 8.75
   board_height: row_pitch + cap_height + 1
 
@@ -131,6 +131,8 @@ pcbs:
           P2: LCD_SI
           P3: LCD_CLK
           VCC: 3V3
+          RAW: VBAT
+          RST: RST
       display:
         what: nice_view
         where:
@@ -166,3 +168,27 @@ pcbs:
         where:
           ref: pad_c0_bottom
           shift: [right_mount_x, 0]
+      battery_connector:
+        what: battery_ph
+        where:
+          ref: pad_c0_bottom
+          shift: [98.2, 28]
+      power_switch:
+        what: power_slide
+        where:
+          ref: pad_c0_bottom
+          shift: [100, -5]
+        adjust:
+          rotate: 90
+      reset_switch:
+        what: reset_tact
+        where:
+          ref: pad_c0_bottom
+          shift: [98.1, 35.8]
+        adjust:
+          rotate: 90
+      battery_space:
+        what: battery_space
+        where:
+          ref: pad_c0_bottom
+          shift: [28.575, controller_y]

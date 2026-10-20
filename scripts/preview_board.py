@@ -63,7 +63,19 @@ def main():
             for pad in footprint.Pads():
                 px, py = position(pad.GetPosition())
                 items.append(f'<circle cx="{px - left}" cy="{py - top}" r="0.65" fill="#427fba"/>')
-            label(width - 7, -1.2, '5-pin connection', 1.3)
+            label(width - 11.5, height + 2, 'Display pins', 1.2)
+    battery = geometry.get('battery')
+    if battery:
+        bx, by = battery['x'], height - battery['y']
+        rectangle(bx - battery['length'] / 2, by - battery['width'] / 2,
+                  battery['length'], battery['width'], '#fff2c7', '#bb8f3d', dash='0.8 0.5')
+        label(bx, by - 0.3, 'Protected 301230 LiPo', 1.5)
+        label(bx, by + 2.2, '110 mAh · beneath keycaps', 1.2)
+    for control in geometry.get('controls', []):
+        x, y, w, h = (control[key] for key in ('x', 'y', 'width', 'height'))
+        rectangle(x, y, w, h, '#e7e0f4', '#8b70a4')
+        name = 'PWR' if control['reference'].startswith('PWR') else 'RST' if control['reference'].startswith('RST') else 'BAT'
+        label(x + w / 2, y + h / 2 + 0.4, name, 1.2)
     label(width / 2, height + 4.5, '1 mm between the portrait rows · aligned outer cap edges · internal M2 holes', 1.8)
     base_y = height + 23
     side_x = width / 2 - 28

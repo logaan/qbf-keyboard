@@ -1,6 +1,6 @@
 const left = ['P1', 'P0', 'GND', 'GND', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9'];
-const right = ['', 'GND', '', 'VCC', 'P21', 'P20', 'P19', 'P18', 'P15', 'P14', 'P16', 'P10'];
-const wired = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10', 'P14', 'P15', 'P16', 'GND', 'VCC'];
+const right = ['RAW', 'GND', 'RST', 'VCC', 'P21', 'P20', 'P19', 'P18', 'P15', 'P14', 'P16', 'P10'];
+const wired = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10', 'P14', 'P15', 'P16', 'GND', 'VCC', 'RAW', 'RST'];
 const nets = Object.fromEntries(wired.map(name => [name, {type: 'net', value: name}]));
 
 module.exports = {

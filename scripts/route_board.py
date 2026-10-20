@@ -162,11 +162,14 @@ def make_base_plate():
     for footprint in list(plate.GetFootprints()):
         is_controller = footprint.GetReference().startswith('MCU')
         pads = list(footprint.Pads())
-        if footprint.GetReference().startswith(('LCD', 'W')):
+        if footprint.GetReference().startswith(('LCD', 'PWR', 'J')):
             positions = [pad.GetPosition() for pad in pads]
             center = pcb.VECTOR2I(sum(position.x for position in positions) // len(positions),
                                  sum(position.y for position in positions) // len(positions))
-            length = max(position.y for position in positions) - min(position.y for position in positions) + pcb.FromMM(1.8)
+            slot_width = max(position.x for position in positions) - min(position.x for position in positions) + pcb.FromMM(1.8)
+            slot_height = max(position.y for position in positions) - min(position.y for position in positions) + pcb.FromMM(1.8)
+            if footprint.GetReference().startswith('PWR'):
+                slot_width, slot_height = pcb.FromMM(3.9), pcb.FromMM(11)
             reference = footprint.GetReference()
             plate.Remove(footprint)
             footprint = pcb.FOOTPRINT(plate)
@@ -177,7 +180,7 @@ def make_base_plate():
             slot.SetAttribute(pcb.PAD_ATTRIB_NPTH)
             slot.SetShape(pcb.PAD_SHAPE_OVAL)
             slot.SetDrillShape(pcb.PAD_DRILL_SHAPE_OBLONG)
-            slot.SetSize(pcb.VECTOR2I(pcb.FromMM(1.8), length))
+            slot.SetSize(pcb.VECTOR2I(slot_width, slot_height))
             slot.SetDrillSize(slot.GetSize())
             slot.SetPosition(center)
             slot.SetLayerSet(pcb.LSET.AllCuMask())
@@ -187,7 +190,7 @@ def make_base_plate():
         footprint.Value().SetVisible(False)
         for pad in pads:
             if pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH:
-                diameter = 2.0 if is_controller else 2.8
+                diameter = 2.0 if is_controller or footprint.GetReference().startswith('RST') else 2.8
                 drill = pcb.VECTOR2I(pcb.FromMM(diameter), pcb.FromMM(diameter))
                 pad.SetDrillSize(drill)
                 pad.SetSize(drill)
@@ -225,9 +228,9 @@ def check_base_plate(plate):
     if list(plate.GetTracks()) or list(plate.Zones()):
         raise RuntimeError('Base plate has tracks or copper zones')
     pads = [pad for footprint in plate.GetFootprints() for pad in footprint.Pads()]
-    if len(pads) != 81 or any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH or
+    if len(pads) != 87 or any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH or
                               pad.GetNetCode() != 0 for pad in pads):
-        raise RuntimeError('Base plate must have 81 unconnected mechanical holes or slots')
+        raise RuntimeError('Base plate must have 87 unconnected mechanical holes or slots')
     markers = [drawing for drawing in plate.GetDrawings()
                if drawing.GetLayer() == pcb.B_SilkS]
     if len(markers) != 4 or any(marker.GetShape() != pcb.SHAPE_T_SEGMENT
@@ -273,7 +276,7 @@ def check_layout(board, output):
         raise RuntimeError('Expected 19.05 mm horizontal key spacing')
     expected_mounts = {(round((xs[index] + xs[index + 1]) / 2, 4), y)
                        for index in (0, 2) for y in ys}
-    right_mount_x = round(board_bounds(board)[2] - 2.25, 4)
+    right_mount_x = round(xs[-1] + 8.25 + (19.05 - 16.5) / 2, 4)
     expected_mounts.update((right_mount_x, y) for y in ys)
     if set(mounts) != expected_mounts:
         raise RuntimeError('Mounts must sit between columns 1/2 and 3/4 and beside the rightmost keys')
@@ -323,12 +326,55 @@ def check_layout(board, output):
            pad.GetAttribute() != pcb.PAD_ATTRIB_PTH
            for footprint in board.GetFootprints() for pad in footprint.Pads()):
         raise RuntimeError('Assembly must use through-hole components only')
+    parts = {footprint.GetReference(): footprint for footprint in board.GetFootprints()}
+    expected_wiring = {
+        'J1': {'1': 'BAT_POS', '2': 'GND'},
+        'PWR1': {'1': 'BAT_POS', '2': 'VBAT', '3': ''},
+        'RST1': {'1': 'RST', '2': 'GND'},
+        'MCU1': {'24': 'VBAT', '22': 'RST'},
+    }
+    for reference, wiring in expected_wiring.items():
+        if reference not in parts:
+            raise RuntimeError(f'Missing battery or reset component: {reference}')
+        for number, net in wiring.items():
+            terminals = [pad for pad in parts[reference].Pads() if pad.GetNumber() == number]
+            if not terminals or any(pad.GetNetname() != net for pad in terminals):
+                raise RuntimeError(f'Incorrect power or reset wiring: {reference}.{number}')
+    controls = []
+    battery = next(footprint for footprint in board.GetFootprints()
+                   if footprint.GetReference().startswith('BAT'))
+    bx, by = mm_point(battery.GetPosition())
+    for footprint in board.GetFootprints():
+        if not footprint.GetReference().startswith(('PWR', 'RST', 'J')):
+            continue
+        corners = [mm_point(position) for drawing in footprint.GraphicalItems()
+                   if isinstance(drawing, pcb.PCB_SHAPE) and drawing.GetLayer() == pcb.F_Fab
+                   for position in (drawing.GetStart(), drawing.GetEnd())]
+        bounds = (min(x for x, y in corners), min(y for x, y in corners),
+                  max(x for x, y in corners), max(y for x, y in corners))
+        for other in caps + [(cx - 18, cy - 9.15, cx + 18, cy + 9.15)]:
+            if min(bounds[2], other[2]) > max(bounds[0], other[0]) and min(bounds[3], other[3]) > max(bounds[1], other[1]):
+                raise RuntimeError(f'Control overlaps a keycap or controller: {footprint.GetReference()}')
+        if bounds[0] < left or bounds[1] < top or bounds[2] > right or bounds[3] > bottom:
+            raise RuntimeError(f'Control body outside board: {footprint.GetReference()}')
+        controls.append({'reference': footprint.GetReference(),
+                         'x': round(bounds[0] - left, 3), 'y': round(bounds[1] - top, 3),
+                         'width': round(bounds[2] - bounds[0], 3),
+                         'height': round(bounds[3] - bounds[1], 3)})
+    if abs(by - cy) > 0.001 or bx + 16.25 > cx - 18:
+        raise RuntimeError('Battery must sit in the original rows, clear of the controller')
+    if by - 6.25 < ys[0] + 7 or by + 6.25 > ys[1] - 7:
+        raise RuntimeError('Battery pack envelope overlaps the switch bodies')
     geometry = {
         'width': round(right - left, 3),
         'height': round(bottom - top, 3),
         'display': {'x': round(dx - left, 3), 'y': round(bottom - dy, 3),
                     'width': 36, 'height': 14, 'module_underside_z': 8.0,
                     'module_thickness': 2.9},
+        'battery': {'x': round(bx - left, 3), 'y': round(bottom - by, 3),
+                    'length': 32.5, 'width': 12.5, 'thickness': 3.2, 'adhesive': 0.2,
+                    'capacity_mah': 110},
+        'controls': sorted(controls, key=lambda control: control['reference']),
         'hole_x': sorted({round(x - left, 3) for x, y in mounts}),
         'hole_y': sorted({round(bottom - y, 3) for x, y in mounts}),
     }
@@ -366,7 +412,19 @@ def find_path(board, net, layer, start, end):
                 continue
             size = pad.GetDrillSize() if pad.GetAttribute() == pcb.PAD_ATTRIB_NPTH else pad.GetSize()
             position = mm_point(pad.GetPosition())
-            mark_obstacle(blocked, position, position, max(pcb.ToMM(size.x), pcb.ToMM(size.y)) / 2 + margin)
+            if pad.GetShape() == pcb.PAD_SHAPE_CIRCLE:
+                mark_obstacle(blocked, position, position, pcb.ToMM(size.x) / 2 + margin)
+            else:
+                bounds = pad.GetBoundingBox()
+                x1, y1 = pcb.ToMM(bounds.GetLeft()), pcb.ToMM(bounds.GetTop())
+                x2, y2 = pcb.ToMM(bounds.GetRight()), pcb.ToMM(bounds.GetBottom())
+                gx1, gy1 = grid_point((x1 - margin - GRID_MM, y1 - margin - GRID_MM))
+                gx2, gy2 = grid_point((x2 + margin + GRID_MM, y2 + margin + GRID_MM))
+                for gx in range(gx1, gx2 + 1):
+                    for gy in range(gy1, gy2 + 1):
+                        px, py = grid_mm((gx, gy))
+                        if math.hypot(max(x1 - px, 0, px - x2), max(y1 - py, 0, py - y2)) < margin:
+                            blocked.add((gx, gy))
     for track in board.GetTracks():
         if track.GetLayer() == layer and track.GetNetCode() != net.GetNetCode():
             mark_obstacle(blocked, mm_point(track.GetStart()), mm_point(track.GetEnd()),
@@ -452,18 +510,31 @@ def smooth_path(coordinates):
 
 
 def route_signals(board):
+    global GRID_MM
     endpoints = {}
     for footprint in board.GetFootprints():
         for pad in footprint.Pads():
             if pad.GetNetname() and pad.GetNetname() != 'GND':
                 endpoints.setdefault(pad.GetNetname(), []).append(mm_point(pad.GetPosition()))
-    if len(endpoints) != 14 or any(len(pads) != 2 for pads in endpoints.values()):
-        raise RuntimeError('Expected ten direct key nets, three display signals and display power')
-    ordered = sorted(endpoints, key=lambda name: (name.startswith('LCD_') or name == '3V3', math.dist(*endpoints[name])))
-    for name in ordered:
-        start, end = endpoints[name]
+    expected = {'BAT_POS': 2, 'VBAT': 2, 'RST': 3}
+    if len(endpoints) != 17 or any(len(pads) != expected.get(name, 2)
+                                  for name, pads in endpoints.items()):
+        raise RuntimeError('Expected direct keys, display, switched battery power and reset nets')
+    connections = []
+    for name, pads in endpoints.items():
+        connected, pending = pads[:1], pads[1:]
+        while pending:
+            start, end = min(itertools.product(connected, pending), key=lambda pair: math.dist(*pair))
+            connections.append((name, start, end))
+            connected.append(end)
+            pending.remove(end)
+    connections.sort(key=lambda connection: (0 if connection[0] in ('VBAT', 'BAT_POS') else
+                                              2 if connection[0].startswith('LCD_') or connection[0] in ('3V3', 'RST') else 1,
+                                              math.dist(*connection[1:])))
+    for name, start, end in connections:
+        GRID_MM = 0.1 if name in ('VBAT', 'BAT_POS') else 0.25
         net = board.FindNet(name)
-        layer = pcb.F_Cu if name in ('P4', 'P6', 'P8', 'P9', 'P16', 'LCD_CLK', 'LCD_CS') else pcb.B_Cu
+        layer = pcb.F_Cu if name in ('P4', 'P6', 'P8', 'P9', 'P16', 'LCD_CLK', 'LCD_CS', 'BAT_POS') else pcb.B_Cu
         try:
             path = find_path(board, net, layer, start, end)
         except RuntimeError:
@@ -471,6 +542,7 @@ def route_signals(board):
             path = find_path(board, net, layer, start, end)
         coordinates = terminal(start, path[0]) + path[1:-1] + terminal(path[-1], end)
         route(board, net, layer, smooth_path(coordinates))
+    GRID_MM = 0.25
 
 
 def main():
@@ -489,6 +561,11 @@ def main():
     make_base_plate()
     route_signals(board)
     ground = board.FindNet('GND')
+    for footprint in board.GetFootprints():
+        if footprint.GetReference().startswith('RST'):
+            for pad in footprint.Pads():
+                if pad.GetNetname() == 'GND':
+                    pad.SetThermalSpokeAngleDegrees(45)
     for layer in (pcb.F_Cu, pcb.B_Cu):
         add_ground_zone(board, ground, layer)
     board.GetTitleBlock().SetTitle(DRAWING_TITLE)
@@ -499,7 +576,7 @@ def main():
     board.BuildConnectivity()
     pcb.SaveBoard(str(BOARD), board)
     check_board(pcb.LoadBoard(str(BOARD)))
-    print(f'Generated circuit-free base plate with 81 holes or slots: {BASE_PLATE}')
+    print(f'Generated circuit-free base plate with 87 holes or slots: {BASE_PLATE}')
     print(f'Routed {len(list(board.GetTracks()))} segments and filled two GND zones: {BOARD}')
 
 

@@ -9,10 +9,42 @@
     "module_underside_z": 8.0,
     "module_thickness": 2.9
   },
+  "battery": {
+    "x": 37.325,
+    "y": 27.5,
+    "length": 32.5,
+    "width": 12.5,
+    "thickness": 3.2,
+    "adhesive": 0.2,
+    "capacity_mah": 110
+  },
+  "controls": [
+    {
+      "reference": "J1",
+      "x": 104.0,
+      "y": 11.55,
+      "width": 5.9,
+      "height": 4.5
+    },
+    {
+      "reference": "PWR1",
+      "x": 106.6,
+      "y": 41.95,
+      "width": 4.3,
+      "height": 8.6
+    },
+    {
+      "reference": "RST1",
+      "x": 103.85,
+      "y": 2.45,
+      "width": 6.0,
+      "height": 6.0
+    }
+  ],
   "hole_x": [
     18.275,
     56.375,
-    108.9
+    75.425
   ],
   "hole_y": [
     13.75,

@@ -35,3 +35,6 @@
     1.  Through-hole sockets expose enough pins for ten direct keys and a display.
 4.  Ready-made nice!view display
     1.  Low power, through-hole connections, and documented use in HillSideView.
+5.  Battery and controls
+    1.  Protected 301230 LiPo beneath the keycaps, between the original switch rows.
+    2.  Board-mounted through-hole JST-PH connector, upward-facing power slide switch, and upward-facing reset button.
