@@ -1,0 +1,202 @@
+meta:
+  engine: 4.2.1
+  version: 0.0.1
+  author: Logan Campbell
+
+units:
+  column_pitch: 19.05
+  cap_height: 26.5
+  row_gap: 1
+  row_pitch: 27.5
+  extra_x: 4 * column_pitch
+  extra_offset: row_pitch / 2
+  controller_x: 20
+  controller_y: 85.75
+  display_x: 23.1
+  display_y: 85.75
+  layout_width: 98
+  layout_height: 96
+  pcb_border: 0
+  board_width: 98
+  board_height: 96
+  battery_well_length: 32.6
+  battery_well_width: 13.6
+
+points:
+  zones:
+    pad:
+      anchor:
+        shift: [10.9, 34.25]
+      key:
+        padding: row_pitch
+      columns:
+        c0:
+          rows:
+            bottom: {net: P9, label: b1}
+            top: {net: P4, label: t1}
+        c1:
+          key: {spread: column_pitch}
+          rows:
+            bottom: {net: P10, label: b2}
+            top: {net: P5, label: t2}
+        c2:
+          key: {spread: column_pitch}
+          rows:
+            bottom: {net: P16, label: b3}
+            top: {net: P6, label: t3}
+        c3:
+          key: {spread: column_pitch}
+          rows:
+            bottom: {net: P14, label: b4}
+            top: {net: P7, label: t4}
+      rows:
+        bottom:
+        top:
+    extra:
+      key:
+        padding: 2 * extra_offset
+      anchor:
+        ref: pad_c0_bottom
+        shift: [extra_x, 0]
+      columns:
+        c4:
+          rows:
+            bottom: {net: P15, label: b5}
+            top: {net: P8, label: t5}
+      rows:
+        bottom:
+        top:
+
+outlines:
+  board:
+    - what: rectangle
+      where:
+        shift: [49, 48.0]
+      size: [board_width, board_height]
+      corner: 1.5
+
+pcbs:
+  macropad:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      top_switches:
+        what: choc_v1_15u_portrait
+        where: /^pad_.*_top$/
+        adjust:
+          rotate: 90
+        params:
+          from: GND
+          to: '{{net}}'
+          label: '{{label}}'
+          cap_length: 26.5
+          label_offset: 0
+      bottom_switches:
+        what: choc_v1_15u_portrait
+        where: /^pad_.*_bottom$/
+        adjust:
+          rotate: 90
+        params:
+          from: '{{net}}'
+          to: GND
+          label: '{{label}}'
+          cap_length: 26.5
+          label_offset: 0
+      extra_top_switch:
+        what: choc_v1_15u_portrait
+        where: extra_c4_top
+        adjust:
+          rotate: 0
+        params:
+          from: GND
+          to: '{{net}}'
+          label: '{{label}}'
+          cap_length: 17.5
+          label_offset: 0
+      extra_bottom_switch:
+        what: choc_v1_15u_portrait
+        where: extra_c4_bottom
+        adjust:
+          rotate: 0
+        params:
+          from: '{{net}}'
+          to: GND
+          label: '{{label}}'
+          cap_length: 17.5
+          label_offset: 0
+      controller:
+        what: nice_nano
+        where:
+          shift: [controller_x, controller_y]
+        adjust:
+          rotate: 90
+        params:
+          P1: LCD_CS
+          P2: LCD_SI
+          P3: LCD_CLK
+          VCC: 3V3
+          RAW: VBAT
+          RST: RST
+      display:
+        what: nice_view
+        where:
+          shift: [display_x, display_y]
+        adjust:
+          rotate: 180
+      upper_left_mount:
+        what: m2_mount
+        where:
+          shift: [2, 76]
+      upper_right_mount:
+        what: m2_mount
+        where:
+          shift: [59, 76]
+      lower_left_mount:
+        what: m2_mount
+        where:
+          shift: [2, 20]
+      lower_right_mount:
+        what: m2_mount
+        where:
+          shift: [59, 20]
+      upper_outer_mount:
+        what: m2_mount
+        where:
+          shift: [96, 76]
+      lower_outer_mount:
+        what: m2_mount
+        where:
+          shift: [96, 20]
+      battery_connector:
+        what: battery_ph
+        where:
+          shift: [50, 10]
+        adjust:
+          rotate: -90
+      power_switch:
+        what: power_slide
+        where:
+          shift: [50, 91]
+      reset_switch:
+        what: reset_tact
+        where:
+          shift: [50, 80]
+      battery_space:
+        what: battery_space
+        where:
+          shift: [20, 10]
+        params:
+          length: 32
+          width: 13
+          thickness: 3.5
+          capacity: 110
+          model: 301230
+          bottom_z: -1.4
+      battery_well:
+        what: battery_well
+        where:
+          shift: [20, 10]
+        params:
+          length: battery_well_length
+          width: battery_well_width
