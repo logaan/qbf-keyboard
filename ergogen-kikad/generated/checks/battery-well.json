@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "native_step_main_well_overlap_mm3": 0.0,
+  "native_step_missing_baseplate_floor_mm3": 0.0,
+  "native_step_pack_pcb_overlap_mm3": 0.0,
+  "continuous_baseplate_floor_volume_mm3": 1031.056,
+  "well": {
+    "x": 1.35,
+    "y": 21.95,
+    "length": 58.1,
+    "width": 11.1,
+    "corner_chamfer": 0.5,
+    "main_pcb_only": true,
+    "baseplate_floor_z": -3.2,
+    "baseplate_top_z": -1.6
+  },
+  "battery": {
+    "x": 30.4,
+    "y": 27.5,
+    "length": 57.5,
+    "width": 10.5,
+    "thickness": 3.5,
+    "adhesive": 0.2,
+    "capacity_mah": 220,
+    "model": "301055",
+    "bottom_z": -1.4,
+    "top_z": 2.1
+  },
+  "pcb_stack_mm": {
+    "main_pcb": [
+      -1.6,
+      0
+    ],
+    "baseplate": [
+      -3.2,
+      -1.6
+    ]
+  },
+  "pcb_thickness_note": "Native KiCad body normalized to nominal 1.6 mm FR4, matching the touching stack."
+}

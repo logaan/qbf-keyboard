@@ -5,6 +5,7 @@ import argparse
 import heapq
 import itertools
 import json
+import re
 
 import pcbnew as pcb
 
@@ -20,6 +21,7 @@ CLEARANCE_MM = 0.25
 PAGE_OFFSET_MM = (0, 0)
 DRAWING_TITLE = 'QBF Wireless Split Perkins Keyboard'
 RING_INNER_RADIUS_MM = 23.0
+WELL_COPPER_CLEARANCE_MM = 0.5
 
 
 def point(xy):
@@ -89,9 +91,14 @@ def check_board(board):
         raise RuntimeError('Expected filled GND zones on both copper layers')
     if not all(zone.IsFilled() for zone in zones):
         raise RuntimeError('One or more GND zones are not filled')
+    well = check_battery_well(board)
     for track in tracks:
         start, end = mm_point(track.GetStart()), mm_point(track.GetEnd())
         half_width = pcb.ToMM(track.GetWidth()) / 2
+        if min(segment_distance(start, end, a, b) for a, b in rectangle_edges(well)) - half_width < WELL_COPPER_CLEARANCE_MM - 1e-5:
+            raise RuntimeError('Trace violates battery well copper-edge clearance')
+        if any(well[0] <= p[0] <= well[2] and well[1] <= p[1] <= well[3] for p in (start, end)):
+            raise RuntimeError('Trace crosses the battery well')
         for pad in pads:
             if pad.GetAttribute() == pcb.PAD_ATTRIB_SMD and not pad.IsOnLayer(track.GetLayer()):
                 continue
@@ -160,8 +167,12 @@ def make_base_plate():
     plate = pcb.LoadBoard(str(BOARD))
     if list(plate.GetTracks()) or list(plate.Zones()):
         raise RuntimeError('Base plate source must be the un-routed Ergogen board')
+    well = battery_well_bounds(plate)
 
     for footprint in list(plate.GetFootprints()):
+        if footprint.GetReference().startswith('WELL'):
+            plate.Remove(footprint)
+            continue
         is_controller = footprint.GetReference().startswith('MCU')
         pads = list(footprint.Pads())
         if footprint.GetReference().startswith(('LCD', 'PWR', 'J')):
@@ -202,6 +213,13 @@ def make_base_plate():
         for graphic in list(footprint.GraphicalItems()):
             if graphic.GetLayer() in (pcb.F_SilkS, pcb.B_SilkS):
                 graphic.SetLayer(pcb.F_Fab)
+    for footprint in plate.GetFootprints():
+        for pad in footprint.Pads():
+            center = mm_point(pad.GetPosition())
+            if well[0] <= center[0] <= well[2] and well[1] <= center[1] <= well[3]:
+                raise RuntimeError('Baseplate battery floor contains a drill or slot')
+            if min(pad_distance(pad, start, end) for start, end in rectangle_edges(well)) <= 0:
+                raise RuntimeError('Baseplate hole overlaps the battery floor')
     plate.RemoveUnusedNets(None)
 
     left, top, right, bottom = board_bounds(plate)
@@ -229,6 +247,8 @@ def make_base_plate():
 def check_base_plate(plate):
     if list(plate.GetTracks()) or list(plate.Zones()):
         raise RuntimeError('Base plate has tracks or copper zones')
+    if any(f.GetReference().startswith('WELL') for f in plate.GetFootprints()):
+        raise RuntimeError('Base plate must remain continuous beneath the battery well')
     pads = [pad for footprint in plate.GetFootprints() for pad in footprint.Pads()]
     if len(pads) != 87 or any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH or
                               pad.GetNetCode() != 0 for pad in pads):
@@ -238,6 +258,41 @@ def check_base_plate(plate):
     if len(markers) != 4 or any(marker.GetShape() != pcb.SHAPE_T_SEGMENT
                                 for marker in markers):
         raise RuntimeError('Expected four B.SilkS ring alignment ticks')
+
+
+def battery_well_bounds(board):
+    wells = [f for f in board.GetFootprints() if f.GetReference().startswith('WELL')]
+    if len(wells) != 1:
+        raise RuntimeError('Main PCB must have exactly one battery well')
+    coordinates = [mm_point(position) for drawing in wells[0].GraphicalItems()
+                   if drawing.GetLayer() == pcb.Edge_Cuts
+                   for position in (drawing.GetStart(), drawing.GetEnd())]
+    if len(coordinates) != 16:
+        raise RuntimeError('Battery well must have eight closed chamfered edges')
+    return (min(x for x, y in coordinates), min(y for x, y in coordinates),
+            max(x for x, y in coordinates), max(y for x, y in coordinates))
+
+
+def rectangle_edges(bounds):
+    left, top, right, bottom = bounds
+    corners = [(left, top), (right, top), (right, bottom), (left, bottom)]
+    return [(corner, corners[(index + 1) % 4]) for index, corner in enumerate(corners)]
+
+
+def check_battery_well(board):
+    bounds = battery_well_bounds(board)
+    left, top, right, bottom = bounds
+    outer = board_bounds(board)
+    if min(left - outer[0], top - outer[1], outer[2] - right, outer[3] - bottom) < 1.3:
+        raise RuntimeError('Battery well must retain at least a 1.3 mm outer PCB web')
+    for footprint in board.GetFootprints():
+        for pad in footprint.Pads():
+            center = mm_point(pad.GetPosition())
+            if left <= center[0] <= right and top <= center[1] <= bottom:
+                raise RuntimeError('Battery well includes a through-hole component pad')
+            if min(pad_distance(pad, start, end) for start, end in rectangle_edges(bounds)) < WELL_COPPER_CLEARANCE_MM:
+                raise RuntimeError('Battery well is too close to a component pad')
+    return bounds
 
 
 def board_bounds(board):
@@ -365,6 +420,10 @@ def check_layout(board, output):
     battery = next(footprint for footprint in board.GetFootprints()
                    if footprint.GetReference().startswith('BAT'))
     bx, by = mm_point(battery.GetPosition())
+    battery_metadata = re.fullmatch(r'(\S+) (\d+)mAh max ([\d.]+)x([\d.]+)x([\d.]+) z=(-?[\d.]+)', battery.GetValue())
+    if not battery_metadata:
+        raise RuntimeError('Battery footprint must document pack model, capacity, maximum envelope and seating height')
+    battery_model, battery_capacity, _, _, battery_thickness, battery_bottom_z = battery_metadata.groups()
     battery_corners = [mm_point(position) for drawing in battery.GraphicalItems()
                        if isinstance(drawing, pcb.PCB_SHAPE)
                        for position in (drawing.GetStart(), drawing.GetEnd())]
@@ -372,6 +431,10 @@ def check_layout(board, output):
                       max(x for x, y in battery_corners), max(y for x, y in battery_corners))
     battery_length = battery_bounds[2] - battery_bounds[0]
     battery_width = battery_bounds[3] - battery_bounds[1]
+    if abs(float(battery_bottom_z) + 1.4) > 0.001:
+        raise RuntimeError('Battery must sit on 0.2 mm adhesive above the baseplate top at z=-1.6 mm')
+    if abs(battery_length - float(battery_metadata.group(3))) > 0.001 or abs(battery_width - float(battery_metadata.group(4))) > 0.001:
+        raise RuntimeError('Battery maximum envelope must match its footprint bounds')
     for footprint in board.GetFootprints():
         if not footprint.GetReference().startswith(('PWR', 'RST', 'J')):
             continue
@@ -401,7 +464,15 @@ def check_layout(board, output):
     jx, jy = mm_point(parts['J1'].GetPosition())
     if abs(jy - cy) > 0.001 or jx - 12.25 < battery_bounds[2] + 1 or jx + 1.35 > socket_bounds[0] - 0.5:
         raise RuntimeError('Battery connector and mated plug must fit beside the pack between rows')
+    well = check_battery_well(board)
+    if min(battery_bounds[0] - well[0], battery_bounds[1] - well[1],
+           well[2] - battery_bounds[2], well[3] - battery_bounds[3]) < 0.299:
+        raise RuntimeError('Battery pack requires at least 0.3 mm lateral clearance in its well')
     geometry = {
+        'battery_well': {'x': round(well[0] - left, 3), 'y': round(bottom - well[3], 3),
+                         'length': round(well[2] - well[0], 3), 'width': round(well[3] - well[1], 3),
+                         'corner_chamfer': 0.5, 'main_pcb_only': True,
+                         'baseplate_floor_z': -3.2, 'baseplate_top_z': -1.6},
         'width': round(right - left, 3),
         'height': round(bottom - top, 3),
         'display': {'x': round(dx - left, 3), 'y': round(bottom - dy, 3),
@@ -411,7 +482,10 @@ def check_layout(board, output):
                     'socket_body_length': 12.7},
         'battery': {'x': round(bx - left, 3), 'y': round(bottom - by, 3),
                     'length': round(battery_length, 3), 'width': round(battery_width, 3),
-                    'thickness': 3.5, 'adhesive': 0.2, 'capacity_mah': 220},
+                    'thickness': float(battery_thickness), 'adhesive': 0.2,
+                    'capacity_mah': int(battery_capacity), 'model': battery_model,
+                    'bottom_z': float(battery_bottom_z),
+                    'top_z': round(float(battery_bottom_z) + float(battery_thickness), 3)},
         'controls': sorted(controls, key=lambda control: control['reference']),
         'mounts': sorted([{'x': round(x - left, 3), 'y': round(bottom - y, 3)}
                           for x, y in mounts], key=lambda point: (point['x'], point['y'])),
@@ -465,6 +539,15 @@ def find_path(board, net, layer, start, end):
                         px, py = grid_mm((gx, gy))
                         if math.hypot(max(x1 - px, 0, px - x2), max(y1 - py, 0, py - y2)) < margin:
                             blocked.add((gx, gy))
+    well = battery_well_bounds(board)
+    edge_margin = WIDTH_MM / 2 + WELL_COPPER_CLEARANCE_MM + GRID_MM / math.sqrt(2) + 0.01
+    gx1, gy1 = grid_point((well[0] - edge_margin - GRID_MM, well[1] - edge_margin - GRID_MM))
+    gx2, gy2 = grid_point((well[2] + edge_margin + GRID_MM, well[3] + edge_margin + GRID_MM))
+    for gx in range(gx1, gx2 + 1):
+        for gy in range(gy1, gy2 + 1):
+            px, py = grid_mm((gx, gy))
+            if well[0] - edge_margin <= px <= well[2] + edge_margin and well[1] - edge_margin <= py <= well[3] + edge_margin:
+                blocked.add((gx, gy))
     for track in board.GetTracks():
         if track.GetLayer() == layer and track.GetNetCode() != net.GetNetCode():
             mark_obstacle(blocked, mm_point(track.GetStart()), mm_point(track.GetEnd()),
@@ -620,10 +703,12 @@ def main():
     route_signals(board)
     ground = board.FindNet('GND')
     for footprint in board.GetFootprints():
-        if footprint.GetReference().startswith('RST') or footprint.GetReference() == 'S10':
-            for pad in footprint.Pads():
-                if pad.GetNetname() == 'GND':
+        for pad in footprint.Pads():
+            if pad.GetNetname() == 'GND':
+                if footprint.GetReference().startswith('RST') or footprint.GetReference() == 'S10':
                     pad.SetThermalSpokeAngleDegrees(45)
+                if footprint.GetReference() == 'MCU1' and pad.GetNumber() == '23':
+                    pad.SetLocalZoneConnection(pcb.ZONE_CONNECTION_FULL)
     for layer in (pcb.F_Cu, pcb.B_Cu):
         add_ground_zone(board, ground, layer)
     board.GetTitleBlock().SetTitle(DRAWING_TITLE)

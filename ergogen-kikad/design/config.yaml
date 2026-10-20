@@ -20,6 +20,8 @@ units:
   right_mount_x: extra_x + 26.5 / 2 + 0.3
   board_width: controller_x + 18 + 0.5 + 8.75
   board_height: row_pitch + cap_height + 1
+  battery_well_length: 58.1
+  battery_well_width: 11.1
   controls_x: (extra_x + 26.5 / 2 + board_width - 8.75) / 2
 
 points:
@@ -194,4 +196,19 @@ pcbs:
         what: battery_space
         where:
           ref: pad_c0_bottom
-          shift: [20.9, controller_y]
+          shift: [21.65, controller_y]
+        params:
+          length: 57.5
+          width: 10.5
+          thickness: 3.5
+          capacity: 220
+          model: 301055
+          bottom_z: -1.4
+      battery_well:
+        what: battery_well
+        where:
+          ref: pad_c0_bottom
+          shift: [21.65, controller_y]
+        params:
+          length: battery_well_length
+          width: battery_well_width

@@ -39,6 +39,7 @@ if ! "$repo_root/scripts/check.sh" "$stage"; then
     done
     exit 1
 fi
+"$repo_root/scripts/check-battery-well.sh" "$stage"
 "$repo_root/scripts/preview.sh" "$stage"
 check_locks
 mkdir -p "$project_dir/generated/outlines" "$project_dir/generated/checks" "$pcb_dir"
@@ -48,4 +49,4 @@ if [ -f "$stage/layout.png" ]; then
 fi
 cp "$stage/outlines/board.dxf" "$project_dir/generated/outlines/"
 cp "$stage/pcbs/macropad.kicad_pcb" "$stage/pcbs/baseplate.kicad_pcb" "$pcb_dir/"
-cp "$stage/checks/macropad.rpt" "$stage/checks/baseplate.rpt" "$project_dir/generated/checks/"
+cp "$stage/checks/macropad.rpt" "$stage/checks/baseplate.rpt" "$stage/checks/battery-well.json" "$project_dir/generated/checks/"
