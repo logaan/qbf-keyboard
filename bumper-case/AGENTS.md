@@ -1,0 +1,12 @@
+# Bumper case work
+
+- Keep all case sources, native FreeCAD solids, STEP/STL exports, previews and reports inside this folder. Keyboard geometry is a dimension and collision reference; do not embed it in the case CAD.
+- Commit source and generated outputs as work progresses. Do not add code comments.
+- Edit `parameters.json` and `build.py`, then run `./bumper-case/build.sh` from the repository root. It validates single solids, closed print meshes, z=0 print placement, fasteners and modeled operating clearances before saving the case.
+- Run `./bumper-case/render.sh` after case geometry changes. It checks the original KiCad solids and model bounds, creates temporary assembly boards, and generates native KiCad images. It must not modify the original PCB files or component assignments.
+- The two recurring assembly previews are `generated/assembled.png` (with keycaps) and `generated/inspection.png` (without keycaps). **Only the ten keycap models may disappear. Keep all ten Choc switches, the display, its socket, controller, battery, connectors, reset/power controls, boards, fasteners and feet in both.** `prepare_views.py` checks the visibility difference and writes `generated/preview-components.json`.
+- Keep the reset casing enclosed, with a close roof and a circular access hole over the recessed button. Keep the power casing enclosed, with a slot clearing the full 2 mm slide stroke and the actuator standing above the roof. Verify native STEP geometry as well as the operating envelopes; the reset model has raised corner posts.
+- Preserve full thumb-key travel and side access while fitting control covers. Keep the case bottom at the baseplate underside, with the main PCB and baseplate touching.
+- Run `python3 bumper-case/render_parts.py` in a Python environment containing NumPy and Pillow to refresh the case-only, underside and print-orientation images. These images come directly from the exported STL geometry.
+- Inspect both assembly previews and case-only views after generating them. Commit the images, CAD exports, reports and scripts together. Update `README.md` if dimensions, print supports, assembly order or regeneration commands change.
+- `reference/placements.json` records PCB placements and source hashes. If upstream electronics change, use KiCad's Python to rerun `capture_reference.py`, review the dimensions, rebuild and verify again. Do not bypass a changed reference hash.

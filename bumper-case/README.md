@@ -36,7 +36,9 @@ The four adhesive rubber feet are **10 × 20 × 2 mm**, with the 20 mm direction
 
 The Choc v1 plate is **1.2 mm thick**, from z=1.0 to z=2.2 mm. The switch apertures are 14.1 mm with 0.15 mm corner radii, giving a small printing allowance around a nominal 14 mm opening. The left part has no plastic higher than z=2.2 mm. The nut tops are at z=3.4 mm, 0.6 mm below the conservative fully depressed cap undersides. The plate datum and **3 mm full travel** follow the [Kailh PG1350 drawing and specification](https://cdn-shop.adafruit.com/product-files/5114/5114_CPG135001D03.pdf).
 
-The right edge alongside t5/b5 drops to the **0.8 mm PCB-contacting ledge**, below the switch plate. The controller cover has a flat top at z=12.4 mm, 1 mm walls and roof, and a rounded **26.3 × 11.8 mm display window**. It is open at the left underneath the roof to clear the native nice!view socket and the fourth-column caps. The controller is covered from above and on the other three sides. The outer side has a **12 × 7.5 mm USB opening**; the power switch and reset button have open access beside the thumb keys. No flying display wires are required.
+The low strip beside t5/b5 remains at the **2.2 mm switch-plate height** before the control hoods rise. The hoods start at x=104.5 mm, leaving 1.3 mm lateral clearance from the thumb-cap edges; the outer skirt continues to the baseplate underside. The controller cover has a flat top at z=12.4 mm, 1 mm walls and roof, and a rounded **26.3 × 11.8 mm display window**. It is open at the left underneath the roof to clear the native nice!view socket and the fourth-column caps. The controller is covered from above and on the other three sides. The outer side has a **12 × 7.5 mm USB opening**; separate low hoods cover the PCB and housings around the power switch and reset button beside the thumb keys. No flying display wires are required.
+
+The reset hood has a **4 mm circular hole** centered over the modeled 3.3 mm button. Its underside is at z=4.3 mm, leaving **0.2 mm clearance above the four raised housing posts**. The 1 mm roof ends at z=5.3 mm, recessing the button by **1 mm**. The power hood underside is at z=4.9 mm, **0.2 mm above its 4.7 mm housing**. Its roof ends at z=5.9 mm, leaving **2.8 mm of actuator exposed**. The **2.6 × 4.6 mm slot** accommodates the 2 mm actuator width and full 2 mm slide stroke with 0.3 mm side/end clearance. The stroke and housing height match the [C&K OS series specification](https://www.ckswitches.com/media/1428/os.pdf); the actuator profile and reset housing posts come from the installed KiCad STEP models. Native actuator geometry is checked at both positions and intermediate points.
 
 The battery, wires, mating plug and side-entry JST-PH header occupy an open corridor between the original rows. The case does not contact the battery. The roof clears the modeled display top by about 0.49 mm. The modeled controller is only **0.20 mm** from the cover wall, and each thumb cap has **0.15 mm** lateral clearance to the cover over its full travel. Those tight dimensions follow the available space in the existing assembly and should be checked carefully on the first print.
 
@@ -44,28 +46,32 @@ The battery, wires, mating plug and side-entry JST-PH header occupy an open corr
 
 ![Print orientations](generated/print_orientation.png)
 
-Print PETG as a starting material. The supplied print STLs already put the left plate face and the right cover face against the bed, as requested. The left nut-seat recesses make short local bridges. **The right part needs removable supports under its lower switch-plate wings, mounting areas and perimeter ledges.** Keep support scars out of the switch openings, nut seats and PCB contact surfaces. A slicer preview and a first-fit print are necessary before a final material comparison.
+Print PETG as a starting material. The supplied print STLs already put the left plate face and the right cover face against the bed, as requested. The left nut-seat recesses make short local bridges. **The right part needs removable supports under its lower switch-plate wings, mounting areas, perimeter ledges and control-hood roofs.** Keep support scars out of the switch openings, nut seats and PCB contact surfaces. A slicer preview and a first-fit print are necessary before a final material comparison.
 
 The specified **2 mm nozzle** cannot conventionally resolve the requested 1 mm walls and 1.2 mm switch plate. Use an appropriately smaller nozzle, or have the print provider propose a changed geometry. The case retains the requested dimensions; no assumption that “2 mm” meant “0.2 mm” has been made. A 0.2 or 0.4 mm nozzle is a practical starting point for preserving these features. Check elephant-foot compensation around the plate openings and mating seam.
 
 1. Remove caps and the socketed display. If the switches are already soldered, this full switch plate generally requires desoldering/removing them to install it; it cannot slide around installed switch flanges.
-2. Fit switches into the appropriate plate part, confirm clip engagement and full travel, and fit the parts and switches to the main PCB. Solder or socket the switches as applicable to the board build. Refit the display through its native socket; no wires are added.
+2. Fit the controller and display into their native sockets before lowering the right case over them. The display window is smaller than the whole module, so the module cannot be inserted through it after the case is installed. Fit switches into the appropriate plate part, confirm clip engagement, then carefully align the case and switch pins with the populated main PCB. Solder or socket the switches as applicable to the board build; no display wires are added.
 3. Stack the baseplate directly below the main PCB. Verify that every protruding solder joint and component lead enters its existing relief hole, so the two board faces meet without rocking.
 4. Insert the six screws from underneath, place the nuts from above with caps removed, and tighten evenly. The outer two nuts clamp both case halves. Check the printed contact rims sit flat on the PCB.
 5. Refit caps, exercise all keys to full travel, plug in USB and test both controls. Attach the four feet after checking the screw heads and solder protrusions remain above the feet's bottom plane.
 
 ## Verification and previews
 
-Both case parts are valid single FreeCAD solids, and both print meshes are closed. Automated checks cover the conservative full cap travel envelopes, actual cap mesh bounds, switch bodies, battery and connector corridor, controller, display and socket, native KiCad STEP control bodies, both PCB solids, screw passages, nut seating area, screw heads and feet. The shared nut supports retain more than 9 mm² contact area per nut. The case pieces have no volume overlap.
+Both case parts are valid single FreeCAD solids, and both print meshes are closed. Automated checks cover the conservative full cap travel envelopes, actual cap mesh bounds, switch bodies, battery and connector corridor, controller, display and socket, native KiCad STEP control bodies and power-actuator travel, both PCB solids, screw passages, nut seating area, screw heads and feet. The shared nut supports retain more than 9 mm² contact area per nut. The case pieces have no volume overlap.
 
 The existing simplified Choc 3D model puts its flange at a height that intersects a drawing-based plate. That rendering approximation is excluded from flange interference testing; the actual drawing's body size and plate datum govern switch mating. Other component approximations are documented in [the existing model notes](../ergogen-kikad/design/models/README.md). The cap model is a rendering mesh, not a guarantee of its internal cavity. Physical clip retention, bottomed-out cap fit, connector boot fit, solder clearance, printing tolerances and durability remain untested.
 
-- [Assembled reference](generated/assembled.png): native KiCad render with the case temporarily placed around the existing assembly.
-- [Inspection view](generated/inspection.png): caps and display hidden.
+- [Assembly with keycaps](generated/assembled.png): native KiCad render with the complete keyboard assembly and case.
+- [Assembly without keycaps](generated/inspection.png): only the ten keycap models are hidden. All ten Choc switches, the display, socket, controller, battery, connectors, controls, boards, fasteners and feet remain present.
 - [Exploded view](generated/exploded.png): the case raised above the board for inspection; illustrative, not an assembly sequence.
 - [Case solids](generated/case_only.png) and [underside](generated/underside.png): direct rasterizations of the exported case meshes, with the right part separated for visibility.
 
 Assembly references are temporary and are not saved into the case CAD. Existing cap render terms remain in [the source model README](../ergogen-kikad/design/models/source/MBK_README.md).
+
+## Recurring assembly previews
+
+From the repository root, run `./bumper-case/render.sh` to refresh both assembly previews. `prepare_views.py` and `render.sh` are committed regeneration scripts. The visibility inventory and checks are written to [generated/preview-components.json](generated/preview-components.json); the two assembly views must differ only by the ten keycap models. Inspect both PNGs after generating them. Future case work is governed by [AGENTS.md](AGENTS.md), also referenced from the repository instructions.
 
 ## Rebuild
 

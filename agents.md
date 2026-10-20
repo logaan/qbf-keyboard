@@ -9,3 +9,4 @@
 9. All user soldering must be through-hole. Use ready-made display modules with documented use in an open-source mechanical keyboard; a README or build guide is sufficient evidence.
 10. Socket the nice!view directly into its native five-pin 2.54 mm footprint; keep the socket body clear of the controller. Do not substitute flying wires.
 11. Keep 3D model assignments in `scripts/attach_models.py`; run `./scripts/render-3d.sh` for native KiCad assembled and internal inspection views. Model approximations are listed in `ergogen-kikad/design/models/README.md`.
+12. For bumper-case changes and recurring assembly previews, follow `bumper-case/AGENTS.md`; retain every component except keycaps in the cap-free preview.

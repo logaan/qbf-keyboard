@@ -1,0 +1,124 @@
+{
+  "assembled": {
+    "visible_keyboard_models": [
+      "BAT1/battery_301055.wrl",
+      "J1/JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal.step",
+      "J1/battery_plug_reference.wrl",
+      "LCD1/display_socket.wrl",
+      "LCD1/nice_view_reference.wrl",
+      "MCU1/nice_nano_reference.wrl",
+      "PWR1/SW_Slide_SPDT_Straight_CK_OS102011MS2Q.step",
+      "RST1/SW_PUSH_6mm_H4.3mm.step",
+      "S1/choc_reference.wrl",
+      "S1/mbk_15u.wrl",
+      "S10/choc_reference.wrl",
+      "S10/mbk_15u.wrl",
+      "S2/choc_reference.wrl",
+      "S2/mbk_15u.wrl",
+      "S3/choc_reference.wrl",
+      "S3/mbk_15u.wrl",
+      "S4/choc_reference.wrl",
+      "S4/mbk_15u.wrl",
+      "S5/choc_reference.wrl",
+      "S5/mbk_15u.wrl",
+      "S6/choc_reference.wrl",
+      "S6/mbk_15u.wrl",
+      "S7/choc_reference.wrl",
+      "S7/mbk_15u.wrl",
+      "S8/choc_reference.wrl",
+      "S8/mbk_15u.wrl",
+      "S9/choc_reference.wrl",
+      "S9/mbk_15u.wrl"
+    ],
+    "hidden_keyboard_models": [],
+    "case_and_hardware": [
+      "left_bumper",
+      "right_bumper",
+      "baseplate",
+      "feet",
+      "fasteners"
+    ]
+  },
+  "inspection": {
+    "visible_keyboard_models": [
+      "BAT1/battery_301055.wrl",
+      "J1/JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal.step",
+      "J1/battery_plug_reference.wrl",
+      "LCD1/display_socket.wrl",
+      "LCD1/nice_view_reference.wrl",
+      "MCU1/nice_nano_reference.wrl",
+      "PWR1/SW_Slide_SPDT_Straight_CK_OS102011MS2Q.step",
+      "RST1/SW_PUSH_6mm_H4.3mm.step",
+      "S1/choc_reference.wrl",
+      "S10/choc_reference.wrl",
+      "S2/choc_reference.wrl",
+      "S3/choc_reference.wrl",
+      "S4/choc_reference.wrl",
+      "S5/choc_reference.wrl",
+      "S6/choc_reference.wrl",
+      "S7/choc_reference.wrl",
+      "S8/choc_reference.wrl",
+      "S9/choc_reference.wrl"
+    ],
+    "hidden_keyboard_models": [
+      "S1/mbk_15u.wrl",
+      "S10/mbk_15u.wrl",
+      "S2/mbk_15u.wrl",
+      "S3/mbk_15u.wrl",
+      "S4/mbk_15u.wrl",
+      "S5/mbk_15u.wrl",
+      "S6/mbk_15u.wrl",
+      "S7/mbk_15u.wrl",
+      "S8/mbk_15u.wrl",
+      "S9/mbk_15u.wrl"
+    ],
+    "case_and_hardware": [
+      "left_bumper",
+      "right_bumper",
+      "baseplate",
+      "feet",
+      "fasteners"
+    ]
+  },
+  "exploded": {
+    "visible_keyboard_models": [
+      "BAT1/battery_301055.wrl",
+      "J1/JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal.step",
+      "J1/battery_plug_reference.wrl",
+      "LCD1/display_socket.wrl",
+      "LCD1/nice_view_reference.wrl",
+      "MCU1/nice_nano_reference.wrl",
+      "PWR1/SW_Slide_SPDT_Straight_CK_OS102011MS2Q.step",
+      "RST1/SW_PUSH_6mm_H4.3mm.step",
+      "S1/choc_reference.wrl",
+      "S10/choc_reference.wrl",
+      "S2/choc_reference.wrl",
+      "S3/choc_reference.wrl",
+      "S4/choc_reference.wrl",
+      "S5/choc_reference.wrl",
+      "S6/choc_reference.wrl",
+      "S7/choc_reference.wrl",
+      "S8/choc_reference.wrl",
+      "S9/choc_reference.wrl"
+    ],
+    "hidden_keyboard_models": [
+      "S1/mbk_15u.wrl",
+      "S10/mbk_15u.wrl",
+      "S2/mbk_15u.wrl",
+      "S3/mbk_15u.wrl",
+      "S4/mbk_15u.wrl",
+      "S5/mbk_15u.wrl",
+      "S6/mbk_15u.wrl",
+      "S7/mbk_15u.wrl",
+      "S8/mbk_15u.wrl",
+      "S9/mbk_15u.wrl"
+    ],
+    "case_and_hardware": [
+      "left_bumper",
+      "right_bumper",
+      "baseplate",
+      "feet"
+    ]
+  },
+  "verified": true
+}
