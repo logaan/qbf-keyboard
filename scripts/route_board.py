@@ -281,7 +281,7 @@ def check_layout(board, output):
     if set(mounts) != expected_mounts:
         raise RuntimeError('Mounts must sit between columns 1/2 and 3/4 and beside the rightmost keys')
     cx, cy = mm_point(controllers[0].GetPosition())
-    if abs(cy - sum(ys) / 2) > 0.001 or abs(cx - 83.9) > 0.001:
+    if abs(cy - sum(ys) / 2) > 0.001 or abs(cx - 87.0) > 0.001:
         raise RuntimeError('Controller must be centered in the next column to the right')
     extra_positions = sorted(mm_point(footprint.GetPosition()) for footprint in extra)
     if any(abs(x - xs[-1] - 24.05) > 0.001 for x, y in extra_positions):
@@ -319,9 +319,9 @@ def check_layout(board, output):
     display_bounds = (dx - 18, dy - 7, dx + 18, dy + 7)
     for cap in caps:
         if min(cap[2], display_bounds[2]) > max(cap[0], display_bounds[0]) and min(cap[3], display_bounds[3]) > max(cap[1], display_bounds[1]):
-            raise RuntimeError('Display adapter overlaps a keycap')
+            raise RuntimeError('Display module overlaps a keycap')
     if display_bounds[2] > right - 0.499 or display_bounds[0] < xs[-1] + 8.749:
-        raise RuntimeError('Display adapter must clear the fourth column and board edge')
+        raise RuntimeError('Display module must clear the fourth column and board edge')
     if any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH and
            pad.GetAttribute() != pcb.PAD_ATTRIB_PTH
            for footprint in board.GetFootprints() for pad in footprint.Pads()):
@@ -332,6 +332,7 @@ def check_layout(board, output):
         'PWR1': {'1': 'BAT_POS', '2': 'VBAT', '3': ''},
         'RST1': {'1': 'RST', '2': 'GND'},
         'MCU1': {'24': 'VBAT', '22': 'RST'},
+        'LCD1': {'1': 'LCD_SI', '2': 'LCD_CLK', '3': '3V3', '4': 'GND', '5': 'LCD_CS'},
     }
     for reference, wiring in expected_wiring.items():
         if reference not in parts:
@@ -340,6 +341,19 @@ def check_layout(board, output):
             terminals = [pad for pad in parts[reference].Pads() if pad.GetNumber() == number]
             if not terminals or any(pad.GetNetname() != net for pad in terminals):
                 raise RuntimeError(f'Incorrect power or reset wiring: {reference}.{number}')
+    socket_pads = sorted(parts['LCD1'].Pads(), key=lambda pad: int(pad.GetNumber()))
+    expected_socket = [(round(dx - 16.7, 4), round(dy - 5.08 + index * 2.54, 4))
+                       for index in range(5)]
+    if [mm_point(pad.GetPosition()) for pad in socket_pads] != expected_socket:
+        raise RuntimeError('Display socket must match the module contacts at 2.54 mm pitch')
+    socket_bounds = (dx - 17.97, dy - 6.35, dx - 15.43, dy + 6.35)
+    if cx - 18 - socket_bounds[2] < 0.5 - 0.001:
+        raise RuntimeError('Display socket body must clear the controller by at least 0.5 mm')
+    if cx + 18 > right - 0.499:
+        raise RuntimeError('Controller must clear the right board edge')
+    rx, ry = mm_point(parts['RST1'].GetPosition())
+    if abs(ry - (top + cy - 9.15) / 2) > 0.001:
+        raise RuntimeError('Reset must be halfway between the controller top and the PCB top')
     controls = []
     battery = next(footprint for footprint in board.GetFootprints()
                    if footprint.GetReference().startswith('BAT'))
@@ -371,6 +385,8 @@ def check_layout(board, output):
                          'x': round(bounds[0] - left, 3), 'y': round(bounds[1] - top, 3),
                          'width': round(bounds[2] - bounds[0], 3),
                          'height': round(bounds[3] - bounds[1], 3)})
+    if battery_bounds[2] > socket_bounds[0] - 0.5:
+        raise RuntimeError('Battery must clear the display socket body')
     if abs(by - cy) > 0.001 or battery_bounds[0] < left or battery_bounds[2] > cx - 18:
         raise RuntimeError('Battery must sit in the original rows, clear of the controller')
     if battery_bounds[1] < ys[0] + 7 or battery_bounds[3] > ys[1] - 7:
@@ -383,7 +399,9 @@ def check_layout(board, output):
         'height': round(bottom - top, 3),
         'display': {'x': round(dx - left, 3), 'y': round(bottom - dy, 3),
                     'width': 36, 'height': 14, 'module_underside_z': 8.0,
-                    'module_thickness': 2.9},
+                    'module_thickness': 2.9, 'connection': 'direct_socket',
+                    'socket_pitch': 2.54, 'socket_body_width': 2.54,
+                    'socket_body_length': 12.7},
         'battery': {'x': round(bx - left, 3), 'y': round(bottom - by, 3),
                     'length': round(battery_length, 3), 'width': round(battery_width, 3),
                     'thickness': 3.5, 'adhesive': 0.2, 'capacity_mah': 220},

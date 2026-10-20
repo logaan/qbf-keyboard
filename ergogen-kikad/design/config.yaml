@@ -16,10 +16,11 @@ units:
   display_width: 36
   display_height: 14
   display_x: 3 * column_pitch + 8.25 + 0.5 + display_width / 2
-  controller_x: display_x
+  controller_x: display_x + 3.1
   right_mount_x: 3 * column_pitch + 8.25 + (column_pitch - 16.5) / 2
-  board_width: display_x + display_width / 2 + 0.5 + 8.75
+  board_width: controller_x + 18 + 0.5 + 8.75
   board_height: row_pitch + cap_height + 1
+  reset_y: (controller_y + controller_height / 2 + controller_y + board_height / 2) / 2
 
 points:
   zones:
@@ -186,7 +187,7 @@ pcbs:
         what: reset_tact
         where:
           ref: pad_c0_bottom
-          shift: [98.1, 35.8]
+          shift: [98.1, reset_y]
         adjust:
           rotate: 90
       battery_space:

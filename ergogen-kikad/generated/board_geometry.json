@@ -1,5 +1,5 @@
 {
-  "width": 111.15,
+  "width": 114.25,
   "height": 55.0,
   "display": {
     "x": 92.65,
@@ -7,7 +7,11 @@
     "width": 36,
     "height": 14,
     "module_underside_z": 8.0,
-    "module_thickness": 2.9
+    "module_thickness": 2.9,
+    "connection": "direct_socket",
+    "socket_pitch": 2.54,
+    "socket_body_width": 2.54,
+    "socket_body_length": 12.7
   },
   "battery": {
     "x": 45.0,
@@ -36,7 +40,7 @@
     {
       "reference": "RST1",
       "x": 103.85,
-      "y": 2.45,
+      "y": 6.175,
       "width": 6.0,
       "height": 6.0
     }

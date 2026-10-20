@@ -25,7 +25,7 @@ The PCB and base plate are each nominally 1.6 mm thick. Each 4 mm rail has three
 
 The protected orientation places the component face about 13.8 mm above the outside bottom of the case when the PCB and base plate are both fitted. The floor's inside face is at 2.5 mm, leaving **11.3 mm maximum component/cap projection below the PCB face** before contact. Measure the built switch, cap, and socketed nice!nano and nice!view stack before relying on this clearance. If it is taller, increase `SLOT_BOTTOM` and `CASE_TOP` together in the CAD source and regenerate the case. The exposed orientation keeps the case walls outside the board and cap outline.
 
-The outside dimensions of the case are 232.3 × 65 × 22.2 mm. The two board outlines are 111.15 × 55 mm with a 4 mm middle gap. Tabs on each rail reach the mounting holes between switch columns and between columns four/five; the hole rows are 27.5 mm apart.
+The outside dimensions of the case are 238.5 × 65 × 22.2 mm. The two board outlines are 114.25 × 55 mm with a 4 mm middle gap. Tabs on each rail reach the mounting holes between switch columns and between columns four/five; the hole rows are 27.5 mm apart.
 
 The parts are geometric prototypes. No physical print, cap-travel, USB-plug, fastener, or drop test has been done.
 
