@@ -1,0 +1,18 @@
+import FreeCAD as App
+import FreeCADGui as Gui
+
+from pathlib import Path
+import runpy
+
+case_root = Path(__file__).resolve().parent
+runpy.run_path(str(case_root / 'build.py'), run_name='__main__')
+doc = App.openDocument(str(case_root / 'QBF_Bumper_Case.FCStd'))
+for name, color in [('LeftBumper', (0.16, 0.38, 0.49)), ('RightBumper', (0.92, 0.49, 0.22))]:
+    obj = doc.getObject(name)
+    obj.ViewObject.ShapeColor = color
+    obj.ViewObject.LineColor = (0.12, 0.15, 0.17)
+    obj.ViewObject.DisplayMode = 'Flat Lines'
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()
+doc.recompute()
+doc.save()

@@ -77,6 +77,7 @@ def make_parts():
                       P['rib_width'], P['rib_length'], P['rib_height'], 0.5)
         supports.append(boss.fuse(rib))
     structural = union([perimeter, plate] + supports)
+    structural = structural.cut(rounded(0.5, 21.65, 0, 73.9, 11.7, 4.5, 1.0))
     structural = structural.cut(box(74.4, 18.15, -0.1, 40.05, 18.7, 3))
     switches = [f for f in REF['footprints'] if f['reference'].startswith('S')]
     for switch in switches:
@@ -143,7 +144,7 @@ def check(parts, mounts, switches):
     for name, shape in parts.items():
         if not shape.isValid() or len(shape.Solids) != 1:
             raise RuntimeError(f'{name}: invalid or disconnected solid ({len(shape.Solids)})')
-        bb = shape.BoundBox
+        bb = shape.optimalBoundingBox(False, False)
         results['parts'][name] = {'solid_count': len(shape.Solids), 'valid': shape.isValid(),
                                  'volume_mm3': round(shape.Volume, 3),
                                  'bounds_mm': [round(v, 5) for v in (bb.XMin, bb.YMin, bb.ZMin, bb.XMax, bb.YMax, bb.ZMax)]}
@@ -184,16 +185,17 @@ def check(parts, mounts, switches):
             raise RuntimeError('Insufficient nut support area')
         results['clearance_checks'].append({'name': m['reference'] + ' nut seating area',
                                            'area_mm2': round(area, 4)})
-    for x in (2, REF['width'] - 22):
-        for y in (2, REF['height'] - 12):
-            collision('Rubber foot', box(x, y, -5.2, 20, 10, 2))
+    for x in (2, REF['width'] - 12):
+        for y in (2, REF['height'] - 22):
+            collision('Rubber foot', box(x, y, -5.2, 10, 20, 2))
     results['passed'] = True
     return results
 
 
 def main():
     OUT.mkdir(exist_ok=True)
-    Gui.setupWithoutGUI()
+    if not App.GuiUp:
+        Gui.setupWithoutGUI()
     parts, mounts, switches = make_parts()
     report = check(parts, mounts, switches)
     doc = App.newDocument('QBF_Bumper_Case')
@@ -222,14 +224,17 @@ def main():
         mesh.write(str(OUT / (name + '_assembly.stl')))
         print_shape = shape.copy()
         print_shape.rotate(V(0, 0, 0), V(1, 0, 0), 180)
-        bb = print_shape.BoundBox
+        bb = print_shape.optimalBoundingBox(False, False)
         print_shape.translate(V(-bb.XMin, -bb.YMin, -bb.ZMin))
         print_mesh = MeshPart.meshFromShape(Shape=print_shape, LinearDeflection=0.035, AngularDeflection=0.12, Relative=False)
         if not print_mesh.isSolid():
             raise RuntimeError(name + ': print mesh is not closed')
+        if abs(print_mesh.BoundBox.ZMin) > 0.00001:
+            raise RuntimeError(name + ': print mesh does not touch z=0')
         print_mesh.write(str(OUT / (name + '_print.stl')))
+        pb = print_mesh.BoundBox
         export_info[name] = {'facets': mesh.CountFacets, 'closed_mesh': mesh.isSolid(),
-                             'print_bounds_mm': [print_shape.BoundBox.XLength, print_shape.BoundBox.YLength, print_shape.BoundBox.ZLength]}
+                             'print_bounds_mm': [pb.XLength, pb.YLength, pb.ZLength]}
         write_wrl(shape, OUT / (name + '.wrl'), colors[name])
     report['exports'] = export_info
     doc.recompute()
