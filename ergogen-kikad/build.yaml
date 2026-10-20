@@ -1,3 +1,3 @@
 include:
-  - board: xiao_ble//zmk
-    shield: qbf_macropad
+  - board: nice_nano@2.0.0//zmk
+    shield: qbf_macropad nice_view

@@ -1,5 +1,0 @@
-config QBF_JDI_DISPLAY
-    bool "QBF LPM009M360A memory LCD"
-    depends on DISPLAY
-    select SPI
-    select GPIO

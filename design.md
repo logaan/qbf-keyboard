@@ -31,7 +31,7 @@
     1.  The lowest commonly available switch.
     2.  Low profile boards are comfortable.
     3.  Small boards are portable.
-3.  Seed controller
-    1.  It's small and cheap.
-    2.  It leaves more space for the battery.
-    3.  There's an onboard reset button.
+3.  nice!nano v2 controller
+    1.  Through-hole sockets expose enough pins for ten direct keys and a display.
+4.  Ready-made nice!view display
+    1.  Low power, through-hole connections, and documented use in HillSideView.
