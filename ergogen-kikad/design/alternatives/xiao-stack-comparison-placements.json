@@ -1,0 +1,249 @@
+{
+  "common": {
+    "board_mm": [
+      98,
+      96
+    ],
+    "main_keys": [
+      {
+        "label": "b1",
+        "center": [
+          10.9,
+          34.25
+        ],
+        "cap_mm": [
+          16.5,
+          26.5
+        ]
+      },
+      {
+        "label": "t1",
+        "center": [
+          10.9,
+          61.75
+        ],
+        "cap_mm": [
+          16.5,
+          26.5
+        ]
+      },
+      {
+        "label": "b2",
+        "center": [
+          29.95,
+          34.25
+        ],
+        "cap_mm": [
+          16.5,
+          26.5
+        ]
+      },
+      {
+        "label": "t2",
+        "center": [
+          29.95,
+          61.75
+        ],
+        "cap_mm": [
+          16.5,
+          26.5
+        ]
+      },
+      {
+        "label": "b3",
+        "center": [
+          49,
+          34.25
+        ],
+        "cap_mm": [
+          16.5,
+          26.5
+        ]
+      },
+      {
+        "label": "t3",
+        "center": [
+          49,
+          61.75
+        ],
+        "cap_mm": [
+          16.5,
+          26.5
+        ]
+      },
+      {
+        "label": "b4",
+        "center": [
+          68.05,
+          34.25
+        ],
+        "cap_mm": [
+          16.5,
+          26.5
+        ]
+      },
+      {
+        "label": "t4",
+        "center": [
+          68.05,
+          61.75
+        ],
+        "cap_mm": [
+          16.5,
+          26.5
+        ]
+      }
+    ],
+    "fifth_keys": [
+      {
+        "label": "b5",
+        "center": [
+          87.1,
+          20.75
+        ],
+        "cap_mm": [
+          17.5,
+          16.5
+        ]
+      },
+      {
+        "label": "t5",
+        "center": [
+          87.1,
+          75.25
+        ],
+        "cap_mm": [
+          17.5,
+          16.5
+        ]
+      }
+    ],
+    "key_symmetry_axis_y_mm": 48,
+    "controller": {
+      "module": "XIAO nRF52840 Plus",
+      "center": [
+        87.5,
+        48
+      ],
+      "body_mm": [
+        21,
+        17.8
+      ],
+      "plan_bounds": [
+        77,
+        39.1,
+        98,
+        56.9
+      ],
+      "mounting_concept": "Recessed into main PCB cutout, board coplanar; edge solder attachment concept only; recess, support and solder geometry unvalidated.",
+      "usb_right_projection_mm": 1.5,
+      "onboard_reset_center": [
+        96.073,
+        53.721
+      ],
+      "onboard_reset_left_body_x": 94.773
+    },
+    "battery": {
+      "model": "protected 301055",
+      "center": [
+        32,
+        48
+      ],
+      "envelope_mm": [
+        57.5,
+        10.5,
+        3.5
+      ],
+      "placement": "Below cap overhang in main-PCB-only well; no wires routed in this illustration."
+    },
+    "provisional_relocation": {
+      "power_center": [
+        50,
+        85
+      ],
+      "jst_ph_center": [
+        20,
+        85
+      ],
+      "jst_rotation_degrees": -90,
+      "jst_body_bounds": [
+        13.75,
+        82.05,
+        21.35,
+        87.95
+      ],
+      "jst_mating_plug_bounds": [
+        7.75,
+        82.1,
+        13.75,
+        87.9
+      ]
+    },
+    "status": "Diagram only. Main PCB cutout, castellated solder mounting, vertical stack, reset operating access, power/JST positioning and electrical routing require validation."
+  },
+  "variants": {
+    "portrait": {
+      "display_center": [
+        87.5,
+        48
+      ],
+      "display_rotation_degrees": 90,
+      "display_body_bounds": [
+        80.5,
+        30,
+        94.5,
+        66
+      ],
+      "native_socket_bounds": [
+        81.15,
+        30.03,
+        93.85,
+        32.57
+      ],
+      "display_to_fifth_caps_mm": 1,
+      "display_to_fourth_column_caps_mm": 4.2,
+      "socket_to_xiao_body_mm": 6.53,
+      "reset_status": "Center exposed in plan; display to left edge of reset body is only 0.273 mm and operating access is unvalidated.",
+      "assessment": "Plan-view candidate; vertical fit not validated."
+    },
+    "horizontal": {
+      "display_center": [
+        80,
+        48
+      ],
+      "display_rotation_degrees": 0,
+      "display_body_bounds": [
+        62,
+        41,
+        98,
+        55
+      ],
+      "native_socket_bounds": [
+        62.03,
+        41.65,
+        64.57,
+        54.35
+      ],
+      "fourth_column_cap_overlap_rectangles": [
+        [
+          62,
+          41,
+          76.3,
+          47.5
+        ],
+        [
+          62,
+          48.5,
+          76.3,
+          55
+        ]
+      ],
+      "cap_overlap_width_mm": 14.3,
+      "shoulder_gap_mm": 12.5,
+      "module_height_mm": 14,
+      "native_socket_length_mm": 12.7,
+      "reset_status": "Reset center and body beneath display; access unresolved.",
+      "assessment": "Overlaps fourth-column cap projection. A low stack interferes with key travel; a display above the caps would obstruct paired-key pressing. Actual z stack unvalidated."
+    }
+  }
+}
