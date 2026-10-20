@@ -1,6 +1,5 @@
 {
   "wall": 1.0,
-  "pcb_edge_clearance": 0.2,
   "pcb_thickness": 1.6,
   "baseplate_thickness": 1.6,
   "board_gap": 0.0,
@@ -58,7 +57,7 @@
   ],
   "printer_nozzle_as_specified": 2.0,
   "outer_boss_right_limit": 105.525,
-  "right_foot_x": 89.75,
+  "right_foot_x": 87.75,
   "upper_battery_envelope": [
     1.65,
     22.25,
@@ -75,7 +74,13 @@
     2.6,
     1.9
   ],
-  "upper_battery_roof_clearance": 0.2,
+  "upper_battery_roof_clearance": 0.3,
   "upper_battery_roof_thickness": 1.0,
-  "upper_guard_top": 10.9691
+  "upper_guard_top": 10.9691,
+  "layout_edge_offset": 0.2,
+  "pcb_border": 1.5,
+  "lower_roof_fillet": 0.5,
+  "controller_roof_fillet": 2.0,
+  "control_roof_fillet": 0.4,
+  "fastener_wall_clearance": 1.0
 }

@@ -4,7 +4,7 @@
     {
       "name": "BAT1: battery_301055",
       "overlap_mm3": 0.0,
-      "distance_mm": 0.2
+      "distance_mm": 0.3
     },
     {
       "name": "J1: battery_plug_reference",
@@ -49,7 +49,7 @@
     {
       "name": "S4: mbk_15u full travel",
       "overlap_mm3": 0.0,
-      "distance_mm": 0.51369
+      "distance_mm": 0.5
     },
     {
       "name": "S5: mbk_15u full travel",
@@ -69,7 +69,7 @@
     {
       "name": "S8: mbk_15u full travel",
       "overlap_mm3": 0.0,
-      "distance_mm": 0.51369
+      "distance_mm": 0.5
     },
     {
       "name": "S9: mbk_15u full travel",
@@ -173,12 +173,12 @@
     {
       "name": "SW_PUSH_6mm_H4.3mm to fasteners",
       "overlap_mm3": 0.0,
-      "housing_clearance_mm": 1.225
+      "housing_clearance_mm": 3.225
     },
     {
       "name": "SW_Slide_SPDT_Straight_CK_OS102011MS2Q007 to fasteners",
       "overlap_mm3": 0.0,
-      "housing_clearance_mm": 2.075
+      "housing_clearance_mm": 4.075
     }
   ],
   "native_step_component_z_shift_mm": -1.595,

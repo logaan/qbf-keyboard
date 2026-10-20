@@ -59,7 +59,7 @@ The longer candidate is the protected **Liter Energy 301055, listed at 220 mAh**
 
 BAT1 is centered at (31.9, 29) mm measured from the current PCB lower-left corner, corresponding to (30.4, 27.5) mm in the fixed case assembly frame. The original pack is shifted 0.75 mm right and recessed through a **58.1 × 11.1 mm opening in the main PCB only**. The baseplate remains continuous below the entire opening. A 0.2 mm insulating adhesive layer on its top puts the battery bottom at z=−1.4 mm and top at z=2.1 mm. The opening leaves 0.3 mm side clearance and a 2.85 mm left PCB web. Smooth and insulate the cut edges; do not allow the pouch or leads to rub against FR4.
 
-The side-entry JST-PH near the controller stays in place, with 1 mm between the pack and mated-plug envelope. The new upper case guard has a continuous 1 mm roof at z=2.3 to 3.3 mm: 0.2 mm over the battery and 0.7 mm below the conservative fully depressed caps. Pack dimensions and lead geometry are recorded in `design/battery.json`; see [the three-part case guide](../bumper-case/README.md) for the screw stack, printing and assembly.
+The side-entry JST-PH near the controller stays in place, with 1 mm between the pack and mated-plug envelope. The new upper case guard has a continuous 1 mm roof at z=2.4 to 3.4 mm: 0.3 mm over the battery and 0.6 mm below the conservative fully depressed caps. Pack dimensions and lead geometry are recorded in `design/battery.json`; see [the three-part case guide](../bumper-case/README.md) for the screw stack, printing and assembly.
 
 | Position | Part | Connection |
 | --- | --- | --- |

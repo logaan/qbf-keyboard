@@ -3,11 +3,11 @@
     "left_bumper": {
       "solid_count": 1,
       "valid": true,
-      "volume_mm3": 3442.53,
+      "volume_mm3": 2672.571,
       "bounds_mm": [
         -1.2,
         -1.2,
-        -3.2,
+        0.0,
         75.3,
         56.2,
         2.2
@@ -16,11 +16,11 @@
     "right_bumper": {
       "solid_count": 1,
       "valid": true,
-      "volume_mm3": 3820.869,
+      "volume_mm3": 3435.712,
       "bounds_mm": [
         74.65,
         -1.2,
-        -3.2,
+        0.0,
         115.45,
         56.2,
         12.4
@@ -127,7 +127,7 @@
     },
     {
       "name": "S4 full cap travel clearance",
-      "distance_mm": 0.51369
+      "distance_mm": 0.5
     },
     {
       "name": "S4 switch body",
@@ -191,7 +191,7 @@
     },
     {
       "name": "S8 full cap travel clearance",
-      "distance_mm": 0.51369
+      "distance_mm": 0.5
     },
     {
       "name": "S8 switch body",
@@ -318,6 +318,10 @@
       "overlap_mm3": 0.0
     },
     {
+      "name": "H5 nut to orange upright walls",
+      "distance_mm": 2.0
+    },
+    {
       "name": "H5 screw passage",
       "overlap_mm3": 0.0
     },
@@ -328,6 +332,10 @@
     {
       "name": "H6 nut",
       "overlap_mm3": 0.0
+    },
+    {
+      "name": "H6 nut to orange upright walls",
+      "distance_mm": 2.0
     },
     {
       "name": "H6 screw passage",
@@ -356,7 +364,6 @@
   ],
   "parameters": {
     "wall": 1.0,
-    "pcb_edge_clearance": 0.2,
     "pcb_thickness": 1.6,
     "baseplate_thickness": 1.6,
     "board_gap": 0.0,
@@ -414,7 +421,7 @@
     ],
     "printer_nozzle_as_specified": 2.0,
     "outer_boss_right_limit": 105.525,
-    "right_foot_x": 89.75,
+    "right_foot_x": 87.75,
     "upper_battery_envelope": [
       1.65,
       22.25,
@@ -431,14 +438,21 @@
       2.6,
       1.9
     ],
-    "upper_battery_roof_clearance": 0.2,
+    "upper_battery_roof_clearance": 0.3,
     "upper_battery_roof_thickness": 1.0,
-    "upper_guard_top": 10.9691
+    "upper_guard_top": 10.9691,
+    "layout_edge_offset": 0.2,
+    "pcb_border": 1.5,
+    "lower_roof_fillet": 0.5,
+    "controller_roof_fillet": 2.0,
+    "control_roof_fillet": 0.4,
+    "fastener_wall_clearance": 1.0
   },
   "reference_source_hashes": {
-    "ergogen-kikad/design/battery.json": "7b3e3750b4955e85fb36b012e269195580477f8d82b72f75a898bf2d56e6380a",
-    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "74b57626d109af4a7b0da667b6c5be766e6b3eba99589a200e722b3dea77f94d",
-    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "b976aa0519c37ddfc46826d0a4e244ee2eb697c11e0ac47715895aec825ac9aa",
+    "ergogen-kikad/generated/board_geometry.json": "7e00cd8d6f98f90f710fc0ecb15723d6d3756a744f381097eec448f0d2bc0c17",
+    "ergogen-kikad/design/battery.json": "55e9ee4a5dfef28619d767e306a74c2e43a617b6f310344e80626b520064b27f",
+    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "d0c5009dc20aed621fe95fb7e5916de5985144677ec750a79cbb0e81acc4a6f1",
+    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "341e2588d4e89ef029b293897e13f4366f3461a65110634559dc6898cf6c2b1a",
     "ergogen-kikad/design/models/battery_301055.wrl": "678d0e44e43f2b28cf2688cff14d0f0a151bad529723f33a35db495a39ff79ed",
     "ergogen-kikad/design/models/battery_plug_reference.wrl": "fde40d6e5606130f3fb695c3045188165670abe33d71f6582c9f4b88780d9391",
     "ergogen-kikad/design/models/nice_view_reference.wrl": "5c7cb187289362a48505090a67c6bd39ec3f1c7a0e438c5910417df058400d7f",
@@ -460,8 +474,14 @@
       -5.2,
       -3.2
     ],
-    "case_bottom": -3.2
+    "case_bottom": 0
   },
+  "pcb_bounds_mm": [
+    -1.5,
+    -1.5,
+    115.75,
+    56.5
+  ],
   "limitations": [
     "Switch mating uses the nominal 13.8 mm body and 15 mm shoulder at z2.2..3.0 from the Kailh drawing; simplified model details still require a physical fit check.",
     "Physical switch clip retention, cap internal cavities, solder protrusion, print tolerances, and fastener tightening require a prototype.",
@@ -474,12 +494,20 @@
     "wall_mm": 1.0,
     "upright_rail_width_mm": 0.0,
     "internal_upright_walls": false,
+    "upright_exclusion_layout_bounds_mm": [
+      0.0,
+      0.0,
+      114.25,
+      55.0
+    ],
     "perimeter_drop_length_mm": 12.0,
     "perimeter_drop_start_x_mm": 63.3,
     "perimeter_drop_end_x_mm": 75.3,
     "perimeter_drop_end_z_mm": 3.4000000000000004,
     "perimeter_drop_shape": "Cubic Bezier with horizontal tangents at both ends",
     "battery_roof_edge_fillet_mm": 0.2,
+    "battery_roof_print_plane_offset_mm": 0.19999999999999973,
+    "battery_roof_bridge_span_mm": 11.7,
     "battery_envelope_mm": [
       1.65,
       22.25,
@@ -488,10 +516,10 @@
       10.5,
       3.5
     ],
-    "battery_roof_underside_mm": 2.3000000000000003,
-    "battery_roof_top_mm": 3.3000000000000003,
+    "battery_roof_underside_mm": 2.4,
+    "battery_roof_top_mm": 3.4,
     "battery_roof_thickness_mm": 1.0,
-    "battery_clearance_mm": 0.2,
+    "battery_clearance_mm": 0.3,
     "cap_sweep_clearance_mm": 0.15,
     "mount_flange_thickness_mm": 0.4,
     "switch_shoulder_aperture_mm": 15.3,
@@ -562,25 +590,25 @@
   "passed": true,
   "exports": {
     "left_bumper": {
-      "facets": 9704,
+      "facets": 12914,
       "closed_mesh": true,
       "print_bounds_mm": [
         76.5,
-        57.40000152587888,
-        5.400000095367432
+        57.400001525878906,
+        2.200000047683716
       ]
     },
     "right_bumper": {
-      "facets": 34226,
+      "facets": 36306,
       "closed_mesh": true,
       "print_bounds_mm": [
-        40.79999923706055,
-        57.400001425878905,
-        15.600000381469728
+        40.79999913706055,
+        57.400001525878906,
+        12.399999618530273
       ]
     },
     "upper_guard": {
-      "facets": 13312,
+      "facets": 13088,
       "closed_mesh": true,
       "print_bounds_mm": [
         76.5,

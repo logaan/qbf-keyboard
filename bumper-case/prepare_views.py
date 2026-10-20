@@ -6,9 +6,12 @@ import pcbnew as pcb
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parent
+REF = json.loads((ROOT / 'reference/placements.json').read_text())
 
 
-def add_model(board, path, reference, position=(152.875, 176), offset=(0, 0, 0), rotation=(0, 0, 0)):
+def add_model(board, path, reference, position=None, offset=(0, 0, 0), rotation=(0, 0, 0)):
+    if position is None:
+        position = REF['origin_kicad']
     fp = pcb.FOOTPRINT(board)
     fp.SetReference(reference)
     fp.SetPosition(pcb.VECTOR2I(round(position[0] * 1e6), round(position[1] * 1e6)))

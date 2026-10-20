@@ -23,5 +23,6 @@
     27.5,
     1.7
   ],
-  "connector": "Factory-fitted JST-PH 2-pin, polarity matching board pad 1 BAT_POS and pad 2 GND; confirm ordered lead variant"
+  "connector": "Factory-fitted JST-PH 2-pin, polarity matching board pad 1 BAT_POS and pad 2 GND; confirm ordered lead variant",
+  "coordinate_system": "Fixed switch-layout datum from board_geometry.assembly_origin_kicad, not the enlarged PCB lower-left corner"
 }

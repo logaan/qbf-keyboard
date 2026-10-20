@@ -33,6 +33,16 @@ def union(shapes):
     return shapes[0].fuse(shapes[1:]).removeSplitter() if len(shapes) > 1 else shapes[0]
 
 
+def fillet_ceiling(shape, height, radius, open_x=None):
+    edges = [edge for edge in shape.Edges
+             if abs(edge.BoundBox.ZMin - height) < 0.00001
+             and abs(edge.BoundBox.ZMax - height) < 0.00001
+             and (open_x is None or edge.BoundBox.XMax > open_x + 0.2)]
+    if not edges:
+        raise RuntimeError('Missing internal ceiling edges for support fillet')
+    return shape.makeFillet(radius, edges)
+
+
 def polygon_prism(points, height):
     wire = Part.makePolygon([V(*p) for p in points] + [V(*points[0])])
     return Part.Face(wire).extrude(V(0, 0, height))
@@ -53,7 +63,7 @@ def mount_stack(mount):
 
 def control_hood(y0, y1, case_top, aperture):
     w, h = REF['width'], REF['height']
-    extra = P['wall'] + P['pcb_edge_clearance']
+    extra = P['wall'] + P['layout_edge_offset']
     left = P['control_hood_left']
     underside = case_top + P['control_housing_clearance']
     top = underside + P['wall']
@@ -61,6 +71,7 @@ def control_hood(y0, y1, case_top, aperture):
     hood = hood.common(box(left, y0, 0, w + extra - left, y1 - y0, top))
     hood = hood.cut(box(left + P['wall'], y0 + P['wall'], -0.1,
                         w + extra - left - 2 * P['wall'], y1 - y0 - 2 * P['wall'], underside + 0.1))
+    hood = fillet_ceiling(hood, underside, P['control_roof_fillet'])
     hood = hood.cut(aperture)
     edges = [e for e in hood.Edges if abs(e.BoundBox.ZMin - top) < 0.001
              and abs(e.BoundBox.ZMax - top) < 0.001]
@@ -69,25 +80,22 @@ def control_hood(y0, y1, case_top, aperture):
 
 def make_parts():
     w, h = REF['width'], REF['height']
-    extra = P['wall'] + P['pcb_edge_clearance']
+    extra = P['wall'] + P['layout_edge_offset']
     outer = (-extra, -extra, w + 2 * extra, h + 2 * extra)
-    wall_bottom = -P['pcb_thickness'] - P['baseplate_thickness'] - P['board_gap']
-    skirt = rounded(*outer[:2], wall_bottom, *outer[2:], -wall_bottom, 1.5 + extra)
-    clearance = P['pcb_edge_clearance']
-    skirt = skirt.cut(rounded(-clearance, -clearance, wall_bottom - 0.1,
-                             w + 2 * clearance, h + 2 * clearance, -wall_bottom + 0.2,
-                             1.5 + clearance))
-    lip = rounded(*outer[:2], 0, *outer[2:], P['ledge_height'], 1.5 + extra)
+    clearance = P['layout_edge_offset']
+    perimeter = rounded(*outer[:2], 0, *outer[2:], P['plate_top'], 1.5 + extra)
+    perimeter = perimeter.cut(rounded(-clearance, -clearance, -0.1,
+                                     w + 2 * clearance, h + 2 * clearance, P['plate_top'] + 0.2,
+                                     1.5 + clearance))
+    lip = rounded(*outer[:2], 0, *outer[2:], 0.4, 1.5 + extra)
     inset = P['ledge_overlap']
     lip = lip.cut(rounded(inset, inset, -0.1, w - 2 * inset, h - 2 * inset,
-                         P['ledge_height'] + 0.2, 0.7))
-    perimeter = skirt.fuse(lip).removeSplitter()
+                         0.6, 0.7))
     plate = rounded(*outer[:2], P['plate_top'] - P['plate_thickness'],
                     *outer[2:], P['plate_thickness'], 1.5 + extra)
-    bridge = rounded(*outer[:2], P['ledge_height'] - 0.1, *outer[2:], 0.5, 1.5 + extra)
-    bridge = bridge.cut(rounded(inset, inset, P['ledge_height'] - 0.2,
-                               w - 2 * inset, h - 2 * inset, 0.8, 0.7))
-    plate = plate.fuse(bridge)
+    plate = union([perimeter, plate])
+    plate = fillet_ceiling(plate, P['plate_top'] - P['plate_thickness'], P['lower_roof_fillet'])
+    plate = plate.fuse(lip)
     plate = plate.cut(rounded(0.5, 21.65, 0.7, 73.9, 11.7, 2, 1.0))
     plate = plate.cut(box(103.5, -2, 0.7, 14, 19.15, 2))
     plate = plate.cut(box(103.5, 37.85, 0.7, 14, 19.2, 2))
@@ -103,7 +111,7 @@ def make_parts():
         rib = rounded(x - P['rib_width'] / 2, y - P['rib_length'] / 2, 0,
                       P['rib_width'], P['rib_length'], P['rib_height'], 0.5)
         supports.append(boss.fuse(rib))
-    structural = union([perimeter, plate] + supports)
+    structural = union([plate] + supports)
     structural = structural.cut(rounded(0.5, 21.65, 0, 73.9, 11.7, 4.5, 1.0))
     structural = structural.cut(box(74.4, 18.15, -0.1, 40.05, 18.7, 3))
     switches = [f for f in REF['footprints'] if f['reference'].startswith('S')]
@@ -127,6 +135,8 @@ def make_parts():
     cover = cover.cut(box(x0 - 2, y0 + P['wall'], -0.1,
                           w + extra - P['wall'] - x0 + 2, y1 - y0 - 2 * P['wall'],
                           P['cover_roof_top'] - P['cover_roof_thickness'] + 0.1))
+    cover = fillet_ceiling(cover, P['cover_roof_top'] - P['cover_roof_thickness'],
+                           P['controller_roof_fillet'], x0)
     a, b, c, d = P['display_window']
     cover = cover.cut(rounded(a, b, 10.9, c, d, 2.0, 0.5))
     uy, uz, uw, uh = P['usb_opening']
@@ -170,7 +180,8 @@ def check(parts, mounts, switches):
     results = {'parts': {}, 'clearance_checks': [], 'parameters': P,
                'reference_source_hashes': REF['source_files'],
                'pcb_stack': {'main_pcb': [-1.6, 0], 'baseplate': [-3.2, -1.6],
-                             'feet': [-5.2, -3.2], 'case_bottom': -3.2},
+                             'feet': [-5.2, -3.2], 'case_bottom': 0},
+               'pcb_bounds_mm': REF['pcb_bounds_mm'],
                'limitations': ['Switch mating uses the nominal 13.8 mm body and 15 mm shoulder at z2.2..3.0 from the Kailh drawing; simplified model details still require a physical fit check.',
                                'Physical switch clip retention, cap internal cavities, solder protrusion, print tolerances, and fastener tightening require a prototype.',
                                'A 2 mm nozzle cannot conventionally print the requested 1 mm walls; print with a smaller nozzle.',
@@ -185,6 +196,8 @@ def check(parts, mounts, switches):
         value = a.distToShape(b)[0]
         results['clearance_checks'].append({'name': label, 'distance_mm': round(value, 5)})
         return value
+    px0, py0, px1, py1 = REF['pcb_bounds_mm']
+    pcb_projection = rounded(px0, py0, -0.01, px1 - px0, py1 - py0, 20, 1.5)
     for name, shape in parts.items():
         if not shape.isValid() or len(shape.Solids) != 1:
             raise RuntimeError(f'{name}: invalid or disconnected solid ({len(shape.Solids)})')
@@ -192,8 +205,10 @@ def check(parts, mounts, switches):
         results['parts'][name] = {'solid_count': len(shape.Solids), 'valid': shape.isValid(),
                                  'volume_mm3': round(shape.Volume, 3),
                                  'bounds_mm': [round(v, 5) for v in (bb.XMin, bb.YMin, bb.ZMin, bb.XMax, bb.YMax, bb.ZMax)]}
-        if name != 'upper_guard' and abs(bb.ZMin + 3.2) > 0.001:
-            raise RuntimeError('Case must end at baseplate underside')
+        if bb.ZMin < -0.00001 or shape.cut(pcb_projection).Volume > 0.00001:
+            raise RuntimeError('Printed case must rise from within the PCB top outline')
+        if name != 'upper_guard' and abs(bb.ZMin) > 0.001:
+            raise RuntimeError('Lower case parts must contact the PCB top print plane')
     for i, (name, shape) in enumerate(parts.items()):
         for other_name, other in list(parts.items())[i + 1:]:
             distance(name + ' to ' + other_name, shape, other)
@@ -204,7 +219,7 @@ def check(parts, mounts, switches):
     interior = box(0.8, 0.8, 3.8, REF['width'] - 1.6, REF['height'] - 1.6, 10)
     interior_volume = parts['upper_guard'].common(interior).Volume
     if interior_volume > 0.00001:
-        raise RuntimeError('Upper guard has an upright wall inside the PCB perimeter')
+        raise RuntimeError('Upper guard has an upright wall inside the key-layout perimeter')
     results['clearance_checks'].append({'name': 'Upper guard interior above low plate and battery roof',
                                        'overlap_mm3': round(interior_volume, 7)})
     for s in switches:
@@ -250,6 +265,12 @@ def check(parts, mounts, switches):
         stack = mount_stack(m)
         n = nut(m['x'], m['y'], stack['seat'], stack['nut_thickness'])
         collision(m['reference'] + ' nut', n)
+        if m['x'] > P['seam_x']:
+            upright = parts['right_bumper'].common(box(-3, -3, P['plate_top'] + 0.01,
+                                                        REF['width'] + 6, REF['height'] + 6, 20))
+            wall_gap = distance(m['reference'] + ' nut to orange upright walls', n, upright)
+            if wall_gap < P['fastener_wall_clearance']:
+                raise RuntimeError('Right nut is too close to an orange upright wall')
         for s in switches:
             shoulder = box(s['x'] - 7.5, s['y'] - 7.5, 2.2, 15, 15, 0.8)
             if n.common(shoulder).Volume > 0.00001:
@@ -293,7 +314,7 @@ def main():
         obj.Shape = shape
         obj.addProperty('App::PropertyString', 'PrintOrientation', 'Manufacture')
         obj.PrintOrientation = ('Lower flat mating face on build plate' if name == 'upper_guard'
-                                else 'Uppermost flat face on build plate') + '; print STL is already oriented'
+                                else 'PCB-contact face on build plate; walls and roofs rise upward') + '; print STL is already oriented'
         if obj.ViewObject:
             obj.ViewObject.ShapeColor = colors[name]
             obj.ViewObject.LineColor = (0.12, 0.15, 0.17)
@@ -304,8 +325,6 @@ def main():
             raise RuntimeError(name + ': STL mesh is not closed')
         mesh.write(str(OUT / (name + '_assembly.stl')))
         print_shape = shape.copy()
-        if name != 'upper_guard':
-            print_shape.rotate(V(0, 0, 0), V(1, 0, 0), 180)
         bb = print_shape.optimalBoundingBox(False, False)
         print_shape.translate(V(-bb.XMin, -bb.YMin, -bb.ZMin))
         print_mesh = MeshPart.meshFromShape(Shape=print_shape, LinearDeflection=0.035, AngularDeflection=0.12, Relative=False)

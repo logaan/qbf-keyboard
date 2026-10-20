@@ -74,7 +74,7 @@ def build_upper_guard(parameters, reference, lower_left_shape):
     base = p['plate_top']
     top = p.get('upper_guard_top', 10.9691)
     wall = p['wall']
-    extra = wall + p['pcb_edge_clearance']
+    extra = wall + p['layout_edge_offset']
     height = r['height']
     xmax = p['seam_x'] - p['seam_gap'] / 2
     thickness = p['plate_thickness']
@@ -92,9 +92,9 @@ def build_upper_guard(parameters, reference, lower_left_shape):
     blank.translate(V(0, 0, thickness))
     rim = _rounded(-extra, -extra, base, xmax + extra, height + 2 * extra, top - base, 1.5 + extra)
     inner_right = xmax - wall
-    rim = rim.cut(_rounded(-p['pcb_edge_clearance'], -p['pcb_edge_clearance'], base - 0.1,
-                          inner_right + p['pcb_edge_clearance'], height + 2 * p['pcb_edge_clearance'],
-                          top - base + 0.2, 1.5 + p['pcb_edge_clearance']))
+    rim = rim.cut(_rounded(-p['layout_edge_offset'], -p['layout_edge_offset'], base - 0.1,
+                          inner_right + p['layout_edge_offset'], height + 2 * p['layout_edge_offset'],
+                          top - base + 0.2, 1.5 + p['layout_edge_offset']))
     rim = rim.cut(_rounded(0, 0, base - 0.1, r['width'], height, top - base + 0.2, 1.5))
     drop_start = xmax - 12.0
     full_height = _box(-extra - 0.1, -extra - 0.1, base - 0.1,

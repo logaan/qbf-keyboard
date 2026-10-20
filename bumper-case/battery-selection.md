@@ -15,15 +15,15 @@ All coordinates use the case reference system, with the main PCB top at z = 0.
 | Feature | Final design value |
 | --- | --- |
 | Main-PCB battery opening | 58.1 × 11.1 mm |
-| Opening center | x = 30.4 mm, y = 27.5 mm |
+| Opening center | Fixed case frame (30.4,27.5); current PCB lower-left frame (31.9,29) mm |
 | Modeled battery lower-left corner | x = 1.65 mm, y = 22.25 mm |
 | Baseplate top | z = −1.6 mm |
 | Insulating adhesive thickness | 0.2 mm |
 | Battery bottom / maximum modeled top | z = −1.4 / 2.1 mm |
-| Continuous roof underside / top | z = 2.3 / 3.3 mm |
-| Battery-to-roof clearance | 0.2 mm |
+| Continuous roof underside / top | z = 2.4 / 3.4 mm |
+| Battery-to-roof clearance | 0.3 mm |
 | Fully depressed keycap underside | z = 4.0 mm |
-| Roof-to-depressed-keycap clearance | 0.7 mm |
+| Roof-to-depressed-keycap clearance | 0.6 mm |
 | Opening clearance around the pack envelope | 0.3 mm per side |
 
 These clearances are geometric calculations against the existing component models, not measured physical fit. The baseplate and insulating adhesive support the pack. Keep its pouch clear of copper, solder features and exposed opening edges. Round or insulate the opening edges, preserve space for the wire exit, and do not compress the battery in the screw-and-nut sandwich. Retain the factory-insulated leads and route them toward the existing side-entry JST-PH connector.

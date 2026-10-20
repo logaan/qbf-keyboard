@@ -8,15 +8,16 @@ freecad_python=${FREECAD_PYTHON:-/Applications/FreeCAD.app/Contents/Resources/bi
 freecad_lib=${FREECAD_LIB:-/Applications/FreeCAD.app/Contents/Resources/lib}
 export PYTHONPATH="$freecad_lib${PYTHONPATH:+:$PYTHONPATH}"
 export QT_QPA_PLATFORM=offscreen
+assembly_origin=$("$kicad_python" -c 'import json,sys; p=json.load(open(sys.argv[1]))["origin_kicad"]; print(f"{p[0]}x{p[1]}mm")' "$case_root/reference/placements.json")
 stage=$(mktemp -d "${TMPDIR:-/tmp}/qbf-bumper.XXXXXX")
 trap 'rm -rf "$stage"' EXIT HUP INT TERM
-"$kicad_cli" pcb export step --force --user-origin 152.875x176mm --output "$stage/kicad-assembly.step" "$repo_root/ergogen-kikad/generated/pcbs/macropad.kicad_pcb" > "$stage/assembly-export.log" 2>&1 || {
+"$kicad_cli" pcb export step --force --user-origin "$assembly_origin" --output "$stage/kicad-assembly.step" "$repo_root/ergogen-kikad/generated/pcbs/macropad.kicad_pcb" > "$stage/assembly-export.log" 2>&1 || {
     if [ ! -s "$stage/kicad-assembly.step" ]; then
         cat "$stage/assembly-export.log"
         exit 1
     fi
 }
-"$kicad_cli" pcb export step --force --board-only --user-origin 152.875x176mm --output "$stage/kicad-baseplate.step" "$repo_root/ergogen-kikad/generated/pcbs/baseplate.kicad_pcb" > "$stage/baseplate-export.log" 2>&1
+"$kicad_cli" pcb export step --force --board-only --user-origin "$assembly_origin" --output "$stage/kicad-baseplate.step" "$repo_root/ergogen-kikad/generated/pcbs/baseplate.kicad_pcb" > "$stage/baseplate-export.log" 2>&1
 "$freecad_python" "$case_root/check_assembly.py" "$stage"
 unset PYTHONPATH
 "$kicad_python" "$case_root/prepare_views.py" "$stage" > "$stage/views.log" 2>&1

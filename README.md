@@ -2,7 +2,7 @@
 
 QBF is a small split keyboard for chorded input. On a Perkins keyboard, you press several keys **together** to enter the dots of a Braille cell, then release them as one chord. A six-dot cell has 64 possible patterns; eight-dot Braille adds two more dot positions. QBF explores that input method with two identical, portable ten-key low-profile boards that can be spaced apart, joined in a printed case, or used one at a time.
 
-Each half uses ten Kailh Choc v1 switches: eight portrait 1.5U keys and two landscape 1.5U thumb keys beside a socketed nice!nano v2 and nice!view display. The PCB and circuit-free baseplate measure 114.25 × 55 mm. Six M2 screws secure a [three-part bumper case](bumper-case/README.md), including an upward guard and continuous battery roof. The original protected 301055 220 mAh battery sits in a main-PCB-only opening on the intact baseplate.
+Each half uses ten Kailh Choc v1 switches: eight portrait 1.5U keys and two landscape 1.5U thumb keys beside a socketed nice!nano v2 and nice!view display. The PCB and circuit-free baseplate measure 117.25 × 58 mm. Six M2 screws secure a [three-part bumper case](bumper-case/README.md), which rises from the PCB top and includes an upward guard and continuous battery roof. The original protected 301055 220 mAh battery sits in a main-PCB-only opening on the intact baseplate.
 
 The proposed keycap set has no legends: all four top keys and the inner bottom key on each half are white. The other three bottom keys are red, blue, and yellow, mirrored across the two halves.
 
