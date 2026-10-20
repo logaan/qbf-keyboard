@@ -34,13 +34,17 @@ def main():
     for footprint in switches:
         x, y = position(footprint.GetPosition())
         x, y = x - left, y - top
-        cap_height = 17.5 if footprint.GetValue() == 'Choc v1 1U' else 26.5
-        rectangle(x - 8.25, y - cap_height / 2, 16.5, cap_height, '#f4f6f9', '#8594a5')
+        corners = [position(point) for drawing in footprint.GraphicalItems()
+                   if drawing.GetLayer() == pcb.Dwgs_User
+                   for point in (drawing.GetStart(), drawing.GetEnd())]
+        cap_width = max(px for px, py in corners) - min(px for px, py in corners)
+        cap_height = max(py for px, py in corners) - min(py for px, py in corners)
+        rectangle(x - cap_width / 2, y - cap_height / 2, cap_width, cap_height, '#f4f6f9', '#8594a5')
         rectangle(x - 7, y - 7, 14, 14, 'none', '#d5dde5', 0)
         row = 't' if y < height / 2 else 'b'
         column = xs.index(round(x + left, 3)) + 1
         label(x, y + 0.7, f'{row}{column}', 3)
-        label(x, y + 3.6, '1U' if cap_height == 17.5 else '1.5U', 1.7, color='#788697')
+        label(x, y + 3.6, '1.5U', 1.7, color='#788697')
     for footprint in board.GetFootprints():
         x, y = position(footprint.GetPosition())
         x, y = x - left, y - top
@@ -59,8 +63,8 @@ def main():
             for pad in footprint.Pads():
                 px, py = position(pad.GetPosition())
                 items.append(f'<circle cx="{px - left}" cy="{py - top}" r="0.65" fill="#427fba"/>')
-            label(width - 12, 7, '5-pin connection', 1.4)
-    label(width / 2, height + 4.5, '1 mm between the 1.5U rows · aligned outer cap edges · internal M2 holes', 1.8)
+            label(width - 7, -1.2, '5-pin connection', 1.3)
+    label(width / 2, height + 4.5, '1 mm between the portrait rows · aligned outer cap edges · internal M2 holes', 1.8)
     base_y = height + 23
     side_x = width / 2 - 28
     rectangle(side_x, base_y, 39, 1.6, '#7a9b86', '#547d61', 0)

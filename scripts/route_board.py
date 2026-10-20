@@ -225,9 +225,9 @@ def check_base_plate(plate):
     if list(plate.GetTracks()) or list(plate.Zones()):
         raise RuntimeError('Base plate has tracks or copper zones')
     pads = [pad for footprint in plate.GetFootprints() for pad in footprint.Pads()]
-    if len(pads) != 79 or any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH or
+    if len(pads) != 81 or any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH or
                               pad.GetNetCode() != 0 for pad in pads):
-        raise RuntimeError('Base plate must have 79 unconnected mechanical holes or slots')
+        raise RuntimeError('Base plate must have 81 unconnected mechanical holes or slots')
     markers = [drawing for drawing in plate.GetDrawings()
                if drawing.GetLayer() == pcb.B_SilkS]
     if len(markers) != 4 or any(marker.GetShape() != pcb.SHAPE_T_SEGMENT
@@ -258,12 +258,13 @@ def check_layout(board, output):
                    if footprint.GetReference().startswith('MCU')]
     mounts = [mm_point(footprint.GetPosition()) for footprint in board.GetFootprints()
               if footprint.GetReference().startswith('H')]
-    if len(switches) != 10 or len(controllers) != 1 or len(mounts) != 4:
-        raise RuntimeError('Expected ten switches, one controller and four mounts')
-    main = [footprint for footprint in switches if footprint.GetValue() == 'Choc v1 1.5U']
-    extra = [footprint for footprint in switches if footprint.GetValue() == 'Choc v1 1U']
+    if len(switches) != 10 or len(controllers) != 1 or len(mounts) != 6:
+        raise RuntimeError('Expected ten switches, one controller and six mounts')
+    main = [footprint for footprint in switches
+            if cap_bounds(footprint)[3] - cap_bounds(footprint)[1] > 20]
+    extra = [footprint for footprint in switches if footprint not in main]
     if len(main) != 8 or len(extra) != 2:
-        raise RuntimeError('Expected eight 1.5U caps and two 1U caps')
+        raise RuntimeError('Expected eight portrait and two landscape 1.5U caps')
     xs = sorted({mm_point(footprint.GetPosition())[0] for footprint in main})
     ys = sorted({mm_point(footprint.GetPosition())[1] for footprint in main})
     if len(xs) != 4 or len(ys) != 2 or abs(ys[1] - ys[0] - 27.5) > 0.001:
@@ -272,15 +273,17 @@ def check_layout(board, output):
         raise RuntimeError('Expected 19.05 mm horizontal key spacing')
     expected_mounts = {(round((xs[index] + xs[index + 1]) / 2, 4), y)
                        for index in (0, 2) for y in ys}
+    right_mount_x = round(board_bounds(board)[2] - 2.25, 4)
+    expected_mounts.update((right_mount_x, y) for y in ys)
     if set(mounts) != expected_mounts:
-        raise RuntimeError('Mounts must sit between switch columns 1/2 and 3/4')
+        raise RuntimeError('Mounts must sit between columns 1/2 and 3/4 and beside the rightmost keys')
     cx, cy = mm_point(controllers[0].GetPosition())
     if abs(cy - sum(ys) / 2) > 0.001 or abs(cx - 83.9) > 0.001:
         raise RuntimeError('Controller must be centered in the next column to the right')
     extra_positions = sorted(mm_point(footprint.GetPosition()) for footprint in extra)
-    if any(abs(x - xs[-1] - 19.05) > 0.001 for x, y in extra_positions):
-        raise RuntimeError('Extra keys must retain the horizontal key pitch')
-    if any(abs(abs(y - cy) - 18.25) > 0.001 for x, y in extra_positions):
+    if any(abs(x - xs[-1] - 24.05) > 0.001 for x, y in extra_positions):
+        raise RuntimeError('Landscape keys must retain the 2.55 mm gap to column four')
+    if any(abs(abs(y - cy) - 18.75) > 0.001 for x, y in extra_positions):
         raise RuntimeError('Extra keys must align with the outer row edges')
     if not extra_positions[0][1] < cy < extra_positions[1][1]:
         raise RuntimeError('Expected one extra key above and one below the controller')
@@ -289,8 +292,8 @@ def check_layout(board, output):
     for footprint in switches:
         bounds = cap_bounds(footprint)
         width, height = bounds[2] - bounds[0], bounds[3] - bounds[1]
-        expected_height = 17.5 if footprint in extra else 26.5
-        if abs(width - 16.5) > 0.001 or abs(height - expected_height) > 0.001:
+        expected_width, expected_height = (26.5, 16.5) if footprint in extra else (16.5, 26.5)
+        if footprint.GetValue() != 'Choc v1 1.5U' or abs(width - expected_width) > 0.001 or abs(height - expected_height) > 0.001:
             raise RuntimeError(f'Incorrect cap dimensions: {footprint.GetReference()}')
         if bounds[0] < left or bounds[1] < top or bounds[2] > right or bounds[3] > bottom:
             raise RuntimeError(f'Cap outside board: {footprint.GetReference()}')
@@ -496,7 +499,7 @@ def main():
     board.BuildConnectivity()
     pcb.SaveBoard(str(BOARD), board)
     check_board(pcb.LoadBoard(str(BOARD)))
-    print(f'Generated circuit-free base plate with 79 holes or slots: {BASE_PLATE}')
+    print(f'Generated circuit-free base plate with 81 holes or slots: {BASE_PLATE}')
     print(f'Routed {len(list(board.GetTracks()))} segments and filled two GND zones: {BOARD}')
 
 

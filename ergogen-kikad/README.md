@@ -2,7 +2,7 @@
 
 Ten direct-wired Choc v1 switches, a socketed **nice!nano v2**, and a ready-made **nice!view** display running ZMK. All user soldering is through-hole: switches, controller sockets, and the five display connections. The purchased modules arrive with their small components assembled.
 
-The eight portrait 1.5U caps are 16.5 × 26.5 mm, with 19.05 mm horizontal spacing and a 1 mm row gap. The fifth column has two 16.5 × 17.5 mm 1U caps ([MBK dimensions](https://shop.dailycraft.jp/en/products/keycaps_mbk)); all five outer cap edges align across each row. The controller shifts right beneath the display while key positions retain their pitch. The PCB and base plate measure **111.15 × 55 mm**, 10.5 mm wider than the former bare-panel version.
+The eight portrait 1.5U caps are 16.5 × 26.5 mm, with 19.05 mm horizontal spacing and a 1 mm row gap. The fifth column has two landscape 26.5 × 16.5 mm 1.5U caps ([MBK dimensions](https://shop.dailycraft.jp/en/products/keycaps_mbk)); all five outer cap edges align across each row. The fifth-column centers shift 5 mm right to keep the same 2.55 mm cap gap to column four. The controller shifts right beneath the display while the original four columns retain their pitch. The PCB and base plate measure **111.15 × 55 mm**, 10.5 mm wider than the former bare-panel version.
 
 ## Files
 
@@ -10,7 +10,7 @@ The eight portrait 1.5U caps are 16.5 × 26.5 mm, with 19.05 mm horizontal spaci
 - `design/footprints/choc_v1_15u_portrait.js` — rotated Choc v1 switch footprint with parameterized 1U/1.5U cap outlines.
 - `design/footprints/nice_nano.js` — two 1×12, 2.54 mm controller socket strips; USB faces right.
 - `design/footprints/nice_view.js` — module placement outline and a separate five-pin, 2.54 mm through-hole connection.
-- `design/footprints/m2_mount.js` — four matching 2.2 mm M2 fastening holes between columns 1/2 and 3/4, in the main PCB and base plate.
+- `design/footprints/m2_mount.js` — six matching 2.2 mm M2 fastening holes between columns 1/2 and 3/4 and beside column 5, in the main PCB and base plate.
 - `generated/pcbs/macropad.kicad_pcb` — generated KiCad PCB with routed signals and filled GND copper on both sides.
 - `generated/pcbs/baseplate.kicad_pcb` — separate, circuit-free FR4 bottom plate with cutouts for every through-hole lead and locating pin.
 - `../scripts/route_board.py` — routing, ground fills, base plate, and layout checks.
@@ -37,7 +37,7 @@ Each switch connects directly to its GPIO and GND. ZMK uses internal pull-ups an
 
 Use a complete [nice!view module](https://nicekeyboards.com/nice-view/), not a bare Sharp panel. Its manufacturer lists 36 × 14 × 2.9 mm, 160 × 68 pixels, 3.3 V, and approximately 10 µA typical draw. The [open-source HillSideView keyboard README](https://github.com/wannabecoffeenerd/HillSideView) names nice!view and nice!nano in its BOM; this confirms prior keyboard use without schematic inspection. The [manufacturer assembly guide](https://nicekeyboards.com/docs/nice-view/getting-started/) specifies five-pin through-hole headers and sockets.
 
-Mount the display horizontally above the nice!nano, between t5 and b5. Its 14 mm height leaves 2.5 mm to each cap, and its left edge clears column 4 by 0.5 mm. The controller footprint reserves a conservative 36 × 18.3 mm envelope. Fit the controller component-side up, USB facing right, using its two standard 12-pin rows. Leave the separate B+/B− holes outside those socket strips. The board requires no underside controller-pad soldering.
+Mount the display horizontally above the nice!nano, between t5 and b5. Its 14 mm height leaves 3.5 mm to each landscape cap, and its left edge clears column 4 by 0.5 mm. The controller footprint reserves a conservative 36 × 18.3 mm envelope. Fit the controller component-side up, USB facing right, using its two standard 12-pin rows. Leave the separate B+/B− holes outside those socket strips. The board requires no underside controller-pad soldering.
 
 LCD1 is the vertical five-hole connection beside t5. Pin 1 is its top end. Use short insulated wires from a through-hole header/socket here to the labeled nice!view pins, matching signal names:
 
@@ -55,7 +55,7 @@ Firmware uses ZMK's standard `nice_view` shield with the built-in landscape stat
 
 ## Base plate and MagSafe ring
 
-The bottom plate follows [Horizon's circuit-free plate approach](https://github.com/skarrmann/horizon#pcbs): it shares the main board outline and has non-plated holes for the ten switches, controller socket pins, and four M2 fasteners. The switch lead openings are 2.8 mm to clear socket bodies and solder fillets; Controller pin openings are 2.0 mm. The four M2 holes are at local board coordinates (18.275, 13.75), (56.375, 13.75), (18.275, 41.25), and (56.375, 41.25) mm, measured from the lower-left board corner. Their vertical spacing is 27.5 mm. They can anchor a neck strap or the optional printed bumpers.
+The bottom plate follows [Horizon's circuit-free plate approach](https://github.com/skarrmann/horizon#pcbs): it shares the main board outline and has non-plated holes for the ten switches, controller socket pins, and six M2 fasteners. The switch lead openings are 2.8 mm to clear socket bodies and solder fillets; controller pin openings are 2.0 mm. The six M2 holes use local x coordinates 18.275, 56.375, and 108.9 mm at y = 13.75 and 41.25 mm, measured from the lower-left board corner. Their vertical spacing is 27.5 mm. They can anchor a neck strap or the optional printed bumpers.
 
 The **outside face** of the base plate has four short alignment ticks on `B.SilkS` at the 23 mm radius. Center a 46 mm inner / 56 mm outer diameter MagSafe-compatible adhesive metal ring on those ticks. The ring may overlap clearance holes; check the purchased ring, solder joints, and adhesion before applying it. The ring is for magnetic attachment; the keyboard has no wireless charging circuit. The optional bumpers cover strips at the plate edges and can be removed for direct magnetic mounting.
 
@@ -65,7 +65,7 @@ Each Choc v1 signal pad is a 2.4 mm plated pad with a 1.6 mm finished drill. Thi
 
 ## Printed carrier
 
-The printable bumper rails and reversible two-board case are in [`../mechanical/README.md`](../mechanical/README.md). The four M2 holes can also be used for strap attachment when the bumper is not fitted.
+The printable bumper rails and reversible two-board case are in [`../mechanical/README.md`](../mechanical/README.md). The six M2 holes can also be used for strap attachment when the bumper is not fitted.
 
 ## Regenerate
 

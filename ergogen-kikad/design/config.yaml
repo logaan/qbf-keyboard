@@ -8,15 +8,16 @@ units:
   cap_height: 26.5
   row_gap: 1
   row_pitch: cap_height + row_gap
-  extra_x: 4 * column_pitch
+  extra_x: 4 * column_pitch + (26.5 - 16.5) / 2
   controller_y: row_pitch / 2
   controller_height: 18.3
-  extra_cap_height: 17.5
+  extra_cap_height: 16.5
   extra_offset: row_pitch / 2 + (cap_height - extra_cap_height) / 2
   display_width: 36
   display_height: 14
   display_x: 3 * column_pitch + 8.25 + 0.5 + display_width / 2
   controller_x: display_x
+  right_mount_x: display_x + display_width / 2 - 1.75
   board_width: display_x + display_width / 2 + 0.5 + 8.75
   board_height: row_pitch + cap_height + 1
 
@@ -102,24 +103,22 @@ pcbs:
         what: choc_v1_15u_portrait
         where: extra_c4_top
         adjust:
-          rotate: 90
+          rotate: 0
         params:
           from: GND
           to: '{{net}}'
           label: '{{net}}'
-          label_offset: 7
-          cap_length: extra_cap_height
+          label_offset: 8
       extra_bottom_switch:
         what: choc_v1_15u_portrait
         where: extra_c4_bottom
         adjust:
-          rotate: 90
+          rotate: 0
         params:
           from: '{{net}}'
           to: GND
           label: '{{net}}'
-          label_offset: -7
-          cap_length: extra_cap_height
+          label_offset: -11
       controller:
         what: nice_nano
         where:
@@ -157,3 +156,13 @@ pcbs:
         where:
           ref: pad_c0_bottom
           shift: [2.5 * column_pitch, 0]
+      upper_outer_mount:
+        what: m2_mount
+        where:
+          ref: pad_c0_bottom
+          shift: [right_mount_x, row_pitch]
+      lower_outer_mount:
+        what: m2_mount
+        where:
+          ref: pad_c0_bottom
+          shift: [right_mount_x, 0]

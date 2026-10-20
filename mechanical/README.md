@@ -21,11 +21,11 @@ Print the rails flat and the case with its solid floor on the bed. The case groo
 
 ## Fit and fastening
 
-The PCB and base plate are each nominally 1.6 mm thick. Each 4 mm rail has two 2.0 mm locating pegs, for four pegs per board, aligned with the 2.2 mm board holes. Each rail has two tabs reaching the internal mounting holes. Each peg is 1.4 mm high, so it stays below the component face of a 1.6 mm board and cannot touch a moving keycap. Fix the rails to the underside of the base plate with thin double-sided adhesive tape; the pegs locate the rails and resist sliding. Keep the adhesive off the MagSafe ring area. The rails can also attach directly under a PCB without a base plate if the solder joints clear them. Remove the rails to use the holes for M2 neck-strap fittings.
+The PCB and base plate are each nominally 1.6 mm thick. Each 4 mm rail has three 2.0 mm locating pegs, for six pegs per board, aligned with the 2.2 mm board holes. Each rail has three tabs reaching the internal mounting holes. Each peg is 1.4 mm high, so it stays below the component face of a 1.6 mm board and cannot touch a moving keycap. Fix the rails to the underside of the base plate with thin double-sided adhesive tape; the pegs locate the rails and resist sliding. Keep the adhesive off the MagSafe ring area. The rails can also attach directly under a PCB without a base plate if the solder joints clear them. Remove the rails to use the holes for M2 neck-strap fittings.
 
 The protected orientation places the component face about 13.8 mm above the outside bottom of the case when the PCB and base plate are both fitted. The floor's inside face is at 2.5 mm, leaving **11.3 mm maximum component/cap projection below the PCB face** before contact. Measure the built switch, cap, and socketed nice!nano and nice!view stack before relying on this clearance. If it is taller, increase `SLOT_BOTTOM` and `CASE_TOP` together in the CAD source and regenerate the case. The exposed orientation keeps the case walls outside the board and cap outline.
 
-The outside dimensions of the case are 232.3 × 65 × 22.2 mm. The two board outlines are 111.15 × 55 mm with a 4 mm middle gap. Tabs on each rail reach the mounting holes between switch columns; the hole rows are 27.5 mm apart.
+The outside dimensions of the case are 232.3 × 65 × 22.2 mm. The two board outlines are 111.15 × 55 mm with a 4 mm middle gap. Tabs on each rail reach the mounting holes between switch columns and beside column five; the hole rows are 27.5 mm apart.
 
 The parts are geometric prototypes. No physical print, cap-travel, USB-plug, fastener, or drop test has been done.
 

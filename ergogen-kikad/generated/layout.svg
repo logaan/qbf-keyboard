@@ -3,62 +3,64 @@
 <g font-family="Helvetica" fill="#253448">
 <rect x="0" y="0" width="111.15" height="55.0" rx="1.5" fill="#ffffff" stroke="#83909e" stroke-width="0.15" stroke-dasharray=""/>
 <text x="55.575" y="-3.5" text-anchor="middle" font-size="2.7" fill="#253448">QBF · 111.15 × 55 mm</text>
-<rect x="38.599999999999994" y="0.5" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
-<rect x="39.849999999999994" y="6.75" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
-<text x="46.849999999999994" y="14.45" text-anchor="middle" font-size="3" fill="#253448">t3</text>
-<text x="46.849999999999994" y="17.35" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
 <rect x="57.64999999999998" y="0.5" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
 <rect x="58.89999999999998" y="6.75" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
 <text x="65.89999999999998" y="14.45" text-anchor="middle" font-size="3" fill="#253448">t4</text>
 <text x="65.89999999999998" y="17.35" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
-<rect x="76.69999999999999" y="37.0" width="16.5" height="17.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
-<rect x="77.94999999999999" y="38.75" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
-<text x="84.94999999999999" y="46.45" text-anchor="middle" font-size="3" fill="#253448">b5</text>
-<text x="84.94999999999999" y="49.35" text-anchor="middle" font-size="1.7" fill="#788697">1U</text>
-<rect x="0.5" y="28.0" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
-<rect x="1.75" y="34.25" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
-<text x="8.75" y="41.95" text-anchor="middle" font-size="3" fill="#253448">b1</text>
-<text x="8.75" y="44.85" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
-<rect x="76.69999999999999" y="0.5" width="16.5" height="17.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
-<rect x="77.94999999999999" y="2.25" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
-<text x="84.94999999999999" y="9.95" text-anchor="middle" font-size="3" fill="#253448">t5</text>
-<text x="84.94999999999999" y="12.85" text-anchor="middle" font-size="1.7" fill="#788697">1U</text>
 <rect x="38.599999999999994" y="28.0" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
 <rect x="39.849999999999994" y="34.25" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
 <text x="46.849999999999994" y="41.95" text-anchor="middle" font-size="3" fill="#253448">b3</text>
 <text x="46.849999999999994" y="44.85" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
-<rect x="57.64999999999998" y="28.0" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
-<rect x="58.89999999999998" y="34.25" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
-<text x="65.89999999999998" y="41.95" text-anchor="middle" font-size="3" fill="#253448">b4</text>
-<text x="65.89999999999998" y="44.85" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
 <rect x="19.549999999999983" y="28.0" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
 <rect x="20.799999999999983" y="34.25" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
 <text x="27.799999999999983" y="41.95" text-anchor="middle" font-size="3" fill="#253448">b2</text>
 <text x="27.799999999999983" y="44.85" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
-<rect x="19.549999999999983" y="0.5" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
-<rect x="20.799999999999983" y="6.75" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
-<text x="27.799999999999983" y="14.45" text-anchor="middle" font-size="3" fill="#253448">t2</text>
-<text x="27.799999999999983" y="17.35" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
+<rect x="57.64999999999998" y="28.0" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
+<rect x="58.89999999999998" y="34.25" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
+<text x="65.89999999999998" y="41.95" text-anchor="middle" font-size="3" fill="#253448">b4</text>
+<text x="65.89999999999998" y="44.85" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
+<rect x="0.5" y="28.0" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
+<rect x="1.75" y="34.25" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
+<text x="8.75" y="41.95" text-anchor="middle" font-size="3" fill="#253448">b1</text>
+<text x="8.75" y="44.85" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
+<rect x="38.599999999999994" y="0.5" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
+<rect x="39.849999999999994" y="6.75" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
+<text x="46.849999999999994" y="14.45" text-anchor="middle" font-size="3" fill="#253448">t3</text>
+<text x="46.849999999999994" y="17.35" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
 <rect x="0.5" y="0.5" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
 <rect x="1.75" y="6.75" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
 <text x="8.75" y="14.45" text-anchor="middle" font-size="3" fill="#253448">t1</text>
 <text x="8.75" y="17.35" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
-<circle cx="56.375" cy="41.25" r="1.1" fill="white" stroke="#bf7b22" stroke-width="0.25"/>
-<circle cx="56.375" cy="13.75" r="1.1" fill="white" stroke="#bf7b22" stroke-width="0.25"/>
-<circle cx="18.274999999999977" cy="13.75" r="1.1" fill="white" stroke="#bf7b22" stroke-width="0.25"/>
+<rect x="76.69999999999999" y="38.0" width="26.5" height="16.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
+<rect x="82.94999999999999" y="39.25" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
+<text x="89.94999999999999" y="46.95" text-anchor="middle" font-size="3" fill="#253448">b5</text>
+<text x="89.94999999999999" y="49.85" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
+<rect x="76.69999999999999" y="0.5" width="26.5" height="16.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
+<rect x="82.94999999999999" y="1.75" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
+<text x="89.94999999999999" y="9.45" text-anchor="middle" font-size="3" fill="#253448">t5</text>
+<text x="89.94999999999999" y="12.35" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
+<rect x="19.549999999999983" y="0.5" width="16.5" height="26.5" rx="0.5" fill="#f4f6f9" stroke="#8594a5" stroke-width="0.15" stroke-dasharray=""/>
+<rect x="20.799999999999983" y="6.75" width="14" height="14" rx="0" fill="none" stroke="#d5dde5" stroke-width="0.15" stroke-dasharray=""/>
+<text x="27.799999999999983" y="14.45" text-anchor="middle" font-size="3" fill="#253448">t2</text>
+<text x="27.799999999999983" y="17.35" text-anchor="middle" font-size="1.7" fill="#788697">1.5U</text>
+<circle cx="108.89999999999998" cy="41.25" r="1.1" fill="white" stroke="#bf7b22" stroke-width="0.25"/>
 <rect x="74.64999999999998" y="18.35" width="36" height="18.3" rx="0.5" fill="#eef0f3" stroke="#a4adb7" stroke-width="0.15" stroke-dasharray="0.7 0.5"/>
 <circle cx="18.274999999999977" cy="41.25" r="1.1" fill="white" stroke="#bf7b22" stroke-width="0.25"/>
+<circle cx="56.375" cy="13.75" r="1.1" fill="white" stroke="#bf7b22" stroke-width="0.25"/>
+<circle cx="56.375" cy="41.25" r="1.1" fill="white" stroke="#bf7b22" stroke-width="0.25"/>
+<circle cx="108.89999999999998" cy="13.75" r="1.1" fill="white" stroke="#bf7b22" stroke-width="0.25"/>
+<circle cx="18.274999999999977" cy="13.75" r="1.1" fill="white" stroke="#bf7b22" stroke-width="0.25"/>
 <rect x="74.65" y="20.5" width="36" height="14" rx="0.5" fill="#dceaf5" stroke="#427fba" stroke-width="0.15" stroke-dasharray=""/>
 <rect x="78.65" y="21.7" width="27" height="11.6" rx="0" fill="#d1e6de" stroke="#689593" stroke-width="0.15" stroke-dasharray=""/>
 <text x="91.85000000000001" y="27.3" text-anchor="middle" font-size="1.65" fill="#253448">nice!view module</text>
 <text x="91.85000000000001" y="29.9" text-anchor="middle" font-size="1.2" fill="#253448">160 × 68 · no backlight</text>
-<circle cx="106.64999999999998" cy="4.170000000000002" r="0.65" fill="#427fba"/>
-<circle cx="106.64999999999998" cy="6.709999999999994" r="0.65" fill="#427fba"/>
-<circle cx="106.64999999999998" cy="9.25" r="0.65" fill="#427fba"/>
-<circle cx="106.64999999999998" cy="11.789999999999992" r="0.65" fill="#427fba"/>
-<circle cx="106.64999999999998" cy="14.330000000000013" r="0.65" fill="#427fba"/>
-<text x="99.15" y="7" text-anchor="middle" font-size="1.4" fill="#253448">5-pin connection</text>
-<text x="55.575" y="59.5" text-anchor="middle" font-size="1.8" fill="#253448">1 mm between the 1.5U rows · aligned outer cap edges · internal M2 holes</text>
+<circle cx="104.84999999999997" cy="4.170000000000002" r="0.65" fill="#427fba"/>
+<circle cx="104.84999999999997" cy="6.709999999999994" r="0.65" fill="#427fba"/>
+<circle cx="104.84999999999997" cy="9.25" r="0.65" fill="#427fba"/>
+<circle cx="104.84999999999997" cy="11.789999999999992" r="0.65" fill="#427fba"/>
+<circle cx="104.84999999999997" cy="14.330000000000013" r="0.65" fill="#427fba"/>
+<text x="104.15" y="-1.2" text-anchor="middle" font-size="1.3" fill="#253448">5-pin connection</text>
+<text x="55.575" y="59.5" text-anchor="middle" font-size="1.8" fill="#253448">1 mm between the portrait rows · aligned outer cap edges · internal M2 holes</text>
 <rect x="27.575000000000003" y="78.0" width="39" height="1.6" rx="0" fill="#7a9b86" stroke="#547d61" stroke-width="0.15" stroke-dasharray=""/>
 <rect x="29.075000000000003" y="71.2" width="36" height="6.8" rx="0" fill="#d7dce3" stroke="#9aa6b4" stroke-width="0.15" stroke-dasharray=""/>
 <rect x="29.075000000000003" y="67.1" width="36" height="2.9" rx="0" fill="#d1e6de" stroke="#427fba" stroke-width="0.15" stroke-dasharray=""/>
