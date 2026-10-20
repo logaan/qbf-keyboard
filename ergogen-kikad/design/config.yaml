@@ -18,8 +18,8 @@ units:
   board_width: board_right - board_left
   board_height: board_top - board_bottom
   controller_x: 87.5
-  controller_y: midline_y
-  power_x: 3.8
+  controller_y: midline_y - 0.5
+  power_x: 3.75
   battery_x: 35.5
   battery_well_length: 58.1
   battery_well_width: 11.1
@@ -75,6 +75,12 @@ outlines:
         shift: [(board_left + board_right) / 2, (board_bottom + board_top) / 2]
       size: [board_width, board_height]
       corner: 1.5
+    - what: rectangle
+      operation: subtract
+      where:
+        shift: [(76.7 + board_right + 0.5) / 2, controller_y]
+      size: [board_right + 0.5 - 76.7, 18]
+      corner: 0.5
 
 pcbs:
   macropad:
@@ -123,7 +129,7 @@ pcbs:
           cap_length: 17.5
           label_offset: 0
       controller:
-        what: xiao_nrf52840_plus_reference
+        what: xiao_nrf52840_plus
         where:
           shift: [controller_x, controller_y]
       upper_left_mount:
@@ -145,9 +151,13 @@ pcbs:
       battery_connector:
         what: battery_sh
         where:
-          shift: [71.875, midline_y]
+          shift: [71.375, midline_y]
         adjust:
           rotate: -90
+      battery_wire:
+        what: battery_wire
+        where:
+          shift: [75.2, 37.7]
       power_switch:
         what: power_pcm12
         where:

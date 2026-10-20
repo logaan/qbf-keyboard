@@ -1,112 +1,176 @@
 {
   "origin_kicad": [
-    151.375,
-    177.5
+    161.15,
+    177.75
   ],
   "assembly_origin_kicad": [
-    152.875,
-    176.0
+    160.75,
+    196.5
   ],
   "assembly_bounds_mm": [
-    -1.5,
-    -1.5,
-    115.75,
-    56.5
+    0.4,
+    18.75,
+    98.1,
+    77.25
+  ],
+  "width": 97.7,
+  "height": 58.5,
+  "mounts": [
+    {
+      "x": 20.025000000000002,
+      "y": 53.75
+    },
+    {
+      "x": 58.125,
+      "y": 53.75
+    },
+    {
+      "x": 20.025000000000002,
+      "y": 4.75
+    },
+    {
+      "x": 58.125,
+      "y": 4.75
+    }
+  ],
+  "fixed_mounts": [
+    {
+      "x": 20.425,
+      "y": 72.5
+    },
+    {
+      "x": 58.525,
+      "y": 72.5
+    },
+    {
+      "x": 20.425,
+      "y": 23.5
+    },
+    {
+      "x": 58.525,
+      "y": 23.5
+    }
   ],
   "battery_well": {
-    "x": 2.85,
-    "y": 23.45,
-    "length": 58.1,
-    "width": 11.1,
+    "x": 6.05,
+    "y": 23.700000000000003,
+    "length": 58.099999999999994,
+    "width": 11.099999999999994,
     "corner_chamfer": 0.5,
     "main_pcb_only": true,
     "baseplate_floor_z": -3.2,
     "baseplate_top_z": -1.6
   },
-  "width": 117.25,
-  "height": 58.0,
-  "display": {
-    "x": 94.15,
-    "y": 29.0,
-    "width": 36,
-    "height": 14,
-    "module_underside_z": 8.0,
-    "module_thickness": 2.9,
-    "connection": "direct_socket",
-    "socket_pitch": 2.54,
-    "socket_body_width": 2.54,
-    "socket_body_length": 12.7
-  },
   "battery": {
-    "x": 31.9,
-    "y": 29.0,
+    "x": 35.1,
+    "y": 29.25,
     "length": 57.5,
     "width": 10.5,
     "thickness": 3.5,
-    "adhesive": 0.2,
-    "capacity_mah": 220,
-    "model": "301055",
     "bottom_z": -1.4,
-    "top_z": 2.1
+    "top_z": 2.1,
+    "model": "301055",
+    "capacity_mah": 220
   },
-  "controls": [
-    {
-      "reference": "J1",
-      "x": 67.65,
-      "y": 26.05,
-      "width": 7.6,
-      "height": 5.9
-    },
-    {
-      "reference": "PWR1",
-      "x": 108.075,
-      "y": 43.45,
-      "width": 4.3,
-      "height": 8.6
-    },
-    {
-      "reference": "RST1",
-      "x": 107.225,
-      "y": 7.25,
-      "width": 6.0,
-      "height": 6.0
-    }
-  ],
-  "mounts": [
-    {
-      "x": 19.775,
-      "y": 15.25
-    },
-    {
-      "x": 19.775,
-      "y": 42.75
-    },
-    {
-      "x": 57.875,
-      "y": 15.25
-    },
-    {
-      "x": 57.875,
-      "y": 42.75
-    },
-    {
-      "x": 102.0,
-      "y": 10.25
-    },
-    {
-      "x": 102.0,
-      "y": 47.75
-    }
-  ],
-  "hole_x": [
-    19.775,
-    57.875,
-    102.0
-  ],
-  "hole_y": [
-    10.25,
-    15.25,
-    42.75,
-    47.75
-  ]
+  "controller": {
+    "center": [
+      87.5,
+      47.5
+    ],
+    "pcb_mm": [
+      21,
+      17.8,
+      1.6
+    ],
+    "pcb_top_z": 0.05,
+    "support_film_thickness": 0.05,
+    "notch_bounds": [
+      76.7,
+      38.5,
+      98.6,
+      56.5
+    ],
+    "notch_corner_radius": 0.5,
+    "host_solder_land_mm": [
+      0.8,
+      1.2
+    ],
+    "host_land_offset_y": 9.8,
+    "host_land_cut_edge_setback": 0.2,
+    "castellation_y": 8.89,
+    "castellation_copper_diameter": 0.9,
+    "castellation_drill": 0.6,
+    "solder_bridge_max_height": 0.8,
+    "battery_pad_local": [
+      -5.03298,
+      1.00232
+    ],
+    "battery_host_landing": [
+      75.2,
+      37.7
+    ],
+    "battery_wire_od": 0.6,
+    "battery_wire_z": -1.95,
+    "battery_wire_path": [
+      [
+        82.46702,
+        48.50232
+      ],
+      [
+        82.46702,
+        37.7
+      ],
+      [
+        75.2,
+        37.7
+      ]
+    ],
+    "baseplate_access_windows": [
+      [
+        81.35,
+        36.6,
+        83.6,
+        49.65
+      ],
+      [
+        74.1,
+        36.6,
+        83.6,
+        38.8
+      ]
+    ],
+    "antenna_local_bounds": [
+      -10.202401,
+      0.204725,
+      -8.602401,
+      3.404725
+    ],
+    "antenna_clearance": 3,
+    "rf_keepout_bounds": [
+      74.297599,
+      44.704725,
+      81.897599,
+      53.904725
+    ],
+    "reset_local_bounds": [
+      7.27572,
+      4.9214,
+      9.87572,
+      6.5214
+    ],
+    "usb_local_bounds": [
+      4.63872,
+      -4.4936,
+      11.98872,
+      4.5064
+    ],
+    "microphone_local_bounds": [
+      -10.67428,
+      -6.4706,
+      -7.62528,
+      -2.8156
+    ],
+    "physical_sample_note": "Official project specifies 1.6 mm; production PCB thickness, cutout tolerance and supplied module must be measured before fabrication/assembly."
+  },
+  "controls": []
 }

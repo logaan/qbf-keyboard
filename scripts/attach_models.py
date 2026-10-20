@@ -23,24 +23,21 @@ def add_model(footprint, name, offset=(0, 0, 0), rotation=(0, 0, 0), standard=Fa
 def attach_models(board):
     for footprint in board.GetFootprints():
         footprint.Models().clear()
-        reference = footprint.GetReference()
+        reference=footprint.GetReference()
         if reference.startswith('S'):
-            add_model(footprint, 'choc_reference.wrl')
-            add_model(footprint, 'mbk_15u.wrl')
+            add_model(footprint,'choc_reference.wrl')
+            cap='mbk_1u_reference.wrl' if footprint.GetValue()=='Choc v1 1U' else 'mbk_15u.wrl'
+            if (ROOT/'ergogen-kikad/design/models'/cap).exists():add_model(footprint,cap)
         elif reference.startswith('MCU'):
-            add_model(footprint, 'nice_nano_reference.wrl', rotation=(0, 0, 180))
-        elif reference.startswith('LCD'):
-            add_model(footprint, 'nice_view_reference.wrl')
-            add_model(footprint, 'display_socket.wrl')
+            if (ROOT/'ergogen-kikad/design/models/xiao_plus_reference.wrl').exists():add_model(footprint,'xiao_plus_reference.wrl')
         elif reference.startswith('BAT'):
-            add_model(footprint, 'battery_301055.wrl')
+            add_model(footprint,'battery_301055.wrl')
         elif reference.startswith('PWR'):
-            add_model(footprint, 'Button_Switch_THT.3dshapes/SW_Slide_SPDT_Straight_CK_OS102011MS2Q.step', standard=True)
-        elif reference.startswith('RST'):
-            add_model(footprint, 'Button_Switch_THT.3dshapes/SW_PUSH_6mm_H4.3mm.step', offset=(-3.25, 2.25, 0), standard=True)
-        elif reference == 'J1':
-            add_model(footprint, 'Connector_JST.3dshapes/JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal.step', offset=(-1, 0, 0), standard=True)
-            add_model(footprint, 'battery_plug_reference.wrl')
+            add_model(footprint,'Button_Switch_SMD.3dshapes/SW_SPDT_PCM12.step',standard=True)
+        elif reference=='J1':
+            add_model(footprint,'Connector_JST.3dshapes/JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal.step',standard=True)
+            if (ROOT/'ergogen-kikad/design/models/jst_sh_plug_allowance.wrl').exists():add_model(footprint,'jst_sh_plug_allowance.wrl')
+
 
 
 def main():
@@ -54,7 +51,7 @@ def main():
             models = list(footprint.Models())
             footprint.Models().clear()
             for model in models:
-                if 'mbk_15u' in model.m_Filename or 'nice_view_reference' in model.m_Filename:
+                if 'mbk_' in model.m_Filename:
                     model.m_Show = False
                 model.m_Filename = model.m_Filename.replace(LOCAL, str(ROOT / 'ergogen-kikad/design/models') + '/')
                 footprint.Models().append(model)

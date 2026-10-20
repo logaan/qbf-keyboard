@@ -1,0 +1,204 @@
+{
+  "fixed_pcb_bounds": [
+    0.4,
+    18.75,
+    98.1,
+    77.25
+  ],
+  "main_thickness": 1.6,
+  "baseplate_thickness": 1.6,
+  "module": {
+    "center": [
+      87.5,
+      47.5
+    ],
+    "pcb_mm": [
+      21,
+      17.8,
+      1.6
+    ],
+    "pcb_top_z": 0.05,
+    "support_film_thickness": 0.05,
+    "notch_bounds": [
+      76.7,
+      38.5,
+      98.6,
+      56.5
+    ],
+    "notch_corner_radius": 0.5,
+    "host_solder_land_mm": [
+      0.8,
+      1.2
+    ],
+    "host_land_offset_y": 9.8,
+    "host_land_cut_edge_setback": 0.2,
+    "castellation_y": 8.89,
+    "castellation_copper_diameter": 0.9,
+    "castellation_drill": 0.6,
+    "solder_bridge_max_height": 0.8,
+    "battery_pad_local": [
+      -5.03298,
+      1.00232
+    ],
+    "battery_host_landing": [
+      75.2,
+      37.7
+    ],
+    "battery_wire_od": 0.6,
+    "battery_wire_z": -1.95,
+    "battery_wire_path": [
+      [
+        82.46702,
+        48.50232
+      ],
+      [
+        82.46702,
+        37.7
+      ],
+      [
+        75.2,
+        37.7
+      ]
+    ],
+    "baseplate_access_windows": [
+      [
+        81.35,
+        36.6,
+        83.6,
+        49.65
+      ],
+      [
+        74.1,
+        36.6,
+        83.6,
+        38.8
+      ]
+    ],
+    "antenna_local_bounds": [
+      -10.202401,
+      0.204725,
+      -8.602401,
+      3.404725
+    ],
+    "antenna_clearance": 3,
+    "rf_keepout_bounds": [
+      74.297599,
+      44.704725,
+      81.897599,
+      53.904725
+    ],
+    "reset_local_bounds": [
+      7.27572,
+      4.9214,
+      9.87572,
+      6.5214
+    ],
+    "usb_local_bounds": [
+      4.63872,
+      -4.4936,
+      11.98872,
+      4.5064
+    ],
+    "microphone_local_bounds": [
+      -10.67428,
+      -6.4706,
+      -7.62528,
+      -2.8156
+    ],
+    "physical_sample_note": "Official project specifies 1.6 mm; production PCB thickness, cutout tolerance and supplied module must be measured before fabrication/assembly."
+  },
+  "fasteners": {
+    "count": 4,
+    "screw": "M2 x 5 mm low head",
+    "head_diameter_max": 3.8,
+    "head_height_max": 1.6,
+    "head_z": [
+      0,
+      1.6
+    ],
+    "nut_across_flats": 4,
+    "nut_height": 1.6,
+    "nut_z": [
+      -4.8,
+      -3.2
+    ],
+    "thread_end_z": -5
+  },
+  "connector": {
+    "origin": [
+      71.375,
+      48
+    ],
+    "rotation": -90,
+    "mated_allowance_bounds": [
+      65.05,
+      45,
+      73.05,
+      51
+    ],
+    "mated_height_allowance": 3.0,
+    "native_model": "Connector_JST.3dshapes/JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal.step",
+    "note": "Mating plug represented by conservative assembly allowance, not exact mating CAD."
+  },
+  "power": {
+    "origin": [
+      3.75,
+      48
+    ],
+    "rotation": -90,
+    "stroke": 1.5,
+    "native_model": "Button_Switch_SMD.3dshapes/SW_SPDT_PCM12.step"
+  },
+  "gpio": {
+    "D0": [
+      0,
+      2
+    ],
+    "D1": [
+      0,
+      3
+    ],
+    "D2": [
+      0,
+      28
+    ],
+    "D3": [
+      0,
+      29
+    ],
+    "D4": [
+      0,
+      4
+    ],
+    "D5": [
+      0,
+      5
+    ],
+    "D6": [
+      1,
+      11
+    ],
+    "D7": [
+      1,
+      12
+    ],
+    "D8": [
+      1,
+      13
+    ],
+    "D9": [
+      1,
+      14
+    ],
+    "D10": [
+      1,
+      15
+    ]
+  },
+  "sources": {
+    "xiao_docs": "https://wiki.seeedstudio.com/XIAO_BLE/",
+    "antenna": "https://datasheet.lcsc.com/datasheet/pdf/b5dbf9d22ca92e360a16bb97f35d6538.pdf?productCode=C2916136",
+    "module_pcb_sha256": "5a27d0975005abeab356ee8355f3df62d75c01b4f50fe582eaa6448aec16d870",
+    "module_schematic_sha256": "8ae3fba8adbd66d4a45bcca87dce64c02176d6338a9f0c6333f2404944cc2185"
+  }
+}

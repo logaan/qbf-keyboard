@@ -14,7 +14,7 @@ module.exports = {
         (effects (font (size 1 1) (thickness 0.15))))
       (fp_text value "Choc v1 ${p.cap_length == 17.5 ? '1U' : '1.5U'}" (at 0 0) (layer F.Fab) hide
         (effects (font (size 1 1) (thickness 0.15))))
-      (fp_text user "${p.label}" (at ${p.label_offset} 0) (layer F.SilkS)
+      (fp_text user "${p.label}" (at ${p.label_offset} 2.8) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15))))
       (fp_line (start ${-p.cap_length / 2} -8.25) (end ${p.cap_length / 2} -8.25) (layer Dwgs.User) (width 0.15))
       (fp_line (start ${p.cap_length / 2} -8.25) (end ${p.cap_length / 2} 8.25) (layer Dwgs.User) (width 0.15))

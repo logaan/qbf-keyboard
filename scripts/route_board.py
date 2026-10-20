@@ -6,23 +6,20 @@ import heapq
 import itertools
 import json
 import re
-
+import subprocess
+import sys
 import pcbnew as pcb
-
 from attach_models import attach_models
 
-
-OUTPUT = Path(__file__).resolve().parents[1] / 'ergogen-kikad/generated'
-BOARD = OUTPUT / 'pcbs/macropad.kicad_pcb'
-BASE_PLATE = OUTPUT / 'pcbs/baseplate.kicad_pcb'
-WIDTH_MM = 0.30
-GRID_MM = 0.25
-CLEARANCE_MM = 0.25
-PAGE_OFFSET_MM = (0, 0)
-DRAWING_TITLE = 'QBF Wireless Split Perkins Keyboard'
-RING_INNER_RADIUS_MM = 23.0
-WELL_COPPER_CLEARANCE_MM = 0.5
-
+OUTPUT=Path(__file__).resolve().parents[1]/'ergogen-kikad/generated'
+BOARD=OUTPUT/'pcbs/macropad.kicad_pcb'
+BASE_PLATE=OUTPUT/'pcbs/baseplate.kicad_pcb'
+WIDTH_MM=0.30
+GRID_MM=0.20
+CLEARANCE_MM=0.25
+PAGE_OFFSET_MM=(0,0)
+DRAWING_TITLE='QBF XIAO Direct-Wired Keyboard'
+WELL_COPPER_CLEARANCE_MM=0.5
 
 def point(xy):
     return pcb.VECTOR2I(pcb.FromMM(xy[0]), pcb.FromMM(xy[1]))
@@ -81,46 +78,6 @@ def pad_distance(pad, start, end):
                for index, corner in enumerate(corners))
 
 
-def check_board(board):
-    tracks = list(board.GetTracks())
-    pads = [pad for footprint in board.GetFootprints() for pad in footprint.Pads()]
-    zones = list(board.Zones())
-    if board.GetConnectivity().GetUnconnectedCount(False):
-        raise RuntimeError('Board still has unconnected nets')
-    if len(zones) != 2 or {zone.GetLayer() for zone in zones} != {pcb.F_Cu, pcb.B_Cu}:
-        raise RuntimeError('Expected filled GND zones on both copper layers')
-    if not all(zone.IsFilled() for zone in zones):
-        raise RuntimeError('One or more GND zones are not filled')
-    well = check_battery_well(board)
-    for track in tracks:
-        start, end = mm_point(track.GetStart()), mm_point(track.GetEnd())
-        half_width = pcb.ToMM(track.GetWidth()) / 2
-        if min(segment_distance(start, end, a, b) for a, b in rectangle_edges(well)) - half_width < WELL_COPPER_CLEARANCE_MM - 1e-5:
-            raise RuntimeError('Trace violates battery well copper-edge clearance')
-        if any(well[0] <= p[0] <= well[2] and well[1] <= p[1] <= well[3] for p in (start, end)):
-            raise RuntimeError('Trace crosses the battery well')
-        for pad in pads:
-            if pad.GetAttribute() == pcb.PAD_ATTRIB_SMD and not pad.IsOnLayer(track.GetLayer()):
-                continue
-            if pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH and pad.GetNetname() == track.GetNetname():
-                continue
-            clearance = pad_distance(pad, start, end) - half_width
-            if clearance < CLEARANCE_MM - 1e-5:
-                raise RuntimeError(f'{track.GetNetname()} trace {start}->{end} too close to '
-                                   f'{pad.GetParentFootprint().GetReference()} pad {pad.GetNumber()} '
-                                   f'at {mm_point(pad.GetPosition())}: {clearance:.3f} mm')
-
-    for index, first in enumerate(tracks):
-        for second in tracks[index + 1:]:
-            if first.GetLayer() != second.GetLayer() or first.GetNetCode() == second.GetNetCode():
-                continue
-            separation = segment_distance(mm_point(first.GetStart()), mm_point(first.GetEnd()),
-                                          mm_point(second.GetStart()), mm_point(second.GetEnd()))
-            clearance = separation - pcb.ToMM(first.GetWidth() + second.GetWidth()) / 2
-            if clearance < CLEARANCE_MM - 1e-5:
-                raise RuntimeError(f'{first.GetNetname()} and {second.GetNetname()} traces too close: {clearance:.3f} mm')
-
-
 def route(board, net, layer, coordinates):
     previous_direction = None
     for start, end in zip(coordinates, coordinates[1:]):
@@ -141,123 +98,6 @@ def route(board, net, layer, coordinates):
         track.SetNetCode(net.GetNetCode())
         board.Add(track)
         previous_direction = direction
-
-
-def add_ground_zone(board, ground, layer):
-    zone = pcb.ZONE(board)
-    zone.SetLayer(layer)
-    zone.SetNetCode(ground.GetNetCode())
-    zone.SetMinThickness(pcb.FromMM(0.1 if WIDTH_MM < 0.3 else 0.25))
-    zone.SetLocalClearance(pcb.FromMM(CLEARANCE_MM))
-    zone.SetThermalReliefGap(pcb.FromMM(max(0.15, CLEARANCE_MM)))
-    zone.SetThermalReliefSpokeWidth(pcb.FromMM(0.2 if WIDTH_MM < 0.3 else 0.35))
-    zone.SetIslandRemovalMode(pcb.ISLAND_REMOVAL_MODE_ALWAYS)
-    polygon = zone.Outline()
-    polygon.NewOutline()
-    bounds = board_bounds(board)
-    left, top, right, bottom = bounds
-    inset = 0.8
-    for xy in [(left + inset, top + inset), (right - inset, top + inset),
-               (right - inset, bottom - inset), (left + inset, bottom - inset)]:
-        polygon.Append(*point(xy))
-    board.Add(zone)
-
-
-def make_base_plate():
-    plate = pcb.LoadBoard(str(BOARD))
-    if list(plate.GetTracks()) or list(plate.Zones()):
-        raise RuntimeError('Base plate source must be the un-routed Ergogen board')
-    well = battery_well_bounds(plate)
-
-    for footprint in list(plate.GetFootprints()):
-        if footprint.GetReference().startswith('WELL'):
-            plate.Remove(footprint)
-            continue
-        is_controller = footprint.GetReference().startswith('MCU')
-        pads = list(footprint.Pads())
-        if footprint.GetReference().startswith(('LCD', 'PWR', 'J')):
-            positions = [pad.GetPosition() for pad in pads]
-            center = pcb.VECTOR2I(sum(position.x for position in positions) // len(positions),
-                                 sum(position.y for position in positions) // len(positions))
-            slot_width = max(position.x for position in positions) - min(position.x for position in positions) + pcb.FromMM(1.8)
-            slot_height = max(position.y for position in positions) - min(position.y for position in positions) + pcb.FromMM(1.8)
-            if footprint.GetReference().startswith('PWR'):
-                slot_width, slot_height = pcb.FromMM(3.9), pcb.FromMM(11)
-            reference = footprint.GetReference()
-            plate.Remove(footprint)
-            footprint = pcb.FOOTPRINT(plate)
-            footprint.SetReference(reference)
-            footprint.SetValue('Header clearance')
-            plate.Add(footprint)
-            slot = pcb.PAD(footprint)
-            slot.SetAttribute(pcb.PAD_ATTRIB_NPTH)
-            slot.SetShape(pcb.PAD_SHAPE_OVAL)
-            slot.SetDrillShape(pcb.PAD_DRILL_SHAPE_OBLONG)
-            slot.SetSize(pcb.VECTOR2I(slot_width, slot_height))
-            slot.SetDrillSize(slot.GetSize())
-            slot.SetPosition(center)
-            slot.SetLayerSet(pcb.LSET.AllCuMask())
-            footprint.Add(slot)
-            pads = [slot]
-        footprint.Reference().SetVisible(False)
-        footprint.Value().SetVisible(False)
-        for pad in pads:
-            if pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH:
-                diameter = 2.0 if is_controller or footprint.GetReference().startswith('RST') else 2.8
-                drill = pcb.VECTOR2I(pcb.FromMM(diameter), pcb.FromMM(diameter))
-                pad.SetDrillSize(drill)
-                pad.SetSize(drill)
-            pad.SetAttribute(pcb.PAD_ATTRIB_NPTH)
-            pad.SetNumber('')
-            pad.SetNetCode(0)
-        for graphic in list(footprint.GraphicalItems()):
-            if graphic.GetLayer() in (pcb.F_SilkS, pcb.B_SilkS):
-                graphic.SetLayer(pcb.F_Fab)
-    for footprint in plate.GetFootprints():
-        for pad in footprint.Pads():
-            center = mm_point(pad.GetPosition())
-            if well[0] <= center[0] <= well[2] and well[1] <= center[1] <= well[3]:
-                raise RuntimeError('Baseplate battery floor contains a drill or slot')
-            if min(pad_distance(pad, start, end) for start, end in rectangle_edges(well)) <= 0:
-                raise RuntimeError('Baseplate hole overlaps the battery floor')
-    plate.RemoveUnusedNets(None)
-
-    left, top, right, bottom = board_bounds(plate)
-    cx, cy = (left + right) / 2, (top + bottom) / 2
-    r = RING_INNER_RADIUS_MM
-    for start, end in [((cx - r - 1, cy), (cx - r + 1, cy)),
-                       ((cx + r - 1, cy), (cx + r + 1, cy)),
-                       ((cx, cy - r - 1), (cx, cy - r + 1)),
-                       ((cx, cy + r - 1), (cx, cy + r + 1))]:
-        marker = pcb.PCB_SHAPE(plate)
-        marker.SetShape(pcb.SHAPE_T_SEGMENT)
-        marker.SetStart(point(start))
-        marker.SetEnd(point(end))
-        marker.SetLayer(pcb.B_SilkS)
-        marker.SetWidth(pcb.FromMM(0.16))
-        plate.Add(marker)
-
-    plate.GetTitleBlock().SetTitle('QBF Circuit-Free Base Plate')
-    plate.GetTitleBlock().SetDate(date.today().isoformat())
-    plate.Move(point(PAGE_OFFSET_MM))
-    pcb.SaveBoard(str(BASE_PLATE), plate)
-    check_base_plate(pcb.LoadBoard(str(BASE_PLATE)))
-
-
-def check_base_plate(plate):
-    if list(plate.GetTracks()) or list(plate.Zones()):
-        raise RuntimeError('Base plate has tracks or copper zones')
-    if any(f.GetReference().startswith('WELL') for f in plate.GetFootprints()):
-        raise RuntimeError('Base plate must remain continuous beneath the battery well')
-    pads = [pad for footprint in plate.GetFootprints() for pad in footprint.Pads()]
-    if len(pads) != 87 or any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH or
-                              pad.GetNetCode() != 0 for pad in pads):
-        raise RuntimeError('Base plate must have 87 unconnected mechanical holes or slots')
-    markers = [drawing for drawing in plate.GetDrawings()
-               if drawing.GetLayer() == pcb.B_SilkS]
-    if len(markers) != 4 or any(marker.GetShape() != pcb.SHAPE_T_SEGMENT
-                                for marker in markers):
-        raise RuntimeError('Expected four B.SilkS ring alignment ticks')
 
 
 def battery_well_bounds(board):
@@ -311,201 +151,6 @@ def cap_bounds(footprint):
             max(x for x, y in positions), max(y for x, y in positions))
 
 
-def check_layout(board, output):
-    switches = [footprint for footprint in board.GetFootprints()
-                if footprint.GetReference().startswith('S')]
-    controllers = [footprint for footprint in board.GetFootprints()
-                   if footprint.GetReference().startswith('MCU')]
-    mounts = [mm_point(footprint.GetPosition()) for footprint in board.GetFootprints()
-              if footprint.GetReference().startswith('H')]
-    if len(switches) != 10 or len(controllers) != 1 or len(mounts) != 6:
-        raise RuntimeError('Expected ten switches, one controller and six mounts')
-    main = [footprint for footprint in switches
-            if cap_bounds(footprint)[3] - cap_bounds(footprint)[1] > 20]
-    extra = [footprint for footprint in switches if footprint not in main]
-    if len(main) != 8 or len(extra) != 2:
-        raise RuntimeError('Expected eight portrait and two landscape 1.5U caps')
-    xs = sorted({mm_point(footprint.GetPosition())[0] for footprint in main})
-    ys = sorted({mm_point(footprint.GetPosition())[1] for footprint in main})
-    if len(xs) != 4 or len(ys) != 2 or abs(ys[1] - ys[0] - 27.5) > 0.001:
-        raise RuntimeError('The main rows must have a 1 mm cap gap')
-    if any(abs(right - left - 19.05) > 0.001 for left, right in zip(xs, xs[1:])):
-        raise RuntimeError('Expected 19.05 mm horizontal key spacing')
-    expected_mounts = {(round((xs[index] + xs[index + 1]) / 2, 4), y)
-                       for index in (0, 2) for y in ys}
-    right_mount_x = round(xs[-1] + 24.05 + 26.5 / 2 - 2.7, 4)
-    expected_mounts.update((right_mount_x, round(sum(ys) / 2 + offset, 4))
-                           for offset in (-18.75, 18.75))
-    if set(mounts) != expected_mounts:
-        raise RuntimeError('Mounts must sit between columns 1/2 and 3/4 and between column 5 and the controls')
-    cx, cy = mm_point(controllers[0].GetPosition())
-    if abs(cy - sum(ys) / 2) > 0.001 or abs(cx - 87.0) > 0.001:
-        raise RuntimeError('Controller must be centered in the next column to the right')
-    extra_positions = sorted(mm_point(footprint.GetPosition()) for footprint in extra)
-    if any(abs(x - xs[-1] - 24.05) > 0.001 for x, y in extra_positions):
-        raise RuntimeError('Landscape keys must retain the 2.55 mm gap to column four')
-    if any(abs(abs(y - cy) - 18.75) > 0.001 for x, y in extra_positions):
-        raise RuntimeError('Extra keys must align with the outer row edges')
-    if not extra_positions[0][1] < cy < extra_positions[1][1]:
-        raise RuntimeError('Expected one extra key above and one below the controller')
-    left, top, right, bottom = board_bounds(board)
-    assembly_left, assembly_bottom = xs[0] - 8.75, ys[-1] + 13.75
-    expected_bounds = (assembly_left - 1.5, ys[0] - 15.25, cx + 20, assembly_bottom + 1.5)
-    if any(abs(actual - expected) > 0.001 for actual, expected in zip((left, top, right, bottom), expected_bounds)):
-        raise RuntimeError('PCB must extend 1.5 mm around the unchanged component layout')
-    caps = []
-    for footprint in switches:
-        bounds = cap_bounds(footprint)
-        width, height = bounds[2] - bounds[0], bounds[3] - bounds[1]
-        expected_width, expected_height = (26.5, 16.5) if footprint in extra else (16.5, 26.5)
-        if footprint.GetValue() != 'Choc v1 1.5U' or abs(width - expected_width) > 0.001 or abs(height - expected_height) > 0.001:
-            raise RuntimeError(f'Incorrect cap dimensions: {footprint.GetReference()}')
-        if bounds[0] < left or bounds[1] < top or bounds[2] > right or bounds[3] > bottom:
-            raise RuntimeError(f'Cap outside board: {footprint.GetReference()}')
-        caps.append(bounds)
-    top_edges = [cap_bounds(footprint)[1] for footprint in switches
-                 if mm_point(footprint.GetPosition())[1] < cy]
-    bottom_edges = [cap_bounds(footprint)[3] for footprint in switches
-                    if mm_point(footprint.GetPosition())[1] > cy]
-    if max(top_edges) - min(top_edges) > 0.001 or max(bottom_edges) - min(bottom_edges) > 0.001:
-        raise RuntimeError('All five outer cap edges must align in each row')
-    rectangles = caps + [(cx - 18, cy - 9.15, cx + 18, cy + 9.15)]
-    for first, second in itertools.combinations(rectangles, 2):
-        if min(first[2], second[2]) > max(first[0], second[0]) and min(first[3], second[3]) > max(first[1], second[1]):
-            raise RuntimeError('Overlapping keycaps or controller')
-    displays = [footprint for footprint in board.GetFootprints()
-                if footprint.GetReference().startswith('LCD')]
-    if len(displays) != 1:
-        raise RuntimeError('Expected one stacked display')
-    dx, dy = mm_point(displays[0].GetPosition())
-    display_bounds = (dx - 18, dy - 7, dx + 18, dy + 7)
-    for cap in caps:
-        if min(cap[2], display_bounds[2]) > max(cap[0], display_bounds[0]) and min(cap[3], display_bounds[3]) > max(cap[1], display_bounds[1]):
-            raise RuntimeError('Display module overlaps a keycap')
-    if display_bounds[2] > right - 0.499 or display_bounds[0] < xs[-1] + 8.749:
-        raise RuntimeError('Display module must clear the fourth column and board edge')
-    if any(pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH and
-           pad.GetAttribute() != pcb.PAD_ATTRIB_PTH
-           for footprint in board.GetFootprints() for pad in footprint.Pads()):
-        raise RuntimeError('Assembly must use through-hole components only')
-    parts = {footprint.GetReference(): footprint for footprint in board.GetFootprints()}
-    expected_wiring = {
-        'J1': {'1': 'BAT_POS', '2': 'GND'},
-        'PWR1': {'1': 'BAT_POS', '2': 'VBAT', '3': ''},
-        'RST1': {'1': 'RST', '2': 'GND'},
-        'MCU1': {'24': 'VBAT', '22': 'RST'},
-        'LCD1': {'1': 'LCD_SI', '2': 'LCD_CLK', '3': '3V3', '4': 'GND', '5': 'LCD_CS'},
-    }
-    for reference, wiring in expected_wiring.items():
-        if reference not in parts:
-            raise RuntimeError(f'Missing battery or reset component: {reference}')
-        for number, net in wiring.items():
-            terminals = [pad for pad in parts[reference].Pads() if pad.GetNumber() == number]
-            if not terminals or any(pad.GetNetname() != net for pad in terminals):
-                raise RuntimeError(f'Incorrect power or reset wiring: {reference}.{number}')
-    socket_pads = sorted(parts['LCD1'].Pads(), key=lambda pad: int(pad.GetNumber()))
-    expected_socket = [(round(dx - 16.7, 4), round(dy - 5.08 + index * 2.54, 4))
-                       for index in range(5)]
-    if [mm_point(pad.GetPosition()) for pad in socket_pads] != expected_socket:
-        raise RuntimeError('Display socket must match the module contacts at 2.54 mm pitch')
-    socket_bounds = (dx - 17.97, dy - 6.35, dx - 15.43, dy + 6.35)
-    if cx - 18 - socket_bounds[2] < 0.5 - 0.001:
-        raise RuntimeError('Display socket body must clear the controller by at least 0.5 mm')
-    if cx + 18 > right - 0.499:
-        raise RuntimeError('Controller must clear the right board edge')
-    rx, ry = mm_point(parts['RST1'].GetPosition())
-    px, py = mm_point(parts['PWR1'].GetPosition())
-    functional_right = cx + 18.5
-    control_x = (cap_bounds(extra[0])[2] + functional_right) / 2
-    if abs(rx - control_x) > 0.001 or abs(px - control_x) > 0.001:
-        raise RuntimeError('Power and reset must retain the midpoint between column five caps and the original functional region edge')
-    if abs(ry - min(y for x, y in extra_positions)) > 0.001 or abs(py - max(y for x, y in extra_positions)) > 0.001:
-        raise RuntimeError('Reset must align horizontally with t5 and power with b5')
-    controls = []
-    battery = next(footprint for footprint in board.GetFootprints()
-                   if footprint.GetReference().startswith('BAT'))
-    bx, by = mm_point(battery.GetPosition())
-    battery_metadata = re.fullmatch(r'(\S+) (\d+)mAh max ([\d.]+)x([\d.]+)x([\d.]+) z=(-?[\d.]+)', battery.GetValue())
-    if not battery_metadata:
-        raise RuntimeError('Battery footprint must document pack model, capacity, maximum envelope and seating height')
-    battery_model, battery_capacity, _, _, battery_thickness, battery_bottom_z = battery_metadata.groups()
-    battery_corners = [mm_point(position) for drawing in battery.GraphicalItems()
-                       if isinstance(drawing, pcb.PCB_SHAPE)
-                       for position in (drawing.GetStart(), drawing.GetEnd())]
-    battery_bounds = (min(x for x, y in battery_corners), min(y for x, y in battery_corners),
-                      max(x for x, y in battery_corners), max(y for x, y in battery_corners))
-    battery_length = battery_bounds[2] - battery_bounds[0]
-    battery_width = battery_bounds[3] - battery_bounds[1]
-    if abs(float(battery_bottom_z) + 1.4) > 0.001:
-        raise RuntimeError('Battery must sit on 0.2 mm adhesive above the baseplate top at z=-1.6 mm')
-    if abs(battery_length - float(battery_metadata.group(3))) > 0.001 or abs(battery_width - float(battery_metadata.group(4))) > 0.001:
-        raise RuntimeError('Battery maximum envelope must match its footprint bounds')
-    for footprint in board.GetFootprints():
-        if not footprint.GetReference().startswith(('PWR', 'RST', 'J')):
-            continue
-        corners = [mm_point(position) for drawing in footprint.GraphicalItems()
-                   if isinstance(drawing, pcb.PCB_SHAPE) and drawing.GetLayer() == pcb.F_Fab
-                   for position in (drawing.GetStart(), drawing.GetEnd())]
-        bounds = (min(x for x, y in corners), min(y for x, y in corners),
-                  max(x for x, y in corners), max(y for x, y in corners))
-        switch_bodies = [(x - 7, y - 7, x + 7, y + 7)
-                         for switch in main for x, y in [mm_point(switch.GetPosition())]]
-        obstacles = switch_bodies + [battery_bounds] if footprint.GetReference() == 'J1' else caps
-        for other in obstacles + [(cx - 18, cy - 9.15, cx + 18, cy + 9.15)]:
-            if min(bounds[2], other[2]) > max(bounds[0], other[0]) and min(bounds[3], other[3]) > max(bounds[1], other[1]):
-                raise RuntimeError(f'Control overlaps a keycap or controller: {footprint.GetReference()}')
-        if bounds[0] < left or bounds[1] < top or bounds[2] > right or bounds[3] > bottom:
-            raise RuntimeError(f'Control body outside board: {footprint.GetReference()}')
-        controls.append({'reference': footprint.GetReference(),
-                         'x': round(bounds[0] - left, 3), 'y': round(bounds[1] - top, 3),
-                         'width': round(bounds[2] - bounds[0], 3),
-                         'height': round(bounds[3] - bounds[1], 3)})
-    if battery_bounds[2] > socket_bounds[0] - 0.5:
-        raise RuntimeError('Battery must clear the display socket body')
-    if abs(by - cy) > 0.001 or battery_bounds[0] < left or battery_bounds[2] > cx - 18:
-        raise RuntimeError('Battery must sit in the original rows, clear of the controller')
-    if battery_bounds[1] < ys[0] + 7 or battery_bounds[3] > ys[1] - 7:
-        raise RuntimeError('Battery pack envelope overlaps the switch bodies')
-    jx, jy = mm_point(parts['J1'].GetPosition())
-    if abs(jy - cy) > 0.001 or jx - 12.25 < battery_bounds[2] + 1 or jx + 1.35 > socket_bounds[0] - 0.5:
-        raise RuntimeError('Battery connector and mated plug must fit beside the pack between rows')
-    well = check_battery_well(board)
-    if min(battery_bounds[0] - well[0], battery_bounds[1] - well[1],
-           well[2] - battery_bounds[2], well[3] - battery_bounds[3]) < 0.299:
-        raise RuntimeError('Battery pack requires at least 0.3 mm lateral clearance in its well')
-    geometry = {
-        'origin_kicad': [round(left + PAGE_OFFSET_MM[0], 3), round(bottom + PAGE_OFFSET_MM[1], 3)],
-        'assembly_origin_kicad': [round(assembly_left + PAGE_OFFSET_MM[0], 3),
-                                  round(assembly_bottom + PAGE_OFFSET_MM[1], 3)],
-        'assembly_bounds_mm': [round(left - assembly_left, 3), round(assembly_bottom - bottom, 3),
-                               round(right - assembly_left, 3), round(assembly_bottom - top, 3)],
-        'battery_well': {'x': round(well[0] - left, 3), 'y': round(bottom - well[3], 3),
-                         'length': round(well[2] - well[0], 3), 'width': round(well[3] - well[1], 3),
-                         'corner_chamfer': 0.5, 'main_pcb_only': True,
-                         'baseplate_floor_z': -3.2, 'baseplate_top_z': -1.6},
-        'width': round(right - left, 3),
-        'height': round(bottom - top, 3),
-        'display': {'x': round(dx - left, 3), 'y': round(bottom - dy, 3),
-                    'width': 36, 'height': 14, 'module_underside_z': 8.0,
-                    'module_thickness': 2.9, 'connection': 'direct_socket',
-                    'socket_pitch': 2.54, 'socket_body_width': 2.54,
-                    'socket_body_length': 12.7},
-        'battery': {'x': round(bx - left, 3), 'y': round(bottom - by, 3),
-                    'length': round(battery_length, 3), 'width': round(battery_width, 3),
-                    'thickness': float(battery_thickness), 'adhesive': 0.2,
-                    'capacity_mah': int(battery_capacity), 'model': battery_model,
-                    'bottom_z': float(battery_bottom_z),
-                    'top_z': round(float(battery_bottom_z) + float(battery_thickness), 3)},
-        'controls': sorted(controls, key=lambda control: control['reference']),
-        'mounts': sorted([{'x': round(x - left, 3), 'y': round(bottom - y, 3)}
-                          for x, y in mounts], key=lambda point: (point['x'], point['y'])),
-        'hole_x': sorted({round(x - left, 3) for x, y in mounts}),
-        'hole_y': sorted({round(bottom - y, 3) for x, y in mounts}),
-    }
-    (output / 'board_geometry.json').write_text(json.dumps(geometry, indent=2) + '\n')
-    print(f"Validated aligned outer cap edges and 1 mm main row gap; board {geometry['width']} x {geometry['height']} mm")
-
-
 def grid_point(position):
     return tuple(round(value / GRID_MM) for value in position)
 
@@ -525,89 +170,6 @@ def mark_obstacle(blocked, start, end, radius):
             distance = math.dist(position, start) if start == end else point_to_segment_distance(position, start, end)
             if distance < radius:
                 blocked.add((x, y))
-
-
-def find_path(board, net, layer, start, end):
-    blocked = set()
-    margin = WIDTH_MM / 2 + 0.25 + GRID_MM / math.sqrt(2) + 0.01
-    for footprint in board.GetFootprints():
-        for pad in footprint.Pads():
-            if pad.GetAttribute() != pcb.PAD_ATTRIB_NPTH and pad.GetNetCode() == net.GetNetCode():
-                continue
-            size = pad.GetDrillSize() if pad.GetAttribute() == pcb.PAD_ATTRIB_NPTH else pad.GetSize()
-            position = mm_point(pad.GetPosition())
-            if pad.GetShape() == pcb.PAD_SHAPE_CIRCLE:
-                mark_obstacle(blocked, position, position, pcb.ToMM(size.x) / 2 + margin)
-            else:
-                bounds = pad.GetBoundingBox()
-                x1, y1 = pcb.ToMM(bounds.GetLeft()), pcb.ToMM(bounds.GetTop())
-                x2, y2 = pcb.ToMM(bounds.GetRight()), pcb.ToMM(bounds.GetBottom())
-                gx1, gy1 = grid_point((x1 - margin - GRID_MM, y1 - margin - GRID_MM))
-                gx2, gy2 = grid_point((x2 + margin + GRID_MM, y2 + margin + GRID_MM))
-                for gx in range(gx1, gx2 + 1):
-                    for gy in range(gy1, gy2 + 1):
-                        px, py = grid_mm((gx, gy))
-                        if math.hypot(max(x1 - px, 0, px - x2), max(y1 - py, 0, py - y2)) < margin:
-                            blocked.add((gx, gy))
-    well = battery_well_bounds(board)
-    edge_margin = WIDTH_MM / 2 + WELL_COPPER_CLEARANCE_MM + GRID_MM / math.sqrt(2) + 0.01
-    gx1, gy1 = grid_point((well[0] - edge_margin - GRID_MM, well[1] - edge_margin - GRID_MM))
-    gx2, gy2 = grid_point((well[2] + edge_margin + GRID_MM, well[3] + edge_margin + GRID_MM))
-    for gx in range(gx1, gx2 + 1):
-        for gy in range(gy1, gy2 + 1):
-            px, py = grid_mm((gx, gy))
-            if well[0] - edge_margin <= px <= well[2] + edge_margin and well[1] - edge_margin <= py <= well[3] + edge_margin:
-                blocked.add((gx, gy))
-    for track in board.GetTracks():
-        if track.GetLayer() == layer and track.GetNetCode() != net.GetNetCode():
-            mark_obstacle(blocked, mm_point(track.GetStart()), mm_point(track.GetEnd()),
-                          pcb.ToMM(track.GetWidth()) / 2 + margin)
-    left, top, right, bottom = board_bounds(board)
-    xmin, ymin = grid_point((left + 0.75, top + 0.75))
-    xmax, ymax = grid_point((right - 0.75, bottom - 0.75))
-    origin, target = grid_point(start), grid_point(end)
-    if origin in blocked or target in blocked:
-        raise RuntimeError(f'Blocked endpoint for {net.GetNetname()}')
-
-    def estimate(position):
-        dx, dy = abs(position[0] - target[0]), abs(position[1] - target[1])
-        return max(dx, dy) + (math.sqrt(2) - 1) * min(dx, dy)
-
-    serial = itertools.count()
-    queue = [(estimate(origin), next(serial), origin)]
-    cost, parents = {origin: 0}, {}
-    directions = ((1, 0), (0, 1), (-1, 0), (0, -1), (1, 1), (1, -1), (-1, 1), (-1, -1))
-    visited = set()
-    while queue:
-        _, _, current = heapq.heappop(queue)
-        if current in visited:
-            continue
-        if current == target:
-            path = [current]
-            while current != origin:
-                current = parents[current]
-                path.append(current)
-            return [grid_mm(position) for position in reversed(path)]
-        visited.add(current)
-        for dx, dy in directions:
-            neighbor = (current[0] + dx, current[1] + dy)
-            if not xmin <= neighbor[0] <= xmax or not ymin <= neighbor[1] <= ymax:
-                continue
-            if neighbor in blocked or neighbor in visited:
-                continue
-            if dx and dy and ((current[0] + dx, current[1]) in blocked or
-                              (current[0], current[1] + dy) in blocked):
-                continue
-            new_cost = cost[current] + math.hypot(dx, dy)
-            if current in parents:
-                previous = parents[current]
-                if (current[0] - previous[0], current[1] - previous[1]) != (dx, dy):
-                    new_cost += 0.05
-            if new_cost < cost.get(neighbor, math.inf):
-                cost[neighbor] = new_cost
-                parents[neighbor] = current
-                heapq.heappush(queue, (new_cost + estimate(neighbor), next(serial), neighbor))
-    raise RuntimeError(f'No route for {net.GetNetname()} on layer {layer}')
 
 
 def terminal(start, end):
@@ -642,97 +204,244 @@ def smooth_path(coordinates):
     return result + [compact[-1]]
 
 
+def assembly_spec():
+    return json.loads((Path(__file__).resolve().parents[1] / 'ergogen-kikad/design/assembly.json').read_text())
+
+
+def add_rectangle(board,bounds,layer=pcb.Edge_Cuts):
+    for a,b in rectangle_edges(bounds):
+        shape=pcb.PCB_SHAPE(board)
+        shape.SetShape(pcb.SHAPE_T_SEGMENT)
+        shape.SetStart(point(a));shape.SetEnd(point(b));shape.SetLayer(layer);shape.SetWidth(pcb.FromMM(0.05))
+        board.Add(shape)
+
+
+def add_rounded_rectangle(board,bounds,r):
+    x0,y0,x1,y1=bounds
+    lines=[((x0+r,y0),(x1-r,y0)),((x1,y0+r),(x1,y1-r)),((x1-r,y1),(x0+r,y1)),((x0,y1-r),(x0,y0+r))]
+    for start,end in lines:
+        shape=pcb.PCB_SHAPE(board);shape.SetShape(pcb.SHAPE_T_SEGMENT);shape.SetStart(point(start));shape.SetEnd(point(end));shape.SetLayer(pcb.Edge_Cuts);shape.SetWidth(pcb.FromMM(0.05));board.Add(shape)
+    d=r/math.sqrt(2)
+    arcs=[((x1-r,y0),(x1-r+d,y0+r-d),(x1,y0+r)),((x1,y1-r),(x1-r+d,y1-r+d),(x1-r,y1)),((x0+r,y1),(x0+r-d,y1-r+d),(x0,y1-r)),((x0,y0+r),(x0+r-d,y0+r-d),(x0+r,y0))]
+    for start,mid,end in arcs:
+        shape=pcb.PCB_SHAPE(board);shape.SetShape(pcb.SHAPE_T_ARC);shape.SetArcGeometry(point(start),point(mid),point(end));shape.SetLayer(pcb.Edge_Cuts);shape.SetWidth(pcb.FromMM(0.05));board.Add(shape)
+
+
+def fixed_to_kicad(bounds):
+    return [bounds[0],-bounds[3],bounds[2],-bounds[1]]
+
+
+def make_base_plate():
+    global PAGE_OFFSET_MM
+    source=pcb.LoadBoard(str(BOARD))
+    plate=pcb.BOARD()
+    plate.GetDesignSettings().SetBoardThickness(pcb.FromMM(1.6))
+    raw=board_bounds(source)
+    PAGE_OFFSET_MM=(210-(raw[0]+raw[2])/2,148.5-(raw[1]+raw[3])/2)
+    add_rounded_rectangle(plate,raw,1.5)
+    for source_fp in source.GetFootprints():
+        reference=source_fp.GetReference()
+        if not reference.startswith(('S','H','PWR')):continue
+        fp=pcb.FOOTPRINT(plate);fp.SetReference(reference);fp.SetPosition(source_fp.GetPosition());fp.Reference().SetVisible(False);fp.Value().SetVisible(False);plate.Add(fp)
+        for source_pad in source_fp.Pads():
+            if reference.startswith('PWR') and source_pad.GetAttribute()!=pcb.PAD_ATTRIB_NPTH:continue
+            size=source_pad.GetDrillSize() if source_pad.GetAttribute()==pcb.PAD_ATTRIB_NPTH else point((2.8,2.8))
+            pad=pcb.PAD(fp);pad.SetAttribute(pcb.PAD_ATTRIB_NPTH);pad.SetShape(pcb.PAD_SHAPE_CIRCLE);pad.SetPosition(source_pad.GetPosition());pad.SetSize(size);pad.SetDrillSize(size);pad.SetLayerSet(pcb.LSET.AllCuMask());fp.Add(pad)
+    access=assembly_spec()['module']['baseplate_access_windows']
+    x0=min(b[0] for b in access);x1=max(b[2] for b in access)
+    low=min(b[1] for b in access);high=max(b[3] for b in access)
+    points=[(access[0][0],high),(access[0][2],high),(access[0][2],low),(x0,low),(x0,access[1][3]),(access[0][0],access[1][3])]
+    for a,b in zip(points,points[1:]+points[:1]):
+        edge=pcb.PCB_SHAPE(plate);edge.SetShape(pcb.SHAPE_T_SEGMENT);edge.SetStart(point((a[0],-a[1])));edge.SetEnd(point((b[0],-b[1])));edge.SetLayer(pcb.Edge_Cuts);edge.SetWidth(pcb.FromMM(0.05));plate.Add(edge)
+    plate.GetTitleBlock().SetTitle('QBF circuit-free insulating baseplate')
+    plate.RemoveUnusedNets(None)
+    plate.Move(point(PAGE_OFFSET_MM));pcb.SaveBoard(str(BASE_PLATE),plate)
+    if len([pad for fp in plate.GetFootprints() for pad in fp.Pads()])!=56:
+        raise RuntimeError('Expected 50 switch clearances, four M2 holes and two power locating holes')
+    if list(plate.GetTracks()) or list(plate.Zones()):raise RuntimeError('Baseplate contains copper routing')
+
+
+def check_layout(board,output):
+    parts={fp.GetReference():fp for fp in board.GetFootprints()}
+    switches=[fp for fp in parts.values() if fp.GetReference().startswith('S')]
+    mounts=[mm_point(fp.GetPosition()) for fp in parts.values() if fp.GetReference().startswith('H')]
+    if len(switches)!=10 or len(mounts)!=4 or 'MCU1' not in parts or any(r.startswith(('LCD','RST')) for r in parts):
+        raise RuntimeError('Expected ten direct keys, one XIAO, four mounts, no display or external reset')
+    left,top,right,bottom=board_bounds(board)
+    if any(abs(a-b)>0.001 for a,b in zip([left,top,right,bottom],[0.4,-77.25,98.1,-18.75])):raise RuntimeError('Fixed outline changed')
+    if set(mounts)!={(20.425,-23.5),(20.425,-72.5),(58.525,-23.5),(58.525,-72.5)}:raise RuntimeError('Mount positions changed')
+    for fp in switches:
+        labels=[item.GetText() for item in fp.GraphicalItems() if hasattr(item,'GetText') and re.fullmatch('[tb][1-5]',item.GetText())]
+        if len(labels)!=1:raise RuntimeError('Missing key label')
+        name=labels[0];i=int(name[1])-1
+        x=87.1 if i==4 else [10.9,29.95,49,68.05][i]
+        y=(66.75 if name[0]=='t' else 29.25) if i==4 else (61.75 if name[0]=='t' else 34.25)
+        if mm_point(fp.GetPosition())!=(x,-y):raise RuntimeError('Key position changed: '+name)
+        signal='D'+str(i+(0 if name[0]=='t' else 5))
+        if sorted(p.GetNetname() for p in fp.Pads() if p.GetNetname())!=sorted(['GND',signal]):raise RuntimeError('Incorrect direct wiring: '+name)
+        cap=cap_bounds(fp)
+        if min(cap[0]-left,cap[1]-top,right-cap[2],bottom-cap[3])<2.249:raise RuntimeError('Cap border less than 2.25 mm')
+    if mm_point(parts['MCU1'].GetPosition())!=(87.5,-47.5):raise RuntimeError('XIAO position changed')
+    if len(list(parts['MCU1'].Pads()))!=14:raise RuntimeError('Expected official 14 standard castellations')
+    well=check_battery_well(board)
+    spec=json.loads((Path(__file__).resolve().parents[1]/'ergogen-kikad/design/battery.json').read_text())
+    geometry={'origin_kicad':[left+PAGE_OFFSET_MM[0],bottom+PAGE_OFFSET_MM[1]],'assembly_origin_kicad':[PAGE_OFFSET_MM[0],PAGE_OFFSET_MM[1]],'assembly_bounds_mm':[left,-bottom,right,-top],'width':round(right-left,3),'height':round(bottom-top,3),'mounts':[{'x':x-left,'y':bottom-y} for x,y in mounts],'fixed_mounts':[{'x':x,'y':-y} for x,y in mounts],'battery_well':{'x':well[0]-left,'y':bottom-well[3],'length':well[2]-well[0],'width':well[3]-well[1],'corner_chamfer':0.5,'main_pcb_only':True,'baseplate_floor_z':-3.2,'baseplate_top_z':-1.6},'battery':{'x':spec['center'][0]-left,'y':spec['center'][1]+bottom,'length':spec['length'],'width':spec['width'],'thickness':spec['thickness'],'bottom_z':spec['bottom_z'],'top_z':spec['bottom_z']+spec['thickness'],'model':spec['model'],'capacity_mah':spec['capacity_mah']},'controller':assembly_spec()['module'],'controls':[]}
+    (output/'board_geometry.json').write_text(json.dumps(geometry,indent=2)+'\n')
+    print('Validated fixed 97.7 x 58.5 mm layout and ten direct GPIO nets',flush=True)
+
+
+def add_rule_area(board,bounds,name,layer):
+    area=pcb.ZONE(board);area.SetIsRuleArea(True);area.SetPlacementAreaEnabled(False)
+    area.SetLayer(layer);area.SetDoNotAllowTracks(True);area.SetDoNotAllowVias(True);area.SetDoNotAllowPads(True);area.SetDoNotAllowZoneFills(True);area.SetZoneName(name)
+    outline=area.Outline();outline.NewOutline()
+    for p in [(bounds[0],bounds[1]),(bounds[2],bounds[1]),(bounds[2],bounds[3]),(bounds[0],bounds[3])]:outline.Append(*point(p))
+    board.Add(area)
+
+
+def add_ground_zone(board,ground,layer):
+    zone=pcb.ZONE(board);zone.SetLayer(layer);zone.SetNetCode(ground.GetNetCode());zone.SetMinThickness(pcb.FromMM(0.1));zone.SetLocalClearance(pcb.FromMM(CLEARANCE_MM));zone.SetThermalReliefGap(pcb.FromMM(0.25));zone.SetThermalReliefSpokeWidth(pcb.FromMM(0.3));zone.SetIslandRemovalMode(pcb.ISLAND_REMOVAL_MODE_ALWAYS)
+    polygon=zone.Outline();polygon.NewOutline()
+    left,top,right,bottom=board_bounds(board)
+    for p in [(left,top),(right,top),(right,bottom),(left,bottom)]:polygon.Append(*point(p))
+    board.Add(zone)
+
+
+def pad_layers(pad):
+    return [i for i,layer in enumerate((pcb.F_Cu,pcb.B_Cu)) if pad.IsOnLayer(layer)]
+
+
+def route_blocked(board,net):
+    blocked=[set(),set()]
+    margin=WIDTH_MM/2+CLEARANCE_MM+GRID_MM/math.sqrt(2)+0.01
+    for fp in board.GetFootprints():
+        for pad in fp.Pads():
+            if pad.GetAttribute()!=pcb.PAD_ATTRIB_NPTH and pad.GetNetCode()==net.GetNetCode():continue
+            bb=pad.GetBoundingBox();x1,y1,x2,y2=[pcb.ToMM(v) for v in (bb.GetLeft(),bb.GetTop(),bb.GetRight(),bb.GetBottom())]
+            layers=[0,1] if pad.GetAttribute()==pcb.PAD_ATTRIB_NPTH else pad_layers(pad)
+            gx1,gy1=grid_point((x1-margin-GRID_MM,y1-margin-GRID_MM));gx2,gy2=grid_point((x2+margin+GRID_MM,y2+margin+GRID_MM))
+            for gx in range(gx1,gx2+1):
+                for gy in range(gy1,gy2+1):
+                    x,y=grid_mm((gx,gy))
+                    if math.hypot(max(x1-x,x-x2,0),max(y1-y,y-y2,0))<margin:
+                        for layer in layers:blocked[layer].add((gx,gy))
+    for track in board.GetTracks():
+        if track.GetNetCode()==net.GetNetCode():continue
+        layers=[0,1] if isinstance(track,pcb.PCB_VIA) else [0 if track.GetLayer()==pcb.F_Cu else 1]
+        for layer in layers:mark_obstacle(blocked[layer],mm_point(track.GetStart()),mm_point(track.GetEnd()),pcb.ToMM(track.GetWidth(pcb.F_Cu) if isinstance(track,pcb.PCB_VIA) else track.GetWidth())/2+margin)
+    exclusions=[(battery_well_bounds(board),0.5),(fixed_to_kicad(assembly_spec()['module']['notch_bounds']),0.25),(fixed_to_kicad(assembly_spec()['module']['rf_keepout_bounds']),0)]
+    for bounds,edge_clearance in exclusions:
+        radius=WIDTH_MM/2+edge_clearance+GRID_MM/math.sqrt(2)+0.01
+        gx1,gy1=grid_point((bounds[0]-radius-GRID_MM,bounds[1]-radius-GRID_MM));gx2,gy2=grid_point((bounds[2]+radius+GRID_MM,bounds[3]+radius+GRID_MM))
+        for gx in range(gx1,gx2+1):
+            for gy in range(gy1,gy2+1):
+                x,y=grid_mm((gx,gy))
+                if bounds[0]-radius<=x<=bounds[2]+radius and bounds[1]-radius<=y<=bounds[3]+radius:
+                    blocked[0].add((gx,gy));blocked[1].add((gx,gy))
+    return blocked
+
+
+def find_multilayer_path(board,net,first,last):
+    blocked=route_blocked(board,net)
+    origin,target=grid_point(mm_point(first.GetPosition())),grid_point(mm_point(last.GetPosition()))
+    starts=[(layer,*origin) for layer in pad_layers(first) if origin not in blocked[layer]]
+    targets={(layer,*target) for layer in pad_layers(last) if target not in blocked[layer]}
+    if not starts or not targets:raise RuntimeError('Blocked endpoint for '+net.GetNetname())
+    left,top,right,bottom=board_bounds(board);xmin,ymin=grid_point((left+0.7,top+0.7));xmax,ymax=grid_point((right-0.7,bottom-0.7))
+    def heuristic(state):return math.hypot(state[1]-target[0],state[2]-target[1])
+    serial=itertools.count();queue=[];cost={};parents={}
+    for start in starts:cost[start]=0;heapq.heappush(queue,(heuristic(start),next(serial),start))
+    visited=set();directions=[(1,0),(-1,0),(0,1),(0,-1),(1,1),(1,-1),(-1,1),(-1,-1)]
+    while queue:
+        _,_,current=heapq.heappop(queue)
+        if current in visited:continue
+        if current in targets:
+            result=[current]
+            while current in parents:current=parents[current];result.append(current)
+            return list(reversed(result))
+        visited.add(current);layer,x,y=current
+        neighbors=[((layer,x+dx,y+dy),math.hypot(dx,dy)) for dx,dy in directions]
+        if all((x+dx,y+dy) not in blocked[other] for other in [0,1] for dx in [-1,0,1] for dy in [-1,0,1]):neighbors.append(((1-layer,x,y),15))
+        for neighbor,step in neighbors:
+            nl,nx,ny=neighbor
+            if not xmin<=nx<=xmax or not ymin<=ny<=ymax or neighbor in visited or (nx,ny) in blocked[nl]:continue
+            if nl==layer and nx!=x and ny!=y and ((nx,y) in blocked[layer] or (x,ny) in blocked[layer]):continue
+            value=cost[current]+step
+            if value<cost.get(neighbor,math.inf):cost[neighbor]=value;parents[neighbor]=current;heapq.heappush(queue,(value+heuristic(neighbor),next(serial),neighbor))
+    raise RuntimeError('No multilayer route for '+net.GetNetname())
+
+
+def route_connection(board,net,first,last):
+    path=find_multilayer_path(board,net,first,last)
+    section=terminal(mm_point(first.GetPosition()),grid_mm(path[0][1:]));layer=path[0][0]
+    for state in path:
+        position=grid_mm(state[1:])
+        if state[0]!=layer:
+            route(board,net,[pcb.F_Cu,pcb.B_Cu][layer],smooth_path(section+[position]))
+            via=pcb.PCB_VIA(board);via.SetPosition(point(position));via.SetWidth(pcb.FromMM(0.65));via.SetDrill(pcb.FromMM(0.3));via.SetLayerPair(pcb.F_Cu,pcb.B_Cu);via.SetNetCode(net.GetNetCode());board.Add(via)
+            section=[position];layer=state[0]
+        else:section.append(position)
+    section+=terminal(section[-1],mm_point(last.GetPosition()))[1:]
+    section=terminal(section[0],section[1])+section[2:] if len(section)>1 else section
+    route(board,net,[pcb.F_Cu,pcb.B_Cu][layer],smooth_path(section))
+
+
+def add_connector_ground_stitch(board):
+    net=board.FindNet('GND')
+    pad=next(p for fp in board.GetFootprints() if fp.GetReference()=='J1' for p in fp.Pads() if p.GetNetname()=='GND')
+    position=(72.4,-47.4)
+    route(board,net,pcb.F_Cu,smooth_path(terminal(mm_point(pad.GetPosition()),position)))
+    via=pcb.PCB_VIA(board);via.SetPosition(point(position));via.SetWidth(pcb.FromMM(0.65));via.SetDrill(pcb.FromMM(0.3));via.SetLayerPair(pcb.F_Cu,pcb.B_Cu);via.SetNetCode(net.GetNetCode());board.Add(via)
+
+
 def route_signals(board):
-    global GRID_MM
-    endpoints = {}
-    for footprint in board.GetFootprints():
-        for pad in footprint.Pads():
-            if pad.GetNetname() and pad.GetNetname() != 'GND':
-                endpoints.setdefault(pad.GetNetname(), []).append(mm_point(pad.GetPosition()))
-    expected = {'BAT_POS': 2, 'VBAT': 2, 'RST': 3}
-    if len(endpoints) != 17 or any(len(pads) != expected.get(name, 2)
-                                  for name, pads in endpoints.items()):
-        raise RuntimeError('Expected direct keys, display, switched battery power and reset nets')
-    connections = []
-    for name, pads in endpoints.items():
-        connected, pending = pads[:1], pads[1:]
+    endpoints={}
+    for fp in board.GetFootprints():
+        for pad in fp.Pads():
+            if pad.GetNetname():endpoints.setdefault(pad.GetNetname(),[]).append(pad)
+    expected={**{'D'+str(i):2 for i in range(10)},'BAT_POS':2,'VBAT':2}
+    if any(len(endpoints.get(name,[]))!=count for name,count in expected.items()):raise RuntimeError('Incorrect direct-key or battery net terminal count')
+    connections=[]
+    for name,pads in endpoints.items():
+        connected,pending=pads[:1],pads[1:]
         while pending:
-            start, end = min(itertools.product(connected, pending), key=lambda pair: math.dist(*pair))
-            connections.append((name, start, end))
-            connected.append(end)
-            pending.remove(end)
-    connections.sort(key=lambda connection: (0 if connection[0] == 'VBAT' else
-                                              3 if connection[0] == 'BAT_POS' else
-                                              2 if connection[0].startswith('LCD_') or connection[0] in ('3V3', 'RST') else 1,
-                                              math.dist(*connection[1:])))
-    for name, start, end in connections:
-        GRID_MM = 0.1 if name in ('VBAT', 'BAT_POS', 'RST', '3V3') or name.startswith('LCD_') else 0.25
-        net = board.FindNet(name)
-        layer = pcb.F_Cu if name in ('P4', 'P6', 'P8', 'P9', 'P16', 'LCD_CLK', 'LCD_CS', 'BAT_POS') else pcb.B_Cu
-        try:
-            path = find_path(board, net, layer, start, end)
-        except RuntimeError:
-            layer = pcb.B_Cu if layer == pcb.F_Cu else pcb.F_Cu
-            path = find_path(board, net, layer, start, end)
-        coordinates = terminal(start, path[0]) + path[1:-1] + terminal(path[-1], end)
-        route(board, net, layer, smooth_path(coordinates))
-    ground = board.FindNet('GND')
-    source = next(pad for footprint in board.GetFootprints()
-                  if footprint.GetReference() == 'S10' for pad in footprint.Pads()
-                  if pad.GetNetname() == 'GND')
-    targets = [pad for footprint in board.GetFootprints()
-               if footprint.GetReference().startswith('MCU') for pad in footprint.Pads()
-               if pad.GetNetname() == 'GND']
-    start = mm_point(source.GetPosition())
-    end = min((mm_point(pad.GetPosition()) for pad in targets), key=lambda xy: math.dist(start, xy))
-    GRID_MM = 0.1
-    layer = pcb.B_Cu
-    try:
-        path = find_path(board, ground, layer, start, end)
-    except RuntimeError:
-        layer = pcb.F_Cu
-        path = find_path(board, ground, layer, start, end)
-    route(board, ground, layer, smooth_path(terminal(start, path[0]) + path[1:-1] + terminal(path[-1], end)))
-    GRID_MM = 0.25
+            a,b=min(itertools.product(connected,pending),key=lambda pair:math.dist(mm_point(pair[0].GetPosition()),mm_point(pair[1].GetPosition())))
+            connections.append((name,a,b));connected.append(b);pending.remove(b)
+    connections.sort(key=lambda c:(0 if c[0]=='BAT_POS' else 1 if c[0]=='VBAT' else 3 if c[0]=='GND' else 2,math.dist(mm_point(c[1].GetPosition()),mm_point(c[2].GetPosition()))))
+    for name,a,b in connections:
+        if name=='GND' and not any(p.GetParentFootprint().GetReference()=='MCU1' for p in [a,b]):continue
+        print('Routing '+name+' '+str(mm_point(a.GetPosition()))+' -> '+str(mm_point(b.GetPosition())),flush=True)
+        route_connection(board,board.FindNet(name),a,b)
+
+
+def check_board(board):
+    board.BuildConnectivity()
+    if board.GetConnectivity().GetUnconnectedCount(False):raise RuntimeError('Routed board has unconnected nets')
+    copper=[zone for zone in board.Zones() if not zone.GetIsRuleArea()]
+    if len(copper)!=2 or not all(zone.IsFilled() for zone in copper):raise RuntimeError('Expected two filled ground zones')
+    check_battery_well(board)
 
 
 def main():
-    global BOARD, BASE_PLATE, PAGE_OFFSET_MM
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--output', type=Path, default=OUTPUT)
-    args = parser.parse_args()
-    BOARD = args.output / 'pcbs/macropad.kicad_pcb'
-    BASE_PLATE = args.output / 'pcbs/baseplate.kicad_pcb'
-    board = pcb.LoadBoard(str(BOARD))
-    if list(board.GetTracks()) or list(board.Zones()):
-        raise RuntimeError('Expected an un-routed Ergogen board; regenerate the layout first')
-    left, top, right, bottom = board_bounds(board)
-    PAGE_OFFSET_MM = (210 - (left + right) / 2, 148.5 - (top + bottom) / 2)
-    check_layout(board, args.output)
-    make_base_plate()
-    route_signals(board)
-    ground = board.FindNet('GND')
-    for footprint in board.GetFootprints():
-        for pad in footprint.Pads():
-            if pad.GetNetname() == 'GND':
-                if footprint.GetReference().startswith('RST') or footprint.GetReference() == 'S10':
-                    pad.SetThermalSpokeAngleDegrees(45)
-                if footprint.GetReference() == 'MCU1' and pad.GetNumber() == '23':
-                    pad.SetLocalZoneConnection(pcb.ZONE_CONNECTION_FULL)
-    for layer in (pcb.F_Cu, pcb.B_Cu):
-        add_ground_zone(board, ground, layer)
-    board.GetTitleBlock().SetTitle(DRAWING_TITLE)
-    board.GetTitleBlock().SetDate(date.today().isoformat())
-    attach_models(board)
-    board.Move(point(PAGE_OFFSET_MM))
-    board.BuildConnectivity()
-    pcb.ZONE_FILLER(board).Fill(board.Zones())
-    board.BuildConnectivity()
-    pcb.SaveBoard(str(BOARD), board)
-    check_board(pcb.LoadBoard(str(BOARD)))
-    print(f'Generated circuit-free base plate with 87 holes or slots: {BASE_PLATE}')
-    print(f'Routed {len(list(board.GetTracks()))} segments and filled two GND zones: {BOARD}')
+    global BOARD,BASE_PLATE,PAGE_OFFSET_MM
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,default=OUTPUT);parser.add_argument('--baseplate',action='store_true');args=parser.parse_args()
+    BOARD=args.output/'pcbs/macropad.kicad_pcb';BASE_PLATE=args.output/'pcbs/baseplate.kicad_pcb'
+    if args.baseplate:make_base_plate();return
+    subprocess.run([sys.executable,__file__,'--output',str(args.output),'--baseplate'],check=True)
+    board=pcb.LoadBoard(str(BOARD))
+    if list(board.GetTracks()) or list(board.Zones()):raise RuntimeError('Expected fresh Ergogen board')
+    left,top,right,bottom=board_bounds(board);PAGE_OFFSET_MM=(210-(left+right)/2,148.5-(top+bottom)/2)
+    check_layout(board,args.output);add_connector_ground_stitch(board);route_signals(board)
+    print('Adding RF rule area',flush=True)
+    well=battery_well_bounds(board)
+    for layer in [pcb.F_Cu,pcb.B_Cu]:
+        add_rule_area(board,fixed_to_kicad(assembly_spec()['module']['rf_keepout_bounds']),'ANT1 3 mm RF keepout',layer)
+        add_rule_area(board,[well[0]-0.5,well[1]-0.5,well[2]+0.5,well[3]+0.5],'Battery well 0.5 mm copper clearance',layer)
+    print('Adding ground zones',flush=True)
+    for layer in [pcb.F_Cu,pcb.B_Cu]:add_ground_zone(board,board.FindNet('GND'),layer)
+    print('Assigning models',flush=True)
+    board.GetTitleBlock().SetTitle(DRAWING_TITLE);board.GetTitleBlock().SetDate(date.today().isoformat())
+    attach_models(board);board.Move(point(PAGE_OFFSET_MM));board.BuildConnectivity();print('Filling ground zones',flush=True);pcb.ZONE_FILLER(board).Fill(board.Zones());board.BuildConnectivity();pcb.SaveBoard(str(BOARD),board)
+    check_board(pcb.LoadBoard(str(BOARD)));print('Routed '+str(len(list(board.GetTracks())))+' tracks/vias with no opens',flush=True)
 
 
-if __name__ == '__main__':
-    main()
+if __name__=='__main__':main()
