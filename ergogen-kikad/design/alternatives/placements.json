@@ -109,6 +109,120 @@
     "status": "Provisional Ergogen placement only; unrouted; no fabrication or assembly validation."
   },
   "five-column-15u": {
+    "components": [
+      {
+        "reference": "S1",
+        "footprint": "PG1350_1_5U",
+        "x": 10.9,
+        "y": 61.75,
+        "rotation": 90.0
+      },
+      {
+        "reference": "S2",
+        "footprint": "PG1350_1_5U",
+        "x": 29.950000000000003,
+        "y": 61.75,
+        "rotation": 90.0
+      },
+      {
+        "reference": "S3",
+        "footprint": "PG1350_1_5U",
+        "x": 49.0,
+        "y": 61.75,
+        "rotation": 90.0
+      },
+      {
+        "reference": "S4",
+        "footprint": "PG1350_1_5U",
+        "x": 68.05,
+        "y": 61.75,
+        "rotation": 90.0
+      },
+      {
+        "reference": "S5",
+        "footprint": "PG1350_1_5U",
+        "x": 10.9,
+        "y": 34.25,
+        "rotation": 90.0
+      },
+      {
+        "reference": "S6",
+        "footprint": "PG1350_1_5U",
+        "x": 29.950000000000003,
+        "y": 34.25,
+        "rotation": 90.0
+      },
+      {
+        "reference": "S7",
+        "footprint": "PG1350_1_5U",
+        "x": 49.0,
+        "y": 34.25,
+        "rotation": 90.0
+      },
+      {
+        "reference": "S8",
+        "footprint": "PG1350_1_5U",
+        "x": 68.05,
+        "y": 34.25,
+        "rotation": 90.0
+      },
+      {
+        "reference": "S9",
+        "footprint": "PG1350_1U",
+        "x": 87.10000000000001,
+        "y": 66.75,
+        "rotation": 0.0
+      },
+      {
+        "reference": "S10",
+        "footprint": "PG1350_1U",
+        "x": 87.10000000000001,
+        "y": 29.25,
+        "rotation": 0.0
+      },
+      {
+        "reference": "H1",
+        "footprint": "M2_Mount",
+        "x": 2.0,
+        "y": 76.0,
+        "rotation": 0.0
+      },
+      {
+        "reference": "H2",
+        "footprint": "M2_Mount",
+        "x": 59.0,
+        "y": 76.0,
+        "rotation": 0.0
+      },
+      {
+        "reference": "H3",
+        "footprint": "M2_Mount",
+        "x": 2.0,
+        "y": 20.0,
+        "rotation": 0.0
+      },
+      {
+        "reference": "H4",
+        "footprint": "M2_Mount",
+        "x": 59.0,
+        "y": 20.0,
+        "rotation": 0.0
+      },
+      {
+        "reference": "H5",
+        "footprint": "M2_Mount",
+        "x": 96.0,
+        "y": 76.0,
+        "rotation": 0.0
+      },
+      {
+        "reference": "H6",
+        "footprint": "M2_Mount",
+        "x": 96.0,
+        "y": 20.0,
+        "rotation": 0.0
+      }
+    ],
     "board_mm": [
       98,
       96
@@ -197,7 +311,7 @@
       {
         "label": "t5",
         "x": 87.10000000000001,
-        "y": 61.75,
+        "y": 66.75,
         "rotation": 0.0,
         "cap": [
           17.5,
@@ -207,7 +321,7 @@
       {
         "label": "b5",
         "x": 87.10000000000001,
-        "y": 34.25,
+        "y": 29.25,
         "rotation": 0.0,
         "cap": [
           17.5,

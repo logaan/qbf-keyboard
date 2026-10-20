@@ -1,0 +1,479 @@
+{
+  "passed": true,
+  "scope": "Conservative layout envelope checks only; unrouted PCB; native assembled geometry, case, firmware and fabrication checks deferred.",
+  "assumptions": {
+    "full_travel_cap_underside_z_mm": 4,
+    "switch_shoulder_plan_mm": [
+      15,
+      15
+    ],
+    "pad_method": "Axis-aligned outer copper/drill rectangles, conservative for circles and ovals; 0.5 mm to well and board edge; 0.2 mm between different footprints.",
+    "connector_mated_height_mm": 4.85
+  },
+  "unchanged_main_eight": true,
+  "cap_outer_edges_y_mm": [
+    21,
+    75
+  ],
+  "horizontal_symmetry_axis_y_mm": 48,
+  "cap_full_travel_plan_checks": [
+    {
+      "key": "t1",
+      "part": "JST housing",
+      "plan_clearance_mm": 64.150701
+    },
+    {
+      "key": "t1",
+      "part": "JST mating plug",
+      "plan_clearance_mm": 58.158146
+    },
+    {
+      "key": "t1",
+      "part": "reset",
+      "plan_clearance_mm": 59.35
+    },
+    {
+      "key": "t1",
+      "part": "power",
+      "plan_clearance_mm": 68.05
+    },
+    {
+      "key": "t1",
+      "part": "controller",
+      "plan_clearance_mm": 1.6
+    },
+    {
+      "key": "t1",
+      "part": "display",
+      "plan_clearance_mm": 23.155669
+    },
+    {
+      "key": "t1",
+      "part": "display socket",
+      "plan_clearance_mm": 23.299236
+    },
+    {
+      "key": "t2",
+      "part": "JST housing",
+      "plan_clearance_mm": 45.122112
+    },
+    {
+      "key": "t2",
+      "part": "JST mating plug",
+      "plan_clearance_mm": 39.13646
+    },
+    {
+      "key": "t2",
+      "part": "reset",
+      "plan_clearance_mm": 40.3
+    },
+    {
+      "key": "t2",
+      "part": "power",
+      "plan_clearance_mm": 49.0
+    },
+    {
+      "key": "t2",
+      "part": "controller",
+      "plan_clearance_mm": 1.6
+    },
+    {
+      "key": "t2",
+      "part": "display",
+      "plan_clearance_mm": 5.338773
+    },
+    {
+      "key": "t2",
+      "part": "display socket",
+      "plan_clearance_mm": 5.83343
+    },
+    {
+      "key": "t3",
+      "part": "JST housing",
+      "plan_clearance_mm": 26.124749
+    },
+    {
+      "key": "t3",
+      "part": "JST mating plug",
+      "plan_clearance_mm": 20.168292
+    },
+    {
+      "key": "t3",
+      "part": "reset",
+      "plan_clearance_mm": 21.25
+    },
+    {
+      "key": "t3",
+      "part": "power",
+      "plan_clearance_mm": 29.95
+    },
+    {
+      "key": "t3",
+      "part": "controller",
+      "plan_clearance_mm": 3.181588
+    },
+    {
+      "key": "t3",
+      "part": "display",
+      "plan_clearance_mm": 3.75
+    },
+    {
+      "key": "t3",
+      "part": "display socket",
+      "plan_clearance_mm": 4.4
+    },
+    {
+      "key": "t4",
+      "part": "JST housing",
+      "plan_clearance_mm": 7.40304
+    },
+    {
+      "key": "t4",
+      "part": "JST mating plug",
+      "plan_clearance_mm": 2.768122
+    },
+    {
+      "key": "t4",
+      "part": "reset",
+      "plan_clearance_mm": 2.2
+    },
+    {
+      "key": "t4",
+      "part": "power",
+      "plan_clearance_mm": 10.9
+    },
+    {
+      "key": "t4",
+      "part": "controller",
+      "plan_clearance_mm": 21.858637
+    },
+    {
+      "key": "t4",
+      "part": "display",
+      "plan_clearance_mm": 3.75
+    },
+    {
+      "key": "t4",
+      "part": "display socket",
+      "plan_clearance_mm": 15.852851
+    },
+    {
+      "key": "b1",
+      "part": "JST housing",
+      "plan_clearance_mm": 64.1
+    },
+    {
+      "key": "b1",
+      "part": "JST mating plug",
+      "plan_clearance_mm": 58.1
+    },
+    {
+      "key": "b1",
+      "part": "reset",
+      "plan_clearance_mm": 59.40263
+    },
+    {
+      "key": "b1",
+      "part": "power",
+      "plan_clearance_mm": 68.132408
+    },
+    {
+      "key": "b1",
+      "part": "controller",
+      "plan_clearance_mm": 29.1
+    },
+    {
+      "key": "b1",
+      "part": "display",
+      "plan_clearance_mm": 38.712853
+    },
+    {
+      "key": "b1",
+      "part": "display socket",
+      "plan_clearance_mm": 39.256903
+    },
+    {
+      "key": "b2",
+      "part": "JST housing",
+      "plan_clearance_mm": 45.05
+    },
+    {
+      "key": "b2",
+      "part": "JST mating plug",
+      "plan_clearance_mm": 39.05
+    },
+    {
+      "key": "b2",
+      "part": "reset",
+      "plan_clearance_mm": 40.377469
+    },
+    {
+      "key": "b2",
+      "part": "power",
+      "plan_clearance_mm": 49.114382
+    },
+    {
+      "key": "b2",
+      "part": "controller",
+      "plan_clearance_mm": 29.1
+    },
+    {
+      "key": "b2",
+      "part": "display",
+      "plan_clearance_mm": 31.480192
+    },
+    {
+      "key": "b2",
+      "part": "display socket",
+      "plan_clearance_mm": 32.129097
+    },
+    {
+      "key": "b3",
+      "part": "JST housing",
+      "plan_clearance_mm": 26.0
+    },
+    {
+      "key": "b3",
+      "part": "JST mating plug",
+      "plan_clearance_mm": 20.0
+    },
+    {
+      "key": "b3",
+      "part": "reset",
+      "plan_clearance_mm": 21.396553
+    },
+    {
+      "key": "b3",
+      "part": "power",
+      "plan_clearance_mm": 30.136772
+    },
+    {
+      "key": "b3",
+      "part": "controller",
+      "plan_clearance_mm": 29.229651
+    },
+    {
+      "key": "b3",
+      "part": "display",
+      "plan_clearance_mm": 31.25
+    },
+    {
+      "key": "b3",
+      "part": "display socket",
+      "plan_clearance_mm": 31.9
+    },
+    {
+      "key": "b4",
+      "part": "JST housing",
+      "plan_clearance_mm": 6.95
+    },
+    {
+      "key": "b4",
+      "part": "JST mating plug",
+      "plan_clearance_mm": 0.95
+    },
+    {
+      "key": "b4",
+      "part": "reset",
+      "plan_clearance_mm": 3.330165
+    },
+    {
+      "key": "b4",
+      "part": "power",
+      "plan_clearance_mm": 11.403179
+    },
+    {
+      "key": "b4",
+      "part": "controller",
+      "plan_clearance_mm": 36.360006
+    },
+    {
+      "key": "b4",
+      "part": "display",
+      "plan_clearance_mm": 31.25
+    },
+    {
+      "key": "b4",
+      "part": "display socket",
+      "plan_clearance_mm": 35.349157
+    },
+    {
+      "key": "t5",
+      "part": "JST housing",
+      "plan_clearance_mm": 12.55
+    },
+    {
+      "key": "t5",
+      "part": "JST mating plug",
+      "plan_clearance_mm": 12.6
+    },
+    {
+      "key": "t5",
+      "part": "reset",
+      "plan_clearance_mm": 2.5
+    },
+    {
+      "key": "t5",
+      "part": "power",
+      "plan_clearance_mm": 3.35
+    },
+    {
+      "key": "t5",
+      "part": "controller",
+      "plan_clearance_mm": 40.38171
+    },
+    {
+      "key": "t5",
+      "part": "display",
+      "plan_clearance_mm": 3.766298
+    },
+    {
+      "key": "t5",
+      "part": "display socket",
+      "plan_clearance_mm": 34.065355
+    },
+    {
+      "key": "b5",
+      "part": "JST housing",
+      "plan_clearance_mm": 2.55
+    },
+    {
+      "key": "b5",
+      "part": "JST mating plug",
+      "plan_clearance_mm": 2.6
+    },
+    {
+      "key": "b5",
+      "part": "reset",
+      "plan_clearance_mm": 12.5
+    },
+    {
+      "key": "b5",
+      "part": "power",
+      "plan_clearance_mm": 13.35
+    },
+    {
+      "key": "b5",
+      "part": "controller",
+      "plan_clearance_mm": 56.186586
+    },
+    {
+      "key": "b5",
+      "part": "display",
+      "plan_clearance_mm": 41.251485
+    },
+    {
+      "key": "b5",
+      "part": "display socket",
+      "plan_clearance_mm": 53.820985
+    }
+  ],
+  "minimum_well_to_shoulder_mm": 0.7000000000000028,
+  "minimum_copper_drill_to_well_mm": 1.8491,
+  "controller_display_body_gap_mm": 4.0,
+  "maximum_battery_top_z_mm": 2.1,
+  "maximum_wire_top_z_mm": 1.95,
+  "checked_clearance_count": 4513,
+  "closest_clearances": [
+    {
+      "name": "PWR1/ to RST1/1 copper/drill",
+      "clearance_mm": 0.55,
+      "minimum_mm": 0.2
+    },
+    {
+      "name": "PWR1/ to RST1/2 copper/drill",
+      "clearance_mm": 0.55,
+      "minimum_mm": 0.2
+    },
+    {
+      "name": "Future 1 mm roof above battery with 0.3 mm gap to full-travel cap underside",
+      "clearance_mm": 0.6,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to t1 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to t2 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to t3 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to t4 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to b1 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to b2 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to b3 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to b4 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "H1/ copper/drill to PCB edge",
+      "clearance_mm": 0.9,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "H3/ copper/drill to PCB edge",
+      "clearance_mm": 0.9,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "H5/ copper/drill to PCB edge",
+      "clearance_mm": 0.9,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "H6/ copper/drill to PCB edge",
+      "clearance_mm": 0.9,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "t1 to battery",
+      "clearance_mm": 1.0,
+      "minimum_mm": 0
+    },
+    {
+      "name": "t2 to battery",
+      "clearance_mm": 1.0,
+      "minimum_mm": 0
+    },
+    {
+      "name": "t3 to battery",
+      "clearance_mm": 1.0,
+      "minimum_mm": 0
+    },
+    {
+      "name": "t4 to battery",
+      "clearance_mm": 1.0,
+      "minimum_mm": 0
+    },
+    {
+      "name": "b1 to battery",
+      "clearance_mm": 1.0,
+      "minimum_mm": 0
+    }
+  ]
+}

@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 
 ROOT = Path(__file__).resolve().parent
-DATA = json.loads((ROOT / 'placements.json').read_text())
+DATA = json.loads((ROOT / 'comparison-placements.json').read_text())
 SCALE = 5.5
 ELEMENTS = []
 

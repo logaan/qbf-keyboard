@@ -9,18 +9,18 @@ units:
   row_gap: 1
   row_pitch: 27.5
   extra_x: 4 * column_pitch
-  extra_offset: row_pitch / 2
+  extra_offset: 18.75
   controller_x: 20
   controller_y: 85.75
-  display_x: 23.1
+  display_x: 60
   display_y: 85.75
   layout_width: 98
   layout_height: 96
   pcb_border: 0
   board_width: 98
   board_height: 96
-  battery_well_length: 32.6
-  battery_well_width: 13.6
+  battery_well_length: 58.1
+  battery_well_width: 11.1
 
 points:
   zones:
@@ -57,7 +57,7 @@ points:
         padding: 2 * extra_offset
       anchor:
         ref: pad_c0_bottom
-        shift: [extra_x, 0]
+        shift: [extra_x, -5]
       columns:
         c4:
           rows:
@@ -143,7 +143,7 @@ pcbs:
         where:
           shift: [display_x, display_y]
         adjust:
-          rotate: 180
+          rotate: 0
       upper_left_mount:
         what: m2_mount
         where:
@@ -171,32 +171,32 @@ pcbs:
       battery_connector:
         what: battery_ph
         where:
-          shift: [50, 10]
+          shift: [89.5, 43]
         adjust:
           rotate: -90
       power_switch:
         what: power_slide
         where:
-          shift: [50, 91]
+          shift: [91.5, 53]
       reset_switch:
         what: reset_tact
         where:
-          shift: [50, 80]
+          shift: [81.5, 53]
       battery_space:
         what: battery_space
         where:
-          shift: [20, 10]
+          shift: [32, 48]
         params:
-          length: 32
-          width: 13
+          length: 57.5
+          width: 10.5
           thickness: 3.5
-          capacity: 110
-          model: 301230
+          capacity: 220
+          model: 301055
           bottom_z: -1.4
       battery_well:
         what: battery_well
         where:
-          shift: [20, 10]
+          shift: [32, 48]
         params:
           length: battery_well_length
           width: battery_well_width
