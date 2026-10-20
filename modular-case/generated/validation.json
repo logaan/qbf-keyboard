@@ -1,0 +1,4309 @@
+{
+  "passed": true,
+  "check_count": 703,
+  "checks": [
+    {
+      "name": "frozen board macropad.kicad_pcb",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "frozen board baseplate.kicad_pcb",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "frozen design config.yaml",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "frozen design assembly.json",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "frozen design battery.json",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "tray valid",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "tray one solid",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "rim valid",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "rim one solid",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "rim/tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/tray clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover valid",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "cover one solid",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "cover/tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/tray clearance mm",
+      "value": 4.609772,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/rim overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/rim clearance mm",
+      "value": 0.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge valid",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "bridge one solid",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "bridge/tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/rim overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/rim clearance mm",
+      "value": 4.809366,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/cover overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/cover clearance mm",
+      "value": 8.417987,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/case hardware overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/case hardware clearance mm",
+      "value": 0.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t4 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t4 full travel clearance mm",
+      "value": 7.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t4 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t4 switch body clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t4 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t4 switch shoulder clearance mm",
+      "value": 5.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t5 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t5 full travel clearance mm",
+      "value": 7.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t5 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t5 switch body clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t5 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t5 switch shoulder clearance mm",
+      "value": 5.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t1 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t1 full travel clearance mm",
+      "value": 7.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t1 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t1 switch body clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t1 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t1 switch shoulder clearance mm",
+      "value": 5.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b2 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b2 full travel clearance mm",
+      "value": 7.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b2 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b2 switch body clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b2 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b2 switch shoulder clearance mm",
+      "value": 5.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b5 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b5 full travel clearance mm",
+      "value": 7.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b5 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b5 switch body clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b5 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b5 switch shoulder clearance mm",
+      "value": 5.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t2 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t2 full travel clearance mm",
+      "value": 7.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t2 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t2 switch body clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t2 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t2 switch shoulder clearance mm",
+      "value": 5.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b4 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b4 full travel clearance mm",
+      "value": 7.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b4 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b4 switch body clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b4 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b4 switch shoulder clearance mm",
+      "value": 5.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t3 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t3 full travel clearance mm",
+      "value": 7.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t3 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t3 switch body clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t3 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/t3 switch shoulder clearance mm",
+      "value": 5.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b3 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b3 full travel clearance mm",
+      "value": 7.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b3 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b3 switch body clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b3 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b3 switch shoulder clearance mm",
+      "value": 5.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b1 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b1 full travel clearance mm",
+      "value": 7.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b1 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b1 switch body clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b1 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/b1 switch shoulder clearance mm",
+      "value": 5.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_pcb overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_pcb clearance mm",
+      "value": 1.65,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_solder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_solder clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_usb overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_usb clearance mm",
+      "value": 3.25,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_reset overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_reset clearance mm",
+      "value": 3.25,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_microphone overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_microphone clearance mm",
+      "value": 3.25,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_antenna overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_antenna clearance mm",
+      "value": 3.25,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_radio overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_radio clearance mm",
+      "value": 3.25,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_imu overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/controller_imu clearance mm",
+      "value": 3.25,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/support_film overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/support_film clearance mm",
+      "value": 1.6,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/battery_wire overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/battery_wire clearance mm",
+      "value": 0.95,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/battery_leads overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/battery_leads clearance mm",
+      "value": 3.468976,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/battery overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/battery clearance mm",
+      "value": 1.8,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/power overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/power clearance mm",
+      "value": 2.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/connector overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/connector clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/connector_mated_allowance overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/connector_mated_allowance clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/reset_2mm_probe overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/reset_2mm_probe clearance mm",
+      "value": 3.78,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/usb_reference_plug overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/usb_reference_plug clearance mm",
+      "value": 2.601642,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/power_access overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/power_access clearance mm",
+      "value": 3.2,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/case hardware overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/case hardware clearance mm",
+      "value": 0.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t4 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t4 full travel clearance mm",
+      "value": 0.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t4 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t4 switch body clearance mm",
+      "value": 0.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t4 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t4 switch shoulder clearance mm",
+      "value": 0.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t5 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t5 full travel clearance mm",
+      "value": 0.471699,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t5 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t5 switch body clearance mm",
+      "value": 1.6,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t5 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t5 switch shoulder clearance mm",
+      "value": 1.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t1 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t1 full travel clearance mm",
+      "value": 0.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t1 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t1 switch body clearance mm",
+      "value": 0.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t1 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t1 switch shoulder clearance mm",
+      "value": 0.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b2 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b2 full travel clearance mm",
+      "value": 0.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b2 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b2 switch body clearance mm",
+      "value": 0.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b2 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b2 switch shoulder clearance mm",
+      "value": 0.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b5 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b5 full travel clearance mm",
+      "value": 0.471699,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b5 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b5 switch body clearance mm",
+      "value": 1.6,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b5 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b5 switch shoulder clearance mm",
+      "value": 1.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t2 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t2 full travel clearance mm",
+      "value": 0.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t2 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t2 switch body clearance mm",
+      "value": 0.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t2 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t2 switch shoulder clearance mm",
+      "value": 0.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b4 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b4 full travel clearance mm",
+      "value": 0.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b4 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b4 switch body clearance mm",
+      "value": 0.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b4 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b4 switch shoulder clearance mm",
+      "value": 0.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t3 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t3 full travel clearance mm",
+      "value": 0.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t3 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t3 switch body clearance mm",
+      "value": 0.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t3 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/t3 switch shoulder clearance mm",
+      "value": 0.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b3 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b3 full travel clearance mm",
+      "value": 0.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b3 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b3 switch body clearance mm",
+      "value": 0.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b3 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b3 switch shoulder clearance mm",
+      "value": 0.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b1 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b1 full travel clearance mm",
+      "value": 0.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b1 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b1 switch body clearance mm",
+      "value": 0.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b1 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/b1 switch shoulder clearance mm",
+      "value": 0.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_pcb overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_pcb clearance mm",
+      "value": 0.25,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_solder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_solder clearance mm",
+      "value": 0.58,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_usb overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_usb clearance mm",
+      "value": 4.6436,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_reset overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_reset clearance mm",
+      "value": 2.6286,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_microphone overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_microphone clearance mm",
+      "value": 12.356432,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_antenna overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_antenna clearance mm",
+      "value": 12.790769,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_radio overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_radio clearance mm",
+      "value": 8.723277,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_imu overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/controller_imu clearance mm",
+      "value": 6.433132,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/support_film overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/support_film clearance mm",
+      "value": 1.570032,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/battery_wire overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/battery_wire clearance mm",
+      "value": 11.078132,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/battery_leads overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/battery_leads clearance mm",
+      "value": 0.568976,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/battery overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/battery clearance mm",
+      "value": 0.3,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/power overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/power clearance mm",
+      "value": 1.6,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/connector overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/connector clearance mm",
+      "value": 4.35,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/connector_mated_allowance overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/connector_mated_allowance clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/reset_2mm_probe overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/reset_2mm_probe clearance mm",
+      "value": 2.4286,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/usb_reference_plug overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/usb_reference_plug clearance mm",
+      "value": 3.442534,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/power_access overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/power_access clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/case hardware overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/case hardware clearance mm",
+      "value": 1.941649,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t4 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t4 full travel clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t4 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t4 switch body clearance mm",
+      "value": 5.684244,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t4 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t4 switch shoulder clearance mm",
+      "value": 6.278734,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t5 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t5 full travel clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t5 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t5 switch body clearance mm",
+      "value": 1.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t5 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t5 switch shoulder clearance mm",
+      "value": 1.386542,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t1 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t1 full travel clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t1 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t1 switch body clearance mm",
+      "value": 1.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t1 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t1 switch shoulder clearance mm",
+      "value": 1.386542,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b2 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b2 full travel clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b2 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b2 switch body clearance mm",
+      "value": 5.767203,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b2 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b2 switch shoulder clearance mm",
+      "value": 6.278734,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b5 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b5 full travel clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b5 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b5 switch body clearance mm",
+      "value": 1.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b5 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b5 switch shoulder clearance mm",
+      "value": 1.386542,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t2 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t2 full travel clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t2 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t2 switch body clearance mm",
+      "value": 5.767203,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t2 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t2 switch shoulder clearance mm",
+      "value": 6.278734,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b4 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b4 full travel clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b4 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b4 switch body clearance mm",
+      "value": 5.684244,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b4 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b4 switch shoulder clearance mm",
+      "value": 6.278734,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t3 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t3 full travel clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t3 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t3 switch body clearance mm",
+      "value": 5.767203,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t3 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/t3 switch shoulder clearance mm",
+      "value": 6.278734,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b3 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b3 full travel clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b3 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b3 switch body clearance mm",
+      "value": 5.767203,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b3 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b3 switch shoulder clearance mm",
+      "value": 6.278734,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b1 full travel overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b1 full travel clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b1 switch body overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b1 switch body clearance mm",
+      "value": 1.85,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b1 switch shoulder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/b1 switch shoulder clearance mm",
+      "value": 1.386542,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_pcb overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_pcb clearance mm",
+      "value": 3.55,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_solder overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_solder clearance mm",
+      "value": 2.920428,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_usb overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_usb clearance mm",
+      "value": 0.35,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_reset overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_reset clearance mm",
+      "value": 3.02,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_microphone overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_microphone clearance mm",
+      "value": 9.41,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_antenna overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_antenna clearance mm",
+      "value": 9.05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_radio overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_radio clearance mm",
+      "value": 7.883106,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_imu overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/controller_imu clearance mm",
+      "value": 6.298556,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/support_film overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/support_film clearance mm",
+      "value": 5.15,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/battery_wire overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/battery_wire clearance mm",
+      "value": 11.95,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/battery_leads overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/battery_leads clearance mm",
+      "value": 9.87704,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/battery overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/battery clearance mm",
+      "value": 4.838388,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/power overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/power clearance mm",
+      "value": 2.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/connector overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/connector clearance mm",
+      "value": 8.254346,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/connector_mated_allowance overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/connector_mated_allowance clearance mm",
+      "value": 7.835217,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/t4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/t4 clearance mm",
+      "value": 2.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/t5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/t5 clearance mm",
+      "value": 18.036231,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/t1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/t1 clearance mm",
+      "value": 2.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/b2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/b2 clearance mm",
+      "value": 2.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/b5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/b5 clearance mm",
+      "value": 18.036231,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/t2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/t2 clearance mm",
+      "value": 2.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/b4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/b4 clearance mm",
+      "value": 2.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/t3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/t3 clearance mm",
+      "value": 2.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/b3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/b3 clearance mm",
+      "value": 2.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/b1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case fasteners/b1 clearance mm",
+      "value": 2.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim lateral cap clearance",
+      "value": 0.4,
+      "minimum": 0.25,
+      "passed": true
+    },
+    {
+      "name": "battery roof clearance overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "battery roof clearance clearance mm",
+      "value": 0.3,
+      "minimum": 0.3,
+      "passed": true
+    },
+    {
+      "name": "cover roof above resting caps",
+      "value": 1.230886,
+      "minimum": 1.2,
+      "passed": true
+    },
+    {
+      "name": "right tray/left cover overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "right tray/left cover clearance mm",
+      "value": 10.807405,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "two covers overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "two covers clearance mm",
+      "value": 6.8,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/right rim overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/right rim clearance mm",
+      "value": 4.809366,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/right cover overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/right cover clearance mm",
+      "value": 8.417987,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.5/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.5/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.5/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.5/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.25/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.25/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.25/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.25/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.0/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.0/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.0/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -6.0/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.75/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.75/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.75/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.75/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.5/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.5/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.5/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.5/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.25/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.25/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.25/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.25/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.0/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.0/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.0/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -5.0/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.75/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.75/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.75/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.75/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.5/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.5/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.5/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.5/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.25/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.25/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.25/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.25/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.0/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.0/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.0/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -4.0/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.75/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.75/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.75/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.75/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.5/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.5/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.5/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.5/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.25/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.25/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.25/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.25/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.0/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.0/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.0/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -3.0/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.75/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.75/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.75/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.75/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.5/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.5/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.5/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.5/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.25/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.25/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.25/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.25/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.0/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.0/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.0/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -2.0/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.75/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.75/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.75/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.75/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.5/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.5/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.5/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.5/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.25/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.25/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.25/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.25/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.0/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.0/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.0/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -1.0/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.75/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.75/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.75/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.75/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.5/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.5/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.5/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.5/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.25/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.25/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.25/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide -0.25/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide 0.0/left tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide 0.0/left tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide 0.0/right tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge slide 0.0/right tray clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (-6.5, -1) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (-6.5, -1) clearance mm",
+      "value": 0.3,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (-6.5, -2) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (-6.5, -2) clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (-6.5, -3) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (-6.5, -3) clearance mm",
+      "value": 1.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (-6.5, -4) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (-6.5, -4) clearance mm",
+      "value": 1.720465,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (6.5, -1) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (6.5, -1) clearance mm",
+      "value": 0.3,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (6.5, -2) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (6.5, -2) clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (6.5, -3) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (6.5, -3) clearance mm",
+      "value": 1.4,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (6.5, -4) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge vertical entry (6.5, -4) clearance mm",
+      "value": 1.720465,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke 0/tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke 0/tray clearance mm",
+      "value": 2.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke 0/rim overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke 0/rim clearance mm",
+      "value": 1.6,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke 0/cover overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke 0/cover clearance mm",
+      "value": 2.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke 0/bridge overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke 0/bridge clearance mm",
+      "value": 85.259597,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -0.75/tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -0.75/tray clearance mm",
+      "value": 2.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -0.75/rim overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -0.75/rim clearance mm",
+      "value": 1.25,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -0.75/cover overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -0.75/cover clearance mm",
+      "value": 2.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -0.75/bridge overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -0.75/bridge clearance mm",
+      "value": 85.15243,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -1.5/tray overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -1.5/tray clearance mm",
+      "value": 2.7,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -1.5/rim overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -1.5/rim clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -1.5/cover overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -1.5/cover clearance mm",
+      "value": 2.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -1.5/bridge overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "power stroke -1.5/bridge clearance mm",
+      "value": 85.051742,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/native baseplate overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray/native baseplate clearance mm",
+      "value": 0.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/native baseplate overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "rim/native baseplate clearance mm",
+      "value": 1.6,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/native baseplate overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover/native baseplate clearance mm",
+      "value": 3.014963,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/native baseplate overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge/native baseplate clearance mm",
+      "value": 1.6,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case screws/native baseplate holes overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "case screws/native baseplate holes clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 0 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 0 clearance mm",
+      "value": 0.0,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/t4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/t4 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/t5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/t5 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/t1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/t1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/b2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/b2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/b5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/b5 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/t2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/t2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/b4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/b4 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/t3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/t3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/b3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/b3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/b1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0/b1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 0.25 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 0.25 clearance mm",
+      "value": 0.111803,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/t4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/t4 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/t5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/t5 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/t1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/t1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/b2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/b2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/b5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/b5 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/t2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/t2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/b4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/b4 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/t3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/t3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/b3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/b3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/b1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.25/b1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 0.5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 0.5 clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/t4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/t4 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/t5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/t5 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/t1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/t1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/b2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/b2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/b5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/b5 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/t2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/t2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/b4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/b4 clearance mm",
+      "value": 0.425,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/t3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/t3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/b3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/b3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/b1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 0.5/b1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 1 clearance mm",
+      "value": 0.1,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/t4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/t4 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/t5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/t5 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/t1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/t1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/b2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/b2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/b5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/b5 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/t2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/t2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/b4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/b4 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/t3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/t3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/b3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/b3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/b1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 1/b1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 2 clearance mm",
+      "value": 0.501377,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/t4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/t4 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/t5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/t5 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/t1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/t1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/b2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/b2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/b5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/b5 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/t2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/t2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/b4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/b4 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/t3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/t3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/b3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/b3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/b1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 2/b1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 4 clearance mm",
+      "value": 1.969772,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/t4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/t4 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/t5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/t5 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/t1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/t1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/b2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/b2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/b5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/b5 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/t2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/t2 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/b4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/b4 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/t3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/t3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/b3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/b3 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/b1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 4/b1 clearance mm",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 8 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 8 clearance mm",
+      "value": 5.854912,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/t4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/t4 clearance mm",
+      "value": 0.804995,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/t5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/t5 clearance mm",
+      "value": 0.804995,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/t1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/t1 clearance mm",
+      "value": 0.804995,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/b2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/b2 clearance mm",
+      "value": 0.804995,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/b5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/b5 clearance mm",
+      "value": 0.804995,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/t2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/t2 clearance mm",
+      "value": 0.804995,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/b4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/b4 clearance mm",
+      "value": 0.804995,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/t3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/t3 clearance mm",
+      "value": 0.804995,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/b3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/b3 clearance mm",
+      "value": 0.804995,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/b1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 8/b1 clearance mm",
+      "value": 0.804995,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 14 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover upward 14 clearance mm",
+      "value": 11.827088,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/t4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/t4 clearance mm",
+      "value": 6.64971,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/t5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/t5 clearance mm",
+      "value": 6.64971,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/t1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/t1 clearance mm",
+      "value": 6.64971,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/b2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/b2 clearance mm",
+      "value": 6.64971,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/b5 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/b5 clearance mm",
+      "value": 6.64971,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/t2 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/t2 clearance mm",
+      "value": 6.64971,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/b4 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/b4 clearance mm",
+      "value": 6.64971,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/t3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/t3 clearance mm",
+      "value": 5.37915,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/b3 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/b3 clearance mm",
+      "value": 5.37915,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/b1 overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "released cover 14/b1 clearance mm",
+      "value": 6.64971,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (93.1, -6.5) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (93.1, -6.5) clearance mm",
+      "value": 0.15,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (93.1, -4) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (93.1, -4) clearance mm",
+      "value": 0.15,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (93.1, -2) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (93.1, -2) clearance mm",
+      "value": 0.15,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (93.1, 0) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (93.1, 0) clearance mm",
+      "value": 0.33541,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (113.1, -6.5) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (113.1, -6.5) clearance mm",
+      "value": 0.15,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (113.1, -4) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (113.1, -4) clearance mm",
+      "value": 0.15,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (113.1, -2) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (113.1, -2) clearance mm",
+      "value": 0.15,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (113.1, 0) overlap mm3",
+      "value": 1e-05,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge detent deflected (113.1, 0) clearance mm",
+      "value": 0.33541,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "cover clip strain estimate",
+      "value": 0.084726,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "bridge clip strain estimate",
+      "value": 0.5,
+      "minimum": 0,
+      "passed": true
+    },
+    {
+      "name": "tray mesh closed",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "rim mesh closed",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "cover mesh closed",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "name": "bridge mesh closed",
+      "value": 1.0,
+      "minimum": 1,
+      "passed": true
+    }
+  ],
+  "source_contract_sha256": "eca13be340eca7687b7c837b30e3f6e53fb92ccd2bfa479fbf145622acba36fb",
+  "parts": {
+    "tray": {
+      "bounds": [
+        0.4,
+        18.75,
+        -7.8,
+        98.1,
+        77.25,
+        -3.2
+      ],
+      "volume_mm3": 17883.144304625675,
+      "print_size_mm": [
+        97.69999999999999,
+        58.5,
+        4.600000000000007
+      ],
+      "quantity": 2
+    },
+    "rim": {
+      "bounds": [
+        0.3999999999999999,
+        18.75,
+        0.0,
+        98.1,
+        77.25,
+        3.6
+      ],
+      "volume_mm3": 3090.056671020212,
+      "print_size_mm": [
+        97.69999999999999,
+        58.5,
+        3.6000000000000076
+      ],
+      "quantity": 2
+    },
+    "cover": {
+      "bounds": [
+        -1.2,
+        16.35,
+        1.4,
+        99.7,
+        79.64999999999999,
+        13.4
+      ],
+      "volume_mm3": 12605.257895690143,
+      "print_size_mm": [
+        100.9,
+        63.29999999999999,
+        12.00000000000001
+      ],
+      "quantity": 2
+    },
+    "bridge": {
+      "bounds": [
+        89.7,
+        27.0,
+        -7.6,
+        116.5,
+        69.0,
+        -4.8
+      ],
+      "volume_mm3": 735.8880000000008,
+      "print_size_mm": [
+        26.799999999999997,
+        42.0,
+        2.8
+      ],
+      "quantity": 1
+    }
+  },
+  "joined_pcb_width_mm": 205.4,
+  "protected_height_mm": 21.2,
+  "cap_rest_to_roof_mm": 1.230886,
+  "estimated_clip_outer_fiber_strain_percent": {
+    "cover": 1.1152735279819268,
+    "bridge": 0.5
+  },
+  "limitations": [
+    "Nominal CAD clearance verification, not a physical load, drop, fatigue, or tolerance test.",
+    "Snap fits need PETG coupon/prototype verification; release tabs intentionally flex during assembly.",
+    "Cover ribs clear keycap envelopes; cover roof deflection under luggage loads is not simulated.",
+    "Separate halves for ordinary straight USB cable access.",
+    "Electronics assembly-contract limitations remain applicable."
+  ]
+}

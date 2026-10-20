@@ -46,6 +46,26 @@ def attach_models(board):
 
 
 
+
+def attach_modular_case_models(board, case_dir, origin, cover=False, bridge=False, only_bridge=False):
+    for footprint in board.GetFootprints():
+        if footprint.GetReference().startswith('H'):
+            footprint.Models().clear()
+    names=['bridge'] if only_bridge else ['tray','rim','case_hardware'] + (['cover'] if cover else []) + (['bridge'] if bridge else [])
+    for name in names:
+        footprint=pcb.FOOTPRINT(board)
+        footprint.SetReference('CASE_'+name.upper())
+        footprint.SetPosition(pcb.VECTOR2I(round(origin[0]*1e6),round(origin[1]*1e6)))
+        footprint.Reference().SetVisible(False)
+        footprint.Value().SetVisible(False)
+        model=pcb.FP_3DMODEL()
+        model.m_Filename=str(case_dir/(name+'.wrl'))
+        model.m_Scale=pcb.VECTOR3D(1,1,1)
+        model.m_Show=True
+        footprint.Models().append(model)
+        board.Add(footprint)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('source', type=Path)

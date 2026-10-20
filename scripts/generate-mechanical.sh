@@ -11,4 +11,4 @@ if [ -d "$freecad_lib" ]; then
     export PYTHONPATH="$freecad_lib${PYTHONPATH:+:$PYTHONPATH}"
 fi
 export QT_QPA_PLATFORM=offscreen
-exec "$freecad_python" "$repo_root/mechanical/build_parts.py"
+exec "$freecad_python" "$repo_root/modular-case/build.py"

@@ -1,0 +1,18 @@
+{
+  "wall": 2.0,
+  "cap_edge_clearance": 0.25,
+  "rim_top": 3.6,
+  "tray_bottom": -6.4,
+  "foot_bottom": -7.8,
+  "cover_roof_bottom": 12.2,
+  "cover_roof_top": 13.4,
+  "joined_gap": 10.0,
+  "bridge_slide": 6.5,
+  "cover_clip_deflection": 0.5,
+  "bridge_clip_deflection": 0.75,
+  "hardware": {
+    "screw": "M2 x 6 low head; maximum head diameter 3.8 mm, height 1.6 mm",
+    "nut": "M2 thin nut; 4 mm across flats, 1.2 mm thick",
+    "quantity_per_half": 4
+  }
+}
