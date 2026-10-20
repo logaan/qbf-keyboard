@@ -4,3 +4,4 @@ node_modules/
 generated/pcbs/.history/
 generated/checks/
 *.lck
+generated/firmware/build/
