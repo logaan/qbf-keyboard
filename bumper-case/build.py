@@ -201,6 +201,12 @@ def check(parts, mounts, switches):
                 raise RuntimeError('Case pieces overlap: ' + name + ', ' + other_name)
     if parts['left_bumper'].BoundBox.ZMax > P['plate_top'] + 0.001:
         raise RuntimeError('Left part exceeds switch plate plane')
+    interior = box(0.8, 0.8, 3.8, REF['width'] - 1.6, REF['height'] - 1.6, 10)
+    interior_volume = parts['upper_guard'].common(interior).Volume
+    if interior_volume > 0.00001:
+        raise RuntimeError('Upper guard has an upright wall inside the PCB perimeter')
+    results['clearance_checks'].append({'name': 'Upper guard interior above low plate and battery roof',
+                                       'overlap_mm3': round(interior_volume, 7)})
     for s in switches:
         landscape = s['rotation'] == 0
         cw, ch = (26.5, 16.5) if landscape else (16.5, 26.5)

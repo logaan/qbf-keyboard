@@ -56,6 +56,7 @@ def main():
                 raise RuntimeError(f'{label} intersects case by {volume:.6f} mm3')
     doc = App.newDocument('NativeKiCadReference')
     Import.insert(str(stage / 'kicad-assembly.step'), doc.Name)
+    native_controls = []
     root = next(o for o in doc.Objects if o.TypeId == 'App::Part' and not o.InList)
     for obj in root.Group:
         shape = obj.Shape.copy()
@@ -74,6 +75,8 @@ def main():
                        'distance_mm': round(case.distToShape(shape)[0], 5)})
         if volume > 0.0001:
             raise RuntimeError(f'{obj.Label} intersects case by {volume:.6f} mm3')
+        if obj.Label.startswith(('SW_Slide', 'SW_PUSH')):
+            native_controls.append((obj.Label, shape.copy()))
         if obj.Label.startswith('SW_Slide'):
             actuator = shape.common(box(105, 5, P['power_case_top'], 8, 12, 5))
             for offset in (0, 0.5, 1, 1.5, P['power_actuator_stroke']):
@@ -117,8 +120,19 @@ def main():
             landscape = fp['rotation'] == 0
             cw, ch = (26.5, 16.5) if landscape else (16.5, 26.5)
             swept = box(fp['x'] - cw / 2, fp['y'] - ch / 2, 4, cw, ch, 7)
-            if fasteners.common(swept).Volume > 0.0001:
-                raise RuntimeError('Hardware intersects full key travel')
+            gap = fasteners.distToShape(swept)[0]
+            if fasteners.common(swept).Volume > 0.0001 or gap < 0.19:
+                raise RuntimeError('Hardware requires at least 0.19 mm full key travel clearance')
+            checks.append({'name': fp['reference'] + ' full travel to fasteners',
+                           'clearance_mm': round(gap, 5)})
+    for label, control in native_controls:
+        volume = fasteners.common(control).Volume
+        housing = control.common(box(100, 0, 0, 14, REF['height'], 12))
+        gap = fasteners.distToShape(housing)[0]
+        if volume > 0.0001 or gap < 1.0:
+            raise RuntimeError('Fasteners must clear native control housings by at least 1 mm: ' + label)
+        checks.append({'name': label + ' to fasteners', 'overlap_mm3': round(volume, 7),
+                       'housing_clearance_mm': round(gap, 5)})
     write_wrl(fasteners, stage / 'fasteners.wrl', (0.64, 0.67, 0.7))
     feet = [box(x, y, -5.2, 10, 20, 2) for x in (2, P['right_foot_x']) for y in (2, REF['height'] - 22)]
     if fasteners.common(Part.makeCompound(feet)).Volume > 0.0001:

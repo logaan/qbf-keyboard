@@ -16,7 +16,7 @@
     "right_bumper": {
       "solid_count": 1,
       "valid": true,
-      "volume_mm3": 3792.87,
+      "volume_mm3": 3820.869,
       "bounds_mm": [
         74.65,
         -1.2,
@@ -29,7 +29,7 @@
     "upper_guard": {
       "solid_count": 1,
       "valid": true,
-      "volume_mm3": 5167.566,
+      "volume_mm3": 4142.757,
       "bounds_mm": [
         -1.2,
         -1.2,
@@ -52,6 +52,10 @@
     {
       "name": "right_bumper to upper_guard",
       "distance_mm": 0.25
+    },
+    {
+      "name": "Upper guard interior above low plate and battery roof",
+      "overlap_mm3": 0.0
     },
     {
       "name": "S1 full cap travel envelope",
@@ -123,7 +127,7 @@
     },
     {
       "name": "S4 full cap travel clearance",
-      "distance_mm": 0.15
+      "distance_mm": 0.51369
     },
     {
       "name": "S4 switch body",
@@ -187,7 +191,7 @@
     },
     {
       "name": "S8 full cap travel clearance",
-      "distance_mm": 0.15
+      "distance_mm": 0.51369
     },
     {
       "name": "S8 switch body",
@@ -410,7 +414,7 @@
     ],
     "printer_nozzle_as_specified": 2.0,
     "outer_boss_right_limit": 105.525,
-    "right_foot_x": 90.75,
+    "right_foot_x": 89.75,
     "upper_battery_envelope": [
       1.65,
       22.25,
@@ -433,8 +437,8 @@
   },
   "reference_source_hashes": {
     "ergogen-kikad/design/battery.json": "7b3e3750b4955e85fb36b012e269195580477f8d82b72f75a898bf2d56e6380a",
-    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "5161af1ea7cf8067735d15b131246c1fcde229a0de9c10ccac9ad53524192707",
-    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "6adf115f4056bfcaae5c1c69147e6ecc0f34c8fe2480bf4832101b815c02d20b",
+    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "74b57626d109af4a7b0da667b6c5be766e6b3eba99589a200e722b3dea77f94d",
+    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "b976aa0519c37ddfc46826d0a4e244ee2eb697c11e0ac47715895aec825ac9aa",
     "ergogen-kikad/design/models/battery_301055.wrl": "678d0e44e43f2b28cf2688cff14d0f0a151bad529723f33a35db495a39ff79ed",
     "ergogen-kikad/design/models/battery_plug_reference.wrl": "fde40d6e5606130f3fb695c3045188165670abe33d71f6582c9f4b88780d9391",
     "ergogen-kikad/design/models/nice_view_reference.wrl": "5c7cb187289362a48505090a67c6bd39ec3f1c7a0e438c5910417df058400d7f",
@@ -468,7 +472,14 @@
     "mating_plane_mm": 2.2,
     "wall_top_mm": 10.9691,
     "wall_mm": 1.0,
-    "upright_rail_width_mm": 1.0,
+    "upright_rail_width_mm": 0.0,
+    "internal_upright_walls": false,
+    "perimeter_drop_length_mm": 12.0,
+    "perimeter_drop_start_x_mm": 63.3,
+    "perimeter_drop_end_x_mm": 75.3,
+    "perimeter_drop_end_z_mm": 3.4000000000000004,
+    "perimeter_drop_shape": "Cubic Bezier with horizontal tangents at both ends",
+    "battery_roof_edge_fillet_mm": 0.2,
     "battery_envelope_mm": [
       1.65,
       22.25,
@@ -560,7 +571,7 @@
       ]
     },
     "right_bumper": {
-      "facets": 34134,
+      "facets": 34226,
       "closed_mesh": true,
       "print_bounds_mm": [
         40.79999923706055,
@@ -569,12 +580,12 @@
       ]
     },
     "upper_guard": {
-      "facets": 12320,
+      "facets": 13312,
       "closed_mesh": true,
       "print_bounds_mm": [
         76.5,
-        57.400001525878906,
-        8.769100189208984
+        57.400001425878905,
+        8.769100089208983
       ]
     }
   }
