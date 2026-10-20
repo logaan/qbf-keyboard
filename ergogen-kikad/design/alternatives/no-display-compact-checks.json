@@ -1,0 +1,511 @@
+{
+  "scope": "Nominal layout envelopes only; no routed PCB or assembled geometry validation.",
+  "board_mm": [
+    97.5,
+    57.0
+  ],
+  "main_eight_unchanged": true,
+  "fifth_center_inward_shift_each_mm": 0.6,
+  "checks": [
+    {
+      "name": "b1 cap to XIAO body",
+      "clearance_mm": 57.85,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "b1 cap to board outline",
+      "clearance_mm": 1.5,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "t1 cap to XIAO body",
+      "clearance_mm": 57.85,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "t1 cap to board outline",
+      "clearance_mm": 1.5,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "b2 cap to XIAO body",
+      "clearance_mm": 38.8,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "b2 cap to board outline",
+      "clearance_mm": 1.5,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "t2 cap to XIAO body",
+      "clearance_mm": 38.8,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "t2 cap to board outline",
+      "clearance_mm": 1.5,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "b3 cap to XIAO body",
+      "clearance_mm": 19.75,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "b3 cap to board outline",
+      "clearance_mm": 1.5,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "t3 cap to XIAO body",
+      "clearance_mm": 19.75,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "t3 cap to board outline",
+      "clearance_mm": 1.5,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "b4 cap to XIAO body",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "b4 cap to board outline",
+      "clearance_mm": 1.5,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "t4 cap to XIAO body",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "t4 cap to board outline",
+      "clearance_mm": 1.5,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "b5 cap to XIAO body",
+      "clearance_mm": 1.0,
+      "minimum_mm": 1
+    },
+    {
+      "name": "b5 cap to board outline",
+      "clearance_mm": 2.1,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "t5 cap to XIAO body",
+      "clearance_mm": 1.0,
+      "minimum_mm": 1
+    },
+    {
+      "name": "t5 cap to board outline",
+      "clearance_mm": 2.1,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "Battery well to b1 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to t1 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to b2 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to t2 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to b3 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to t3 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to b4 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to t4 shoulder",
+      "clearance_mm": 0.7,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to b5 shoulder",
+      "clearance_mm": 15.890642,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Battery well to t5 shoulder",
+      "clearance_mm": 15.890642,
+      "minimum_mm": 0.5
+    },
+    {
+      "name": "Power courtyard to battery well",
+      "clearance_mm": 0.9,
+      "minimum_mm": 0.8
+    },
+    {
+      "name": "Battery well to JST-SH allowance",
+      "clearance_mm": 1.0,
+      "minimum_mm": 1
+    },
+    {
+      "name": "JST-SH allowance to XIAO body",
+      "clearance_mm": 3.45,
+      "minimum_mm": 1
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to b1 shoulder",
+      "clearance_mm": 1.529246,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to t1 shoulder",
+      "clearance_mm": 28.516605,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to b2 shoulder",
+      "clearance_mm": 1.529246,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to t2 shoulder",
+      "clearance_mm": 28.516605,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to b3 shoulder",
+      "clearance_mm": 19.024121,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to t3 shoulder",
+      "clearance_mm": 34.978923,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to b4 shoulder",
+      "clearance_mm": 37.956405,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to t4 shoulder",
+      "clearance_mm": 48.252726,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to b5 shoulder",
+      "clearance_mm": 56.875,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to t5 shoulder",
+      "clearance_mm": 66.527343,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,23.5 screw allowance to PCB edge",
+      "clearance_mm": 1.7,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to b1 shoulder",
+      "clearance_mm": 28.516605,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to t1 shoulder",
+      "clearance_mm": 1.529246,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to b2 shoulder",
+      "clearance_mm": 28.516605,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to t2 shoulder",
+      "clearance_mm": 1.529246,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to b3 shoulder",
+      "clearance_mm": 34.978923,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to t3 shoulder",
+      "clearance_mm": 19.024121,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to b4 shoulder",
+      "clearance_mm": 48.252726,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to t4 shoulder",
+      "clearance_mm": 37.956405,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to b5 shoulder",
+      "clearance_mm": 66.527343,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to t5 shoulder",
+      "clearance_mm": 56.875,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 20.425,72.5 screw allowance to PCB edge",
+      "clearance_mm": 1.7,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to b1 shoulder",
+      "clearance_mm": 37.956405,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to t1 shoulder",
+      "clearance_mm": 48.252726,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to b2 shoulder",
+      "clearance_mm": 19.024121,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to t2 shoulder",
+      "clearance_mm": 34.978923,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to b3 shoulder",
+      "clearance_mm": 1.529246,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to t3 shoulder",
+      "clearance_mm": 28.516605,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to b4 shoulder",
+      "clearance_mm": 1.529246,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to t4 shoulder",
+      "clearance_mm": 28.516605,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to b5 shoulder",
+      "clearance_mm": 18.775,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to t5 shoulder",
+      "clearance_mm": 38.683876,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,23.5 screw allowance to PCB edge",
+      "clearance_mm": 1.7,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to b1 shoulder",
+      "clearance_mm": 48.252726,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to t1 shoulder",
+      "clearance_mm": 37.956405,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to b2 shoulder",
+      "clearance_mm": 34.978923,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to t2 shoulder",
+      "clearance_mm": 19.024121,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to b3 shoulder",
+      "clearance_mm": 28.516605,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to t3 shoulder",
+      "clearance_mm": 1.529246,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to b4 shoulder",
+      "clearance_mm": 28.516605,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to t4 shoulder",
+      "clearance_mm": 1.529246,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to b5 shoulder",
+      "clearance_mm": 38.683876,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to t5 shoulder",
+      "clearance_mm": 18.775,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 58.525,72.5 screw allowance to PCB edge",
+      "clearance_mm": 1.7,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to b1 shoulder",
+      "clearance_mm": 56.390055,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to t1 shoulder",
+      "clearance_mm": 63.877961,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to b2 shoulder",
+      "clearance_mm": 37.383309,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to t2 shoulder",
+      "clearance_mm": 47.797555,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to b3 shoulder",
+      "clearance_mm": 18.456023,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to t3 shoulder",
+      "clearance_mm": 34.656901,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to b4 shoulder",
+      "clearance_mm": 1.258792,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to t4 shoulder",
+      "clearance_mm": 28.484168,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to b5 shoulder",
+      "clearance_mm": 0.3,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to t5 shoulder",
+      "clearance_mm": 32.946028,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,23.5 screw allowance to PCB edge",
+      "clearance_mm": 1.7,
+      "minimum_mm": 1.5
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to b1 shoulder",
+      "clearance_mm": 63.877961,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to t1 shoulder",
+      "clearance_mm": 56.390055,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to b2 shoulder",
+      "clearance_mm": 47.797555,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to t2 shoulder",
+      "clearance_mm": 37.383309,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to b3 shoulder",
+      "clearance_mm": 34.656901,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to t3 shoulder",
+      "clearance_mm": 18.456023,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to b4 shoulder",
+      "clearance_mm": 28.484168,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to t4 shoulder",
+      "clearance_mm": 1.258792,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to b5 shoulder",
+      "clearance_mm": 32.946028,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to t5 shoulder",
+      "clearance_mm": 0.3,
+      "minimum_mm": 0.3
+    },
+    {
+      "name": "Mount 77,72.5 screw allowance to PCB edge",
+      "clearance_mm": 1.7,
+      "minimum_mm": 1.5
+    }
+  ],
+  "passed": true,
+  "usb_projection_beyond_pcb_mm": 1.0,
+  "power_actuator_projection_beyond_pcb_mm": 1,
+  "battery_top_z_mm": 2.1,
+  "full_travel_cap_to_screw_head_vertical_allowance_mm": 2.4
+}

@@ -1,0 +1,66 @@
+{
+  "status": "Provisional layout sketch only; no production design, routing, firmware or case change.",
+  "coordinate_system": "Millimetres in the unchanged switch-layout frame, main PCB top z=0.",
+  "board_bounds": [1, 19.5, 98.5, 76.5],
+  "corner_radius": 1.5,
+  "main_columns_x": [10.9, 29.95, 49, 68.05],
+  "main_rows_y": [34.25, 61.75],
+  "main_cap_mm": [16.5, 26.5],
+  "switch_shoulder_mm": [15, 15],
+  "column_pitch": 19.05,
+  "main_row_pitch": 27.5,
+  "fifth_column_x": 87.1,
+  "fifth_rows_y": [29.85, 66.15],
+  "fifth_cap_mm": [17.5, 16.5],
+  "minimum_controller_cap_plan_gap": 1,
+  "controller": {
+    "module": "Seeed XIAO nRF52840 Plus",
+    "center": [87.5, 48],
+    "body_mm": [21, 17.8],
+    "mounting": "Recessed coplanar cutout concept; conductive edge lands, mechanical support, cutout, solder access and vertical fit not designed.",
+    "usb_right_projection": 1.5,
+    "onboard_reset_center": [96.073, 53.721],
+    "antenna": "Integrated ceramic antenna; no external antenna; RF keepout to validate during PCB design."
+  },
+  "battery": {
+    "model": "Protected 301055",
+    "center": [35.5, 48],
+    "envelope_mm": [57.5, 10.5, 3.5],
+    "well_mm": [58.1, 11.1],
+    "bottom_z": -1.4,
+    "placement": "Main-PCB-only well on intact baseplate with insulating adhesive; below cap overhang."
+  },
+  "power": {
+    "model": "C&K PCM12SMTR",
+    "footprint_origin": [3.1, 48],
+    "body_bounds": [1.5, 44.65, 4.1, 51.35],
+    "courtyard_bounds": [1, 43.6, 5.55, 52.4],
+    "body_height": 1.4,
+    "actuator_projection_from_body": 1.5,
+    "actuator_left_x": 0,
+    "actuator_travel": 1.5,
+    "actuator_envelope_note": "Illustrative actuator width and position; travel and projection dimensioned, detailed moving envelope deferred.",
+    "source": "https://www.ckswitches.com/media/1424/pcm.pdf"
+  },
+  "connector": {
+    "family": "JST-SH",
+    "header_body_mm": [4.25, 4],
+    "header_height": 2.9,
+    "assembly_height_allowance": 3,
+    "assembly_allowance_bounds": [65.55, 45, 73.55, 51],
+    "header_body_bounds": [69.3, 46, 73.55, 50],
+    "mating_direction": "left",
+    "note": "8 x 6 mm conservative JST-SH allowance includes mating plug space; full mated dimensions not verified.",
+    "source": "https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf"
+  },
+  "mounts": {
+    "centers": [[20.425, 23.5], [20.425, 72.5], [58.525, 23.5], [58.525, 72.5], [77, 23.5], [77, 72.5]],
+    "hole_diameter": 2.2,
+    "screw_keepout_diameter": 4.6,
+    "proposed_top_head_height_max": 1.6,
+    "nut_location": "Below PCB",
+    "note": "Mount envelopes only; fastener choice, baseplate and case attachment remain unvalidated."
+  },
+  "assumed_full_travel_cap_underside_z": 4,
+  "deferred": ["PCB cutout and edge solder mounting", "Electrical routing and battery wire path", "RF keepout", "Exact mated connector dimensions", "Full moving actuator envelope", "Case walls and assembled fasteners", "Native component models and full key travel"]
+}
