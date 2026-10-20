@@ -41,6 +41,8 @@ def guard_dimensions(parameters, reference):
                 battery_clearance_mm=parameters.get('upper_battery_roof_clearance', 0.2),
                 cap_sweep_clearance_mm=0.15,
                 mount_flange_thickness_mm=0.4,
+                switch_shoulder_aperture_mm=15.3,
+                switch_shoulder_relief_top_mm=3.1,
                 mounts=guard_mount_specs(parameters, reference),
                 battery_cover='Continuous roof over the complete protected battery envelope; connector remains outside the roof.')
 
@@ -102,6 +104,9 @@ def build_upper_guard(parameters, reference, lower_left_shape):
         s = p['switch_aperture']
         guard = guard.cut(_rounded(switch['x'] - s / 2, switch['y'] - s / 2,
                                   base - 1, s, s, 4.95 - base + 1, 0.15))
+        shoulder = 15.3
+        guard = guard.cut(_rounded(switch['x'] - shoulder / 2, switch['y'] - shoulder / 2,
+                                  base - 0.1, shoulder, shoulder, 3.1 - base + 0.1, 0.15))
         cw, ch = (26.5, 16.5) if switch['rotation'] == 0 else (16.5, 26.5)
         guard = guard.cut(_box(switch['x'] - cw / 2 - 0.15, switch['y'] - ch / 2 - 0.15,
                                p['cap_rest_underside'] - p['key_travel'] - 0.2,
