@@ -396,7 +396,7 @@ def check_layout(board, output):
     if battery_bounds[1] < ys[0] + 7 or battery_bounds[3] > ys[1] - 7:
         raise RuntimeError('Battery pack envelope overlaps the switch bodies')
     jx, jy = mm_point(parts['J1'].GetPosition())
-    if abs(jy - cy) > 0.001 or jx + 12.25 > battery_bounds[0] - 1:
+    if abs(jy - cy) > 0.001 or jx - 12.25 < battery_bounds[2] + 1 or jx + 1.35 > socket_bounds[0] - 0.5:
         raise RuntimeError('Battery connector and mated plug must fit beside the pack between rows')
     geometry = {
         'width': round(right - left, 3),

@@ -173,9 +173,9 @@ pcbs:
         what: battery_ph
         where:
           ref: pad_c0_bottom
-          shift: [-6.5, controller_y]
+          shift: [63.65, controller_y]
         adjust:
-          rotate: 90
+          rotate: -90
       power_switch:
         what: power_slide
         where:
@@ -194,4 +194,4 @@ pcbs:
         what: battery_space
         where:
           ref: pad_c0_bottom
-          shift: [36.25, controller_y]
+          shift: [20.9, controller_y]
