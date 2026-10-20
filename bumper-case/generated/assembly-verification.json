@@ -78,19 +78,48 @@
     },
     {
       "name": "SW_Slide_SPDT_Straight_CK_OS102011MS2Q007 native KiCad STEP",
-      "overlap_mm3": 0.0
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.2
+    },
+    {
+      "name": "Native power actuator at travel 0 mm",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.3
+    },
+    {
+      "name": "Native power actuator at travel 0.5 mm",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.3
+    },
+    {
+      "name": "Native power actuator at travel 1 mm",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.3
+    },
+    {
+      "name": "Native power actuator at travel 1.5 mm",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.3
+    },
+    {
+      "name": "Native power actuator at travel 2.0 mm",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.3
     },
     {
       "name": "SW_PUSH_6mm_H4.3mm native KiCad STEP",
-      "overlap_mm3": 0.0
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.2
     },
     {
       "name": "JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal native KiCad STEP",
-      "overlap_mm3": 0.0
+      "overlap_mm3": 0.0,
+      "distance_mm": 2.00811
     },
     {
       "name": "macropad_PCB native KiCad STEP",
-      "overlap_mm3": 0.0
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.0
     },
     {
       "name": "Native baseplate",

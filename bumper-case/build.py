@@ -44,6 +44,22 @@ def nut(x, y, z):
     return polygon_prism(pts, P['nut_thickness']).cut(cylinder(x, y, z - 0.1, 1, 2))
 
 
+def control_hood(y0, y1, case_top, aperture):
+    w, h = REF['width'], REF['height']
+    extra = P['wall'] + P['pcb_edge_clearance']
+    left = P['control_hood_left']
+    underside = case_top + P['control_housing_clearance']
+    top = underside + P['wall']
+    hood = rounded(-extra, -extra, 0, w + 2 * extra, h + 2 * extra, top, 1.5 + extra)
+    hood = hood.common(box(left, y0, 0, w + extra - left, y1 - y0, top))
+    hood = hood.cut(box(left + P['wall'], y0 + P['wall'], -0.1,
+                        w + extra - left - 2 * P['wall'], y1 - y0 - 2 * P['wall'], underside + 0.1))
+    hood = hood.cut(aperture)
+    edges = [e for e in hood.Edges if abs(e.BoundBox.ZMin - top) < 0.001
+             and abs(e.BoundBox.ZMax - top) < 0.001]
+    return hood.makeFillet(0.2, edges)
+
+
 def make_parts():
     w, h = REF['width'], REF['height']
     extra = P['wall'] + P['pcb_edge_clearance']
@@ -108,7 +124,17 @@ def make_parts():
     top_edges = [e for e in cover.Edges if abs(e.BoundBox.ZMin - P['cover_roof_top']) < 0.001
                  and abs(e.BoundBox.ZMax - P['cover_roof_top']) < 0.001]
     cover = cover.makeFillet(0.25, top_edges)
-    right = right.fuse(cover).removeSplitter()
+    rx, ry = P['reset_button_center']
+    reset_opening = cylinder(rx, ry, -0.1, P['reset_hole_diameter'] / 2, 10)
+    sx, sy, sw, sh = P['power_slot']
+    power_opening = rounded(sx, sy, -0.1, sw, sh, 11, 0.25)
+    reset_hood = control_hood(y1, h + extra, P['reset_case_top'], reset_opening)
+    power_hood = control_hood(-extra, y0, P['power_case_top'], power_opening)
+    hood_links = [box(103.3, lo, 1, P['control_hood_left'] - 103.3 + 0.2, hi - lo, 1.2)
+                  for lo, hi in ((-extra, y0), (y1, h + extra))]
+    hood_links = [s.common(rounded(-extra, -extra, 0.9, w + 2 * extra, h + 2 * extra, 1.4, 1.5 + extra))
+                  for s in hood_links]
+    right = union([right, cover, reset_hood, power_hood] + hood_links)
     return {'left_bumper': left, 'right_bumper': right}, mounts, switches
 
 
@@ -169,8 +195,25 @@ def check(parts, mounts, switches):
     collision('Nice nano body and sockets', box(77.75, 18.35, 0, 36, 18.3, 6.8))
     collision('Nice view module', box(74.65, 20.5, 8, 36, 14, 2.91))
     collision('Nice view socket', box(74.68, 21.15, 0, 2.54, 12.7, 9))
-    collision('Power switch access', box(106.1, 6, 0, 5.3, 9.5, 15))
-    collision('Reset access', box(105.2, 42.05, 0, 7.05, 8.2, 15))
+    collision('Power housing envelope', box(106.575, 6.45, 0, 4.3, 8.6, P['power_case_top']))
+    collision('Power actuator full travel', box(107.725, 8.75, P['power_case_top'],
+                                                2, 2 + P['power_actuator_stroke'],
+                                                P['power_actuator_top'] - P['power_case_top']))
+    rx, ry = P['reset_button_center']
+    collision('Reset housing envelope', box(105.725, 43.15, 0, 6, 6, P['reset_case_top']))
+    collision('Reset button access', cylinder(rx, ry, 3.6, 1.65, 4))
+    reset_roof = P['reset_case_top'] + P['control_housing_clearance'] + P['wall']
+    power_roof = P['power_case_top'] + P['control_housing_clearance'] + P['wall']
+    if reset_roof <= P['reset_button_top'] or power_roof >= P['power_actuator_top']:
+        raise RuntimeError('Reset must be recessed and power actuator must stand proud')
+    results['controls'] = {'housing_clearance_mm': P['control_housing_clearance'],
+                          'reset_roof_top_mm': reset_roof,
+                          'reset_recess_mm': reset_roof - P['reset_button_top'],
+                          'reset_hole_diameter_mm': P['reset_hole_diameter'],
+                          'power_roof_top_mm': power_roof,
+                          'power_actuator_exposed_mm': P['power_actuator_top'] - power_roof,
+                          'power_stroke_mm': P['power_actuator_stroke'],
+                          'power_slot_mm': P['power_slot']}
     collision('USB plug path', box(113.4, 21.8, 3, 20, 11.4, 7))
     for m in mounts:
         n = nut(m['x'], m['y'], P['nut_seat_height'])
@@ -240,6 +283,8 @@ def main():
     doc.recompute()
     doc.saveAs(str(ROOT / 'QBF_Bumper_Case.FCStd'))
     Part.export([doc.getObject('LeftBumper'), doc.getObject('RightBumper')], str(OUT / 'bumper_case.step'))
+    for path in OUT.glob('*.step'):
+        path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines()) + '\n')
     (OUT / 'verification.json').write_text(json.dumps(report, indent=2) + '\n')
     App.closeDocument(doc.Name)
     print('Generated two valid single solids, closed STL meshes, case-only FreeCAD and STEP, and clearance report')

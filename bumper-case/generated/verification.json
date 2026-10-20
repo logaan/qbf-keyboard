@@ -16,7 +16,7 @@
     "right_bumper": {
       "solid_count": 1,
       "valid": true,
-      "volume_mm3": 2950.532,
+      "volume_mm3": 3809.573,
       "bounds_mm": [
         74.65,
         -1.2,
@@ -173,11 +173,19 @@
       "overlap_mm3": 0.0
     },
     {
-      "name": "Power switch access",
+      "name": "Power housing envelope",
       "overlap_mm3": 0.0
     },
     {
-      "name": "Reset access",
+      "name": "Power actuator full travel",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Reset housing envelope",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Reset button access",
       "overlap_mm3": 0.0
     },
     {
@@ -313,6 +321,24 @@
       12.0,
       7.5
     ],
+    "control_hood_left": 104.5,
+    "control_housing_clearance": 0.2,
+    "reset_case_top": 4.1,
+    "reset_button_top": 4.3,
+    "reset_button_center": [
+      108.725,
+      46.15
+    ],
+    "reset_hole_diameter": 4.0,
+    "power_case_top": 4.7,
+    "power_actuator_top": 8.7,
+    "power_actuator_stroke": 2.0,
+    "power_slot": [
+      107.425,
+      8.45,
+      2.6,
+      4.6
+    ],
     "printer_nozzle_as_specified": 2.0
   },
   "reference_source_hashes": {
@@ -347,6 +373,21 @@
     "A 2 mm nozzle cannot conventionally print the requested 1 mm walls; print with a smaller nozzle.",
     "Board touching is specified by the user; no PCB or baseplate geometry has been changed."
   ],
+  "controls": {
+    "housing_clearance_mm": 0.2,
+    "reset_roof_top_mm": 5.3,
+    "reset_recess_mm": 1.0,
+    "reset_hole_diameter_mm": 4.0,
+    "power_roof_top_mm": 5.9,
+    "power_actuator_exposed_mm": 2.799999999999999,
+    "power_stroke_mm": 2.0,
+    "power_slot_mm": [
+      107.425,
+      8.45,
+      2.6,
+      4.6
+    ]
+  },
   "passed": true,
   "exports": {
     "left_bumper": {
@@ -359,11 +400,11 @@
       ]
     },
     "right_bumper": {
-      "facets": 16124,
+      "facets": 32178,
       "closed_mesh": true,
       "print_bounds_mm": [
         40.79999923706055,
-        57.40000152587888,
+        57.400001525878885,
         15.600000381469728
       ]
     }

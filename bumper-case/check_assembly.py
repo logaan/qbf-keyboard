@@ -66,9 +66,21 @@ def main():
         else:
             shape.translate(V(0, 0, -1.595))
         volume = case.common(shape).Volume
-        checks.append({'name': obj.Label + ' native KiCad STEP', 'overlap_mm3': round(volume, 7)})
+        checks.append({'name': obj.Label + ' native KiCad STEP', 'overlap_mm3': round(volume, 7),
+                       'distance_mm': round(case.distToShape(shape)[0], 5)})
         if volume > 0.0001:
             raise RuntimeError(f'{obj.Label} intersects case by {volume:.6f} mm3')
+        if obj.Label.startswith('SW_Slide'):
+            actuator = shape.common(box(105, 5, P['power_case_top'], 8, 12, 5))
+            for offset in (0, 0.5, 1, 1.5, P['power_actuator_stroke']):
+                position = actuator.copy()
+                position.translate(V(0, offset, 0))
+                volume = case.common(position).Volume
+                if volume > 0.0001:
+                    raise RuntimeError('Power actuator collides with slot during travel')
+                checks.append({'name': 'Native power actuator at travel ' + str(offset) + ' mm',
+                               'overlap_mm3': round(volume, 7),
+                               'distance_mm': round(case.distToShape(position)[0], 5)})
     App.closeDocument(doc.Name)
     base = Part.read(str(stage / 'kicad-baseplate.step'))
     matrix = App.Matrix()
