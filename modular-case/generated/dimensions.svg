@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100"><rect width="1800" height="1100" fill="#f5f7f8"/><style>text{font-family:Arial,sans-serif;fill:#22323b} .dim{stroke:#516974;stroke-width:1.5;fill:none} .small{font-size:21px} .label{font-size:25px}</style>
+<text x="90" y="75" font-size="40" fill="#22323b" text-anchor="start">QBF  /  MODULAR CASE</text>
+<text x="90" y="112" font-size="22" fill="#22323b" text-anchor="start">Dimensioned nominal geometry • millimetres • two identical halves, second rotated 180°</text>
+<rect x="120.0" y="190.0" width="683.8999999999999" height="409.5" rx="10.5" fill="#b7d5d7" stroke="#20515b" stroke-width="2"/>
+<rect x="134.0" y="204.0" width="655.8999999999999" height="381.5" rx="0" fill="#edf1ed" stroke="none" stroke-width="2"/>
+<rect x="162.35" y="355.90000000000003" width="406.69999999999993" height="77.69999999999996" rx="0" fill="#70a6ae" stroke="#20515b" stroke-width="2"/>
+<rect x="535.8" y="205.75" width="115.5" height="185.5" rx="7" fill="#ffffff" stroke="#637780" stroke-width="2"/>
+<text x="593.55" y="306.5" font-size="23" fill="#22323b" text-anchor="middle">t4</text>
+<rect x="665.6499999999999" y="205.75" width="122.5" height="115.5" rx="7" fill="#ffffff" stroke="#637780" stroke-width="2"/>
+<text x="726.8999999999999" y="271.5" font-size="23" fill="#22323b" text-anchor="middle">t5</text>
+<rect x="135.75" y="205.75" width="115.5" height="185.5" rx="7" fill="#ffffff" stroke="#637780" stroke-width="2"/>
+<text x="193.5" y="306.5" font-size="23" fill="#22323b" text-anchor="middle">t1</text>
+<rect x="269.1" y="398.25" width="115.50000000000003" height="185.5" rx="7" fill="#ffffff" stroke="#637780" stroke-width="2"/>
+<text x="326.85" y="499.0" font-size="23" fill="#22323b" text-anchor="middle">b2</text>
+<rect x="665.6499999999999" y="468.25" width="122.5" height="115.5" rx="7" fill="#ffffff" stroke="#637780" stroke-width="2"/>
+<text x="726.8999999999999" y="534.0" font-size="23" fill="#22323b" text-anchor="middle">b5</text>
+<rect x="269.1" y="205.75" width="115.50000000000003" height="185.5" rx="7" fill="#ffffff" stroke="#637780" stroke-width="2"/>
+<text x="326.85" y="306.5" font-size="23" fill="#22323b" text-anchor="middle">t2</text>
+<rect x="535.8" y="398.25" width="115.5" height="185.5" rx="7" fill="#ffffff" stroke="#637780" stroke-width="2"/>
+<text x="593.55" y="499.0" font-size="23" fill="#22323b" text-anchor="middle">b4</text>
+<rect x="402.45" y="205.75" width="115.5" height="185.5" rx="7" fill="#ffffff" stroke="#637780" stroke-width="2"/>
+<text x="460.2" y="306.5" font-size="23" fill="#22323b" text-anchor="middle">t3</text>
+<rect x="402.45" y="398.25" width="115.5" height="185.5" rx="7" fill="#ffffff" stroke="#637780" stroke-width="2"/>
+<text x="460.2" y="499.0" font-size="23" fill="#22323b" text-anchor="middle">b3</text>
+<rect x="135.75" y="398.25" width="115.5" height="185.5" rx="7" fill="#ffffff" stroke="#637780" stroke-width="2"/>
+<text x="193.5" y="499.0" font-size="23" fill="#22323b" text-anchor="middle">b1</text>
+<rect x="656.1999999999999" y="335.95000000000005" width="147" height="124.59999999999998" rx="0" fill="#b4c49f" stroke="#50705b" stroke-width="2"/>
+<rect x="762.17104" y="366.7052" width="51.44999999999996" height="63.0" rx="0" fill="#b6bdc3" stroke="#65717a" stroke-width="2"/>
+<text x="712.1999999999999" y="405.25" font-size="18" fill="#22323b" text-anchor="middle">XIAO</text>
+<circle cx="260.175" cy="223.25" r="7.7" fill="white" stroke="#20515b" stroke-width="2"/>
+<circle cx="526.875" cy="223.25" r="7.7" fill="white" stroke="#20515b" stroke-width="2"/>
+<circle cx="260.175" cy="566.25" r="7.7" fill="white" stroke="#20515b" stroke-width="2"/>
+<circle cx="526.875" cy="566.25" r="7.7" fill="white" stroke="#20515b" stroke-width="2"/>
+<rect x="121.54" y="367.79999999999995" width="35.0" height="53.90000000000002" rx="0" fill="#b8bec5" stroke="#65717a" stroke-width="2"/>
+<path d="M 66.54,394.75 L 116.54,394.75" stroke="#516974" stroke-width="1.5" fill="none"/>
+<text x="59.540000000000006" y="401.75" font-size="20" fill="#22323b" text-anchor="end">Power</text>
+<path d="M 120,163 L 803.9,163" stroke="#516974" stroke-width="1.5" fill="none"/>
+<path d="M 120,156 L 120,170" stroke="#516974" stroke-width="1.5" fill="none"/>
+<path d="M 803.9,156 L 803.9,170" stroke="#516974" stroke-width="1.5" fill="none"/>
+<text x="461.95" y="151" font-size="21" fill="#22323b" text-anchor="middle">97.7 PCB / tray / rim</text>
+<path d="M 843,190 L 843,599.5" stroke="#516974" stroke-width="1.5" fill="none"/>
+<path d="M 836,190 L 850,190" stroke="#516974" stroke-width="1.5" fill="none"/>
+<path d="M 836,599.5 L 850,599.5" stroke="#516974" stroke-width="1.5" fill="none"/>
+<text x="858" y="394.75" font-size="21" fill="#22323b" text-anchor="start">58.5</text>
+<text x="120" y="638" font-size="21" fill="#22323b" text-anchor="start">Joined width: 97.7 + 10 + 97.7 = 205.4</text>
+<text x="975" y="195" font-size="30" fill="#22323b" text-anchor="start">Key and wall clearances</text>
+<text x="975" y="242" font-size="22" fill="#22323b" text-anchor="start">Main caps: 16.5 × 26.5 (portrait 1.5U)</text>
+<text x="975" y="281" font-size="22" fill="#22323b" text-anchor="start">Column 5: 17.5 × 16.5 (1U)</text>
+<text x="975" y="320" font-size="22" fill="#22323b" text-anchor="start">PCB beyond cap edges: 2.25</text>
+<text x="975" y="359" font-size="22" fill="#22323b" text-anchor="start">Perimeter wall: 2.0 • cap gap: 0.25</text>
+<text x="975" y="398" font-size="22" fill="#22323b" text-anchor="start">Four M2 mounts • battery roof clearance: 0.30</text>
+<text x="975" y="437" font-size="22" fill="#22323b" text-anchor="start">Controller: 21 × 17.8 • USB faces inward</text>
+<text x="975" y="525" font-size="30" fill="#22323b" text-anchor="start">Transport envelope, each half</text>
+<text x="975" y="570" font-size="34" fill="#22323b" text-anchor="start">100.9 × 63.3 × 21.2</text>
+<text x="975" y="607" font-size="21" fill="#22323b" text-anchor="start">Includes the cover finger tabs and tray feet.</text>
+<text x="90" y="715" font-size="28" fill="#22323b" text-anchor="start">SIDE VIEW  /  HEIGHT ENVELOPES</text>
+<rect x="115" y="939.4" width="680" height="35.2" rx="0" fill="#225665" stroke="none" stroke-width="2"/>
+<rect x="165" y="974.6" width="65" height="15.399999999999999" rx="0" fill="#225665" stroke="none" stroke-width="2"/>
+<rect x="680" y="974.6" width="65" height="15.399999999999999" rx="0" fill="#225665" stroke="none" stroke-width="2"/>
+<rect x="115" y="904.2" width="680" height="35.2" rx="0" fill="#8b9a7e" stroke="none" stroke-width="2"/>
+<rect x="115" y="864.6" width="22" height="39.6" rx="0" fill="#478e9a" stroke="none" stroke-width="2"/>
+<rect x="773" y="864.6" width="22" height="39.6" rx="0" fill="#478e9a" stroke="none" stroke-width="2"/>
+<rect x="180" y="783.539746" width="550" height="43.660253999999995" rx="6" fill="white" stroke="#637780" stroke-width="2"/>
+<rect x="180" y="827.2" width="550" height="33" rx="0" fill="#d9e1e3" stroke="none" stroke-width="2"/>
+<rect x="100" y="756.8" width="710" height="13.2" rx="0" fill="#db7830" stroke="none" stroke-width="2"/>
+<rect x="100" y="770.0" width="14" height="94.6" rx="0" fill="#db7830" stroke="none" stroke-width="2"/>
+<rect x="796" y="770.0" width="14" height="94.6" rx="0" fill="#db7830" stroke="none" stroke-width="2"/>
+<path d="M 850,756.8 L 850,990.0" stroke="#516974" stroke-width="1.5" fill="none"/>
+<path d="M 843,756.8 L 857,756.8" stroke="#516974" stroke-width="1.5" fill="none"/>
+<path d="M 843,990.0 L 857,990.0" stroke="#516974" stroke-width="1.5" fill="none"/>
+<text x="865" y="873.4" font-size="21" fill="#22323b" text-anchor="start">21.2</text>
+<path d="M 600,770.0 L 650,740" stroke="#516974" stroke-width="1.5" fill="none"/>
+<text x="665" y="741" font-size="21" fill="#22323b" text-anchor="start">1.23 cap-to-roof gap</text>
+<text x="975" y="730" font-size="30" fill="#22323b" text-anchor="start">Tool-free everyday use</text>
+<text x="975" y="775" font-size="21" fill="#22323b" text-anchor="start">Join: insert four bridge heads, then slide 6.5 mm.</text>
+<text x="975" y="814" font-size="21" fill="#22323b" text-anchor="start">Split: press both underside tabs, slide back, lift off.</text>
+<text x="975" y="853" font-size="21" fill="#22323b" text-anchor="start">Cover: press down until the front/back clips catch.</text>
+<text x="975" y="892" font-size="21" fill="#22323b" text-anchor="start">Uncover: pull both cover tabs outward and lift.</text>
+<text x="975" y="931" font-size="21" fill="#22323b" text-anchor="start">Each half can be used and covered on its own.</text>
+<text x="975" y="970" font-size="21" fill="#22323b" text-anchor="start">Separate halves for straight USB cable access.</text>
+<text x="90" y="1060" font-size="21" fill="#22323b" text-anchor="start">CAD fit is verified; print fit, clip fatigue, luggage loads and the recessed controller assembly need physical testing.</text>
+</svg>

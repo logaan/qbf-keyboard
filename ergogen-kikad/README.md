@@ -49,7 +49,7 @@ With KiCad closed, run from the repository root:
 
 Node/npm, KiCad and FreeCAD are required. The first generation establishes the actual baseplate; model rebuilding exports its native shape, and the second attaches the complete assembly. Board generation is transactional: both native DRC reports and the STEP battery-floor proof must pass before replacing production outputs. `./scripts/check.sh` repeats DRC; `./scripts/check-battery-well.sh` repeats the continuous-floor proof. Reports live in `generated/checks/`.
 
-The assembly check uses actual native PCB solids and filled copper, tests all 23 XIAO castellations, four fasteners, full cap travel, battery, connector reserve, complete power stroke, USB reference-cable access and a 2 mm onboard-reset probe. Its limits remain explicit: purchased hardware, solder process, actual cap cavity/clip seating, module thickness and wireless performance require a prototype. The current case files belong to the earlier design; the separate mechanical stage follows the reviewed firmware stage.
+The assembly check uses actual native PCB solids and filled copper, tests all 23 XIAO castellations, four fasteners, full cap travel, battery, connector reserve, complete power stroke, USB reference-cable access and a 2 mm onboard-reset probe. Its limits remain explicit: purchased hardware, solder process, actual cap cavity/clip seating, module thickness and wireless performance require a prototype. The [modular case](../modular-case/README.md) was built after the reviewed firmware stage. It has independent covers and a removable flat bridge. Its four M2 × 6 mm screws and 1.2 mm thin nuts replace the electronics-only fastener reference; use the case guide for that stack.
 
 ## Firmware
 

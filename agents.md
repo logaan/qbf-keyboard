@@ -10,3 +10,5 @@
 10. Use no display and no separate reset switch; retain access to the XIAO onboard reset. Complete work strictly in sequential stages: Ergogen, then KiCad, then firmware, then mechanical/case last. Do not begin a later stage until the current stage is complete and reviewed. Stage 1 XIAO placement references without electrical mount pads are not manufacturing-ready footprints.
 11. Keep 3D model assignments in `scripts/attach_models.py`; run `./scripts/render-3d.sh` for native KiCad assembled and internal inspection views. Model approximations are listed in `ergogen-kikad/design/models/README.md`.
 12. For bumper-case changes and recurring assembly previews, follow `bumper-case/AGENTS.md`; retain every component except keycaps in the cap-free preview.
+
+13. The active case is `modular-case/`; follow its `AGENTS.md`. It provides independent tool-free covers and a removable flat bridge, with no folding. `bumper-case/` and `mechanical/` are historical.
