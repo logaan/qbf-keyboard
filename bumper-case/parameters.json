@@ -38,5 +38,7 @@
   "power_actuator_top": 8.7,
   "power_actuator_stroke": 2.0,
   "power_slot": [107.425, 8.45, 2.6, 4.6],
-  "printer_nozzle_as_specified": 2.0
+  "printer_nozzle_as_specified": 2.0,
+  "outer_boss_right_limit": 105.525,
+  "right_foot_x": 90.75
 }

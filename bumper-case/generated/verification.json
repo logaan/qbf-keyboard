@@ -3,7 +3,7 @@
     "left_bumper": {
       "solid_count": 1,
       "valid": true,
-      "volume_mm3": 3429.664,
+      "volume_mm3": 3420.225,
       "bounds_mm": [
         -1.2,
         -1.2,
@@ -16,7 +16,7 @@
     "right_bumper": {
       "solid_count": 1,
       "valid": true,
-      "volume_mm3": 3809.573,
+      "volume_mm3": 3792.87,
       "bounds_mm": [
         74.65,
         -1.2,
@@ -250,7 +250,7 @@
     },
     {
       "name": "H5 nut seating area",
-      "area_mm2": 9.1389
+      "area_mm2": 9.7017
     },
     {
       "name": "H6 nut",
@@ -262,7 +262,7 @@
     },
     {
       "name": "H6 nut seating area",
-      "area_mm2": 9.1389
+      "area_mm2": 9.7017
     },
     {
       "name": "Rubber foot",
@@ -339,11 +339,13 @@
       2.6,
       4.6
     ],
-    "printer_nozzle_as_specified": 2.0
+    "printer_nozzle_as_specified": 2.0,
+    "outer_boss_right_limit": 105.525,
+    "right_foot_x": 90.75
   },
   "reference_source_hashes": {
-    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "658d26ea0a96a3232b7433723844cd4a39da029c0247e402d3e36a187499cfd9",
-    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "42da8ddde5cb044666fc2fb6f60a14be3b38b59ed9aaad7d4282286863ad96ac",
+    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "5151773e0e21f6d4df269c6a3a09c73a45303cda7eba9bf02368b0039f111c52",
+    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "f423d3fd90ce9a103dd5eda0f3d4e8ab58b8eb0a12362a7852c7c122784992d8",
     "ergogen-kikad/design/models/battery_301055.wrl": "0b33d331c8d421c46668a60f2bf834ee96ff663bca3644910c2fcc2cdfe3262f",
     "ergogen-kikad/design/models/battery_plug_reference.wrl": "fde40d6e5606130f3fb695c3045188165670abe33d71f6582c9f4b88780d9391",
     "ergogen-kikad/design/models/nice_view_reference.wrl": "5c7cb187289362a48505090a67c6bd39ec3f1c7a0e438c5910417df058400d7f",
@@ -391,7 +393,7 @@
   "passed": true,
   "exports": {
     "left_bumper": {
-      "facets": 12784,
+      "facets": 11384,
       "closed_mesh": true,
       "print_bounds_mm": [
         76.5,
@@ -400,11 +402,11 @@
       ]
     },
     "right_bumper": {
-      "facets": 32178,
+      "facets": 34134,
       "closed_mesh": true,
       "print_bounds_mm": [
         40.79999923706055,
-        57.400001525878885,
+        57.400001425878905,
         15.600000381469728
       ]
     }

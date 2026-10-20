@@ -1,8 +1,8 @@
 {
   "coordinate_system": "millimetres, origin at PCB lower left, PCB top z=0",
   "source_files": {
-    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "658d26ea0a96a3232b7433723844cd4a39da029c0247e402d3e36a187499cfd9",
-    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "42da8ddde5cb044666fc2fb6f60a14be3b38b59ed9aaad7d4282286863ad96ac",
+    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "5151773e0e21f6d4df269c6a3a09c73a45303cda7eba9bf02368b0039f111c52",
+    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "f423d3fd90ce9a103dd5eda0f3d4e8ab58b8eb0a12362a7852c7c122784992d8",
     "ergogen-kikad/design/models/battery_301055.wrl": "0b33d331c8d421c46668a60f2bf834ee96ff663bca3644910c2fcc2cdfe3262f",
     "ergogen-kikad/design/models/battery_plug_reference.wrl": "fde40d6e5606130f3fb695c3045188165670abe33d71f6582c9f4b88780d9391",
     "ergogen-kikad/design/models/nice_view_reference.wrl": "5c7cb187289362a48505090a67c6bd39ec3f1c7a0e438c5910417df058400d7f",
@@ -69,15 +69,15 @@
     },
     {
       "reference": "H5",
-      "x": 75.425,
-      "y": 41.25,
+      "x": 103.5,
+      "y": 46.25,
       "rotation": 0.0,
       "models": []
     },
     {
       "reference": "H6",
-      "x": 75.425,
-      "y": 13.75,
+      "x": 103.5,
+      "y": 8.75,
       "rotation": 0.0,
       "models": []
     },

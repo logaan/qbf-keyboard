@@ -89,6 +89,10 @@ def make_parts():
     for m in mounts:
         x, y = m['x'], m['y']
         boss = cylinder(x, y, 0, P['boss_radius'], P['plate_top'])
+        if x > P['seam_x']:
+            boss = boss.common(box(x - P['boss_radius'], y - P['boss_radius'], 0,
+                                   P['outer_boss_right_limit'] - x + P['boss_radius'],
+                                   2 * P['boss_radius'], P['plate_top']))
         rib = rounded(x - P['rib_width'] / 2, y - P['rib_length'] / 2, 0,
                       P['rib_width'], P['rib_length'], P['rib_height'], 0.5)
         supports.append(boss.fuse(rib))
@@ -135,6 +139,11 @@ def make_parts():
     hood_links = [s.common(rounded(-extra, -extra, 0.9, w + 2 * extra, h + 2 * extra, 1.4, 1.5 + extra))
                   for s in hood_links]
     right = union([right, cover, reset_hood, power_hood] + hood_links)
+    for m in mounts:
+        if m['x'] > P['seam_x']:
+            right = right.cut(cylinder(m['x'], m['y'], -0.1, P['screw_clearance_diameter'] / 2, 13))
+            right = right.cut(cylinder(m['x'], m['y'], P['nut_seat_height'], P['boss_radius'], 13))
+    right = right.removeSplitter()
     return {'left_bumper': left, 'right_bumper': right}, mounts, switches
 
 
@@ -228,7 +237,7 @@ def check(parts, mounts, switches):
             raise RuntimeError('Insufficient nut support area')
         results['clearance_checks'].append({'name': m['reference'] + ' nut seating area',
                                            'area_mm2': round(area, 4)})
-    for x in (2, REF['width'] - 12):
+    for x in (2, P['right_foot_x']):
         for y in (2, REF['height'] - 22):
             collision('Rubber foot', box(x, y, -5.2, 10, 20, 2))
     results['passed'] = True
