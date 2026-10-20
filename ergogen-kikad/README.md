@@ -51,4 +51,12 @@ Node/npm, KiCad and FreeCAD are required. The first generation establishes the a
 
 The assembly check uses actual native PCB solids and filled copper, tests all 23 XIAO castellations, four fasteners, full cap travel, battery, connector reserve, complete power stroke, USB reference-cable access and a 2 mm onboard-reset probe. Its limits remain explicit: purchased hardware, solder process, actual cap cavity/clip seating, module thickness and wireless performance require a prototype. The current case files belong to the earlier design; the separate mechanical stage follows the reviewed firmware stage.
 
-Firmware migration and build verification follow this completed board stage. The [shield and numerical keymap](config/boards/shields/qbf_macropad/) will retain standalone use of each board, without a mandatory split peripheral.
+## Firmware
+
+The [shield and numerical keymap](config/boards/shields/qbf_macropad/) build for `xiao_ble/nrf52840/zmk`. Each board works independently over USB or Bluetooth; split transport and display are disabled. The numerical map above is preserved. P0.13 is explicitly an input without pulls, retaining the native approximately 50 mA charge setting.
+
+```sh
+./scripts/build-firmware.sh /path/to/zmk-repository
+```
+
+Pass the directory containing `app/`, within an initialized west workspace. Run with west and the Zephyr SDK available. The build script resolves the actual Zephyr tree from its build cache and checks compiled GPIOs, pull-ups, standalone settings, key transform and charge input. The retained [UF2](generated/firmware/qbf_macropad.uf2) and [validation report](generated/firmware/validation.json) were built offline with ZMK revision `4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85` in the existing ZMK build container. Both halves may use this same standalone image. Double-tap the onboard reset to enter the supplied UF2 bootloader, then copy the UF2 to its mounted drive. Hardware flashing, key input and charging remain to be tested on a physical prototype.

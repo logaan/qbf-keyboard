@@ -1,0 +1,136 @@
+{
+  "passed": true,
+  "board": "xiao_ble/nrf52840/zmk",
+  "shield": "qbf_macropad",
+  "zmk_revision": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+  "standalone": true,
+  "display": false,
+  "usb": true,
+  "bluetooth": true,
+  "charge_control": {
+    "gpio": [
+      0,
+      13
+    ],
+    "mode": "input, no pulls; native approximately 50 mA setting"
+  },
+  "gpio_mapping": [
+    {
+      "key": "t1",
+      "net": "D0",
+      "gpio": [
+        0,
+        2
+      ],
+      "active_low": true,
+      "internal_pull_up": true
+    },
+    {
+      "key": "t2",
+      "net": "D1",
+      "gpio": [
+        0,
+        3
+      ],
+      "active_low": true,
+      "internal_pull_up": true
+    },
+    {
+      "key": "t3",
+      "net": "D2",
+      "gpio": [
+        0,
+        28
+      ],
+      "active_low": true,
+      "internal_pull_up": true
+    },
+    {
+      "key": "t4",
+      "net": "D3",
+      "gpio": [
+        0,
+        29
+      ],
+      "active_low": true,
+      "internal_pull_up": true
+    },
+    {
+      "key": "t5",
+      "net": "D4",
+      "gpio": [
+        0,
+        4
+      ],
+      "active_low": true,
+      "internal_pull_up": true
+    },
+    {
+      "key": "b1",
+      "net": "D5",
+      "gpio": [
+        0,
+        5
+      ],
+      "active_low": true,
+      "internal_pull_up": true
+    },
+    {
+      "key": "b2",
+      "net": "D6",
+      "gpio": [
+        1,
+        11
+      ],
+      "active_low": true,
+      "internal_pull_up": true
+    },
+    {
+      "key": "b3",
+      "net": "D7",
+      "gpio": [
+        1,
+        12
+      ],
+      "active_low": true,
+      "internal_pull_up": true
+    },
+    {
+      "key": "b4",
+      "net": "D8",
+      "gpio": [
+        1,
+        13
+      ],
+      "active_low": true,
+      "internal_pull_up": true
+    },
+    {
+      "key": "b5",
+      "net": "D9",
+      "gpio": [
+        1,
+        14
+      ],
+      "active_low": true,
+      "internal_pull_up": true
+    }
+  ],
+  "keymap": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "9",
+    "5",
+    "6",
+    "7",
+    "8",
+    "0"
+  ],
+  "uf2_bytes": 403456,
+  "uf2_sha256": "8334658624b9ba9ce5164dcca496e2fbd7ef682a812f247e2921d47fd6ed0dbe",
+  "limitations": [
+    "Compiled and resolved device tree checked; flashing and physical key, USB/Bluetooth and charging behavior require a prototype."
+  ]
+}
