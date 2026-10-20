@@ -5,8 +5,8 @@
   "native_step_pack_pcb_overlap_mm3": 0.0,
   "continuous_baseplate_floor_volume_mm3": 1031.056,
   "well": {
-    "x": 1.35,
-    "y": 21.95,
+    "x": 2.85,
+    "y": 23.45,
     "length": 58.1,
     "width": 11.1,
     "corner_chamfer": 0.5,
@@ -15,8 +15,8 @@
     "baseplate_top_z": -1.6
   },
   "battery": {
-    "x": 30.4,
-    "y": 27.5,
+    "x": 31.9,
+    "y": 29.0,
     "length": 57.5,
     "width": 10.5,
     "thickness": 3.5,

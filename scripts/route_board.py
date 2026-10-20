@@ -333,7 +333,7 @@ def check_layout(board, output):
         raise RuntimeError('Expected 19.05 mm horizontal key spacing')
     expected_mounts = {(round((xs[index] + xs[index + 1]) / 2, 4), y)
                        for index in (0, 2) for y in ys}
-    right_mount_x = round(xs[-1] + 24.05 + 26.5 / 2 - 0.7, 4)
+    right_mount_x = round(xs[-1] + 24.05 + 26.5 / 2 - 2.7, 4)
     expected_mounts.update((right_mount_x, round(sum(ys) / 2 + offset, 4))
                            for offset in (-18.75, 18.75))
     if set(mounts) != expected_mounts:
@@ -349,6 +349,10 @@ def check_layout(board, output):
     if not extra_positions[0][1] < cy < extra_positions[1][1]:
         raise RuntimeError('Expected one extra key above and one below the controller')
     left, top, right, bottom = board_bounds(board)
+    assembly_left, assembly_bottom = xs[0] - 8.75, ys[-1] + 13.75
+    expected_bounds = (assembly_left - 1.5, ys[0] - 15.25, cx + 20, assembly_bottom + 1.5)
+    if any(abs(actual - expected) > 0.001 for actual, expected in zip((left, top, right, bottom), expected_bounds)):
+        raise RuntimeError('PCB must extend 1.5 mm around the unchanged component layout')
     caps = []
     for footprint in switches:
         bounds = cap_bounds(footprint)
@@ -411,9 +415,10 @@ def check_layout(board, output):
         raise RuntimeError('Controller must clear the right board edge')
     rx, ry = mm_point(parts['RST1'].GetPosition())
     px, py = mm_point(parts['PWR1'].GetPosition())
-    control_x = (cap_bounds(extra[0])[2] + right) / 2
+    functional_right = cx + 18.5
+    control_x = (cap_bounds(extra[0])[2] + functional_right) / 2
     if abs(rx - control_x) > 0.001 or abs(px - control_x) > 0.001:
-        raise RuntimeError('Power and reset must share the midpoint between column five caps and the PCB edge')
+        raise RuntimeError('Power and reset must retain the midpoint between column five caps and the original functional region edge')
     if abs(ry - min(y for x, y in extra_positions)) > 0.001 or abs(py - max(y for x, y in extra_positions)) > 0.001:
         raise RuntimeError('Reset must align horizontally with t5 and power with b5')
     controls = []
@@ -469,6 +474,11 @@ def check_layout(board, output):
            well[2] - battery_bounds[2], well[3] - battery_bounds[3]) < 0.299:
         raise RuntimeError('Battery pack requires at least 0.3 mm lateral clearance in its well')
     geometry = {
+        'origin_kicad': [round(left + PAGE_OFFSET_MM[0], 3), round(bottom + PAGE_OFFSET_MM[1], 3)],
+        'assembly_origin_kicad': [round(assembly_left + PAGE_OFFSET_MM[0], 3),
+                                  round(assembly_bottom + PAGE_OFFSET_MM[1], 3)],
+        'assembly_bounds_mm': [round(left - assembly_left, 3), round(assembly_bottom - bottom, 3),
+                               round(right - assembly_left, 3), round(assembly_bottom - top, 3)],
         'battery_well': {'x': round(well[0] - left, 3), 'y': round(bottom - well[3], 3),
                          'length': round(well[2] - well[0], 3), 'width': round(well[3] - well[1], 3),
                          'corner_chamfer': 0.5, 'main_pcb_only': True,
