@@ -1,28 +1,51 @@
 {
-  "manufacturer": "Existing protected-pack envelope; verify supplied pack",
-  "model": "301055",
-  "source": "ergogen-kikad/design/models/README.md",
-  "length": 57.5,
-  "width": 10.5,
+  "manufacturer": "KEEBD protected 301230 LiPo; reserved envelope includes margin over nominal dimensions",
+  "model": "301230",
+  "source": "https://keebd.com/products/301230-3-7v-110mah-lipo-battery",
+  "length": 32,
+  "width": 13,
   "thickness": 3.5,
-  "capacity_mah": 220,
+  "capacity_mah": 110,
   "charge_voltage": 4.2,
   "protected": true,
   "bottom_z": -1.4,
   "adhesive": 0.2,
   "center": [
-    30.4,
-    27.5
+    20,
+    10
   ],
-  "well_length": 58.1,
-  "well_width": 11.1,
+  "well_length": 32.6,
+  "well_width": 13.6,
   "lead_radius": 0.25,
   "lead_exit_z": 0.4,
   "lead_end": [
-    60.15,
-    27.5,
+    37.75,
+    10,
     1.7
   ],
   "connector": "Factory-fitted JST-PH 2-pin, polarity matching board pad 1 BAT_POS and pad 2 GND; confirm ordered lead variant",
-  "coordinate_system": "Fixed switch-layout datum from board_geometry.assembly_origin_kicad, not the enlarged PCB lower-left corner"
+  "coordinate_system": "Millimetres from PCB lower-left corner, main PCB top z=0",
+  "lead_waypoints": [
+    [
+      36,
+      10,
+      0.4
+    ],
+    [
+      36.8,
+      10,
+      1.2
+    ],
+    [
+      37.75,
+      10,
+      1.7
+    ]
+  ],
+  "nominal_dimensions": [
+    30,
+    12,
+    3
+  ],
+  "envelope_note": "Allow 2 mm length, 1 mm width and 0.5 mm thickness beyond listed nominal size; verify purchased protected pack and factory lead at assembly."
 }

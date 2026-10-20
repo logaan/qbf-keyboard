@@ -5,31 +5,28 @@ meta:
 
 units:
   column_pitch: 19.05
-  cap_height: 26.5
+  cap_height: 16.5
   row_gap: 1
   row_pitch: cap_height + row_gap
-  extra_x: 4 * column_pitch + (26.5 - 16.5) / 2
-  controller_y: row_pitch / 2
-  controller_height: 18.3
-  extra_cap_height: 16.5
-  extra_offset: row_pitch / 2 + (cap_height - extra_cap_height) / 2
-  display_width: 36
-  display_height: 14
-  display_x: 3 * column_pitch + 8.25 + 0.5 + display_width / 2
-  controller_x: display_x + 3.1
-  right_mount_x: extra_x + 26.5 / 2 - 2.7
-  layout_width: controller_x + 18 + 0.5 + 8.75
-  layout_height: row_pitch + cap_height + 1
-  pcb_border: 1.5
-  board_width: layout_width + 2 * pcb_border
-  board_height: layout_height + 2 * pcb_border
-  battery_well_length: 58.1
-  battery_well_width: 11.1
-  controls_x: (extra_x + 26.5 / 2 + layout_width - 8.75) / 2
+  extra_x: 3 * column_pitch
+  extra_offset: 30
+  controller_x: 20
+  controller_y: 69.75
+  display_x: 23.1
+  display_y: 69.75
+  layout_width: 80
+  layout_height: 80
+  pcb_border: 0
+  board_width: 80
+  board_height: 80
+  battery_well_length: 32.6
+  battery_well_width: 13.6
 
 points:
   zones:
     pad:
+      anchor:
+        shift: [11.425, 31.25]
       key:
         padding: row_pitch
       columns:
@@ -60,7 +57,7 @@ points:
         padding: 2 * extra_offset
       anchor:
         ref: pad_c0_bottom
-        shift: [extra_x, controller_y - extra_offset]
+        shift: [extra_x, -21.25]
       columns:
         c4:
           rows:
@@ -74,8 +71,7 @@ outlines:
   board:
     - what: rectangle
       where:
-        ref: pad_c0_bottom
-        shift: [layout_width / 2 - 8.75, controller_y]
+        shift: [40, 40]
       size: [board_width, board_height]
       corner: 1.5
 
@@ -89,22 +85,24 @@ pcbs:
         what: choc_v1_15u_portrait
         where: /^pad_.*_top$/
         adjust:
-          rotate: 90
+          rotate: 0
         params:
           from: GND
           to: '{{net}}'
           label: '{{label}}'
-          label_offset: 11
+          cap_length: 17.5
+          label_offset: 0
       bottom_switches:
         what: choc_v1_15u_portrait
         where: /^pad_.*_bottom$/
         adjust:
-          rotate: 90
+          rotate: 0
         params:
           from: '{{net}}'
           to: GND
           label: '{{label}}'
-          label_offset: -11
+          cap_length: 17.5
+          label_offset: 0
       extra_top_switch:
         what: choc_v1_15u_portrait
         where: extra_c4_top
@@ -114,7 +112,8 @@ pcbs:
           from: GND
           to: '{{net}}'
           label: '{{label}}'
-          label_offset: 8
+          cap_length: 17.5
+          label_offset: 0
       extra_bottom_switch:
         what: choc_v1_15u_portrait
         where: extra_c4_bottom
@@ -124,14 +123,14 @@ pcbs:
           from: '{{net}}'
           to: GND
           label: '{{label}}'
-          label_offset: -11
+          cap_length: 17.5
+          label_offset: 0
       controller:
         what: nice_nano
         where:
-          ref: pad_c0_bottom
           shift: [controller_x, controller_y]
         adjust:
-          rotate: -90
+          rotate: 90
         params:
           P1: LCD_CS
           P2: LCD_SI
@@ -142,76 +141,62 @@ pcbs:
       display:
         what: nice_view
         where:
-          ref: pad_c0_bottom
-          shift: [display_x, controller_y]
+          shift: [display_x, display_y]
+        adjust:
+          rotate: 180
       upper_left_mount:
         what: m2_mount
         where:
-          ref: pad_c0_bottom
-          shift: [column_pitch / 2, row_pitch]
+          shift: [20.95, 48.75]
       upper_right_mount:
         what: m2_mount
         where:
-          ref: pad_c0_bottom
-          shift: [2.5 * column_pitch, row_pitch]
+          shift: [59.05, 48.75]
       lower_left_mount:
         what: m2_mount
         where:
-          ref: pad_c0_bottom
-          shift: [column_pitch / 2, 0]
+          shift: [20.95, 31.25]
       lower_right_mount:
         what: m2_mount
         where:
-          ref: pad_c0_bottom
-          shift: [2.5 * column_pitch, 0]
+          shift: [59.05, 31.25]
       upper_outer_mount:
         what: m2_mount
         where:
-          ref: pad_c0_bottom
-          shift: [right_mount_x, controller_y + extra_offset]
+          shift: [76.5, 59.375]
       lower_outer_mount:
         what: m2_mount
         where:
-          ref: pad_c0_bottom
-          shift: [right_mount_x, controller_y - extra_offset]
+          shift: [76.5, 20.625]
       battery_connector:
         what: battery_ph
         where:
-          ref: pad_c0_bottom
-          shift: [63.65, controller_y]
+          shift: [50, 10]
         adjust:
           rotate: -90
       power_switch:
         what: power_slide
         where:
-          ref: extra_c4_bottom
-          shift: [controls_x - extra_x, 0]
-        adjust:
-          rotate: 90
+          shift: [50, 75]
       reset_switch:
         what: reset_tact
         where:
-          ref: extra_c4_top
-          shift: [controls_x - extra_x, 0]
-        adjust:
-          rotate: 90
+          shift: [50, 64]
       battery_space:
         what: battery_space
         where:
-          ref: pad_c0_bottom
-          shift: [21.65, controller_y]
+          shift: [20, 10]
         params:
-          length: 57.5
-          width: 10.5
+          length: 32
+          width: 13
           thickness: 3.5
-          capacity: 220
-          model: 301055
+          capacity: 110
+          model: 301230
           bottom_z: -1.4
       battery_well:
         what: battery_well
         where:
-          ref: pad_c0_bottom
-          shift: [21.65, controller_y]
+          shift: [20, 10]
         params:
           length: battery_well_length
           width: battery_well_width
