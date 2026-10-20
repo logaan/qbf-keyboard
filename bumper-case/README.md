@@ -1,88 +1,106 @@
-# Two-part QBF bumper case
+# Three-part QBF bumper case
 
-Two printed parts for one QBF main PCB and its blank baseplate. The left part holds t1–t4/b1–b4. The right part holds t5/b5 and covers the nice!nano and nice!view. The current KiCad assembly supplies dimensions and clearance references; **the FreeCAD and STEP deliverables contain only the two case parts**. The original electronics and the earlier `mechanical/` carrier are unchanged.
+The case contains a lower blue switch plate, an orange controller/control cover, and a new upward-facing blue guard. The guard's flat print face touches the lower blue plate, its walls reach the resting keycap tops, and its continuous 1 mm roof covers the original protected 301055 battery. All three parts are secured in the PCB/screw/nut stack.
 
-![Case parts](generated/case_only.png)
+The opening is **only in the main PCB**. The baseplate remains continuous underneath the battery and supports it. The case CAD contains only the three printed solids; keyboard components appear in separate assembly previews.
 
-![Assembled reference](generated/assembled.png)
+![Assembled with keycaps](generated/assembled.png)
 
-## Files
+![Assembled without keycaps](generated/inspection.png)
+
+## Deliverables
 
 | File | Purpose |
 | --- | --- |
-| [QBF_Bumper_Case.FCStd](QBF_Bumper_Case.FCStd) | Native FreeCAD solids in their installed positions, plus dimension properties |
-| [generated/bumper_case.step](generated/bumper_case.step) | Both case solids in their installed positions |
-| [generated/left_bumper.step](generated/left_bumper.step), [generated/right_bumper.step](generated/right_bumper.step) | Separate editable STEP solids |
-| [generated/left_bumper_print.stl](generated/left_bumper_print.stl), [generated/right_bumper_print.stl](generated/right_bumper_print.stl) | **Print one of each**; highest face already rotated onto z=0 |
-| `generated/*_assembly.stl` | Same solids in installed coordinates; not the supplied print orientation |
-| [parameters.json](parameters.json), [build.py](build.py) | Dimension source and repeatable native-solid construction; edit parameters and rebuild to change the design |
-| [generated/verification.json](generated/verification.json), [generated/assembly-verification.json](generated/assembly-verification.json) | Solid, mesh, component, travel, hardware and stack checks |
+| [QBF_Bumper_Case.FCStd](QBF_Bumper_Case.FCStd) | Three native FreeCAD solids in installed positions, plus dimension records |
+| [generated/bumper_case.step](generated/bumper_case.step) | All three case parts, in installed positions |
+| [generated/left_bumper.step](generated/left_bumper.step), [generated/right_bumper.step](generated/right_bumper.step), [generated/upper_guard.step](generated/upper_guard.step) | Individual STEP solids |
+| [generated/left_bumper_print.stl](generated/left_bumper_print.stl) | Print one lower blue part, plate face down |
+| [generated/right_bumper_print.stl](generated/right_bumper_print.stl) | Print one orange part, controller-cover face down |
+| [generated/upper_guard_print.stl](generated/upper_guard_print.stl) | Print one upper guard, flat mating face down |
+| `generated/*_assembly.stl` | Meshes in installed coordinates rather than print orientation |
+| [parameters.json](parameters.json), [build.py](build.py), [upper_guard.py](upper_guard.py) | Editable dimensions and repeatable native-solid construction |
+| [generated/verification.json](generated/verification.json), [generated/assembly-verification.json](generated/assembly-verification.json) | Solid, mesh, component, shoulder, key travel and hardware checks |
 
-The FreeCAD file stores the resulting solids, rather than a sketch-constrained feature history. Its displayed dimension properties record the build settings; changing those properties alone does not regenerate the solids. Use `parameters.json` and the builder for dimension changes. No PCB, cap or electronic component model is embedded in that document.
+The FreeCAD file stores resulting solids rather than a sketch-constrained feature history. Edit the source parameters and rebuild; changing its dimension-record properties alone does not regenerate geometry. Run [QBF_Bumper_Case.FCMacro](QBF_Bumper_Case.FCMacro) inside FreeCAD to rebuild and open a colored view.
 
-## Geometry and fastening
+## Boards and original battery
 
-The nominal 114.25 × 55 mm board has a 0.2 mm clearance to the inside of the 1 mm outside skirt. The assembled plan envelope is approximately **116.65 × 57.4 mm**. Rounded corners follow the board outline. The two pieces have a 0.25 mm seam centered at x=75.425 mm, between columns four and five. The right cover slightly overhangs the seam above the left plate without touching it.
+The two boards retain their **114.25 × 55 mm** outside dimensions and each remains 1.6 mm thick. Their faces touch directly. With the main PCB top at z=0, the main PCB occupies −1.6 to 0 mm and the baseplate −3.2 to −1.6 mm. The printed outer skirt stops at z=−3.2 mm, flush with the baseplate underside.
 
-Each FR4 layer is 1.6 mm thick, with **zero gap** between the main PCB and baseplate. Relative to the main PCB top at z=0, the main board occupies −1.6 to 0 mm and the baseplate −3.2 to −1.6 mm. The outside skirt stops at **z=−3.2 mm**, flush with the baseplate underside. The inside ledges rest on the main PCB top. The battery opening relieves the ledge locally near the left edge.
+The main board has a **58.1 × 11.1 mm opening**, centered at (30.4,27.5), with 0.5 mm corner chamfers. Its lower-left corner is (1.35,21.95), leaving a 1.35 mm PCB web along the left edge. The baseplate has **no matching battery opening** and retains its existing 87 lead/mount clearance holes. Native STEP verification checks that the entire floor beneath the opening is present, not just its center.
 
-Six **M2 × 7 mm screws**, measured under the head, enter from below the baseplate and pass through both boards and the printed clearance holes. Use six plain **4 mm across-flats, 1.6 mm thick M2 hex nuts**, seated at z=1.8 mm. No washer or printed thread is specified. The modeled screw head is 3.8 mm diameter × 1.2 mm high; the 2 mm feet extend 0.8 mm below it. Verify the actual purchased heads and nut dimensions. An 8 mm screw needs its protrusion checked or trimmed; do not substitute it blindly.
+The original **57.5 × 10.5 × 3.5 mm protected 301055, nominally 220 mAh**, is retained. It moves 0.75 mm right to center (30.4,27.5). Its lower-left corner is (1.65,22.25), giving 0.3 mm side clearance to the well. A 0.2 mm insulating adhesive layer on the baseplate puts the pack bottom at **−1.4 mm** and top at **2.1 mm**. Insulate and smooth the FR4 cut edges with thin polyimide tape; do not force the pouch against them or use the roof to compress it. Measure the supplied pack, including its protection board and wrap, before assembly.
 
-Four support rims are wholly in the left part. The two rims between columns four and five are divided across the seam: each nut spans both semicircular supports, so these two screws secure both parts. Rounded fins extend above and below each rim into the gaps between switch bodies. The printed screw bores are 2.3 mm; the PCB holes remain their existing 2.2 mm diameter. The nut recesses are round, so hold each nut while tightening. Tighten lightly and evenly, with the boards supported; PETG is not a torque stop.
+The upper guard's roof underside is **2.3 mm**, leaving 0.2 mm above the battery. Its 1 mm roof ends at **3.3 mm**, leaving **0.7 mm below the conservative fully depressed keycap undersides** at z=4.0. The entire protected battery footprint is covered; the connector remains outside the roof. The existing side-entry JST-PH stays near the controller, with 1 mm between the pack end and the modeled mating plug. Route its insulated leads without pinching them against the opening or roof. See [battery decision and sourcing notes](battery-selection.md).
 
-The four adhesive rubber feet are **10 × 20 × 2 mm**, with the 20 mm direction running front-to-back. Suggested lower-left corners in the case coordinate system are (2,2), (102.25,2), (2,33) and (102.25,33) mm. This leaves the screw heads clear. Feet are assembly references only and are not part of either print.
+## Screws, nuts and feet
 
-## Switch plate, thumb access and cover
+Four mounting centers stay between columns 1/2 and 3/4: x=18.275/56.375, y=13.75/41.25 mm. The outer pair now sits **between column five and the controls**, at **(103.5,8.75)** and **(103.5,46.25)**. Both new supports lie fully inside the orange part; no fastener is split across the seam between the two original case parts. No board enlargement was needed.
 
-The Choc v1 plate is **1.2 mm thick**, from z=1.0 to z=2.2 mm. The switch apertures are 14.1 mm with 0.15 mm corner radii, giving a small printing allowance around a nominal 14 mm opening. The left part has no plastic higher than z=2.2 mm. The nut tops are at z=3.4 mm, 0.6 mm below the conservative fully depressed cap undersides. The plate datum and **3 mm full travel** follow the [Kailh PG1350 drawing and specification](https://cdn-shop.adafruit.com/product-files/5114/5114_CPG135001D03.pdf).
+Use six **M2 × 7 mm screws**, measured under the head. They enter from below the baseplate and pass through both FR4 layers. There are no printed threads or washers.
 
-The low strip beside t5/b5 remains at the **2.2 mm switch-plate height** before the control hoods rise. The hoods start at x=104.5 mm, leaving 1.3 mm lateral clearance from the thumb-cap edges; the outer skirt continues to the baseplate underside. The controller cover has a flat top at z=12.4 mm, 1 mm walls and roof, and a rounded **26.3 × 11.8 mm display window**. It is open at the left underneath the roof to clear the native nice!view socket and the fourth-column caps. The controller is covered from above and on the other three sides. The outer side has a **12 × 7.5 mm USB opening**; separate low hoods cover the PCB and housings around the power switch and reset button beside the thumb keys. No flying display wires are required.
+| Mounts | Printed stack above main PCB | Nuts |
+| --- | --- | --- |
+| Four left mounts | Lower blue support to z=2.2, upper guard's supported 0.4 mm flange to z=2.6 | Four **DIN 439 M2 thin nuts, 4 mm AF × 1.2 mm thick**; tops at z=3.8 |
+| Two relocated right mounts | Orange support rim, nut seat at z=1.8 | Two standard **4 mm AF × 1.6 mm M2 nuts**; tops at z=3.4 |
 
-The reset hood has a **4 mm circular hole** centered over the modeled 3.3 mm button. Its underside is at z=4.3 mm, leaving **0.2 mm clearance above the four raised housing posts**. The 1 mm roof ends at z=5.3 mm, recessing the button by **1 mm**. The power hood underside is at z=4.9 mm, **0.2 mm above its 4.7 mm housing**. Its roof ends at z=5.9 mm, leaving **2.8 mm of actuator exposed**. The **2.6 × 4.6 mm slot** accommodates the 2 mm actuator width and full 2 mm slide stroke with 0.3 mm side/end clearance. The stroke and housing height match the [C&K OS series specification](https://www.ckswitches.com/media/1428/os.pdf); the actuator profile and reset housing posts come from the installed KiCad STEP models. Native actuator geometry is checked at both positions and intermediate points.
+The left nuts clamp the guard and lower blue part together against the boards. The right nuts clamp the orange part directly to the boards. Rounded fins strengthen the lower support rims. Printed clearance holes are 2.3 mm and PCB holes remain 2.2 mm. Hold the nuts with a suitable fine tool while tightening lightly and evenly; PETG is not a torque stop. Standard 1.6 mm nuts do not fit the four guard positions. The nominal screw tips finish at z=3.8; 8 mm screws need shortening or a new travel check.
 
-The battery, wires, mating plug and side-entry JST-PH header occupy an open corridor between the original rows. The case does not contact the battery. The roof clears the modeled display top by about 0.49 mm. The modeled controller is only **0.20 mm** from the cover wall, and each thumb cap has **0.15 mm** lateral clearance to the cover over its full travel. Those tight dimensions follow the available space in the existing assembly and should be checked carefully on the first print.
+The four left nut faces have only **0.025 mm nominal lateral clearance to the adjacent 15 mm switch shoulders**. This is a critical physical fit check: measure actual shoulders/nuts and do not tighten a nut against a switch housing. Thin-nut bearing area is approximately 9.11 mm² at each guard flange after shoulder relief. The [DIN 439 dimensional table](https://www.aspenfasteners.com/content/pdf/Metric_DIN_439_spec.pdf) specifies the selected thin nut dimensions.
+
+Use four adhesive **10 × 20 × 2 mm rubber feet**, with 20 mm front-to-back. Suggested lower-left corners are (2,2), (90.75,2), (2,33), and (90.75,33) mm. The right pair moved inward to clear the relocated screw heads. The modeled heads are 3.8 mm diameter × 1.2 mm high, leaving 0.8 mm to the feet's bottom plane; verify purchased hardware. Feet are references, not printed case parts.
+
+## Guard, switch plate and controls
+
+The lower Choc v1 plate stays **1.2 mm thick**, z=1.0 to 2.2, with 14.1 mm apertures. The upper guard's lowest face is z=2.2, resting flat against it. The guard's 1 mm outer walls and inter-column rails rise to **z=10.9691 mm**, the modeled resting cap crown. Relief near the controller/display clears the native socket. The keycap mesh is a rendering reference, so cap internal cavities still need checking on physical parts.
+
+The upper guard has **15.3 mm switch-shoulder reliefs through z=3.1**, clearing the nominal 15 mm shoulders at z=2.2 to 3.0. The Choc reference model now uses that drawing-based shoulder height. Both the original 14.1 mm plate apertures and the larger upper shoulder reliefs are intentional. The [Kailh drawing](https://cdn-shop.adafruit.com/product-files/5114/5114_CPG135001D03.pdf) supplies the plate datum and 3 mm full travel. Minimum conservative cap clearance elsewhere is 0.15 mm, notably beside the controller cover.
+
+The orange part retains the **26.3 × 11.8 mm display window**, roof at z=12.4, and **12 × 7.5 mm USB opening**. It remains open under the left side of that roof to clear the display socket and fourth-column caps. The thumb-facing strip stays low before the control hoods rise, leaving 1.3 mm between the hoods and thumb-cap edges.
+
+The reset hood has a **4 mm circular opening**, 0.2 mm clearance over its raised casing posts, and a roof at z=5.3. The button is recessed **1 mm**. The power hood has 0.2 mm housing clearance and a roof at z=5.9, leaving **2.8 mm of actuator exposed**. Its **2.6 × 4.6 mm slot** clears the full 2 mm slide stroke. Native actuator geometry is checked at both ends and intermediate positions. The [C&K specification](https://www.ckswitches.com/media/1428/os.pdf) provides the stroke and housing height.
 
 ## Printing and assembly
 
 ![Print orientations](generated/print_orientation.png)
 
-Print PETG as a starting material. The supplied print STLs already put the left plate face and the right cover face against the bed, as requested. The left nut-seat recesses make short local bridges. **The right part needs removable supports under its lower switch-plate wings, mounting areas, perimeter ledges and control-hood roofs.** Keep support scars out of the switch openings, nut seats and PCB contact surfaces. A slicer preview and a first-fit print are necessary before a final material comparison.
+PETG remains the initial material. All print STLs are already placed at z=0 in their specified orientation. The orange part needs removable supports under its lower switch-plate wings, mounting areas, ledges and control roofs. The upper guard prints with its mating face down; its battery roof forms a short bridge. Inspect the slicer result and use removable supports if needed. Remove every support remnant near the battery and PCB contact surfaces. The four 0.4 mm compression flanges are supported by the lower blue part in use and need intact layers.
 
-The specified **2 mm nozzle** cannot conventionally resolve the requested 1 mm walls and 1.2 mm switch plate. Use an appropriately smaller nozzle, or have the print provider propose a changed geometry. The case retains the requested dimensions; no assumption that “2 mm” meant “0.2 mm” has been made. A 0.2 or 0.4 mm nozzle is a practical starting point for preserving these features. Check elephant-foot compensation around the plate openings and mating seam.
+A true **2 mm nozzle** cannot conventionally resolve the requested 1 mm walls. Use a suitably smaller nozzle to preserve these dimensions; a 0.2 or 0.4 mm nozzle is a practical starting point. Check elephant-foot compensation around switch openings, the seam and mating faces. Geometry validation does not replace a first-fit print.
 
-1. Remove caps and the socketed display. If the switches are already soldered, this full switch plate generally requires desoldering/removing them to install it; it cannot slide around installed switch flanges.
-2. Fit the controller and display into their native sockets before lowering the right case over them. The display window is smaller than the whole module, so the module cannot be inserted through it after the case is installed. Fit switches into the appropriate plate part, confirm clip engagement, then carefully align the case and switch pins with the populated main PCB. Solder or socket the switches as applicable to the board build; no display wires are added.
-3. Stack the baseplate directly below the main PCB. Verify that every protruding solder joint and component lead enters its existing relief hole, so the two board faces meet without rocking.
-4. Insert the six screws from underneath, place the nuts from above with caps removed, and tighten evenly. The outer two nuts clamp both case halves. Check the printed contact rims sit flat on the PCB.
-5. Refit caps, exercise all keys to full travel, plug in USB and test both controls. Attach the four feet after checking the screw heads and solder protrusions remain above the feet's bottom plane.
+1. Remove keycaps. Installing the switch plates around an already soldered board generally requires removing/desoldering the switches; the plate cannot pass around their flanges.
+2. Clean the main-board cutout, insulate its edges, and put the 0.2 mm insulating adhesive on the **solid baseplate floor**. Place the battery without pressure and arrange the insulated leads toward J1. Confirm board faces meet without rocking and all solder protrusions enter their existing relief holes.
+3. Fit controller and display into their native sockets before lowering the orange part over them; the whole display cannot pass through its window afterward. Fit switches into the plates and carefully align pins with the main PCB. Socket or solder them as applicable. No flying display wires are added.
+4. Seat the upper guard's flat face on the lower blue plate. Insert six screws from below. Install the four thin left nuts and two standard right nuts with caps removed. Check shoulder/nut fit, support contact and battery clearance before tightening lightly.
+5. Fit keycaps and check every key through full travel. Test power, recessed reset and USB access. Fit the four feet after confirming screw heads and solder protrusions stay above their bottom plane.
 
-## Verification and previews
-
-Both case parts are valid single FreeCAD solids, and both print meshes are closed. Automated checks cover the conservative full cap travel envelopes, actual cap mesh bounds, switch bodies, battery and connector corridor, controller, display and socket, native KiCad STEP control bodies and power-actuator travel, both PCB solids, screw passages, nut seating area, screw heads and feet. The shared nut supports retain more than 9 mm² contact area per nut. The case pieces have no volume overlap.
-
-The existing simplified Choc 3D model puts its flange at a height that intersects a drawing-based plate. That rendering approximation is excluded from flange interference testing; the actual drawing's body size and plate datum govern switch mating. Other component approximations are documented in [the existing model notes](../ergogen-kikad/design/models/README.md). The cap model is a rendering mesh, not a guarantee of its internal cavity. Physical clip retention, bottomed-out cap fit, connector boot fit, solder clearance, printing tolerances and durability remain untested.
-
-- [Assembly with keycaps](generated/assembled.png): native KiCad render with the complete keyboard assembly and case.
-- [Assembly without keycaps](generated/inspection.png): only the ten keycap models are hidden. All ten Choc switches, the display, socket, controller, battery, connectors, controls, boards, fasteners and feet remain present.
-- [Exploded view](generated/exploded.png): the case raised above the board for inspection; illustrative, not an assembly sequence.
-- [Case solids](generated/case_only.png) and [underside](generated/underside.png): direct rasterizations of the exported case meshes, with the right part separated for visibility.
-
-Assembly references are temporary and are not saved into the case CAD. Existing cap render terms remain in [the source model README](../ergogen-kikad/design/models/source/MBK_README.md).
-
-## Recurring assembly previews
-
-From the repository root, run `./bumper-case/render.sh` to refresh both assembly previews. `prepare_views.py` and `render.sh` are committed regeneration scripts. The visibility inventory and checks are written to [generated/preview-components.json](generated/preview-components.json); the two assembly views must differ only by the ten keycap models. Inspect both PNGs after generating them. Future case work is governed by [AGENTS.md](AGENTS.md), also referenced from the repository instructions.
-
-## Rebuild
+## Recurring checks and previews
 
 From the repository root:
 
 ```sh
+./scripts/build-3d-models.sh
+./scripts/generate.sh
+./scripts/generate-mechanical.sh
+./scripts/render-3d.sh
+```
+
+KiCad must be closed for board regeneration. The PCB script routes both boards, runs DRC, and runs **`./scripts/check-battery-well.sh`** before replacing outputs. The well check needs FreeCAD and uses native KiCad STEP solids to prove the main-board opening, the complete intact baseplate floor, and battery clearance. Its report is [../ergogen-kikad/generated/checks/battery-well.json](../ergogen-kikad/generated/checks/battery-well.json). The board outline and direct GPIO switch nets are unchanged; the MCU ground pad uses a solid zone connection and may need more soldering heat than a thermal pad.
+
+After PCB/model changes, recapture placements with KiCad's Python, then rebuild:
+
+```sh
+/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3.9 bumper-case/capture_reference.py
 ./bumper-case/build.sh
 ./bumper-case/render.sh
 python3 bumper-case/render_parts.py
 ```
 
-`build.sh` uses the installed FreeCAD Python and the captured placement metadata; it is self-contained and does not need to load the keyboard models. Override `FREECAD_PYTHON` and `FREECAD_LIB` when needed. Alternatively, run `QBF_Bumper_Case.FCMacro` inside FreeCAD to rebuild and open a colored view of the case solids. `render.sh` needs KiCad and the current electronics/model source files to verify and render the assembly, and checks their hashes against the captured reference. It writes only inside this folder and a temporary directory. `render_parts.py` requires NumPy and Pillow and renders the STL geometry directly; a Python environment with those libraries is sufficient.
+The last command needs NumPy and Pillow. `build.sh` uses installed FreeCAD Python; override `FREECAD_PYTHON`/`FREECAD_LIB` when needed. `render.sh` uses current keyboard source files only as temporary assembly references, verifies their captured hashes, and generates native KiCad images. It does not embed keyboard geometry in the case document or alter the original PCB assignments.
 
-If the upstream PCB or component models change, first run `capture_reference.py` with KiCad's Python, review the new positions and dimensions, then rebuild and rerun the checks. The captured origin is the current board's lower-left corner, (152.875,176) in KiCad coordinates. Case coordinates use millimetres, x right, y up and z toward the keys. Board outline changes also require updating the case parameters and perimeter construction, not merely recapturing metadata.
+- [With keycaps](generated/assembled.png) and [without keycaps](generated/inspection.png): **only the ten keycaps differ**. Both retain the display, all ten switches, battery, controller, controls, connectors, boards, hardware and all three case parts. A covered component can be hidden from the camera while remaining in the assembly. [Visibility checks](generated/preview-components.json) enforce this.
+- [Exploded assembly](generated/exploded.png): raised case components for inspection, not an assembly sequence.
+- [Case parts](generated/case_only.png), [underside](generated/underside.png), [print orientation](generated/print_orientation.png): direct rasterizations of exported STL geometry.
+
+Each printed part is checked as one valid solid with a closed mesh. Checks also cover nominal switch bodies and shoulders, complete conservative cap travel, battery roof, native control solids and actuator movement, hardware, both PCB layers and the feet. Actual soldering, printing tolerance, clip retention, cap cavities, battery procurement limits and mechanical durability remain untested. Keep the existing [model limitations and cap rendering terms](../ergogen-kikad/design/models/README.md).

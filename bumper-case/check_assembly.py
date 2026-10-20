@@ -9,7 +9,7 @@ import math
 import re
 import sys
 
-from build import ROOT, P, REF, V, box, cylinder, nut, union, write_wrl
+from build import ROOT, P, REF, V, box, cylinder, nut, mount_stack, union, write_wrl
 
 
 def model_points(path):
@@ -24,7 +24,8 @@ def model_points(path):
 
 def main():
     stage = Path(sys.argv[1])
-    parts = [Part.read(str(ROOT / 'generated' / (name + '.step'))) for name in ('left_bumper', 'right_bumper')]
+    parts = [Part.read(str(ROOT / 'generated' / (name + '.step')))
+             for name in ('left_bumper', 'right_bumper', 'upper_guard')]
     case = union(parts)
     checks = []
     for source, expected in REF['source_files'].items():
@@ -63,6 +64,9 @@ def main():
             matrix.A33 = P['pcb_thickness'] / shape.BoundBox.ZLength
             shape = shape.transformGeometry(matrix)
             shape.translate(V(0, 0, -P['pcb_thickness']))
+            battery = box(*P['upper_battery_envelope'])
+            if shape.common(battery).Volume > 0.0001:
+                raise RuntimeError('Battery intersects main PCB instead of sitting in its well')
         else:
             shape.translate(V(0, 0, -1.595))
         volume = case.common(shape).Volume
@@ -90,14 +94,20 @@ def main():
     volume = case.common(base).Volume
     if volume > 0.0001:
         raise RuntimeError('Case interferes with baseplate')
+    battery = box(*P['upper_battery_envelope'])
+    if base.common(battery).Volume > 0.0001:
+        raise RuntimeError('Battery intersects its baseplate floor')
+    checks.append({'name': 'Battery to baseplate floor', 'overlap_mm3': 0.0,
+                   'distance_mm': round(base.distToShape(battery)[0], 5)})
     checks.append({'name': 'Native baseplate', 'overlap_mm3': round(volume, 7)})
     write_wrl(base, stage / 'baseplate.wrl', (0.13, 0.24, 0.18))
     hardware = []
     for fp in REF['footprints']:
         if fp['reference'].startswith('H'):
             x, y = fp['x'], fp['y']
-            hardware.append(nut(x, y, P['nut_seat_height']))
-            hardware.append(cylinder(x, y, -3.2, 1, 7))
+            stack = mount_stack(fp)
+            hardware.append(nut(x, y, stack['seat'], stack['nut_thickness']))
+            hardware.append(cylinder(x, y, -3.2, 1, stack['screw_length']))
             hardware.append(cylinder(x, y, -4.4, 1.9, 1.2))
     fasteners = Part.makeCompound(hardware)
     if case.common(fasteners).Volume > 0.0001:
@@ -110,14 +120,14 @@ def main():
             if fasteners.common(swept).Volume > 0.0001:
                 raise RuntimeError('Hardware intersects full key travel')
     write_wrl(fasteners, stage / 'fasteners.wrl', (0.64, 0.67, 0.7))
-    feet = [box(x, y, -5.2, 10, 20, 2) for x in (2, REF['width'] - 12) for y in (2, REF['height'] - 22)]
+    feet = [box(x, y, -5.2, 10, 20, 2) for x in (2, P['right_foot_x']) for y in (2, REF['height'] - 22)]
     if fasteners.common(Part.makeCompound(feet)).Volume > 0.0001:
         raise RuntimeError('Rubber feet intersect screw heads')
     write_wrl(Part.makeCompound(feet), stage / 'feet.wrl', (0.07, 0.08, 0.09))
     report = {'passed': True, 'checks': checks, 'native_step_component_z_shift_mm': -1.595,
               'pcb_body_note': 'KiCad exports the dielectric body at 1.51 mm; its through-hole outline is normalized to nominal 1.6 mm FR4 for the specified touching stack.',
               'case_file_contains_keyboard_reference': False,
-              'hardware': 'Six M2 x 7 mm screws, modeled 3.8 mm diameter by 1.2 mm high heads, six plain 4 mm AF x 1.6 mm M2 nuts; no washers.'}
+              'hardware': 'Six M2 x 7 mm screws, modeled 3.8 mm diameter by 1.2 mm high heads; four 4 mm AF x 1.2 mm DIN 439 thin M2 nuts on the upper guard and two standard 4 mm AF x 1.6 mm M2 nuts in the orange part; no washers.'}
     (ROOT / 'generated/assembly-verification.json').write_text(json.dumps(report, indent=2) + '\n')
     print('Native KiCad STEP, original component mesh bounds, full key travel, stack and hardware checks passed')
 

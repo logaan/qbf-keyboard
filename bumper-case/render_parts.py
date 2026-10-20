@@ -29,14 +29,15 @@ def render(name, camera, explode=False, print_layout=False):
     right = unit(np.cross((0, 0, 1), view))
     up = unit(np.cross(view, right))
     combined, colors = [], []
-    for i, part in enumerate(('left_bumper', 'right_bumper')):
+    palette = [(45, 113, 143), (225, 129, 59), (44, 148, 160)]
+    for i, part in enumerate(('left_bumper', 'right_bumper', 'upper_guard')):
         mesh = triangles(OUT / (part + ('_print.stl' if print_layout else '_assembly.stl')))
         if explode and i:
-            mesh += np.array((9, 0, 5))
+            mesh += np.array((9, 0, 5) if i == 1 else (0, 0, 22))
         if print_layout and i:
-            mesh += np.array((88, 0, 0))
+            mesh += np.array((88 if i == 1 else 145, 0, 0))
         combined.append(mesh)
-        colors.extend([(45, 113, 143) if not i else (225, 129, 59)] * len(mesh))
+        colors.extend([palette[i]] * len(mesh))
     vertices = np.concatenate(combined)
     colors = np.array(colors)
     flat = vertices.reshape(-1, 3)

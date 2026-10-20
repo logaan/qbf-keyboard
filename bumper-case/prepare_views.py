@@ -40,8 +40,8 @@ def main():
                 key = fp.GetReference() + '/' + Path(model.m_Filename).name
                 (visible if model.m_Show else hidden).append(key)
                 fp.Models().append(model)
-        for part in ('left_bumper', 'right_bumper'):
-            offset = (0, 0, 18 if name == 'exploded' else 0)
+        for part in ('left_bumper', 'right_bumper', 'upper_guard'):
+            offset = (0, 0, (32 if part == 'upper_guard' else 18) if name == 'exploded' else 0)
             add_model(board, ROOT / 'generated' / (part + '.wrl'), part.upper(), offset=offset)
         for item in ('baseplate', 'fasteners', 'feet'):
             if name == 'exploded' and item == 'fasteners':
@@ -50,7 +50,7 @@ def main():
         pcb.SaveBoard(str(stage / (name + '.kicad_pcb')), board)
         inventory[name] = {'visible_keyboard_models': sorted(visible),
                            'hidden_keyboard_models': sorted(hidden),
-                           'case_and_hardware': ['left_bumper', 'right_bumper', 'baseplate', 'feet']
+                           'case_and_hardware': ['left_bumper', 'right_bumper', 'upper_guard', 'baseplate', 'feet']
                            + ([] if name == 'exploded' else ['fasteners'])}
     with_caps = set(inventory['assembled']['visible_keyboard_models'])
     no_caps = set(inventory['inspection']['visible_keyboard_models'])

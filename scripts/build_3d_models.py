@@ -56,7 +56,7 @@ def main():
         triangles.append((i * 3, i * 3 + 1, i * 3 + 2))
     manifest['mbk_15u'] = write_model('mbk_15u', [(vertices, triangles, (0.86, 0.88, 0.87))])
     switch = [mesh_shape(box(-6.9, -6.9, 0, 13.8, 13.8, 5), black),
-              mesh_shape(box(-7.5, -7.5, 0.8, 15, 15, 1.4), black),
+              mesh_shape(box(-7.5, -7.5, 2.2, 15, 15, 0.8), black),
               mesh_shape(box(-2.1, -5.6, 5, 4.2, 11.2, 3), (0.55, 0.24, 0.18))]
     for x, y, radius in [(0, 0, 1.6), (-5.5, 0, 0.8), (5.5, 0, 0.8)]:
         switch.append(mesh_shape(cylinder(x, y, -2.2, radius, 2.2), black))

@@ -26,19 +26,56 @@
   "cover_top_y": 37.85,
   "cover_roof_top": 12.4,
   "cover_roof_thickness": 1.0,
-  "display_window": [78.75, 21.6, 26.3, 11.8],
-  "usb_opening": [21.5, 2.7, 12.0, 7.5],
+  "display_window": [
+    78.75,
+    21.6,
+    26.3,
+    11.8
+  ],
+  "usb_opening": [
+    21.5,
+    2.7,
+    12.0,
+    7.5
+  ],
   "control_hood_left": 104.5,
   "control_housing_clearance": 0.2,
   "reset_case_top": 4.1,
   "reset_button_top": 4.3,
-  "reset_button_center": [108.725, 46.15],
+  "reset_button_center": [
+    108.725,
+    46.15
+  ],
   "reset_hole_diameter": 4.0,
   "power_case_top": 4.7,
   "power_actuator_top": 8.7,
   "power_actuator_stroke": 2.0,
-  "power_slot": [107.425, 8.45, 2.6, 4.6],
+  "power_slot": [
+    107.425,
+    8.45,
+    2.6,
+    4.6
+  ],
   "printer_nozzle_as_specified": 2.0,
   "outer_boss_right_limit": 105.525,
-  "right_foot_x": 90.75
+  "right_foot_x": 90.75,
+  "upper_battery_envelope": [
+    1.65,
+    22.25,
+    -1.4,
+    57.5,
+    10.5,
+    3.5
+  ],
+  "battery_lead_envelope": [
+    59.1,
+    26.2,
+    0.1,
+    1.1,
+    2.6,
+    1.9
+  ],
+  "upper_battery_roof_clearance": 0.2,
+  "upper_battery_roof_thickness": 1.0,
+  "upper_guard_top": 10.9691
 }

@@ -4,17 +4,17 @@
     {
       "name": "BAT1: battery_301055",
       "overlap_mm3": 0.0,
-      "distance_mm": 0.27889
+      "distance_mm": 0.2
     },
     {
       "name": "J1: battery_plug_reference",
       "overlap_mm3": 0.0,
-      "distance_mm": 2.95
+      "distance_mm": 0.6
     },
     {
       "name": "LCD1: nice_view_reference",
       "overlap_mm3": 0.0,
-      "distance_mm": 0.49
+      "distance_mm": 0.25
     },
     {
       "name": "LCD1: display_socket",
@@ -29,7 +29,7 @@
     {
       "name": "S1: mbk_15u full travel",
       "overlap_mm3": 0.0,
-      "distance_mm": 1.8
+      "distance_mm": 0.28579
     },
     {
       "name": "S10: mbk_15u full travel",
@@ -39,42 +39,47 @@
     {
       "name": "S2: mbk_15u full travel",
       "overlap_mm3": 0.0,
-      "distance_mm": 1.8
+      "distance_mm": 0.6
     },
     {
       "name": "S3: mbk_15u full travel",
       "overlap_mm3": 0.0,
-      "distance_mm": 1.8
+      "distance_mm": 0.6
     },
     {
       "name": "S4: mbk_15u full travel",
       "overlap_mm3": 0.0,
-      "distance_mm": 0.58579
+      "distance_mm": 0.15
     },
     {
       "name": "S5: mbk_15u full travel",
       "overlap_mm3": 0.0,
-      "distance_mm": 1.8
+      "distance_mm": 0.28579
     },
     {
       "name": "S6: mbk_15u full travel",
       "overlap_mm3": 0.0,
-      "distance_mm": 1.8
+      "distance_mm": 0.6
     },
     {
       "name": "S7: mbk_15u full travel",
       "overlap_mm3": 0.0,
-      "distance_mm": 1.8
+      "distance_mm": 0.6
     },
     {
       "name": "S8: mbk_15u full travel",
       "overlap_mm3": 0.0,
-      "distance_mm": 0.58579
+      "distance_mm": 0.15
     },
     {
       "name": "S9: mbk_15u full travel",
       "overlap_mm3": 0.0,
       "distance_mm": 0.15
+    },
+    {
+      "name": "JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal native KiCad STEP",
+      "overlap_mm3": 0.0,
+      "distance_mm": 2.00811
     },
     {
       "name": "SW_Slide_SPDT_Straight_CK_OS102011MS2Q007 native KiCad STEP",
@@ -112,14 +117,14 @@
       "distance_mm": 0.2
     },
     {
-      "name": "JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal native KiCad STEP",
-      "overlap_mm3": 0.0,
-      "distance_mm": 2.00811
-    },
-    {
       "name": "macropad_PCB native KiCad STEP",
       "overlap_mm3": 0.0,
       "distance_mm": 0.0
+    },
+    {
+      "name": "Battery to baseplate floor",
+      "overlap_mm3": 0.0,
+      "distance_mm": 0.2
     },
     {
       "name": "Native baseplate",
@@ -129,5 +134,5 @@
   "native_step_component_z_shift_mm": -1.595,
   "pcb_body_note": "KiCad exports the dielectric body at 1.51 mm; its through-hole outline is normalized to nominal 1.6 mm FR4 for the specified touching stack.",
   "case_file_contains_keyboard_reference": false,
-  "hardware": "Six M2 x 7 mm screws, modeled 3.8 mm diameter by 1.2 mm high heads, six plain 4 mm AF x 1.6 mm M2 nuts; no washers."
+  "hardware": "Six M2 x 7 mm screws, modeled 3.8 mm diameter by 1.2 mm high heads; four 4 mm AF x 1.2 mm DIN 439 thin M2 nuts on the upper guard and two standard 4 mm AF x 1.6 mm M2 nuts in the orange part; no washers."
 }

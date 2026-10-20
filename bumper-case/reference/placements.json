@@ -1,20 +1,21 @@
 {
   "coordinate_system": "millimetres, origin at PCB lower left, PCB top z=0",
   "source_files": {
-    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "5151773e0e21f6d4df269c6a3a09c73a45303cda7eba9bf02368b0039f111c52",
-    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "f423d3fd90ce9a103dd5eda0f3d4e8ab58b8eb0a12362a7852c7c122784992d8",
-    "ergogen-kikad/design/models/battery_301055.wrl": "0b33d331c8d421c46668a60f2bf834ee96ff663bca3644910c2fcc2cdfe3262f",
+    "ergogen-kikad/design/battery.json": "7b3e3750b4955e85fb36b012e269195580477f8d82b72f75a898bf2d56e6380a",
+    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "5161af1ea7cf8067735d15b131246c1fcde229a0de9c10ccac9ad53524192707",
+    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "6adf115f4056bfcaae5c1c69147e6ecc0f34c8fe2480bf4832101b815c02d20b",
+    "ergogen-kikad/design/models/battery_301055.wrl": "678d0e44e43f2b28cf2688cff14d0f0a151bad529723f33a35db495a39ff79ed",
     "ergogen-kikad/design/models/battery_plug_reference.wrl": "fde40d6e5606130f3fb695c3045188165670abe33d71f6582c9f4b88780d9391",
     "ergogen-kikad/design/models/nice_view_reference.wrl": "5c7cb187289362a48505090a67c6bd39ec3f1c7a0e438c5910417df058400d7f",
     "ergogen-kikad/design/models/display_socket.wrl": "d8c3cea629bf45c2713d5f01c4206282fb4e9437437e02b910745d282260642c",
     "ergogen-kikad/design/models/nice_nano_reference.wrl": "301df7066360b596e4d80496d5ff5f6723baf681720d1613dd9bc1267e79877c",
-    "ergogen-kikad/design/models/choc_reference.wrl": "bfe12e9a05a7d20905777f3d7c9bb243b1a465152548612f79cf8adb1f16c852",
+    "ergogen-kikad/design/models/choc_reference.wrl": "8444a85723e0627c94cb7e27fa0a3c4bf0cd22aff1aec38429363e15d701ab7c",
     "ergogen-kikad/design/models/mbk_15u.wrl": "a4062481fdfc9aaa8c0be3bb4fe13bbb1d436a216869e4448d66e9f096fd41a8"
   },
   "footprints": [
     {
       "reference": "BAT1",
-      "x": 29.65,
+      "x": 30.4,
       "y": 27.5,
       "rotation": 0.0,
       "models": [
@@ -710,6 +711,13 @@
           "source_path": "ergogen-kikad/design/models/mbk_15u.wrl"
         }
       ]
+    },
+    {
+      "reference": "WELL1",
+      "x": 30.4,
+      "y": 27.5,
+      "rotation": 0.0,
+      "models": []
     }
   ],
   "width": 114.25,
@@ -718,5 +726,32 @@
   "origin_kicad": [
     152.875,
     176.0
-  ]
+  ],
+  "battery": {
+    "manufacturer": "Existing protected-pack envelope; verify supplied pack",
+    "model": "301055",
+    "source": "ergogen-kikad/design/models/README.md",
+    "length": 57.5,
+    "width": 10.5,
+    "thickness": 3.5,
+    "capacity_mah": 220,
+    "charge_voltage": 4.2,
+    "protected": true,
+    "bottom_z": -1.4,
+    "adhesive": 0.2,
+    "center": [
+      30.4,
+      27.5
+    ],
+    "well_length": 58.1,
+    "well_width": 11.1,
+    "lead_radius": 0.25,
+    "lead_exit_z": 0.4,
+    "lead_end": [
+      60.15,
+      27.5,
+      1.7
+    ],
+    "connector": "Factory-fitted JST-PH 2-pin, polarity matching board pad 1 BAT_POS and pad 2 GND; confirm ordered lead variant"
+  }
 }

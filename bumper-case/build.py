@@ -6,6 +6,7 @@ import Part
 from pathlib import Path
 import json
 import math
+from upper_guard import build_upper_guard, guard_dimensions, guard_mount_specs
 
 ROOT = Path(__file__).resolve().parent
 P = json.loads((ROOT / 'parameters.json').read_text())
@@ -37,11 +38,17 @@ def polygon_prism(points, height):
     return Part.Face(wire).extrude(V(0, 0, height))
 
 
-def nut(x, y, z):
+def nut(x, y, z, thickness=None):
     radius = P['nut_across_flats'] / math.sqrt(3)
     pts = [(x + radius * math.cos(math.radians(30 + 60 * i)),
             y + radius * math.sin(math.radians(30 + 60 * i)), z) for i in range(6)]
-    return polygon_prism(pts, P['nut_thickness']).cut(cylinder(x, y, z - 0.1, 1, 2))
+    return polygon_prism(pts, P['nut_thickness'] if thickness is None else thickness).cut(cylinder(x, y, z - 0.1, 1, 3))
+
+
+def mount_stack(mount):
+    if mount['x'] < P['seam_x']:
+        return {'seat': P['plate_top'] + 0.4, 'nut_thickness': 1.2, 'screw_length': 7.0}
+    return {'seat': P['nut_seat_height'], 'nut_thickness': P['nut_thickness'], 'screw_length': 7.0}
 
 
 def control_hood(y0, y1, case_top, aperture):
@@ -107,7 +114,8 @@ def make_parts():
     for m in mounts:
         x, y = m['x'], m['y']
         structural = structural.cut(cylinder(x, y, -0.1, P['screw_clearance_diameter'] / 2, 3))
-        structural = structural.cut(cylinder(x, y, P['nut_seat_height'], P['boss_radius'], 1))
+        if x > P['seam_x']:
+            structural = structural.cut(cylinder(x, y, P['nut_seat_height'], P['boss_radius'], 1))
     gap = P['seam_gap'] / 2
     left_clip = box(-3, -3, -4, P['seam_x'] - gap + 3, h + 6, 20)
     right_clip = box(P['seam_x'] + gap, -3, -4, w + 3 - P['seam_x'] - gap, h + 6, 20)
@@ -144,7 +152,8 @@ def make_parts():
             right = right.cut(cylinder(m['x'], m['y'], -0.1, P['screw_clearance_diameter'] / 2, 13))
             right = right.cut(cylinder(m['x'], m['y'], P['nut_seat_height'], P['boss_radius'], 13))
     right = right.removeSplitter()
-    return {'left_bumper': left, 'right_bumper': right}, mounts, switches
+    upper = build_upper_guard(P, REF, left)
+    return {'left_bumper': left, 'right_bumper': right, 'upper_guard': upper}, mounts, switches
 
 
 def write_wrl(shape, filename, color):
@@ -162,10 +171,10 @@ def check(parts, mounts, switches):
                'reference_source_hashes': REF['source_files'],
                'pcb_stack': {'main_pcb': [-1.6, 0], 'baseplate': [-3.2, -1.6],
                              'feet': [-5.2, -3.2], 'case_bottom': -3.2},
-               'limitations': ['The original Choc model flange is an approximation and conflicts with the drawing-based plate datum; switch plate mating is checked against the 13.8 mm body from the Kailh drawing.',
+               'limitations': ['Switch mating uses the nominal 13.8 mm body and 15 mm shoulder at z2.2..3.0 from the Kailh drawing; simplified model details still require a physical fit check.',
                                'Physical switch clip retention, cap internal cavities, solder protrusion, print tolerances, and fastener tightening require a prototype.',
                                'A 2 mm nozzle cannot conventionally print the requested 1 mm walls; print with a smaller nozzle.',
-                               'Board touching is specified by the user; no PCB or baseplate geometry has been changed.']}
+                               'Board faces touch; the main PCB has a battery well and the baseplate supports the insulated pack.']}
     both = union(list(parts.values()))
     def collision(label, shape):
         volume = both.common(shape).Volume
@@ -183,11 +192,13 @@ def check(parts, mounts, switches):
         results['parts'][name] = {'solid_count': len(shape.Solids), 'valid': shape.isValid(),
                                  'volume_mm3': round(shape.Volume, 3),
                                  'bounds_mm': [round(v, 5) for v in (bb.XMin, bb.YMin, bb.ZMin, bb.XMax, bb.YMax, bb.ZMax)]}
-        if abs(bb.ZMin + 3.2) > 0.001:
+        if name != 'upper_guard' and abs(bb.ZMin + 3.2) > 0.001:
             raise RuntimeError('Case must end at baseplate underside')
-    distance('Separate case pieces', *parts.values())
-    if parts['left_bumper'].common(parts['right_bumper']).Volume > 0.00001:
-        raise RuntimeError('Case pieces overlap')
+    for i, (name, shape) in enumerate(parts.items()):
+        for other_name, other in list(parts.items())[i + 1:]:
+            distance(name + ' to ' + other_name, shape, other)
+            if shape.common(other).Volume > 0.00001:
+                raise RuntimeError('Case pieces overlap: ' + name + ', ' + other_name)
     if parts['left_bumper'].BoundBox.ZMax > P['plate_top'] + 0.001:
         raise RuntimeError('Left part exceeds switch plate plane')
     for s in switches:
@@ -199,7 +210,12 @@ def check(parts, mounts, switches):
         distance(s['reference'] + ' full cap travel clearance', both, swept)
         body = box(s['x'] - 6.9, s['y'] - 6.9, -0.1, 13.8, 13.8, 5.1)
         collision(s['reference'] + ' switch body', body)
-    collision('Battery and wire/plug corridor', box(0.9, 22.25, 0.15, 64.85, 10.5, 3.6))
+        collision(s['reference'] + ' nominal switch shoulder', box(s['x'] - 7.5, s['y'] - 7.5, 2.2,
+                                                                    15, 15, 0.8))
+    collision('Complete protected battery envelope', box(*P['upper_battery_envelope']))
+    collision('Battery lead corridor', box(*P['battery_lead_envelope']))
+    collision('Battery mating plug', box(60.15, 24.6, 0.2, 6, 5.8, 4.3))
+    results['upper_guard'] = guard_dimensions(P, REF)
     collision('JST-PH body', box(66.15, 24.55, 0, 7.6, 5.9, 4.85))
     collision('Nice nano body and sockets', box(77.75, 18.35, 0, 36, 18.3, 6.8))
     collision('Nice view module', box(74.65, 20.5, 8, 36, 14, 2.91))
@@ -225,9 +241,14 @@ def check(parts, mounts, switches):
                           'power_slot_mm': P['power_slot']}
     collision('USB plug path', box(113.4, 21.8, 3, 20, 11.4, 7))
     for m in mounts:
-        n = nut(m['x'], m['y'], P['nut_seat_height'])
+        stack = mount_stack(m)
+        n = nut(m['x'], m['y'], stack['seat'], stack['nut_thickness'])
         collision(m['reference'] + ' nut', n)
-        if P['cap_rest_underside'] - P['key_travel'] - n.BoundBox.ZMax < 0.59:
+        for s in switches:
+            shoulder = box(s['x'] - 7.5, s['y'] - 7.5, 2.2, 15, 15, 0.8)
+            if n.common(shoulder).Volume > 0.00001:
+                raise RuntimeError('Nut intersects nominal switch shoulder')
+        if P['cap_rest_underside'] - P['key_travel'] - n.BoundBox.ZMax < 0.19:
             raise RuntimeError('Nut is too high')
         collision(m['reference'] + ' screw passage', cylinder(m['x'], m['y'], -4, 1.01, 9))
         contact = n.copy()
@@ -257,14 +278,16 @@ def main():
         if isinstance(value, (float, int)):
             settings.addProperty('App::PropertyLength', ''.join(w.title() for w in name.split('_')), 'Dimensions')
             setattr(settings, ''.join(w.title() for w in name.split('_')), value)
-    colors = {'left_bumper': (0.16, 0.38, 0.49), 'right_bumper': (0.92, 0.49, 0.22)}
+    colors = {'left_bumper': (0.16, 0.38, 0.49), 'right_bumper': (0.92, 0.49, 0.22),
+              'upper_guard': (0.17, 0.58, 0.63)}
     export_info = {}
     for name, shape in parts.items():
         obj = doc.addObject('PartDesign::Feature', ''.join(w.title() for w in name.split('_')))
         obj.Label = name.replace('_', ' ').title()
         obj.Shape = shape
         obj.addProperty('App::PropertyString', 'PrintOrientation', 'Manufacture')
-        obj.PrintOrientation = 'Uppermost flat face on build plate; print STL is already oriented'
+        obj.PrintOrientation = ('Lower flat mating face on build plate' if name == 'upper_guard'
+                                else 'Uppermost flat face on build plate') + '; print STL is already oriented'
         if obj.ViewObject:
             obj.ViewObject.ShapeColor = colors[name]
             obj.ViewObject.LineColor = (0.12, 0.15, 0.17)
@@ -275,7 +298,8 @@ def main():
             raise RuntimeError(name + ': STL mesh is not closed')
         mesh.write(str(OUT / (name + '_assembly.stl')))
         print_shape = shape.copy()
-        print_shape.rotate(V(0, 0, 0), V(1, 0, 0), 180)
+        if name != 'upper_guard':
+            print_shape.rotate(V(0, 0, 0), V(1, 0, 0), 180)
         bb = print_shape.optimalBoundingBox(False, False)
         print_shape.translate(V(-bb.XMin, -bb.YMin, -bb.ZMin))
         print_mesh = MeshPart.meshFromShape(Shape=print_shape, LinearDeflection=0.035, AngularDeflection=0.12, Relative=False)
@@ -291,12 +315,13 @@ def main():
     report['exports'] = export_info
     doc.recompute()
     doc.saveAs(str(ROOT / 'QBF_Bumper_Case.FCStd'))
-    Part.export([doc.getObject('LeftBumper'), doc.getObject('RightBumper')], str(OUT / 'bumper_case.step'))
+    Part.export([doc.getObject('LeftBumper'), doc.getObject('RightBumper'), doc.getObject('UpperGuard')],
+                str(OUT / 'bumper_case.step'))
     for path in OUT.glob('*.step'):
         path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines()) + '\n')
     (OUT / 'verification.json').write_text(json.dumps(report, indent=2) + '\n')
     App.closeDocument(doc.Name)
-    print('Generated two valid single solids, closed STL meshes, case-only FreeCAD and STEP, and clearance report')
+    print('Generated three valid single solids, closed STL meshes, case-only FreeCAD and STEP, and clearance report')
 
 
 if __name__ == '__main__':

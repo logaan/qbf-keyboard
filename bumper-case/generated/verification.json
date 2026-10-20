@@ -3,7 +3,7 @@
     "left_bumper": {
       "solid_count": 1,
       "valid": true,
-      "volume_mm3": 3420.225,
+      "volume_mm3": 3442.53,
       "bounds_mm": [
         -1.2,
         -1.2,
@@ -25,11 +25,32 @@
         56.2,
         12.4
       ]
+    },
+    "upper_guard": {
+      "solid_count": 1,
+      "valid": true,
+      "volume_mm3": 5167.566,
+      "bounds_mm": [
+        -1.2,
+        -1.2,
+        2.2,
+        75.3,
+        56.2,
+        10.9691
+      ]
     }
   },
   "clearance_checks": [
     {
-      "name": "Separate case pieces",
+      "name": "left_bumper to right_bumper",
+      "distance_mm": 0.25
+    },
+    {
+      "name": "left_bumper to upper_guard",
+      "distance_mm": 0.0
+    },
+    {
+      "name": "right_bumper to upper_guard",
       "distance_mm": 0.25
     },
     {
@@ -38,10 +59,14 @@
     },
     {
       "name": "S1 full cap travel clearance",
-      "distance_mm": 1.8
+      "distance_mm": 0.28579
     },
     {
       "name": "S1 switch body",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "S1 nominal switch shoulder",
       "overlap_mm3": 0.0
     },
     {
@@ -57,15 +82,23 @@
       "overlap_mm3": 0.0
     },
     {
+      "name": "S10 nominal switch shoulder",
+      "overlap_mm3": 0.0
+    },
+    {
       "name": "S2 full cap travel envelope",
       "overlap_mm3": 0.0
     },
     {
       "name": "S2 full cap travel clearance",
-      "distance_mm": 1.8
+      "distance_mm": 0.6
     },
     {
       "name": "S2 switch body",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "S2 nominal switch shoulder",
       "overlap_mm3": 0.0
     },
     {
@@ -74,10 +107,14 @@
     },
     {
       "name": "S3 full cap travel clearance",
-      "distance_mm": 1.8
+      "distance_mm": 0.6
     },
     {
       "name": "S3 switch body",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "S3 nominal switch shoulder",
       "overlap_mm3": 0.0
     },
     {
@@ -86,10 +123,14 @@
     },
     {
       "name": "S4 full cap travel clearance",
-      "distance_mm": 0.58579
+      "distance_mm": 0.15
     },
     {
       "name": "S4 switch body",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "S4 nominal switch shoulder",
       "overlap_mm3": 0.0
     },
     {
@@ -98,10 +139,14 @@
     },
     {
       "name": "S5 full cap travel clearance",
-      "distance_mm": 1.8
+      "distance_mm": 0.28579
     },
     {
       "name": "S5 switch body",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "S5 nominal switch shoulder",
       "overlap_mm3": 0.0
     },
     {
@@ -110,10 +155,14 @@
     },
     {
       "name": "S6 full cap travel clearance",
-      "distance_mm": 1.8
+      "distance_mm": 0.6
     },
     {
       "name": "S6 switch body",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "S6 nominal switch shoulder",
       "overlap_mm3": 0.0
     },
     {
@@ -122,10 +171,14 @@
     },
     {
       "name": "S7 full cap travel clearance",
-      "distance_mm": 1.8
+      "distance_mm": 0.6
     },
     {
       "name": "S7 switch body",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "S7 nominal switch shoulder",
       "overlap_mm3": 0.0
     },
     {
@@ -134,10 +187,14 @@
     },
     {
       "name": "S8 full cap travel clearance",
-      "distance_mm": 0.58579
+      "distance_mm": 0.15
     },
     {
       "name": "S8 switch body",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "S8 nominal switch shoulder",
       "overlap_mm3": 0.0
     },
     {
@@ -153,7 +210,19 @@
       "overlap_mm3": 0.0
     },
     {
-      "name": "Battery and wire/plug corridor",
+      "name": "S9 nominal switch shoulder",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Complete protected battery envelope",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Battery lead corridor",
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Battery mating plug",
       "overlap_mm3": 0.0
     },
     {
@@ -202,7 +271,7 @@
     },
     {
       "name": "H1 nut seating area",
-      "area_mm2": 9.7017
+      "area_mm2": 9.1063
     },
     {
       "name": "H2 nut",
@@ -214,7 +283,7 @@
     },
     {
       "name": "H2 nut seating area",
-      "area_mm2": 9.7017
+      "area_mm2": 9.1063
     },
     {
       "name": "H3 nut",
@@ -226,7 +295,7 @@
     },
     {
       "name": "H3 nut seating area",
-      "area_mm2": 9.7017
+      "area_mm2": 9.1063
     },
     {
       "name": "H4 nut",
@@ -238,7 +307,7 @@
     },
     {
       "name": "H4 nut seating area",
-      "area_mm2": 9.7017
+      "area_mm2": 9.1063
     },
     {
       "name": "H5 nut",
@@ -341,17 +410,37 @@
     ],
     "printer_nozzle_as_specified": 2.0,
     "outer_boss_right_limit": 105.525,
-    "right_foot_x": 90.75
+    "right_foot_x": 90.75,
+    "upper_battery_envelope": [
+      1.65,
+      22.25,
+      -1.4,
+      57.5,
+      10.5,
+      3.5
+    ],
+    "battery_lead_envelope": [
+      59.1,
+      26.2,
+      0.1,
+      1.1,
+      2.6,
+      1.9
+    ],
+    "upper_battery_roof_clearance": 0.2,
+    "upper_battery_roof_thickness": 1.0,
+    "upper_guard_top": 10.9691
   },
   "reference_source_hashes": {
-    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "5151773e0e21f6d4df269c6a3a09c73a45303cda7eba9bf02368b0039f111c52",
-    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "f423d3fd90ce9a103dd5eda0f3d4e8ab58b8eb0a12362a7852c7c122784992d8",
-    "ergogen-kikad/design/models/battery_301055.wrl": "0b33d331c8d421c46668a60f2bf834ee96ff663bca3644910c2fcc2cdfe3262f",
+    "ergogen-kikad/design/battery.json": "7b3e3750b4955e85fb36b012e269195580477f8d82b72f75a898bf2d56e6380a",
+    "ergogen-kikad/generated/pcbs/macropad.kicad_pcb": "5161af1ea7cf8067735d15b131246c1fcde229a0de9c10ccac9ad53524192707",
+    "ergogen-kikad/generated/pcbs/baseplate.kicad_pcb": "6adf115f4056bfcaae5c1c69147e6ecc0f34c8fe2480bf4832101b815c02d20b",
+    "ergogen-kikad/design/models/battery_301055.wrl": "678d0e44e43f2b28cf2688cff14d0f0a151bad529723f33a35db495a39ff79ed",
     "ergogen-kikad/design/models/battery_plug_reference.wrl": "fde40d6e5606130f3fb695c3045188165670abe33d71f6582c9f4b88780d9391",
     "ergogen-kikad/design/models/nice_view_reference.wrl": "5c7cb187289362a48505090a67c6bd39ec3f1c7a0e438c5910417df058400d7f",
     "ergogen-kikad/design/models/display_socket.wrl": "d8c3cea629bf45c2713d5f01c4206282fb4e9437437e02b910745d282260642c",
     "ergogen-kikad/design/models/nice_nano_reference.wrl": "301df7066360b596e4d80496d5ff5f6723baf681720d1613dd9bc1267e79877c",
-    "ergogen-kikad/design/models/choc_reference.wrl": "bfe12e9a05a7d20905777f3d7c9bb243b1a465152548612f79cf8adb1f16c852",
+    "ergogen-kikad/design/models/choc_reference.wrl": "8444a85723e0627c94cb7e27fa0a3c4bf0cd22aff1aec38429363e15d701ab7c",
     "ergogen-kikad/design/models/mbk_15u.wrl": "a4062481fdfc9aaa8c0be3bb4fe13bbb1d436a216869e4448d66e9f096fd41a8"
   },
   "pcb_stack": {
@@ -370,11 +459,80 @@
     "case_bottom": -3.2
   },
   "limitations": [
-    "The original Choc model flange is an approximation and conflicts with the drawing-based plate datum; switch plate mating is checked against the 13.8 mm body from the Kailh drawing.",
+    "Switch mating uses the nominal 13.8 mm body and 15 mm shoulder at z2.2..3.0 from the Kailh drawing; simplified model details still require a physical fit check.",
     "Physical switch clip retention, cap internal cavities, solder protrusion, print tolerances, and fastener tightening require a prototype.",
     "A 2 mm nozzle cannot conventionally print the requested 1 mm walls; print with a smaller nozzle.",
-    "Board touching is specified by the user; no PCB or baseplate geometry has been changed."
+    "Board faces touch; the main PCB has a battery well and the baseplate supports the insulated pack."
   ],
+  "upper_guard": {
+    "mating_plane_mm": 2.2,
+    "wall_top_mm": 10.9691,
+    "wall_mm": 1.0,
+    "upright_rail_width_mm": 1.0,
+    "battery_envelope_mm": [
+      1.65,
+      22.25,
+      -1.4,
+      57.5,
+      10.5,
+      3.5
+    ],
+    "battery_roof_underside_mm": 2.3000000000000003,
+    "battery_roof_top_mm": 3.3000000000000003,
+    "battery_roof_thickness_mm": 1.0,
+    "battery_clearance_mm": 0.2,
+    "cap_sweep_clearance_mm": 0.15,
+    "mount_flange_thickness_mm": 0.4,
+    "switch_shoulder_aperture_mm": 15.3,
+    "switch_shoulder_relief_top_mm": 3.1,
+    "mounts": [
+      {
+        "reference": "H1",
+        "x": 18.275,
+        "y": 41.25,
+        "flange_bottom": 2.2,
+        "nut_seat": 2.6,
+        "nut_thickness": 1.2,
+        "recess_radius": 0.0,
+        "flange_radius": 2.6,
+        "screw_clearance": 2.3
+      },
+      {
+        "reference": "H2",
+        "x": 56.375,
+        "y": 41.25,
+        "flange_bottom": 2.2,
+        "nut_seat": 2.6,
+        "nut_thickness": 1.2,
+        "recess_radius": 0.0,
+        "flange_radius": 2.6,
+        "screw_clearance": 2.3
+      },
+      {
+        "reference": "H3",
+        "x": 18.275,
+        "y": 13.75,
+        "flange_bottom": 2.2,
+        "nut_seat": 2.6,
+        "nut_thickness": 1.2,
+        "recess_radius": 0.0,
+        "flange_radius": 2.6,
+        "screw_clearance": 2.3
+      },
+      {
+        "reference": "H4",
+        "x": 56.375,
+        "y": 13.75,
+        "flange_bottom": 2.2,
+        "nut_seat": 2.6,
+        "nut_thickness": 1.2,
+        "recess_radius": 0.0,
+        "flange_radius": 2.6,
+        "screw_clearance": 2.3
+      }
+    ],
+    "battery_cover": "Continuous roof over the complete protected battery envelope; connector remains outside the roof."
+  },
   "controls": {
     "housing_clearance_mm": 0.2,
     "reset_roof_top_mm": 5.3,
@@ -393,7 +551,7 @@
   "passed": true,
   "exports": {
     "left_bumper": {
-      "facets": 11384,
+      "facets": 9704,
       "closed_mesh": true,
       "print_bounds_mm": [
         76.5,
@@ -408,6 +566,15 @@
         40.79999923706055,
         57.400001425878905,
         15.600000381469728
+      ]
+    },
+    "upper_guard": {
+      "facets": 12320,
+      "closed_mesh": true,
+      "print_bounds_mm": [
+        76.5,
+        57.400001525878906,
+        8.769100189208984
       ]
     }
   }

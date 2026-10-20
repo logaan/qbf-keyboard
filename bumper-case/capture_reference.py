@@ -15,6 +15,9 @@ def main():
     manifest = {'coordinate_system': 'millimetres, origin at PCB lower left, PCB top z=0',
                 'source_files': {}, 'footprints': [], 'width': 114.25, 'height': 55.0,
                 'pcb_thickness': 1.6, 'origin_kicad': [152.875, 176.0]}
+    spec_path = REPO / 'ergogen-kikad/design/battery.json'
+    manifest['battery'] = json.loads(spec_path.read_text())
+    manifest['source_files'][str(spec_path.relative_to(REPO))] = hashlib.sha256(spec_path.read_bytes()).hexdigest()
     for name in ('macropad', 'baseplate'):
         source = SOURCES / f'{name}.kicad_pcb'
         manifest['source_files'][str(source.relative_to(REPO))] = hashlib.sha256(source.read_bytes()).hexdigest()
