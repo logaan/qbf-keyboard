@@ -7,7 +7,7 @@ module.exports = {
     const contacts = names.map((name, index) => {
       const upper = index < 7;
       const x = upper ? 7.62 - 2.54 * index : -7.62 + 2.54 * (index - 7);
-      const y = upper ? -9.8 : 9.8;
+      const y = upper ? -9.9 : 9.9;
       return `(pad ${index + 1} smd roundrect (at ${x.toFixed(2)} ${y} ${p.r}) (size 0.8 1.2) (layers F.Cu F.Mask) (roundrect_rratio 0.125) ${p[name]})`;
     });
     return `(module XIAO_nRF52840_Plus_Coplanar_Edge_Solder (layer F.Cu)

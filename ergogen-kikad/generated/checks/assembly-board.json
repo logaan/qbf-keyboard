@@ -1,0 +1,1490 @@
+{
+  "footprints": [
+    {
+      "reference": "S4",
+      "value": "Choc v1 1.5U",
+      "center": [
+        68.05,
+        61.75
+      ],
+      "rotation": 90.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            68.05,
+            56.25
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            68.05,
+            61.75
+          ],
+          "size": [
+            3.429,
+            3.429
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            68.05,
+            67.25
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "1",
+          "net": "GND",
+          "center": [
+            64.25,
+            66.75
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        },
+        {
+          "number": "2",
+          "net": "D3",
+          "center": [
+            62.15,
+            61.75
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    {
+      "reference": "S9",
+      "value": "Choc v1 1U",
+      "center": [
+        87.1,
+        66.75
+      ],
+      "rotation": 0.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            81.6,
+            66.75
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            87.1,
+            66.75
+          ],
+          "size": [
+            3.429,
+            3.429
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            92.6,
+            66.75
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "1",
+          "net": "GND",
+          "center": [
+            92.1,
+            70.55
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        },
+        {
+          "number": "2",
+          "net": "D4",
+          "center": [
+            87.1,
+            72.65
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_1u_reference.wrl"
+      ]
+    },
+    {
+      "reference": "S1",
+      "value": "Choc v1 1.5U",
+      "center": [
+        10.9,
+        61.75
+      ],
+      "rotation": 90.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            10.9,
+            56.25
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            10.9,
+            61.75
+          ],
+          "size": [
+            3.429,
+            3.429
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            10.9,
+            67.25
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "1",
+          "net": "GND",
+          "center": [
+            7.1,
+            66.75
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        },
+        {
+          "number": "2",
+          "net": "D0",
+          "center": [
+            5.0,
+            61.75
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    {
+      "reference": "H4",
+      "value": "M2 mount",
+      "center": [
+        58.525,
+        23.5
+      ],
+      "rotation": 0.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            58.525,
+            23.5
+          ],
+          "size": [
+            2.2,
+            2.2
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/m2_low_head_reference.wrl"
+      ]
+    },
+    {
+      "reference": "PWR1",
+      "value": "PCM12SMTR side power",
+      "center": [
+        3.75,
+        48.0
+      ],
+      "rotation": -90.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            4.53,
+            51.65
+          ],
+          "size": [
+            1.0,
+            0.8
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            2.32,
+            51.65
+          ],
+          "size": [
+            1.0,
+            0.8
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            3.42,
+            49.5
+          ],
+          "size": [
+            0.9,
+            0.9
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            3.42,
+            46.5
+          ],
+          "size": [
+            0.9,
+            0.9
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            4.53,
+            44.35
+          ],
+          "size": [
+            1.0,
+            0.8
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            2.32,
+            44.35
+          ],
+          "size": [
+            1.0,
+            0.8
+          ]
+        },
+        {
+          "number": "1",
+          "net": "",
+          "center": [
+            5.18,
+            50.25
+          ],
+          "size": [
+            0.7,
+            1.5
+          ]
+        },
+        {
+          "number": "2",
+          "net": "VBAT",
+          "center": [
+            5.18,
+            47.25
+          ],
+          "size": [
+            0.7,
+            1.5
+          ]
+        },
+        {
+          "number": "3",
+          "net": "BAT_POS",
+          "center": [
+            5.18,
+            45.75
+          ],
+          "size": [
+            0.7,
+            1.5
+          ]
+        }
+      ],
+      "models": [
+        "${KICAD10_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPDT_PCM12.step"
+      ]
+    },
+    {
+      "reference": "S6",
+      "value": "Choc v1 1.5U",
+      "center": [
+        29.95,
+        34.25
+      ],
+      "rotation": 90.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            29.95,
+            28.75
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            29.95,
+            34.25
+          ],
+          "size": [
+            3.429,
+            3.429
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            29.95,
+            39.75
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "1",
+          "net": "D6",
+          "center": [
+            26.15,
+            39.25
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "center": [
+            24.05,
+            34.25
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    {
+      "reference": "WELL1",
+      "value": "Battery well 58.1x11.1",
+      "center": [
+        35.5,
+        48.0
+      ],
+      "rotation": 0.0,
+      "pads": [],
+      "models": []
+    },
+    {
+      "reference": "H2",
+      "value": "M2 mount",
+      "center": [
+        58.525,
+        72.5
+      ],
+      "rotation": 0.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            58.525,
+            72.5
+          ],
+          "size": [
+            2.2,
+            2.2
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/m2_low_head_reference.wrl"
+      ]
+    },
+    {
+      "reference": "S10",
+      "value": "Choc v1 1U",
+      "center": [
+        87.1,
+        29.25
+      ],
+      "rotation": 0.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            81.6,
+            29.25
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            87.1,
+            29.25
+          ],
+          "size": [
+            3.429,
+            3.429
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            92.6,
+            29.25
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "1",
+          "net": "D9",
+          "center": [
+            92.1,
+            33.05
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "center": [
+            87.1,
+            35.15
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_1u_reference.wrl"
+      ]
+    },
+    {
+      "reference": "S2",
+      "value": "Choc v1 1.5U",
+      "center": [
+        29.95,
+        61.75
+      ],
+      "rotation": 90.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            29.95,
+            56.25
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            29.95,
+            61.75
+          ],
+          "size": [
+            3.429,
+            3.429
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            29.95,
+            67.25
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "1",
+          "net": "GND",
+          "center": [
+            26.15,
+            66.75
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        },
+        {
+          "number": "2",
+          "net": "D1",
+          "center": [
+            24.05,
+            61.75
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    {
+      "reference": "J1",
+      "value": "JST-SH 2-pin horizontal",
+      "center": [
+        71.375,
+        48.0
+      ],
+      "rotation": -90.0,
+      "pads": [
+        {
+          "number": "1",
+          "net": "BAT_POS",
+          "center": [
+            73.375,
+            48.5
+          ],
+          "size": [
+            0.6,
+            1.55
+          ]
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "center": [
+            73.375,
+            47.5
+          ],
+          "size": [
+            0.6,
+            1.55
+          ]
+        },
+        {
+          "number": "MP",
+          "net": "",
+          "center": [
+            69.5,
+            49.8
+          ],
+          "size": [
+            1.2,
+            1.8
+          ]
+        },
+        {
+          "number": "MP",
+          "net": "",
+          "center": [
+            69.5,
+            46.2
+          ],
+          "size": [
+            1.2,
+            1.8
+          ]
+        }
+      ],
+      "models": [
+        "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal.step",
+        "${KIPRJMOD}/../../design/models/jst_sh_plug_allowance.wrl"
+      ]
+    },
+    {
+      "reference": "H1",
+      "value": "M2 mount",
+      "center": [
+        20.425,
+        72.5
+      ],
+      "rotation": 0.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            20.425,
+            72.5
+          ],
+          "size": [
+            2.2,
+            2.2
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/m2_low_head_reference.wrl"
+      ]
+    },
+    {
+      "reference": "S8",
+      "value": "Choc v1 1.5U",
+      "center": [
+        68.05,
+        34.25
+      ],
+      "rotation": 90.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            68.05,
+            28.75
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            68.05,
+            34.25
+          ],
+          "size": [
+            3.429,
+            3.429
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            68.05,
+            39.75
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "1",
+          "net": "D8",
+          "center": [
+            64.25,
+            39.25
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "center": [
+            62.15,
+            34.25
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    {
+      "reference": "H3",
+      "value": "M2 mount",
+      "center": [
+        20.425,
+        23.5
+      ],
+      "rotation": 0.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            20.425,
+            23.5
+          ],
+          "size": [
+            2.2,
+            2.2
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/m2_low_head_reference.wrl"
+      ]
+    },
+    {
+      "reference": "MCU1",
+      "value": "XIAO nRF52840 Plus edge-soldered",
+      "center": [
+        87.5,
+        47.5
+      ],
+      "rotation": 0.0,
+      "pads": [
+        {
+          "number": "1",
+          "net": "D0",
+          "center": [
+            95.12,
+            57.4
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "2",
+          "net": "D1",
+          "center": [
+            92.58,
+            57.4
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "3",
+          "net": "D2",
+          "center": [
+            90.04,
+            57.4
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "4",
+          "net": "D3",
+          "center": [
+            87.5,
+            57.4
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "5",
+          "net": "D4",
+          "center": [
+            84.96,
+            57.4
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "6",
+          "net": "D5",
+          "center": [
+            82.42,
+            57.4
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "7",
+          "net": "D6",
+          "center": [
+            79.88,
+            57.4
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "8",
+          "net": "D7",
+          "center": [
+            79.88,
+            37.6
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "9",
+          "net": "D8",
+          "center": [
+            82.42,
+            37.6
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "10",
+          "net": "D9",
+          "center": [
+            84.96,
+            37.6
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "11",
+          "net": "D10",
+          "center": [
+            87.5,
+            37.6
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "12",
+          "net": "3V3",
+          "center": [
+            90.04,
+            37.6
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "13",
+          "net": "GND",
+          "center": [
+            92.58,
+            37.6
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "number": "14",
+          "net": "VBUS",
+          "center": [
+            95.12,
+            37.6
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/xiao_plus_reference.wrl",
+        "${KIPRJMOD}/../../design/models/xiao_battery_wire.wrl",
+        "${KIPRJMOD}/../../design/models/module_support_film.wrl",
+        "${KIPRJMOD}/../../design/models/baseplate_native.wrl"
+      ]
+    },
+    {
+      "reference": "S3",
+      "value": "Choc v1 1.5U",
+      "center": [
+        49.0,
+        61.75
+      ],
+      "rotation": 90.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            49.0,
+            56.25
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            49.0,
+            61.75
+          ],
+          "size": [
+            3.429,
+            3.429
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            49.0,
+            67.25
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "1",
+          "net": "GND",
+          "center": [
+            45.2,
+            66.75
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        },
+        {
+          "number": "2",
+          "net": "D2",
+          "center": [
+            43.1,
+            61.75
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    {
+      "reference": "BAT1",
+      "value": "301055 220mAh max 57.5x10.5x3.5 z=-1.4",
+      "center": [
+        35.5,
+        48.0
+      ],
+      "rotation": 0.0,
+      "pads": [],
+      "models": [
+        "${KIPRJMOD}/../../design/models/battery_301055.wrl"
+      ]
+    },
+    {
+      "reference": "S7",
+      "value": "Choc v1 1.5U",
+      "center": [
+        49.0,
+        34.25
+      ],
+      "rotation": 90.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            49.0,
+            28.75
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            49.0,
+            34.25
+          ],
+          "size": [
+            3.429,
+            3.429
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            49.0,
+            39.75
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "1",
+          "net": "D7",
+          "center": [
+            45.2,
+            39.25
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "center": [
+            43.1,
+            34.25
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    {
+      "reference": "S5",
+      "value": "Choc v1 1.5U",
+      "center": [
+        10.9,
+        34.25
+      ],
+      "rotation": 90.0,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            10.9,
+            28.75
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            10.9,
+            34.25
+          ],
+          "size": [
+            3.429,
+            3.429
+          ]
+        },
+        {
+          "number": "",
+          "net": "",
+          "center": [
+            10.9,
+            39.75
+          ],
+          "size": [
+            1.7018,
+            1.7018
+          ]
+        },
+        {
+          "number": "1",
+          "net": "D5",
+          "center": [
+            7.1,
+            39.25
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "center": [
+            5.0,
+            34.25
+          ],
+          "size": [
+            2.4,
+            2.4
+          ]
+        }
+      ],
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    {
+      "reference": "BW1",
+      "value": "Insulated lead to XIAO BAT+ underside",
+      "center": [
+        75.2,
+        37.7
+      ],
+      "rotation": 0.0,
+      "pads": [
+        {
+          "number": "1",
+          "net": "VBAT",
+          "center": [
+            75.2,
+            37.7
+          ],
+          "size": [
+            1.4,
+            1.4
+          ]
+        }
+      ],
+      "models": []
+    }
+  ],
+  "native_module_castellations": [
+    {
+      "number": "1",
+      "center": [
+        7.62,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "2",
+      "center": [
+        5.08,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "3",
+      "center": [
+        2.54,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "4",
+      "center": [
+        0.0,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "5",
+      "center": [
+        -2.54,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "6",
+      "center": [
+        -5.08,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "7",
+      "center": [
+        -7.62,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "8",
+      "center": [
+        -7.62,
+        -8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "9",
+      "center": [
+        -5.08,
+        -8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "10",
+      "center": [
+        -2.54,
+        -8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "11",
+      "center": [
+        0.0,
+        -8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "12",
+      "center": [
+        2.54,
+        -8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "13",
+      "center": [
+        5.08,
+        -8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "14",
+      "center": [
+        7.62,
+        -8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "15",
+      "center": [
+        6.35,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "16",
+      "center": [
+        3.81,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "17",
+      "center": [
+        1.27,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "18",
+      "center": [
+        -1.27,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "19",
+      "center": [
+        -3.81,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "20",
+      "center": [
+        -6.35,
+        8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "21",
+      "center": [
+        -6.35,
+        -8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "22",
+      "center": [
+        -3.81,
+        -8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    },
+    {
+      "number": "23",
+      "center": [
+        -1.27,
+        -8.89
+      ],
+      "copper_diameter": 0.9,
+      "drill": 0.6
+    }
+  ],
+  "rf_copper_objects_checked": 522,
+  "rf_copper_intersections": 0,
+  "baseplate_copper_objects": 0,
+  "baseplate_npth_count": 56,
+  "source_pcb_sha256": "5a27d0975005abeab356ee8355f3df62d75c01b4f50fe582eaa6448aec16d870"
+}

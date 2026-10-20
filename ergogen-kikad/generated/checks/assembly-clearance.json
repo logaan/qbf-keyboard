@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "check_count": 1404,
+  "minimum_cap_clearances": [
+    {
+      "component": "connector_mated_allowance",
+      "key": "S4",
+      "clearance": 1.0
+    },
+    {
+      "component": "connector_mated_allowance",
+      "key": "S8",
+      "clearance": 1.0
+    },
+    {
+      "component": "connector",
+      "key": "S4",
+      "clearance": 1.04
+    },
+    {
+      "component": "connector",
+      "key": "S8",
+      "clearance": 1.04
+    },
+    {
+      "component": "battery",
+      "key": "S4",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S1",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S6",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S2",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S8",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S3",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S7",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S5",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery_leads",
+      "key": "S4",
+      "clearance": 2.168976
+    },
+    {
+      "component": "battery_leads",
+      "key": "S8",
+      "clearance": 2.168976
+    },
+    {
+      "component": "H4_screw",
+      "key": "S8",
+      "clearance": 2.4
+    }
+  ],
+  "minimum_solder_bridge_to_other_castellation": 0.42,
+  "minimum_clearances": {
+    "module_to_native_host": 0.2,
+    "solder_to_switch_shoulder": 0.85,
+    "antenna_rf_to_switch": 0.345275,
+    "antenna_rf_to_connector": 0.447599,
+    "reset_probe_to_usb": 0.215,
+    "actuator_inside_left_border": 0.22
+  }
+}

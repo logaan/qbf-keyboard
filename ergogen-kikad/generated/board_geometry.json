@@ -85,17 +85,17 @@
     "pcb_top_z": 0.05,
     "support_film_thickness": 0.05,
     "notch_bounds": [
-      76.7,
-      38.5,
+      76.5,
+      38.4,
       98.6,
-      56.5
+      56.6
     ],
     "notch_corner_radius": 0.5,
     "host_solder_land_mm": [
       0.8,
       1.2
     ],
-    "host_land_offset_y": 9.8,
+    "host_land_offset_y": 9.9,
     "host_land_cut_edge_setback": 0.2,
     "castellation_y": 8.89,
     "castellation_copper_diameter": 0.9,
@@ -170,7 +170,8 @@
       -7.62528,
       -2.8156
     ],
-    "physical_sample_note": "Official project specifies 1.6 mm; production PCB thickness, cutout tolerance and supplied module must be measured before fabrication/assembly."
+    "physical_sample_note": "Official project specifies 1.6 mm; production PCB thickness, cutout tolerance and supplied module must be measured before fabrication/assembly.",
+    "optional_sense_components": "Microphone and IMU envelopes from shared official Plus/Sense PCB are retained conservatively; population on the purchased non-Sense Plus must be verified."
   },
   "controls": []
 }

@@ -20,17 +20,17 @@
     "pcb_top_z": 0.05,
     "support_film_thickness": 0.05,
     "notch_bounds": [
-      76.7,
-      38.5,
+      76.5,
+      38.4,
       98.6,
-      56.5
+      56.6
     ],
     "notch_corner_radius": 0.5,
     "host_solder_land_mm": [
       0.8,
       1.2
     ],
-    "host_land_offset_y": 9.8,
+    "host_land_offset_y": 9.9,
     "host_land_cut_edge_setback": 0.2,
     "castellation_y": 8.89,
     "castellation_copper_diameter": 0.9,
@@ -105,7 +105,8 @@
       -7.62528,
       -2.8156
     ],
-    "physical_sample_note": "Official project specifies 1.6 mm; production PCB thickness, cutout tolerance and supplied module must be measured before fabrication/assembly."
+    "physical_sample_note": "Official project specifies 1.6 mm; production PCB thickness, cutout tolerance and supplied module must be measured before fabrication/assembly.",
+    "optional_sense_components": "Microphone and IMU envelopes from shared official Plus/Sense PCB are retained conservatively; population on the purchased non-Sense Plus must be verified."
   },
   "fasteners": {
     "count": 4,
@@ -133,12 +134,18 @@
     "mated_allowance_bounds": [
       65.05,
       45,
-      73.05,
+      74.15,
       51
     ],
     "mated_height_allowance": 3.0,
     "native_model": "Connector_JST.3dshapes/JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal.step",
-    "note": "Mating plug represented by conservative assembly allowance, not exact mating CAD."
+    "note": "Mating plug represented by conservative allowance, not exact mating CAD; full reserve includes native rear tails and rear copper lands.",
+    "native_model_bounds": [
+      68.9,
+      46,
+      73.85,
+      50
+    ]
   },
   "power": {
     "origin": [
@@ -147,7 +154,12 @@
     ],
     "rotation": -90,
     "stroke": 1.5,
-    "native_model": "Button_Switch_SMD.3dshapes/SW_SPDT_PCM12.step"
+    "native_model": "Button_Switch_SMD.3dshapes/SW_SPDT_PCM12.step",
+    "actuator_motion_world_y": [
+      -1.5,
+      0
+    ],
+    "motion_note": "Native model shows one end; local +1.5 mm actuator stroke maps to fixed-frame y -1.5 mm. Clearance proof translates the entire native body conservatively."
   },
   "gpio": {
     "D0": [
@@ -200,5 +212,10 @@
     "antenna": "https://datasheet.lcsc.com/datasheet/pdf/b5dbf9d22ca92e360a16bb97f35d6538.pdf?productCode=C2916136",
     "module_pcb_sha256": "5a27d0975005abeab356ee8355f3df62d75c01b4f50fe582eaa6448aec16d870",
     "module_schematic_sha256": "8ae3fba8adbd66d4a45bcca87dce64c02176d6338a9f0c6333f2404944cc2185"
+  },
+  "fabrication": {
+    "host_edge_copper_minimum": 0.2,
+    "battery_well_copper_clearance": 0.5,
+    "note": "Fabricator must support 0.2 mm copper-to-routed-edge on the controller hand-solder lands. No castellation plating is required on the host; the supplied module has native plated castellations."
   }
 }

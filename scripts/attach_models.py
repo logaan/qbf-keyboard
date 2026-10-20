@@ -27,16 +27,22 @@ def attach_models(board):
         if reference.startswith('S'):
             add_model(footprint,'choc_reference.wrl')
             cap='mbk_1u_reference.wrl' if footprint.GetValue()=='Choc v1 1U' else 'mbk_15u.wrl'
-            if (ROOT/'ergogen-kikad/design/models'/cap).exists():add_model(footprint,cap)
+            add_model(footprint,cap)
         elif reference.startswith('MCU'):
-            if (ROOT/'ergogen-kikad/design/models/xiao_plus_reference.wrl').exists():add_model(footprint,'xiao_plus_reference.wrl')
+            add_model(footprint,'xiao_plus_reference.wrl')
+            add_model(footprint,'xiao_battery_wire.wrl')
+            add_model(footprint,'module_support_film.wrl')
+            if (ROOT/'ergogen-kikad/design/models/baseplate_native.wrl').exists():
+                add_model(footprint,'baseplate_native.wrl',offset=(-87.5,-47.5,0))
+        elif reference.startswith('H'):
+            add_model(footprint,'m2_low_head_reference.wrl')
         elif reference.startswith('BAT'):
             add_model(footprint,'battery_301055.wrl')
         elif reference.startswith('PWR'):
             add_model(footprint,'Button_Switch_SMD.3dshapes/SW_SPDT_PCM12.step',standard=True)
         elif reference=='J1':
             add_model(footprint,'Connector_JST.3dshapes/JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal.step',standard=True)
-            if (ROOT/'ergogen-kikad/design/models/jst_sh_plug_allowance.wrl').exists():add_model(footprint,'jst_sh_plug_allowance.wrl')
+            add_model(footprint,'jst_sh_plug_allowance.wrl')
 
 
 

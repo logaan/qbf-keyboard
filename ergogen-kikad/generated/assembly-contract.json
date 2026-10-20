@@ -1,0 +1,1088 @@
+{
+  "status": "PASS within source-backed nominal envelopes; physical sample and assembly process validation remain required",
+  "coordinate_system": "fixed layout frame, x right, y up, main PCB top z=0; KiCad conversion x=origin.x+x, y=origin.y-y",
+  "origin_kicad": [
+    160.75,
+    196.5
+  ],
+  "pcb_bounds": [
+    0.4,
+    18.75,
+    98.1,
+    77.25
+  ],
+  "native_step_note": "Board-only STEP omits outer copper/mask. Native outline/hole solids are normalized to the nominal 1.6 mm full stack, as in the battery-floor proof.",
+  "pcb_outer_corner_radius": 1.5,
+  "pcb_stack": {
+    "main": [
+      -1.6,
+      0
+    ],
+    "baseplate": [
+      -3.2,
+      -1.6
+    ],
+    "module": [
+      -1.55,
+      0.05
+    ],
+    "support_film": [
+      -1.6,
+      -1.55
+    ]
+  },
+  "keys": [
+    {
+      "name": "t4",
+      "reference": "S4",
+      "center": [
+        68.05,
+        61.75
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ],
+      "shoulder_mm": [
+        15,
+        15
+      ],
+      "shoulder_z": [
+        2.2,
+        3
+      ],
+      "body_bounds": [
+        61.15,
+        54.85,
+        0,
+        74.95,
+        68.65,
+        5
+      ],
+      "peg_bottom_z": -2.2,
+      "pin_bottom_z": -3,
+      "cap_rest_z": [
+        7,
+        10.969114
+      ],
+      "travel": 3,
+      "cap_swept_bounds": [
+        59.8,
+        48.5,
+        4.0,
+        76.3,
+        75.0,
+        10.969114
+      ]
+    },
+    {
+      "name": "t5",
+      "reference": "S9",
+      "center": [
+        87.1,
+        66.75
+      ],
+      "cap_mm": [
+        17.5,
+        16.5
+      ],
+      "shoulder_mm": [
+        15,
+        15
+      ],
+      "shoulder_z": [
+        2.2,
+        3
+      ],
+      "body_bounds": [
+        80.19999999999999,
+        59.85,
+        0,
+        94.0,
+        73.65,
+        5
+      ],
+      "peg_bottom_z": -2.2,
+      "pin_bottom_z": -3,
+      "cap_rest_z": [
+        7,
+        10.969114
+      ],
+      "travel": 3,
+      "cap_swept_bounds": [
+        78.35,
+        58.5,
+        4.0,
+        95.85,
+        75.0,
+        10.969114
+      ]
+    },
+    {
+      "name": "t1",
+      "reference": "S1",
+      "center": [
+        10.9,
+        61.75
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ],
+      "shoulder_mm": [
+        15,
+        15
+      ],
+      "shoulder_z": [
+        2.2,
+        3
+      ],
+      "body_bounds": [
+        4.0,
+        54.85,
+        0,
+        17.8,
+        68.65,
+        5
+      ],
+      "peg_bottom_z": -2.2,
+      "pin_bottom_z": -3,
+      "cap_rest_z": [
+        7,
+        10.969114
+      ],
+      "travel": 3,
+      "cap_swept_bounds": [
+        2.65,
+        48.5,
+        4.0,
+        19.15,
+        75.0,
+        10.969114
+      ]
+    },
+    {
+      "name": "b2",
+      "reference": "S6",
+      "center": [
+        29.95,
+        34.25
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ],
+      "shoulder_mm": [
+        15,
+        15
+      ],
+      "shoulder_z": [
+        2.2,
+        3
+      ],
+      "body_bounds": [
+        23.049999999999997,
+        27.35,
+        0,
+        36.85,
+        41.15,
+        5
+      ],
+      "peg_bottom_z": -2.2,
+      "pin_bottom_z": -3,
+      "cap_rest_z": [
+        7,
+        10.969114
+      ],
+      "travel": 3,
+      "cap_swept_bounds": [
+        21.7,
+        21.0,
+        4.0,
+        38.2,
+        47.5,
+        10.969114
+      ]
+    },
+    {
+      "name": "b5",
+      "reference": "S10",
+      "center": [
+        87.1,
+        29.25
+      ],
+      "cap_mm": [
+        17.5,
+        16.5
+      ],
+      "shoulder_mm": [
+        15,
+        15
+      ],
+      "shoulder_z": [
+        2.2,
+        3
+      ],
+      "body_bounds": [
+        80.19999999999999,
+        22.35,
+        0,
+        94.0,
+        36.15,
+        5
+      ],
+      "peg_bottom_z": -2.2,
+      "pin_bottom_z": -3,
+      "cap_rest_z": [
+        7,
+        10.969114
+      ],
+      "travel": 3,
+      "cap_swept_bounds": [
+        78.35,
+        21.0,
+        4.0,
+        95.85,
+        37.5,
+        10.969114
+      ]
+    },
+    {
+      "name": "t2",
+      "reference": "S2",
+      "center": [
+        29.95,
+        61.75
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ],
+      "shoulder_mm": [
+        15,
+        15
+      ],
+      "shoulder_z": [
+        2.2,
+        3
+      ],
+      "body_bounds": [
+        23.049999999999997,
+        54.85,
+        0,
+        36.85,
+        68.65,
+        5
+      ],
+      "peg_bottom_z": -2.2,
+      "pin_bottom_z": -3,
+      "cap_rest_z": [
+        7,
+        10.969114
+      ],
+      "travel": 3,
+      "cap_swept_bounds": [
+        21.7,
+        48.5,
+        4.0,
+        38.2,
+        75.0,
+        10.969114
+      ]
+    },
+    {
+      "name": "b4",
+      "reference": "S8",
+      "center": [
+        68.05,
+        34.25
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ],
+      "shoulder_mm": [
+        15,
+        15
+      ],
+      "shoulder_z": [
+        2.2,
+        3
+      ],
+      "body_bounds": [
+        61.15,
+        27.35,
+        0,
+        74.95,
+        41.15,
+        5
+      ],
+      "peg_bottom_z": -2.2,
+      "pin_bottom_z": -3,
+      "cap_rest_z": [
+        7,
+        10.969114
+      ],
+      "travel": 3,
+      "cap_swept_bounds": [
+        59.8,
+        21.0,
+        4.0,
+        76.3,
+        47.5,
+        10.969114
+      ]
+    },
+    {
+      "name": "t3",
+      "reference": "S3",
+      "center": [
+        49.0,
+        61.75
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ],
+      "shoulder_mm": [
+        15,
+        15
+      ],
+      "shoulder_z": [
+        2.2,
+        3
+      ],
+      "body_bounds": [
+        42.1,
+        54.85,
+        0,
+        55.9,
+        68.65,
+        5
+      ],
+      "peg_bottom_z": -2.2,
+      "pin_bottom_z": -3,
+      "cap_rest_z": [
+        7,
+        10.969114
+      ],
+      "travel": 3,
+      "cap_swept_bounds": [
+        40.75,
+        48.5,
+        4.0,
+        57.25,
+        75.0,
+        10.969114
+      ]
+    },
+    {
+      "name": "b3",
+      "reference": "S7",
+      "center": [
+        49.0,
+        34.25
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ],
+      "shoulder_mm": [
+        15,
+        15
+      ],
+      "shoulder_z": [
+        2.2,
+        3
+      ],
+      "body_bounds": [
+        42.1,
+        27.35,
+        0,
+        55.9,
+        41.15,
+        5
+      ],
+      "peg_bottom_z": -2.2,
+      "pin_bottom_z": -3,
+      "cap_rest_z": [
+        7,
+        10.969114
+      ],
+      "travel": 3,
+      "cap_swept_bounds": [
+        40.75,
+        21.0,
+        4.0,
+        57.25,
+        47.5,
+        10.969114
+      ]
+    },
+    {
+      "name": "b1",
+      "reference": "S5",
+      "center": [
+        10.9,
+        34.25
+      ],
+      "cap_mm": [
+        16.5,
+        26.5
+      ],
+      "shoulder_mm": [
+        15,
+        15
+      ],
+      "shoulder_z": [
+        2.2,
+        3
+      ],
+      "body_bounds": [
+        4.0,
+        27.35,
+        0,
+        17.8,
+        41.15,
+        5
+      ],
+      "peg_bottom_z": -2.2,
+      "pin_bottom_z": -3,
+      "cap_rest_z": [
+        7,
+        10.969114
+      ],
+      "travel": 3,
+      "cap_swept_bounds": [
+        2.65,
+        21.0,
+        4.0,
+        19.15,
+        47.5,
+        10.969114
+      ]
+    }
+  ],
+  "pcb_voids": {
+    "main_battery_well": [
+      6.45,
+      42.45,
+      64.55,
+      53.55
+    ],
+    "battery_well_corner_chamfer": 0.5,
+    "main_controller_notch": [
+      76.5,
+      38.4,
+      98.6,
+      56.6
+    ],
+    "controller_notch_radius": 0.5,
+    "baseplate_battery_wire_access": [
+      [
+        81.35,
+        36.6,
+        83.6,
+        49.65
+      ],
+      [
+        74.1,
+        36.6,
+        83.6,
+        38.8
+      ]
+    ]
+  },
+  "mounts": [
+    {
+      "x": 20.425,
+      "y": 72.5
+    },
+    {
+      "x": 58.525,
+      "y": 72.5
+    },
+    {
+      "x": 20.425,
+      "y": 23.5
+    },
+    {
+      "x": 58.525,
+      "y": 23.5
+    }
+  ],
+  "fasteners": {
+    "count": 4,
+    "screw": "M2 x 5 mm low head",
+    "head_diameter_max": 3.8,
+    "head_height_max": 1.6,
+    "head_z": [
+      0,
+      1.6
+    ],
+    "nut_across_flats": 4,
+    "nut_height": 1.6,
+    "nut_z": [
+      -4.8,
+      -3.2
+    ],
+    "thread_end_z": -5
+  },
+  "components": {
+    "controller_pcb": [
+      77.0,
+      38.6,
+      -1.55,
+      98.0,
+      56.4,
+      0.05
+    ],
+    "controller_solder": [
+      79.48,
+      37.0,
+      0.0,
+      95.52,
+      58.0,
+      0.8
+    ],
+    "controller_usb": [
+      92.13872,
+      43.0064,
+      0.05,
+      99.48872,
+      52.0064,
+      3.25
+    ],
+    "controller_reset": [
+      94.77572,
+      52.4214,
+      0.05,
+      97.37572,
+      54.0214,
+      0.58
+    ],
+    "controller_microphone": [
+      76.82572,
+      41.0294,
+      0.05,
+      79.87472,
+      44.6844,
+      0.99
+    ],
+    "controller_antenna": [
+      77.297599,
+      47.704725,
+      0.05,
+      78.897599,
+      50.904725,
+      1.35
+    ],
+    "controller_radio": [
+      81.73072,
+      43.2614,
+      0.05,
+      88.89072,
+      50.4214,
+      1.05
+    ],
+    "controller_imu": [
+      87.59072,
+      50.8084,
+      0.05,
+      90.59072,
+      53.3284,
+      1.05
+    ],
+    "support_film": [
+      77.0,
+      38.6,
+      -1.6,
+      98.0,
+      56.4,
+      -1.55
+    ],
+    "battery_wire": [
+      74.9,
+      37.4,
+      -2.25,
+      82.76702,
+      48.80232,
+      -1.55
+    ],
+    "battery_leads": [
+      64.037085,
+      46.85,
+      0.268976,
+      65.262915,
+      49.15,
+      1.831024
+    ],
+    "battery": [
+      6.75,
+      42.75,
+      -1.4,
+      64.25,
+      53.25,
+      2.1
+    ],
+    "power": [
+      0.62,
+      44.15,
+      -0.5,
+      5.62,
+      51.85,
+      1.5
+    ],
+    "connector": [
+      68.9,
+      46.0,
+      0.0,
+      73.85,
+      50.0,
+      2.96
+    ],
+    "connector_mated_allowance": [
+      65.05,
+      45.0,
+      0.0,
+      74.15,
+      51.0,
+      3.0
+    ],
+    "H4_screw": [
+      56.625,
+      21.6,
+      -5.0,
+      60.425,
+      25.4,
+      1.6
+    ],
+    "H4_nut": [
+      56.215599,
+      21.5,
+      -4.8,
+      60.834401,
+      25.5,
+      -3.2
+    ],
+    "H2_screw": [
+      56.625,
+      70.6,
+      -5.0,
+      60.425,
+      74.4,
+      1.6
+    ],
+    "H2_nut": [
+      56.215599,
+      70.5,
+      -4.8,
+      60.834401,
+      74.5,
+      -3.2
+    ],
+    "H1_screw": [
+      18.525,
+      70.6,
+      -5.0,
+      22.325,
+      74.4,
+      1.6
+    ],
+    "H1_nut": [
+      18.115599,
+      70.5,
+      -4.8,
+      22.734401,
+      74.5,
+      -3.2
+    ],
+    "H3_screw": [
+      18.525,
+      21.6,
+      -5.0,
+      22.325,
+      25.4,
+      1.6
+    ],
+    "H3_nut": [
+      18.115599,
+      21.5,
+      -4.8,
+      22.734401,
+      25.5,
+      -3.2
+    ]
+  },
+  "operating_keepouts": {
+    "rf": [
+      74.297599,
+      44.704725,
+      -5.0,
+      81.897599,
+      53.904725,
+      10.0
+    ],
+    "reset_2mm_probe": [
+      95.07572,
+      52.2214,
+      0.58,
+      97.07572,
+      54.2214,
+      12.58
+    ],
+    "usb_reference_plug": [
+      99.48872,
+      41.5,
+      -1.0,
+      114.48872,
+      53.5,
+      6.0
+    ],
+    "power_access": [
+      -7.6,
+      42.65,
+      0,
+      3.75,
+      53.35,
+      3
+    ],
+    "power_actuator_motion_world_y": [
+      -1.5,
+      0
+    ]
+  },
+  "sources": {
+    "xiao_docs": "https://wiki.seeedstudio.com/XIAO_BLE/",
+    "antenna": "https://datasheet.lcsc.com/datasheet/pdf/b5dbf9d22ca92e360a16bb97f35d6538.pdf?productCode=C2916136",
+    "module_pcb_sha256": "5a27d0975005abeab356ee8355f3df62d75c01b4f50fe582eaa6448aec16d870",
+    "module_schematic_sha256": "8ae3fba8adbd66d4a45bcca87dce64c02176d6338a9f0c6333f2404944cc2185"
+  },
+  "board_sha256": {
+    "macropad.kicad_pcb": "b5835463221d8525efa61108f7b515dda55ed88f1173cd4ecbde772420e0211e",
+    "baseplate.kicad_pcb": "9a5dfbe246e1594f2ae29623d27f83992adefbb043ced118904aebacd64061b4"
+  },
+  "design_sha256": {
+    "config.yaml": "b3983732214046a4963370156ed37bf93c693dbc9e1963508bacfc9764b84cd9",
+    "assembly.json": "493fecd11afb2aa6c70b911b1afa8b885e604d71655ff675b9fad8745d0da80f",
+    "battery.json": "07488e0e6facac52189f031d38ef9285c43a445e1c44efd91d72228b0e068775"
+  },
+  "minimum_clearances": {
+    "module_to_native_host": 0.2,
+    "solder_to_switch_shoulder": 0.85,
+    "antenna_rf_to_switch": 0.345275,
+    "antenna_rf_to_connector": 0.447599,
+    "reset_probe_to_usb": 0.215,
+    "actuator_inside_left_border": 0.22
+  },
+  "component_models": {
+    "S4": {
+      "center": [
+        68.05,
+        61.75
+      ],
+      "rotation": 90.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    "S9": {
+      "center": [
+        87.1,
+        66.75
+      ],
+      "rotation": 0.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_1u_reference.wrl"
+      ]
+    },
+    "S1": {
+      "center": [
+        10.9,
+        61.75
+      ],
+      "rotation": 90.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    "H4": {
+      "center": [
+        58.525,
+        23.5
+      ],
+      "rotation": 0.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/m2_low_head_reference.wrl"
+      ]
+    },
+    "PWR1": {
+      "center": [
+        3.75,
+        48.0
+      ],
+      "rotation": -90.0,
+      "models": [
+        "${KICAD10_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPDT_PCM12.step"
+      ]
+    },
+    "S6": {
+      "center": [
+        29.95,
+        34.25
+      ],
+      "rotation": 90.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    "H2": {
+      "center": [
+        58.525,
+        72.5
+      ],
+      "rotation": 0.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/m2_low_head_reference.wrl"
+      ]
+    },
+    "S10": {
+      "center": [
+        87.1,
+        29.25
+      ],
+      "rotation": 0.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_1u_reference.wrl"
+      ]
+    },
+    "S2": {
+      "center": [
+        29.95,
+        61.75
+      ],
+      "rotation": 90.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    "J1": {
+      "center": [
+        71.375,
+        48.0
+      ],
+      "rotation": -90.0,
+      "models": [
+        "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal.step",
+        "${KIPRJMOD}/../../design/models/jst_sh_plug_allowance.wrl"
+      ]
+    },
+    "H1": {
+      "center": [
+        20.425,
+        72.5
+      ],
+      "rotation": 0.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/m2_low_head_reference.wrl"
+      ]
+    },
+    "S8": {
+      "center": [
+        68.05,
+        34.25
+      ],
+      "rotation": 90.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    "H3": {
+      "center": [
+        20.425,
+        23.5
+      ],
+      "rotation": 0.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/m2_low_head_reference.wrl"
+      ]
+    },
+    "MCU1": {
+      "center": [
+        87.5,
+        47.5
+      ],
+      "rotation": 0.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/xiao_plus_reference.wrl",
+        "${KIPRJMOD}/../../design/models/xiao_battery_wire.wrl",
+        "${KIPRJMOD}/../../design/models/module_support_film.wrl",
+        "${KIPRJMOD}/../../design/models/baseplate_native.wrl"
+      ]
+    },
+    "S3": {
+      "center": [
+        49.0,
+        61.75
+      ],
+      "rotation": 90.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    "BAT1": {
+      "center": [
+        35.5,
+        48.0
+      ],
+      "rotation": 0.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/battery_301055.wrl"
+      ]
+    },
+    "S7": {
+      "center": [
+        49.0,
+        34.25
+      ],
+      "rotation": 90.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    },
+    "S5": {
+      "center": [
+        10.9,
+        34.25
+      ],
+      "rotation": 90.0,
+      "models": [
+        "${KIPRJMOD}/../../design/models/choc_reference.wrl",
+        "${KIPRJMOD}/../../design/models/mbk_15u.wrl"
+      ]
+    }
+  },
+  "native_model_sources": {
+    "power": {
+      "path": "Button_Switch_SMD.3dshapes/SW_SPDT_PCM12.step",
+      "sha256": "a10ea113b1599b80249c9f289ca60875d1442ab8e7b62a025b047afe6e77cf92"
+    },
+    "connector": {
+      "path": "Connector_JST.3dshapes/JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal.step",
+      "sha256": "c7580ba6320b5978fc3e659ad51a0c3ae8aba7e2d06dfd92fed391446fa3c525"
+    }
+  },
+  "model_sha256": {
+    "choc_reference.wrl": "8444a85723e0627c94cb7e27fa0a3c4bf0cd22aff1aec38429363e15d701ab7c",
+    "baseplate_native.wrl": "cd779e713c9cb53f785ebf2a1a73a2b0db0f38cffde229c7f9d35cb75ed7f764",
+    "xiao_battery_wire.wrl": "5e663e9d232e95ab41ca402f48fdc4622e27776d88e87ff8bee0ddcd836b41ba",
+    "module_support_film.wrl": "43eaa5a4ce0b31bb2f92fde46c1281cab04875cac2fcd0d7f5532f1d4b886d16",
+    "battery_301055.wrl": "d78eb21666f00d4c0932c02630fe9bfdd5233d6579b265c40fb1ac3987f859da",
+    "mbk_15u.wrl": "a4062481fdfc9aaa8c0be3bb4fe13bbb1d436a216869e4448d66e9f096fd41a8",
+    "xiao_plus_reference.wrl": "4bd098a761ab4b10354455fc4a08baa449e5e5c7b19dde86c5cf44d674f4d64d",
+    "m2_low_head_reference.wrl": "78987fe2f7e6356a17358c7c04f3fc0ddf61e12c2ad1cf0461d53db72a2f3b22",
+    "jst_sh_plug_allowance.wrl": "9761a78bf94d917cade5d1c3705da73bc7be948e6f11db595c4f3d4a2c251e58",
+    "mbk_1u_reference.wrl": "7cd8396277a00b3b70db82f36101f0e099fd2629f0589597a41bcdc7ef3cc806"
+  },
+  "minimum_cap_clearances": [
+    {
+      "component": "connector_mated_allowance",
+      "key": "S4",
+      "clearance": 1.0
+    },
+    {
+      "component": "connector_mated_allowance",
+      "key": "S8",
+      "clearance": 1.0
+    },
+    {
+      "component": "connector",
+      "key": "S4",
+      "clearance": 1.04
+    },
+    {
+      "component": "connector",
+      "key": "S8",
+      "clearance": 1.04
+    },
+    {
+      "component": "battery",
+      "key": "S4",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S1",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S6",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S2",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S8",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S3",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S7",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery",
+      "key": "S5",
+      "clearance": 1.9
+    },
+    {
+      "component": "battery_leads",
+      "key": "S4",
+      "clearance": 2.168976
+    },
+    {
+      "component": "battery_leads",
+      "key": "S8",
+      "clearance": 2.168976
+    },
+    {
+      "component": "H4_screw",
+      "key": "S8",
+      "clearance": 2.4
+    }
+  ],
+  "minimum_solder_bridge_to_other_castellation": 0.42,
+  "check_count": 1404,
+  "limitations": [
+    "Choc housing/pin models are nominal drawing references; clip compliance and actual board seating require a hardware trial. Cap mesh is rendering-only. Envelope proof excludes each cap mating to its own switch; cap cavity, stem fit and actual bottom-out must be checked with the purchased hardware.",
+    "XIAO component outlines follow official PCB; microphone and IMU are conservative optional Sense envelopes, not a claim that non-Sense Plus populates them; unmodelled small passives lie within the 21 x 17.8 mm module plan. Component heights and 1.6 mm module PCB thickness require sample confirmation.",
+    "Coplanar module requires 0.05 mm insulating support film with BAT wire access, controlled hand solder bridges, and a measured module/cutout fit. This is not a supplier-qualified mounting process.",
+    "JST mating plug is a conservative reserve with native header and metal tails; exact purchased plug/wire bend must fit it.",
+    "M2 fasteners are dimension references: procure heads no larger than 3.8 x 1.6 mm, 5 mm underhead length, and 4 mm AF x 1.6 mm nuts.",
+    "USB access is a 12 mm wide by 7 mm high reference cable reserve; check chosen cable boot. Case geometry is not evaluated here."
+  ],
+  "fabrication": {
+    "host_edge_copper_minimum": 0.2,
+    "battery_well_copper_clearance": 0.5,
+    "note": "Fabricator must support 0.2 mm copper-to-routed-edge on the controller hand-solder lands. No castellation plating is required on the host; the supplied module has native plated castellations."
+  }
+}

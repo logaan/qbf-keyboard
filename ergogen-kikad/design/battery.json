@@ -19,7 +19,7 @@
   "lead_radius": 0.25,
   "lead_exit_z": 0.4,
   "lead_end": [
-    65.55,
+    65.05,
     48,
     1.7
   ],
@@ -32,10 +32,10 @@
       0.4
     ],
     [
-      65.55,
+      65.05,
       48,
       1.7
     ]
   ],
-  "status": "Stage 1 placement envelope only; exact mated connector, electrical mounting and lead path require KiCad-stage validation."
+  "status": "Board-stage nominal protected-pack envelope; factory lead polarity and physical pack dimensions require verification."
 }

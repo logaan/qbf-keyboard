@@ -78,8 +78,8 @@ outlines:
     - what: rectangle
       operation: subtract
       where:
-        shift: [(76.7 + board_right + 0.5) / 2, controller_y]
-      size: [board_right + 0.5 - 76.7, 18]
+        shift: [(76.5 + board_right + 0.5) / 2, controller_y]
+      size: [board_right + 0.5 - 76.5, 18.2]
       corner: 0.5
 
 pcbs:
