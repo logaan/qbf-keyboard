@@ -22,6 +22,9 @@ def rail(upper):
     shape = box(0, y, 0, W, 9, 4)
     hole_y = GEOMETRY['hole_y'][1 if upper else 0]
     for x in GEOMETRY['hole_x']:
+        tab_y = hole_y - 3 if upper else 5.5
+        tab_end = y + 1 if upper else hole_y + 3
+        shape = shape.fuse(box(x - 3, tab_y, 0, 6, tab_end - tab_y, 4))
         shape = shape.fuse(cylinder(x, hole_y, 4, 1, 1.4))
     outer_y = H + 2.5 if upper else -2.5
     for x in (6, W - 6):

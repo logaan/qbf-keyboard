@@ -24,7 +24,7 @@ def point(xy):
 
 
 def mm_point(vector):
-    return (round(pcb.ToMM(vector.x), 2), round(pcb.ToMM(vector.y), 2))
+    return (round(pcb.ToMM(vector.x), 4), round(pcb.ToMM(vector.y), 4))
 
 
 def point_to_segment_distance(position, start, end):
@@ -226,6 +226,10 @@ def check_layout(board, output):
         raise RuntimeError('The main rows must have a 1 mm cap gap')
     if any(abs(right - left - 19.05) > 0.001 for left, right in zip(xs, xs[1:])):
         raise RuntimeError('Expected 19.05 mm horizontal key spacing')
+    expected_mounts = {(round((xs[index] + xs[index + 1]) / 2, 4), y)
+                       for index in (0, 2) for y in ys}
+    if set(mounts) != expected_mounts:
+        raise RuntimeError('Mounts must sit between switch columns 1/2 and 3/4')
     cx, cy = mm_point(controllers[0].GetPosition())
     if abs(cx - xs[-1] - 19.05) > 0.001 or abs(cy - sum(ys) / 2) > 0.001:
         raise RuntimeError('Controller must be centered in the next column to the right')

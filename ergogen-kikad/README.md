@@ -1,13 +1,13 @@
 # QBF ten-key macro pad
 
-Ten direct-wired Choc v1 switches for a Seeed Studio XIAO nRF52840 running ZMK. The original eight portrait 1.5U caps are 16.5 × 26.5 mm, with 19.05 mm horizontal spacing and 27.5 mm row pitch for a 1 mm cap gap. A fifth column contains the controller with USB facing right and one portrait 1U key above and below it. The 1U caps are 16.5 × 17.5 mm ([MBK dimensions](https://shop.dailycraft.jp/en/products/keycaps_mbk)); their outer edges align with the original rows, leaving 0.6 mm to the controller. The PCB and base plate measure 95.95 × 60.5 mm.
+Ten direct-wired Choc v1 switches for a Seeed Studio XIAO nRF52840 running ZMK. The original eight portrait 1.5U caps are 16.5 × 26.5 mm, with 19.05 mm horizontal spacing and 27.5 mm row pitch for a 1 mm cap gap. A fifth column contains the controller with USB facing right and one portrait 1U key above and below it. The 1U caps are 16.5 × 17.5 mm ([MBK dimensions](https://shop.dailycraft.jp/en/products/keycaps_mbk)); their outer edges align with the original rows, leaving 0.6 mm to the controller. The PCB and base plate measure 95.95 × 55 mm.
 
 ## Files
 
 - `design/config.yaml` — Ergogen layout, board outline, switch nets, and controller position.
 - `design/footprints/choc_v1_15u_portrait.js` — rotated Choc v1 switch footprint with parameterized 1U/1.5U cap outlines.
 - `design/footprints/xiao_nrf52840.js` — XIAO footprint for two 1×7, 2.54 mm socket strips; USB end points toward the right edge.
-- `design/footprints/m2_mount.js` — four matching 2.2 mm M2 fastening holes, two near each side edge, in the main PCB and base plate.
+- `design/footprints/m2_mount.js` — four matching 2.2 mm M2 fastening holes between columns 1/2 and 3/4, in the main PCB and base plate.
 - `generated/pcbs/macropad.kicad_pcb` — generated KiCad PCB with routed signals and filled GND copper on both sides.
 - `generated/pcbs/baseplate.kicad_pcb` — separate, circuit-free FR4 bottom plate with cutouts for every through-hole lead and locating pin.
 - `../scripts/route_board.py` — routing, ground fills, base plate, and layout checks.
@@ -32,7 +32,7 @@ The leg facing the center of the board connects to the labeled GPIO; the outer l
 
 ## Base plate and MagSafe ring
 
-The bottom plate follows [Horizon's circuit-free plate approach](https://github.com/skarrmann/horizon#pcbs): it shares the main board outline and has non-plated holes for the ten switches, XIAO socket pins, and four M2 fasteners. The switch lead openings are 2.8 mm to clear socket bodies and solder fillets; XIAO pin openings are 2.0 mm. The four M2 holes are at local board coordinates (4.0, 2.75), (91.95, 2.75), (4.0, 57.75), and (91.95, 57.75) mm, measured from the lower-left board corner. Their vertical spacing is 55 mm. They can anchor a neck strap or the optional printed bumpers.
+The bottom plate follows [Horizon's circuit-free plate approach](https://github.com/skarrmann/horizon#pcbs): it shares the main board outline and has non-plated holes for the ten switches, XIAO socket pins, and four M2 fasteners. The switch lead openings are 2.8 mm to clear socket bodies and solder fillets; XIAO pin openings are 2.0 mm. The four M2 holes are at local board coordinates (18.275, 13.75), (56.375, 13.75), (18.275, 41.25), and (56.375, 41.25) mm, measured from the lower-left board corner. Their vertical spacing is 27.5 mm. They can anchor a neck strap or the optional printed bumpers.
 
 The **outside face** of the base plate has four short alignment ticks on `B.SilkS` at the 23 mm radius. Center a 46 mm inner / 56 mm outer diameter MagSafe-compatible adhesive metal ring on those ticks. The ring may overlap clearance holes; check the purchased ring, solder joints, and adhesion before applying it. The ring is for magnetic attachment; the keyboard has no wireless charging circuit. The optional bumpers cover strips at the plate edges and can be removed for direct magnetic mounting.
 

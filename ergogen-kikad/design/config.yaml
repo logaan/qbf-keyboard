@@ -14,7 +14,7 @@ units:
   extra_cap_height: 17.5
   extra_offset: row_pitch / 2 + (cap_height - extra_cap_height) / 2
   board_width: controller_x + 10.5 + 0.5 + 8.75
-  board_height: 60.5
+  board_height: row_pitch + cap_height + 1
 
 points:
   zones:
@@ -139,19 +139,19 @@ pcbs:
         what: m2_mount
         where:
           ref: pad_c0_bottom
-          shift: [-4.75, controller_y + 27.5]
+          shift: [column_pitch / 2, row_pitch]
       upper_right_mount:
         what: m2_mount
         where:
           ref: pad_c0_bottom
-          shift: [board_width - 12.75, controller_y + 27.5]
+          shift: [2.5 * column_pitch, row_pitch]
       lower_left_mount:
         what: m2_mount
         where:
           ref: pad_c0_bottom
-          shift: [-4.75, controller_y - 27.5]
+          shift: [column_pitch / 2, 0]
       lower_right_mount:
         what: m2_mount
         where:
           ref: pad_c0_bottom
-          shift: [board_width - 12.75, controller_y - 27.5]
+          shift: [2.5 * column_pitch, 0]
