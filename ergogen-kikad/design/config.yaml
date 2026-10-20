@@ -5,7 +5,16 @@ meta:
 
 units:
   column_pitch: 19.05
-  row_pitch: 34
+  cap_height: 26.5
+  row_gap: 1
+  row_pitch: cap_height + row_gap
+  controller_x: 4 * column_pitch
+  controller_y: row_pitch / 2
+  controller_height: 17.8
+  extra_cap_height: 17.5
+  extra_offset: controller_height / 2 + row_gap + extra_cap_height / 2
+  board_width: controller_x + 10.5 + 0.5 + 8.75
+  board_height: 60.5
 
 points:
   zones:
@@ -35,14 +44,28 @@ points:
       rows:
         bottom:
         top:
+    extra:
+      key:
+        padding: 2 * extra_offset
+      anchor:
+        ref: pad_c0_bottom
+        shift: [controller_x, controller_y - extra_offset]
+      columns:
+        c4:
+          rows:
+            bottom: {net: D1}
+            top: {net: D0}
+      rows:
+        bottom:
+        top:
 
 outlines:
   board:
     - what: rectangle
       where:
         ref: pad_c0_bottom
-        shift: [28.575, 17]
-      size: [73.65, 60.5]
+        shift: [board_width / 2 - 8.75, controller_y]
+      size: [board_width, board_height]
       corner: 1.5
 
 pcbs:
@@ -53,32 +76,56 @@ pcbs:
     footprints:
       top_switches:
         what: choc_v1_15u_portrait
-        where: /_top$/
+        where: /^pad_.*_top$/
         adjust:
           rotate: 90
         params:
           from: GND
           to: '{{net}}'
           label: '{{net}}'
-          label_offset: 14.5
+          label_offset: 11
       bottom_switches:
         what: choc_v1_15u_portrait
-        where: /_bottom$/
+        where: /^pad_.*_bottom$/
         adjust:
           rotate: 90
         params:
           from: '{{net}}'
           to: GND
           label: '{{net}}'
-          label_offset: -14.5
+          label_offset: -11
+      extra_top_switch:
+        what: choc_v1_15u_portrait
+        where: extra_c4_top
+        adjust:
+          rotate: 90
+        params:
+          from: GND
+          to: '{{net}}'
+          label: '{{net}}'
+          label_offset: 7
+          cap_length: extra_cap_height
+      extra_bottom_switch:
+        what: choc_v1_15u_portrait
+        where: extra_c4_bottom
+        adjust:
+          rotate: 90
+        params:
+          from: '{{net}}'
+          to: GND
+          label: '{{net}}'
+          label_offset: -7
+          cap_length: extra_cap_height
       controller:
         what: xiao_nrf52840
         where:
           ref: pad_c0_bottom
-          shift: [55, 17]
+          shift: [controller_x, controller_y]
         adjust:
           rotate: -90
         params:
+          D0: D0
+          D1: D1
           D3: D3
           D4: D4
           D5: D5
@@ -92,19 +139,19 @@ pcbs:
         what: m2_mount
         where:
           ref: pad_c0_bottom
-          shift: [-4.75, 44.5]
+          shift: [-4.75, controller_y + 27.5]
       upper_right_mount:
         what: m2_mount
         where:
           ref: pad_c0_bottom
-          shift: [61.9, 44.5]
+          shift: [board_width - 12.75, controller_y + 27.5]
       lower_left_mount:
         what: m2_mount
         where:
           ref: pad_c0_bottom
-          shift: [-4.75, -10.5]
+          shift: [-4.75, controller_y - 27.5]
       lower_right_mount:
         what: m2_mount
         where:
           ref: pad_c0_bottom
-          shift: [61.9, -10.5]
+          shift: [board_width - 12.75, controller_y - 27.5]

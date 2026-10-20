@@ -1,8 +1,6 @@
-// Seeed Studio XIAO nRF52840 mounted on two 1x7 2.54 mm socket strips.
-// USB connector is at the top; view is from the PCB component side.
 const left = ['D0', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6'];
 const right = ['5V', 'GND', '3V3', 'D10', 'D9', 'D8', 'D7'];
-const wired = ['D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10', 'GND'];
+const wired = ['D0', 'D1', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10', 'GND'];
 const nets = Object.fromEntries(wired.map(name => [name, { type: 'net', value: name }]));
 
 module.exports = {

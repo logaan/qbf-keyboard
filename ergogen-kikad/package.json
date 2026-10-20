@@ -2,11 +2,12 @@
   "name": "qbf-ergogen",
   "version": "1.0.0",
   "private": true,
-  "description": "4x2 direct-wired Choc v1 macro pad for Seeed XIAO nRF52840 and ZMK",
+  "description": "10-key direct-wired Choc v1 macro pad for Seeed XIAO nRF52840 and ZMK",
   "scripts": {
-    "generate": "npm run layout && npm run route",
+    "generate": "sh ../scripts/generate.sh",
     "layout": "ergogen design --output generated",
-    "route": "sh scripts/route.sh"
+    "route": "sh ../scripts/route.sh",
+    "check": "sh ../scripts/check.sh"
   },
   "devDependencies": {
     "ergogen": "4.2.1"
