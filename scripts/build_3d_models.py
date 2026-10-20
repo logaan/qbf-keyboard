@@ -91,15 +91,20 @@ def main():
     manifest['nice_view_reference'] = write_model('nice_view_reference', lcd)
     socket = box(-17.97, -6.35, 0, 2.54, 12.7, 6.5)
     manifest['display_socket'] = write_model('display_socket', [mesh_shape(socket, black)])
-    cell = box(-28.75, -5.25, 0.2, 57.5, 10.5, 3.5)
+    spec = json.loads((ROOT / 'ergogen-kikad/design/battery.json').read_text())
+    length, width, depth = spec['length'], spec['width'], spec['thickness']
+    cell = box(-length / 2, -width / 2, spec['bottom_z'], length, width, depth)
     try:
         cell = cell.makeFillet(0.3, cell.Edges)
     except Part.OCCError:
         pass
     battery = [mesh_shape(cell, (0.73, 0.75, 0.77)),
-               mesh_shape(box(25.75, -5.25, 0.2, 3, 10.5, 3.5), (0.83, 0.61, 0.16))]
+               mesh_shape(box(length / 2 - 3, -width / 2, spec['bottom_z'], 3, width, depth), (0.83, 0.61, 0.16))]
     for y, color in [(-0.9, (0.72, 0.08, 0.06)), (0.9, black)]:
-        wire = Part.makeCylinder(0.3, 1.75, App.Vector(28.75, y, 1.7), App.Vector(1, 0, 0))
+        start = App.Vector(length / 2, y, spec['lead_exit_z'])
+        finish = App.Vector(spec['lead_end'][0] - spec['center'][0], y, spec['lead_end'][2])
+        direction = finish - start
+        wire = Part.makeCylinder(spec['lead_radius'], direction.Length, start, direction)
         battery.append(mesh_shape(wire, color))
     manifest['battery_301055'] = write_model('battery_301055', battery)
     plug = box(-2.9, -12.25, 0.2, 5.8, 6, 4.3)

@@ -1,0 +1,27 @@
+{
+  "manufacturer": "Existing protected-pack envelope; verify supplied pack",
+  "model": "301055",
+  "source": "ergogen-kikad/design/models/README.md",
+  "length": 57.5,
+  "width": 10.5,
+  "thickness": 3.5,
+  "capacity_mah": 220,
+  "charge_voltage": 4.2,
+  "protected": true,
+  "bottom_z": -1.4,
+  "adhesive": 0.2,
+  "center": [
+    30.4,
+    27.5
+  ],
+  "well_length": 58.1,
+  "well_width": 11.1,
+  "lead_radius": 0.25,
+  "lead_exit_z": 0.4,
+  "lead_end": [
+    60.15,
+    27.5,
+    1.7
+  ],
+  "connector": "Factory-fitted JST-PH 2-pin, polarity matching board pad 1 BAT_POS and pad 2 GND; confirm ordered lead variant"
+}
