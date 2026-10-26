@@ -1,0 +1,5 @@
+Preserve the reviewed QBF geometry: t1–t5/b1–b5 left to right; main eight centres x=10.9/29.95/49/68.05, y=34.25/61.75 mm with 16.5 × 26.5 mm portrait caps. t5/b5 centres are (87.1,66.75)/(87.1,29.25), with 17.5 × 16.5 mm caps. Geometry is symmetric about y=48 mm. Four M2 holes only, x=20.425/58.525 and y=23.5/72.5 mm. Preserve at least 2.25 mm PCB beyond cap edges.
+
+Retain the protected 301055 envelope, 57.5 × 10.5 × 3.5 mm at (35.5,48), in a main-board-only 58.1 × 11.1 mm well over an intact insulating baseplate. Retain the recessed coplanar XIAO nRF52840 Plus with USB right, support film, designed edge solder lands, accessible onboard reset and antenna keepout. No display or separate reset switch. Keep the side-entry JST-SH and left-facing C&K PCM12 entirely inside the outline; switch battery positive before the controller input.
+
+Regenerate with KiCad closed. Do not bypass assembly source-hash checks. Firmware nets and direct GPIO wiring must agree. Model approximations and nominal checks are not physical validation.

@@ -2,3 +2,11 @@ __pycache__/
 *.pyc
 *.FCBak
 *.FCStd1
+node_modules/
+.npm-cache/
+.tools/
+.DS_Store
+*.kicad_prl
+~*.lck
+*.log
+

@@ -19,11 +19,9 @@ check_locks() {
 check_locks
 stage=$(mktemp -d "${TMPDIR:-/tmp}/qbf-generate.XXXXXX")
 trap 'rm -rf "$stage"' EXIT HUP INT TERM
+"$repo_root/scripts/setup.sh" --dependencies-only
 cd "$project_dir"
-if [ ! -x node_modules/.bin/ergogen ] || [ package-lock.json -nt node_modules/.package-lock.json ]; then
-    npm ci --allow-git=all --cache "$project_dir/.npm-cache"
-fi
-node_modules/.bin/ergogen design --output "$stage"
+"$repo_root/node_modules/.bin/ergogen" design --output "$stage"
 "$repo_root/scripts/route.sh" --output "$stage"
 for board in macropad baseplate; do
     if [ -f "$pcb_dir/$board.kicad_pro" ]; then

@@ -1,14 +1,9 @@
-1. Commit as you go.
-2. Edit `ergogen-kikad/design/config.yaml` and its footprints; regenerate KiCad boards with `./scripts/generate.sh` while KiCad is closed. The script routes both boards and runs DRC before replacing outputs; previews are native KiCad SVG plots rasterized to PNG.
-3. During the mechanical stage, run `./scripts/generate-mechanical.sh` after board dimensions or mounts change. Keep this regeneration after the earlier Ergogen, KiCad and firmware stages are complete and reviewed.
-4. Build firmware with `./scripts/build-firmware.sh /path/to/zmk-workspace`. Keep the ZMK shield and keymap aligned with switch nets. Do not add code comments.
-5. Key names are t1–t5 and b1–b5, left to right. Keep the main eight switches at x=10.9/29.95/49/68.05 mm and y=34.25/61.75 mm with portrait 1.5U caps (16.5 × 26.5 mm), 19.05 mm column pitch and 27.5 mm row pitch. Use 1U t5/b5 caps (17.5 × 16.5 mm) at x=87.1 mm, y=66.75/29.25 mm so their outer top/bottom edges align with the main rows. Keep key geometry symmetric about y=48 mm.
-6. Keep four M2 holes only: pairs between columns 1/2 and 3/4 at x=20.425/58.525 mm, y=23.5/72.5 mm. Keep at least 2.25 mm of PCB beyond the outer cap edges for future 2 mm case walls and 0.25 mm cap clearance; grow the outline when mounting or solder lands require it.
-7. Keep switches directly wired to GPIO and GND, with no diodes or matrix.
-8. Retain the protected 301055 battery envelope (57.5 × 10.5 × 3.5 mm) at (35.5,48) in a main-PCB-only 58.1 × 11.1 mm well, supported by the intact baseplate with insulating adhesive. Put a side-entry JST-SH connector near the controller. Keep the left-facing C&K PCM12 side power switch beneath the left edge of column one, with the complete switch and actuator inside the PCB outline. Switch battery positive before the XIAO battery input.
-9. Through-hole and surface-mount user soldering are both permitted. Keep switches directly wired to GPIO and GND. Use the Seeed XIAO nRF52840 Plus in column five with USB facing right and its integrated antenna; its intended coplanar recessed mounting requires designed edge solder lands, cutout clearance, support and RF keepout.
-10. Use no display and no separate reset switch; retain access to the XIAO onboard reset. Complete work strictly in sequential stages: Ergogen, then KiCad, then firmware, then mechanical/case last. Do not begin a later stage until the current stage is complete and reviewed. Stage 1 XIAO placement references without electrical mount pads are not manufacturing-ready footprints.
-11. Keep 3D model assignments in `scripts/attach_models.py`; run `./scripts/render-3d.sh` for native KiCad assembled and internal inspection views. Model approximations are listed in `ergogen-kikad/design/models/README.md`.
-12. For bumper-case changes and recurring assembly previews, follow `bumper-case/AGENTS.md`; retain every component except keycaps in the cap-free preview.
+Commit coherent changes as work progresses. Keep TODO.md to one task per line, tagged @agent or @user. Do not add user documentation or code comments; preserve third-party licence and attribution notices.
 
-13. The active case is `modular-case/`; follow its `AGENTS.md`. It provides independent tool-free covers and a removable flat bridge, with no folding. `bumper-case/` and `mechanical/` are historical.
+Work in reviewed stages: Ergogen, KiCad, firmware, mechanical. Do not advance a board to the next stage without user review. Never present placement files, stale routing, provisional adapters or envelope models as fabrication-ready. Review approvals must refer to current source hashes.
+
+Use one root npm installation and KiCad 10 for every active board. Keep the existing QBF geometry unchanged during repository cleanup. The active QBF case is modular-case; bumper-case and mechanical are historical.
+
+The three new modules must share one PCB footprint, approximately half a Pixel 6 Pro. Each needs a display, controller, battery, power switch, reset button and at least four 1.5U keys. Keys, trackpad and display must be on the top face and mirror-symmetric left-to-right as an interaction layout. A directional display may need firmware rotation for handedness. These requirements do not apply to the existing QBF board, which has no display or separate reset.
+
+Keep direct GPIO-to-ground switches without a matrix or diodes. Battery selection, protection, polarity, charging limits, antenna clearance and component stack-up require verification before fabrication. Do not suppress real DRC errors to pass a build.

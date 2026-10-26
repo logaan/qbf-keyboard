@@ -1,0 +1,11 @@
+{
+  "name": "qbf-keyboards",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {"node": ">=20"},
+  "devDependencies": {"ergogen": "4.2.1"},
+  "scripts": {
+    "build": "./scripts/boards.sh build all",
+    "check": "./scripts/boards.sh check all"
+  }
+}

@@ -7,7 +7,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[2]
-ERGOGEN = REPO / 'ergogen-kikad/node_modules/.bin/ergogen'
+ERGOGEN = REPO / 'node_modules/.bin/ergogen'
 
 
 def main():
