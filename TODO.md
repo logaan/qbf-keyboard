@@ -26,3 +26,6 @@
 - [x] @agent Export checked Gerber drill BOM and pin-map review bundles
 - [x] @agent Group the existing QBF board under boards while preserving legacy entry points
 - [ ] @user Review the approximate component models and anime composite perspective
+- [x] @agent Verify the full PCB export and anime-render pipeline
+- [x] @agent Exclude machine-local KiCad state from portable artifact manifests
+- [ ] @agent Verify dependency setup and all checks from a clean checkout

@@ -1,4 +1,3 @@
-// Observe HID input values from the diagnostic keyboard, without grabbing it.
 import Foundation
 import IOKit.hid
 

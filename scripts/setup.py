@@ -6,6 +6,7 @@ import platform
 import shutil
 import subprocess
 import sys
+import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS = ROOT / '.tools'
@@ -18,6 +19,14 @@ def run(command):
     subprocess.run(command, cwd=ROOT, check=True)
 
 if args.install_system:
+    if platform.system() == 'Darwin' and not shutil.which('brew'):
+        if not sys.stdin.isatty() or input('Install Homebrew using its official installer? [y/N] ').lower() != 'y':
+            sys.exit('System setup cancelled; no Homebrew installer was run.')
+        TOOLS.mkdir(exist_ok=True)
+        installer = TOOLS / 'homebrew-install.sh'
+        with urllib.request.urlopen('https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh', timeout=60) as response:
+            installer.write_bytes(response.read())
+        run(['/bin/bash', str(installer)])
     if shutil.which('brew'):
         run(['brew', 'install', 'node', 'python@3.12'])
         run(['brew', 'install', '--cask', 'kicad', 'freecad', 'blender'])
@@ -41,7 +50,20 @@ if not (ROOT / 'node_modules/.bin/ergogen').exists() or not stamp.exists() or st
 venv = TOOLS / 'venv'
 python = venv / 'bin/python'
 if not python.exists():
-    run([sys.executable, '-m', 'venv', str(venv)])
+    interpreter = sys.executable
+    if not (3, 9) <= sys.version_info[:2] <= (3, 12):
+        candidates = [shutil.which('python3.12'), '/usr/bin/python3', '/opt/homebrew/opt/python@3.12/bin/python3.12', '/usr/local/opt/python@3.12/bin/python3.12']
+        interpreter = None
+        for candidate in candidates:
+            if not candidate or not Path(candidate).is_file():
+                continue
+            version = subprocess.check_output([candidate, '-c', 'import sys; print(sys.version_info.major, sys.version_info.minor)'], text=True).split()
+            if (3, 9) <= tuple(map(int, version)) <= (3, 12):
+                interpreter = candidate
+                break
+        if interpreter is None:
+            sys.exit('Python 3.9–3.12 is required for the pinned dependencies. Select system-tool installation in scripts/start.command.')
+    run([interpreter, '-m', 'venv', str(venv)])
 requirements = ROOT / 'scripts/requirements.txt'
 digest = hashlib.sha256(requirements.read_bytes()).hexdigest()
 stamp = TOOLS / 'python.sha256'

@@ -1,22 +1,22 @@
 {
   "status": "PCB fabrication review only; not a manufacturing release",
   "board_sha256": {
-    "module3.kicad_pcb": "69b9acd0ff0555ba8792b021deaa6e5c5991d946aab7a4fd6b2e74c5ad772ac0"
+    "module3.kicad_pcb": "0ee19dc9e25df9b8a6fe4c5f17fb43d6361b21b3369c9c95f0a14ed8da1ae43d"
   },
   "files": {
     "bom.json": "e136c991b96570898e152e1586730b1e7ec3d5916ac0443b6a3f044e80212490",
-    "module3/module3-B_Cu.gbl": "57e452222489a3d09edc251e9c3faa53766844dc4a04e279d1b75c83d81bfc12",
-    "module3/module3-B_Mask.gbs": "dba833e1cf677d55b062cdd33d6aadf5b92c9a18fc7369e88e27cd474474c024",
-    "module3/module3-B_Silkscreen.gbo": "3a684a45b6eeef96010b77f70f89f5eeda90dfb513d457f68443253a4c6f01ca",
-    "module3/module3-Edge_Cuts.gm1": "34e9ce6c2d14999ae1cc437dd64b5d330a68c0cca867dc184915f7afb61cfb8f",
-    "module3/module3-F_Cu.gtl": "39f9024b0645c960809679117c6a6be9ad71b25b6cebc7630cbffab5214a6f37",
-    "module3/module3-F_Mask.gts": "0e29410ee87c288789c7e904078134271a836eb8de792829a80878bf6da029e3",
-    "module3/module3-F_Silkscreen.gto": "579b22a9606d42c6c7ceefff4f27f989c5388441dba84022cf608b1a7b188978",
-    "module3/module3-NPTH-drl_map.svg": "5d5634ae0b8475b1d65916f01ea81bcad936dfac887aed3787e699481511ff0b",
-    "module3/module3-NPTH.drl": "90afc89e0e747e8e932d03e48730d460c72904e11c347cef7909341971fb782b",
-    "module3/module3-PTH-drl_map.svg": "7887a3c572fcd3a0137ba8780405a8b32b4d6af6f47c34a2485d9c166a4321a7",
-    "module3/module3-PTH.drl": "d86fef5d83fbd24d3d01a5b28536723290d852be6b1ff7afddf6686d244c8449",
-    "module3/module3-job.gbrjob": "1f49d71ef42531dd549d6c98ccf815966fe96daea8a54c5922dddba2f7ce8f86",
+    "module3/module3-B_Cu.gbl": "160fabf5552a742b9c5222b7b7b72675268d2d081b917e450b17e9991ec24490",
+    "module3/module3-B_Mask.gbs": "61b55e2f26d4d7ff3d8db1d3e42a37a941dec60b75e7d173b5b2acc102625bfb",
+    "module3/module3-B_Silkscreen.gbo": "ac44a88d4817f84e62ef1a1d5315c5d56816b0806f83db7a0ef6a4eabf31e404",
+    "module3/module3-Edge_Cuts.gm1": "a9a4ed4c9fd260b7a6e0ac680a8065af72fa4ad0e208946b5e79f343355b6504",
+    "module3/module3-F_Cu.gtl": "3700e6a3ab2e0891da12cde153c39a9843302bcca90d0ae65de56bfbc9658cdd",
+    "module3/module3-F_Mask.gts": "eb0d0dd633902d4dd917776c9aaea51589763ffe050f92226b40a3b54bbc913b",
+    "module3/module3-F_Silkscreen.gto": "19f5548143ac2b055b6f4fd1388a0b102dc89bf40aa32c6bdafc5764b74f4bb0",
+    "module3/module3-NPTH-drl_map.svg": "afe5dad94ba95c4c117c8a0bbfa9983e3e60fff3c97368e83793e83749faad7d",
+    "module3/module3-NPTH.drl": "80afbd1c4dbdbaaa3aeea9763282a84bf54571664922f5f749da754484f56721",
+    "module3/module3-PTH-drl_map.svg": "bb07bb8184d5ecbc9a0d9813a24ef16612bdb168c2eae63091b265d02807f722",
+    "module3/module3-PTH.drl": "55506bd6cabb2b161b02ab8323105b431a6fec2a27483547309397b87e97426f",
+    "module3/module3-job.gbrjob": "46f664ccc4c7a3f7910148657c7b76c494c9b0c1494198289ff72c288ae3bf95",
     "pin-map.csv": "5c5560dfe86ad17d8ed0d7187c0223ea8e8c9fe100a6bedae747889fac0674cd"
   },
   "required_reviews": [

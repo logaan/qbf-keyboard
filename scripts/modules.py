@@ -231,7 +231,7 @@ def build(name):
                   'source_sha256': digest(), 'outline': spec['outline'],
                   'key_count': sum(i['kind'] == 'key' for i in interactions(spec, name)),
                   'blockers': ['User PCB review required before fabrication', 'Battery procurement, protection, antenna reservation and mechanical stack unverified'],
-                  'outputs': {str(p.relative_to(stage)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(stage.rglob('*')) if p.is_file() and p.suffix != '.log'}}
+                  'outputs': {str(p.relative_to(stage)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(stage.rglob('*')) if p.is_file() and p.suffix not in ('.log', '.kicad_prl', '.lck')}}
         drc = json.loads((stage / 'drc.json').read_text())
         report['drc'] = {key: len(drc.get(key, [])) for key in ('violations', 'unconnected_items', 'schematic_parity')}
         if name == 'module3':

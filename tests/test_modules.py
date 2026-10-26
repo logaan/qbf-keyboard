@@ -69,6 +69,11 @@ class LayoutTests(unittest.TestCase):
                     modules.build('module1')
             self.assertEqual(marker.read_text(), 'retained')
 
+    def test_generated_manifest_excludes_personal_state(self):
+        for name in self.spec['modules']:
+            report = json.loads((modules.GENERATED / name / 'validation.json').read_text())
+            self.assertTrue(all(Path(path).suffix not in ('.log', '.kicad_prl', '.lck') for path in report['outputs']))
+
     def test_stale_output_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'module1'
