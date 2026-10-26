@@ -28,4 +28,5 @@
 - [ ] @user Review the approximate component models and anime composite perspective
 - [x] @agent Verify the full PCB export and anime-render pipeline
 - [x] @agent Exclude machine-local KiCad state from portable artifact manifests
-- [ ] @agent Verify dependency setup and all checks from a clean checkout
+- [x] @agent Verify dependency setup and all checks from a clean checkout
+- [ ] @user Verify the nice!nano antenna reservation against purchased hardware
