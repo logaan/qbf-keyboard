@@ -1,0 +1,79 @@
+{
+  "status": "generated",
+  "asset": "anime-render/background.png",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in image generation",
+  "generated_source": "/Users/logaan/.codex/generated_images/01a17860-efa6-75f2-b730-eca9267b0a7a/exec-32ea5140-277e-481c-911f-31f2a540941c.png",
+  "output": {
+    "width": 1536,
+    "height": 1024,
+    "aspect_ratio": "3:2",
+    "sha256": "0698e516c044c8a1c4d5d78c4ac2088ab57a0b919aef586453fbc723c2c50859",
+    "postprocessing": "None; copied original PNG unchanged."
+  },
+  "scene": {
+    "path": "anime-render/scene.json",
+    "sha256": "a4403f4b5131d98118f9f7c1aa710796f179cd850637d935d3fccf0a2e33077b"
+  },
+  "camera": {
+    "lens_mm": 40,
+    "sensor_mm": [
+      36,
+      24
+    ],
+    "position_mm": [
+      0,
+      -450,
+      500
+    ],
+    "target_mm": [
+      0,
+      45,
+      0
+    ],
+    "roll_degrees": 0,
+    "requested_resolution": [
+      1920,
+      1280
+    ]
+  },
+  "camera_caveat": "Image-generation camera matching is approximate, not calibrated or pixel-perfect. The exact scene camera projects the specified tablet top beyond the upper frame (approximately y=-260 at 1920x1280). The generation prompt prioritizes fitting the tablet in frame and keeping the notebook and both board footprints unobstructed, so tablet scale, position and perspective differ from exact CAD projection. Composite alignment requires visual review.",
+  "compositing": {
+    "requested_board_centers_pixels_at_1920x1280": [
+      [
+        627,
+        742
+      ],
+      [
+        1293,
+        742
+      ]
+    ],
+    "approximate_board_centers_pixels_at_output": [
+      [
+        501.6,
+        593.6
+      ],
+      [
+        1034.4,
+        593.6
+      ]
+    ],
+    "clearance": "Prompt requested clear wood around each footprint for board height up to 20 mm and cast shadows. No physical calibration or final CAD composite verification performed."
+  },
+  "validation": {
+    "method": "Visual inspection of generated image plus PNG dimensions and SHA-256 verification.",
+    "findings": [
+      "Single exact 3:2 background.",
+      "Closed portrait notebook centered between two broad clear wood areas.",
+      "Landscape tablet behind notebook; visible fox plush on upper right and faceted pen in foreground.",
+      "No keyboards, hands, captions, dimension labels, grids or placeholder outlines visible."
+    ]
+  },
+  "execution": {
+    "tmux_session_present": true,
+    "tmux_session": "/private/tmp/tmux-501/default,17384,0",
+    "committed": false
+  },
+  "prompt": "Use case: illustration-story.\nAsset type: ONE reusable background plate for compositing real CAD keyboard renders later.\nCreate a polished cozy anime study desk illustration in the style of Lofi Girl: soft hand-painted warm evening light, calm cute study atmosphere, subtle delicate line art, tactile softly painted wooden tabletop. Landscape exact 3:2 composition, ideally 1920x1280. No text anywhere.\n\nCamera and layout: approximate a 40 mm full-frame lens with 36x24 mm sensor, camera [0,-450,500] mm looking at [0,45,0], no roll, downward elevation about 45.3 degrees. Desk coordinate system x right, y away from viewer, z up; tabletop z=0, 900x650 mm. This is a relatively elevated oblique view looking down onto the desk, with vertical image centerline aligned to the notebook. Keep the central arrangement within the frame. Image-generation perspective is approximate; prioritize unobstructed board footprints and the notebook placement if exact tablet projection would crop its top.\n\nCRITICAL COMPOSITING NEGATIVE SPACE: Two completely EMPTY flat bare tabletop regions, each 75.2x75.2 mm, at x=-105,y=0 and x=+105,y=0. At 1920x1280 their projected centers are approximately pixel [627,742] and [1293,742]. Leave generous continuous clear wood around each, roughly pixel x=450..800 and x=1120..1470, y=600..900, to allow 20 mm-tall CAD boards and soft cast shadows. They are simply unmarked empty wood, no outlines, no pads, no props, no keyboards, no drawn shadows of absent objects. The two positions sit to either side of the notebook, not behind it.\n\nCentral object: a CLOSED portrait Hobonichi Weeks notebook, 95x188x10 mm, centered at desk [0,5], long axis pointing away from viewer, straight and centered, muted warm cream/sage cloth cover with subtle binding and no printed title or lettering. Notebook center projects around [960,708]. Do not use an open notebook.\nBehind/further away than the notebook and empty keyboard spaces: ONE propped landscape tablet, 280.6x214.9 mm, its lower edge centered at desk [0,155,20], tilted 75 degrees above tabletop. Its bottom is around image [960,383], screen faces viewer. Fit the tablet naturally into the upper central composition; it must not hide notebook or reserved empty tabletop. Tablet shows a muted warm dusk landscape illustration without interface, text or icons. No keyboard attached to tablet.\nA small adorable orange-and-cream fox plushy is visibly seated on the UPPER RIGHT desktop, entirely outside the empty board region, around image x=1560..1730,y=360..540. A recognizable small faceted Kaweco Sport fountain pen is visible close to the FRONT tip of the notebook, around image x=900..1070,y=1060, entirely outside both board footprints. Its cap may be attached; no lettering needed.\nDecorative lamp and a small plant or mug are allowed only at far corners. Leave the center uncluttered. Omit the optional student shoulder/hair so nothing covers the board slots. No hands, no person reaching into the scene.\n\nLighting: large warm soft key light from upper left at desk [-320,-100,550] mm, amber peach highlights, gentle diffuse shadows falling right/back, calm dusky fill, restrained saturation, beautifully nuanced brushwork. Cohesive cozy study ambience. Broad uncluttered wood surface extends through the lower frame. Refined finished illustration, not a diagram or 3D CAD preview.\n\nAbsolute exclusions: NO keyboards, keycaps, mice, trackpads, electronics boards, hands over the reserved spaces, captions, dimension labels, grids, placeholder outlines, marked rectangles, watermarks, logos, readable text, split panels or alternate variants. ONE finished background image."
+}

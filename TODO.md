@@ -9,7 +9,7 @@
 - [x] @agent Resolve module placement DRC and route all three boards
 - [x] @agent Implement the datasheet-mapped TPS43 cable header and pull-ups
 - [x] @agent Cancel new-module firmware implementation as out of PCB-only scope
-- [ ] @agent Add native PCB assembly previews without developing new mechanical cases
+- [x] @agent Add native PCB assembly previews without developing new mechanical cases
 - [x] @agent Reassess the unpatched Ergogen Maker.js dependency advisory
 - [ ] @user Accept trusted-source-only Ergogen use pending an upstream Maker.js security fix
 - [ ] @user Review the shared 75.2 mm module outline and revised 10-key 6-key
@@ -22,6 +22,9 @@
 - [ ] @user Prototype and verify electrical safety fit and handedness
 - [x] @agent Route all three modules with broad filled ground planes and clean DRC
 - [ ] @user Verify the TPS43 cable adapter pin order pitch and contact orientation before fabrication
-- [ ] @agent Define and render a shared 40 mm over-shoulder camera for all modules
-- [ ] @agent Commission the reusable cozy anime desk background through Codex in tmux
-- [ ] @agent Script colour grading and anime composites for module pairs 1+1 1+2 1+3 and 2+3
+- [x] @agent Define and render a shared 40 mm over-shoulder camera for all modules
+- [x] @agent Commission the reusable cozy anime desk background through Codex in tmux
+- [x] @agent Script colour grading and anime composites for module pairs 1+1 1+2 1+3 and 2+3
+- [x] @agent Export checked Gerber drill BOM and pin-map review bundles
+- [ ] @agent Group the existing QBF board under boards while preserving legacy entry points
+- [ ] @user Review the approximate component models and anime composite perspective

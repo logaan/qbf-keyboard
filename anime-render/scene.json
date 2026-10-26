@@ -1,0 +1,12 @@
+{
+  "image": {"width": 1920, "height": 1280},
+  "camera": {"lens_mm": 40, "sensor_width_mm": 36, "sensor_height_mm": 24, "position_mm": [0, -450, 500], "target_mm": [0, 45, 0]},
+  "desk": {"z_mm": 0, "width_mm": 900, "depth_mm": 650},
+  "board": {"size_mm": [75.2, 75.2], "pcb_top_z_mm": 9, "left_center_mm": [-105, 0], "right_center_mm": [105, 0], "rotation_degrees": 0},
+  "notebook": {"part": "Hobonichi Weeks", "size_mm": [95, 188, 10], "center_mm": [0, 5, 0], "orientation": "closed portrait"},
+  "tablet": {"part": "12.9 inch tablet", "size_mm": [280.6, 214.9, 6.4], "bottom_center_mm": [0, 155, 20], "tilt_from_desk_degrees": 75},
+  "light": {"position_mm": [-320, -100, 550], "color": [1, 0.78, 0.57], "energy_watts": 12, "size_mm": 400},
+  "background": "background.png",
+  "pairs": [[1, 1], [1, 2], [1, 3], [2, 3]],
+  "grading": {"saturation": 0.78, "warmth_rgb": [1.08, 1.015, 0.91], "contrast": 0.9, "shadow_opacity": 0.55}
+}

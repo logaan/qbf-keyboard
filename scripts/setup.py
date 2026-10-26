@@ -20,10 +20,10 @@ def run(command):
 if args.install_system:
     if shutil.which('brew'):
         run(['brew', 'install', 'node', 'python@3.12'])
-        run(['brew', 'install', '--cask', 'kicad', 'freecad'])
+        run(['brew', 'install', '--cask', 'kicad', 'freecad', 'blender'])
     elif shutil.which('apt-get'):
         run(['sudo', 'apt-get', 'update'])
-        run(['sudo', 'apt-get', 'install', '-y', 'nodejs', 'npm', 'python3-venv', 'python3-yaml', 'kicad', 'freecad'])
+        run(['sudo', 'apt-get', 'install', '-y', 'nodejs', 'npm', 'python3-venv', 'python3-yaml', 'kicad', 'freecad', 'blender'])
     else:
         sys.exit('No supported package manager found. Install Homebrew on macOS or use an apt-based Linux system, then reopen setup.sh.')
 if not shutil.which('npm') or not shutil.which('node'):

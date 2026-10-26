@@ -1,0 +1,39 @@
+{
+  "status": "PCB fabrication review only; not a manufacturing release",
+  "board_sha256": {
+    "macropad.kicad_pcb": "b5835463221d8525efa61108f7b515dda55ed88f1173cd4ecbde772420e0211e",
+    "baseplate.kicad_pcb": "9a5dfbe246e1594f2ae29623d27f83992adefbb043ced118904aebacd64061b4"
+  },
+  "files": {
+    "baseplate/baseplate-B_Cu.gbl": "6b88a0752226a45102b96cbbc592fd573c84f7773fe435f6dae09a3fabddffc5",
+    "baseplate/baseplate-B_Mask.gbs": "6c5bb691bade7820f93d62a230de5b3ee2576cd8ff9d27ac1fa0b4659e3ea42b",
+    "baseplate/baseplate-B_Silkscreen.gbo": "474df97f6d7752f9b8e499466ce7dd5553c64cc716dfb54cece82ba1beff401a",
+    "baseplate/baseplate-Edge_Cuts.gm1": "729f2ecad93f6ebbc0a5754a1e1a14d2c6f7812ea62845a008fb22ab2375fa63",
+    "baseplate/baseplate-F_Cu.gtl": "5f9661da3545cad63ed347022ec81be6c077b03dc057bcb29bb0302c443b7e33",
+    "baseplate/baseplate-F_Mask.gts": "cd50f370d097417b02576980c6f5943e32984bf822b9ae9a64443d532c71aef1",
+    "baseplate/baseplate-F_Silkscreen.gto": "2e15a7dcd2d0a387e55b47fd65b965952fb6787dd04984648f6f11b2231a444e",
+    "baseplate/baseplate-NPTH-drl_map.svg": "8bcd71ea39fe814cdce5759473af073128fee76d559623c696abe6d00771c67f",
+    "baseplate/baseplate-NPTH.drl": "e12f9d149a9c5d3ac5cc7c8a2fefc102252fc880601970b081887b31c92be219",
+    "baseplate/baseplate-PTH-drl_map.svg": "0ef9cee4d1948da24808e25b74d8dbb737e92ba5fddc112108b977dfe1daf255",
+    "baseplate/baseplate-PTH.drl": "d0a074fd7b3f17d6c47e1d3a19b53e7b5ba429480424803f6e4bbe1525663269",
+    "baseplate/baseplate-job.gbrjob": "a209d555b02e39e1427d00a60cbcf3b6c66d4efff84efe8e6df5e960aa78d09d",
+    "macropad/macropad-B_Cu.gbl": "b62b5b5bf65267d8f1c765b2563d936f54a5ec1ba5384d6ce87780e348e25f76",
+    "macropad/macropad-B_Mask.gbs": "f2ad460d77e4d920591ee4af4a73935ec8deb6f546460cbe777346d193f95274",
+    "macropad/macropad-B_Silkscreen.gbo": "a3ac2b35f5ef5b21667e60964275dcf1afa1c37a6bdf794a44c21a7c83c2b1b7",
+    "macropad/macropad-Edge_Cuts.gm1": "0068b036fe56824ded37b6ecb9e7d782d28e4156385a4e422d1e3172a519cfc5",
+    "macropad/macropad-F_Cu.gtl": "e6e72bf8329188366447d8eaeee93e12f86fba4d2c15518e80dfeef69ac2865a",
+    "macropad/macropad-F_Mask.gts": "ff1b65eebd8828d51d7ee6be5b8c2ea4d1a40280f8e1f802adcfba095cefe650",
+    "macropad/macropad-F_Silkscreen.gto": "152b393b23998d34c01c4a547f4e6d8b3eac3f5f385a87f58deb327e87246433",
+    "macropad/macropad-NPTH-drl_map.svg": "c5e93755c39bcdfc218d524ce2806a52a2cc3c734b32eab21022fdb3a5e1a26d",
+    "macropad/macropad-NPTH.drl": "c6700242e0cce9c2d5bec17b9c649a50ae7c61362da89dff0fa22ddf7131ca62",
+    "macropad/macropad-PTH-drl_map.svg": "7c1876e34970c6ee05b5b022690c6685e76edd3497e4fa273f018d54565c2bc4",
+    "macropad/macropad-PTH.drl": "3cfc62c4293e4c3f7ea78516f29b5dc0dd3d9a83a600127236f5f029ab3ffc79",
+    "macropad/macropad-job.gbrjob": "9363967faaa18c850733544e5097b454957e278125e6610edd1f2c35606dcd0a"
+  },
+  "required_reviews": [
+    "Purchased parts and cable polarity",
+    "Charging and protected battery specification",
+    "Antenna clearance",
+    "Physical assembly stack and component access"
+  ]
+}

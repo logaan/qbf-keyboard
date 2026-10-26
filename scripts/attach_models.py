@@ -66,6 +66,57 @@ def attach_modular_case_models(board, case_dir, origin, cover=False, bridge=Fals
         board.Add(footprint)
 
 
+def module_instances(spec, name):
+    module = spec['modules'][name]
+    instances = []
+    model_root = ROOT / 'ergogen-kikad/design/models'
+
+    def mesh(label, filename, position, rotation=(0, 0, 0), scale=(1, 1, 1), color=None):
+        instances.append({'name': label, 'kind': 'vrml', 'source': str((model_root / filename).relative_to(ROOT)),
+                          'position_mm': position, 'rotation_degrees': rotation, 'scale': scale, 'color': color})
+
+    def box(label, size, position, color, radius=0.3):
+        instances.append({'name': label, 'kind': 'box', 'size_mm': size, 'position_mm': position, 'color': color, 'bevel_mm': radius})
+
+    for row_index, row in enumerate(module['rows']):
+        for column in row['columns']:
+            x, y = (column - 1.5) * spec['pitch'], row['y']
+            label = f'key_r{row_index + 1}_c{column + 1}'
+            mesh(label + '_switch', 'choc_reference.wrl', [x, y, 0], (0, 0, 90))
+            large = row['cap'] == 'portrait_1_5u'
+            mesh(label + '_cap', 'mbk_15u.wrl' if large else 'mbk_1u_reference.wrl', [x, y, 0],
+                 (0, 0, 90 if large else 0), (1, 1, 1) if large else (16.5 / 17.5, 1, 1),
+                 [0.68, 0.79, 0.73] if column in (0, 3) else [0.88, 0.85, 0.74])
+    mesh('controller', 'nice_nano_reference.wrl', [spec['controller']['x'], spec['controller']['y'], -1.6], (180, 0, 0))
+    display_position = [module.get('display_x', 0), module['display_y'], 0]
+    display_rotation = (0, 0, module.get('display_rotation', spec['display']['rotation']) + 90)
+    mesh('display', 'nice_view_reference.wrl', display_position, display_rotation)
+    mesh('display_socket', 'display_socket.wrl', display_position, display_rotation)
+    box('protected_battery', spec['battery']['size'], [spec['battery']['x'], spec['battery']['y'], -5.5], [0.65, 0.67, 0.68])
+    box('battery_insulator', [spec['battery']['size'][0] + 0.4, spec['battery']['size'][1] + 0.4, 0.3], [spec['battery']['x'], spec['battery']['y'], -3.85], [0.75, 0.48, 0.08])
+    box('power_switch', [6.7, 2.8, 1.4], [0, -34, -2.3], [0.22, 0.23, 0.24])
+    box('power_actuator', [2, 2, 1], [0, -36, -2.2], [0.08, 0.09, 0.1])
+    box('reset_switch', [3.5, 4.7, 1.8], [-32, -12, -2.5], [0.48, 0.5, 0.51])
+    box('reset_actuator', [1.2, 2, 1], [-34.5, -12, -2.5], [0.12, 0.13, 0.14])
+    box('battery_connector', [8, 7, 4.8], [22, 9, -4], [0.86, 0.86, 0.81])
+    inset = spec['outline']['mount_inset']
+    for x in (-spec['outline']['width'] / 2 + inset, spec['outline']['width'] / 2 - inset):
+        for y in (-spec['outline']['height'] / 2 + inset, spec['outline']['height'] / 2 - inset):
+            instances.append({'name': f'standoff_{x}_{y}', 'kind': 'cylinder', 'radius_mm': 2,
+                              'height_mm': 7.4, 'position_mm': [x, y, -5.3], 'color': [0.55, 0.39, 0.15]})
+    if 'trackpad_y' in module:
+        x, y = module.get('trackpad_x', 0), module['trackpad_y']
+        box('TPS43_module', [43, 40, 0.8], [x, y, 7.6], [0.08, 0.1, 0.11], 1)
+        box('TPS43_overlay', [43, 40, 1], [x, y, 8.5], [0.13, 0.17, 0.19], 1.8)
+        box('TPS43_adapter_header', [2.54, 15.24, 2.5], [-31, 15.65, -2.85], [0.12, 0.13, 0.14])
+        for index, (x, y) in enumerate([(-20, 29), (-20, 24), (-13, 29), (-13, 24)], 1):
+            box(f'pullup_{index}', [2, 1.25, 0.55], [x, y, -1.9], [0.12, 0.13, 0.14], 0.05)
+    return {'instances': instances, 'limitations': ['PCB and copper are native KiCad exports.',
+            '1.5U caps use the retained MBK rendering mesh; switches, controller and display use existing reference meshes.',
+            'TPS43, battery, small controls and standoffs are nominal envelopes, not supplier-qualified assembly models.',
+            'Preview support heights do not constitute a mechanical design or physical collision validation.']}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('source', type=Path)

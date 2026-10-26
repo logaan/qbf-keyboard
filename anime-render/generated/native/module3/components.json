@@ -1,0 +1,610 @@
+{
+  "instances": [
+    {
+      "name": "key_r1_c1_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        -28.575000000000003,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r1_c1_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        -28.575000000000003,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.68,
+        0.79,
+        0.73
+      ]
+    },
+    {
+      "name": "key_r1_c2_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        -9.525,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r1_c2_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        -9.525,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.88,
+        0.85,
+        0.74
+      ]
+    },
+    {
+      "name": "key_r1_c3_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        9.525,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r1_c3_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        9.525,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.88,
+        0.85,
+        0.74
+      ]
+    },
+    {
+      "name": "key_r1_c4_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        28.575000000000003,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r1_c4_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        28.575000000000003,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.68,
+        0.79,
+        0.73
+      ]
+    },
+    {
+      "name": "controller",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/nice_nano_reference.wrl",
+      "position_mm": [
+        0,
+        0,
+        -1.6
+      ],
+      "rotation_degrees": [
+        180,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "display",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/nice_view_reference.wrl",
+      "position_mm": [
+        24,
+        14,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "display_socket",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/display_socket.wrl",
+      "position_mm": [
+        24,
+        14,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "protected_battery",
+      "kind": "box",
+      "size_mm": [
+        12,
+        30,
+        3
+      ],
+      "position_mm": [
+        -22,
+        0,
+        -5.5
+      ],
+      "color": [
+        0.65,
+        0.67,
+        0.68
+      ],
+      "bevel_mm": 0.3
+    },
+    {
+      "name": "battery_insulator",
+      "kind": "box",
+      "size_mm": [
+        12.4,
+        30.4,
+        0.3
+      ],
+      "position_mm": [
+        -22,
+        0,
+        -3.85
+      ],
+      "color": [
+        0.75,
+        0.48,
+        0.08
+      ],
+      "bevel_mm": 0.3
+    },
+    {
+      "name": "power_switch",
+      "kind": "box",
+      "size_mm": [
+        6.7,
+        2.8,
+        1.4
+      ],
+      "position_mm": [
+        0,
+        -34,
+        -2.3
+      ],
+      "color": [
+        0.22,
+        0.23,
+        0.24
+      ],
+      "bevel_mm": 0.3
+    },
+    {
+      "name": "power_actuator",
+      "kind": "box",
+      "size_mm": [
+        2,
+        2,
+        1
+      ],
+      "position_mm": [
+        0,
+        -36,
+        -2.2
+      ],
+      "color": [
+        0.08,
+        0.09,
+        0.1
+      ],
+      "bevel_mm": 0.3
+    },
+    {
+      "name": "reset_switch",
+      "kind": "box",
+      "size_mm": [
+        3.5,
+        4.7,
+        1.8
+      ],
+      "position_mm": [
+        -32,
+        -12,
+        -2.5
+      ],
+      "color": [
+        0.48,
+        0.5,
+        0.51
+      ],
+      "bevel_mm": 0.3
+    },
+    {
+      "name": "reset_actuator",
+      "kind": "box",
+      "size_mm": [
+        1.2,
+        2,
+        1
+      ],
+      "position_mm": [
+        -34.5,
+        -12,
+        -2.5
+      ],
+      "color": [
+        0.12,
+        0.13,
+        0.14
+      ],
+      "bevel_mm": 0.3
+    },
+    {
+      "name": "battery_connector",
+      "kind": "box",
+      "size_mm": [
+        8,
+        7,
+        4.8
+      ],
+      "position_mm": [
+        22,
+        9,
+        -4
+      ],
+      "color": [
+        0.86,
+        0.86,
+        0.81
+      ],
+      "bevel_mm": 0.3
+    },
+    {
+      "name": "standoff_-34.6_-34.6",
+      "kind": "cylinder",
+      "radius_mm": 2,
+      "height_mm": 7.4,
+      "position_mm": [
+        -34.6,
+        -34.6,
+        -5.3
+      ],
+      "color": [
+        0.55,
+        0.39,
+        0.15
+      ]
+    },
+    {
+      "name": "standoff_-34.6_34.6",
+      "kind": "cylinder",
+      "radius_mm": 2,
+      "height_mm": 7.4,
+      "position_mm": [
+        -34.6,
+        34.6,
+        -5.3
+      ],
+      "color": [
+        0.55,
+        0.39,
+        0.15
+      ]
+    },
+    {
+      "name": "standoff_34.6_-34.6",
+      "kind": "cylinder",
+      "radius_mm": 2,
+      "height_mm": 7.4,
+      "position_mm": [
+        34.6,
+        -34.6,
+        -5.3
+      ],
+      "color": [
+        0.55,
+        0.39,
+        0.15
+      ]
+    },
+    {
+      "name": "standoff_34.6_34.6",
+      "kind": "cylinder",
+      "radius_mm": 2,
+      "height_mm": 7.4,
+      "position_mm": [
+        34.6,
+        34.6,
+        -5.3
+      ],
+      "color": [
+        0.55,
+        0.39,
+        0.15
+      ]
+    },
+    {
+      "name": "TPS43_module",
+      "kind": "box",
+      "size_mm": [
+        43,
+        40,
+        0.8
+      ],
+      "position_mm": [
+        -12.5,
+        14,
+        7.6
+      ],
+      "color": [
+        0.08,
+        0.1,
+        0.11
+      ],
+      "bevel_mm": 1
+    },
+    {
+      "name": "TPS43_overlay",
+      "kind": "box",
+      "size_mm": [
+        43,
+        40,
+        1
+      ],
+      "position_mm": [
+        -12.5,
+        14,
+        8.5
+      ],
+      "color": [
+        0.13,
+        0.17,
+        0.19
+      ],
+      "bevel_mm": 1.8
+    },
+    {
+      "name": "TPS43_adapter_header",
+      "kind": "box",
+      "size_mm": [
+        2.54,
+        15.24,
+        2.5
+      ],
+      "position_mm": [
+        -31,
+        15.65,
+        -2.85
+      ],
+      "color": [
+        0.12,
+        0.13,
+        0.14
+      ],
+      "bevel_mm": 0.3
+    },
+    {
+      "name": "pullup_1",
+      "kind": "box",
+      "size_mm": [
+        2,
+        1.25,
+        0.55
+      ],
+      "position_mm": [
+        -20,
+        29,
+        -1.9
+      ],
+      "color": [
+        0.12,
+        0.13,
+        0.14
+      ],
+      "bevel_mm": 0.05
+    },
+    {
+      "name": "pullup_2",
+      "kind": "box",
+      "size_mm": [
+        2,
+        1.25,
+        0.55
+      ],
+      "position_mm": [
+        -20,
+        24,
+        -1.9
+      ],
+      "color": [
+        0.12,
+        0.13,
+        0.14
+      ],
+      "bevel_mm": 0.05
+    },
+    {
+      "name": "pullup_3",
+      "kind": "box",
+      "size_mm": [
+        2,
+        1.25,
+        0.55
+      ],
+      "position_mm": [
+        -13,
+        29,
+        -1.9
+      ],
+      "color": [
+        0.12,
+        0.13,
+        0.14
+      ],
+      "bevel_mm": 0.05
+    },
+    {
+      "name": "pullup_4",
+      "kind": "box",
+      "size_mm": [
+        2,
+        1.25,
+        0.55
+      ],
+      "position_mm": [
+        -13,
+        24,
+        -1.9
+      ],
+      "color": [
+        0.12,
+        0.13,
+        0.14
+      ],
+      "bevel_mm": 0.05
+    }
+  ],
+  "limitations": [
+    "PCB and copper are native KiCad exports.",
+    "1.5U caps use the retained MBK rendering mesh; switches, controller and display use existing reference meshes.",
+    "TPS43, battery, small controls and standoffs are nominal envelopes, not supplier-qualified assembly models.",
+    "Preview support heights do not constitute a mechanical design or physical collision validation."
+  ],
+  "sources": {
+    "boards/modules/design.json": "6243d9a4562991b78b02bf808da2b6c8038e7eafebb940e7b79e3ac83c2f9fc1",
+    "ergogen-kikad/design/models/choc_reference.wrl": "8444a85723e0627c94cb7e27fa0a3c4bf0cd22aff1aec38429363e15d701ab7c",
+    "ergogen-kikad/design/models/display_socket.wrl": "d8c3cea629bf45c2713d5f01c4206282fb4e9437437e02b910745d282260642c",
+    "ergogen-kikad/design/models/mbk_15u.wrl": "a4062481fdfc9aaa8c0be3bb4fe13bbb1d436a216869e4448d66e9f096fd41a8",
+    "ergogen-kikad/design/models/nice_nano_reference.wrl": "301df7066360b596e4d80496d5ff5f6723baf681720d1613dd9bc1267e79877c",
+    "ergogen-kikad/design/models/nice_view_reference.wrl": "5c7cb187289362a48505090a67c6bd39ec3f1c7a0e438c5910417df058400d7f",
+    "scripts/attach_models.py": "f3877c0702627e7cac7cd022357273d15f58f7167c764ef1e99c1ab1e1f1c65a"
+  }
+}

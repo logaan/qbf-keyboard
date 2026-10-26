@@ -1,0 +1,15 @@
+{
+  "ceoloide": {
+    "provenance": "footprints/ceoloide/upstream.json",
+    "hash_semantics": "Upstream source bytes before local transformation",
+    "local_transformation": "scripts/strip-comments.cjs removes explanatory comments while preserving copyright, SPDX, author and licence URL notices",
+    "licensing": "Per-file SPDX notices take precedence over the upstream repository MIT licence",
+    "adapters": ["footprints/local/nice_nano_extended.js", "footprints/local/mounting_hole_npth.js"]
+  },
+  "TPS43": {
+    "pin_mapping_source": "https://www.azoteq.com/images/stories/pdf/proxsense_i2c_trackpad_datasheet.pdf",
+    "revision": "1.06 August 2025 Table 2.1",
+    "host_connection": "Six-pin 2.54 mm cable header; not a direct FPC socket",
+    "physical_adapter_status": "Supplier pitch, pin order and contact orientation require verification"
+  }
+}

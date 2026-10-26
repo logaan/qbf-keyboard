@@ -1,0 +1,28 @@
+{
+  "status": "PCB fabrication review only; not a manufacturing release",
+  "board_sha256": {
+    "module3.kicad_pcb": "69b9acd0ff0555ba8792b021deaa6e5c5991d946aab7a4fd6b2e74c5ad772ac0"
+  },
+  "files": {
+    "bom.json": "e136c991b96570898e152e1586730b1e7ec3d5916ac0443b6a3f044e80212490",
+    "module3/module3-B_Cu.gbl": "c2b12d73a24f7b6a1e38280b07b2a11ee248f515d52fba1394a1ae05372e5986",
+    "module3/module3-B_Mask.gbs": "000fe11a31289da4576fe4c732ff255e4099107b9501bf3f8048cfb9e5b76809",
+    "module3/module3-B_Silkscreen.gbo": "2620560fbdff16db92dc41ec829098cd3295067bbb348506be2ffffacdf90e57",
+    "module3/module3-Edge_Cuts.gm1": "525a25f6dbd7b7fd8cbd54c2626ac6c155ff6b066e12a1645f87ad680c49b6cf",
+    "module3/module3-F_Cu.gtl": "6dba018d7f3628b44f9964e02c3322ebbfd3cba2745feca71092e4239553463f",
+    "module3/module3-F_Mask.gts": "9d88e37cbebdd07352f3663284daa471152896f96a0f1a1c22807fb634199a68",
+    "module3/module3-F_Silkscreen.gto": "63c313e9d351132df32a568a97b4e3b7c0729a55a693aa971c16c85b174beedd",
+    "module3/module3-NPTH-drl_map.svg": "d2c630d363c9909bbae004d483da353409a7fbb4d6d766b0b9636dbbb348b3e1",
+    "module3/module3-NPTH.drl": "126e8873ec9b8eefc0bfacc0e7ea53428ac435595f353d2cf258b92dabec62f2",
+    "module3/module3-PTH-drl_map.svg": "d4547a86ba94de2abedcc32b9177d82cda5dea9f414889721f554e0b29e445ca",
+    "module3/module3-PTH.drl": "337a7e8118f416afb292aa7c5c4e02e577dee22ee9161a24a524b8ce62ce81b8",
+    "module3/module3-job.gbrjob": "e460f9fced29652dc5ada2bbe9787a7e2b942fb6b2a1b88805bc3eaa99d8f1ac",
+    "pin-map.csv": "1b334d848146ceb98f32a04ccf07f2560c08a3234d4552bf7115751310ba9dc8"
+  },
+  "required_reviews": [
+    "Purchased parts and cable polarity",
+    "Charging and protected battery specification",
+    "Antenna clearance",
+    "Physical assembly stack and component access"
+  ]
+}
