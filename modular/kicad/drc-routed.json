@@ -1,0 +1,1857 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T17:20:31+1100",
+    "kicad_version": "9.0.2",
+    "schematic_parity": [],
+    "source": "braille_review_routed.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 20 [DISPLAY_MOSI] of MCU1",
+                    "pos": {
+                        "x": 101.905,
+                        "y": 76.37
+                    },
+                    "uuid": "614be329-7038-43f0-b277-c61fc6aeeb65"
+                },
+                {
+                    "description": "PTH pad 5 [DISPLAY_MOSI] of DISP1",
+                    "pos": {
+                        "x": 133.655,
+                        "y": 116.7
+                    },
+                    "uuid": "8bb5ae54-2571-49de-8555-bb2c99c957cf"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.1369 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of S8",
+                    "pos": {
+                        "x": 119.05,
+                        "y": 94.5
+                    },
+                    "uuid": "8f18593b-fb91-4a98-aefd-5e6333d8073f"
+                },
+                {
+                    "description": "PTH pad 12 [c3_bottom] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 94.15
+                    },
+                    "uuid": "61ce39dc-0e50-4fa9-80bd-8cedba990d7f"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.1197 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of S9",
+                    "pos": {
+                        "x": 119.05,
+                        "y": 81.6875
+                    },
+                    "uuid": "d3761f9e-8e30-4673-a03c-de382aa76a56"
+                },
+                {
+                    "description": "PTH pad 7 [c4_top] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 81.45
+                    },
+                    "uuid": "d2ee78e6-77e4-478d-98eb-4ede52e5e8e9"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of S9",
+                    "pos": {
+                        "x": 119.05,
+                        "y": 76.1875
+                    },
+                    "uuid": "8ac93480-a43b-456a-ac6f-25de950344c3"
+                },
+                {
+                    "description": "PTH pad 5 [P21] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 76.37
+                    },
+                    "uuid": "06f2cf2a-2d6a-4e10-ab1d-48ddfda922a7"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.1980 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of S9",
+                    "pos": {
+                        "x": 119.05,
+                        "y": 70.6875
+                    },
+                    "uuid": "bd48ff6e-63a7-4729-aa27-66bd66582be4"
+                },
+                {
+                    "description": "PTH pad 3 [RST] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 71.29
+                    },
+                    "uuid": "9d809f66-88e7-4dd3-87a0-a211b73fcd73"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0471 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [GND] of S9",
+                    "pos": {
+                        "x": 115.25,
+                        "y": 81.1875
+                    },
+                    "uuid": "f3016d0b-275c-4782-bce5-766fa60dc9f4"
+                },
+                {
+                    "description": "PTH pad 7 [c4_top] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 81.45
+                    },
+                    "uuid": "d2ee78e6-77e4-478d-98eb-4ede52e5e8e9"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.1980 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of S3",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 70.6875
+                    },
+                    "uuid": "9817361c-5c96-482d-b802-b661075d0b31"
+                },
+                {
+                    "description": "PTH pad 22 [GND] of MCU1",
+                    "pos": {
+                        "x": 101.905,
+                        "y": 71.29
+                    },
+                    "uuid": "fa0ecc51-002f-4460-b5ea-46f21eba09a6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of S3",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 76.1875
+                    },
+                    "uuid": "16a3e9f4-52f9-4336-a868-4f863796f033"
+                },
+                {
+                    "description": "PTH pad 20 [DISPLAY_MOSI] of MCU1",
+                    "pos": {
+                        "x": 101.905,
+                        "y": 76.37
+                    },
+                    "uuid": "614be329-7038-43f0-b277-c61fc6aeeb65"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.1197 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of S3",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 81.6875
+                    },
+                    "uuid": "a70a5326-6c6d-4327-b661-4512d3552db7"
+                },
+                {
+                    "description": "PTH pad 18 [c1_bottom] of MCU1",
+                    "pos": {
+                        "x": 101.905,
+                        "y": 81.45
+                    },
+                    "uuid": "e65ea08a-4a4c-4eea-84c9-c13fb21a5fe6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.1369 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of S2",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 94.5
+                    },
+                    "uuid": "315af2c3-4a79-4d4f-93bb-d580a75efe51"
+                },
+                {
+                    "description": "PTH pad 13 [c2_top] of MCU1",
+                    "pos": {
+                        "x": 101.905,
+                        "y": 94.15
+                    },
+                    "uuid": "7d48a889-aa4a-47d7-9006-d98d32402c32"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 90.975,
+                        "y": 65.4
+                    },
+                    "uuid": "9eb09b3e-6acb-4f88-b641-20a7b4b981ca"
+                },
+                {
+                    "description": "Reference field of S3",
+                    "pos": {
+                        "x": 91.2,
+                        "y": 76.1875
+                    },
+                    "uuid": "2c66d382-4f75-49db-a671-3fa278aa7ebb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 90.975,
+                        "y": 65.4
+                    },
+                    "uuid": "9eb09b3e-6acb-4f88-b641-20a7b4b981ca"
+                },
+                {
+                    "description": "Reference field of S1",
+                    "pos": {
+                        "x": 91.2,
+                        "y": 123.8125
+                    },
+                    "uuid": "37c045d9-6147-4273-9238-a27679bdc6d5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 90.975,
+                        "y": 65.4
+                    },
+                    "uuid": "9eb09b3e-6acb-4f88-b641-20a7b4b981ca"
+                },
+                {
+                    "description": "Reference field of S2",
+                    "pos": {
+                        "x": 91.2,
+                        "y": 100.0
+                    },
+                    "uuid": "20f7174e-3755-4dc3-a649-a0bfea296018"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Arc on Edge.Cuts",
+                    "pos": {
+                        "x": 93.975,
+                        "y": 134.6
+                    },
+                    "uuid": "942593e1-e547-4e72-b0c5-df92bdd8b8d5"
+                },
+                {
+                    "description": "Reference field of MH3",
+                    "pos": {
+                        "x": 93.975,
+                        "y": 137.15
+                    },
+                    "uuid": "bd0781a3-aa85-4a9a-a461-3c55b2fd95e3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.4200 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 163.175,
+                        "y": 62.4
+                    },
+                    "uuid": "4acceab8-1a11-4fc1-806f-9f553aba2c54"
+                },
+                {
+                    "description": "PTH pad 25 [GND] of MCU1",
+                    "pos": {
+                        "x": 101.905,
+                        "y": 63.67
+                    },
+                    "uuid": "a25d8ee7-d6a4-4154-bb28-20b9ab2ff8ab"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.4200 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 163.175,
+                        "y": 62.4
+                    },
+                    "uuid": "4acceab8-1a11-4fc1-806f-9f553aba2c54"
+                },
+                {
+                    "description": "PTH pad 26 [VBAT] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 63.67
+                    },
+                    "uuid": "ff8ba89d-0966-4c3f-8a37-9cdcbbebc8a8"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Arc on Edge.Cuts",
+                    "pos": {
+                        "x": 163.175,
+                        "y": 134.6
+                    },
+                    "uuid": "a3b3215a-bfde-44e6-b60d-61fc971681c1"
+                },
+                {
+                    "description": "Reference field of MH4",
+                    "pos": {
+                        "x": 163.175,
+                        "y": 137.15
+                    },
+                    "uuid": "8d17fa3f-cbe4-4f35-af36-e94172c533e3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2495 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 5 [P21] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 76.37
+                    },
+                    "uuid": "06f2cf2a-2d6a-4e10-ab1d-48ddfda922a7"
+                },
+                {
+                    "description": "NPTH pad of S9",
+                    "pos": {
+                        "x": 119.05,
+                        "y": 76.1875
+                    },
+                    "uuid": "8ac93480-a43b-456a-ac6f-25de950344c3"
+                }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+        },
+        {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2495 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of S3",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 76.1875
+                    },
+                    "uuid": "16a3e9f4-52f9-4336-a868-4f863796f033"
+                },
+                {
+                    "description": "PTH pad 20 [DISPLAY_MOSI] of MCU1",
+                    "pos": {
+                        "x": 101.905,
+                        "y": 76.37
+                    },
+                    "uuid": "614be329-7038-43f0-b277-c61fc6aeeb65"
+                }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S10",
+                    "pos": {
+                        "x": 138.1,
+                        "y": 123.8125
+                    },
+                    "uuid": "21440b1a-67af-4389-bbfe-4bf2ba87e36e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S8",
+                    "pos": {
+                        "x": 119.05,
+                        "y": 100.0
+                    },
+                    "uuid": "3a9db433-8213-45e8-88b9-25f8dde8754d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S5",
+                    "pos": {
+                        "x": 157.15,
+                        "y": 100.0
+                    },
+                    "uuid": "3af8f6fb-6de9-4660-8126-c6e153a0d551"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S7",
+                    "pos": {
+                        "x": 119.05,
+                        "y": 123.8125
+                    },
+                    "uuid": "534fb41d-d0f2-413d-93a7-7e747372e238"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S9",
+                    "pos": {
+                        "x": 119.05,
+                        "y": 76.1875
+                    },
+                    "uuid": "6dc1fbfa-6985-4e3d-a802-826d163562df"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S3",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 76.1875
+                    },
+                    "uuid": "7286ec7a-5b60-45ab-a655-be895530c623"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S12",
+                    "pos": {
+                        "x": 138.1,
+                        "y": 76.1875
+                    },
+                    "uuid": "961ee855-49ee-4104-9d85-c0015f105ce7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S1",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 123.8125
+                    },
+                    "uuid": "ab08101a-45df-412c-85e5-f12a05187853"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S2",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 100.0
+                    },
+                    "uuid": "b3992236-cecf-4096-be47-912c1e560732"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S4",
+                    "pos": {
+                        "x": 157.15,
+                        "y": 123.8125
+                    },
+                    "uuid": "b870d019-eaeb-41d7-94b7-1645306d849a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S6",
+                    "pos": {
+                        "x": 157.15,
+                        "y": 76.1875
+                    },
+                    "uuid": "d3886433-7106-459b-ab01-120a786fa4f8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint S11",
+                    "pos": {
+                        "x": 138.1,
+                        "y": 100.0
+                    },
+                    "uuid": "fdde3bae-3ff2-41b7-9b88-619fc64cd4e3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint PWR1",
+                    "pos": {
+                        "x": 109.525,
+                        "y": 135.5
+                    },
+                    "uuid": "0510447d-34f2-4f34-9971-ec0d5e128abb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH3",
+                    "pos": {
+                        "x": 93.975,
+                        "y": 134.6
+                    },
+                    "uuid": "20c20c69-9bd7-42b7-96b7-fa88ad302e99"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MCU1",
+                    "pos": {
+                        "x": 109.525,
+                        "y": 78.91
+                    },
+                    "uuid": "268f72cc-b03e-42e7-bffd-7024092cf4ad"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint JST1",
+                    "pos": {
+                        "x": 147.625,
+                        "y": 127.1
+                    },
+                    "uuid": "34f81075-ede5-4f3f-b300-2539e7e048b5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint RST1",
+                    "pos": {
+                        "x": 92.925,
+                        "y": 100.0
+                    },
+                    "uuid": "747a97fd-a693-40dc-8b81-941f5195eb54"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH2",
+                    "pos": {
+                        "x": 163.175,
+                        "y": 65.4
+                    },
+                    "uuid": "91d784fa-af26-49c8-b211-646f4fc0dc0b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH4",
+                    "pos": {
+                        "x": 163.175,
+                        "y": 134.6
+                    },
+                    "uuid": "b189dbe9-0788-4286-b4ff-b3ccda66b699"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint MH1",
+                    "pos": {
+                        "x": 93.975,
+                        "y": 65.4
+                    },
+                    "uuid": "cd2f269f-e63c-4c9e-a6e0-c7bfadc59f9e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'.",
+            "items": [
+                {
+                    "description": "Footprint DISP1",
+                    "pos": {
+                        "x": 128.575,
+                        "y": 100.0
+                    },
+                    "uuid": "eb450143-4ec1-4934-9d16-ad26b4ba262e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 100.575,
+                        "y": 64.88
+                    },
+                    "uuid": "0816bc22-9d92-409f-9382-a32e1d171f37"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 64.88
+                    },
+                    "uuid": "ac60074e-420e-43c3-98b8-d3dfcbf39dcd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 95.48
+                    },
+                    "uuid": "f1e245fb-e7a0-4e29-a460-7a4cc1e9ec9e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 115.815,
+                        "y": 64.88
+                    },
+                    "uuid": "6e92fa2a-06fc-4749-86d5-fddc88388101"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 118.475,
+                        "y": 64.88
+                    },
+                    "uuid": "ae70f923-2eef-41cf-bda0-7aa32fafa5db"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c4_bottom)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 91.61
+                    },
+                    "uuid": "09fb23d3-0af6-4a12-9814-23cd2e4e9f4c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_CS)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 66.21
+                    },
+                    "uuid": "1d50f435-b7c8-4c77-82a5-928b0f94d8d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_MOSI)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 76.37
+                    },
+                    "uuid": "2118bac6-9d6d-4686-b221-941deb8841fb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c1_bottom)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 81.45
+                    },
+                    "uuid": "33b27e77-e055-448c-9f7b-4e148198ee50"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c4_top)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 81.45
+                    },
+                    "uuid": "39447362-eec3-4e82-a057-c9fd8d3109df"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c2_top)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 94.15
+                    },
+                    "uuid": "3a85d49c-62ab-4ad3-b9fc-532c7c6cd738"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (GND)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 71.29
+                    },
+                    "uuid": "69d72295-50e3-4ce3-a31b-4d85e5009ffe"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_SCK)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 78.91
+                    },
+                    "uuid": "6a7ca9ae-410a-4f72-99a7-bf1a1158a306"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c4_middle)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 83.99
+                    },
+                    "uuid": "6a8e5e95-301b-46fd-9b55-a804f0f00801"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c2_middle)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 91.61
+                    },
+                    "uuid": "8e112b27-feb2-47a7-ac91-87a28f4857e5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (P21)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 76.37
+                    },
+                    "uuid": "93a9c566-819a-4fed-aa15-5af5387feaca"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c1_middle)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 83.99
+                    },
+                    "uuid": "be84249a-1c15-44a7-81b2-4737bc70c0d9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c1_top)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 86.53
+                    },
+                    "uuid": "c2a70335-ff32-46b8-af35-2b092df5ce07"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c3_top)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 86.53
+                    },
+                    "uuid": "c84dc47f-f3d7-4bb3-a0ab-8d802fb36b6e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c2_bottom)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 89.07
+                    },
+                    "uuid": "cd9f7f70-3a85-42d0-89d4-45a2080b0180"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c3_bottom)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 94.15
+                    },
+                    "uuid": "ea3d812b-de15-4e3d-a2d8-6087cad2eef9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c3_middle)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 89.07
+                    },
+                    "uuid": "fa49cc04-8f51-4793-b360-ed72ed0c2adc"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of DISP1 (DISPLAY_SCK)",
+                    "pos": {
+                        "x": 131.295,
+                        "y": 118.5
+                    },
+                    "uuid": "9ea933a3-9376-4dc2-b2e2-867d464ebc36"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of DISP1 (DISPLAY_MOSI)",
+                    "pos": {
+                        "x": 133.795,
+                        "y": 118.5
+                    },
+                    "uuid": "a2370dee-06b6-430a-92e9-750452ba0600"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "NPTH pad of S9",
+                    "pos": {
+                        "x": 119.05,
+                        "y": 76.1875
+                    },
+                    "uuid": "8ac93480-a43b-456a-ac6f-25de950344c3"
+                },
+                {
+                    "description": "PTH pad 5 [P21] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 76.37
+                    },
+                    "uuid": "06f2cf2a-2d6a-4e10-ab1d-48ddfda922a7"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "NPTH pad of S9",
+                    "pos": {
+                        "x": 119.05,
+                        "y": 76.1875
+                    },
+                    "uuid": "8ac93480-a43b-456a-ac6f-25de950344c3"
+                },
+                {
+                    "description": "PTH pad 5 [P21] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 76.37
+                    },
+                    "uuid": "06f2cf2a-2d6a-4e10-ab1d-48ddfda922a7"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 1 [GND] of S9",
+                    "pos": {
+                        "x": 115.25,
+                        "y": 81.1875
+                    },
+                    "uuid": "f3016d0b-275c-4782-bce5-766fa60dc9f4"
+                },
+                {
+                    "description": "PTH pad 7 [c4_top] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 81.45
+                    },
+                    "uuid": "d2ee78e6-77e4-478d-98eb-4ede52e5e8e9"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 1 [GND] of S9",
+                    "pos": {
+                        "x": 115.25,
+                        "y": 81.1875
+                    },
+                    "uuid": "f3016d0b-275c-4782-bce5-766fa60dc9f4"
+                },
+                {
+                    "description": "PTH pad 7 [c4_top] of MCU1",
+                    "pos": {
+                        "x": 117.145,
+                        "y": 81.45
+                    },
+                    "uuid": "d2ee78e6-77e4-478d-98eb-4ede52e5e8e9"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "NPTH pad of S3",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 76.1875
+                    },
+                    "uuid": "16a3e9f4-52f9-4336-a868-4f863796f033"
+                },
+                {
+                    "description": "PTH pad 20 [DISPLAY_MOSI] of MCU1",
+                    "pos": {
+                        "x": 101.905,
+                        "y": 76.37
+                    },
+                    "uuid": "614be329-7038-43f0-b277-c61fc6aeeb65"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "NPTH pad of S3",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 76.1875
+                    },
+                    "uuid": "16a3e9f4-52f9-4336-a868-4f863796f033"
+                },
+                {
+                    "description": "PTH pad 20 [DISPLAY_MOSI] of MCU1",
+                    "pos": {
+                        "x": 101.905,
+                        "y": 76.37
+                    },
+                    "uuid": "614be329-7038-43f0-b277-c61fc6aeeb65"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Footprint text of PWR1 (PWR1)",
+                    "pos": {
+                        "x": 109.525,
+                        "y": 132.0
+                    },
+                    "uuid": "03bd4875-651e-405d-b9eb-83d688c4d2e0"
+                },
+                {
+                    "description": "Reference field of PWR1",
+                    "pos": {
+                        "x": 109.525,
+                        "y": 131.9
+                    },
+                    "uuid": "9ef9b0d6-a54a-4e3c-8b55-723ac62404d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c4_bottom)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 91.61
+                    },
+                    "uuid": "09fb23d3-0af6-4a12-9814-23cd2e4e9f4c"
+                },
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 115.815,
+                        "y": 64.88
+                    },
+                    "uuid": "6e92fa2a-06fc-4749-86d5-fddc88388101"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c4_middle)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 83.99
+                    },
+                    "uuid": "6a8e5e95-301b-46fd-9b55-a804f0f00801"
+                },
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 115.815,
+                        "y": 64.88
+                    },
+                    "uuid": "6e92fa2a-06fc-4749-86d5-fddc88388101"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c4_top)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 81.45
+                    },
+                    "uuid": "39447362-eec3-4e82-a057-c9fd8d3109df"
+                },
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 115.815,
+                        "y": 64.88
+                    },
+                    "uuid": "6e92fa2a-06fc-4749-86d5-fddc88388101"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 115.815,
+                        "y": 64.88
+                    },
+                    "uuid": "6e92fa2a-06fc-4749-86d5-fddc88388101"
+                },
+                {
+                    "description": "Footprint text of MCU1 (c3_top)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 86.53
+                    },
+                    "uuid": "c84dc47f-f3d7-4bb3-a0ab-8d802fb36b6e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 115.815,
+                        "y": 64.88
+                    },
+                    "uuid": "6e92fa2a-06fc-4749-86d5-fddc88388101"
+                },
+                {
+                    "description": "Footprint text of MCU1 (c3_bottom)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 94.15
+                    },
+                    "uuid": "ea3d812b-de15-4e3d-a2d8-6087cad2eef9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 115.815,
+                        "y": 64.88
+                    },
+                    "uuid": "6e92fa2a-06fc-4749-86d5-fddc88388101"
+                },
+                {
+                    "description": "Footprint text of MCU1 (c3_middle)",
+                    "pos": {
+                        "x": 113.995,
+                        "y": 89.07
+                    },
+                    "uuid": "fa49cc04-8f51-4793-b360-ed72ed0c2adc"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_SCK)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 78.91
+                    },
+                    "uuid": "6a7ca9ae-410a-4f72-99a7-bf1a1158a306"
+                },
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 64.88
+                    },
+                    "uuid": "ac60074e-420e-43c3-98b8-d3dfcbf39dcd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Reference field of DISP1",
+                    "pos": {
+                        "x": 128.575,
+                        "y": 120.0
+                    },
+                    "uuid": "37fdb071-52d4-4976-a410-d846a61d2504"
+                },
+                {
+                    "description": "Footprint text of DISP1 (GND)",
+                    "pos": {
+                        "x": 126.195,
+                        "y": 118.5
+                    },
+                    "uuid": "67febd3b-6420-40c2-a019-dfcd42e5ff86"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Reference field of DISP1",
+                    "pos": {
+                        "x": 128.575,
+                        "y": 120.0
+                    },
+                    "uuid": "37fdb071-52d4-4976-a410-d846a61d2504"
+                },
+                {
+                    "description": "Footprint text of DISP1 (3V3)",
+                    "pos": {
+                        "x": 128.725,
+                        "y": 118.5
+                    },
+                    "uuid": "c718b773-adc1-45bd-a59e-88969caf3d3b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_CS)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 66.21
+                    },
+                    "uuid": "1d50f435-b7c8-4c77-82a5-928b0f94d8d1"
+                },
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 64.88
+                    },
+                    "uuid": "ac60074e-420e-43c3-98b8-d3dfcbf39dcd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_MOSI)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 76.37
+                    },
+                    "uuid": "2118bac6-9d6d-4686-b221-941deb8841fb"
+                },
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 64.88
+                    },
+                    "uuid": "ac60074e-420e-43c3-98b8-d3dfcbf39dcd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 100.575,
+                        "y": 64.88
+                    },
+                    "uuid": "0816bc22-9d92-409f-9382-a32e1d171f37"
+                },
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_MOSI)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 76.37
+                    },
+                    "uuid": "2118bac6-9d6d-4686-b221-941deb8841fb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c1_bottom)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 81.45
+                    },
+                    "uuid": "33b27e77-e055-448c-9f7b-4e148198ee50"
+                },
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 64.88
+                    },
+                    "uuid": "ac60074e-420e-43c3-98b8-d3dfcbf39dcd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 64.88
+                    },
+                    "uuid": "ac60074e-420e-43c3-98b8-d3dfcbf39dcd"
+                },
+                {
+                    "description": "Footprint text of MCU1 (c1_middle)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 83.99
+                    },
+                    "uuid": "be84249a-1c15-44a7-81b2-4737bc70c0d9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 64.88
+                    },
+                    "uuid": "ac60074e-420e-43c3-98b8-d3dfcbf39dcd"
+                },
+                {
+                    "description": "Footprint text of MCU1 (c1_top)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 86.53
+                    },
+                    "uuid": "c2a70335-ff32-46b8-af35-2b092df5ce07"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c2_middle)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 91.61
+                    },
+                    "uuid": "8e112b27-feb2-47a7-ac91-87a28f4857e5"
+                },
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 64.88
+                    },
+                    "uuid": "ac60074e-420e-43c3-98b8-d3dfcbf39dcd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (c2_top)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 94.15
+                    },
+                    "uuid": "3a85d49c-62ab-4ad3-b9fc-532c7c6cd738"
+                },
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 64.88
+                    },
+                    "uuid": "ac60074e-420e-43c3-98b8-d3dfcbf39dcd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 103.235,
+                        "y": 64.88
+                    },
+                    "uuid": "ac60074e-420e-43c3-98b8-d3dfcbf39dcd"
+                },
+                {
+                    "description": "Footprint text of MCU1 (c2_bottom)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 89.07
+                    },
+                    "uuid": "cd9f7f70-3a85-42d0-89d4-45a2080b0180"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 100.575,
+                        "y": 64.88
+                    },
+                    "uuid": "0816bc22-9d92-409f-9382-a32e1d171f37"
+                },
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_SCK)",
+                    "pos": {
+                        "x": 105.055,
+                        "y": 78.91
+                    },
+                    "uuid": "6a7ca9ae-410a-4f72-99a7-bf1a1158a306"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of PWR1",
+                    "pos": {
+                        "x": 109.525,
+                        "y": 131.9
+                    },
+                    "uuid": "9ef9b0d6-a54a-4e3c-8b55-723ac62404d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of MH3",
+                    "pos": {
+                        "x": 93.975,
+                        "y": 137.15
+                    },
+                    "uuid": "bd0781a3-aa85-4a9a-a461-3c55b2fd95e3"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of MCU1",
+                    "pos": {
+                        "x": 109.525,
+                        "y": 63.91
+                    },
+                    "uuid": "47913b76-2295-41e8-8e48-e2fd777553d6"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of JST1",
+                    "pos": {
+                        "x": 147.625,
+                        "y": 131.9
+                    },
+                    "uuid": "f75b0fbe-0a76-4fca-a2dc-0e284c5076ad"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of RST1",
+                    "pos": {
+                        "x": 92.925,
+                        "y": 100.0
+                    },
+                    "uuid": "7ddf5e25-1ba7-4879-9505-5e7cfedf4b8c"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of MH2",
+                    "pos": {
+                        "x": 163.175,
+                        "y": 67.95
+                    },
+                    "uuid": "5ae6eb12-07bd-4183-b000-e532019fbc22"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of MH4",
+                    "pos": {
+                        "x": 163.175,
+                        "y": 137.15
+                    },
+                    "uuid": "8d17fa3f-cbe4-4f35-af36-e94172c533e3"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of MH1",
+                    "pos": {
+                        "x": 93.975,
+                        "y": 67.95
+                    },
+                    "uuid": "5d24e390-6f65-43ee-9a64-df1ee549983f"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of DISP1",
+                    "pos": {
+                        "x": 128.575,
+                        "y": 120.0
+                    },
+                    "uuid": "37fdb071-52d4-4976-a410-d846a61d2504"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        }
+    ]
+}

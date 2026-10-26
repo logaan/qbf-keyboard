@@ -1,0 +1,13 @@
+{
+  "name": "braille-keyboard-layout",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Editable initial Ergogen layout and switch-placement study for a 12-key Braille keyboard",
+  "scripts": {
+    "build": "node scripts/prepare-footprints.cjs && ergogen ergogen --output output --debug --svg && node scripts/preview.cjs",
+    "check": "python3 scripts/check_review.py"
+  },
+  "devDependencies": {
+    "ergogen": "4.2.1"
+  }
+}

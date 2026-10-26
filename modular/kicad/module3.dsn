@@ -1,0 +1,423 @@
+(pcb "/home/logan/www/braille-keyboard/kicad/module3.dsn"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "9.0.2+dfsg-1")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  163343 -62402.4  163678 -62440.1  164006 -62515  164324 -62626.2
+            164627 -62772.3  164912 -62951.4  165176 -63161.3  165414 -63399.4
+            165624 -63662.6  165803 -63947.7  165949 -64251  166060 -64568.8
+            166135 -64897.1  166173 -65231.7  166175 -65400  166175 -134600
+            166173 -134768  166135 -135103  166060 -135431  165949 -135749
+            165803 -136052  165624 -136337  165414 -136601  165176 -136839
+            164912 -137049  164627 -137228  164324 -137374  164006 -137485
+            163678 -137560  163343 -137598  163175 -137600  93975 -137600
+            93806.7 -137598  93472.1 -137560  93143.8 -137485  92826 -137374
+            92522.7 -137228  92237.6 -137049  91974.4 -136839  91736.3 -136601
+            91526.4 -136337  91347.3 -136052  91201.2 -135749  91090 -135431
+            91015.1 -135103  90977.4 -134768  90975 -134600  90975 -65400
+            90977.4 -65231.7  91015.1 -64897.1  91090 -64568.8  91201.2 -64251
+            91347.3 -63947.7  91526.4 -63662.6  91736.3 -63399.4  91974.4 -63161.3
+            92237.6 -62951.4  92522.7 -62772.3  92826 -62626.2  93143.8 -62515
+            93472.1 -62440.1  93806.7 -62402.4  93975 -62400  163175 -62400
+            163343 -62402.4)
+    )
+    (via "Via[0-1]_600:300_um")
+    (rule
+      (width 200)
+      (clearance 200)
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component ceoloide:switch_choc_v1_v2
+      (place S1 100000.000000 -123812.500000 front -90.000000)
+      (place S2 157150.000000 -123812.500000 front -90.000000)
+      (place S3 119050.000000 -123812.500000 front 90.000000)
+      (place S4 138100.000000 -123812.500000 front 90.000000)
+    )
+    (component ceoloide:mcu_nice_nano
+      (place MCU1 110477.500000 -89000.000000 front 0.000000)
+    )
+    (component ceoloide:display_nice_view
+      (place DISP1 147625.000000 -89000.000000 front 0.000000)
+    )
+    (component ceoloide:reset_switch_smd_side
+      (place RST1 149530.000000 -135500.000000 front 90.000000)
+    )
+    (component ceoloide:power_switch_smd_side
+      (place PWR1 107620.000000 -135500.000000 front -90.000000)
+    )
+    (component ceoloide:battery_connector_jst_ph_2
+      (place JST1 128575.000000 -67400.000000 back 180.000000)
+    )
+    (component ceoloide:mounting_hole_npth
+      (place MH1 93975.000000 -65400.000000 back 180.000000)
+      (place MH2 163175.000000 -65400.000000 back 180.000000)
+      (place MH3 93975.000000 -134600.000000 back 180.000000)
+      (place MH4 163175.000000 -134600.000000 back 180.000000)
+    )
+    (component local:TPS43_abstract_interface
+      (place TP1 128575.000000 -91000.000000 front 0.000000)
+    )
+  )
+  (library
+    (image ceoloide:switch_choc_v1_v2
+      (outline (path signal 150  -7000 6000  -7000 7000))
+      (outline (path signal 150  -7000 -7000  -6000 -7000))
+      (outline (path signal 150  -6000 7000  -7000 7000))
+      (outline (path signal 150  -7000 -7000  -7000 -6000))
+      (outline (path signal 150  7000 -6000  7000 -7000))
+      (outline (path signal 150  7000 7000  6000 7000))
+      (outline (path signal 150  6000 -7000  7000 -7000))
+      (outline (path signal 150  7000 7000  7000 6000))
+      (pin Round[A]Pad_2032.000000_um (rotate 195) 2 0 5900)
+      (pin Round[A]Pad_2032.000000_um (rotate 195) 1 -5000 3800)
+      (keepout "" (circle F.Cu 3900))
+      (keepout "" (circle B.Cu 3900))
+      (keepout "" (circle F.Cu 2400 5500 0))
+      (keepout "" (circle B.Cu 2400 5500 0))
+      (keepout "" (circle F.Cu 2400 -5500 0))
+      (keepout "" (circle B.Cu 2400 -5500 0))
+    )
+    (image ceoloide:mcu_nice_nano
+      (outline (path signal 150  3556 18034  3556 16510))
+      (outline (path signal 150  -3810 16510  -3810 18034))
+      (outline (path signal 150  -3810 18034  3556 18034))
+      (outline (path signal 150  -8890 16510  8890 16510))
+      (outline (path signal 150  -8890 16510  -8890 -16570))
+      (outline (path signal 150  8890 16510  8890 -16570))
+      (outline (path signal 150  -8890 -16570  8890 -16570))
+      (outline (path signal 120  6290 14030  8950 14030))
+      (outline (path signal 120  6290 14030  6290 -16570))
+      (outline (path signal 120  6290 -16570  8950 -16570))
+      (outline (path signal 120  -6290 14030  -6290 -16570))
+      (outline (path signal 120  8950 14030  8950 -16570))
+      (outline (path signal 120  -8950 14030  -6290 14030))
+      (outline (path signal 120  -8950 14030  -8950 -16570))
+      (outline (path signal 120  -8950 -16570  -6290 -16570))
+      (outline (path signal 120  6290 11430  8950 11430))
+      (pin Round[A]Pad_1700.000000_um 24 -7620 12700)
+      (pin Round[A]Pad_1700.000000_um 1 7620 12700)
+      (pin Round[A]Pad_1700.000000_um 23 -7620 10160)
+      (pin Round[A]Pad_1700.000000_um 2 7620 10160)
+      (pin Round[A]Pad_1700.000000_um 22 -7620 7620)
+      (pin Round[A]Pad_1700.000000_um 3 7620 7620)
+      (pin Round[A]Pad_1700.000000_um 21 -7620 5080)
+      (pin Round[A]Pad_1700.000000_um 4 7620 5080)
+      (pin Round[A]Pad_1700.000000_um 20 -7620 2540)
+      (pin Round[A]Pad_1700.000000_um 5 7620 2540)
+      (pin Round[A]Pad_1700.000000_um 19 -7620 0)
+      (pin Round[A]Pad_1700.000000_um 6 7620 0)
+      (pin Round[A]Pad_1700.000000_um 18 -7620 -2540)
+      (pin Round[A]Pad_1700.000000_um 7 7620 -2540)
+      (pin Round[A]Pad_1700.000000_um 17 -7620 -5080)
+      (pin Round[A]Pad_1700.000000_um 8 7620 -5080)
+      (pin Round[A]Pad_1700.000000_um 16 -7620 -7620)
+      (pin Round[A]Pad_1700.000000_um 9 7620 -7620)
+      (pin Round[A]Pad_1700.000000_um 15 -7620 -10160)
+      (pin Round[A]Pad_1700.000000_um 10 7620 -10160)
+      (pin Round[A]Pad_1700.000000_um 14 -7620 -12700)
+      (pin Round[A]Pad_1700.000000_um 11 7620 -12700)
+      (pin Round[A]Pad_1700.000000_um 13 -7620 -15240)
+      (pin Round[A]Pad_1700.000000_um 12 7620 -15240)
+      (pin Round[A]Pad_1700.000000_um 25 -7620 15240)
+      (pin Round[A]Pad_1700.000000_um 26 7620 15240)
+    )
+    (image ceoloide:display_nice_view
+      (outline (path signal 120  -6410 -15370  -6410 -18030))
+      (outline (path signal 120  6410 -18030  -6410 -18030))
+      (outline (path signal 120  6410 -15370  6410 -18030))
+      (outline (path signal 120  6410 -15370  -6410 -15370))
+      (outline (path signal 150  6880 -14900  6880 -18450))
+      (outline (path signal 150  6880 -18450  -6820 -18450))
+      (outline (path signal 150  -6820 -18450  -6820 -14900))
+      (outline (path signal 150  -6820 -14900  6880 -14900))
+      (outline (path signal 150  5400 -13400  5400 11900))
+      (outline (path signal 150  -5400 -13400  -5400 11900))
+      (outline (path signal 150  5400 11900  -5400 11900))
+      (outline (path signal 150  -5400 -13400  5400 -13400))
+      (outline (path signal 150  -7000 18000  7000 18000))
+      (outline (path signal 150  7000 -18000  -7000 -18000))
+      (outline (path signal 150  -7000 -18000  -7000 18000))
+      (outline (path signal 150  7000 -18000  7000 18000))
+      (pin Oval[A]Pad_1700.000000x1700.000000_um (rotate 270) 1 -5080 -16700)
+      (pin Oval[A]Pad_1700.000000x1700.000000_um (rotate 270) 2 -2540 -16700)
+      (pin Oval[A]Pad_1700.000000x1700.000000_um (rotate 270) 3 0 -16700)
+      (pin Oval[A]Pad_1700.000000x1700.000000_um (rotate 270) 4 2540 -16700)
+      (pin Round[A]Pad_1700.000000_um (rotate 270) 5 5080 -16700)
+    )
+    (image ceoloide:reset_switch_smd_side
+      (outline (path signal 100  -2350 1750  -2350 -1750))
+      (outline (path signal 100  -2350 1750  2350 1750))
+      (outline (path signal 100  -2350 -1750  2350 -1750))
+      (outline (path signal 100  -1300 2750  -1300 1750))
+      (outline (path signal 100  -1300 2750  1300 2750))
+      (outline (path signal 100  1300 2750  1300 1750))
+      (outline (path signal 100  2350 1750  2350 -1750))
+      (outline (path signal 100  -2350 1500  -2350 1750))
+      (outline (path signal 100  -2350 -1500  -2350 -1750))
+      (outline (path signal 100  -2100 1750  -2350 1750))
+      (outline (path signal 100  -2100 -1750  -2350 -1750))
+      (outline (path signal 100  2100 1750  2350 1750))
+      (outline (path signal 100  2100 -1750  2350 -1750))
+      (outline (path signal 100  2350 1500  2350 1750))
+      (outline (path signal 100  2350 -1500  2350 -1750))
+      (outline (path signal 50  2360 -1750  2360 1750  -2360 1750  -2360 -1750))
+      (pin Rect[T]Pad_1550.000000x1000.000000_um (rotate 180) 1 2625 850)
+      (pin Rect[T]Pad_1550.000000x1000.000000_um (rotate 180) 2 2625 -850)
+      (pin Rect[T]Pad_1550.000000x1000.000000_um (rotate 180) 3 -2625 850)
+      (pin Rect[T]Pad_1550.000000x1000.000000_um (rotate 180) 4 -2625 -850)
+    )
+    (image ceoloide:power_switch_smd_side
+      (outline (path signal 100  -1305 3350  -1305 -3350))
+      (outline (path signal 100  1295 3350  -1305 3350))
+      (outline (path signal 100  1295 -3350  1295 3350))
+      (outline (path signal 100  -1305 -3350  1295 -3350))
+      (outline (path signal 100  2595 -100  1295 -100))
+      (outline (path signal 100  2645 -150  2595 -100))
+      (outline (path signal 100  2845 -350  2645 -150))
+      (outline (path signal 100  2845 -1200  2845 -350))
+      (outline (path signal 100  2645 -1400  2845 -1200))
+      (outline (path signal 100  1345 -1400  2645 -1400))
+      (outline (path signal 120  415 3450  -375 3450))
+      (outline (path signal 120  -375 -3450  415 -3450))
+      (outline (path signal 120  -1425 -1600  -1425 100))
+      (outline (path signal 120  1425 -2850  1425 2850))
+      (outline (path signal 120  -1425 1400  -1425 1600))
+      (outline (path signal 50  1795 -4400  -2755 -4400))
+      (outline (path signal 50  1795 -1650  1795 -4400))
+      (outline (path signal 50  3095 -1650  1795 -1650))
+      (outline (path signal 50  3095 1650  3095 -1650))
+      (outline (path signal 50  1795 1650  3095 1650))
+      (outline (path signal 50  1795 4400  1795 1650))
+      (outline (path signal 50  -2755 4400  1795 4400))
+      (outline (path signal 50  -2755 -4400  -2755 4400))
+      (pin Rect[T]Pad_1000.000000x800.000000_um (rotate 90) @1 1125 3650)
+      (pin Rect[T]Pad_1000.000000x800.000000_um (rotate 90) @2 -1085 3650)
+      (pin Rect[T]Pad_1000.000000x800.000000_um (rotate 90) @3 -1085 -3650)
+      (pin Rect[T]Pad_1000.000000x800.000000_um (rotate 90) @4 1125 -3650)
+      (pin Rect[T]Pad_700.000000x1500.000000_um (rotate 90) 1 -1735 -2250)
+      (pin Rect[T]Pad_700.000000x1500.000000_um (rotate 90) 2 -1735 750)
+      (pin Rect[T]Pad_700.000000x1500.000000_um (rotate 90) 3 -1735 2250)
+      (keepout "" (circle F.Cu 1400 25 1500))
+      (keepout "" (circle B.Cu 1400 25 1500))
+      (keepout "" (circle F.Cu 1400 25 -1500))
+      (keepout "" (circle B.Cu 1400 25 -1500))
+    )
+    (image ceoloide:battery_connector_jst_ph_2
+      (outline (path signal 100  -2950 -1350  -2250 -1350))
+      (outline (path signal 100  -2950 6250  -2950 -1350))
+      (outline (path signal 100  -2250 -1350  -2250 250))
+      (outline (path signal 100  -2250 250  2250 250))
+      (outline (path signal 100  2250 -1350  2950 -1350))
+      (outline (path signal 100  2250 250  2250 -1350))
+      (outline (path signal 100  2950 -1350  2950 6250))
+      (outline (path signal 100  2950 6250  -2950 6250))
+      (outline (path signal 50  -3450 -1850  -3450 10500))
+      (outline (path signal 50  -3450 10500  3450 10500))
+      (outline (path signal 50  3450 -1850  -3450 -1850))
+      (outline (path signal 50  3450 10500  3450 -1850))
+      (outline (path signal 100  1500 7400  500 7400))
+      (outline (path signal 100  -1500 7400  -500 7400))
+      (outline (path signal 100  -1000 6900  -1000 7900))
+      (outline (path signal 120  -2060 -1460  -3060 -1460))
+      (outline (path signal 120  -3060 -1460  -3060 -460))
+      (outline (path signal 120  2140 -1460  3060 -1460))
+      (outline (path signal 120  3060 -1460  3060 -460))
+      (outline (path signal 120  -2140 6360  -3060 6360))
+      (outline (path signal 120  -3060 6360  -3060 5360))
+      (outline (path signal 120  2140 6360  3060 6360))
+      (outline (path signal 120  3060 6360  3060 5360))
+      (pin RoundRect[A]Pad_1200.000000x1750.000000_240.913000_um_0.000000_0 1 1000 0)
+      (pin Oval[A]Pad_1200.000000x1750.000000_um 2 -1000 0)
+    )
+    (image ceoloide:mounting_hole_npth
+      (keepout "" (circle F.Cu 2700))
+      (keepout "" (circle B.Cu 2700))
+    )
+    (image local:TPS43_abstract_interface
+      (outline (path signal 150  -21500 21500  21500 21500  21500 -21500  -21500 -21500))
+      (pin Rect[T]Pad_1500.000000x2000.000000_um 1 -6350 -24000)
+      (pin Rect[T]Pad_1500.000000x2000.000000_um 2 -3810 -24000)
+      (pin Rect[T]Pad_1500.000000x2000.000000_um 3 -1270 -24000)
+      (pin Rect[T]Pad_1500.000000x2000.000000_um 4 1270 -24000)
+      (pin Rect[T]Pad_1500.000000x2000.000000_um 5 3810 -24000)
+      (pin Rect[T]Pad_1500.000000x2000.000000_um 6 6350 -24000)
+    )
+    (padstack Round[A]Pad_1700.000000_um
+      (shape (circle F.Cu 1700))
+      (shape (circle B.Cu 1700))
+      (attach off)
+    )
+    (padstack Round[A]Pad_2032.000000_um
+      (shape (circle F.Cu 2032))
+      (shape (circle B.Cu 2032))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1200.000000x1750.000000_um
+      (shape (path F.Cu 1200  0 -275  0 275))
+      (shape (path B.Cu 1200  0 -275  0 275))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1700.000000x1700.000000_um
+      (shape (path F.Cu 1700  0 0  0 0))
+      (shape (path B.Cu 1700  0 0  0 0))
+      (attach off)
+    )
+    (padstack RoundRect[A]Pad_1200.000000x1750.000000_240.913000_um_0.000000_0
+      (shape (polygon F.Cu 0  -600.913 635  -582.575 727.193  -530.351 805.351  -452.193 857.575
+            -359.999 875.912  360 875.913  452.193 857.575  530.351 805.351
+            582.575 727.193  600.912 634.999  600.913 -635  582.575 -727.193
+            530.351 -805.351  452.193 -857.575  359.999 -875.912  -360 -875.913
+            -452.193 -857.575  -530.351 -805.351  -582.575 -727.193  -600.912 -634.999
+            -600.913 635))
+      (shape (polygon B.Cu 0  -600.913 635  -582.575 727.193  -530.351 805.351  -452.193 857.575
+            -359.999 875.912  360 875.913  452.193 857.575  530.351 805.351
+            582.575 727.193  600.912 634.999  600.913 -635  582.575 -727.193
+            530.351 -805.351  452.193 -857.575  359.999 -875.912  -360 -875.913
+            -452.193 -857.575  -530.351 -805.351  -582.575 -727.193  -600.912 -634.999
+            -600.913 635))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_700.000000x1500.000000_um
+      (shape (rect F.Cu -350 -750 350 750))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_1000.000000x800.000000_um
+      (shape (rect F.Cu -500 -400 500 400))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_1500.000000x2000.000000_um
+      (shape (rect F.Cu -750 -1000 750 1000))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_1550.000000x1000.000000_um
+      (shape (rect F.Cu -775 -500 775 500))
+      (attach off)
+    )
+    (padstack "Via[0-1]_600:300_um"
+      (shape (circle F.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+  )
+  (network
+    (net default_default
+      (pins S1-2 S2-2 S3-2 S4-2)
+    )
+    (net GND
+      (pins S1-1 S2-1 S3-1 S4-1 MCU1-23 MCU1-3 MCU1-4 MCU1-26 DISP1-4 RST1-1 RST1-3
+        JST1-1 TP1-2)
+    )
+    (net VBAT
+      (pins MCU1-24 MCU1-25 PWR1-2)
+    )
+    (net RST
+      (pins MCU1-22 RST1-2 RST1-4)
+    )
+    (net 3V3
+      (pins MCU1-21 DISP1-3 TP1-1)
+    )
+    (net P21
+      (pins MCU1-20)
+    )
+    (net P20
+      (pins MCU1-19)
+    )
+    (net P19
+      (pins MCU1-18)
+    )
+    (net TP_RST
+      (pins MCU1-17 TP1-6)
+    )
+    (net TP_SCL
+      (pins MCU1-16 TP1-4)
+    )
+    (net TP_SDA
+      (pins MCU1-15 TP1-3)
+    )
+    (net TP_RDY
+      (pins MCU1-14 TP1-5)
+    )
+    (net P10
+      (pins MCU1-13)
+    )
+    (net P1
+      (pins MCU1-1)
+    )
+    (net P0
+      (pins MCU1-2)
+    )
+    (net P2
+      (pins MCU1-5)
+    )
+    (net P3
+      (pins MCU1-6)
+    )
+    (net key_bottom_1
+      (pins MCU1-7)
+    )
+    (net key_bottom_2
+      (pins MCU1-8)
+    )
+    (net key_bottom_3
+      (pins MCU1-9)
+    )
+    (net key_bottom_4
+      (pins MCU1-10)
+    )
+    (net P8
+      (pins MCU1-11)
+    )
+    (net P9
+      (pins MCU1-12)
+    )
+    (net DISPLAY_MOSI
+      (pins DISP1-1)
+    )
+    (net DISPLAY_SCK
+      (pins DISP1-2)
+    )
+    (net DISPLAY_CS
+      (pins DISP1-5)
+    )
+    (net BAT_P
+      (pins PWR1-1 JST1-2)
+    )
+    (class kicad_default 3V3 BAT_P D1 D2 DISP1_1 DISP1_2 DISP1_4 DISP1_5 DISPLAY_CS
+      DISPLAY_MOSI DISPLAY_SCK GND JST1_1 JST1_2 MCU1_1 MCU1_10 MCU1_11 MCU1_12
+      MCU1_13 MCU1_14 MCU1_15 MCU1_16 MCU1_17 MCU1_18 MCU1_19 MCU1_2 MCU1_20
+      MCU1_21 MCU1_22 MCU1_23 MCU1_24 MCU1_3 MCU1_4 MCU1_5 MCU1_6 MCU1_7 MCU1_8
+      MCU1_9 P0 P1 P10 P101 P102 P107 P19 P2 P20 P21 P3 P8 P9 RST TP_RDY TP_RST
+      TP_SCL TP_SDA VBAT default_default key_bottom_1 key_bottom_2 key_bottom_3
+      key_bottom_4
+      (circuit
+        (use_via "Via[0-1]_600:300_um")
+      )
+      (rule
+        (width 200)
+        (clearance 200)
+      )
+    )
+  )
+  (wiring
+  )
+)

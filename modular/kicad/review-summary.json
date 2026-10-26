@@ -1,0 +1,64 @@
+{
+  "status": "Review draft with accepted clashes and outstanding DRC findings",
+  "pcb_mm": [
+    75.2,
+    75.2,
+    1.6
+  ],
+  "acrylic_mm": [
+    75.2,
+    75.2,
+    3
+  ],
+  "assembly_xy_including_usb_and_controls_mm": [
+    76.0,
+    77.469
+  ],
+  "illustrated_assembly_height_mm": 20.0,
+  "assembly_height_status": "Provisional envelopes; real keycaps, sockets, ring and stack need confirmation",
+  "key_spacing_status": "Provisional 19.05 mm units; spoken reference board remains unidentified",
+  "switches": 12,
+  "independent_key_inputs": 12,
+  "controller_socket_contacts": 26,
+  "track_and_via_items": 133,
+  "accepted_header_clearances": 8,
+  "unconnected_items": [
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "PTH pad 20 [DISPLAY_MOSI] of MCU1",
+          "pos": {
+            "x": 101.905,
+            "y": 76.37
+          },
+          "uuid": "614be329-7038-43f0-b277-c61fc6aeeb65"
+        },
+        {
+          "description": "PTH pad 5 [DISPLAY_MOSI] of DISP1",
+          "pos": {
+            "x": 133.655,
+            "y": 116.7
+          },
+          "uuid": "8bb5ae54-2571-49de-8555-bb2c99c957cf"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    }
+  ],
+  "drc_types": {
+    "hole_clearance": 8,
+    "clearance": 1,
+    "silk_edge_clearance": 5,
+    "copper_edge_clearance": 2,
+    "hole_to_hole": 2,
+    "lib_footprint_issues": 21,
+    "silk_over_copper": 24,
+    "solder_mask_bridge": 6,
+    "silk_overlap": 20,
+    "nonmirrored_text_on_back_layer": 9
+  },
+  "sources_match_routed_placements": true,
+  "manufacturer_component_models": false
+}

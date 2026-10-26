@@ -1,0 +1,16 @@
+node_modules/
+.git/
+.DS_Store
+.venv/
+venv/
+.cache/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.pyc
+*.log
+*.FCBak
+*.FCStd1
+*.kicad_prl
+~*.lck

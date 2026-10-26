@@ -1,0 +1,824 @@
+models:
+    export:
+        models:
+            keys_c1_bottom:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 90.975
+                            - -110.02499999999999
+                        end:
+                            - 109.02499999999999
+                            - -110.02499999999999
+                    right:
+                        type: line
+                        origin:
+                            - 109.02499999999999
+                            - -110.02499999999999
+                        end:
+                            - 109.02499999999999
+                            - -137.6
+                    bottom:
+                        type: line
+                        origin:
+                            - 109.02499999999999
+                            - -137.6
+                        end:
+                            - 90.975
+                            - -137.6
+                    left:
+                        type: line
+                        origin:
+                            - 90.975
+                            - -137.6
+                        end:
+                            - 90.975
+                            - -110.02499999999999
+                origin:
+                    - 0
+                    - 0
+            keys_c1_middle:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 90.975
+                            - -90.97500000000001
+                        end:
+                            - 109.02499999999999
+                            - -90.97500000000001
+                    right:
+                        type: line
+                        origin:
+                            - 109.02499999999999
+                            - -90.97500000000001
+                        end:
+                            - 109.02499999999999
+                            - -109.025
+                    bottom:
+                        type: line
+                        origin:
+                            - 109.02499999999999
+                            - -109.025
+                        end:
+                            - 90.975
+                            - -109.025
+                    left:
+                        type: line
+                        origin:
+                            - 90.975
+                            - -109.025
+                        end:
+                            - 90.975
+                            - -90.97500000000001
+                origin:
+                    - 0
+                    - 0
+            keys_c1_top:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 90.975
+                            - -62.39999999999999
+                        end:
+                            - 109.02499999999999
+                            - -62.39999999999999
+                    right:
+                        type: line
+                        origin:
+                            - 109.02499999999999
+                            - -62.39999999999999
+                        end:
+                            - 109.02499999999999
+                            - -89.975
+                    bottom:
+                        type: line
+                        origin:
+                            - 109.02499999999999
+                            - -89.975
+                        end:
+                            - 90.975
+                            - -89.975
+                    left:
+                        type: line
+                        origin:
+                            - 90.975
+                            - -89.975
+                        end:
+                            - 90.975
+                            - -62.39999999999999
+                origin:
+                    - 0
+                    - 0
+            keys_c2_bottom:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 110.02499999999999
+                            - -110.02499999999999
+                        end:
+                            - 128.075
+                            - -110.02499999999999
+                    right:
+                        type: line
+                        origin:
+                            - 128.075
+                            - -110.02499999999999
+                        end:
+                            - 128.075
+                            - -137.6
+                    bottom:
+                        type: line
+                        origin:
+                            - 128.075
+                            - -137.6
+                        end:
+                            - 110.02499999999999
+                            - -137.6
+                    left:
+                        type: line
+                        origin:
+                            - 110.02499999999999
+                            - -137.6
+                        end:
+                            - 110.02499999999999
+                            - -110.02499999999999
+                origin:
+                    - 0
+                    - 0
+            keys_c2_middle:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 110.02499999999999
+                            - -90.97500000000001
+                        end:
+                            - 128.075
+                            - -90.97500000000001
+                    right:
+                        type: line
+                        origin:
+                            - 128.075
+                            - -90.97500000000001
+                        end:
+                            - 128.075
+                            - -109.025
+                    bottom:
+                        type: line
+                        origin:
+                            - 128.075
+                            - -109.025
+                        end:
+                            - 110.02499999999999
+                            - -109.025
+                    left:
+                        type: line
+                        origin:
+                            - 110.02499999999999
+                            - -109.025
+                        end:
+                            - 110.02499999999999
+                            - -90.97500000000001
+                origin:
+                    - 0
+                    - 0
+            keys_c2_top:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 110.02499999999999
+                            - -62.39999999999999
+                        end:
+                            - 128.075
+                            - -62.39999999999999
+                    right:
+                        type: line
+                        origin:
+                            - 128.075
+                            - -62.39999999999999
+                        end:
+                            - 128.075
+                            - -89.975
+                    bottom:
+                        type: line
+                        origin:
+                            - 128.075
+                            - -89.975
+                        end:
+                            - 110.02499999999999
+                            - -89.975
+                    left:
+                        type: line
+                        origin:
+                            - 110.02499999999999
+                            - -89.975
+                        end:
+                            - 110.02499999999999
+                            - -62.39999999999999
+                origin:
+                    - 0
+                    - 0
+            keys_c3_bottom:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 129.075
+                            - -110.02499999999999
+                        end:
+                            - 147.125
+                            - -110.02499999999999
+                    right:
+                        type: line
+                        origin:
+                            - 147.125
+                            - -110.02499999999999
+                        end:
+                            - 147.125
+                            - -137.6
+                    bottom:
+                        type: line
+                        origin:
+                            - 147.125
+                            - -137.6
+                        end:
+                            - 129.075
+                            - -137.6
+                    left:
+                        type: line
+                        origin:
+                            - 129.075
+                            - -137.6
+                        end:
+                            - 129.075
+                            - -110.02499999999999
+                origin:
+                    - 0
+                    - 0
+            keys_c3_middle:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 129.075
+                            - -90.97500000000001
+                        end:
+                            - 147.125
+                            - -90.97500000000001
+                    right:
+                        type: line
+                        origin:
+                            - 147.125
+                            - -90.97500000000001
+                        end:
+                            - 147.125
+                            - -109.025
+                    bottom:
+                        type: line
+                        origin:
+                            - 147.125
+                            - -109.025
+                        end:
+                            - 129.075
+                            - -109.025
+                    left:
+                        type: line
+                        origin:
+                            - 129.075
+                            - -109.025
+                        end:
+                            - 129.075
+                            - -90.97500000000001
+                origin:
+                    - 0
+                    - 0
+            keys_c3_top:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 129.075
+                            - -62.39999999999999
+                        end:
+                            - 147.125
+                            - -62.39999999999999
+                    right:
+                        type: line
+                        origin:
+                            - 147.125
+                            - -62.39999999999999
+                        end:
+                            - 147.125
+                            - -89.975
+                    bottom:
+                        type: line
+                        origin:
+                            - 147.125
+                            - -89.975
+                        end:
+                            - 129.075
+                            - -89.975
+                    left:
+                        type: line
+                        origin:
+                            - 129.075
+                            - -89.975
+                        end:
+                            - 129.075
+                            - -62.39999999999999
+                origin:
+                    - 0
+                    - 0
+            keys_c4_bottom:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 148.125
+                            - -110.02499999999999
+                        end:
+                            - 166.175
+                            - -110.02499999999999
+                    right:
+                        type: line
+                        origin:
+                            - 166.175
+                            - -110.02499999999999
+                        end:
+                            - 166.175
+                            - -137.6
+                    bottom:
+                        type: line
+                        origin:
+                            - 166.175
+                            - -137.6
+                        end:
+                            - 148.125
+                            - -137.6
+                    left:
+                        type: line
+                        origin:
+                            - 148.125
+                            - -137.6
+                        end:
+                            - 148.125
+                            - -110.02499999999999
+                origin:
+                    - 0
+                    - 0
+            keys_c4_middle:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 148.125
+                            - -90.97500000000001
+                        end:
+                            - 166.175
+                            - -90.97500000000001
+                    right:
+                        type: line
+                        origin:
+                            - 166.175
+                            - -90.97500000000001
+                        end:
+                            - 166.175
+                            - -109.025
+                    bottom:
+                        type: line
+                        origin:
+                            - 166.175
+                            - -109.025
+                        end:
+                            - 148.125
+                            - -109.025
+                    left:
+                        type: line
+                        origin:
+                            - 148.125
+                            - -109.025
+                        end:
+                            - 148.125
+                            - -90.97500000000001
+                origin:
+                    - 0
+                    - 0
+            keys_c4_top:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 148.125
+                            - -62.39999999999999
+                        end:
+                            - 166.175
+                            - -62.39999999999999
+                    right:
+                        type: line
+                        origin:
+                            - 166.175
+                            - -62.39999999999999
+                        end:
+                            - 166.175
+                            - -89.975
+                    bottom:
+                        type: line
+                        origin:
+                            - 166.175
+                            - -89.975
+                        end:
+                            - 148.125
+                            - -89.975
+                    left:
+                        type: line
+                        origin:
+                            - 148.125
+                            - -89.975
+                        end:
+                            - 148.125
+                            - -62.39999999999999
+                origin:
+                    - 0
+                    - 0
+            controller:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 100.525
+                            - -69.91
+                        end:
+                            - 118.525
+                            - -69.91
+                    right:
+                        type: line
+                        origin:
+                            - 118.525
+                            - -69.91
+                        end:
+                            - 118.525
+                            - -87.91
+                    bottom:
+                        type: line
+                        origin:
+                            - 118.525
+                            - -87.91
+                        end:
+                            - 100.525
+                            - -87.91
+                    left:
+                        type: line
+                        origin:
+                            - 100.525
+                            - -87.91
+                        end:
+                            - 100.525
+                            - -69.91
+                origin:
+                    - 0
+                    - 0
+            display:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 119.57499999999999
+                            - -91
+                        end:
+                            - 137.575
+                            - -91
+                    right:
+                        type: line
+                        origin:
+                            - 137.575
+                            - -91
+                        end:
+                            - 137.575
+                            - -109
+                    bottom:
+                        type: line
+                        origin:
+                            - 137.575
+                            - -109
+                        end:
+                            - 119.57499999999999
+                            - -109
+                    left:
+                        type: line
+                        origin:
+                            - 119.57499999999999
+                            - -109
+                        end:
+                            - 119.57499999999999
+                            - -91
+                origin:
+                    - 0
+                    - 0
+            battery:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 138.625
+                            - -91
+                        end:
+                            - 156.625
+                            - -91
+                    right:
+                        type: line
+                        origin:
+                            - 156.625
+                            - -91
+                        end:
+                            - 156.625
+                            - -109
+                    bottom:
+                        type: line
+                        origin:
+                            - 156.625
+                            - -109
+                        end:
+                            - 138.625
+                            - -109
+                    left:
+                        type: line
+                        origin:
+                            - 138.625
+                            - -109
+                        end:
+                            - 138.625
+                            - -91
+                origin:
+                    - 0
+                    - 0
+            reset:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 83.925
+                            - -91
+                        end:
+                            - 101.925
+                            - -91
+                    right:
+                        type: line
+                        origin:
+                            - 101.925
+                            - -91
+                        end:
+                            - 101.925
+                            - -109
+                    bottom:
+                        type: line
+                        origin:
+                            - 101.925
+                            - -109
+                        end:
+                            - 83.925
+                            - -109
+                    left:
+                        type: line
+                        origin:
+                            - 83.925
+                            - -109
+                        end:
+                            - 83.925
+                            - -91
+                origin:
+                    - 0
+                    - 0
+            power:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 100.525
+                            - -126.5
+                        end:
+                            - 118.525
+                            - -126.5
+                    right:
+                        type: line
+                        origin:
+                            - 118.525
+                            - -126.5
+                        end:
+                            - 118.525
+                            - -144.5
+                    bottom:
+                        type: line
+                        origin:
+                            - 118.525
+                            - -144.5
+                        end:
+                            - 100.525
+                            - -144.5
+                    left:
+                        type: line
+                        origin:
+                            - 100.525
+                            - -144.5
+                        end:
+                            - 100.525
+                            - -126.5
+                origin:
+                    - 0
+                    - 0
+            jst:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 138.625
+                            - -118.1
+                        end:
+                            - 156.625
+                            - -118.1
+                    right:
+                        type: line
+                        origin:
+                            - 156.625
+                            - -118.1
+                        end:
+                            - 156.625
+                            - -136.1
+                    bottom:
+                        type: line
+                        origin:
+                            - 156.625
+                            - -136.1
+                        end:
+                            - 138.625
+                            - -136.1
+                    left:
+                        type: line
+                        origin:
+                            - 138.625
+                            - -136.1
+                        end:
+                            - 138.625
+                            - -118.1
+                origin:
+                    - 0
+                    - 0
+            mount_nw:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 84.975
+                            - -56.400000000000006
+                        end:
+                            - 102.975
+                            - -56.400000000000006
+                    right:
+                        type: line
+                        origin:
+                            - 102.975
+                            - -56.400000000000006
+                        end:
+                            - 102.975
+                            - -74.4
+                    bottom:
+                        type: line
+                        origin:
+                            - 102.975
+                            - -74.4
+                        end:
+                            - 84.975
+                            - -74.4
+                    left:
+                        type: line
+                        origin:
+                            - 84.975
+                            - -74.4
+                        end:
+                            - 84.975
+                            - -56.400000000000006
+                origin:
+                    - 0
+                    - 0
+            mount_ne:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 154.175
+                            - -56.400000000000006
+                        end:
+                            - 172.175
+                            - -56.400000000000006
+                    right:
+                        type: line
+                        origin:
+                            - 172.175
+                            - -56.400000000000006
+                        end:
+                            - 172.175
+                            - -74.4
+                    bottom:
+                        type: line
+                        origin:
+                            - 172.175
+                            - -74.4
+                        end:
+                            - 154.175
+                            - -74.4
+                    left:
+                        type: line
+                        origin:
+                            - 154.175
+                            - -74.4
+                        end:
+                            - 154.175
+                            - -56.400000000000006
+                origin:
+                    - 0
+                    - 0
+            mount_sw:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 84.975
+                            - -125.6
+                        end:
+                            - 102.975
+                            - -125.6
+                    right:
+                        type: line
+                        origin:
+                            - 102.975
+                            - -125.6
+                        end:
+                            - 102.975
+                            - -143.6
+                    bottom:
+                        type: line
+                        origin:
+                            - 102.975
+                            - -143.6
+                        end:
+                            - 84.975
+                            - -143.6
+                    left:
+                        type: line
+                        origin:
+                            - 84.975
+                            - -143.6
+                        end:
+                            - 84.975
+                            - -125.6
+                origin:
+                    - 0
+                    - 0
+            mount_se:
+                paths:
+                    top:
+                        type: line
+                        origin:
+                            - 154.175
+                            - -125.6
+                        end:
+                            - 172.175
+                            - -125.6
+                    right:
+                        type: line
+                        origin:
+                            - 172.175
+                            - -125.6
+                        end:
+                            - 172.175
+                            - -143.6
+                    bottom:
+                        type: line
+                        origin:
+                            - 172.175
+                            - -143.6
+                        end:
+                            - 154.175
+                            - -143.6
+                    left:
+                        type: line
+                        origin:
+                            - 154.175
+                            - -143.6
+                        end:
+                            - 154.175
+                            - -125.6
+                origin:
+                    - 0
+                    - 0
+        origin:
+            - 0
+            - 0
+units: mm
+origin:
+    - 0
+    - 0

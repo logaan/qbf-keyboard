@@ -1,0 +1,742 @@
+#VRML V2.0 utf8
+# Review envelopes only; dimensions from editable Ergogen units.
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-8.4940945 -12.1309055 0.0000000,
+-8.4940945 -6.6190945 0.0000000,
+-14.0059055 -6.6190945 0.0000000,
+-14.0059055 -12.1309055 0.0000000,
+-8.4940945 -12.1309055 2.0866142,
+-8.4940945 -6.6190945 2.0866142,
+-14.0059055 -6.6190945 2.0866142,
+-14.0059055 -12.1309055 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.63 0.72 0.87 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-7.6968504 -14.8031496 2.5590551,
+-7.6968504 -3.9468504 2.5590551,
+-14.8031496 -3.9468504 2.5590551,
+-14.8031496 -14.8031496 2.5590551,
+-7.6968504 -14.8031496 3.3464567,
+-7.6968504 -3.9468504 3.3464567,
+-14.8031496 -3.9468504 3.3464567,
+-14.8031496 -14.8031496 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-8.4940945 -2.7559055 0.0000000,
+-8.4940945 2.7559055 0.0000000,
+-14.0059055 2.7559055 0.0000000,
+-14.0059055 -2.7559055 0.0000000,
+-8.4940945 -2.7559055 2.0866142,
+-8.4940945 2.7559055 2.0866142,
+-14.0059055 2.7559055 2.0866142,
+-14.0059055 -2.7559055 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.47 0.78 0.74 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-7.6968504 -3.5531496 2.5590551,
+-7.6968504 3.5531496 2.5590551,
+-14.8031496 3.5531496 2.5590551,
+-14.8031496 -3.5531496 2.5590551,
+-7.6968504 -3.5531496 3.3464567,
+-7.6968504 3.5531496 3.3464567,
+-14.8031496 3.5531496 3.3464567,
+-14.8031496 -3.5531496 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-8.4940945 6.6190945 0.0000000,
+-8.4940945 12.1309055 0.0000000,
+-14.0059055 12.1309055 0.0000000,
+-14.0059055 6.6190945 0.0000000,
+-8.4940945 6.6190945 2.0866142,
+-8.4940945 12.1309055 2.0866142,
+-14.0059055 12.1309055 2.0866142,
+-14.0059055 6.6190945 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.63 0.72 0.87 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-7.6968504 3.9468504 2.5590551,
+-7.6968504 14.8031496 2.5590551,
+-14.8031496 14.8031496 2.5590551,
+-14.8031496 3.9468504 2.5590551,
+-7.6968504 3.9468504 3.3464567,
+-7.6968504 14.8031496 3.3464567,
+-14.8031496 14.8031496 3.3464567,
+-14.8031496 3.9468504 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-0.9940945 -12.1309055 0.0000000,
+-0.9940945 -6.6190945 0.0000000,
+-6.5059055 -6.6190945 0.0000000,
+-6.5059055 -12.1309055 0.0000000,
+-0.9940945 -12.1309055 2.0866142,
+-0.9940945 -6.6190945 2.0866142,
+-6.5059055 -6.6190945 2.0866142,
+-6.5059055 -12.1309055 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.63 0.72 0.87 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-0.1968504 -14.8031496 2.5590551,
+-0.1968504 -3.9468504 2.5590551,
+-7.3031496 -3.9468504 2.5590551,
+-7.3031496 -14.8031496 2.5590551,
+-0.1968504 -14.8031496 3.3464567,
+-0.1968504 -3.9468504 3.3464567,
+-7.3031496 -3.9468504 3.3464567,
+-7.3031496 -14.8031496 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-0.9940945 -2.7559055 0.0000000,
+-0.9940945 2.7559055 0.0000000,
+-6.5059055 2.7559055 0.0000000,
+-6.5059055 -2.7559055 0.0000000,
+-0.9940945 -2.7559055 2.0866142,
+-0.9940945 2.7559055 2.0866142,
+-6.5059055 2.7559055 2.0866142,
+-6.5059055 -2.7559055 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.47 0.78 0.74 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-0.1968504 -3.5531496 2.5590551,
+-0.1968504 3.5531496 2.5590551,
+-7.3031496 3.5531496 2.5590551,
+-7.3031496 -3.5531496 2.5590551,
+-0.1968504 -3.5531496 3.3464567,
+-0.1968504 3.5531496 3.3464567,
+-7.3031496 3.5531496 3.3464567,
+-7.3031496 -3.5531496 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-0.9940945 6.6190945 0.0000000,
+-0.9940945 12.1309055 0.0000000,
+-6.5059055 12.1309055 0.0000000,
+-6.5059055 6.6190945 0.0000000,
+-0.9940945 6.6190945 2.0866142,
+-0.9940945 12.1309055 2.0866142,
+-6.5059055 12.1309055 2.0866142,
+-6.5059055 6.6190945 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.63 0.72 0.87 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-0.1968504 3.9468504 2.5590551,
+-0.1968504 14.8031496 2.5590551,
+-7.3031496 14.8031496 2.5590551,
+-7.3031496 3.9468504 2.5590551,
+-0.1968504 3.9468504 3.3464567,
+-0.1968504 14.8031496 3.3464567,
+-7.3031496 14.8031496 3.3464567,
+-7.3031496 3.9468504 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+6.5059055 -12.1309055 0.0000000,
+6.5059055 -6.6190945 0.0000000,
+0.9940945 -6.6190945 0.0000000,
+0.9940945 -12.1309055 0.0000000,
+6.5059055 -12.1309055 2.0866142,
+6.5059055 -6.6190945 2.0866142,
+0.9940945 -6.6190945 2.0866142,
+0.9940945 -12.1309055 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.63 0.72 0.87 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+7.3031496 -14.8031496 2.5590551,
+7.3031496 -3.9468504 2.5590551,
+0.1968504 -3.9468504 2.5590551,
+0.1968504 -14.8031496 2.5590551,
+7.3031496 -14.8031496 3.3464567,
+7.3031496 -3.9468504 3.3464567,
+0.1968504 -3.9468504 3.3464567,
+0.1968504 -14.8031496 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+6.5059055 -2.7559055 0.0000000,
+6.5059055 2.7559055 0.0000000,
+0.9940945 2.7559055 0.0000000,
+0.9940945 -2.7559055 0.0000000,
+6.5059055 -2.7559055 2.0866142,
+6.5059055 2.7559055 2.0866142,
+0.9940945 2.7559055 2.0866142,
+0.9940945 -2.7559055 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.47 0.78 0.74 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+7.3031496 -3.5531496 2.5590551,
+7.3031496 3.5531496 2.5590551,
+0.1968504 3.5531496 2.5590551,
+0.1968504 -3.5531496 2.5590551,
+7.3031496 -3.5531496 3.3464567,
+7.3031496 3.5531496 3.3464567,
+0.1968504 3.5531496 3.3464567,
+0.1968504 -3.5531496 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+6.5059055 6.6190945 0.0000000,
+6.5059055 12.1309055 0.0000000,
+0.9940945 12.1309055 0.0000000,
+0.9940945 6.6190945 0.0000000,
+6.5059055 6.6190945 2.0866142,
+6.5059055 12.1309055 2.0866142,
+0.9940945 12.1309055 2.0866142,
+0.9940945 6.6190945 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.63 0.72 0.87 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+7.3031496 3.9468504 2.5590551,
+7.3031496 14.8031496 2.5590551,
+0.1968504 14.8031496 2.5590551,
+0.1968504 3.9468504 2.5590551,
+7.3031496 3.9468504 3.3464567,
+7.3031496 14.8031496 3.3464567,
+0.1968504 14.8031496 3.3464567,
+0.1968504 3.9468504 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+14.0059055 -12.1309055 0.0000000,
+14.0059055 -6.6190945 0.0000000,
+8.4940945 -6.6190945 0.0000000,
+8.4940945 -12.1309055 0.0000000,
+14.0059055 -12.1309055 2.0866142,
+14.0059055 -6.6190945 2.0866142,
+8.4940945 -6.6190945 2.0866142,
+8.4940945 -12.1309055 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.63 0.72 0.87 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+14.8031496 -14.8031496 2.5590551,
+14.8031496 -3.9468504 2.5590551,
+7.6968504 -3.9468504 2.5590551,
+7.6968504 -14.8031496 2.5590551,
+14.8031496 -14.8031496 3.3464567,
+14.8031496 -3.9468504 3.3464567,
+7.6968504 -3.9468504 3.3464567,
+7.6968504 -14.8031496 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+14.0059055 -2.7559055 0.0000000,
+14.0059055 2.7559055 0.0000000,
+8.4940945 2.7559055 0.0000000,
+8.4940945 -2.7559055 0.0000000,
+14.0059055 -2.7559055 2.0866142,
+14.0059055 2.7559055 2.0866142,
+8.4940945 2.7559055 2.0866142,
+8.4940945 -2.7559055 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.47 0.78 0.74 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+14.8031496 -3.5531496 2.5590551,
+14.8031496 3.5531496 2.5590551,
+7.6968504 3.5531496 2.5590551,
+7.6968504 -3.5531496 2.5590551,
+14.8031496 -3.5531496 3.3464567,
+14.8031496 3.5531496 3.3464567,
+7.6968504 3.5531496 3.3464567,
+7.6968504 -3.5531496 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.19 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+14.0059055 6.6190945 0.0000000,
+14.0059055 12.1309055 0.0000000,
+8.4940945 12.1309055 0.0000000,
+8.4940945 6.6190945 0.0000000,
+14.0059055 6.6190945 2.0866142,
+14.0059055 12.1309055 2.0866142,
+8.4940945 12.1309055 2.0866142,
+8.4940945 6.6190945 2.0866142
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.63 0.72 0.87 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+14.8031496 3.9468504 2.5590551,
+14.8031496 14.8031496 2.5590551,
+7.6968504 14.8031496 2.5590551,
+7.6968504 3.9468504 2.5590551,
+14.8031496 3.9468504 3.3464567,
+14.8031496 14.8031496 3.3464567,
+7.6968504 14.8031496 3.3464567,
+7.6968504 3.9468504 3.3464567
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.33 0.29 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-4.0000000 1.7795276 -3.0708661,
+-4.0000000 14.8031496 -3.0708661,
+-11.0000000 14.8031496 -3.0708661,
+-11.0000000 1.7795276 -3.0708661,
+-4.0000000 1.7795276 -1.8110236,
+-4.0000000 14.8031496 -1.8110236,
+-11.0000000 14.8031496 -1.8110236,
+-11.0000000 1.7795276 -1.8110236
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.64 0.67 0.71 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-6.1000000 14.8031496 -3.0708661,
+-6.1000000 15.4031496 -3.0708661,
+-9.0000000 15.4031496 -3.0708661,
+-9.0000000 14.8031496 -3.0708661,
+-6.1000000 14.8031496 -1.8110236,
+-6.1000000 15.4031496 -1.8110236,
+-9.0000000 15.4031496 -1.8110236,
+-9.0000000 14.8031496 -1.8110236
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.15 0.16 0.18 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-10.0000000 1.8031496 -1.8110236,
+-10.0000000 14.8031496 -1.8110236,
+-11.0000000 14.8031496 -1.8110236,
+-11.0000000 1.8031496 -1.8110236,
+-10.0000000 1.8031496 -0.6299213,
+-10.0000000 14.8031496 -0.6299213,
+-11.0000000 14.8031496 -0.6299213,
+-11.0000000 1.8031496 -0.6299213
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.15 0.16 0.18 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-4.0000000 1.8031496 -1.8110236,
+-4.0000000 14.8031496 -1.8110236,
+-5.0000000 14.8031496 -1.8110236,
+-5.0000000 1.8031496 -1.8110236,
+-4.0000000 1.8031496 -0.6299213,
+-4.0000000 14.8031496 -0.6299213,
+-5.0000000 14.8031496 -0.6299213,
+-5.0000000 1.8031496 -0.6299213
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.32 0.26 0.45 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+2.7559055 -7.0866142 -3.0708661,
+2.7559055 7.0866142 -3.0708661,
+-2.7559055 7.0866142 -3.0708661,
+-2.7559055 -7.0866142 -3.0708661,
+2.7559055 -7.0866142 -1.9291339,
+2.7559055 7.0866142 -1.9291339,
+-2.7559055 7.0866142 -1.9291339,
+-2.7559055 -7.0866142 -1.9291339
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.13 0.16 0.2 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+2.1259843 -4.6850394 -3.0905512,
+2.1259843 5.2755906 -3.0905512,
+-2.1259843 5.2755906 -3.0905512,
+-2.1259843 -4.6850394 -3.0905512,
+2.1259843 -4.6850394 -3.0708661,
+2.1259843 5.2755906 -3.0708661,
+-2.1259843 5.2755906 -3.0708661,
+-2.1259843 -4.6850394 -3.0708661
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.74 0.76 0.77 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+9.8622047 -5.9055118 -3.1102362,
+9.8622047 5.9055118 -3.1102362,
+5.1377953 5.9055118 -3.1102362,
+5.1377953 -5.9055118 -3.1102362,
+9.8622047 -5.9055118 -1.9291339,
+9.8622047 5.9055118 -1.9291339,
+5.1377953 5.9055118 -1.9291339,
+5.1377953 -5.9055118 -1.9291339
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.88 0.7 0.15 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+9.8858268 -0.4921260 -3.1299213,
+9.8858268 0.4921260 -3.1299213,
+5.1141732 0.4921260 -3.1299213,
+5.1141732 -0.4921260 -3.1299213,
+9.8858268 -0.4921260 -1.9094488,
+9.8858268 0.4921260 -1.9094488,
+5.1141732 0.4921260 -1.9094488,
+5.1141732 -0.4921260 -1.9094488
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.3 0.32 0.35 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-13.3464567 -0.9251969 -1.3385827,
+-13.3464567 0.9251969 -1.3385827,
+-14.7244094 0.9251969 -1.3385827,
+-14.7244094 -0.9251969 -1.3385827,
+-13.3464567 -0.9251969 -0.6299213,
+-13.3464567 0.9251969 -0.6299213,
+-14.7244094 0.9251969 -0.6299213,
+-14.7244094 -0.9251969 -0.6299213
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.5 0.52 0.55 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-14.7244094 -0.5118110 -1.2598425,
+-14.7244094 0.5118110 -1.2598425,
+-15.1181102 0.5118110 -1.2598425,
+-15.1181102 -0.5118110 -1.2598425,
+-14.7244094 -0.5118110 -0.6299213,
+-14.7244094 0.5118110 -0.6299213,
+-15.1181102 0.5118110 -0.6299213,
+-15.1181102 -0.5118110 -0.6299213
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.3 0.32 0.35 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-6.1811024 -14.4881890 -1.2204724,
+-6.1811024 -13.4645669 -1.2204724,
+-8.8188976 -13.4645669 -1.2204724,
+-8.8188976 -14.4881890 -1.2204724,
+-6.1811024 -14.4881890 -0.6299213,
+-6.1811024 -13.4645669 -0.6299213,
+-8.8188976 -13.4645669 -0.6299213,
+-8.8188976 -14.4881890 -0.6299213
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.16 0.17 0.2 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+-7.1062992 -15.0964567 -1.1811024,
+-7.1062992 -14.4862205 -1.1811024,
+-7.8937008 -14.4862205 -1.1811024,
+-7.8937008 -15.0964567 -1.1811024,
+-7.1062992 -15.0964567 -0.6299213,
+-7.1062992 -14.4862205 -0.6299213,
+-7.8937008 -14.4862205 -0.6299213,
+-7.8937008 -15.0964567 -0.6299213
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.82 0.81 0.76 transparency 0 specularColor 0.2 0.2 0.2 shininess 0.35 } }
+geometry IndexedFaceSet { solid FALSE coord Coordinate { point [
+8.6614173 -13.1299213 -2.5196850,
+8.6614173 -10.1377953 -2.5196850,
+6.3385827 -10.1377953 -2.5196850,
+6.3385827 -13.1299213 -2.5196850,
+8.6614173 -13.1299213 -0.6299213,
+8.6614173 -10.1377953 -0.6299213,
+6.3385827 -10.1377953 -0.6299213,
+6.3385827 -13.1299213 -0.6299213
+] } coordIndex [
+0 3 2 -1,
+6 7 4 -1,
+1 0 2 -1,
+6 4 5 -1,
+0 1 5 4 -1,
+1 2 6 5 -1,
+2 3 7 6 -1,
+3 0 4 7 -1
+] } }

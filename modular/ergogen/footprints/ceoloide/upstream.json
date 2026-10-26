@@ -1,0 +1,46 @@
+{
+  "repository": "https://github.com/ceoloide/ergogen-footprints",
+  "commit": "9217fe6fda18e09b70784f53fece9e0cdea5573d",
+  "files": [
+    {
+      "file": "mcu_nice_nano.js",
+      "url": "https://raw.githubusercontent.com/ceoloide/ergogen-footprints/9217fe6fda18e09b70784f53fece9e0cdea5573d/mcu_nice_nano.js",
+      "sha256": "07cd9eaddd575d42efbb79557c35515c4240f425aa4f9c919fa5f4946f21a34b"
+    },
+    {
+      "file": "display_nice_view.js",
+      "url": "https://raw.githubusercontent.com/ceoloide/ergogen-footprints/9217fe6fda18e09b70784f53fece9e0cdea5573d/display_nice_view.js",
+      "sha256": "bdb2080a9697fc9ddbc8ec41bd8e2b81bfbcea31f4e220cf39a0094a342a66c7"
+    },
+    {
+      "file": "switch_choc_v1_v2.js",
+      "url": "https://raw.githubusercontent.com/ceoloide/ergogen-footprints/9217fe6fda18e09b70784f53fece9e0cdea5573d/switch_choc_v1_v2.js",
+      "sha256": "99c09639255ee6cbf629451c5323c612f84f6010bb3489bc66940e34864f5616"
+    },
+    {
+      "file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/ceoloide/ergogen-footprints/9217fe6fda18e09b70784f53fece9e0cdea5573d/LICENSE",
+      "sha256": "77f13b29db5d0d2a1abb1b83200cc79442e5adf07138a78c80790adea8a6790c"
+    },
+    {
+      "file": "mounting_hole_npth.js",
+      "url": "https://raw.githubusercontent.com/ceoloide/ergogen-footprints/9217fe6fda18e09b70784f53fece9e0cdea5573d/mounting_hole_npth.js",
+      "sha256": "73d1dbff6ac90d29c819749c10942e634d89d66e5c8c8f3801b65a818159085d"
+    },
+    {
+      "file": "power_switch_smd_side.js",
+      "url": "https://raw.githubusercontent.com/ceoloide/ergogen-footprints/9217fe6fda18e09b70784f53fece9e0cdea5573d/power_switch_smd_side.js",
+      "sha256": "4271a1e95ff82bfa490dcee4050927c81e0c5a517d1c24150bb07efde84f81fb"
+    },
+    {
+      "file": "reset_switch_smd_side.js",
+      "url": "https://raw.githubusercontent.com/ceoloide/ergogen-footprints/9217fe6fda18e09b70784f53fece9e0cdea5573d/reset_switch_smd_side.js",
+      "sha256": "232943426b5320029bbd373c6710526bc3fadab474f7473c78d4bcdd65ff0785"
+    },
+    {
+      "file": "battery_connector_jst_ph_2.js",
+      "url": "https://raw.githubusercontent.com/ceoloide/ergogen-footprints/9217fe6fda18e09b70784f53fece9e0cdea5573d/battery_connector_jst_ph_2.js",
+      "sha256": "c16d65fe3aaf4cd4b5c29d226e71e27facb17e2684fc96141ef16e10ed57928a"
+    }
+  ]
+}
