@@ -86,13 +86,16 @@ def vrml_parts(relative, override):
 
 def add_module(number, center, top_z, hide_caps=False):
     folder = ROOT / 'anime-render/generated/native' / f'module{number}'
+    components = json.loads((folder / 'components.json').read_text())
+    if top_z > 0:
+        top_z = max(top_z, components['preview_pcb_top_z_mm'])
     previous = set(bpy.data.objects)
     bpy.ops.import_scene.gltf(filepath=str(folder / 'board.glb'))
     imported = set(bpy.data.objects) - previous
     for obj in imported:
         if obj.parent is None:
             obj.location += Vector((center[0] / 1000, center[1] / 1000, (top_z - 1.6) / 1000))
-    instances = json.loads((folder / 'components.json').read_text())['instances']
+    instances = components['instances']
     for item in instances:
         if hide_caps and item['name'].endswith('_cap'):
             continue

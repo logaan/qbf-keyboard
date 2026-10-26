@@ -87,23 +87,27 @@ def module_instances(spec, name):
             mesh(label + '_cap', 'mbk_15u.wrl' if large else 'mbk_1u_reference.wrl', [x, y, 0],
                  (0, 0, 90 if large else 0), (1, 1, 1) if large else (16.5 / 17.5, 1, 1),
                  [0.68, 0.79, 0.73] if column in (0, 3) else [0.88, 0.85, 0.74])
-    mesh('controller', 'nice_nano_reference.wrl', [spec['controller']['x'], spec['controller']['y'], -1.6], (180, 0, 0))
-    display_position = [module.get('display_x', 0), module['display_y'], 0]
-    display_rotation = (0, 0, module.get('display_rotation', spec['display']['rotation']) + 90)
+    mesh('controller', 'nice_nano_reference.wrl', [module.get('controller_x', spec['controller']['x']), module.get('controller_y', spec['controller']['y']), -1.6], (180, 0, module.get('controller_rotation', 0)))
+    bottom_display = module.get('display_side', spec['display']['side']) == 'B'
+    display_position = [module.get('display_x', 0), module['display_y'], -1.6 if bottom_display else 0]
+    display_rotation = (180 if bottom_display else 0, 0, module.get('display_rotation', spec['display']['rotation']) + 90)
     mesh('display', 'nice_view_reference.wrl', display_position, display_rotation)
     mesh('display_socket', 'display_socket.wrl', display_position, display_rotation)
-    box('protected_battery', spec['battery']['size'], [spec['battery']['x'], spec['battery']['y'], -5.5], [0.65, 0.67, 0.68])
-    box('battery_insulator', [spec['battery']['size'][0] + 0.4, spec['battery']['size'][1] + 0.4, 0.3], [spec['battery']['x'], spec['battery']['y'], -3.85], [0.75, 0.48, 0.08])
+    battery_x, battery_y = module.get('battery_x', spec['battery']['x']), module.get('battery_y', spec['battery']['y'])
+    box('protected_battery', spec['battery']['size'], [battery_x, battery_y, -5.5], [0.65, 0.67, 0.68])
+    box('battery_insulator', [spec['battery']['size'][0] + 0.4, spec['battery']['size'][1] + 0.4, 0.3], [battery_x, battery_y, -3.85], [0.75, 0.48, 0.08])
     box('power_switch', [6.7, 2.8, 1.4], [0, -34, -2.3], [0.22, 0.23, 0.24])
     box('power_actuator', [2, 2, 1], [0, -36, -2.2], [0.08, 0.09, 0.1])
     box('reset_switch', [3.5, 4.7, 1.8], [-32, -12, -2.5], [0.48, 0.5, 0.51])
     box('reset_actuator', [1.2, 2, 1], [-34.5, -12, -2.5], [0.12, 0.13, 0.14])
-    box('battery_connector', [8, 7, 4.8], [22, 9, -4], [0.86, 0.86, 0.81])
+    box('battery_connector', [8, 7, 4.8], [module.get('jst_x', 22), module.get('jst_y', 12) - 3, -4], [0.86, 0.86, 0.81])
+    preview_height = 13 if bottom_display else 9
+    support_height = preview_height - 1.6
     inset = spec['outline']['mount_inset']
     for x in (-spec['outline']['width'] / 2 + inset, spec['outline']['width'] / 2 - inset):
         for y in (-spec['outline']['height'] / 2 + inset, spec['outline']['height'] / 2 - inset):
             instances.append({'name': f'standoff_{x}_{y}', 'kind': 'cylinder', 'radius_mm': 2,
-                              'height_mm': 7.4, 'position_mm': [x, y, -5.3], 'color': [0.55, 0.39, 0.15]})
+                              'height_mm': support_height, 'position_mm': [x, y, -1.6 - support_height / 2], 'color': [0.55, 0.39, 0.15]})
     if 'trackpad_y' in module:
         x, y = module.get('trackpad_x', 0), module['trackpad_y']
         box('TPS43_module', [43, 40, 0.8], [x, y, 7.6], [0.08, 0.1, 0.11], 1)
@@ -111,7 +115,7 @@ def module_instances(spec, name):
         box('TPS43_adapter_header', [2.54, 15.24, 2.5], [-31, 15.65, -2.85], [0.12, 0.13, 0.14])
         for index, (x, y) in enumerate([(-20, 29), (-20, 24), (-13, 29), (-13, 24)], 1):
             box(f'pullup_{index}', [2, 1.25, 0.55], [x, y, -1.9], [0.12, 0.13, 0.14], 0.05)
-    return {'instances': instances, 'limitations': ['PCB and copper are native KiCad exports.',
+    return {'instances': instances, 'preview_pcb_top_z_mm': preview_height, 'limitations': ['PCB and copper are native KiCad exports.',
             '1.5U caps use the retained MBK rendering mesh; switches, controller and display use existing reference meshes.',
             'TPS43, battery, small controls and standoffs are nominal envelopes, not supplier-qualified assembly models.',
             'Preview support heights do not constitute a mechanical design or physical collision validation.']}

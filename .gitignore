@@ -9,4 +9,5 @@ node_modules/
 *.kicad_prl
 ~*.lck
 *.log
+boards/modules/generated/failed/
 

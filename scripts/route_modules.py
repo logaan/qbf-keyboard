@@ -21,7 +21,12 @@ if pcb.Version().split('.')[0] != '10':
 if list(board.GetTracks()) or list(board.Zones()):
     raise SystemExit('Router requires a fresh placement board')
 keepout = spec['antenna_keepout']
-rf = [100 + keepout[0], 100 - keepout[3], 100 + keepout[2], 100 - keepout[1]]
+controller = next(f for f in board.GetFootprints() if f.GetReference() == 'MCU1')
+cx, cy = router.mm_point(controller.GetPosition())
+angle = math.radians(controller.GetOrientationDegrees())
+c, s = math.cos(angle), math.sin(angle)
+corners = [(cx + x * c - y * s, cy - x * s - y * c) for x in (keepout[0], keepout[2]) for y in (keepout[1], keepout[3])]
+rf = [round(min(p[0] for p in corners), 6), round(min(p[1] for p in corners), 6), round(max(p[0] for p in corners), 6), round(max(p[1] for p in corners), 6)]
 exclusions = [(rf, 0)]
 endpoints = {}
 for footprint in sorted(board.GetFootprints(), key=lambda f: f.GetReference()):
@@ -37,7 +42,8 @@ for name, pads in sorted(endpoints.items()):
         if pad.GetParentFootprint().GetReference() != 'MCU1':
             continue
         x, y = router.mm_point(pad.GetPosition())
-        target = (87.4 if x < 100 else 112.6, y)
+        direction = math.copysign(4.98, (x - cx) * c - (y - cy) * s)
+        target = (round(x + direction * c, 6), round(y - direction * s, 6))
         router.WIDTH_MM = spec['power_width'] if name in {'VBAT', 'BAT_P', '3V3'} else spec['signal_width']
         router.route(board, board.FindNet(name), pcb.B_Cu, [(x, y), target])
         via = pcb.PCB_VIA(board)

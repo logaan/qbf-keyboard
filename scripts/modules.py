@@ -40,7 +40,7 @@ def interactions(spec, name):
                           'x': (column - 1.5) * spec['pitch'], 'y': row['y'],
                           'size': spec['keycaps'][row['cap']], 'cap': row['cap'], 'side': 'F'})
     items.append({'name': 'display', 'kind': 'display', 'x': module.get('display_x', 0), 'y': module['display_y'],
-                  'size': module.get('display_size', spec['display']['size']), 'side': spec['display']['side']})
+                  'size': module.get('display_size', spec['display']['size']), 'side': module.get('display_side', spec['display']['side'])})
     if 'trackpad_y' in module:
         items.append({'name': 'trackpad', 'kind': 'trackpad', 'x': module.get('trackpad_x', 0), 'y': module['trackpad_y'],
                       'size': spec['trackpad']['size'], 'side': spec['trackpad']['side']})
@@ -59,9 +59,14 @@ def validate(spec, name):
         errors.append('Portrait 1.5U keycap dimensions are outside the supported envelope range')
     if sum(i.get('cap') == 'portrait_1_5u' for i in items) < 4:
         errors.append('At least four portrait 1.5U keys are required')
+    if name == 'module1':
+        rows = spec['modules'][name]['rows']
+        if len(rows) != 3 or [r['cap'] for r in sorted(rows, key=lambda r: -r['y'])] != ['portrait_1_5u', 'one_u', 'portrait_1_5u'] or any(r['columns'] != [0, 1, 2, 3] for r in rows):
+            errors.append('Module 1 requires twelve keys: four 1U keys between two rows of four 1.5U keys')
     for item in items:
-        if item['side'] != 'F':
-            errors.append(f'{item["name"]}: interaction must be on the top face')
+        required_side = 'B' if name == 'module1' and item['kind'] == 'display' else 'F'
+        if item['side'] != required_side:
+            errors.append(f'{item["name"]}: must be on the {"underside" if required_side == "B" else "top face"}')
         mirrored = any(i['kind'] == item['kind'] and i['size'] == item['size'] and
                        abs(i['x'] + item['x']) < 1e-6 and abs(i['y'] - item['y']) < 1e-6 for i in items)
         asymmetric_allowed = spec['modules'][name].get('allow_asymmetric_interactions', False) and item['kind'] != 'key'
@@ -76,7 +81,7 @@ def validate(spec, name):
                     errors.append(f'{item["name"]}: envelope exceeds rounded outline')
     for index, a in enumerate(items):
         for b in items[index + 1:]:
-            if abs(a['x'] - b['x']) < (a['size'][0] + b['size'][0]) / 2 and abs(a['y'] - b['y']) < (a['size'][1] + b['size'][1]) / 2:
+            if a['side'] == b['side'] and abs(a['x'] - b['x']) < (a['size'][0] + b['size'][0]) / 2 and abs(a['y'] - b['y']) < (a['size'][1] + b['size'][1]) / 2:
                 errors.append(f'{a["name"]}/{b["name"]}: overlapping interaction envelopes')
     if errors:
         raise ValueError('\n'.join(sorted(set(errors))))
@@ -90,8 +95,9 @@ def configuration(spec, name):
     if set(footprints) != required:
         raise ValueError('Required hardware footprints changed')
     footprints['display']['adjust.rotate'] = spec['modules'][name].get('display_rotation', spec['display']['rotation'])
-    footprints['display']['params']['side'] = spec['display']['side']
+    footprints['display']['params']['side'] = spec['modules'][name].get('display_side', spec['display']['side'])
     footprints['controller']['params']['side'] = spec['controller']['side']
+    footprints['controller']['adjust.rotate'] = spec['modules'][name].get('controller_rotation', 0)
     footprints['mounts']['params'].update(hole_size=spec['outline']['mount_diameter'], hole_drill=spec['outline']['mount_diameter'])
     zones = {}
 
@@ -107,10 +113,10 @@ def configuration(spec, name):
     for pin, key in zip(PINS, keys):
         footprints['controller']['params'][pin] = key['name']
     for key in ('controller', 'battery'):
-        point(key, spec[key]['x'], spec[key]['y'], [key])
+        point(key, spec['modules'][name].get(f'{key}_x', spec[key]['x']), spec['modules'][name].get(f'{key}_y', spec[key]['y']), [key])
     point('reset', -32, -12, ['reset'])
     point('power', 0, -34, ['power'])
-    point('jst', 22, 12, ['jst'])
+    point('jst', spec['modules'][name].get('jst_x', 22), spec['modules'][name].get('jst_y', 12), ['jst'])
     if 'trackpad_y' in spec['modules'][name]:
         point('touch_connector', -31, 22, ['touch_connector'])
         footprints['controller']['params'].update(P14='TP_SDA', P15='TP_SCL', P16='TP_RDY', P18='TP_RST')
@@ -132,7 +138,7 @@ def configuration(spec, name):
         'mount_holes': [{'what': 'circle', 'where': 'mount', 'radius': o['mount_diameter'] / 2}]
     }
     pcb_outlines = {'edge': {'outline': 'pcb_boundary'}, 'caps': {'outline': 'keycaps', 'layer': 'Dwgs.User'},
-                    'screen': {'outline': 'display', 'layer': 'Dwgs.User'}, 'cell': {'outline': 'battery', 'layer': 'B.Fab'}}
+                    'screen': {'outline': 'display', 'layer': 'B.Fab' if footprints['display']['params']['side'] == 'B' else 'Dwgs.User'}, 'cell': {'outline': 'battery', 'layer': 'B.Fab'}}
     if 'trackpad_y' in spec['modules'][name]:
         outlines['trackpad'] = [{'what': 'rectangle', 'where': 'trackpad', 'size': spec['trackpad']['size'], 'corner': 2}]
         pcb_outlines['touch'] = {'outline': 'trackpad', 'layer': 'Dwgs.User'}
@@ -147,6 +153,8 @@ def preview(spec, name, path):
                 '<rect x="-100" y="-100" width="200" height="200" fill="white"/>',
                 f'<rect x="{-w/2}" y="{-h/2}" width="{w}" height="{h}" rx="{spec["outline"]["corner"]}" fill="#ddebe5" stroke="#234" stroke-width="0.2"/>']
     for item in items:
+        if item['side'] != 'F':
+            continue
         x, y = item['x'], -item['y']
         iw, ih = item['size']
         color = {'key': '#aecbeb', 'display': '#c6b5df', 'trackpad': '#e8cb8a'}[item['kind']]
@@ -206,19 +214,21 @@ def build(name):
         board = stage / 'ergogen/pcbs' / f'{name}.kicad_pcb'
         cli = kicad_cli()
         shutil.copyfile(SOURCE / 'project.json', board.with_suffix('.kicad_pro'))
-        subprocess.run([kicad_python(), str(ROOT / 'scripts/module_pcb.py'), str(board), str(stage / 'electrical.json')], check=True)
+        subprocess.run([kicad_python(), str(ROOT / 'scripts/module_pcb.py'), str(board), str(stage / 'electrical.json'), '--display-side', spec['modules'][name].get('display_side', spec['display']['side'])], check=True)
         subprocess.run([cli, 'pcb', 'drc', '--format', 'json', '--severity-all', '-o', str(stage / 'placement-drc.json'), str(board)], check=True)
         subprocess.run([cli, 'pcb', 'export', 'svg', '--layers', 'F.Fab,F.SilkS,Dwgs.User,Edge.Cuts', '--sketch-pads-on-fab-layers', '--page-size-mode', '2', '--exclude-drawing-sheet', '--mode-single', '-o', str(stage / 'pcb.svg'), str(board)], check=True)
         placement_drc = json.loads((stage / 'placement-drc.json').read_text())
         if placement_drc['violations']:
-            raise ValueError(f'{name}: placement conflicts must be fixed before routing')
+            failure = GENERATED / 'failed' / name
+            shutil.copytree(stage, failure, dirs_exist_ok=True)
+            raise ValueError(f'{name}: placement conflicts must be fixed before routing; inspect {failure}')
         pcbs = stage / 'pcbs'
         pcbs.mkdir()
         routed = pcbs / f'{name}.kicad_pcb'
         shutil.copyfile(SOURCE / 'project.json', routed.with_suffix('.kicad_pro'))
         try:
             with (stage / 'routing.log').open('w') as log:
-                subprocess.run([kicad_python(), str(ROOT / 'scripts/route_modules.py'), str(board), str(routed), str(SOURCE / 'design.json')], stdout=log, stderr=subprocess.STDOUT, check=True, timeout=300)
+                subprocess.run([kicad_python(), str(ROOT / 'scripts/route_modules.py'), str(board), str(routed), str(SOURCE / 'design.json'), '--strategy', spec['modules'][name].get('routing_strategy', 'longest')], stdout=log, stderr=subprocess.STDOUT, check=True, timeout=300)
         except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
             failure = GENERATED / 'failed' / name
             shutil.copytree(stage, failure, dirs_exist_ok=True)

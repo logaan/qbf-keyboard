@@ -34,10 +34,31 @@ class LayoutTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'four'):
             modules.validate(self.spec, 'module3')
 
-    def test_bottom_display_rejected(self):
-        self.spec['display']['side'] = 'B'
-        with self.assertRaisesRegex(ValueError, 'top face'):
+    def test_module1_twelve_keys_and_bottom_display(self):
+        items = modules.validate(self.spec, 'module1')
+        keys = [i for i in items if i['kind'] == 'key']
+        self.assertEqual(len(keys), 12)
+        self.assertEqual(sum(i['cap'] == 'one_u' for i in keys), 4)
+        self.assertEqual({i['y'] for i in keys if i['cap'] == 'one_u'}, {0})
+        self.assertEqual(next(i for i in items if i['kind'] == 'display')['side'], 'B')
+        config = modules.configuration(self.spec, 'module1')
+        self.assertEqual(config['pcbs']['module1']['footprints']['display']['params']['side'], 'B')
+
+    def test_module1_top_display_rejected(self):
+        self.spec['modules']['module1']['display_side'] = 'F'
+        with self.assertRaisesRegex(ValueError, 'underside'):
             modules.validate(self.spec, 'module1')
+
+    def test_module1_missing_middle_keys_rejected(self):
+        self.spec['modules']['module1']['rows'][1]['columns'] = [0, 3]
+        with self.assertRaisesRegex(ValueError, 'twelve keys'):
+            modules.validate(self.spec, 'module1')
+
+    def test_other_bottom_displays_rejected(self):
+        self.spec['display']['side'] = 'B'
+        for name in ('module2', 'module3'):
+            with self.assertRaisesRegex(ValueError, 'top face'):
+                modules.validate(self.spec, name)
 
     def test_interaction_collision_rejected(self):
         self.spec['modules']['module3']['trackpad_x'] = 24

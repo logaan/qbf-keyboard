@@ -12,7 +12,7 @@
 - [x] @agent Add native PCB assembly previews without developing new mechanical cases
 - [x] @agent Reassess the unpatched Ergogen Maker.js dependency advisory
 - [ ] @user Accept trusted-source-only Ergogen use pending an upstream Maker.js security fix
-- [ ] @user Review the shared 75.2 mm module outline and revised 10-key 6-key and 4-key layouts
+- [ ] @user Review the shared 75.2 mm module outline and revised 12-key 6-key and 4-key layouts
 - [x] @user Reject the Cirque substitution and retain the TPS43 with an off-centre top-face layout
 - [ ] @user Confirm purchased keycaps protected batteries polarity charging limits and stack clearances
 - [ ] @user Review KiCad routing before fabrication
@@ -30,3 +30,4 @@
 - [x] @agent Exclude machine-local KiCad state from portable artifact manifests
 - [x] @agent Verify dependency setup and all checks from a clean checkout
 - [ ] @user Verify the nice!nano antenna reservation against purchased hardware
+- [ ] @agent Restore twelve module 1 keys with an underside display and refresh routing exports and renders

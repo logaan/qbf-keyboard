@@ -47,7 +47,8 @@ for name in selected:
             module = spec['modules'][name]
             bom = {'status': 'procurement review required', 'controller': spec['controller']['part'],
                    'display': spec['display']['part'], 'switches': {'part': 'Kailh Choc v1 soldered', 'quantity': len(electrical['keys'])},
-                   'battery': spec['battery'], 'keycap_rows': module['rows'], 'keycap_sizes_mm': spec['keycaps'],
+                   'battery': {**spec['battery'], 'x': module.get('battery_x', spec['battery']['x']), 'y': module.get('battery_y', spec['battery']['y'])},
+                   'display_side': module.get('display_side', spec['display']['side']), 'keycap_rows': module['rows'], 'keycap_sizes_mm': spec['keycaps'],
                    'footprints': electrical['footprints'], 'trackpad': spec['trackpad'] if 'trackpad_y' in module else None}
             (stage / 'bom.json').write_text(json.dumps(bom, indent=2) + '\n')
         manifest = {'status': 'PCB fabrication review only; not a manufacturing release',

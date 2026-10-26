@@ -7,6 +7,7 @@ import pcbnew as pcb
 parser = argparse.ArgumentParser()
 parser.add_argument('board', type=Path)
 parser.add_argument('config', type=Path)
+parser.add_argument('--display-side', choices=['F', 'B'], default='F')
 args = parser.parse_args()
 if pcb.Version().split('.')[0] != '10':
     raise SystemExit('KiCad 10 Python bindings required')
@@ -25,8 +26,8 @@ for footprint in items:
     footprint.Value().SetVisible(False)
 controller = next(f for f in items if f.GetReference() == 'MCU1')
 display = next(f for f in items if f.GetReference() == 'DISP1')
-if display.GetLayer() != pcb.F_Cu:
-    raise SystemExit('Display must be on the top face')
+if display.GetLayer() != (pcb.F_Cu if args.display_side == 'F' else pcb.B_Cu):
+    raise SystemExit(f'Display must be on the configured {args.display_side} face')
 pads = {p.GetNumber(): p.GetNetname() for p in controller.Pads()}
 if pads['25'] != 'GND' or pads['26'] != 'VBAT':
     raise SystemExit('Controller battery polarity mismatch')
@@ -48,7 +49,7 @@ for net in ('DISPLAY_CS', 'DISPLAY_MOSI', 'DISPLAY_SCK', '3V3'):
 settings = board.GetDesignSettings()
 box = board.GetBoardEdgesBoundingBox()
 records = [{'reference': f.GetReference(), 'position': [pcb.ToMM(f.GetPosition().x), pcb.ToMM(f.GetPosition().y)],
-            'side': 'F' if f.GetLayer() == pcb.F_Cu else 'B',
+            'side': 'F' if f.GetLayer() == pcb.F_Cu else 'B', 'rotation_degrees': f.GetOrientationDegrees(),
             'pads': {p.GetNumber(): p.GetNetname() for p in f.Pads() if p.GetNetname()}} for f in items]
 report = {'kicad': pcb.Version(), 'stage': 'placement diagnostic only', 'fabrication_ready': False,
           'keys': key_nets, 'footprints': records,

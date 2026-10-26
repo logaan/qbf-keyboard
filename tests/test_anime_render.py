@@ -47,8 +47,18 @@ class AnimeRenderTests(unittest.TestCase):
             names = {item['name'] for item in data['instances']}
             self.assertTrue({'controller', 'display', 'display_socket', 'protected_battery', 'power_switch', 'reset_switch', 'battery_connector'} <= names)
             cap_count = sum(name.endswith('_cap') for name in names)
-            self.assertEqual(cap_count, {1: 10, 2: 6, 3: 4}[number])
+            self.assertEqual(cap_count, {1: 12, 2: 6, 3: 4}[number])
             self.assertEqual(sum(name.endswith('_switch') and name.startswith('key_') for name in names), cap_count)
+            if number == 1:
+                parts = {item['name']: item for item in data['instances']}
+                self.assertEqual(parts['display']['rotation_degrees'][0], 180)
+                self.assertEqual(parts['display_socket']['rotation_degrees'][0], 180)
+                self.assertLess(parts['display']['position_mm'][2], 0)
+                self.assertEqual(data['preview_pcb_top_z_mm'], 13)
+                electrical = json.loads((ROOT / 'boards/modules/generated/module1/electrical.json').read_text())
+                mcu = next(f for f in electrical['footprints'] if f['reference'] == 'MCU1')
+                self.assertAlmostEqual(parts['controller']['position_mm'][0], mcu['position'][0] - 100)
+                self.assertEqual(parts['controller']['rotation_degrees'][2], mcu['rotation_degrees'])
             if number == 3:
                 self.assertTrue({'TPS43_module', 'TPS43_overlay', 'TPS43_adapter_header'} <= names)
 
