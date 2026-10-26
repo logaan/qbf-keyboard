@@ -59,6 +59,28 @@ points:
                     - one_u
                 width: 16.5
                 height: 16.5
+        key_r2_c2:
+            anchor:
+                shift:
+                    - 90.475
+                    - -100
+            key:
+                tags:
+                    - switch
+                    - one_u
+                width: 16.5
+                height: 16.5
+        key_r2_c3:
+            anchor:
+                shift:
+                    - 109.525
+                    - -100
+            key:
+                tags:
+                    - switch
+                    - one_u
+                width: 16.5
+                height: 16.5
         key_r2_c4:
             anchor:
                 shift:
@@ -118,7 +140,7 @@ points:
             anchor:
                 shift:
                     - 100
-                    - -100
+                    - -75
             key:
                 tags:
                     - display
@@ -127,7 +149,7 @@ points:
         controller:
             anchor:
                 shift:
-                    - 100
+                    - 101.4
                     - -100
             key:
                 tags:
@@ -137,8 +159,8 @@ points:
         battery:
             anchor:
                 shift:
-                    - 78
-                    - -100
+                    - 120
+                    - -125
             key:
                 tags:
                     - battery
@@ -167,8 +189,8 @@ points:
         jst:
             anchor:
                 shift:
-                    - 122
-                    - -88
+                    - 97.3
+                    - -118
             key:
                 tags:
                     - jst
@@ -253,8 +275,8 @@ outlines:
             what: rectangle
             where: battery
             size:
-                - 12
                 - 30
+                - 12
     mount_holes:
         -
             what: circle
@@ -272,7 +294,7 @@ pcbs:
                 layer: Dwgs.User
             screen:
                 outline: display
-                layer: Dwgs.User
+                layer: B.Fab
             cell:
                 outline: battery
                 layer: B.Fab
@@ -315,18 +337,22 @@ pcbs:
                     P6: key_r1_c3
                     P7: key_r1_c4
                     P8: key_r2_c1
-                    P9: key_r2_c4
-                    P10: key_r3_c1
-                    P14: key_r3_c2
-                    P15: key_r3_c3
-                    P16: key_r3_c4
+                    P9: key_r2_c2
+                    P10: key_r2_c3
+                    P14: key_r2_c4
+                    P15: key_r3_c1
+                    P16: key_r3_c2
+                    P18: key_r3_c3
+                    P19: key_r3_c4
+                adjust:
+                    rotate: 90
             display:
                 what: ceoloide/display_nice_view
                 where: display
                 adjust:
                     rotate: 90
                 params:
-                    side: F
+                    side: B
                     reversible: false
                     include_traces: false
                     include_courtyard: true

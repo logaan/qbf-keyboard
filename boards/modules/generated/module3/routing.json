@@ -21,10 +21,10 @@
   "power_width_mm": 0.5,
   "clearance_mm": 0.25,
   "antenna_keepout_kicad": [
-    94,
-    110,
-    106,
-    120
+    94.0,
+    110.0,
+    106.0,
+    120.0
   ],
   "fabrication_ready": false
 }

@@ -5,26 +5,26 @@
     {
       "layer": "F.Cu",
       "net": "GND",
-      "filled_area_mm2": 4503.652,
-      "board_bbox_coverage": 0.7964
+      "filled_area_mm2": 4365.768,
+      "board_bbox_coverage": 0.772
     },
     {
       "layer": "B.Cu",
       "net": "GND",
-      "filled_area_mm2": 4562.233,
-      "board_bbox_coverage": 0.8068
+      "filled_area_mm2": 4256.132,
+      "board_bbox_coverage": 0.7526
     }
   ],
-  "ground_stitching_vias": 17,
-  "track_count": 717,
+  "ground_stitching_vias": 18,
+  "track_count": 954,
   "signal_width_mm": 0.3,
   "power_width_mm": 0.5,
   "clearance_mm": 0.25,
   "antenna_keepout_kicad": [
-    94,
-    110,
-    106,
-    120
+    111.4,
+    94.0,
+    121.4,
+    106.0
   ],
   "fabrication_ready": false
 }

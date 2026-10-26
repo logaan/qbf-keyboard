@@ -487,7 +487,7 @@
       "position_mm": [
         -34.6,
         -34.6,
-        -5.3
+        -5.300000000000001
       ],
       "color": [
         0.55,
@@ -503,7 +503,7 @@
       "position_mm": [
         -34.6,
         34.6,
-        -5.3
+        -5.300000000000001
       ],
       "color": [
         0.55,
@@ -519,7 +519,7 @@
       "position_mm": [
         34.6,
         -34.6,
-        -5.3
+        -5.300000000000001
       ],
       "color": [
         0.55,
@@ -535,7 +535,7 @@
       "position_mm": [
         34.6,
         34.6,
-        -5.3
+        -5.300000000000001
       ],
       "color": [
         0.55,
@@ -544,6 +544,7 @@
       ]
     }
   ],
+  "preview_pcb_top_z_mm": 9,
   "limitations": [
     "PCB and copper are native KiCad exports.",
     "1.5U caps use the retained MBK rendering mesh; switches, controller and display use existing reference meshes.",
@@ -551,13 +552,13 @@
     "Preview support heights do not constitute a mechanical design or physical collision validation."
   ],
   "sources": {
-    "boards/modules/design.json": "6243d9a4562991b78b02bf808da2b6c8038e7eafebb940e7b79e3ac83c2f9fc1",
+    "boards/modules/design.json": "beb0bd852f63a49e65bd55f7a4ee76a559f4de2ee5ae35c9508fafc028c92c20",
     "ergogen-kikad/design/models/choc_reference.wrl": "8444a85723e0627c94cb7e27fa0a3c4bf0cd22aff1aec38429363e15d701ab7c",
     "ergogen-kikad/design/models/display_socket.wrl": "d8c3cea629bf45c2713d5f01c4206282fb4e9437437e02b910745d282260642c",
     "ergogen-kikad/design/models/mbk_15u.wrl": "a4062481fdfc9aaa8c0be3bb4fe13bbb1d436a216869e4448d66e9f096fd41a8",
     "ergogen-kikad/design/models/mbk_1u_reference.wrl": "7cd8396277a00b3b70db82f36101f0e099fd2629f0589597a41bcdc7ef3cc806",
     "ergogen-kikad/design/models/nice_nano_reference.wrl": "301df7066360b596e4d80496d5ff5f6723baf681720d1613dd9bc1267e79877c",
     "ergogen-kikad/design/models/nice_view_reference.wrl": "5c7cb187289362a48505090a67c6bd39ec3f1c7a0e438c5910417df058400d7f",
-    "scripts/attach_models.py": "f3877c0702627e7cac7cd022357273d15f58f7167c764ef1e99c1ab1e1f1c65a"
+    "scripts/attach_models.py": "01909281ace74fbf31ad675dea34ea231afe434460ac194ab39c65f41d8e24ec"
   }
 }

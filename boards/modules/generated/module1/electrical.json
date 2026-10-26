@@ -8,6 +8,8 @@
     "key_r1_c3",
     "key_r1_c4",
     "key_r2_c1",
+    "key_r2_c2",
+    "key_r2_c3",
     "key_r2_c4",
     "key_r3_c1",
     "key_r3_c2",
@@ -22,6 +24,7 @@
         76.5
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
         "2": "key_r1_c1",
         "1": "GND"
@@ -34,6 +37,7 @@
         76.5
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
         "2": "key_r1_c2",
         "1": "GND"
@@ -46,6 +50,7 @@
         76.5
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
         "2": "key_r1_c3",
         "1": "GND"
@@ -58,6 +63,7 @@
         76.5
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
         "2": "key_r1_c4",
         "1": "GND"
@@ -70,6 +76,7 @@
         100.0
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
         "2": "key_r2_c1",
         "1": "GND"
@@ -78,58 +85,89 @@
     {
       "reference": "S6",
       "position": [
-        128.575,
+        90.475,
         100.0
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
-        "2": "key_r2_c4",
+        "2": "key_r2_c2",
         "1": "GND"
       }
     },
     {
       "reference": "S7",
       "position": [
-        71.425,
-        123.5
+        109.525,
+        100.0
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
-        "2": "key_r3_c1",
+        "2": "key_r2_c3",
         "1": "GND"
       }
     },
     {
       "reference": "S8",
       "position": [
-        90.475,
-        123.5
+        128.575,
+        100.0
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
-        "2": "key_r3_c2",
+        "2": "key_r2_c4",
         "1": "GND"
       }
     },
     {
       "reference": "S9",
       "position": [
-        109.525,
+        71.425,
         123.5
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
-        "2": "key_r3_c3",
+        "2": "key_r3_c1",
         "1": "GND"
       }
     },
     {
       "reference": "S10",
       "position": [
+        90.475,
+        123.5
+      ],
+      "side": "F",
+      "rotation_degrees": 90.0,
+      "pads": {
+        "2": "key_r3_c2",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S11",
+      "position": [
+        109.525,
+        123.5
+      ],
+      "side": "F",
+      "rotation_degrees": 90.0,
+      "pads": {
+        "2": "key_r3_c3",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S12",
+      "position": [
         128.575,
         123.5
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
         "2": "key_r3_c4",
         "1": "GND"
@@ -138,10 +176,11 @@
     {
       "reference": "MCU1",
       "position": [
-        100.0,
+        101.4,
         100.0
       ],
       "side": "B",
+      "rotation_degrees": 90.0,
       "pads": {
         "24": "DISPLAY_CS",
         "1": "VBAT",
@@ -156,17 +195,17 @@
         "19": "DISPLAY_SCK",
         "6": "P20",
         "18": "key_r1_c1",
-        "7": "P19",
+        "7": "key_r3_c4",
         "17": "key_r1_c2",
-        "8": "P18",
+        "8": "key_r3_c3",
         "16": "key_r1_c3",
-        "9": "key_r3_c3",
+        "9": "key_r3_c1",
         "15": "key_r1_c4",
-        "10": "key_r3_c2",
+        "10": "key_r2_c4",
         "14": "key_r2_c1",
-        "11": "key_r3_c4",
-        "13": "key_r2_c4",
-        "12": "key_r3_c1",
+        "11": "key_r3_c2",
+        "13": "key_r2_c2",
+        "12": "key_r2_c3",
         "25": "GND",
         "26": "VBAT"
       }
@@ -175,15 +214,16 @@
       "reference": "DISP1",
       "position": [
         100.0,
-        100.0
+        75.0
       ],
-      "side": "F",
+      "side": "B",
+      "rotation_degrees": 90.0,
       "pads": {
-        "1": "DISPLAY_MOSI",
-        "2": "DISPLAY_SCK",
+        "1": "DISPLAY_CS",
+        "2": "GND",
         "3": "3V3",
-        "4": "GND",
-        "5": "DISPLAY_CS"
+        "4": "DISPLAY_SCK",
+        "5": "DISPLAY_MOSI"
       }
     },
     {
@@ -193,6 +233,7 @@
         112.0
       ],
       "side": "B",
+      "rotation_degrees": 90.0,
       "pads": {
         "1": "GND",
         "2": "RST",
@@ -207,6 +248,7 @@
         134.0
       ],
       "side": "B",
+      "rotation_degrees": -90.0,
       "pads": {
         "2": "VBAT",
         "3": "BAT_P"
@@ -215,10 +257,11 @@
     {
       "reference": "JST1",
       "position": [
-        122.0,
-        88.0
+        97.3,
+        118.0
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {
         "1": "GND",
         "2": "BAT_P"
@@ -231,6 +274,7 @@
         134.6
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {}
     },
     {
@@ -240,6 +284,7 @@
         65.4
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {}
     },
     {
@@ -249,6 +294,7 @@
         134.6
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {}
     },
     {
@@ -258,6 +304,7 @@
         65.4
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {}
     }
   ],

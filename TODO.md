@@ -30,4 +30,4 @@
 - [x] @agent Exclude machine-local KiCad state from portable artifact manifests
 - [x] @agent Verify dependency setup and all checks from a clean checkout
 - [ ] @user Verify the nice!nano antenna reservation against purchased hardware
-- [ ] @agent Restore twelve module 1 keys with an underside display and refresh routing exports and renders
+- [x] @agent Restore twelve module 1 keys with an underside display and refresh routing exports and renders

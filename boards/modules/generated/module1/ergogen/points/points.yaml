@@ -253,6 +253,108 @@ key_r2_c1:
             - 0
             - 0
             - 0
+key_r2_c2:
+    x: 90.475
+    'y': -100
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 16.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r2_c2
+        tags:
+            - switch
+            - one_u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - one_u
+                width: 16.5
+                height: 16.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r2_c2
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+key_r2_c3:
+    x: 109.525
+    'y': -100
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 16.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r2_c3
+        tags:
+            - switch
+            - one_u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - one_u
+                width: 16.5
+                height: 16.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r2_c3
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
 key_r2_c4:
     x: 128.575
     'y': -100
@@ -510,7 +612,7 @@ key_r3_c4:
             - 0
 display:
     x: 100
-    'y': -100
+    'y': -75
     r: 0
     meta:
         stagger: 0
@@ -558,7 +660,7 @@ display:
             - 0
             - 0
 controller:
-    x: 100
+    x: 101.4
     'y': -100
     r: 0
     meta:
@@ -607,8 +709,8 @@ controller:
             - 0
             - 0
 battery:
-    x: 78
-    'y': -100
+    x: 120
+    'y': -125
     r: 0
     meta:
         stagger: 0
@@ -754,8 +856,8 @@ power:
             - 0
             - 0
 jst:
-    x: 122
-    'y': -88
+    x: 97.3
+    'y': -118
     r: 0
     meta:
         stagger: 0

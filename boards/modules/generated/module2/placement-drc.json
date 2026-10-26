@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-10-27T01:16:51",
+    "date": "2026-10-27T07:31:18",
     "ignored_checks": [
         {
             "description": "Footprint has no courtyard defined",
@@ -42,7 +42,7 @@
                         "x": 67.15,
                         "y": 109.375
                     },
-                    "uuid": "bcc5fe17-4697-44ba-a591-3c276ead8166"
+                    "uuid": "a1dadc05-01fb-4850-a807-0675540e575d"
                 },
                 {
                     "description": "Pad 1 [GND] of RST1 on B.Cu",
@@ -50,7 +50,7 @@
                         "x": 67.15,
                         "y": 114.625
                     },
-                    "uuid": "d0dce89c-9ef1-4df9-bd5f-47a8a92e9227"
+                    "uuid": "5d551743-7068-40e0-b120-4b97653238e8"
                 }
             ],
             "severity": "error",
@@ -65,7 +65,7 @@
                         "x": 67.15,
                         "y": 114.625
                     },
-                    "uuid": "d0dce89c-9ef1-4df9-bd5f-47a8a92e9227"
+                    "uuid": "5d551743-7068-40e0-b120-4b97653238e8"
                 },
                 {
                     "description": "PTH pad 1 [GND] of S5",
@@ -73,7 +73,7 @@
                         "x": 67.625,
                         "y": 131.0
                     },
-                    "uuid": "2eb452c4-e694-4e3d-a38a-93575558cea7"
+                    "uuid": "44e9f5fa-7ddf-4a8b-81fb-a5dd296080df"
                 }
             ],
             "severity": "error",
@@ -88,7 +88,7 @@
                         "x": 67.625,
                         "y": 81.5
                     },
-                    "uuid": "59a30583-8910-42cd-8c16-2e94ccb1db2f"
+                    "uuid": "bc964331-1269-4d05-b872-ba367802f981"
                 },
                 {
                     "description": "Pad 3 [GND] of RST1 on B.Cu",
@@ -96,7 +96,7 @@
                         "x": 67.15,
                         "y": 109.375
                     },
-                    "uuid": "bcc5fe17-4697-44ba-a591-3c276ead8166"
+                    "uuid": "a1dadc05-01fb-4850-a807-0675540e575d"
                 }
             ],
             "severity": "error",
@@ -111,7 +111,7 @@
                         "x": 86.675,
                         "y": 81.5
                     },
-                    "uuid": "b8612488-583a-4694-b41e-9db049ae4269"
+                    "uuid": "ebbf2d9e-c439-4e24-81eb-4818e03c1f73"
                 },
                 {
                     "description": "PTH pad 25 [GND] of MCU1",
@@ -119,7 +119,7 @@
                         "x": 92.38,
                         "y": 84.76
                     },
-                    "uuid": "46d35b75-ae78-403e-81b3-1ae03215ba63"
+                    "uuid": "27987036-226a-462f-a513-4cebbdd537bd"
                 }
             ],
             "severity": "error",
@@ -134,7 +134,7 @@
                         "x": 86.675,
                         "y": 81.5
                     },
-                    "uuid": "b8612488-583a-4694-b41e-9db049ae4269"
+                    "uuid": "ebbf2d9e-c439-4e24-81eb-4818e03c1f73"
                 },
                 {
                     "description": "PTH pad 1 [GND] of S1",
@@ -142,7 +142,7 @@
                         "x": 67.625,
                         "y": 81.5
                     },
-                    "uuid": "59a30583-8910-42cd-8c16-2e94ccb1db2f"
+                    "uuid": "bc964331-1269-4d05-b872-ba367802f981"
                 }
             ],
             "severity": "error",
@@ -157,7 +157,7 @@
                         "x": 92.38,
                         "y": 84.76
                     },
-                    "uuid": "46d35b75-ae78-403e-81b3-1ae03215ba63"
+                    "uuid": "27987036-226a-462f-a513-4cebbdd537bd"
                 },
                 {
                     "description": "PTH pad 22 [GND] of MCU1",
@@ -165,7 +165,7 @@
                         "x": 92.38,
                         "y": 92.38
                     },
-                    "uuid": "70de6b8f-5c87-495d-aa8e-0115181a5e10"
+                    "uuid": "4180d98c-dc55-4733-9619-f311aad0e88c"
                 }
             ],
             "severity": "error",
@@ -180,7 +180,7 @@
                         "x": 92.38,
                         "y": 92.38
                     },
-                    "uuid": "70de6b8f-5c87-495d-aa8e-0115181a5e10"
+                    "uuid": "4180d98c-dc55-4733-9619-f311aad0e88c"
                 },
                 {
                     "description": "PTH pad 21 [GND] of MCU1",
@@ -188,7 +188,7 @@
                         "x": 92.38,
                         "y": 94.92
                     },
-                    "uuid": "f2304933-b32c-46fb-a0c8-b54bb43e397f"
+                    "uuid": "54d39379-6fad-47b4-a290-c490517090f7"
                 }
             ],
             "severity": "error",
@@ -203,7 +203,7 @@
                         "x": 105.725,
                         "y": 81.5
                     },
-                    "uuid": "49dcc6e8-4a8c-44ec-8809-f0e154165a02"
+                    "uuid": "f5a10841-794c-40a4-b207-1605f84c75bd"
                 },
                 {
                     "description": "PTH pad 25 [GND] of MCU1",
@@ -211,7 +211,7 @@
                         "x": 92.38,
                         "y": 84.76
                     },
-                    "uuid": "46d35b75-ae78-403e-81b3-1ae03215ba63"
+                    "uuid": "27987036-226a-462f-a513-4cebbdd537bd"
                 }
             ],
             "severity": "error",
@@ -226,7 +226,7 @@
                         "x": 107.62,
                         "y": 89.84
                     },
-                    "uuid": "79a66025-cfef-45bd-90ba-9e8241067f0a"
+                    "uuid": "2f8e74ce-cd37-4b0a-a9b8-5ae1fbd68f1c"
                 },
                 {
                     "description": "PTH pad 1 [GND] of S3",
@@ -234,7 +234,7 @@
                         "x": 105.725,
                         "y": 81.5
                     },
-                    "uuid": "49dcc6e8-4a8c-44ec-8809-f0e154165a02"
+                    "uuid": "f5a10841-794c-40a4-b207-1605f84c75bd"
                 }
             ],
             "severity": "error",
@@ -249,7 +249,7 @@
                         "x": 107.62,
                         "y": 89.84
                     },
-                    "uuid": "79a66025-cfef-45bd-90ba-9e8241067f0a"
+                    "uuid": "2f8e74ce-cd37-4b0a-a9b8-5ae1fbd68f1c"
                 },
                 {
                     "description": "PTH pad 4 [GND] of DISP1",
@@ -257,7 +257,7 @@
                         "x": 116.7,
                         "y": 97.46
                     },
-                    "uuid": "30adb2cd-0691-48e6-ad45-c94535d4c0ba"
+                    "uuid": "8fd4f4b9-70f3-4bd4-92c4-60969b1893fe"
                 }
             ],
             "severity": "error",
@@ -272,7 +272,7 @@
                         "x": 123.0,
                         "y": 88.0
                     },
-                    "uuid": "ea6de30d-4525-4bb8-8a0b-d25a2a2dd766"
+                    "uuid": "ac214499-5845-470c-bc51-183969db5df5"
                 },
                 {
                     "description": "PTH pad 4 [GND] of DISP1",
@@ -280,7 +280,7 @@
                         "x": 116.7,
                         "y": 97.46
                     },
-                    "uuid": "30adb2cd-0691-48e6-ad45-c94535d4c0ba"
+                    "uuid": "8fd4f4b9-70f3-4bd4-92c4-60969b1893fe"
                 }
             ],
             "severity": "error",
@@ -295,7 +295,7 @@
                         "x": 124.775,
                         "y": 81.5
                     },
-                    "uuid": "7fb585f8-278b-499f-af3f-29225217f54b"
+                    "uuid": "50374af6-f826-40c3-a7db-63d5850379a7"
                 },
                 {
                     "description": "PTH pad 1 [GND] of JST1",
@@ -303,7 +303,7 @@
                         "x": 123.0,
                         "y": 88.0
                     },
-                    "uuid": "ea6de30d-4525-4bb8-8a0b-d25a2a2dd766"
+                    "uuid": "ac214499-5845-470c-bc51-183969db5df5"
                 }
             ],
             "severity": "error",
@@ -318,7 +318,7 @@
                         "x": 124.775,
                         "y": 131.0
                     },
-                    "uuid": "f4e27822-dd3d-4fe2-85e6-04a28e5cea21"
+                    "uuid": "2843ac29-1737-48b4-9845-61c1d02f9339"
                 },
                 {
                     "description": "PTH pad 4 [GND] of DISP1",
@@ -326,145 +326,7 @@
                         "x": 116.7,
                         "y": 97.46
                     },
-                    "uuid": "30adb2cd-0691-48e6-ad45-c94535d4c0ba"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Missing connection between items",
-            "items": [
-                {
-                    "description": "PTH pad 15 [key_r1_c4] of MCU1",
-                    "pos": {
-                        "x": 92.38,
-                        "y": 110.16
-                    },
-                    "uuid": "6eae448f-fda4-421e-b41b-e1632f9945c9"
-                },
-                {
-                    "description": "PTH pad 2 [key_r1_c4] of S4",
-                    "pos": {
-                        "x": 122.675,
-                        "y": 76.5
-                    },
-                    "uuid": "3ca35fea-3645-4ba3-aca6-dfb15dea606c"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Missing connection between items",
-            "items": [
-                {
-                    "description": "PTH pad 16 [key_r1_c3] of MCU1",
-                    "pos": {
-                        "x": 92.38,
-                        "y": 107.62
-                    },
-                    "uuid": "14b6074b-d1ed-40c4-b4fa-b552cadcee1b"
-                },
-                {
-                    "description": "PTH pad 2 [key_r1_c3] of S3",
-                    "pos": {
-                        "x": 103.625,
-                        "y": 76.5
-                    },
-                    "uuid": "3e897bba-e7b9-4295-9aef-bd8552ae2ef6"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Missing connection between items",
-            "items": [
-                {
-                    "description": "PTH pad 20 [DISPLAY_MOSI] of MCU1",
-                    "pos": {
-                        "x": 92.38,
-                        "y": 97.46
-                    },
-                    "uuid": "2784f420-7bec-406e-b5e1-9ce1af3565a3"
-                },
-                {
-                    "description": "PTH pad 1 [DISPLAY_MOSI] of DISP1",
-                    "pos": {
-                        "x": 116.7,
-                        "y": 105.08
-                    },
-                    "uuid": "28b9aa67-8cc0-498a-be77-a4cbbac93c84"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Missing connection between items",
-            "items": [
-                {
-                    "description": "PTH pad 19 [DISPLAY_SCK] of MCU1",
-                    "pos": {
-                        "x": 92.38,
-                        "y": 100.0
-                    },
-                    "uuid": "730a450f-291a-497a-8869-7967899d5666"
-                },
-                {
-                    "description": "PTH pad 2 [DISPLAY_SCK] of DISP1",
-                    "pos": {
-                        "x": 116.7,
-                        "y": 102.54
-                    },
-                    "uuid": "55f7ef39-9258-4e09-a7f3-d8dcaed5920d"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Missing connection between items",
-            "items": [
-                {
-                    "description": "PTH pad 4 [3V3] of MCU1",
-                    "pos": {
-                        "x": 107.62,
-                        "y": 94.92
-                    },
-                    "uuid": "b3a0e26d-7778-49e6-9e42-7459a552e3cb"
-                },
-                {
-                    "description": "PTH pad 3 [3V3] of DISP1",
-                    "pos": {
-                        "x": 116.7,
-                        "y": 100.0
-                    },
-                    "uuid": "16b5b001-754c-4f08-b19f-dcbb69ec4658"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Missing connection between items",
-            "items": [
-                {
-                    "description": "PTH pad 24 [DISPLAY_CS] of MCU1",
-                    "pos": {
-                        "x": 92.38,
-                        "y": 87.3
-                    },
-                    "uuid": "ceed8f78-f687-4c41-bc8e-83eb8c94d11a"
-                },
-                {
-                    "description": "PTH pad 5 [DISPLAY_CS] of DISP1",
-                    "pos": {
-                        "x": 116.7,
-                        "y": 94.92
-                    },
-                    "uuid": "b83e62ce-b54f-4227-9fbc-df1bc8a8f658"
+                    "uuid": "8fd4f4b9-70f3-4bd4-92c4-60969b1893fe"
                 }
             ],
             "severity": "error",
@@ -479,7 +341,7 @@
                         "x": 65.525,
                         "y": 126.0
                     },
-                    "uuid": "3cf871e0-efe0-4b28-b078-91571651d4f9"
+                    "uuid": "fe907a09-cf71-4bb4-8375-05a36e6900b9"
                 },
                 {
                     "description": "PTH pad 14 [key_r2_c1] of MCU1",
@@ -487,7 +349,30 @@
                         "x": 92.38,
                         "y": 112.7
                     },
-                    "uuid": "ce1b11cf-a9b9-45ac-8b48-2e4fa037e28e"
+                    "uuid": "1830c3ec-d7e1-4a65-83a7-9e56c5083669"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 15 [key_r1_c4] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 110.16
+                    },
+                    "uuid": "3ffc3b29-f4ef-486c-9c8c-3707b562b412"
+                },
+                {
+                    "description": "PTH pad 2 [key_r1_c4] of S4",
+                    "pos": {
+                        "x": 122.675,
+                        "y": 76.5
+                    },
+                    "uuid": "45c64313-b95d-4e2f-8933-4faab359d3e8"
                 }
             ],
             "severity": "error",
@@ -502,7 +387,7 @@
                         "x": 84.575,
                         "y": 76.5
                     },
-                    "uuid": "d3112081-df30-4120-a884-bc436821436b"
+                    "uuid": "c576459a-9dc9-41aa-adcc-0178ed29f967"
                 },
                 {
                     "description": "PTH pad 17 [key_r1_c2] of MCU1",
@@ -510,7 +395,7 @@
                         "x": 92.38,
                         "y": 105.08
                     },
-                    "uuid": "8ec69415-74b0-494c-ac69-a01996cd6181"
+                    "uuid": "3f72e871-dbda-4351-aa08-696dd18d6163"
                 }
             ],
             "severity": "error",
@@ -525,7 +410,7 @@
                         "x": 92.38,
                         "y": 115.24
                     },
-                    "uuid": "20a56bf0-bbb8-432a-8a4a-5333781f96ce"
+                    "uuid": "42f5eb63-e19a-431a-9ba8-6b5c5a8d0cc7"
                 },
                 {
                     "description": "PTH pad 2 [key_r2_c4] of S6",
@@ -533,7 +418,7 @@
                         "x": 122.675,
                         "y": 126.0
                     },
-                    "uuid": "cd2bb098-1a42-45b1-85ee-2b14c5a8857b"
+                    "uuid": "9326263b-27ac-443e-a85e-685732bbe1a3"
                 }
             ],
             "severity": "error",
@@ -548,7 +433,7 @@
                         "x": 65.525,
                         "y": 76.5
                     },
-                    "uuid": "560cb3ad-20f5-47c3-a424-ca55e443c1c5"
+                    "uuid": "fb2ad791-d97e-4a60-b9cd-e98d97857bbc"
                 },
                 {
                     "description": "PTH pad 18 [key_r1_c1] of MCU1",
@@ -556,7 +441,7 @@
                         "x": 92.38,
                         "y": 102.54
                     },
-                    "uuid": "fbb2b7b2-9522-451d-8c99-76059de9b9d5"
+                    "uuid": "c6caaf78-c84e-4fbc-8925-d3cace467761"
                 }
             ],
             "severity": "error",
@@ -566,20 +451,20 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Pad 4 [RST] of RST1 on B.Cu",
+                    "description": "PTH pad 20 [DISPLAY_MOSI] of MCU1",
                     "pos": {
-                        "x": 68.85,
-                        "y": 109.375
+                        "x": 92.38,
+                        "y": 97.46
                     },
-                    "uuid": "e3621d08-6a79-4382-b850-39e5abc8e769"
+                    "uuid": "60d25c9b-a3ab-471c-8cb7-9330d30de36f"
                 },
                 {
-                    "description": "Pad 2 [RST] of RST1 on B.Cu",
+                    "description": "PTH pad 1 [DISPLAY_MOSI] of DISP1",
                     "pos": {
-                        "x": 68.85,
-                        "y": 114.625
+                        "x": 116.7,
+                        "y": 105.08
                     },
-                    "uuid": "9a855e31-10b4-49cf-a043-40594ca60cda"
+                    "uuid": "db220e30-b07b-42be-8bb3-70d894124875"
                 }
             ],
             "severity": "error",
@@ -589,20 +474,89 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "PTH pad 3 [RST] of MCU1",
+                    "description": "PTH pad 19 [DISPLAY_SCK] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 100.0
+                    },
+                    "uuid": "baf635a0-deb0-4cfd-b93a-3c9d6f5543ab"
+                },
+                {
+                    "description": "PTH pad 2 [DISPLAY_SCK] of DISP1",
+                    "pos": {
+                        "x": 116.7,
+                        "y": 102.54
+                    },
+                    "uuid": "49d3fd56-8d0b-4ebf-9456-54025521cc1f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [3V3] of MCU1",
                     "pos": {
                         "x": 107.62,
-                        "y": 92.38
+                        "y": 94.92
                     },
-                    "uuid": "b1196d35-0bc2-431d-b51f-3f206b066a5d"
+                    "uuid": "a37e15d2-544d-4ed3-9041-bea7f8e75ffb"
                 },
                 {
-                    "description": "Pad 4 [RST] of RST1 on B.Cu",
+                    "description": "PTH pad 3 [3V3] of DISP1",
                     "pos": {
-                        "x": 68.85,
-                        "y": 109.375
+                        "x": 116.7,
+                        "y": 100.0
                     },
-                    "uuid": "e3621d08-6a79-4382-b850-39e5abc8e769"
+                    "uuid": "421d781c-a8e3-4eb1-8317-0067e7fdc042"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 24 [DISPLAY_CS] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 87.3
+                    },
+                    "uuid": "8554872a-dd81-4bc3-adf2-6400303bd598"
+                },
+                {
+                    "description": "PTH pad 5 [DISPLAY_CS] of DISP1",
+                    "pos": {
+                        "x": 116.7,
+                        "y": 94.92
+                    },
+                    "uuid": "01dc2459-a2ee-4215-a3fd-057141e7bca9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 16 [key_r1_c3] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 107.62
+                    },
+                    "uuid": "14db8e43-6c80-40d4-acd7-87c3b408a3c4"
+                },
+                {
+                    "description": "PTH pad 2 [key_r1_c3] of S3",
+                    "pos": {
+                        "x": 103.625,
+                        "y": 76.5
+                    },
+                    "uuid": "72395a45-b215-446e-adc6-f59ecbe39718"
                 }
             ],
             "severity": "error",
@@ -617,7 +571,7 @@
                         "x": 99.25,
                         "y": 132.265
                     },
-                    "uuid": "baf7b97f-9189-4104-b467-153b1729c360"
+                    "uuid": "583f14fb-d6d5-4a94-8734-aad657117d43"
                 },
                 {
                     "description": "PTH pad 1 [VBAT] of MCU1",
@@ -625,7 +579,7 @@
                         "x": 107.62,
                         "y": 87.3
                     },
-                    "uuid": "8da167d1-4dfa-45a1-a862-284491d94370"
+                    "uuid": "7721e1b6-b221-48f3-9b38-b6d2e5dece9b"
                 }
             ],
             "severity": "error",
@@ -640,7 +594,7 @@
                         "x": 107.62,
                         "y": 87.3
                     },
-                    "uuid": "8da167d1-4dfa-45a1-a862-284491d94370"
+                    "uuid": "7721e1b6-b221-48f3-9b38-b6d2e5dece9b"
                 },
                 {
                     "description": "PTH pad 26 [VBAT] of MCU1",
@@ -648,7 +602,7 @@
                         "x": 107.62,
                         "y": 84.76
                     },
-                    "uuid": "9313bdea-0913-40f3-b7d3-05a612390c94"
+                    "uuid": "e37f86ff-1a8b-48e4-9c53-44889cd2cb2e"
                 }
             ],
             "severity": "error",
@@ -663,7 +617,7 @@
                         "x": 97.75,
                         "y": 132.265
                     },
-                    "uuid": "135bb7b9-224d-41e7-8744-c3d2802e341d"
+                    "uuid": "ddee1dc0-a48a-4f87-a21b-c92f6407524a"
                 },
                 {
                     "description": "PTH pad 2 [BAT_P] of JST1",
@@ -671,7 +625,53 @@
                         "x": 121.0,
                         "y": 88.0
                     },
-                    "uuid": "b189bc30-d66e-4857-8d4f-7bea847464ff"
+                    "uuid": "2f8e7f9c-b292-4076-9259-cb33dee99865"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 4 [RST] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 68.85,
+                        "y": 109.375
+                    },
+                    "uuid": "66518c3b-008c-4a89-ba5a-e23bff069bad"
+                },
+                {
+                    "description": "Pad 2 [RST] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 68.85,
+                        "y": 114.625
+                    },
+                    "uuid": "012c98c1-091e-4b36-bb56-74eff30026ac"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [RST] of MCU1",
+                    "pos": {
+                        "x": 107.62,
+                        "y": 92.38
+                    },
+                    "uuid": "bc037d42-11ca-42b2-83eb-33f704cf6d1c"
+                },
+                {
+                    "description": "Pad 4 [RST] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 68.85,
+                        "y": 109.375
+                    },
+                    "uuid": "66518c3b-008c-4a89-ba5a-e23bff069bad"
                 }
             ],
             "severity": "error",

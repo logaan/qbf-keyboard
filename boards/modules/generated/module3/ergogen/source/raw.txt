@@ -315,6 +315,7 @@ pcbs:
           P15: TP_SCL
           P16: TP_RDY
           P18: TP_RST
+        adjust.rotate: 0
       display:
         what: ceoloide/display_nice_view
         where: display

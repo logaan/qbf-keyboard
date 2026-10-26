@@ -265,6 +265,7 @@ pcbs:
           P7: key_r1_c4
           P8: key_r2_c1
           P9: key_r2_c4
+        adjust.rotate: 0
       display:
         what: ceoloide/display_nice_view
         where: display

@@ -15,8 +15,10 @@
     "x": -22,
     "y": 0,
     "side": "B",
-    "status": "provisional protected cell; insulated support and switch-tail clearance unverified"
+    "status": "provisional protected cell; insulated support and switch-tail clearance unverified",
+    "rotation_degrees": 0
   },
+  "display_side": "F",
   "keycap_rows": [
     {
       "y": -23.5,
@@ -47,6 +49,7 @@
         123.5
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
         "2": "key_r1_c1",
         "1": "GND"
@@ -59,6 +62,7 @@
         123.5
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
         "2": "key_r1_c2",
         "1": "GND"
@@ -71,6 +75,7 @@
         123.5
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
         "2": "key_r1_c3",
         "1": "GND"
@@ -83,6 +88,7 @@
         123.5
       ],
       "side": "F",
+      "rotation_degrees": 90.0,
       "pads": {
         "2": "key_r1_c4",
         "1": "GND"
@@ -95,6 +101,7 @@
         100.0
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {
         "24": "DISPLAY_CS",
         "1": "VBAT",
@@ -131,6 +138,7 @@
         86.0
       ],
       "side": "F",
+      "rotation_degrees": 0.0,
       "pads": {
         "1": "DISPLAY_MOSI",
         "2": "DISPLAY_SCK",
@@ -146,6 +154,7 @@
         112.0
       ],
       "side": "B",
+      "rotation_degrees": 90.0,
       "pads": {
         "1": "GND",
         "2": "RST",
@@ -160,6 +169,7 @@
         134.0
       ],
       "side": "B",
+      "rotation_degrees": -90.0,
       "pads": {
         "2": "VBAT",
         "3": "BAT_P"
@@ -172,6 +182,7 @@
         88.0
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {
         "1": "GND",
         "2": "BAT_P"
@@ -184,6 +195,7 @@
         134.6
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {}
     },
     {
@@ -193,6 +205,7 @@
         65.4
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {}
     },
     {
@@ -202,6 +215,7 @@
         134.6
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {}
     },
     {
@@ -211,6 +225,7 @@
         65.4
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {}
     },
     {
@@ -220,6 +235,7 @@
         78.0
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {
         "1": "TP_RDY",
         "2": "TP_RST",
@@ -236,6 +252,7 @@
         71.0
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {
         "1": "3V3",
         "2": "TP_SDA"
@@ -248,6 +265,7 @@
         76.0
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {
         "1": "3V3",
         "2": "TP_SCL"
@@ -260,6 +278,7 @@
         71.0
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {
         "1": "3V3",
         "2": "TP_RDY"
@@ -272,6 +291,7 @@
         76.0
       ],
       "side": "B",
+      "rotation_degrees": 0.0,
       "pads": {
         "1": "3V3",
         "2": "TP_RST"

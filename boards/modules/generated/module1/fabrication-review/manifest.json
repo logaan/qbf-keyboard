@@ -1,23 +1,23 @@
 {
   "status": "PCB fabrication review only; not a manufacturing release",
   "board_sha256": {
-    "module1.kicad_pcb": "d9f8d6e98f95b27b4803779102cc51e7885d545c66352611d693063d8f4adaf3"
+    "module1.kicad_pcb": "3b6ec04d3f402f885d79701e6a028d26c83f6c91a48b0f070f46a39dee4dd8bc"
   },
   "files": {
-    "bom.json": "e021cf89d61c6015b8e0a1de0e9132605be051f3646fabe2a1aa63c74a44d888",
-    "module1/module1-B_Cu.gbl": "3d5d493fb51ee5594939ba5cc11b200d68875468c21b1fd75ad54163dcde6232",
-    "module1/module1-B_Mask.gbs": "b1fd22adeb6875842f4465fd2d97a108913adc750e1227eddad9f8e39cfab059",
-    "module1/module1-B_Silkscreen.gbo": "0b4e24b3be0dc7eed8c6ef0bf1513a5fe694ff4982a701d754d6576f5c68f581",
-    "module1/module1-Edge_Cuts.gm1": "3147d6bf66144a542fe88e0c2886f86759908b4bcb3a2aeef8a6209fadc6f1b4",
-    "module1/module1-F_Cu.gtl": "551e18a4d6a4cf9da48c01116d840b3ae687820c5efdabfb3a7c1bc826f0faa9",
-    "module1/module1-F_Mask.gts": "39d41fec1425f60160abe4365212ef6fff3a8c010e94751034801f73074920d4",
-    "module1/module1-F_Silkscreen.gto": "1b31ad0a79cb7d12e8a7d5f71a2e4afc6ced5e179cbdc35f040abf795c53f184",
-    "module1/module1-NPTH-drl_map.svg": "5da36f332464ff9dc3484edb79bd58a7259402342b6d2c0eb186f5e2f85e7cbb",
-    "module1/module1-NPTH.drl": "45898c691336a7635700658338136574ef55ca99bcd09a3e6ada2d1ac363b308",
-    "module1/module1-PTH-drl_map.svg": "5429946726f4845039c84b5a7de8925437580e44a50c966bc9dd0277427065dc",
-    "module1/module1-PTH.drl": "555e786ae546c8bb68fd66b188169016cebb138e45cebf26719f7cbb2784e7b8",
-    "module1/module1-job.gbrjob": "a6c0b941eea01c96d133291d4ac9eab6429fd9086fc406e7077e303dc1ef05f8",
-    "pin-map.csv": "356273a39d000bd7810abd4f27a93ba12bc075932aa409bda506ee68751ec1e9"
+    "bom.json": "6a8c4ea74534b996504feaf80ec92f62a3f1d5e6f95de0f4fcd33b8b04b7ce67",
+    "module1/module1-B_Cu.gbl": "4abed79a1f5f78d55f3e50be243613cddb038932c3e19fa78bf7e99970d74506",
+    "module1/module1-B_Mask.gbs": "81187645ee2ef523f8ed4320bddd19df2ce965d175346d3c4765cee62886d2f3",
+    "module1/module1-B_Silkscreen.gbo": "e8b9242db02879e68cb8ccb70ae9ee1c227c490676ac978eb111751f02c91509",
+    "module1/module1-Edge_Cuts.gm1": "e2dae11b6ebc4218777e8cde7bfa7bfb4d85db28b6a825c575049295e2480ab8",
+    "module1/module1-F_Cu.gtl": "3989d859cb784bd2207254754999be2a6e58d254fb6f7fb6dcf607e390baf599",
+    "module1/module1-F_Mask.gts": "6c056fc11111516d0d049008d9a5da792a96a306b40bd086968286ff5c705baf",
+    "module1/module1-F_Silkscreen.gto": "1df279a32fe4a6dbfa6195e8feac6cab8e6aab4289e39780c02d7b65667dd459",
+    "module1/module1-NPTH-drl_map.svg": "cdfaff449f6cfe022233578af70215e9a9f77f2bc787d23a6eabef3bc5c90cf5",
+    "module1/module1-NPTH.drl": "e5c5bd42dc5b7a6b59ae4fe658a661c5719aba47cc0dd8280ad6656de84855fa",
+    "module1/module1-PTH-drl_map.svg": "3694d89530b60d5dc855a8c5b9359f14bd7a428a92cf83be76e7631cf37d29f5",
+    "module1/module1-PTH.drl": "842985ecac5166db03466f8fedfbf77df5d1847703b6eeab3cac9822fe677caf",
+    "module1/module1-job.gbrjob": "12c08e93bc37713e82987f986d64135c10066534cab49ab94789515c97c4b793",
+    "pin-map.csv": "ef18fdd8fdd48936a9037c3009c40efc1333e433ffd3836640274665dc30c4eb"
   },
   "required_reviews": [
     "Purchased parts and cable polarity",
