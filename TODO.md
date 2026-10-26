@@ -12,11 +12,9 @@
 - [x] @agent Add native PCB assembly previews without developing new mechanical cases
 - [x] @agent Reassess the unpatched Ergogen Maker.js dependency advisory
 - [ ] @user Accept trusted-source-only Ergogen use pending an upstream Maker.js security fix
-- [ ] @user Review the shared 75.2 mm module outline and revised 10-key 6-key
-  and 4-key layouts
+- [ ] @user Review the shared 75.2 mm module outline and revised 10-key 6-key and 4-key layouts
 - [x] @user Reject the Cirque substitution and retain the TPS43 with an off-centre top-face layout
-- [ ] @user Confirm purchased keycaps protected batteries polarity charging
-  limits and stack clearances
+- [ ] @user Confirm purchased keycaps protected batteries polarity charging limits and stack clearances
 - [ ] @user Review KiCad routing before fabrication
 - [x] @user Cancel firmware and mechanical-stage reviews as out of PCB-only scope
 - [ ] @user Prototype and verify electrical safety fit and handedness
@@ -26,5 +24,5 @@
 - [x] @agent Commission the reusable cozy anime desk background through Codex in tmux
 - [x] @agent Script colour grading and anime composites for module pairs 1+1 1+2 1+3 and 2+3
 - [x] @agent Export checked Gerber drill BOM and pin-map review bundles
-- [ ] @agent Group the existing QBF board under boards while preserving legacy entry points
+- [x] @agent Group the existing QBF board under boards while preserving legacy entry points
 - [ ] @user Review the approximate component models and anime composite perspective

@@ -38,7 +38,7 @@ for name in selected:
         if name != 'qbf':
             electrical = json.loads((folder / 'electrical.json').read_text())
             with (stage / 'pin-map.csv').open('w') as stream:
-                writer = csv.writer(stream)
+                writer = csv.writer(stream, lineterminator='\n')
                 writer.writerow(['Reference', 'Pad', 'Net', 'Side'])
                 for footprint in electrical['footprints']:
                     for pad, net in footprint['pads'].items():
