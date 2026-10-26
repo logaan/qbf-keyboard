@@ -134,7 +134,7 @@ def configuration(spec, name):
         'pcb_boundary': [{'what': 'rectangle', 'where': {'shift': [100, -100]}, 'size': [o['width'], o['height']], 'corner': o['corner']}],
         'keycaps': [{'what': 'rectangle', 'where': cap, 'size': size, 'corner': 1} for cap, size in spec['keycaps'].items()],
         'display': [{'what': 'rectangle', 'where': 'display', 'size': spec['modules'][name].get('display_size', spec['display']['size'])}],
-        'battery': [{'what': 'rectangle', 'where': 'battery', 'size': spec['battery']['size'][:2]}],
+        'battery': [{'what': 'rectangle', 'where': 'battery', 'size': spec['battery']['size'][:2][::-1] if spec['modules'][name].get('battery_rotation', 0) == 90 else spec['battery']['size'][:2]}],
         'mount_holes': [{'what': 'circle', 'where': 'mount', 'radius': o['mount_diameter'] / 2}]
     }
     pcb_outlines = {'edge': {'outline': 'pcb_boundary'}, 'caps': {'outline': 'keycaps', 'layer': 'Dwgs.User'},

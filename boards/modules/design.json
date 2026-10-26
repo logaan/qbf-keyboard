@@ -8,7 +8,7 @@
   "display": {"part": "nice!view", "size": [36, 14], "side": "F", "rotation": 90},
   "trackpad": {"part": "Azoteq TPS43", "size": [43, 43], "module_size": [43, 40], "side": "F", "status": "conservative 43 mm envelope; exact overlay, cable adapter and support require physical review", "header_pins": ["TP_RDY", "TP_RST", "GND", "3V3", "TP_SCL", "TP_SDA"], "sources": ["https://www.azoteq.com/images/stories/pdf/proxsense_i2c_trackpad_datasheet.pdf"]},
   "modules": {
-    "module1": {"rows": [{"y": 23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}, {"y": 0, "columns": [0, 1, 2, 3], "cap": "one_u"}, {"y": -23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}], "display_y": 25, "display_side": "B", "controller_rotation": 90, "controller_x": 1.4, "routing_strategy": "shortest", "battery_x": 28.5, "jst_x": -2.7, "jst_y": -18},
+    "module1": {"rows": [{"y": 23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}, {"y": 0, "columns": [0, 1, 2, 3], "cap": "one_u"}, {"y": -23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}], "display_y": 25, "display_side": "B", "controller_rotation": 90, "controller_x": 1.4, "routing_strategy": "shortest", "battery_x": 20, "battery_y": -25, "battery_rotation": 90, "jst_x": -2.7, "jst_y": -18},
     "module2": {"rows": [{"y": 23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}, {"y": -26, "columns": [0, 3], "cap": "one_u"}], "display_y": 0},
     "module3": {"rows": [{"y": -23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}], "display_x": 24, "display_y": 14, "display_rotation": 0, "display_size": [14, 36], "trackpad_x": -12.5, "trackpad_y": 14, "allow_asymmetric_interactions": true}
   }

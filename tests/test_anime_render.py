@@ -40,6 +40,17 @@ class AnimeRenderTests(unittest.TestCase):
         self.assertEqual(output[0, 2, 3], 0)
         self.assertFalse(np.array_equal(output[0, 1, :3], pixels[0, 1, :3]))
 
+    def test_battery_clear_of_antenna_reservation(self):
+        for number in (1, 2, 3):
+            data = json.loads((ROOT / f'anime-render/generated/native/module{number}/components.json').read_text())
+            battery = next(i for i in data['instances'] if i['name'] == 'protected_battery')
+            x, y, _ = battery['position_mm']
+            w, h, _ = battery['size_mm']
+            bounds = [100 + x - w / 2, 100 - y - h / 2, 100 + x + w / 2, 100 - y + h / 2]
+            routing = json.loads((ROOT / f'boards/modules/generated/module{number}/routing.json').read_text())
+            left, top, right, bottom = routing['antenna_keepout_kicad']
+            self.assertTrue(bounds[2] <= left - 5 or bounds[0] >= right + 5 or bounds[3] <= top - 5 or bounds[1] >= bottom + 5)
+
     def test_component_models_include_underside_hardware(self):
         for number in (1, 2, 3):
             path = ROOT / f'anime-render/generated/native/module{number}/components.json'

@@ -94,8 +94,11 @@ def module_instances(spec, name):
     mesh('display', 'nice_view_reference.wrl', display_position, display_rotation)
     mesh('display_socket', 'display_socket.wrl', display_position, display_rotation)
     battery_x, battery_y = module.get('battery_x', spec['battery']['x']), module.get('battery_y', spec['battery']['y'])
-    box('protected_battery', spec['battery']['size'], [battery_x, battery_y, -5.5], [0.65, 0.67, 0.68])
-    box('battery_insulator', [spec['battery']['size'][0] + 0.4, spec['battery']['size'][1] + 0.4, 0.3], [battery_x, battery_y, -3.85], [0.75, 0.48, 0.08])
+    battery_size = list(spec['battery']['size'])
+    if module.get('battery_rotation', 0) == 90:
+        battery_size[:2] = battery_size[:2][::-1]
+    box('protected_battery', battery_size, [battery_x, battery_y, -5.5], [0.65, 0.67, 0.68])
+    box('battery_insulator', [battery_size[0] + 0.4, battery_size[1] + 0.4, 0.3], [battery_x, battery_y, -3.85], [0.75, 0.48, 0.08])
     box('power_switch', [6.7, 2.8, 1.4], [0, -34, -2.3], [0.22, 0.23, 0.24])
     box('power_actuator', [2, 2, 1], [0, -36, -2.2], [0.08, 0.09, 0.1])
     box('reset_switch', [3.5, 4.7, 1.8], [-32, -12, -2.5], [0.48, 0.5, 0.51])
