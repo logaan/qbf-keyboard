@@ -1,4 +1,3 @@
-"""Refresh the SuperMini-only installer and checksums from checked-in sources."""
 import hashlib
 from pathlib import Path
 import zipfile
@@ -14,7 +13,6 @@ def main():
         bundle.write(runtime, runtime.name)
         for name in ("boot.py", "code.py", "fixture.py"):
             bundle.write(application / name, "CIRCUITPY/" + name)
-        bundle.write(application / "INSTALL.md", "SETUP.md")
         for name in ("BUILD.json", "west-frozen.yml"):
             bundle.write(DIST / name, name)
         for path in sorted((DIST / "LICENSES").iterdir()):

@@ -1,0 +1,79 @@
+switches:
+  what: ceoloide/switch_choc_v1_v2
+  where: switch
+  adjust.rotate: 90
+  params:
+    side: F
+    reversible: false
+    hotswap: false
+    solder: true
+    choc_v1_support: true
+    choc_v2_support: false
+    include_stabilizer_pad: false
+    include_corner_marks: true
+    include_traces_vias: false
+    allow_soldermask_bridges: false
+    from: '{{name}}'
+    to: GND
+controller:
+  what: local/nice_nano_extended
+  where: controller
+  params:
+    side: B
+    reverse_mount: true
+    reversible: false
+    include_traces: false
+    include_extra_pins: false
+    show_instructions: false
+    RAW: VBAT
+    VCC: 3V3
+    P1: DISPLAY_CS
+    P2: DISPLAY_MOSI
+    P3: DISPLAY_SCK
+display:
+  what: ceoloide/display_nice_view
+  where: display
+  adjust.rotate: 90
+  params:
+    side: F
+    reversible: false
+    include_traces: false
+    include_courtyard: true
+    MOSI: DISPLAY_MOSI
+    SCK: DISPLAY_SCK
+    CS: DISPLAY_CS
+    VCC: 3V3
+reset:
+  what: ceoloide/reset_switch_smd_side
+  where: reset
+  adjust.rotate: 90
+  params:
+    side: B
+    include_courtyard: true
+    from: GND
+    to: RST
+power:
+  what: ceoloide/power_switch_smd_side
+  where: power
+  adjust.rotate: 270
+  params:
+    side: B
+    include_courtyard: true
+    from: BAT_P
+    to: VBAT
+battery_connector:
+  what: ceoloide/battery_connector_jst_ph_2
+  where: jst
+  params:
+    side: B
+    reversible: false
+    include_traces: false
+    BAT_P: BAT_P
+    BAT_N: GND
+mounts:
+  what: local/mounting_hole_npth
+  where: mount
+  params:
+    side: B
+    hole_size: 2.2
+    hole_drill: 2.2

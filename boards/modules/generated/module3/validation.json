@@ -1,0 +1,61 @@
+{
+  "stage": "ergogen",
+  "review": "pending",
+  "fabrication_ready": false,
+  "source_sha256": "8f0ff91e1723fb8eaf5a67a40a72876cada94ca71a229f1396ebb61d29e44915",
+  "outline": {
+    "width": 75.2,
+    "height": 75.2,
+    "corner": 2,
+    "mount_inset": 3,
+    "mount_diameter": 2.2
+  },
+  "key_count": 4,
+  "blockers": [
+    "User Ergogen review required before KiCad routing",
+    "Battery procurement, protection and mechanical stack unverified",
+    "Firmware and mechanical stages not started",
+    "Placement DRC findings must be resolved in the reviewed KiCad stage",
+    "Cirque candidate replaces oversized TPS43; sensor connector and electrical interface not implemented"
+  ],
+  "outputs": {
+    "electrical.json": "048b1fe38675412eeef712ccca01ee5fd18e4d65ec5983fc9d3b716bf968b898",
+    "ergogen/outlines/battery.dxf": "62c132ba75202ef6e4ed1c28d31002a387537b72f360792cf45103756084c01b",
+    "ergogen/outlines/battery.svg": "2a92e838d4b65d925ea4df6d57b324b0957fafd2a53336736b26a0b87c112291",
+    "ergogen/outlines/battery.yaml": "89eb6a091bad85d941f36992b9bf98965a5fd4829447b5da9b853f18298666ab",
+    "ergogen/outlines/display.dxf": "d996cf9a00a54887489094aab8a7d395508dd8f1d7171464a83c4f76abc1cb5d",
+    "ergogen/outlines/display.svg": "848aa3631e528502ce70456e9068997d7d24afb871b498302a825b26e82c033f",
+    "ergogen/outlines/display.yaml": "ba72c127422a4f27531d8a4093812c05c5773625f180ac0d81b70cee652805a2",
+    "ergogen/outlines/keycaps.dxf": "a34a23659d3f622d2171c226946f729e37fc1977c2e055e150b1bcb15b832af2",
+    "ergogen/outlines/keycaps.svg": "a0f1735fa3a0a5cfa3a38831fdfef4c379c730e9cf45a50497066eb5f4ac0c79",
+    "ergogen/outlines/keycaps.yaml": "4339d184c2f2648382c6715e4f2211611937779dacb88604f88b0ae53e961ba4",
+    "ergogen/outlines/mount_holes.dxf": "9aafe44d1e6bbb7e80c1f46a31d9efad47fdbcd715feced55765d41ed646a53b",
+    "ergogen/outlines/mount_holes.svg": "c87426c39d9a3df2d2bba23962876f750d05a73a77c21bfcd5195e1c1563288d",
+    "ergogen/outlines/mount_holes.yaml": "3ff1b0027816b00d66891bd0cf52aba563bed41424f9af6d8c298efd3540b2c5",
+    "ergogen/outlines/pcb_boundary.dxf": "f52879e75cb892b58b1a040196f39abc1db07a9faa22511088ec367257c47cce",
+    "ergogen/outlines/pcb_boundary.svg": "439311e9f4b52bdcea1d6e5458d5c273f47e471f2a47d4f3db2c46ca7e630ff6",
+    "ergogen/outlines/pcb_boundary.yaml": "c9ba7a94368a74d7daf8e77db148dbb29c08ceb3f865ad0a49c7dd04c3ac602f",
+    "ergogen/outlines/trackpad.dxf": "cc47231a33959616dba5b5f3f9a7afc82fe4346f83d7c61f04680d5224f089e8",
+    "ergogen/outlines/trackpad.svg": "07cb323e61800d633aafe122f3863dddc340820f2fd9d1d1d101a98e213d477e",
+    "ergogen/outlines/trackpad.yaml": "c04f92e179f6c0a8942785f0104df7013be84fa3db761b79cc010291fecf8cde",
+    "ergogen/pcbs/module3.kicad_pcb": "68a21b7a5ddc49d0a6ff6ee2da43a37ceb42ddc3784cb8ab0b1838e2ae7db381",
+    "ergogen/pcbs/module3.kicad_prl": "5a6a6fec319571a405a2665768e5e321c954398f06560740be5b5d2e9f9da9f8",
+    "ergogen/pcbs/module3.kicad_pro": "45082bcaf390cc6192c1e34e8d0f156e4918c0e687ae9d81a80ba39f1ac7ea44",
+    "ergogen/points/demo.dxf": "f5de3d2f1c7985a8be58c6cf51a98f77dc0bb6f76d0e1a700de15fa1c84b8998",
+    "ergogen/points/demo.svg": "a5f0d6bc971b65793888be6e79978107095cfb4a10f44d12317e00cf22d9e264",
+    "ergogen/points/demo.yaml": "12253b556c0cf2b95c28b6ab6ca7a340ba64b0cd815c98eb99c178e2079a277f",
+    "ergogen/points/points.yaml": "333edbd6cd2add0680ed625aa81e5bb41b635d9857a312d49aa47266827ba64f",
+    "ergogen/points/units.yaml": "1eae0beb61ccea0fbb894114040ccbb1130c6173d41b69aebfdaf0c5ac586da1",
+    "ergogen/source/canonical.yaml": "fef578fcbc3e520c15605406d606708d74734916414c5ab4bbadd6b9b39ed966",
+    "ergogen/source/raw.txt": "d62e51ccf822fc3ad566c73244f74cea530e98152f8fe6ac89636d00050d6024",
+    "layout.svg": "420f2f1676c73cefc178ea0038223b50ac0eb432f49d5ff7fd2cf639dd0a6a55",
+    "pcb.svg": "46b2ec857c7484e3eaf89ec57da4c5adfe7369c5da1f4341b28ac5efc1ea2e91",
+    "placement-drc.json": "bb034e84005c752350eee1dfec20baf706824818900e62165f07cbaa3d0ca1d8",
+    "source/config.yaml": "d62e51ccf822fc3ad566c73244f74cea530e98152f8fe6ac89636d00050d6024"
+  },
+  "drc": {
+    "violations": 47,
+    "unconnected_items": 24,
+    "schematic_parity": 0
+  }
+}

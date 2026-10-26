@@ -1,0 +1,324 @@
+meta:
+    name: module2
+    engine: 4.2.1
+    version: 0.2.0
+points:
+    zones:
+        key_r1_c1:
+            anchor:
+                shift:
+                    - 71.425
+                    - -76.5
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+        key_r1_c2:
+            anchor:
+                shift:
+                    - 90.475
+                    - -76.5
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+        key_r1_c3:
+            anchor:
+                shift:
+                    - 109.525
+                    - -76.5
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+        key_r1_c4:
+            anchor:
+                shift:
+                    - 128.575
+                    - -76.5
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+        key_r2_c1:
+            anchor:
+                shift:
+                    - 71.425
+                    - -126
+            key:
+                tags:
+                    - switch
+                    - one_u
+                width: 16.5
+                height: 16.5
+        key_r2_c4:
+            anchor:
+                shift:
+                    - 128.575
+                    - -126
+            key:
+                tags:
+                    - switch
+                    - one_u
+                width: 16.5
+                height: 16.5
+        display:
+            anchor:
+                shift:
+                    - 100
+                    - -100
+            key:
+                tags:
+                    - display
+                width: 36
+                height: 14
+        controller:
+            anchor:
+                shift:
+                    - 100
+                    - -100
+            key:
+                tags:
+                    - controller
+                width: 1
+                height: 1
+        battery:
+            anchor:
+                shift:
+                    - 78
+                    - -100
+            key:
+                tags:
+                    - battery
+                width: 1
+                height: 1
+        reset:
+            anchor:
+                shift:
+                    - 68
+                    - -100
+            key:
+                tags:
+                    - reset
+                width: 1
+                height: 1
+        power:
+            anchor:
+                shift:
+                    - 122
+                    - -134
+            key:
+                tags:
+                    - power
+                width: 1
+                height: 1
+        jst:
+            anchor:
+                shift:
+                    - 122
+                    - -119
+            key:
+                tags:
+                    - jst
+                width: 1
+                height: 1
+        mount_-1_-1:
+            anchor:
+                shift:
+                    - 65.4
+                    - -134.6
+            key:
+                tags:
+                    - mount
+                width: 1
+                height: 1
+        mount_-1_1:
+            anchor:
+                shift:
+                    - 65.4
+                    - -65.4
+            key:
+                tags:
+                    - mount
+                width: 1
+                height: 1
+        mount_1_-1:
+            anchor:
+                shift:
+                    - 134.6
+                    - -134.6
+            key:
+                tags:
+                    - mount
+                width: 1
+                height: 1
+        mount_1_1:
+            anchor:
+                shift:
+                    - 134.6
+                    - -65.4
+            key:
+                tags:
+                    - mount
+                width: 1
+                height: 1
+outlines:
+    pcb_boundary:
+        -
+            what: rectangle
+            where:
+                shift:
+                    - 100
+                    - -100
+            size:
+                - 75.2
+                - 75.2
+            corner: 2
+    keycaps:
+        -
+            what: rectangle
+            where: portrait_1_5u
+            size:
+                - 16.5
+                - 26.5
+            corner: 1
+        -
+            what: rectangle
+            where: one_u
+            size:
+                - 16.5
+                - 16.5
+            corner: 1
+    display:
+        -
+            what: rectangle
+            where: display
+            size:
+                - 36
+                - 14
+    battery:
+        -
+            what: rectangle
+            where: battery
+            size:
+                - 12
+                - 30
+    mount_holes:
+        -
+            what: circle
+            where: mount
+            radius: 1.1
+pcbs:
+    module2:
+        template: kicad8
+        references: true
+        outlines:
+            edge:
+                outline: pcb_boundary
+            caps:
+                outline: keycaps
+                layer: Dwgs.User
+            screen:
+                outline: display
+                layer: Dwgs.User
+            cell:
+                outline: battery
+                layer: B.Fab
+        footprints:
+            switches:
+                what: ceoloide/switch_choc_v1_v2
+                where: switch
+                adjust:
+                    rotate: 90
+                params:
+                    side: F
+                    reversible: false
+                    hotswap: false
+                    solder: true
+                    choc_v1_support: true
+                    choc_v2_support: false
+                    include_stabilizer_pad: false
+                    include_corner_marks: true
+                    include_traces_vias: false
+                    allow_soldermask_bridges: false
+                    from: '{{name}}'
+                    to: GND
+            controller:
+                what: local/nice_nano_extended
+                where: controller
+                params:
+                    side: B
+                    reverse_mount: true
+                    reversible: false
+                    include_traces: false
+                    include_extra_pins: false
+                    show_instructions: false
+                    RAW: VBAT
+                    VCC: 3V3
+                    P1: DISPLAY_CS
+                    P2: DISPLAY_MOSI
+                    P3: DISPLAY_SCK
+                    P4: key_r1_c1
+                    P5: key_r1_c2
+                    P6: key_r1_c3
+                    P7: key_r1_c4
+                    P8: key_r2_c1
+                    P9: key_r2_c4
+            display:
+                what: ceoloide/display_nice_view
+                where: display
+                adjust:
+                    rotate: 90
+                params:
+                    side: F
+                    reversible: false
+                    include_traces: false
+                    include_courtyard: true
+                    MOSI: DISPLAY_MOSI
+                    SCK: DISPLAY_SCK
+                    CS: DISPLAY_CS
+                    VCC: 3V3
+            reset:
+                what: ceoloide/reset_switch_smd_side
+                where: reset
+                adjust:
+                    rotate: 90
+                params:
+                    side: B
+                    include_courtyard: true
+                    from: GND
+                    to: RST
+            power:
+                what: ceoloide/power_switch_smd_side
+                where: power
+                adjust:
+                    rotate: 270
+                params:
+                    side: B
+                    include_courtyard: true
+                    from: BAT_P
+                    to: VBAT
+            battery_connector:
+                what: ceoloide/battery_connector_jst_ph_2
+                where: jst
+                params:
+                    side: B
+                    reversible: false
+                    include_traces: false
+                    BAT_P: BAT_P
+                    BAT_N: GND
+            mounts:
+                what: local/mounting_hole_npth
+                where: mount
+                params:
+                    side: B
+                    hole_size: 2.2
+                    hole_drill: 2.2

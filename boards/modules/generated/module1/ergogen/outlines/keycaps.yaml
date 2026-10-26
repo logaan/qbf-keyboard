@@ -1,0 +1,800 @@
+models:
+    export:
+        models:
+            a:
+                models:
+                    a:
+                        models:
+                            a:
+                                models:
+                                    a:
+                                        models:
+                                            a:
+                                                models:
+                                                    a:
+                                                        models:
+                                                            a:
+                                                                models:
+                                                                    a:
+                                                                        models:
+                                                                            a:
+                                                                                models:
+                                                                                    a:
+                                                                                        models: {}
+                                                                                        origin:
+                                                                                            - 0
+                                                                                            - 0
+                                                                                    b:
+                                                                                        models:
+                                                                                            '0':
+                                                                                                paths:
+                                                                                                    ShapeLine1_Bottom:
+                                                                                                        type: line
+                                                                                                        origin:
+                                                                                                            - 64.175
+                                                                                                            - -89.75
+                                                                                                        end:
+                                                                                                            - 78.675
+                                                                                                            - -89.75
+                                                                                                    ShapeLine1_EndCap:
+                                                                                                        type: arc
+                                                                                                        origin:
+                                                                                                            - 78.675
+                                                                                                            - -88.75
+                                                                                                        radius: 1
+                                                                                                        startAngle: 270
+                                                                                                        endAngle: 360
+                                                                                                    ShapeLine2_Bottom:
+                                                                                                        type: line
+                                                                                                        origin:
+                                                                                                            - 79.675
+                                                                                                            - -88.75
+                                                                                                        end:
+                                                                                                            - 79.675
+                                                                                                            - -64.25
+                                                                                                    ShapeLine2_EndCap:
+                                                                                                        type: arc
+                                                                                                        origin:
+                                                                                                            - 78.675
+                                                                                                            - -64.25
+                                                                                                        radius: 1
+                                                                                                        startAngle: 0
+                                                                                                        endAngle: 90
+                                                                                                    ShapeLine3_Bottom:
+                                                                                                        type: line
+                                                                                                        origin:
+                                                                                                            - 78.675
+                                                                                                            - -63.25
+                                                                                                        end:
+                                                                                                            - 64.175
+                                                                                                            - -63.25
+                                                                                                    ShapeLine3_EndCap:
+                                                                                                        type: arc
+                                                                                                        origin:
+                                                                                                            - 64.175
+                                                                                                            - -64.25
+                                                                                                        radius: 1
+                                                                                                        startAngle: 90
+                                                                                                        endAngle: 180
+                                                                                                    ShapeLine4_Bottom:
+                                                                                                        type: line
+                                                                                                        origin:
+                                                                                                            - 63.175
+                                                                                                            - -64.25
+                                                                                                        end:
+                                                                                                            - 63.175
+                                                                                                            - -88.75
+                                                                                                    ShapeLine1_StartCap:
+                                                                                                        type: arc
+                                                                                                        origin:
+                                                                                                            - 64.175
+                                                                                                            - -88.75
+                                                                                                        radius: 1
+                                                                                                        startAngle: 180
+                                                                                                        endAngle: 270
+                                                                                                origin:
+                                                                                                    - 0
+                                                                                                    - 0
+                                                                                        origin:
+                                                                                            - 0
+                                                                                            - 0
+                                                                                origin:
+                                                                                    - 0
+                                                                                    - 0
+                                                                            b:
+                                                                                models:
+                                                                                    '0':
+                                                                                        paths:
+                                                                                            ShapeLine1_Bottom:
+                                                                                                type: line
+                                                                                                origin:
+                                                                                                    - 83.225
+                                                                                                    - -89.75
+                                                                                                end:
+                                                                                                    - 97.725
+                                                                                                    - -89.75
+                                                                                            ShapeLine1_EndCap:
+                                                                                                type: arc
+                                                                                                origin:
+                                                                                                    - 97.725
+                                                                                                    - -88.75
+                                                                                                radius: 1
+                                                                                                startAngle: 270
+                                                                                                endAngle: 360
+                                                                                            ShapeLine2_Bottom:
+                                                                                                type: line
+                                                                                                origin:
+                                                                                                    - 98.725
+                                                                                                    - -88.75
+                                                                                                end:
+                                                                                                    - 98.725
+                                                                                                    - -64.25
+                                                                                            ShapeLine2_EndCap:
+                                                                                                type: arc
+                                                                                                origin:
+                                                                                                    - 97.725
+                                                                                                    - -64.25
+                                                                                                radius: 1
+                                                                                                startAngle: 0
+                                                                                                endAngle: 90
+                                                                                            ShapeLine3_Bottom:
+                                                                                                type: line
+                                                                                                origin:
+                                                                                                    - 97.725
+                                                                                                    - -63.25
+                                                                                                end:
+                                                                                                    - 83.225
+                                                                                                    - -63.25
+                                                                                            ShapeLine3_EndCap:
+                                                                                                type: arc
+                                                                                                origin:
+                                                                                                    - 83.225
+                                                                                                    - -64.25
+                                                                                                radius: 1
+                                                                                                startAngle: 90
+                                                                                                endAngle: 180
+                                                                                            ShapeLine4_Bottom:
+                                                                                                type: line
+                                                                                                origin:
+                                                                                                    - 82.225
+                                                                                                    - -64.25
+                                                                                                end:
+                                                                                                    - 82.225
+                                                                                                    - -88.75
+                                                                                            ShapeLine1_StartCap:
+                                                                                                type: arc
+                                                                                                origin:
+                                                                                                    - 83.225
+                                                                                                    - -88.75
+                                                                                                radius: 1
+                                                                                                startAngle: 180
+                                                                                                endAngle: 270
+                                                                                        origin:
+                                                                                            - 0
+                                                                                            - 0
+                                                                                origin:
+                                                                                    - 0
+                                                                                    - 0
+                                                                        origin:
+                                                                            - 0
+                                                                            - 0
+                                                                    b:
+                                                                        models:
+                                                                            '0':
+                                                                                paths:
+                                                                                    ShapeLine1_Bottom:
+                                                                                        type: line
+                                                                                        origin:
+                                                                                            - 102.275
+                                                                                            - -89.75
+                                                                                        end:
+                                                                                            - 116.775
+                                                                                            - -89.75
+                                                                                    ShapeLine1_EndCap:
+                                                                                        type: arc
+                                                                                        origin:
+                                                                                            - 116.775
+                                                                                            - -88.75
+                                                                                        radius: 1
+                                                                                        startAngle: 270
+                                                                                        endAngle: 360
+                                                                                    ShapeLine2_Bottom:
+                                                                                        type: line
+                                                                                        origin:
+                                                                                            - 117.775
+                                                                                            - -88.75
+                                                                                        end:
+                                                                                            - 117.775
+                                                                                            - -64.25
+                                                                                    ShapeLine2_EndCap:
+                                                                                        type: arc
+                                                                                        origin:
+                                                                                            - 116.775
+                                                                                            - -64.25
+                                                                                        radius: 1
+                                                                                        startAngle: 0
+                                                                                        endAngle: 90
+                                                                                    ShapeLine3_Bottom:
+                                                                                        type: line
+                                                                                        origin:
+                                                                                            - 116.775
+                                                                                            - -63.25
+                                                                                        end:
+                                                                                            - 102.275
+                                                                                            - -63.25
+                                                                                    ShapeLine3_EndCap:
+                                                                                        type: arc
+                                                                                        origin:
+                                                                                            - 102.275
+                                                                                            - -64.25
+                                                                                        radius: 1
+                                                                                        startAngle: 90
+                                                                                        endAngle: 180
+                                                                                    ShapeLine4_Bottom:
+                                                                                        type: line
+                                                                                        origin:
+                                                                                            - 101.275
+                                                                                            - -64.25
+                                                                                        end:
+                                                                                            - 101.275
+                                                                                            - -88.75
+                                                                                    ShapeLine1_StartCap:
+                                                                                        type: arc
+                                                                                        origin:
+                                                                                            - 102.275
+                                                                                            - -88.75
+                                                                                        radius: 1
+                                                                                        startAngle: 180
+                                                                                        endAngle: 270
+                                                                                origin:
+                                                                                    - 0
+                                                                                    - 0
+                                                                        origin:
+                                                                            - 0
+                                                                            - 0
+                                                                origin:
+                                                                    - 0
+                                                                    - 0
+                                                            b:
+                                                                models:
+                                                                    '0':
+                                                                        paths:
+                                                                            ShapeLine1_Bottom:
+                                                                                type: line
+                                                                                origin:
+                                                                                    - 121.32499999999999
+                                                                                    - -89.75
+                                                                                end:
+                                                                                    - 135.825
+                                                                                    - -89.75
+                                                                            ShapeLine1_EndCap:
+                                                                                type: arc
+                                                                                origin:
+                                                                                    - 135.825
+                                                                                    - -88.75
+                                                                                radius: 1
+                                                                                startAngle: 270
+                                                                                endAngle: 360
+                                                                            ShapeLine2_Bottom:
+                                                                                type: line
+                                                                                origin:
+                                                                                    - 136.825
+                                                                                    - -88.75
+                                                                                end:
+                                                                                    - 136.825
+                                                                                    - -64.25
+                                                                            ShapeLine2_EndCap:
+                                                                                type: arc
+                                                                                origin:
+                                                                                    - 135.825
+                                                                                    - -64.25
+                                                                                radius: 1
+                                                                                startAngle: 0
+                                                                                endAngle: 90
+                                                                            ShapeLine3_Bottom:
+                                                                                type: line
+                                                                                origin:
+                                                                                    - 135.825
+                                                                                    - -63.25
+                                                                                end:
+                                                                                    - 121.32499999999999
+                                                                                    - -63.25
+                                                                            ShapeLine3_EndCap:
+                                                                                type: arc
+                                                                                origin:
+                                                                                    - 121.32499999999999
+                                                                                    - -64.25
+                                                                                radius: 1
+                                                                                startAngle: 90
+                                                                                endAngle: 180
+                                                                            ShapeLine4_Bottom:
+                                                                                type: line
+                                                                                origin:
+                                                                                    - 120.32499999999999
+                                                                                    - -64.25
+                                                                                end:
+                                                                                    - 120.32499999999999
+                                                                                    - -88.75
+                                                                            ShapeLine1_StartCap:
+                                                                                type: arc
+                                                                                origin:
+                                                                                    - 121.32499999999999
+                                                                                    - -88.75
+                                                                                radius: 1
+                                                                                startAngle: 180
+                                                                                endAngle: 270
+                                                                        origin:
+                                                                            - 0
+                                                                            - 0
+                                                                origin:
+                                                                    - 0
+                                                                    - 0
+                                                        origin:
+                                                            - 0
+                                                            - 0
+                                                    b:
+                                                        models:
+                                                            '0':
+                                                                paths:
+                                                                    ShapeLine1_Bottom:
+                                                                        type: line
+                                                                        origin:
+                                                                            - 64.175
+                                                                            - -136.75
+                                                                        end:
+                                                                            - 78.675
+                                                                            - -136.75
+                                                                    ShapeLine1_EndCap:
+                                                                        type: arc
+                                                                        origin:
+                                                                            - 78.675
+                                                                            - -135.75
+                                                                        radius: 1
+                                                                        startAngle: 270
+                                                                        endAngle: 360
+                                                                    ShapeLine2_Bottom:
+                                                                        type: line
+                                                                        origin:
+                                                                            - 79.675
+                                                                            - -135.75
+                                                                        end:
+                                                                            - 79.675
+                                                                            - -111.25
+                                                                    ShapeLine2_EndCap:
+                                                                        type: arc
+                                                                        origin:
+                                                                            - 78.675
+                                                                            - -111.25
+                                                                        radius: 1
+                                                                        startAngle: 0
+                                                                        endAngle: 90
+                                                                    ShapeLine3_Bottom:
+                                                                        type: line
+                                                                        origin:
+                                                                            - 78.675
+                                                                            - -110.25
+                                                                        end:
+                                                                            - 64.175
+                                                                            - -110.25
+                                                                    ShapeLine3_EndCap:
+                                                                        type: arc
+                                                                        origin:
+                                                                            - 64.175
+                                                                            - -111.25
+                                                                        radius: 1
+                                                                        startAngle: 90
+                                                                        endAngle: 180
+                                                                    ShapeLine4_Bottom:
+                                                                        type: line
+                                                                        origin:
+                                                                            - 63.175
+                                                                            - -111.25
+                                                                        end:
+                                                                            - 63.175
+                                                                            - -135.75
+                                                                    ShapeLine1_StartCap:
+                                                                        type: arc
+                                                                        origin:
+                                                                            - 64.175
+                                                                            - -135.75
+                                                                        radius: 1
+                                                                        startAngle: 180
+                                                                        endAngle: 270
+                                                                origin:
+                                                                    - 0
+                                                                    - 0
+                                                        origin:
+                                                            - 0
+                                                            - 0
+                                                origin:
+                                                    - 0
+                                                    - 0
+                                            b:
+                                                models:
+                                                    '0':
+                                                        paths:
+                                                            ShapeLine1_Bottom:
+                                                                type: line
+                                                                origin:
+                                                                    - 83.225
+                                                                    - -136.75
+                                                                end:
+                                                                    - 97.725
+                                                                    - -136.75
+                                                            ShapeLine1_EndCap:
+                                                                type: arc
+                                                                origin:
+                                                                    - 97.725
+                                                                    - -135.75
+                                                                radius: 1
+                                                                startAngle: 270
+                                                                endAngle: 360
+                                                            ShapeLine2_Bottom:
+                                                                type: line
+                                                                origin:
+                                                                    - 98.725
+                                                                    - -135.75
+                                                                end:
+                                                                    - 98.725
+                                                                    - -111.25
+                                                            ShapeLine2_EndCap:
+                                                                type: arc
+                                                                origin:
+                                                                    - 97.725
+                                                                    - -111.25
+                                                                radius: 1
+                                                                startAngle: 0
+                                                                endAngle: 90
+                                                            ShapeLine3_Bottom:
+                                                                type: line
+                                                                origin:
+                                                                    - 97.725
+                                                                    - -110.25
+                                                                end:
+                                                                    - 83.225
+                                                                    - -110.25
+                                                            ShapeLine3_EndCap:
+                                                                type: arc
+                                                                origin:
+                                                                    - 83.225
+                                                                    - -111.25
+                                                                radius: 1
+                                                                startAngle: 90
+                                                                endAngle: 180
+                                                            ShapeLine4_Bottom:
+                                                                type: line
+                                                                origin:
+                                                                    - 82.225
+                                                                    - -111.25
+                                                                end:
+                                                                    - 82.225
+                                                                    - -135.75
+                                                            ShapeLine1_StartCap:
+                                                                type: arc
+                                                                origin:
+                                                                    - 83.225
+                                                                    - -135.75
+                                                                radius: 1
+                                                                startAngle: 180
+                                                                endAngle: 270
+                                                        origin:
+                                                            - 0
+                                                            - 0
+                                                origin:
+                                                    - 0
+                                                    - 0
+                                        origin:
+                                            - 0
+                                            - 0
+                                    b:
+                                        models:
+                                            '0':
+                                                paths:
+                                                    ShapeLine1_Bottom:
+                                                        type: line
+                                                        origin:
+                                                            - 102.275
+                                                            - -136.75
+                                                        end:
+                                                            - 116.775
+                                                            - -136.75
+                                                    ShapeLine1_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 116.775
+                                                            - -135.75
+                                                        radius: 1
+                                                        startAngle: 270
+                                                        endAngle: 360
+                                                    ShapeLine2_Bottom:
+                                                        type: line
+                                                        origin:
+                                                            - 117.775
+                                                            - -135.75
+                                                        end:
+                                                            - 117.775
+                                                            - -111.25
+                                                    ShapeLine2_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 116.775
+                                                            - -111.25
+                                                        radius: 1
+                                                        startAngle: 0
+                                                        endAngle: 90
+                                                    ShapeLine3_Bottom:
+                                                        type: line
+                                                        origin:
+                                                            - 116.775
+                                                            - -110.25
+                                                        end:
+                                                            - 102.275
+                                                            - -110.25
+                                                    ShapeLine3_EndCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 102.275
+                                                            - -111.25
+                                                        radius: 1
+                                                        startAngle: 90
+                                                        endAngle: 180
+                                                    ShapeLine4_Bottom:
+                                                        type: line
+                                                        origin:
+                                                            - 101.275
+                                                            - -111.25
+                                                        end:
+                                                            - 101.275
+                                                            - -135.75
+                                                    ShapeLine1_StartCap:
+                                                        type: arc
+                                                        origin:
+                                                            - 102.275
+                                                            - -135.75
+                                                        radius: 1
+                                                        startAngle: 180
+                                                        endAngle: 270
+                                                origin:
+                                                    - 0
+                                                    - 0
+                                        origin:
+                                            - 0
+                                            - 0
+                                origin:
+                                    - 0
+                                    - 0
+                            b:
+                                models:
+                                    '0':
+                                        paths:
+                                            ShapeLine1_Bottom:
+                                                type: line
+                                                origin:
+                                                    - 121.32499999999999
+                                                    - -136.75
+                                                end:
+                                                    - 135.825
+                                                    - -136.75
+                                            ShapeLine1_EndCap:
+                                                type: arc
+                                                origin:
+                                                    - 135.825
+                                                    - -135.75
+                                                radius: 1
+                                                startAngle: 270
+                                                endAngle: 360
+                                            ShapeLine2_Bottom:
+                                                type: line
+                                                origin:
+                                                    - 136.825
+                                                    - -135.75
+                                                end:
+                                                    - 136.825
+                                                    - -111.25
+                                            ShapeLine2_EndCap:
+                                                type: arc
+                                                origin:
+                                                    - 135.825
+                                                    - -111.25
+                                                radius: 1
+                                                startAngle: 0
+                                                endAngle: 90
+                                            ShapeLine3_Bottom:
+                                                type: line
+                                                origin:
+                                                    - 135.825
+                                                    - -110.25
+                                                end:
+                                                    - 121.32499999999999
+                                                    - -110.25
+                                            ShapeLine3_EndCap:
+                                                type: arc
+                                                origin:
+                                                    - 121.32499999999999
+                                                    - -111.25
+                                                radius: 1
+                                                startAngle: 90
+                                                endAngle: 180
+                                            ShapeLine4_Bottom:
+                                                type: line
+                                                origin:
+                                                    - 120.32499999999999
+                                                    - -111.25
+                                                end:
+                                                    - 120.32499999999999
+                                                    - -135.75
+                                            ShapeLine1_StartCap:
+                                                type: arc
+                                                origin:
+                                                    - 121.32499999999999
+                                                    - -135.75
+                                                radius: 1
+                                                startAngle: 180
+                                                endAngle: 270
+                                        origin:
+                                            - 0
+                                            - 0
+                                origin:
+                                    - 0
+                                    - 0
+                        origin:
+                            - 0
+                            - 0
+                    b:
+                        models:
+                            '0':
+                                paths:
+                                    ShapeLine1_Bottom:
+                                        type: line
+                                        origin:
+                                            - 64.175
+                                            - -108.25
+                                        end:
+                                            - 78.675
+                                            - -108.25
+                                    ShapeLine1_EndCap:
+                                        type: arc
+                                        origin:
+                                            - 78.675
+                                            - -107.25
+                                        radius: 1
+                                        startAngle: 270
+                                        endAngle: 360
+                                    ShapeLine2_Bottom:
+                                        type: line
+                                        origin:
+                                            - 79.675
+                                            - -107.25
+                                        end:
+                                            - 79.675
+                                            - -92.75
+                                    ShapeLine2_EndCap:
+                                        type: arc
+                                        origin:
+                                            - 78.675
+                                            - -92.75
+                                        radius: 1
+                                        startAngle: 0
+                                        endAngle: 90
+                                    ShapeLine3_Bottom:
+                                        type: line
+                                        origin:
+                                            - 78.675
+                                            - -91.75
+                                        end:
+                                            - 64.175
+                                            - -91.75
+                                    ShapeLine3_EndCap:
+                                        type: arc
+                                        origin:
+                                            - 64.175
+                                            - -92.75
+                                        radius: 1
+                                        startAngle: 90
+                                        endAngle: 180
+                                    ShapeLine4_Bottom:
+                                        type: line
+                                        origin:
+                                            - 63.175
+                                            - -92.75
+                                        end:
+                                            - 63.175
+                                            - -107.25
+                                    ShapeLine1_StartCap:
+                                        type: arc
+                                        origin:
+                                            - 64.175
+                                            - -107.25
+                                        radius: 1
+                                        startAngle: 180
+                                        endAngle: 270
+                                origin:
+                                    - 0
+                                    - 0
+                        origin:
+                            - 0
+                            - 0
+                origin:
+                    - 0
+                    - 0
+            b:
+                models:
+                    '0':
+                        paths:
+                            ShapeLine1_Bottom:
+                                type: line
+                                origin:
+                                    - 121.32499999999999
+                                    - -108.25
+                                end:
+                                    - 135.825
+                                    - -108.25
+                            ShapeLine1_EndCap:
+                                type: arc
+                                origin:
+                                    - 135.825
+                                    - -107.25
+                                radius: 1
+                                startAngle: 270
+                                endAngle: 360
+                            ShapeLine2_Bottom:
+                                type: line
+                                origin:
+                                    - 136.825
+                                    - -107.25
+                                end:
+                                    - 136.825
+                                    - -92.75
+                            ShapeLine2_EndCap:
+                                type: arc
+                                origin:
+                                    - 135.825
+                                    - -92.75
+                                radius: 1
+                                startAngle: 0
+                                endAngle: 90
+                            ShapeLine3_Bottom:
+                                type: line
+                                origin:
+                                    - 135.825
+                                    - -91.75
+                                end:
+                                    - 121.32499999999999
+                                    - -91.75
+                            ShapeLine3_EndCap:
+                                type: arc
+                                origin:
+                                    - 121.32499999999999
+                                    - -92.75
+                                radius: 1
+                                startAngle: 90
+                                endAngle: 180
+                            ShapeLine4_Bottom:
+                                type: line
+                                origin:
+                                    - 120.32499999999999
+                                    - -92.75
+                                end:
+                                    - 120.32499999999999
+                                    - -107.25
+                            ShapeLine1_StartCap:
+                                type: arc
+                                origin:
+                                    - 121.32499999999999
+                                    - -107.25
+                                radius: 1
+                                startAngle: 180
+                                endAngle: 270
+                        origin:
+                            - 0
+                            - 0
+                origin:
+                    - 0
+                    - 0
+        origin:
+            - 0
+            - 0
+units: mm
+origin:
+    - 0
+    - 0

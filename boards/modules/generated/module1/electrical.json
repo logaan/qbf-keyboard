@@ -1,0 +1,268 @@
+{
+  "kicad": "10.0.4",
+  "stage": "placement diagnostic only",
+  "fabrication_ready": false,
+  "keys": [
+    "key_r1_c1",
+    "key_r1_c2",
+    "key_r1_c3",
+    "key_r1_c4",
+    "key_r2_c1",
+    "key_r2_c4",
+    "key_r3_c1",
+    "key_r3_c2",
+    "key_r3_c3",
+    "key_r3_c4"
+  ],
+  "footprints": [
+    {
+      "reference": "S1",
+      "position": [
+        71.425,
+        76.5
+      ],
+      "side": "F",
+      "pads": {
+        "2": "key_r1_c1",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S2",
+      "position": [
+        90.475,
+        76.5
+      ],
+      "side": "F",
+      "pads": {
+        "2": "key_r1_c2",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S3",
+      "position": [
+        109.525,
+        76.5
+      ],
+      "side": "F",
+      "pads": {
+        "2": "key_r1_c3",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S4",
+      "position": [
+        128.575,
+        76.5
+      ],
+      "side": "F",
+      "pads": {
+        "2": "key_r1_c4",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S5",
+      "position": [
+        71.425,
+        100.0
+      ],
+      "side": "F",
+      "pads": {
+        "2": "key_r2_c1",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S6",
+      "position": [
+        128.575,
+        100.0
+      ],
+      "side": "F",
+      "pads": {
+        "2": "key_r2_c4",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S7",
+      "position": [
+        71.425,
+        123.5
+      ],
+      "side": "F",
+      "pads": {
+        "2": "key_r3_c1",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S8",
+      "position": [
+        90.475,
+        123.5
+      ],
+      "side": "F",
+      "pads": {
+        "2": "key_r3_c2",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S9",
+      "position": [
+        109.525,
+        123.5
+      ],
+      "side": "F",
+      "pads": {
+        "2": "key_r3_c3",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "S10",
+      "position": [
+        128.575,
+        123.5
+      ],
+      "side": "F",
+      "pads": {
+        "2": "key_r3_c4",
+        "1": "GND"
+      }
+    },
+    {
+      "reference": "MCU1",
+      "position": [
+        100.0,
+        100.0
+      ],
+      "side": "B",
+      "pads": {
+        "24": "DISPLAY_CS",
+        "1": "VBAT",
+        "23": "P0",
+        "2": "GND",
+        "22": "GND",
+        "3": "RST",
+        "21": "GND",
+        "4": "3V3",
+        "20": "DISPLAY_MOSI",
+        "5": "P21",
+        "19": "DISPLAY_SCK",
+        "6": "P20",
+        "18": "key_r1_c1",
+        "7": "P19",
+        "17": "key_r1_c2",
+        "8": "P18",
+        "16": "key_r1_c3",
+        "9": "key_r3_c3",
+        "15": "key_r1_c4",
+        "10": "key_r3_c2",
+        "14": "key_r2_c1",
+        "11": "key_r3_c4",
+        "13": "key_r2_c4",
+        "12": "key_r3_c1",
+        "25": "GND",
+        "26": "VBAT"
+      }
+    },
+    {
+      "reference": "DISP1",
+      "position": [
+        100.0,
+        100.0
+      ],
+      "side": "F",
+      "pads": {
+        "1": "DISPLAY_MOSI",
+        "2": "DISPLAY_SCK",
+        "3": "3V3",
+        "4": "GND",
+        "5": "DISPLAY_CS"
+      }
+    },
+    {
+      "reference": "RST1",
+      "position": [
+        68.0,
+        100.0
+      ],
+      "side": "B",
+      "pads": {
+        "1": "GND",
+        "2": "RST",
+        "3": "GND",
+        "4": "RST"
+      }
+    },
+    {
+      "reference": "PWR1",
+      "position": [
+        122.0,
+        134.0
+      ],
+      "side": "B",
+      "pads": {
+        "2": "VBAT",
+        "3": "BAT_P"
+      }
+    },
+    {
+      "reference": "JST1",
+      "position": [
+        122.0,
+        119.0
+      ],
+      "side": "B",
+      "pads": {
+        "1": "GND",
+        "2": "BAT_P"
+      }
+    },
+    {
+      "reference": "MH1",
+      "position": [
+        65.4,
+        134.6
+      ],
+      "side": "B",
+      "pads": {}
+    },
+    {
+      "reference": "MH2",
+      "position": [
+        65.4,
+        65.4
+      ],
+      "side": "B",
+      "pads": {}
+    },
+    {
+      "reference": "MH3",
+      "position": [
+        134.6,
+        134.6
+      ],
+      "side": "B",
+      "pads": {}
+    },
+    {
+      "reference": "MH4",
+      "position": [
+        134.6,
+        65.4
+      ],
+      "side": "B",
+      "pads": {}
+    }
+  ],
+  "outline_bbox_mm": [
+    75.35,
+    75.35
+  ]
+}

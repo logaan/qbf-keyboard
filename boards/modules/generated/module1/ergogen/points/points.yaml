@@ -1,0 +1,1000 @@
+key_r1_c1:
+    x: 71.425
+    'y': -76.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 26.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r1_c1
+        tags:
+            - switch
+            - portrait_1_5u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r1_c1
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+key_r1_c2:
+    x: 90.475
+    'y': -76.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 26.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r1_c2
+        tags:
+            - switch
+            - portrait_1_5u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r1_c2
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+key_r1_c3:
+    x: 109.525
+    'y': -76.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 26.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r1_c3
+        tags:
+            - switch
+            - portrait_1_5u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r1_c3
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+key_r1_c4:
+    x: 128.575
+    'y': -76.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 26.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r1_c4
+        tags:
+            - switch
+            - portrait_1_5u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r1_c4
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+key_r2_c1:
+    x: 71.425
+    'y': -100
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 16.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r2_c1
+        tags:
+            - switch
+            - one_u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - one_u
+                width: 16.5
+                height: 16.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r2_c1
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+key_r2_c4:
+    x: 128.575
+    'y': -100
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 16.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r2_c4
+        tags:
+            - switch
+            - one_u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - one_u
+                width: 16.5
+                height: 16.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r2_c4
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+key_r3_c1:
+    x: 71.425
+    'y': -123.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 26.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r3_c1
+        tags:
+            - switch
+            - portrait_1_5u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r3_c1
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+key_r3_c2:
+    x: 90.475
+    'y': -123.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 26.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r3_c2
+        tags:
+            - switch
+            - portrait_1_5u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r3_c2
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+key_r3_c3:
+    x: 109.525
+    'y': -123.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 26.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r3_c3
+        tags:
+            - switch
+            - portrait_1_5u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r3_c3
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+key_r3_c4:
+    x: 128.575
+    'y': -123.5
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 16.5
+        height: 26.5
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: key_r3_c4
+        tags:
+            - switch
+            - portrait_1_5u
+        zone:
+            key:
+                tags:
+                    - switch
+                    - portrait_1_5u
+                width: 16.5
+                height: 26.5
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: key_r3_c4
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+display:
+    x: 100
+    'y': -100
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 36
+        height: 14
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: display
+        tags:
+            - display
+        zone:
+            key:
+                tags:
+                    - display
+                width: 36
+                height: 14
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: display
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+controller:
+    x: 100
+    'y': -100
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: controller
+        tags:
+            - controller
+        zone:
+            key:
+                tags:
+                    - controller
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: controller
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+battery:
+    x: 78
+    'y': -100
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: battery
+        tags:
+            - battery
+        zone:
+            key:
+                tags:
+                    - battery
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: battery
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+reset:
+    x: 68
+    'y': -100
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: reset
+        tags:
+            - reset
+        zone:
+            key:
+                tags:
+                    - reset
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: reset
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+power:
+    x: 122
+    'y': -134
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: power
+        tags:
+            - power
+        zone:
+            key:
+                tags:
+                    - power
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: power
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+jst:
+    x: 122
+    'y': -119
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: jst
+        tags:
+            - jst
+        zone:
+            key:
+                tags:
+                    - jst
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: jst
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+mount_-1_-1:
+    x: 65.4
+    'y': -134.6
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: mount_-1_-1
+        tags:
+            - mount
+        zone:
+            key:
+                tags:
+                    - mount
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: mount_-1_-1
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+mount_-1_1:
+    x: 65.4
+    'y': -65.4
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: mount_-1_1
+        tags:
+            - mount
+        zone:
+            key:
+                tags:
+                    - mount
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: mount_-1_1
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+mount_1_-1:
+    x: 134.6
+    'y': -134.6
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: mount_1_-1
+        tags:
+            - mount
+        zone:
+            key:
+                tags:
+                    - mount
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: mount_1_-1
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+mount_1_1:
+    x: 134.6
+    'y': -65.4
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: mount_1_1
+        tags:
+            - mount
+        zone:
+            key:
+                tags:
+                    - mount
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: mount_1_1
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0

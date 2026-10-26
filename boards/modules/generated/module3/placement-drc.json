@@ -1,0 +1,1504 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-26T23:45:32",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.4",
+    "schematic_parity": [],
+    "source": "module3.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 20 [DISPLAY_MOSI] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 97.46
+                    },
+                    "uuid": "a880fe56-a19b-4d53-9028-a724af66f60e"
+                },
+                {
+                    "description": "PTH pad 1 [DISPLAY_MOSI] of DISP1",
+                    "pos": {
+                        "x": 116.7,
+                        "y": 76.08
+                    },
+                    "uuid": "a34fc9f4-132e-4def-8ec8-d48f32db76f1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 19 [DISPLAY_SCK] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 100.0
+                    },
+                    "uuid": "023b79b8-1a0b-46bf-8264-3b247c950400"
+                },
+                {
+                    "description": "PTH pad 2 [DISPLAY_SCK] of DISP1",
+                    "pos": {
+                        "x": 116.7,
+                        "y": 73.54
+                    },
+                    "uuid": "082b2dc7-cd63-4b8a-b00a-40fe6d25dfb3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [3V3] of MCU1",
+                    "pos": {
+                        "x": 107.62,
+                        "y": 94.92
+                    },
+                    "uuid": "36ac82d4-9542-45df-98d4-c6ce3732b824"
+                },
+                {
+                    "description": "PTH pad 3 [3V3] of DISP1",
+                    "pos": {
+                        "x": 116.7,
+                        "y": 71.0
+                    },
+                    "uuid": "58596713-d90d-4322-91e6-0607d1a679bb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 3 [GND] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 67.15,
+                        "y": 97.375
+                    },
+                    "uuid": "88472ff3-4a2a-4178-bbf2-d32d4319cce3"
+                },
+                {
+                    "description": "Pad 1 [GND] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 67.15,
+                        "y": 102.625
+                    },
+                    "uuid": "0a5ea3c7-8dbc-4543-9603-87dfcdfd00d1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [GND] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 67.15,
+                        "y": 102.625
+                    },
+                    "uuid": "0a5ea3c7-8dbc-4543-9603-87dfcdfd00d1"
+                },
+                {
+                    "description": "PTH pad 1 [GND] of S1",
+                    "pos": {
+                        "x": 67.625,
+                        "y": 128.5
+                    },
+                    "uuid": "14627dbf-8cec-4ad1-a528-bdb2c85cca9d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [GND] of S1",
+                    "pos": {
+                        "x": 67.625,
+                        "y": 128.5
+                    },
+                    "uuid": "14627dbf-8cec-4ad1-a528-bdb2c85cca9d"
+                },
+                {
+                    "description": "PTH pad 1 [GND] of S2",
+                    "pos": {
+                        "x": 86.675,
+                        "y": 128.5
+                    },
+                    "uuid": "1cac637b-53b9-42e0-b1f4-b836e276f6e2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [GND] of S2",
+                    "pos": {
+                        "x": 86.675,
+                        "y": 128.5
+                    },
+                    "uuid": "1cac637b-53b9-42e0-b1f4-b836e276f6e2"
+                },
+                {
+                    "description": "PTH pad 1 [GND] of S3",
+                    "pos": {
+                        "x": 105.725,
+                        "y": 128.5
+                    },
+                    "uuid": "10003640-b133-4864-b046-ebb3411c8fb1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 22 [GND] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 92.38
+                    },
+                    "uuid": "2603c366-42e4-472b-b9ed-3f9030463ba3"
+                },
+                {
+                    "description": "PTH pad 21 [GND] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 94.92
+                    },
+                    "uuid": "a1e9542b-238f-4d2e-a1f2-95fe2fa4551b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 22 [GND] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 92.38
+                    },
+                    "uuid": "2603c366-42e4-472b-b9ed-3f9030463ba3"
+                },
+                {
+                    "description": "PTH pad 25 [GND] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 84.76
+                    },
+                    "uuid": "da5d4d1e-fba6-4ad6-b895-1e45a1bbe38c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 21 [GND] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 94.92
+                    },
+                    "uuid": "a1e9542b-238f-4d2e-a1f2-95fe2fa4551b"
+                },
+                {
+                    "description": "Pad 3 [GND] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 67.15,
+                        "y": 97.375
+                    },
+                    "uuid": "88472ff3-4a2a-4178-bbf2-d32d4319cce3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [GND] of S3",
+                    "pos": {
+                        "x": 105.725,
+                        "y": 128.5
+                    },
+                    "uuid": "10003640-b133-4864-b046-ebb3411c8fb1"
+                },
+                {
+                    "description": "PTH pad 1 [GND] of S4",
+                    "pos": {
+                        "x": 124.775,
+                        "y": 128.5
+                    },
+                    "uuid": "895af4fd-36af-4bdf-81dc-ea885035aa70"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [GND] of MCU1",
+                    "pos": {
+                        "x": 107.62,
+                        "y": 89.84
+                    },
+                    "uuid": "5a6d3588-b46b-4c08-a217-abfa2abe7ee7"
+                },
+                {
+                    "description": "PTH pad 22 [GND] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 92.38
+                    },
+                    "uuid": "2603c366-42e4-472b-b9ed-3f9030463ba3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [GND] of DISP1",
+                    "pos": {
+                        "x": 116.7,
+                        "y": 68.46
+                    },
+                    "uuid": "5da0c6e1-0dbf-4680-a1cc-4850bd4e17cc"
+                },
+                {
+                    "description": "PTH pad 2 [GND] of MCU1",
+                    "pos": {
+                        "x": 107.62,
+                        "y": 89.84
+                    },
+                    "uuid": "5a6d3588-b46b-4c08-a217-abfa2abe7ee7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [GND] of S4",
+                    "pos": {
+                        "x": 124.775,
+                        "y": 128.5
+                    },
+                    "uuid": "895af4fd-36af-4bdf-81dc-ea885035aa70"
+                },
+                {
+                    "description": "PTH pad 1 [GND] of JST1",
+                    "pos": {
+                        "x": 123.0,
+                        "y": 119.0
+                    },
+                    "uuid": "c649bdf7-ebbf-4190-930e-651fab0313a7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 24 [DISPLAY_CS] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 87.3
+                    },
+                    "uuid": "5ed5cb45-83dd-4e36-8fd8-99aedcc74a64"
+                },
+                {
+                    "description": "PTH pad 5 [DISPLAY_CS] of DISP1",
+                    "pos": {
+                        "x": 116.7,
+                        "y": 65.92
+                    },
+                    "uuid": "0b44f796-0db2-4d0d-86f5-7a87890fbd2a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [key_r1_c1] of S1",
+                    "pos": {
+                        "x": 65.525,
+                        "y": 123.5
+                    },
+                    "uuid": "d5cf5f74-d61d-44fe-854d-b38019fab61a"
+                },
+                {
+                    "description": "PTH pad 18 [key_r1_c1] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 102.54
+                    },
+                    "uuid": "4d87794b-43f4-45e7-a23b-73147b44cd56"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 15 [key_r1_c4] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 110.16
+                    },
+                    "uuid": "3e7adbfe-fc0b-455d-b6ff-64b1f79191b4"
+                },
+                {
+                    "description": "PTH pad 2 [key_r1_c4] of S4",
+                    "pos": {
+                        "x": 122.675,
+                        "y": 123.5
+                    },
+                    "uuid": "3411289d-cf82-4657-aefa-5e7b2d7d4981"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 16 [key_r1_c3] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 107.62
+                    },
+                    "uuid": "011bb31f-86ca-4ace-99dc-1d46a7ffbb88"
+                },
+                {
+                    "description": "PTH pad 2 [key_r1_c3] of S3",
+                    "pos": {
+                        "x": 103.625,
+                        "y": 123.5
+                    },
+                    "uuid": "457eaf7b-6618-423b-acab-5183b4422ea4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [key_r1_c2] of S2",
+                    "pos": {
+                        "x": 84.575,
+                        "y": 123.5
+                    },
+                    "uuid": "028d682a-ba97-4ff7-90e9-b23ac775a18d"
+                },
+                {
+                    "description": "PTH pad 17 [key_r1_c2] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 105.08
+                    },
+                    "uuid": "bd42556b-7e59-4fa6-9320-584d3e26f862"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 26 [VBAT] of MCU1",
+                    "pos": {
+                        "x": 107.62,
+                        "y": 84.76
+                    },
+                    "uuid": "f83d59a9-a46b-488a-af30-7ba2fff504a3"
+                },
+                {
+                    "description": "PTH pad 1 [VBAT] of MCU1",
+                    "pos": {
+                        "x": 107.62,
+                        "y": 87.3
+                    },
+                    "uuid": "9fb51bf4-cb28-4c3a-ac40-4f6f4302ed96"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [VBAT] of MCU1",
+                    "pos": {
+                        "x": 107.62,
+                        "y": 87.3
+                    },
+                    "uuid": "9fb51bf4-cb28-4c3a-ac40-4f6f4302ed96"
+                },
+                {
+                    "description": "Pad 2 [VBAT] of PWR1 on B.Cu",
+                    "pos": {
+                        "x": 121.25,
+                        "y": 132.265
+                    },
+                    "uuid": "076343d1-21f9-402f-afc9-17ba448cce65"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 4 [RST] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 68.85,
+                        "y": 97.375
+                    },
+                    "uuid": "479c2474-2692-4571-8f61-e7c7d2b1b5c8"
+                },
+                {
+                    "description": "Pad 2 [RST] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 68.85,
+                        "y": 102.625
+                    },
+                    "uuid": "40d98da3-f31d-49dc-afa8-5456b8e771a0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [RST] of MCU1",
+                    "pos": {
+                        "x": 107.62,
+                        "y": 92.38
+                    },
+                    "uuid": "3a05fa6c-b228-4fea-a34e-6e48462fc776"
+                },
+                {
+                    "description": "Pad 4 [RST] of RST1 on B.Cu",
+                    "pos": {
+                        "x": 68.85,
+                        "y": 97.375
+                    },
+                    "uuid": "479c2474-2692-4571-8f61-e7c7d2b1b5c8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 3 [BAT_P] of PWR1 on B.Cu",
+                    "pos": {
+                        "x": 119.75,
+                        "y": 132.265
+                    },
+                    "uuid": "74e41b28-8eae-489b-a6e8-40271a53536b"
+                },
+                {
+                    "description": "PTH pad 2 [BAT_P] of JST1",
+                    "pos": {
+                        "x": 121.0,
+                        "y": 119.0
+                    },
+                    "uuid": "e4cad75e-14a4-40f7-bb99-48847deff6fe"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "PTH inside courtyard",
+            "items": [
+                {
+                    "description": "PTH pad 1 [GND] of S4",
+                    "pos": {
+                        "x": 124.775,
+                        "y": 128.5
+                    },
+                    "uuid": "895af4fd-36af-4bdf-81dc-ea885035aa70"
+                },
+                {
+                    "description": "Footprint JST1",
+                    "pos": {
+                        "x": 122.0,
+                        "y": 119.0
+                    },
+                    "uuid": "6a3c2f0e-27bc-4266-86ca-c042ef688279"
+                }
+            ],
+            "severity": "error",
+            "type": "pth_inside_courtyard"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "items": [
+                {
+                    "description": "PTH pad 2 [key_r1_c4] of S4",
+                    "pos": {
+                        "x": 122.675,
+                        "y": 123.5
+                    },
+                    "uuid": "3411289d-cf82-4657-aefa-5e7b2d7d4981"
+                },
+                {
+                    "description": "Footprint JST1",
+                    "pos": {
+                        "x": 122.0,
+                        "y": 119.0
+                    },
+                    "uuid": "6a3c2f0e-27bc-4266-86ca-c042ef688279"
+                }
+            ],
+            "severity": "error",
+            "type": "pth_inside_courtyard"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 137.6,
+                        "y": 135.6
+                    },
+                    "uuid": "07b65866-6af8-4ec0-ae64-59463f50c547"
+                },
+                {
+                    "description": "Reference field of S4",
+                    "pos": {
+                        "x": 137.375,
+                        "y": 123.5
+                    },
+                    "uuid": "2433bf9f-d33b-45f9-b3c8-e84d2b4e25b0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Arc on Edge.Cuts",
+                    "pos": {
+                        "x": 64.4,
+                        "y": 135.6
+                    },
+                    "uuid": "c50fae32-dd07-44e8-809d-01a964d9f5ad"
+                },
+                {
+                    "description": "Reference field of MH1",
+                    "pos": {
+                        "x": 65.4,
+                        "y": 137.15
+                    },
+                    "uuid": "c7d51fde-f4ed-43f5-88ed-6559fae14199"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 64.4,
+                        "y": 137.6
+                    },
+                    "uuid": "1f118e85-ed98-4de1-a472-c4a7762355fc"
+                },
+                {
+                    "description": "Reference field of MH3",
+                    "pos": {
+                        "x": 134.6,
+                        "y": 137.15
+                    },
+                    "uuid": "370f1ff8-6711-4e13-9058-d84eee8a5865"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint DISP1",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 71.0
+                    },
+                    "uuid": "18acabf5-bf76-423f-9d5b-3a8e6a958eff"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint S1",
+                    "pos": {
+                        "x": 71.425,
+                        "y": 123.5
+                    },
+                    "uuid": "8a70f46e-1307-4fea-9f23-3dd2d7d55970"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint S4",
+                    "pos": {
+                        "x": 128.575,
+                        "y": 123.5
+                    },
+                    "uuid": "b7fdbba0-92c8-45bc-8922-875e4e05216c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint S3",
+                    "pos": {
+                        "x": 109.525,
+                        "y": 123.5
+                    },
+                    "uuid": "c1ccfdb3-c716-48ee-bc4e-c286a1aca745"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint S2",
+                    "pos": {
+                        "x": 90.475,
+                        "y": 123.5
+                    },
+                    "uuid": "f34caae7-6cb0-427c-a4b2-f3a97778516f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint MCU1",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 100.0
+                    },
+                    "uuid": "01c4ef2e-2b3c-4fd4-81d9-dbb8e9b5189d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint MH1",
+                    "pos": {
+                        "x": 65.4,
+                        "y": 134.6
+                    },
+                    "uuid": "061c6e88-db66-4a2d-80bf-b89a5c467e27"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint MH2",
+                    "pos": {
+                        "x": 65.4,
+                        "y": 65.4
+                    },
+                    "uuid": "0f1a8186-7bb9-4703-913d-d243f0828e5d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint MH4",
+                    "pos": {
+                        "x": 134.6,
+                        "y": 65.4
+                    },
+                    "uuid": "34f02107-5aae-40af-89ec-c25c3b080b88"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint PWR1",
+                    "pos": {
+                        "x": 122.0,
+                        "y": 134.0
+                    },
+                    "uuid": "34f17cba-6e28-46a8-9744-3fe8b9fa3095"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint JST1",
+                    "pos": {
+                        "x": 122.0,
+                        "y": 119.0
+                    },
+                    "uuid": "6a3c2f0e-27bc-4266-86ca-c042ef688279"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint MH3",
+                    "pos": {
+                        "x": 134.6,
+                        "y": 134.6
+                    },
+                    "uuid": "7b16449d-6d0e-46e7-8794-2e6ad0bd530a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'ceoloide'",
+            "items": [
+                {
+                    "description": "Footprint RST1",
+                    "pos": {
+                        "x": 68.0,
+                        "y": 100.0
+                    },
+                    "uuid": "f880452b-ec9d-4a8f-9d2e-2ac08f242703"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Footprint text of DISP1 (3V3)",
+                    "pos": {
+                        "x": 118.5,
+                        "y": 70.85
+                    },
+                    "uuid": "5a58ff65-abb7-426b-8467-965dba9ea08c"
+                },
+                {
+                    "description": "Reference field of DISP1",
+                    "pos": {
+                        "x": 120.0,
+                        "y": 71.0
+                    },
+                    "uuid": "e541ea26-3f20-4c74-9b48-4b47e59ad1f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Footprint text of DISP1 (GND)",
+                    "pos": {
+                        "x": 118.5,
+                        "y": 68.38
+                    },
+                    "uuid": "2dc49433-6a3c-4a10-b6f9-d9d047e482e7"
+                },
+                {
+                    "description": "Reference field of DISP1",
+                    "pos": {
+                        "x": 120.0,
+                        "y": 71.0
+                    },
+                    "uuid": "e541ea26-3f20-4c74-9b48-4b47e59ad1f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of DISP1",
+                    "pos": {
+                        "x": 120.0,
+                        "y": 71.0
+                    },
+                    "uuid": "e541ea26-3f20-4c74-9b48-4b47e59ad1f9"
+                },
+                {
+                    "description": "Footprint text of DISP1 (DISPLAY_SCK)",
+                    "pos": {
+                        "x": 118.5,
+                        "y": 73.48
+                    },
+                    "uuid": "fea252ea-cf0c-49ac-93c6-341908deec7e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 93.71,
+                        "y": 85.97
+                    },
+                    "uuid": "149a9df8-a40f-4c94-82d1-82041238ccc4"
+                },
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_CS)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 87.3
+                    },
+                    "uuid": "9fcf8a4f-c02d-4983-b60e-66176e0b9d43"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_MOSI)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 97.46
+                    },
+                    "uuid": "7c80c77d-aed5-4dba-9029-9adea5d604f9"
+                },
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 91.05,
+                        "y": 85.97
+                    },
+                    "uuid": "8ddc0689-1795-4f05-a51d-e15fcaa6c97c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 93.71,
+                        "y": 85.97
+                    },
+                    "uuid": "149a9df8-a40f-4c94-82d1-82041238ccc4"
+                },
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_SCK)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 100.0
+                    },
+                    "uuid": "d3f36d8c-e888-4878-aeed-8b203080fa7d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 93.71,
+                        "y": 85.97
+                    },
+                    "uuid": "149a9df8-a40f-4c94-82d1-82041238ccc4"
+                },
+                {
+                    "description": "Footprint text of MCU1 (key_r1_c2)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 105.08
+                    },
+                    "uuid": "9c907aad-8f48-4f6e-9c0d-d31c6d56e653"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 93.71,
+                        "y": 85.97
+                    },
+                    "uuid": "149a9df8-a40f-4c94-82d1-82041238ccc4"
+                },
+                {
+                    "description": "Footprint text of MCU1 (key_r1_c3)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 107.62
+                    },
+                    "uuid": "e4642f12-bc0b-4ea1-a1c3-6d7287f6d362"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 93.71,
+                        "y": 85.97
+                    },
+                    "uuid": "149a9df8-a40f-4c94-82d1-82041238ccc4"
+                },
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_MOSI)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 97.46
+                    },
+                    "uuid": "7c80c77d-aed5-4dba-9029-9adea5d604f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 93.71,
+                        "y": 85.97
+                    },
+                    "uuid": "149a9df8-a40f-4c94-82d1-82041238ccc4"
+                },
+                {
+                    "description": "Footprint text of MCU1 (key_r1_c1)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 102.54
+                    },
+                    "uuid": "9c806b76-a09b-455b-9ef0-870ac5264527"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 93.71,
+                        "y": 85.97
+                    },
+                    "uuid": "149a9df8-a40f-4c94-82d1-82041238ccc4"
+                },
+                {
+                    "description": "Footprint text of MCU1 (key_r1_c4)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 110.16
+                    },
+                    "uuid": "e1193ea4-2491-426e-a069-c5d5379dfa3a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of MCU1 on B.Silkscreen",
+                    "pos": {
+                        "x": 91.05,
+                        "y": 85.97
+                    },
+                    "uuid": "8ddc0689-1795-4f05-a51d-e15fcaa6c97c"
+                },
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_SCK)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 100.0
+                    },
+                    "uuid": "d3f36d8c-e888-4878-aeed-8b203080fa7d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Footprint text of PWR1 (PWR1)",
+                    "pos": {
+                        "x": 122.0,
+                        "y": 130.5
+                    },
+                    "uuid": "6885a9bd-7192-4384-82e5-0436f2f8b6fa"
+                },
+                {
+                    "description": "Reference field of PWR1",
+                    "pos": {
+                        "x": 122.0,
+                        "y": 130.4
+                    },
+                    "uuid": "accde005-648f-4e4a-9613-a8ba2bc0528f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_CS)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 87.3
+                    },
+                    "uuid": "9fcf8a4f-c02d-4983-b60e-66176e0b9d43"
+                },
+                {
+                    "description": "PTH pad 24 [DISPLAY_CS] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 87.3
+                    },
+                    "uuid": "5ed5cb45-83dd-4e36-8fd8-99aedcc74a64"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_MOSI)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 97.46
+                    },
+                    "uuid": "7c80c77d-aed5-4dba-9029-9adea5d604f9"
+                },
+                {
+                    "description": "PTH pad 20 [DISPLAY_MOSI] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 97.46
+                    },
+                    "uuid": "a880fe56-a19b-4d53-9028-a724af66f60e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (DISPLAY_SCK)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 100.0
+                    },
+                    "uuid": "d3f36d8c-e888-4878-aeed-8b203080fa7d"
+                },
+                {
+                    "description": "PTH pad 19 [DISPLAY_SCK] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 100.0
+                    },
+                    "uuid": "023b79b8-1a0b-46bf-8264-3b247c950400"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (key_r1_c3)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 107.62
+                    },
+                    "uuid": "e4642f12-bc0b-4ea1-a1c3-6d7287f6d362"
+                },
+                {
+                    "description": "PTH pad 16 [key_r1_c3] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 107.62
+                    },
+                    "uuid": "011bb31f-86ca-4ace-99dc-1d46a7ffbb88"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (key_r1_c4)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 110.16
+                    },
+                    "uuid": "e1193ea4-2491-426e-a069-c5d5379dfa3a"
+                },
+                {
+                    "description": "PTH pad 15 [key_r1_c4] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 110.16
+                    },
+                    "uuid": "3e7adbfe-fc0b-455d-b6ff-64b1f79191b4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (key_r1_c1)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 102.54
+                    },
+                    "uuid": "9c806b76-a09b-455b-9ef0-870ac5264527"
+                },
+                {
+                    "description": "PTH pad 18 [key_r1_c1] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 102.54
+                    },
+                    "uuid": "4d87794b-43f4-45e7-a23b-73147b44cd56"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of MCU1 (key_r1_c2)",
+                    "pos": {
+                        "x": 95.53,
+                        "y": 105.08
+                    },
+                    "uuid": "9c907aad-8f48-4f6e-9c0d-d31c6d56e653"
+                },
+                {
+                    "description": "PTH pad 17 [key_r1_c2] of MCU1",
+                    "pos": {
+                        "x": 92.38,
+                        "y": 105.08
+                    },
+                    "uuid": "bd42556b-7e59-4fa6-9320-584d3e26f862"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of JST1",
+                    "pos": {
+                        "x": 122.0,
+                        "y": 123.8
+                    },
+                    "uuid": "330c0fa9-fd79-4c00-88b8-af040afe1a45"
+                },
+                {
+                    "description": "PTH pad 2 [key_r1_c4] of S4",
+                    "pos": {
+                        "x": 122.675,
+                        "y": 123.5
+                    },
+                    "uuid": "3411289d-cf82-4657-aefa-5e7b2d7d4981"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of MCU1",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 85.0
+                    },
+                    "uuid": "0200ca64-0fc9-42b5-aed4-3befaa6d38ef"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of MH1",
+                    "pos": {
+                        "x": 65.4,
+                        "y": 137.15
+                    },
+                    "uuid": "c7d51fde-f4ed-43f5-88ed-6559fae14199"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of MH2",
+                    "pos": {
+                        "x": 65.4,
+                        "y": 67.95
+                    },
+                    "uuid": "577df102-ee39-4bac-809e-5f500e7b8ed2"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of MH4",
+                    "pos": {
+                        "x": 134.6,
+                        "y": 67.95
+                    },
+                    "uuid": "dc7d900c-70c4-4298-8460-d39407ba34eb"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of PWR1",
+                    "pos": {
+                        "x": 122.0,
+                        "y": 130.4
+                    },
+                    "uuid": "accde005-648f-4e4a-9613-a8ba2bc0528f"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of JST1",
+                    "pos": {
+                        "x": 122.0,
+                        "y": 123.8
+                    },
+                    "uuid": "330c0fa9-fd79-4c00-88b8-af040afe1a45"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of MH3",
+                    "pos": {
+                        "x": 134.6,
+                        "y": 137.15
+                    },
+                    "uuid": "370f1ff8-6711-4e13-9058-d84eee8a5865"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "Reference field of RST1",
+                    "pos": {
+                        "x": 68.0,
+                        "y": 100.0
+                    },
+                    "uuid": "4b3b70c8-7ffe-487c-aeee-f0469d84f11f"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        }
+    ]
+}

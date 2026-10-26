@@ -1,0 +1,14 @@
+{
+  "outline": {"width": 75.2, "height": 75.2, "corner": 2, "mount_inset": 3, "mount_diameter": 2.2},
+  "pitch": 19.05,
+  "keycaps": {"portrait_1_5u": [16.5, 26.5], "one_u": [16.5, 16.5]},
+  "controller": {"part": "nice!nano v2", "x": 0, "y": 0, "side": "B"},
+  "battery": {"size": [12, 30, 3], "x": -22, "y": 0, "side": "B", "status": "provisional protected cell; insulated support and switch-tail clearance unverified"},
+  "display": {"part": "nice!view", "size": [36, 14], "side": "F", "rotation": 90},
+  "trackpad": {"part": "Cirque TM023023 candidate", "diameter": 23.45, "side": "F", "status": "envelope only; connector, flex, protocol variant and support require review", "sources": ["https://www.cirque.com/gamepad-tm023023", "https://www.mouser.com/pdfdocs/TM023023_SPI-I2C-PINNTrackpad_SPEC1-11.pdf", "https://github.com/petejohanson/cirque-input-module"]},
+  "modules": {
+    "module1": {"rows": [{"y": 23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}, {"y": 0, "columns": [0, 3], "cap": "one_u"}, {"y": -23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}], "display_y": 0},
+    "module2": {"rows": [{"y": 23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}, {"y": -26, "columns": [0, 3], "cap": "one_u"}], "display_y": 0},
+    "module3": {"rows": [{"y": -23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}], "display_y": 29, "trackpad_y": 7}
+  }
+}

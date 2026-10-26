@@ -1,4 +1,3 @@
-// Shared non-plated M2 fastening hole for the circuit board and base plate.
 module.exports = {
   params: { designator: 'H' },
   body: p => `
