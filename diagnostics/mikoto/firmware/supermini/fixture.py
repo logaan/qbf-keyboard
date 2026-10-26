@@ -1,12 +1,9 @@
-"""Direct open-drain fixture: False sinks a signal; True releases it."""
-
 PROTOCOL = "mikoto-fixture-v2"
 WIRING = "direct-open-drain"
 
 
 class Fixture:
     def __init__(self, outputs, clock):
-        # outputs: [reset, key1, key2, key3, key4], configured OPEN_DRAIN.
         self.outputs = outputs
         self.clock = clock
         self.steps = []
@@ -18,11 +15,9 @@ class Fixture:
         self.reset_asserted = False
         self.pressed_keys = []
         for output in self.outputs:
-            output.value = True  # high impedance; never actively drive high
+            output.value = True
 
     def status(self):
-        # Report commanded state. A released pin can still read low if the
-        # target holds it low, so pin.value is not an acknowledgement of a press.
         return {"ok": True, "protocol": PROTOCOL, "wiring": WIRING,
                 "busy": bool(self.steps), "reset": self.reset_asserted,
                 "keys": list(self.pressed_keys)}
@@ -40,7 +35,6 @@ class Fixture:
         if self.steps and self.clock() >= self.deadline:
             self.steps.pop(0)
             if self.steps:
-                # Each pulse gets its full duration even after a delayed tick.
                 self._apply(self.steps[0])
             else:
                 self.release()
@@ -87,7 +81,6 @@ class Fixture:
 
 
 class LineBuffer:
-    """Bounded line framing; discard a whole oversized line, never its tail."""
     def __init__(self, limit=128):
         self.limit = limit
         self.buffer = bytearray()

@@ -19,7 +19,7 @@ check_locks() {
 check_locks
 stage=$(mktemp -d "${TMPDIR:-/tmp}/qbf-generate.XXXXXX")
 trap 'rm -rf "$stage"' EXIT HUP INT TERM
-"$repo_root/scripts/setup.sh" --dependencies-only
+"$repo_root/scripts/setup.sh"
 cd "$project_dir"
 "$repo_root/node_modules/.bin/ergogen" design --output "$stage"
 "$repo_root/scripts/route.sh" --output "$stage"

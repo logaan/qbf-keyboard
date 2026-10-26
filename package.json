@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "engines": {"node": ">=20"},
-  "devDependencies": {"ergogen": "4.2.1"},
+  "devDependencies": {"ergogen": "4.2.1", "esprima": "4.0.1"},
+  "overrides": {
+    "kle-serial": "https://codeload.github.com/ergogen/kle-serial/tar.gz/61f29f317d87bbfed0b0b7e646e1b91d4384ac02",
+    "hull": "https://codeload.github.com/andriiheonia/hull/tar.gz/ffcf93dbd4df5a8c59f0541af5a9926d01528c5d"
+  },
   "scripts": {
     "build": "./scripts/boards.sh build all",
     "check": "./scripts/boards.sh check all"

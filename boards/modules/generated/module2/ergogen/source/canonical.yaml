@@ -104,7 +104,7 @@ points:
             anchor:
                 shift:
                     - 68
-                    - -100
+                    - -112
             key:
                 tags:
                     - reset
@@ -113,7 +113,7 @@ points:
         power:
             anchor:
                 shift:
-                    - 122
+                    - 100
                     - -134
             key:
                 tags:
@@ -124,7 +124,7 @@ points:
             anchor:
                 shift:
                     - 122
-                    - -119
+                    - -88
             key:
                 tags:
                     - jst

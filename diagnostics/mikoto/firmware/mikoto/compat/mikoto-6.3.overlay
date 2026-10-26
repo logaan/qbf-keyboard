@@ -1,5 +1,2 @@
-/* The pinned ZMK legacy board lacks its 6.3 revision overlay. Supply the
- * official v6 GPIO map and pinctrl definitions. The fixture uses only D1-D4.
- */
 #include <../boards/zhiayang/mikoto/mikoto-pinctrl.dtsi>
 #include <../boards/zhiayang/mikoto/arduino_pro_micro_pins_v6.dtsi>

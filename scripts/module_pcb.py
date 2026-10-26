@@ -13,6 +13,16 @@ if pcb.Version().split('.')[0] != '10':
 board = pcb.LoadBoard(str(args.board))
 board.GetDesignSettings().SetBoardThickness(pcb.FromMM(1.6))
 items = list(board.GetFootprints())
+for footprint in items:
+    footprint.SetFPID(pcb.LIB_ID('', footprint.GetFPID().GetLibItemName()))
+    for item in [footprint.Reference(), footprint.Value(), *footprint.GraphicalItems()]:
+        if item.GetLayer() == pcb.F_SilkS:
+            item.SetLayer(pcb.F_Fab)
+        elif item.GetLayer() == pcb.B_SilkS:
+            item.SetLayer(pcb.B_Fab)
+        if hasattr(item, 'SetMirrored'):
+            item.SetMirrored(item.GetLayer() == pcb.B_Fab)
+    footprint.Value().SetVisible(False)
 controller = next(f for f in items if f.GetReference() == 'MCU1')
 display = next(f for f in items if f.GetReference() == 'DISP1')
 if display.GetLayer() != pcb.F_Cu:

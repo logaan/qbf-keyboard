@@ -1,4 +1,3 @@
-"""CircuitPython boot configuration: one data port; fixture is never a keyboard."""
 import usb_cdc
 import usb_hid
 import usb_midi

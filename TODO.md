@@ -1,13 +1,27 @@
-@agent Finish removing non-license comments and verify packaged outputs
-@agent Add automated ZMK workspace provisioning and firmware dependency checks
-@agent Resolve module placement DRC and route all three boards after Ergogen review
-@agent Implement and verify the selected trackpad electrical interface after Ergogen review
-@agent Add module firmware after KiCad review
-@agent Add module mechanical assemblies and native 3D previews after firmware review
-@agent Reassess the unpatched Ergogen Maker.js dependency advisory
-@user Review the shared 75.2 mm module outline and revised 10-key 6-key and 4-key layouts
-@user Approve or replace the provisional 23 mm Cirque sensor replacing the oversized TPS43
-@user Confirm purchased keycaps protected batteries polarity charging limits and stack clearances
-@user Review KiCad routing before firmware implementation
-@user Review firmware before mechanical implementation
-@user Prototype and verify electrical safety fit and handedness
+- [x] @agent Consolidate board sources and root dependency management
+- [x] @agent Add discoverable setup build check and review scripts
+- [x] @agent Enforce shared module dimensions and symmetric top-face interactions
+- [x] @agent Regenerate module placements and report electrical blockers
+- [x] @agent Verify existing board regression checks
+- [x] @agent Remove user documentation and non-license comments
+- [x] @agent Finish removing non-license comments and verify packaged outputs
+- [x] @agent Cancel ZMK workspace provisioning and firmware dependency work as out of PCB-only scope
+- [x] @agent Resolve module placement DRC and route all three boards
+- [x] @agent Implement the datasheet-mapped TPS43 cable header and pull-ups
+- [x] @agent Cancel new-module firmware implementation as out of PCB-only scope
+- [ ] @agent Add native PCB assembly previews without developing new mechanical cases
+- [x] @agent Reassess the unpatched Ergogen Maker.js dependency advisory
+- [ ] @user Accept trusted-source-only Ergogen use pending an upstream Maker.js security fix
+- [ ] @user Review the shared 75.2 mm module outline and revised 10-key 6-key
+  and 4-key layouts
+- [x] @user Reject the Cirque substitution and retain the TPS43 with an off-centre top-face layout
+- [ ] @user Confirm purchased keycaps protected batteries polarity charging
+  limits and stack clearances
+- [ ] @user Review KiCad routing before fabrication
+- [x] @user Cancel firmware and mechanical-stage reviews as out of PCB-only scope
+- [ ] @user Prototype and verify electrical safety fit and handedness
+- [x] @agent Route all three modules with broad filled ground planes and clean DRC
+- [ ] @user Verify the TPS43 cable adapter pin order pitch and contact orientation before fabrication
+- [ ] @agent Define and render a shared 40 mm over-shoulder camera for all modules
+- [ ] @agent Commission the reusable cozy anime desk background through Codex in tmux
+- [ ] @agent Script colour grading and anime composites for module pairs 1+1 1+2 1+3 and 2+3

@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import sys
@@ -41,7 +40,7 @@ class LayoutTests(unittest.TestCase):
             modules.validate(self.spec, 'module1')
 
     def test_interaction_collision_rejected(self):
-        self.spec['modules']['module3']['trackpad_y'] = 29
+        self.spec['modules']['module3']['trackpad_x'] = 24
         with self.assertRaisesRegex(ValueError, 'overlapping'):
             modules.validate(self.spec, 'module3')
 

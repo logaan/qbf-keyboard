@@ -310,7 +310,7 @@ def pad_layers(pad):
     return [i for i,layer in enumerate((pcb.F_Cu,pcb.B_Cu)) if pad.IsOnLayer(layer)]
 
 
-def route_blocked(board,net):
+def route_blocked(board,net,exclusions=None):
     blocked=[set(),set()]
     margin=WIDTH_MM/2+CLEARANCE_MM+GRID_MM/math.sqrt(2)+0.01
     for fp in board.GetFootprints():
@@ -328,7 +328,8 @@ def route_blocked(board,net):
         if track.GetNetCode()==net.GetNetCode():continue
         layers=[0,1] if isinstance(track,pcb.PCB_VIA) else [0 if track.GetLayer()==pcb.F_Cu else 1]
         for layer in layers:mark_obstacle(blocked[layer],mm_point(track.GetStart()),mm_point(track.GetEnd()),pcb.ToMM(track.GetWidth(pcb.F_Cu) if isinstance(track,pcb.PCB_VIA) else track.GetWidth())/2+margin)
-    exclusions=[(battery_well_bounds(board),0.5),(fixed_to_kicad(assembly_spec()['module']['notch_bounds']),0.25),(fixed_to_kicad(assembly_spec()['module']['rf_keepout_bounds']),0)]
+    if exclusions is None:
+        exclusions=[(battery_well_bounds(board),0.5),(fixed_to_kicad(assembly_spec()['module']['notch_bounds']),0.25),(fixed_to_kicad(assembly_spec()['module']['rf_keepout_bounds']),0)]
     for bounds,edge_clearance in exclusions:
         radius=WIDTH_MM/2+edge_clearance+GRID_MM/math.sqrt(2)+0.01
         gx1,gy1=grid_point((bounds[0]-radius-GRID_MM,bounds[1]-radius-GRID_MM));gx2,gy2=grid_point((bounds[2]+radius+GRID_MM,bounds[3]+radius+GRID_MM))
@@ -340,8 +341,8 @@ def route_blocked(board,net):
     return blocked
 
 
-def find_multilayer_path(board,net,first,last):
-    blocked=route_blocked(board,net)
+def find_multilayer_path(board,net,first,last,exclusions=None):
+    blocked=route_blocked(board,net,exclusions)
     origin,target=grid_point(mm_point(first.GetPosition())),grid_point(mm_point(last.GetPosition()))
     starts=[(layer,*origin) for layer in pad_layers(first) if origin not in blocked[layer]]
     targets={(layer,*target) for layer in pad_layers(last) if target not in blocked[layer]}
@@ -370,8 +371,8 @@ def find_multilayer_path(board,net,first,last):
     raise RuntimeError('No multilayer route for '+net.GetNetname())
 
 
-def route_connection(board,net,first,last):
-    path=find_multilayer_path(board,net,first,last)
+def route_connection(board,net,first,last,exclusions=None):
+    path=find_multilayer_path(board,net,first,last,exclusions)
     section=terminal(mm_point(first.GetPosition()),grid_mm(path[0][1:]));layer=path[0][0]
     for state in path:
         position=grid_mm(state[1:])

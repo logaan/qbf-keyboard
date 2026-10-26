@@ -46,7 +46,7 @@ class FixtureTests(unittest.TestCase):
         self.assertEqual(status["keys"], [])
 
     def test_status_reports_commanded_state_when_target_holds_a_pin_low(self):
-        self.outputs[1].value = False  # model a low pad reading after release
+        self.outputs[1].value = False
         self.assertEqual(self.fixture.status()["keys"], [])
         self.assertFalse(self.fixture.status()["reset"])
 
@@ -89,7 +89,6 @@ class FixtureTests(unittest.TestCase):
         for request in requests:
             self.fixture.command({"cmd": "hold", "keys": [1], "ms": 5000})
             self.assertFalse(self.outputs[1].value)
-            # Invalid commands while busy either reject without replacing or release.
             response = self.fixture.command(request)
             self.assertFalse(response["ok"])
             self.fixture.release()
@@ -155,7 +154,6 @@ class HostTests(unittest.TestCase):
 
 
 class RuntimeTests(unittest.TestCase):
-    """Exercise the actual CircuitPython entry point with a GPIO/USB model."""
     def run_runtime(self, command=None, disconnect=False, fail_pin=None):
         class StopLoop(BaseException):
             pass

@@ -203,8 +203,8 @@ key_r1_c4:
             - 0
             - 0
 display:
-    x: 100
-    'y': -71
+    x: 124
+    'y': -86
     r: 0
     meta:
         stagger: 0
@@ -219,8 +219,8 @@ display:
             - 0
         rotate: 0
         adjust: {}
-        width: 36
-        height: 14
+        width: 14
+        height: 36
         padding: 19
         autobind: 10
         skip: false
@@ -233,8 +233,8 @@ display:
             key:
                 tags:
                     - display
-                width: 36
-                height: 14
+                width: 14
+                height: 36
             columns:
                 default:
                     rows: {}
@@ -252,8 +252,8 @@ display:
             - 0
             - 0
 trackpad:
-    x: 100
-    'y': -93
+    x: 87.5
+    'y': -86
     r: 0
     meta:
         stagger: 0
@@ -268,8 +268,8 @@ trackpad:
             - 0
         rotate: 0
         adjust: {}
-        width: 23.45
-        height: 23.45
+        width: 43
+        height: 43
         padding: 19
         autobind: 10
         skip: false
@@ -282,8 +282,8 @@ trackpad:
             key:
                 tags:
                     - trackpad
-                width: 23.45
-                height: 23.45
+                width: 43
+                height: 43
             columns:
                 default:
                     rows: {}
@@ -400,7 +400,7 @@ battery:
             - 0
 reset:
     x: 68
-    'y': -100
+    'y': -112
     r: 0
     meta:
         stagger: 0
@@ -448,7 +448,7 @@ reset:
             - 0
             - 0
 power:
-    x: 122
+    x: 100
     'y': -134
     r: 0
     meta:
@@ -498,7 +498,7 @@ power:
             - 0
 jst:
     x: 122
-    'y': -119
+    'y': -88
     r: 0
     meta:
         stagger: 0
@@ -535,6 +535,251 @@ jst:
                     key: {}
                     name: default
             name: jst
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+touch_connector:
+    x: 69
+    'y': -78
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: touch_connector
+        tags:
+            - touch_connector
+        zone:
+            key:
+                tags:
+                    - touch_connector
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: touch_connector
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+pullup_1:
+    x: 80
+    'y': -71
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: pullup_1
+        tags:
+            - pullup_1
+        zone:
+            key:
+                tags:
+                    - pullup_1
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: pullup_1
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+pullup_2:
+    x: 80
+    'y': -76
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: pullup_2
+        tags:
+            - pullup_2
+        zone:
+            key:
+                tags:
+                    - pullup_2
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: pullup_2
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+pullup_3:
+    x: 87
+    'y': -71
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: pullup_3
+        tags:
+            - pullup_3
+        zone:
+            key:
+                tags:
+                    - pullup_3
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: pullup_3
+        col:
+            rows: {}
+            key: {}
+            name: default
+        row: default
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+pullup_4:
+    x: 87
+    'y': -76
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 1
+        height: 1
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: default_default
+        name: pullup_4
+        tags:
+            - pullup_4
+        zone:
+            key:
+                tags:
+                    - pullup_4
+                width: 1
+                height: 1
+            columns:
+                default:
+                    rows: {}
+                    key: {}
+                    name: default
+            name: pullup_4
         col:
             rows: {}
             key: {}

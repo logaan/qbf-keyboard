@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""macOS fixture CLI: serial control, validated UF2 copy, device-specific HID tests."""
 import argparse
 import hashlib
 import itertools
@@ -67,7 +66,6 @@ class Client:
         try:
             self.request("release")
         except (OSError, RuntimeError, TimeoutError, ValueError):
-            # Dropping DTR also releases the fixture; preserve the original error.
             pass
         finally:
             self.serial.close()
@@ -121,7 +119,7 @@ def wait_drive(expected_id, explicit=None, timeout=15):
 
 
 def flash(client, path, expected_id=MIKOTO_BOARD_ID, drive=None):
-    data = validate_uf2(path)  # verify before pulsing the target
+    data = validate_uf2(path)
     if "mikoto" not in expected_id.lower():
         raise ValueError("Board-ID must identify a Mikoto, not the fixture")
     client.request("bootloader")
@@ -139,7 +137,7 @@ class Observer:
     def __init__(self):
         executable = ROOT / "host/hid-watch"
         if not executable.exists():
-            raise RuntimeError("Build the HID observer using the README command first")
+            subprocess.run(['swiftc', str(ROOT / 'host/hid_watch.swift'), '-o', str(executable)], check=True)
         self.process = subprocess.Popen([str(executable)], stdout=subprocess.PIPE,
                                         stderr=subprocess.PIPE, text=True)
         self.events = queue.Queue()
@@ -181,7 +179,7 @@ class Observer:
 
 
 def assess_events(events, keys):
-    expected = {103 + key for key in keys}  # HID usages F13=104 through F16=107
+    expected = {103 + key for key in keys}
     states = {usage: [] for usage in expected}
     errors = []
     for event in events:
@@ -265,7 +263,7 @@ def main():
         if args.action in ("flash", "run"):
             result["flash"] = flash(client, args.firmware, args.board_id, args.drive)
         if args.action == "run":
-            time.sleep(3)  # allow target USB enumeration after UF2 copy
+            time.sleep(3)
         if args.action in ("test", "run"):
             result["hid"] = run_tests(client, args.repeats, args.chords)
             args.report.parent.mkdir(parents=True, exist_ok=True)

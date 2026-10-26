@@ -1,50 +1,50 @@
 // Copyright (c) 2023 Marco Massarelli
-//
+
 // SPDX-License-Identifier: MIT
-//
-// To view a copy of this license, visit https://opensource.org/license/mit/
-//
+
+
+
 // Author: @ceoloide
-//
-// Description:
-//   SMD side-operated momentary switch, compatible with Panasonic EVQ-PU[A|C|J|L]02K
-//   as sold on Typeractive.xyz https://typeractive.xyz/products/reset-button
-//   keebd.com https://keebd.com/products/reset-button-panasonic
-//   and LCSC. These switches are shorter than the height of hotswap
-//   sockets, so they can be mounted on the same side.
-//
-// Datasheet:
-//   https://cdn.shopify.com/s/files/1/0618/5674/3655/files/PANASONIC-EVQPUC02K.pdf?v=1670451309
-//
-// Nets:
-//    from: corresponds to pin 1 and 3
-//    to: corresponds to pin 2 and 4
-//
-// Params:
-//    side: default is F for Front
-//      the side on which to place the single-side footprint and designator, either F or B
-//    reversible: default is false
-//      if true, it will include pads on both Front and Back to make the footprint reversible
-//    include_bosses: default is false
-//      if true it will include two mechanical NPTH for the switches that have them (EVQ-PUC02K
-//      and EVQ-PUL02K)
-//    include_silkscreen: default is true
-//      if true it will include silkscreen markings
-//    include_courtyard: default is false
-//      if true it will include the part courtyard
-//    reset_switch_3dmodel_filename: default is ''
-//      Allows you to specify the path to a 3D model STEP or WRL file to be
-//      used when rendering the PCB. Use the ${VAR_NAME} syntax to point to
-//      a KiCad configured path.
-//    reset_switch_3dmodel_xyz_offset: default is [0, 0, 0]
-//      xyz offset (in mm), used to adjust the position of the 3d model
-//      relative the footprint.
-//    reset_switch_3dmodel_xyz_scale: default is [1, 1, 1]
-//      xyz scale, used to adjust the size of the 3d model relative to its
-//      original size.
-//    reset_switch_3dmodel_xyz_rotation: default is [0, 0, 0]
-//      xyz rotation (in degrees), used to adjust the orientation of the 3d
-//      model relative the footprint.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = {
   params: {

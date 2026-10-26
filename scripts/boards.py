@@ -47,8 +47,8 @@ def main():
             extra = ['--install-system']
         run(ROOT / 'scripts/setup.sh', *extra)
         return
-    if args.action in ('build', 'check', 'test'):
-        run(ROOT / 'scripts/setup.sh', '--dependencies-only')
+    if args.action in ('build', 'check', 'test', 'preview'):
+        run(ROOT / 'scripts/setup.sh', *(['--dependencies-only'] if args.action in ('test', 'preview') else []))
         venv = ROOT / '.tools/venv/bin/python'
         if Path(sys.prefix).resolve() != venv.parent.parent.resolve():
             os.execv(str(venv), [str(venv), str(Path(__file__)), *sys.argv[1:]] if len(sys.argv) > 1 else [str(venv), str(Path(__file__)), args.action, args.board])
@@ -72,6 +72,9 @@ def main():
                     from modules import check
                     check(name)
             elif args.action == 'preview':
+                if name != 'qbf':
+                    from modules import check
+                    check(name)
                 path = ROOT / ('ergogen-kikad/generated/layout.svg' if name == 'qbf' else f'boards/modules/generated/{name}/layout.svg')
                 if not path.exists():
                     raise ValueError(f'Build {name} first')

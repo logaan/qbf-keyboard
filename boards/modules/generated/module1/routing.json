@@ -1,0 +1,30 @@
+{
+  "router": "shared QBF two-layer A*",
+  "unconnected": 0,
+  "ground_zones": [
+    {
+      "layer": "F.Cu",
+      "net": "GND",
+      "filled_area_mm2": 4503.652,
+      "board_bbox_coverage": 0.7964
+    },
+    {
+      "layer": "B.Cu",
+      "net": "GND",
+      "filled_area_mm2": 4562.233,
+      "board_bbox_coverage": 0.8068
+    }
+  ],
+  "ground_stitching_vias": 17,
+  "track_count": 717,
+  "signal_width_mm": 0.3,
+  "power_width_mm": 0.5,
+  "clearance_mm": 0.25,
+  "antenna_keepout_kicad": [
+    94,
+    110,
+    106,
+    120
+  ],
+  "fabrication_ready": false
+}

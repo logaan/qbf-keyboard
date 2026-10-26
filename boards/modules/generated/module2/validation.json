@@ -1,8 +1,8 @@
 {
-  "stage": "ergogen",
+  "stage": "routed PCB",
   "review": "pending",
   "fabrication_ready": false,
-  "source_sha256": "8f0ff91e1723fb8eaf5a67a40a72876cada94ca71a229f1396ebb61d29e44915",
+  "source_sha256": "96505640ed2a3fe49d2c68585441e5d3b44ddfeb677daeaac74ea3d0ba9481ef",
   "outline": {
     "width": 75.2,
     "height": 75.2,
@@ -12,13 +12,14 @@
   },
   "key_count": 6,
   "blockers": [
-    "User Ergogen review required before KiCad routing",
-    "Battery procurement, protection and mechanical stack unverified",
-    "Firmware and mechanical stages not started",
-    "Placement DRC findings must be resolved in the reviewed KiCad stage"
+    "User PCB review required before fabrication",
+    "Battery procurement, protection, antenna reservation and mechanical stack unverified"
   ],
   "outputs": {
-    "electrical.json": "ec825edc260765727ca67312d9fb40ff116d0f8dbeafc2a257dd4c008e55627d",
+    "copper-B.svg": "c70c800e9e43b988d3a69abc82af266a4a8c5b780d1159d73ec47204a85b223f",
+    "copper-F.svg": "15ecb276f560413a8f9ef39cdb6d2f750886ecdf21383684351851006b527b88",
+    "drc.json": "6c85686eecfb586d6f60329cb42768bb207193f495fd8ac69045f28f6882052f",
+    "electrical.json": "fc1061b8737a696e7a9392f3265916a43df6100c9954f4a9501999854743193f",
     "ergogen/outlines/battery.dxf": "62c132ba75202ef6e4ed1c28d31002a387537b72f360792cf45103756084c01b",
     "ergogen/outlines/battery.svg": "2a92e838d4b65d925ea4df6d57b324b0957fafd2a53336736b26a0b87c112291",
     "ergogen/outlines/battery.yaml": "89eb6a091bad85d941f36992b9bf98965a5fd4829447b5da9b853f18298666ab",
@@ -34,24 +35,28 @@
     "ergogen/outlines/pcb_boundary.dxf": "f52879e75cb892b58b1a040196f39abc1db07a9faa22511088ec367257c47cce",
     "ergogen/outlines/pcb_boundary.svg": "439311e9f4b52bdcea1d6e5458d5c273f47e471f2a47d4f3db2c46ca7e630ff6",
     "ergogen/outlines/pcb_boundary.yaml": "c9ba7a94368a74d7daf8e77db148dbb29c08ceb3f865ad0a49c7dd04c3ac602f",
-    "ergogen/pcbs/module2.kicad_pcb": "6703b108a00c0f5b0e532ac89fae93282662dcd759d1b2a83b585bbf3bb2ac3f",
+    "ergogen/pcbs/module2.kicad_pcb": "8d90c654e0baf086dd89dfe6a884cf91a9e920db791ff1fb11f4eae671d66695",
     "ergogen/pcbs/module2.kicad_prl": "d0fb96c328f9a7b9dd0d35d4ff7c0f140bff360cc5aef2f48e956d6644250689",
-    "ergogen/pcbs/module2.kicad_pro": "2fe121c6a425e3b90f2094b335a537dfec3857868580cd9a8de52e073ae5c566",
-    "ergogen/points/demo.dxf": "c6dee1b839a087cbda8994b7233bf9a234d12480b08c8ecf2cbd47a825a90c54",
-    "ergogen/points/demo.svg": "965f184373ea2d90b759d7d4f2a626f6d0c0e1d4e93583045d596605c72201f8",
-    "ergogen/points/demo.yaml": "d6caab9d83c8c30f9a49cb165825c4727c59ad4ef2f5e980c8039f9c0eb1b420",
-    "ergogen/points/points.yaml": "cb5aae72914cdf855efc878742c5495138486e8aeba7d0835438f81d3d82fd50",
+    "ergogen/pcbs/module2.kicad_pro": "1a94037d9d15735169b30a1ab9c9cf93d2a16e63b4adcada324f9b1a0ca1d315",
+    "ergogen/points/demo.dxf": "8a118c3bb0a4ee270208c7f955b494bce9d90dcaf1ccbc983925263a7643336b",
+    "ergogen/points/demo.svg": "62dafd63b61547ba410d54dfe4832e7cc83f40d4fbfd963426852a3b32502de6",
+    "ergogen/points/demo.yaml": "6e19916273c9e66379ee0bd2377f41f74fb03a15ecdf6a4aeece70b9e9166351",
+    "ergogen/points/points.yaml": "76ed4bae2ed7d06b1aaea0001e9761d44c8aa8b3398c4b1761c6828ee5bbc226",
     "ergogen/points/units.yaml": "1eae0beb61ccea0fbb894114040ccbb1130c6173d41b69aebfdaf0c5ac586da1",
-    "ergogen/source/canonical.yaml": "1f485bf565a8ce1ed5977b9d24989745fff1152d87922f7abfc40520be0e8837",
-    "ergogen/source/raw.txt": "e8dd54f8acfe76018e77d23f27e6ccf3e781baf61c7406bf042b06c474346259",
-    "layout.svg": "38d4130ea2d0ad251ef08a4255efc61c198138de1fdd1c3f87978921703d97d5",
-    "pcb.svg": "4bd7a277f0db192094861391d3867d509d0135a121f467d575a3827048c2a613",
-    "placement-drc.json": "0260b07c8361ed7e403822e5d4185c7316e52fbe48cdaf0e2b6b5f1079c674ac",
-    "source/config.yaml": "e8dd54f8acfe76018e77d23f27e6ccf3e781baf61c7406bf042b06c474346259"
+    "ergogen/source/canonical.yaml": "1080c5d7e101748f319db675d9f5af916e480fb134a6a23452b1c909df6468c0",
+    "ergogen/source/raw.txt": "93fb50b1091badbf524a9b5101714b1498ddfc30f3915b6186a2b25b08cff754",
+    "layout.svg": "c4ae69add3fa0ed3253364e369fc3aff5047182537c7e76d03e7653eae0aa240",
+    "pcb.svg": "2842e473ffa8cee213c9241a553199ff74a51c4fe279c42bd51a799daad029fb",
+    "pcbs/module2.kicad_pcb": "97b6e16ccf306c98b2f9f3d8bac3ec758dfe60ee4ed0d974d40b8b218e62e269",
+    "pcbs/module2.kicad_prl": "d0fb96c328f9a7b9dd0d35d4ff7c0f140bff360cc5aef2f48e956d6644250689",
+    "pcbs/module2.kicad_pro": "8ff414776cbf36811852f3c52a0624a9cb21e66887eb1155911142cc6009ddc7",
+    "placement-drc.json": "dcb8e9d55c1ffacce56b228fb0778d821be56b97c66654be0c078c705a805ff9",
+    "routing.json": "2542c0f7f575eff736ecff1046cf2ff73f1050ce89d28541b8c1b0887064dbf6",
+    "source/config.yaml": "93fb50b1091badbf524a9b5101714b1498ddfc30f3915b6186a2b25b08cff754"
   },
   "drc": {
-    "violations": 58,
-    "unconnected_items": 28,
+    "violations": 0,
+    "unconnected_items": 0,
     "schematic_parity": 0
   }
 }

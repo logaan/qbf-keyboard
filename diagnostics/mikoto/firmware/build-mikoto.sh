@@ -1,5 +1,4 @@
 #!/bin/sh
-# Build the exact ZMK source/dependencies used by the delivered test images.
 set -eu
 fixture_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 fixture_container="qbf-mikoto-rebuild-$$"

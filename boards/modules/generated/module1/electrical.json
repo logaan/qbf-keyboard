@@ -190,7 +190,7 @@
       "reference": "RST1",
       "position": [
         68.0,
-        100.0
+        112.0
       ],
       "side": "B",
       "pads": {
@@ -203,7 +203,7 @@
     {
       "reference": "PWR1",
       "position": [
-        122.0,
+        100.0,
         134.0
       ],
       "side": "B",
@@ -216,7 +216,7 @@
       "reference": "JST1",
       "position": [
         122.0,
-        119.0
+        88.0
       ],
       "side": "B",
       "pads": {

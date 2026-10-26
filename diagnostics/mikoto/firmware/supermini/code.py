@@ -1,4 +1,3 @@
-"""Direct GPIO fixture. Copy all three .py files with signal wires disconnected."""
 import board
 import digitalio
 import json
@@ -14,7 +13,6 @@ try:
     for pin in (board.P0_06, board.P0_08, board.P0_17, board.P0_20, board.P0_22):
         output = digitalio.DigitalInOut(pin)
         outputs.append(output)
-        # Start released. OPEN_DRAIN turns True into high impedance, not 3.3 V.
         output.switch_to_output(value=True, drive_mode=digitalio.DriveMode.OPEN_DRAIN)
     controller = Fixture(outputs, time.monotonic)
     stream = usb_cdc.data
@@ -57,6 +55,5 @@ finally:
         if controller is not None:
             controller.release()
     finally:
-        # Also covers failure partway through configuring the GPIOs.
         for output in outputs:
             output.deinit()

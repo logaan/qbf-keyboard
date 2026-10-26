@@ -1,60 +1,60 @@
 // Copyright (c) 2023 Marco Massarelli
-//
+
 // SPDX-License-Identifier: MIT
-//
-// To view a copy of this license, visit https://opensource.org/license/mit/
-//
+
+
+
 // Author: @ceoloide
-//
-// Description:
-//  A reversible JST PH 2.0mm footprint with support for solder jumpers and traces. This is
-//  the same part sold at Typeractive.xyz and LCSC.
-//
-//  Note that the footprint's courtyard includes the space required for the male connector
-//  and its cables. Make sure to leave enough room in front of the connector. The silkscreen
-//  includes a handy reference for positive and negative terminals that remains visible
-//  after the connector is soldered, to ensure wire polarity is correct.
-//
-// Datasheet:
-//  https://cdn.shopify.com/s/files/1/0618/5674/3655/files/JST-S2B-PH-K.pdf?v=1670451309
-//
-// Params
-//    side: default is F for Front
-//      the side on which to place the single-side footprint and designator, either F or B
-//    reversible: default is false
-//      if true, the footprint will be placed on both sides so that the PCB can be
-//      reversible
-//    include_traces: default is true
-//      if true it will include traces that connect the jumper pads to the connector pins
-//    use_rectangular_jumpers: default is false
-//      if true, it will replace chevron-style jumpers with rectangular pads
-//
-//    trace_width: default is 0.250mm
-//      allows to override the trace width that connects the jumper pads to the connector
-//      pins. Not recommended to go below 0.25mm.
-//    include_silkscreen: default is true
-//      if true it will include the silkscreen. Recommended to be true to ensure connector
-//      polarity is not reversed, which can lead to shorting and damage to the MCU
-//    include_fabrication: default is true
-//      if true it will include the outline of the connector in the fabrication layer
-//    include_courtyard: default is true
-//      if true it will include a courtyard outline around the connector and in front of it
-//      to also account for the male connector plug and the wires. Recommended to be true
-//      at least once in the development of a board to confirm sufficient clearance for the
-//      connector and wires.
-//    battery_connector_3dmodel_filename: default is ''
-//      Allows you to specify the path to a 3D model STEP or WRL file to be
-//      used when rendering the PCB. Use the ${VAR_NAME} syntax to point to
-//      a KiCad configured path.
-//    battery_connector_3dmodel_xyz_offset: default is [0, 0, 0]
-//      xyz offset (in mm), used to adjust the position of the 3d model
-//      relative the footprint.
-//    battery_connector_3dmodel_xyz_scale: default is [1, 1, 1]
-//      xyz scale, used to adjust the size of the 3d model relative to its
-//      original size.
-//    battery_connector_3dmodel_xyz_rotation: default is [0, 0, 0]
-//      xyz rotation (in degrees), used to adjust the orientation of the 3d
-//      model relative the footprint.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = {
   params: {

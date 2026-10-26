@@ -1,101 +1,101 @@
 // Copyright (c) 2023 Marco Massarelli
-//
+
 // SPDX-License-Identifier: CC-BY-NC-SA-4.0
-//
+
 // To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
-//
+
 // Author: @infused-kim + @ceoloide improvements
-//
-// Description:
-//  A single-side or reversible footprint for the nice!nano (or any pro-micro compatible
-//  controller) that uses jumpers instead of two socket rows to be reversible.
-//
-//  Note that the extra pins are *ONLY* compatible with nice!nano boards and not with
-//  clones like the Supermini, which has pins in a slightly different position.
-//
-//  This is a re-implementation of the promicro_pretty footprint made popular
-//  by @benvallack.
-//
-// Pinout and schematics:
-//  https://nicekeyboards.com/docs/nice-nano/pinout-schematic
-//
-// Params:
-//    side: default is F for Front
-//      the side on which to place the single-side footprint and designator, either F or B
-//    reversible: default is false
-//      if true, the footprint will be placed on both sides so that the PCB can be
-//      reversible
-//    reverse_mount: default is false (MCU facing away from the PCB)
-//      if true, the sockets will be oriented so that the MCU faces the PCB (RAW / B+ is the
-//      top left pin). This is the most common mounting option for the nice!nano.
-//      When set to false, the pads will match the datasheet and assume the MCU faces away
-//      from the PCB (RAW / B+ is the top right pin).
-//    include_traces: default is true
-//      if true it will include traces that connect the jumper pads to the vias
-//      and the through-holes for the MCU
-//    include_extra_pins: default is false
-//      if true and if not reversible it will include nice!nano extra pin sockets (P1.01,
-//      P1.02, P1.07)
-//    only_required_jumpers: default is false
-//      if true, it will only place jumpers on the first 4 rows of pins, which can't be
-//      reversed in firmware, i.e. RAW and P1, GND and P0, GND and RST, GND and VCC.
-//    use_rectangular_jumpers: default is false
-//      if true, it will replace chevron-style jumpers with rectangual pads
-//    via_size: default is 0.8
-//      allows to define the size of the via. Not recommended below 0.56 (JLCPCB minimum),
-//      or above 0.8 (KiCad default), to avoid overlap or DRC errors.
-//    via_drill: default is 0.4
-//      allows to define the size of the drill. Not recommended below 0.3 (JLCPCB minimum),
-//      or above 0.4 (KiCad default), to avoid overlap or DRC errors. 
-//    Pxx_label, VCC_label, RAW_label, GND_label, RST_label: default is ''
-//      allows to override the label for each pin
-//    mcu_3dmodel_filename: default is ''
-//      Allows you to specify the path to a 3D model STEP or WRL file to be
-//      used when rendering the PCB. Use the ${VAR_NAME} syntax to point to
-//      a KiCad configured path.
-//    mcu_3dmodel_xyz_offset: default is [0, 0, 0]
-//      xyz offset (in mm), used to adjust the position of the 3d model
-//      relative the footprint.
-//    mcu_3dmodel_xyz_scale: default is [1, 1, 1]
-//      xyz scale, used to adjust the size of the 3d model relative to its
-//      original size.
-//    mcu_3dmodel_xyz_rotation: default is [0, 0, 0]
-//      xyz rotation (in degrees), used to adjust the orientation of the 3d
-//      model relative the footprint.
-//
-// @infused-kim's improvements:
-//  - Use real traces instead of pads, which gets rid of hundreds of DRC errors.
-//  - Leave more space between the vias to allow easier routing through the middle
-//    of the footprint
-//
-// @ceoloide's improvements:
-//  - Move vias closer to the pads to clear up more space for silkscreen
-//  - Add ability to use rectangular jumpers instead of chevron-style
-//  - Add ability to control via size, to free up space for routing if needed
-//  - Add ability to only have required jumpers and let the rest be handled in firmware
-//  - Add single side (non-reversible) support
-//  - Add ability to mount with MCU facing towards or away from PCB
-//  - Add ability to show silkscreen labels on both sides for single side footprint
-//  - Add extra pins (P1.01, P1.02, P1.07) when footprint is single-side or reversible
-//    (only required jumpers)
-//  - Upgrade to KiCad 8
-//
-// # Placement and soldering of jumpers
-//
-// The reversible footprint is meant to be used with jumpers on the
-// OPPOSITE side of where the nice!nano (or pro-micro compatible board) is
-// installed. The silkscreen labels will also match the board when read on
-// the opposite side. This is to have all jumpers and components to solder on
-// the same side, and be able to read the correct labels of the MCU to do
-// tests with a multimeter.
-//
-// # Further credits
-//
-// The original footprint was created from scratch by @infused-kim, but was based on the ideas from
-// these other footprints:
-//
-// https://github.com/Albert-IV/ergogen-contrib/blob/main/src/footprints/promicro_pretty.js
-// https://github.com/50an6xy06r6n/keyboard_reversible.pretty
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = {
   params: {
@@ -108,8 +108,8 @@ module.exports = {
     invert_jumpers_position: false,
     only_required_jumpers: false,
     use_rectangular_jumpers: false,
-    via_size: 0.8, // JLCPC min is 0.56 for 1-2 layer boards, KiCad defaults to 0.8
-    via_drill: 0.4, // JLCPC min is 0.3 for 1-2 layer boards, KiCad defaults to 0.4
+    via_size: 0.8, 
+    via_drill: 0.4, 
 
     show_instructions: true,
     show_silk_labels: true,
@@ -260,45 +260,45 @@ module.exports = {
       const via_label_left = get_pin_label(p, pin_name_left)
       const via_label_right = get_pin_label(p, pin_name_right)
 
-      // These are the silkscreen labels that will be printed on the PCB.
-      // If the footprint is reversible, they will be aligned with the pins
-      // on the opposite side of where the MCU board is mounted.
+      
+      
+      
       const net_silk_front_left = via_label_left
       const net_silk_front_right = via_label_right
       const net_silk_back_left = via_label_right
       const net_silk_back_right = via_label_left
 
       let socket_row_base = `
-    ${''/* Socket Holes */}
+    ${''}
     (pad "${socket_hole_num_left}" thru_hole circle (at -7.62 ${-12.7 + row_offset_y} ${p.r}) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask") ${p.reversible && (row_num < 4 || !p.only_required_jumpers) ? p.local_net(socket_hole_num_left).str : net_left})
     (pad "${socket_hole_num_right}" thru_hole circle (at 7.62 ${-12.7 + row_offset_y} ${p.r}) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask") ${p.reversible && (row_num < 4 || !p.only_required_jumpers) ? p.local_net(socket_hole_num_right).str : net_right})
       `
       let socket_row_vias = `
-    ${''/* Inside VIAS */}
+    ${''}
     (pad "${via_num_left}" thru_hole circle (at -3.4 ${-12.7 + row_offset_y} ${p.r}) (size ${p.via_size} ${p.via_size}) (drill ${p.via_drill}) (layers "*.Cu" "*.Mask") ${net_left})
     (pad "${via_num_right}" thru_hole circle (at 3.4 ${-12.7 + row_offset_y} ${p.r}) (size ${p.via_size} ${p.via_size}) (drill ${p.via_drill}) (layers "*.Cu" "*.Mask") ${net_right})
       `
 
       let socket_row_rectangular_jumpers = `
-    ${''/* Jumper Pads - Front Left */}
+    ${''}
     (pad "${socket_hole_num_left}" smd rect (at -5.48 ${-12.7 + row_offset_y} ${p.r}) (size 0.6 1.2) (layers "F.Cu" "F.Paste" "F.Mask") ${p.local_net(socket_hole_num_left).str})
     (pad "${via_num_left}" smd rect (at -4.58 ${-12.7 + row_offset_y} ${p.r}) (size 0.6 1.2) (layers "F.Cu" "F.Paste" "F.Mask") ${net_left})
 
-    ${''/* Jumper Pads - Front Right */}
+    ${''}
     (pad "${via_num_right}" smd rect (at 4.58 ${-12.7 + row_offset_y} ${p.r}) (size 0.6 1.2) (layers "F.Cu" "F.Paste" "F.Mask") ${net_right})
     (pad "${socket_hole_num_right}" smd rect (at 5.48 ${-12.7 + row_offset_y} ${p.r}) (size 0.6 1.2) (layers "F.Cu" "F.Paste" "F.Mask") ${p.local_net(socket_hole_num_right).str})
 
-    ${''/* Jumper Pads - Back Left */}
+    ${''}
     (pad "${socket_hole_num_left}" smd rect (at -5.48 ${-12.7 + row_offset_y} ${p.r}) (size 0.6 1.2) (layers "B.Cu" "B.Paste" "B.Mask") ${p.local_net(socket_hole_num_left).str})
     (pad "${via_num_right}" smd rect (at -4.58 ${-12.7 + row_offset_y} ${p.r}) (size 0.6 1.2) (layers "B.Cu" "B.Paste" "B.Mask") ${net_right})
 
-    ${''/* Jumper Pads - Back Right */}
+    ${''}
     (pad "${via_num_left}" smd rect (at 4.58 ${-12.7 + row_offset_y} ${p.r}) (size 0.6 1.2) (layers "B.Cu" "B.Paste" "B.Mask") ${net_left})
     (pad "${socket_hole_num_right}" smd rect (at 5.48 ${-12.7 + row_offset_y} ${p.r}) (size 0.6 1.2) (layers "B.Cu" "B.Paste" "B.Mask") ${p.local_net(socket_hole_num_right).str})
         `
 
       let socket_row_chevron_jumpers = `
-    ${''/* Jumper Pads - Front Left */}
+    ${''}
     (pad "${socket_hole_num_left}" smd custom (at -5.5 ${-12.7 + row_offset_y} ${p.r}) (size 0.2 0.2) (layers "F.Cu" "F.Paste" "F.Mask") ${p.local_net(socket_hole_num_left).str}
       (zone_connect 2)
       (options (clearance outline) (anchor rect))
@@ -316,7 +316,7 @@ module.exports = {
       ) (width 0) (fill yes))
     ))
 
-    ${''/* Jumper Pads - Front Right */}
+    ${''}
     (pad "${via_num_right}" smd custom (at 4.775 ${-12.7 + row_offset_y} ${180 + p.r}) (size 0.2 0.2) (layers "F.Cu" "F.Paste" "F.Mask") ${net_right}
       (zone_connect 2)
       (options (clearance outline) (anchor rect))
@@ -334,7 +334,7 @@ module.exports = {
       ) (width 0) (fill yes))
     ))
 
-    ${''/* Jumper Pads - Back Left */}
+    ${''}
     (pad "${socket_hole_num_left}" smd custom (at -5.5 ${-12.7 + row_offset_y} ${p.r}) (size 0.2 0.2) (layers "B.Cu" "B.Paste" "B.Mask") ${p.local_net(socket_hole_num_left).str}
       (zone_connect 2)
       (options (clearance outline) (anchor rect))
@@ -353,7 +353,7 @@ module.exports = {
       ) (width 0) (fill yes))
     ))
 
-    ${''/* Jumper Pads - Back Right */}
+    ${''}
     (pad "${via_num_left}" smd custom (at 4.775 ${-12.7 + row_offset_y} ${180 + p.r}) (size 0.2 0.2) (layers "B.Cu" "B.Paste" "B.Mask") ${net_left}
       (zone_connect 2)
       (options (clearance outline) (anchor rect))
@@ -382,7 +382,7 @@ module.exports = {
       }
       if (show_silk_labels == true) {
         if (p.reversible || p.show_silk_labels_on_both_sides || p.side == 'F') {
-          // Silkscreen labels - front
+          
           if (row_num != 9
             || !p.include_extra_pins
             || (p.include_extra_pins && invert_pins && !p.reversible) 
@@ -407,7 +407,7 @@ module.exports = {
           }
         }
         if (p.reversible|| p.show_silk_labels_on_both_sides || p.side == 'B') {
-          // Silkscreen labels - back
+          
           if (row_num != 9 
             || !p.include_extra_pins
             || (p.include_extra_pins && !invert_pins && !p.reversible) 
@@ -435,7 +435,7 @@ module.exports = {
 
       if (show_via_labels && (p.reversible && (row_num < 4 || !p.only_required_jumpers))) {
         socket_row += `
-    ${''/* Via Labels - Front */}
+    ${''}
     (fp_text user "${via_label_left}" (at -3.262 ${-13.5 + row_offset_y} ${p.r}) (layer "F.Fab")
       (effects (font (size 0.5 0.5) (thickness 0.08)))
     )
@@ -443,7 +443,7 @@ module.exports = {
       (effects (font (size 0.5 0.5) (thickness 0.08)))
     )
 
-    ${''/* Via Labels - Back */}
+    ${''}
     (fp_text user "${via_label_left}" (at -3.262 ${-13.5 + row_offset_y} ${180 + p.r}) (layer "B.Fab")
       (effects (font (size 0.5 0.5) (thickness 0.08)) (justify mirror))
     )
@@ -457,10 +457,10 @@ module.exports = {
     }
     const gen_socket_rows = (show_via_labels, show_silk_labels) => {
       const pin_names = [
-        // The pin matrix below assumes PCB is mounted with the MCU
-        // facing away from the PCB (reverse_mount = false) on the
-        // Front side. It should be inverted for reverse_mount = true
-        // or when mounted on teh Back
+        
+        
+        
+        
         ['P1', 'RAW'],
         ['P0', 'GND'],
         ['GND', 'RST'],
@@ -487,8 +487,8 @@ module.exports = {
 
         socket_rows += socket_row
       }
-      // Socket silkscreen
-      // P1 / D1 / P0.06 is marked according to orientation
+      
+      
       if (show_silk_labels == true) {
         if (p.reversible || p.show_silk_labels_on_both_sides || p.side == 'F') {
           socket_rows += `
@@ -532,13 +532,13 @@ module.exports = {
     )
     (attr exclude_from_pos_files exclude_from_bom)
 
-    ${''/* USB socket outline */}
+    ${''}
     (fp_line (start 3.556 -18.034) (end 3.556 -16.51) (layer "Dwgs.User") (stroke (width 0.15) (type solid)))
     (fp_line (start -3.81 -16.51) (end -3.81 -18.034) (layer "Dwgs.User") (stroke (width 0.15) (type solid)))
     (fp_line (start -3.81 -18.034) (end 3.556 -18.034) (layer "Dwgs.User") (stroke (width 0.15) (type solid)))
 
 
-  ${''/* Controller outline */}
+  ${''}
     (fp_line (start -8.89 -16.51) (end 8.89 -16.51) (layer "Dwgs.User") (stroke (width 0.15) (type solid)))
     (fp_line (start -8.89 -16.51) (end -8.89 16.57) (layer "Dwgs.User") (stroke (width 0.15) (type solid)))
     (fp_line (start 8.89 -16.51) (end 8.89 16.57) (layer "Dwgs.User") (stroke (width 0.15) (type solid)))
@@ -578,7 +578,7 @@ module.exports = {
     `
 
     return `
-    ${''/* Controller*/}
+    ${''}
     ${common_top}
     ${socket_rows}
     ${p.include_extra_pins && (!p.reversible || (p.reversible && p.only_required_jumpers)) ? extra_pins : ''}
@@ -587,7 +587,7 @@ module.exports = {
     ${p.mcu_3dmodel_filename ? mcu_3dmodel : ''}
   )
 
-  ${''/* Traces */}
+  ${''}
   ${p.reversible && p.include_traces ? traces : ''}
     `;
   }

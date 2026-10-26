@@ -51,23 +51,23 @@ points:
         display:
             anchor:
                 shift:
-                    - 100
-                    - -71
+                    - 124
+                    - -86
             key:
                 tags:
                     - display
-                width: 36
-                height: 14
+                width: 14
+                height: 36
         trackpad:
             anchor:
                 shift:
-                    - 100
-                    - -93
+                    - 87.5
+                    - -86
             key:
                 tags:
                     - trackpad
-                width: 23.45
-                height: 23.45
+                width: 43
+                height: 43
         controller:
             anchor:
                 shift:
@@ -92,7 +92,7 @@ points:
             anchor:
                 shift:
                     - 68
-                    - -100
+                    - -112
             key:
                 tags:
                     - reset
@@ -101,7 +101,7 @@ points:
         power:
             anchor:
                 shift:
-                    - 122
+                    - 100
                     - -134
             key:
                 tags:
@@ -112,10 +112,60 @@ points:
             anchor:
                 shift:
                     - 122
-                    - -119
+                    - -88
             key:
                 tags:
                     - jst
+                width: 1
+                height: 1
+        touch_connector:
+            anchor:
+                shift:
+                    - 69
+                    - -78
+            key:
+                tags:
+                    - touch_connector
+                width: 1
+                height: 1
+        pullup_1:
+            anchor:
+                shift:
+                    - 80
+                    - -71
+            key:
+                tags:
+                    - pullup_1
+                width: 1
+                height: 1
+        pullup_2:
+            anchor:
+                shift:
+                    - 80
+                    - -76
+            key:
+                tags:
+                    - pullup_2
+                width: 1
+                height: 1
+        pullup_3:
+            anchor:
+                shift:
+                    - 87
+                    - -71
+            key:
+                tags:
+                    - pullup_3
+                width: 1
+                height: 1
+        pullup_4:
+            anchor:
+                shift:
+                    - 87
+                    - -76
+            key:
+                tags:
+                    - pullup_4
                 width: 1
                 height: 1
         mount_-1_-1:
@@ -190,8 +240,8 @@ outlines:
             what: rectangle
             where: display
             size:
-                - 36
                 - 14
+                - 36
     battery:
         -
             what: rectangle
@@ -206,9 +256,12 @@ outlines:
             radius: 1.1
     trackpad:
         -
-            what: circle
+            what: rectangle
             where: trackpad
-            radius: 11.725
+            size:
+                - 43
+                - 43
+            corner: 2
 pcbs:
     module3:
         template: kicad8
@@ -266,11 +319,15 @@ pcbs:
                     P5: key_r1_c2
                     P6: key_r1_c3
                     P7: key_r1_c4
+                    P14: TP_SDA
+                    P15: TP_SCL
+                    P16: TP_RDY
+                    P18: TP_RST
             display:
                 what: ceoloide/display_nice_view
                 where: display
                 adjust:
-                    rotate: 90
+                    rotate: 0
                 params:
                     side: F
                     reversible: false
@@ -316,3 +373,46 @@ pcbs:
                     side: B
                     hole_size: 2.2
                     hole_drill: 2.2
+            touch_connector:
+                what: local/tps43_connector
+                where: touch_connector
+                params:
+                    side: B
+                    VCC: 3V3
+                    GND: GND
+                    SDA: TP_SDA
+                    SCL: TP_SCL
+                    RDY: TP_RDY
+                    RST: TP_RST
+            pullup_1:
+                what: local/resistor_0805
+                where: pullup_1
+                params:
+                    side: B
+                    value: 4.7k
+                    from: 3V3
+                    to: TP_SDA
+            pullup_2:
+                what: local/resistor_0805
+                where: pullup_2
+                params:
+                    side: B
+                    value: 4.7k
+                    from: 3V3
+                    to: TP_SCL
+            pullup_3:
+                what: local/resistor_0805
+                where: pullup_3
+                params:
+                    side: B
+                    value: 10k
+                    from: 3V3
+                    to: TP_RDY
+            pullup_4:
+                what: local/resistor_0805
+                where: pullup_4
+                params:
+                    side: B
+                    value: 10k
+                    from: 3V3
+                    to: TP_RST

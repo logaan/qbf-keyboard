@@ -33,10 +33,10 @@ if major < 20:
     sys.exit('Node.js 20 or newer is required. Use setup.sh --install-system to update the system tools.')
 TOOLS.mkdir(exist_ok=True)
 lock = ROOT / 'package-lock.json'
-digest = hashlib.sha256(lock.read_bytes()).hexdigest()
+digest = hashlib.sha256(lock.read_bytes() + (ROOT / 'package.json').read_bytes()).hexdigest()
 stamp = TOOLS / 'npm.sha256'
 if not (ROOT / 'node_modules/.bin/ergogen').exists() or not stamp.exists() or stamp.read_text() != digest:
-    run(['npm', 'ci', '--allow-git=all', '--cache', str(TOOLS / 'npm-cache')])
+    run(['npm', 'ci', '--ignore-scripts', '--allow-remote=all', '--cache', str(TOOLS / 'npm-cache')])
     stamp.write_text(digest)
 venv = TOOLS / 'venv'
 python = venv / 'bin/python'

@@ -1,115 +1,115 @@
 // Copyright (c) 2023 Marco Massarelli
-//
+
 // SPDX-License-Identifier: CC-BY-NC-SA-4.0
-//
+
 // To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
-//
+
 // Author: @infused-kim + @ceoloide improvements
-//
-// Description:
-//  Reversible footprint for nice!view display. Includes an outline of the
-//  display to make positioning easier.
-//
-//  Note that because the center pin is VCC on both sides, there is no associated jumper pad
-//  in the reversible footprint.
-//
-//  In its default configuration, jumper pads are positioned above the pins, when the
-//  component is oriented verically and pointing upwards, or left of the pins, when oriented
-//  horizontally and oriented leftward. Jumper pads position can be inverted with a parameter.
-//
-//  In its default configuration, labels are positioned below the pins, when the
-//  component is oriented verically and pointing upwards, or right of the pins, when oriented
-//  horizontally and oriented leftward. Labels position can be inverted with a parameter.
-//
-// Pinout and schematics:
-//  https://nicekeyboards.com/docs/nice-view/pinout-schematic
-//
-// Params:
-//    side: default is F for Front
-//      the side on which to place the single-side footprint and designator, either F or B
-//    reversible: default is false
-//      if true, the footprint will be placed on both sides so that the PCB can be
-//      reversible
-//    include_traces: default is true
-//      if true it will include traces that connect the jumper pads to the vias
-//      and the through-holes for the MCU
-//    gnd_trace_width: default is 0.250mm
-//      allows to override the GND trace width. Not recommended to go below 0.25mm (JLCPC
-//      min is 0.127mm).
-//    signal_trace_width: default is 0.250mm
-//      allows to override the trace width that connects the jumper pads to the MOSI, SCK,
-//      and CS pins. Not recommended to go below 0.15mm (JLCPC min is 0.127mm).
-//    invert_jumpers_position default is false
-//      allows to change the position of the jumper pads, from their default to the opposite
-//      side of the pins. See the description above for more details.
-//    invert_labels_position default is false
-//      allows to change the position of the labels, from their default to the north
-//      side of the pins. See the description above for more details.
-//    include_silkscreen: default is true
-//      if true it will include the silkscreen layer.
-//    include_labels default is true
-//      if true and Silkscreen layer is included, it will include the pin labels. The labels
-//      will match the *opposite* side of the board when the footprint is set to be reversible, 
-//      since they are meant to match the solder jumpers behavior and aid testing.
-//    include_courtyard: default is true
-//      if true it will include a courtyard outline around the pin header.
-//    niceview_3dmodel_filename: default is ''
-//      Allows you to specify the path to a 3D model STEP or WRL file to be
-//      used when rendering the PCB for the nice!view display. Use the ${VAR_NAME} syntax to point to
-//      a KiCad configured path.
-//    niceview_3dmodel_xyz_offset: default is [0, 0, 0]
-//      xyz offset (in mm), used to adjust the position of the nice!view 3d model
-//      relative to the footprint.
-//    niceview_3dmodel_xyz_scale: default is [1, 1, 1]
-//      xyz scale, used to adjust the size of the nice!view 3d model relative to its
-//      original size.
-//    niceview_3dmodel_xyz_rotation: default is [0, 0, 0]
-//      xyz rotation (in degrees), used to adjust the orientation of the nice!view 3d
-//      model relative to the footprint.
-//    pin_socket_3dmodel_filename: default is ''
-//      Allows you to specify the path to a 3D model STEP or WRL file for pin socket to be
-//      used when rendering the PCB. Use the ${VAR_NAME} syntax to point to
-//      a KiCad configured path.
-//    pin_socket_3dmodel_xyz_offset: default is [0, 0, 0]
-//      xyz offset (in mm), used to adjust the position of the pin socket 3d model
-//      relative to the footprint.
-//    pin_socket_3dmodel_xyz_scale: default is [1, 1, 1]
-//      xyz scale, used to adjust the size of the pin socket 3d model relative to its
-//      original size.
-//    pin_socket_3dmodel_xyz_rotation: default is [0, 0, 0]
-//      xyz rotation (in degrees), used to adjust the orientation of the pin socket 3d
-//      model relative to the footprint.
-//    pin_header_3dmodel_filename: default is ''
-//      Allows you to specify the path to a 3D model STEP or WRL file for pin header to be
-//      used when rendering the PCB. Use the ${VAR_NAME} syntax to point to
-//      a KiCad configured path.
-//    pin_header_3dmodel_xyz_offset: default is [0, 0, 0]
-//      xyz offset (in mm), used to adjust the position of the pin header 3d model
-//      relative to the footprint.
-//    pin_header_3dmodel_xyz_scale: default is [1, 1, 1]
-//      xyz scale, used to adjust the size of the pin header 3d model relative to its
-//      original size.
-//    pin_header_3dmodel_xyz_rotation: default is [0, 0, 0]
-//      xyz rotation (in degrees), used to adjust the orientation of the pin header 3d
-//      model relative to the footprint.
-//
-// @ceoloide's improvements:
-//  - Added support for traces
-//  - Upgraded to KiCad 8 format
-//  - Make silkscreen and courtyard optional
-//  - Added ability to move labels and jumpers independently
-//
-// # Placement and soldering of jumpers
-//
-// The reversible footprint is meant to be used with jumpers on the
-// OPPOSITE side of where the nice!view is installed. The silkscreen
-// labels will also match the board when read on the opposite side.
-// This is to have all jumpers and components to solder on the same
-// side, and be able to read the correct labels of the display to do
-// tests with a multimeter.
-//
-// @nidhishs' improvements:
-// - Added 3D model support
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = {
   params: {
@@ -198,7 +198,7 @@ module.exports = {
     const top = `
   (footprint "ceoloide:display_nice_view"
     (layer ${p.side}.Cu)
-    ${p.at /* parametric position */}
+    ${p.at }
     (property "Reference" "${p.ref}"
       (at 0 20 ${p.r})
       (layer "${p.side}.SilkS")

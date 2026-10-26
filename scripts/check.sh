@@ -7,6 +7,10 @@ kicad_cli=${KICAD_CLI:-/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli}
 if [ ! -x "$kicad_cli" ]; then
     kicad_cli=kicad-cli
 fi
+case $("$kicad_cli" version) in
+    10.*) ;;
+    *) printf '%s\n' 'KiCad 10 is required for all boards.' >&2; exit 1 ;;
+esac
 mkdir -p "$output/checks"
 for board in macropad baseplate; do
     "$kicad_cli" pcb drc --exit-code-violations --output "$output/checks/$board.rpt" "$output/pcbs/$board.kicad_pcb"
