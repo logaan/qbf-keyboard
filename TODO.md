@@ -31,3 +31,12 @@
 - [x] @agent Verify dependency setup and all checks from a clean checkout
 - [ ] @user Verify the nice!nano antenna reservation against purchased hardware
 - [x] @agent Restore twelve module 1 keys with an underside display and refresh routing exports and renders
+- [x] @agent Research bare nRF52840 references and JLC assembly using Luna agents
+- [x] @agent Create Module1b KiCad schematic and routed four-layer PCB with 12 Choc sockets
+- [x] @agent Correct inherited BOM mismatches and DC/DC inductor current ratings
+- [ ] @agent Complete Module1b final drill-clearance checks and source-hashed review exports
+- [ ] @agent Render Module1b native views and anime assembly preview
+- [ ] @user Obtain JLC quote for nice!view assembly M2 spacers USB shell soldering and SWD programming
+- [ ] @user Validate Module1b insulated battery mounting socket retention and complete underside stack
+- [ ] @user Prototype Module1b RF USB charging current and crystal startup before production
+- [ ] @user Approve tested bootloader image and provide compatible Module1b application firmware

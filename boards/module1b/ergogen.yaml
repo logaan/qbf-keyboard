@@ -1,0 +1,312 @@
+meta:
+  name: module1b
+  engine: 4.2.1
+  version: 0.2.0
+points:
+  zones:
+    key_r1_c1:
+      anchor:
+        shift:
+        - 71.425
+        - -76.5
+      key:
+        tags:
+        - switch
+        - portrait_1_5u
+        width: 16.5
+        height: 26.5
+    key_r1_c2:
+      anchor:
+        shift:
+        - 90.475
+        - -76.5
+      key:
+        tags:
+        - switch
+        - portrait_1_5u
+        width: 16.5
+        height: 26.5
+    key_r1_c3:
+      anchor:
+        shift:
+        - 109.525
+        - -76.5
+      key:
+        tags:
+        - switch
+        - portrait_1_5u
+        width: 16.5
+        height: 26.5
+    key_r1_c4:
+      anchor:
+        shift:
+        - 128.575
+        - -76.5
+      key:
+        tags:
+        - switch
+        - portrait_1_5u
+        width: 16.5
+        height: 26.5
+    key_r2_c1:
+      anchor:
+        shift:
+        - 71.425
+        - -100
+      key:
+        tags:
+        - switch
+        - one_u
+        width: 16.5
+        height: 16.5
+    key_r2_c2:
+      anchor:
+        shift:
+        - 90.475
+        - -100
+      key:
+        tags:
+        - switch
+        - one_u
+        width: 16.5
+        height: 16.5
+    key_r2_c3:
+      anchor:
+        shift:
+        - 109.525
+        - -100
+      key:
+        tags:
+        - switch
+        - one_u
+        width: 16.5
+        height: 16.5
+    key_r2_c4:
+      anchor:
+        shift:
+        - 128.575
+        - -100
+      key:
+        tags:
+        - switch
+        - one_u
+        width: 16.5
+        height: 16.5
+    key_r3_c1:
+      anchor:
+        shift:
+        - 71.425
+        - -123.5
+      key:
+        tags:
+        - switch
+        - portrait_1_5u
+        width: 16.5
+        height: 26.5
+    key_r3_c2:
+      anchor:
+        shift:
+        - 90.475
+        - -123.5
+      key:
+        tags:
+        - switch
+        - portrait_1_5u
+        width: 16.5
+        height: 26.5
+    key_r3_c3:
+      anchor:
+        shift:
+        - 109.525
+        - -123.5
+      key:
+        tags:
+        - switch
+        - portrait_1_5u
+        width: 16.5
+        height: 26.5
+    key_r3_c4:
+      anchor:
+        shift:
+        - 128.575
+        - -123.5
+      key:
+        tags:
+        - switch
+        - portrait_1_5u
+        width: 16.5
+        height: 26.5
+    display:
+      anchor:
+        shift:
+        - 100
+        - -75
+      key:
+        tags:
+        - display
+        width: 36
+        height: 14
+    controller:
+      anchor:
+        shift:
+        - 101.4
+        - -100
+      key:
+        tags:
+        - controller
+        width: 1
+        height: 1
+    battery:
+      anchor:
+        shift:
+        - 120
+        - -125
+      key:
+        tags:
+        - battery
+        width: 1
+        height: 1
+    reset:
+      anchor:
+        shift:
+        - 68
+        - -112
+      key:
+        tags:
+        - reset
+        width: 1
+        height: 1
+    power:
+      anchor:
+        shift:
+        - 100
+        - -134
+      key:
+        tags:
+        - power
+        width: 1
+        height: 1
+    jst:
+      anchor:
+        shift:
+        - 97.3
+        - -118
+      key:
+        tags:
+        - jst
+        width: 1
+        height: 1
+    mount_-1_-1:
+      anchor:
+        shift:
+        - 65.4
+        - -134.6
+      key:
+        tags:
+        - mount
+        width: 1
+        height: 1
+    mount_-1_1:
+      anchor:
+        shift:
+        - 65.4
+        - -65.4
+      key:
+        tags:
+        - mount
+        width: 1
+        height: 1
+    mount_1_-1:
+      anchor:
+        shift:
+        - 134.6
+        - -134.6
+      key:
+        tags:
+        - mount
+        width: 1
+        height: 1
+    mount_1_1:
+      anchor:
+        shift:
+        - 134.6
+        - -65.4
+      key:
+        tags:
+        - mount
+        width: 1
+        height: 1
+outlines:
+  pcb_boundary:
+  - what: rectangle
+    where:
+      shift:
+      - 100
+      - -100
+    size:
+    - 75.2
+    - 75.2
+    corner: 2
+  keycaps:
+  - what: rectangle
+    where: portrait_1_5u
+    size:
+    - 16.5
+    - 26.5
+    corner: 1
+  - what: rectangle
+    where: one_u
+    size:
+    - 16.5
+    - 16.5
+    corner: 1
+  display:
+  - what: rectangle
+    where: display
+    size:
+    - 36
+    - 14
+  battery:
+  - what: rectangle
+    where: battery
+    size:
+    - 30
+    - 12
+  mount_holes:
+  - what: circle
+    where: mount
+    radius: 1.1
+pcbs:
+  module1b:
+    template: kicad8
+    references: true
+    outlines:
+      edge:
+        outline: pcb_boundary
+      caps:
+        outline: keycaps
+        layer: Dwgs.User
+      screen:
+        outline: display
+        layer: B.Fab
+      cell:
+        outline: battery
+        layer: B.Fab
+    footprints:
+      switches:
+        what: ceoloide/switch_choc_v1_v2
+        where: switch
+        adjust.rotate: 90
+        params:
+          side: B
+          reversible: false
+          hotswap: true
+          solder: false
+          choc_v1_support: true
+          choc_v2_support: false
+          include_stabilizer_pad: false
+          include_corner_marks: false
+          include_traces_vias: false
+          allow_soldermask_bridges: false
+          from: '{{name}}'
+          to: GND

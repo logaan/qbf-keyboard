@@ -1,0 +1,139 @@
+{
+  "name": "Module1b",
+  "revision": "0.1 engineering prototype",
+  "manufacturing_release": false,
+  "layout": {
+    "outline_mm": [
+      75.2,
+      75.2
+    ],
+    "keys": 12,
+    "rows": [
+      "4 portrait 1.5U",
+      "4 1U",
+      "4 portrait 1.5U"
+    ],
+    "switch": "Kailh Choc v1",
+    "switch_socket": "Kailh CPG135001S30 SMT; Mill-Max not selected because individual through-hole sockets are not ordinary SMT assembly",
+    "display": "nice!view underside; factory soldered connector/module requires quote",
+    "key_centers_unchanged_from": "module1",
+    "mount_centers_kicad_mm": [
+      [
+        70.5,
+        65.4
+      ],
+      [
+        129.5,
+        65.4
+      ],
+      [
+        70.5,
+        134.6
+      ],
+      [
+        129.5,
+        134.6
+      ]
+    ],
+    "mount_change": "M2 spacer centers shifted inward in X to avoid outer Choc socket pads/body; original module mounting-hole pattern is not retained"
+  },
+  "pcb": {
+    "layers": 4,
+    "thickness_mm": 1.6,
+    "copper_oz": 1,
+    "minimum_track_mm": 0.09,
+    "minimum_clearance_mm": 0.12,
+    "minimum_via_diameter_mm": 0.45,
+    "minimum_via_drill_mm": 0.2,
+    "minimum_via_annulus_mm": 0.125,
+    "stackup_reference": "Mikoto rev6.3 four-layer 7628 reference; JLC must confirm actual stack and RF impedance",
+    "notes": [
+      "Inner copper layers are included in Gerber export",
+      "J1 has SMT signal pads and plated shell slots; supplier must confirm solder process",
+      "Minimum track uses verified 4-layer JLC 0.09mm capability; not the two-layer capability",
+      "Wuerth annular solder land intentionally meets its own NPTH per manufacturer drawing; scoped KiCad rule applies only within mounting footprints, and supplier must accept this land pattern.",
+      "USB shell land edge clearance is 0.225mm, above JLC routed-edge minimum 0.2mm; use routed edges, not V-scoring."
+    ],
+    "minimum_NPTH_to_copper_mm": 0.2,
+    "absolute_minimum_clearance_mm": 0.09,
+    "minimum_routed_edge_clearance_mm": 0.2
+  },
+  "controller": {
+    "mcu": "bare Nordic nRF52840 aQFN73",
+    "reference": "Mikoto rev6.3 commit 4b3bdb9ffb6007d51376cea206e6b1d2534c1a82 Apache-2.0",
+    "adaptation": [
+      "12 GPIO-to-ground switches without matrix/diodes",
+      "USB-C, ESD protection and reset on keyboard PCB",
+      "BQ24075 power path and charger; XC6220 switched display rail",
+      "Four-layer PCB antenna geometry retained locally, host ground geometry changed",
+      "Charger 250mA/350mA selection resistor removed; fixed 8.66k ISET",
+      "DC/DC inductors replaced with 10uH 80mA LBMF1608T100K"
+    ]
+  },
+  "battery": {
+    "candidate": "Adafruit 1317 protected 3.7V 150mAh LiPo",
+    "size_mm": [
+      19.75,
+      26.02,
+      3.8
+    ],
+    "connector": "JST PH2, J2 pad1 VBAT positive and pad2 GND negative; verify actual harness",
+    "charge_current_typical_mA": 102.8,
+    "charge_current_upper_estimate_mA": 113.7,
+    "cell_max_charge_mA": 150,
+    "charge_temperature_C": [
+      0,
+      45
+    ],
+    "temperature_sensor": false,
+    "ts_behavior": "Fixed 10k on TS bypasses cell-temperature monitoring; charger die thermal protection is not cell-temperature sensing",
+    "mechanical_status": "NOT VALIDATED: no unoccupied flush underside rectangle for this pack; requires insulated raised mounting below components, restraint, lead routing and clearance verification",
+    "power_switch": "VBAT throw asserts SYSOFF, disconnects battery and disables charging; USB can still power system. GND throw enables normal operation/charging"
+  },
+  "programming": {
+    "factory_required_for_no_solder_delivery": true,
+    "method": "SWD fixture before installing keys/display",
+    "pads": {
+      "TP1": "SWDCLK",
+      "TP2": "SWDIO",
+      "TP3": "VDD_NRF reference",
+      "TP5": "GND"
+    },
+    "bootloader": "Mikoto-compatible nRF52840 bootloader is a reference only; supplier needs tested approved HEX/BIN. No new firmware implemented in this PCB-only task.",
+    "requirements": [
+      "Verify 3.3V UICR REGOUT0 configuration before display use",
+      "Blank chip does not ship with USB flashing bootloader",
+      "Factory flash/readback and USB enumeration test required",
+      "Keyboard firmware must use the new pin map and P0.13 peripheral-power enable; original nice!nano binary cannot be assumed compatible",
+      "Final SWD image/hash and fixture/power procedure require approval"
+    ]
+  },
+  "release_blockers": [
+    "Prototype electrical bring-up: charging current, polarity, power switching, sleep current, USB and all keys/display",
+    "Insulated battery mounting and complete underside stack, including socket retention and insertion loads, are not physically validated",
+    "Factory acceptance and exact sourcing of nice!view/header assembly and M2 SMT spacers",
+    "Factory SWD bootloader image, fixture and programming/test service; application firmware not implemented",
+    "RF antenna tuning/range and actual JLC stackup; enlarged ground plane and USB route require verification",
+    "Crystal effective load/startup/frequency with retained reference capacitors; test with chosen parts",
+    "Live BOM availability, CPL origins/rotations, USB shell-slot soldering and first-article assembly review"
+  ],
+  "research_sources": [
+    "https://github.com/zhiayang/mikoto/tree/4b3bdb9ffb6007d51376cea206e6b1d2534c1a82",
+    "https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/ref_circuitry.html",
+    "https://www.ti.com/lit/gpn/BQ24075",
+    "https://jlcpcb.com/capabilities/pcb-",
+    "https://jlcpcb.com/help/article/pcba-programming-service",
+    "https://jlcpcb.com/help/article/pcba-parts-sourcing-instruction",
+    "https://jlcpcb.com/partdetail/Kailh-CPG135001S30/C5333465",
+    "https://www.kailhswitch.com/uploads/15927/files/CPG135001S30.pdf?rnd=101",
+    "https://jlcpcb.com/partdetail/PANASONIC-EVQPUA02K/C128539",
+    "https://jlcpcb.com/partdetail/SHOUHAN-MSK12C02/C431540",
+    "https://jlcpcb.com/partdetail/TaiyoYuden-LBMF1608T100K/C87216",
+    "https://media.digikey.com/pdf/Data%20Sheets/Taiyo%20Yuden%20PDFs%20URL%20links/LBMF1608T100K_SS.pdf",
+    "https://www.we-online.com/components/products/datasheet/9774020243R.pdf",
+    "https://www.adafruit.com/product/1317",
+    "https://cdn-shop.adafruit.com/datasheets/402025%20150mAh.pdf",
+    "https://www.sii.co.jp/en/quartz/nrf52/",
+    "https://www.epsondevice.com/crystal/en/techinfo/ic-partners/nordic/nrf53xxx.html"
+  ]
+}

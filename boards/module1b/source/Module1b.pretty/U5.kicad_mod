@@ -1,0 +1,191 @@
+(footprint "U5"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "U5"
+		(at 0 0 -90)
+		(layer "Eco2.User")
+		(uuid "9e64edcd-2390-4138-8b71-676f54bf9a44")
+		(effects
+			(font
+				(size 0.3 0.3)
+				(thickness 0.05)
+			)
+		)
+	)
+	(property "Value" "ESDR0502NMUTAG"
+		(at 0 -2 180)
+		(layer "Dwgs.User")
+		(hide yes)
+		(uuid "dcaceb90-73a1-446f-aa9e-0d4d1570ea81")
+		(effects
+			(font
+				(size 0.3 0.3)
+				(thickness 0.05)
+			)
+		)
+	)
+	(property "Datasheet" "http://www.onsemi.cn/pub_link/Collateral/ESDR0502N-D.PDF"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d08fa010-c77d-48ba-92be-c5524d27601d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2927e45d-3d64-4b7f-abaf-ecd0f847fa57")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "JLC Part" "C327480"
+		(at -8.85 -7.05 -90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2b867053-ee19-4dc7-b13c-bb964bd2007b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC Part" "C327480"
+		(at -8.85 -7.05 -90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6854e287-c988-45fb-a760-6ffc109fae94")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer Part" "ESDR0502NMUTBG"
+		(at -8.85 -7.05 -90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b570fec4-dc22-4c17-b5d2-e6642128ac67")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Assembly status" "catalog; stock must be checked"
+		(at 0 0 -90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "ef9577ad-fed8-4c47-a6f9-52334668ec81")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(sheetfile "mikoto.kicad_sch")
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.559999 -0.624999)
+		(end -0.559999 0.625001)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "fd69a24b-02c4-40d7-85d9-45d3a35f6d67")
+	)
+	(fp_line
+		(start -0.559999 0.625001)
+		(end 0.560001 0.625001)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "86903265-0053-460c-a7e6-77fc324cb47f")
+	)
+	(fp_line
+		(start 0.560001 -0.624999)
+		(end -0.559999 -0.624999)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "80d98cf5-640f-4bff-b57b-6cb5f638c81f")
+	)
+	(fp_line
+		(start 0.560001 0.625001)
+		(end 0.560001 -0.624999)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "ce8eb6a9-25a4-460f-a894-49a6e91e907a")
+	)
+	(pad "1" smd rect
+		(at -0.325001 -0.399998 270)
+		(size 0.22 0.419999)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(zone_connect 2)
+		(uuid "e33012f2-0eb0-4f79-881b-ef1fe24222ec")
+	)
+	(pad "2" smd rect
+		(at -0.325001 0 270)
+		(size 0.22 0.419999)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "d47883e4-3a0c-4b46-aca1-50f0af50ab65")
+	)
+	(pad "3" smd rect
+		(at -0.325001 0.400002 270)
+		(size 0.22 0.419999)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "6ddc7246-dcae-4df9-8cf6-ca07bdf56435")
+	)
+	(pad "4" smd rect
+		(at 0.325001 0.400002 270)
+		(size 0.22 0.419999)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "9f0f7263-aac7-4ae8-8a2d-8a53d5168ac1")
+	)
+	(pad "5" smd rect
+		(at 0.325001 0 270)
+		(size 0.22 0.419999)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "96c56daa-f47b-4772-a9cd-3ac1b5cd7ada")
+	)
+	(pad "6" smd rect
+		(at 0.325001 -0.399998 270)
+		(size 0.22 0.419999)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8638649a-4405-4f37-abed-6f5a04c5dae7")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/../vendor/mikoto/footprints.pretty/3d/On_Semiconductor_-_ESDR0502NMUTAG.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

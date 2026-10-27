@@ -15,9 +15,9 @@ def run(*command):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Build and inspect the four keyboards; no npm or Python setup commands required.')
+    parser = argparse.ArgumentParser(description='Build and inspect the keyboards; no npm or Python setup commands required.')
     parser.add_argument('action', nargs='?', choices=['list', 'setup', 'build', 'check', 'preview', 'status', 'firmware', 'mechanical', 'test', 'render', 'anime-render', 'pipeline', 'export'])
-    parser.add_argument('board', nargs='?', choices=[*NAMES, 'all'], default='all')
+    parser.add_argument('board', nargs='?', choices=[*NAMES, 'module1b', 'all'], default='all')
     parser.add_argument('--workspace', type=Path)
     args = parser.parse_args()
     if args.action is None:
@@ -30,11 +30,12 @@ def main():
         choice = input('Action number [1]: ').strip() or '1'
         args.action = actions[int(choice) - 1]
         if args.action not in ('setup', 'test'):
-            print('Boards: ' + ', '.join(NAMES) + ', all')
+            print('Boards: ' + ', '.join((*NAMES, 'module1b')) + ', all')
             args.board = input('Board [all]: ').strip() or 'all'
-            if args.board not in (*NAMES, 'all'):
+            if args.board not in (*NAMES, 'module1b', 'all'):
                 parser.error('Unknown board')
     if args.action in ('list', 'status'):
+        print('module1b: bare-nRF52840 engineering prototype; boards/module1b/source; NOT order-ready')
         print('qbf: existing routed PCB, firmware and active modular-case; physical validation still required')
         for name in NAMES[1:]:
             path = ROOT / 'boards/modules/generated' / name / 'validation.json'
@@ -47,6 +48,16 @@ def main():
             extra = ['--install-system']
         run(ROOT / 'scripts/setup.sh', *extra)
         return
+    variant_actions = ('build', 'check', 'preview', 'export', 'render', 'anime-render', 'pipeline')
+    if args.board == 'module1b':
+        if args.action not in variant_actions:
+            parser.error('Module1b is PCB-only; select build, check, preview, export, render or pipeline')
+        run(ROOT / 'scripts/setup.sh', '--dependencies-only')
+        run(ROOT / '.tools/venv/bin/python', ROOT / 'scripts/module1b.py', args.action)
+        return
+    if args.board == 'all' and args.action in variant_actions:
+        run(ROOT / 'scripts/setup.sh', '--dependencies-only')
+        run(ROOT / '.tools/venv/bin/python', ROOT / 'scripts/module1b.py', args.action)
     if args.action == 'pipeline':
         selected = NAMES if args.board == 'all' else (['qbf'] if args.board == 'qbf' else NAMES[1:])
         for name in selected:

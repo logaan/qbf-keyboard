@@ -1,0 +1,20 @@
+{
+  "mikoto": {
+    "url": "https://github.com/zhiayang/mikoto",
+    "commit": "4b3bdb9ffb6007d51376cea206e6b1d2534c1a82",
+    "license": "Apache-2.0",
+    "revision": "6.3",
+    "purpose": "bare nRF52840 circuit and local RF layout reference; adapted design requires validation"
+  },
+  "ergogen": {
+    "source": "boards/modules/footprints/ceoloide",
+    "license": "CC-BY-NC-SA-4.0 (per vendored footprint SPDX)",
+    "url": "https://github.com/ceoloide/ergogen-footprints"
+  },
+  "kicad": {
+    "version": "10",
+    "purpose": "standard SMT connector and threaded-spacer footprints",
+    "license": "CC-BY-SA-4.0 with KiCad libraries exception",
+    "source": "https://gitlab.com/kicad/libraries/kicad-footprints"
+  }
+}

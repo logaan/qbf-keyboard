@@ -1,0 +1,15 @@
+{
+  "outline": {"width": 75.2, "height": 75.2, "corner": 2, "mount_inset": 3, "mount_diameter": 2.2},
+  "pitch": 19.05,
+  "routing": {"signal_width": 0.3, "power_width": 0.5, "clearance": 0.25, "via_diameter": 0.65, "via_drill": 0.3, "antenna_keepout": [-6, -20, 6, -10], "antenna_status": "provisional controller antenna reservation; verify against purchased module"},
+  "keycaps": {"portrait_1_5u": [16.5, 26.5], "one_u": [16.5, 16.5]},
+  "controller": {"part": "nice!nano v2", "x": 0, "y": 0, "side": "B"},
+  "battery": {"size": [12, 30, 3], "x": -22, "y": 0, "side": "B", "status": "provisional protected cell; insulated support and switch-tail clearance unverified"},
+  "display": {"part": "nice!view", "size": [36, 14], "side": "F", "rotation": 90},
+  "trackpad": {"part": "Azoteq TPS43", "size": [43, 43], "module_size": [43, 40], "side": "F", "status": "conservative 43 mm envelope; exact overlay, cable adapter and support require physical review", "header_pins": ["TP_RDY", "TP_RST", "GND", "3V3", "TP_SCL", "TP_SDA"], "sources": ["https://www.azoteq.com/images/stories/pdf/proxsense_i2c_trackpad_datasheet.pdf"]},
+  "modules": {
+    "module1": {"rows": [{"y": 23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}, {"y": 0, "columns": [0, 1, 2, 3], "cap": "one_u"}, {"y": -23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}], "display_y": 25, "display_side": "B", "controller_rotation": 90, "controller_x": 1.4, "routing_strategy": "shortest", "battery_x": 20, "battery_y": -25, "battery_rotation": 90, "jst_x": -2.7, "jst_y": -18},
+    "module2": {"rows": [{"y": 23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}, {"y": -26, "columns": [0, 3], "cap": "one_u"}], "display_y": 0},
+    "module3": {"rows": [{"y": -23.5, "columns": [0, 1, 2, 3], "cap": "portrait_1_5u"}], "display_x": 24, "display_y": 14, "display_rotation": 0, "display_size": [14, 36], "trackpad_x": -12.5, "trackpad_y": 14, "allow_asymmetric_interactions": true}
+  }
+}
