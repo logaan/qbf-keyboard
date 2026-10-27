@@ -1,0 +1,73 @@
+Comment,Designator,Footprint,LCSC Part #,Manufacturer Part,Assembly status
+4.7uF,C1,Module1b:C1,C23733,CL05A475MP5NRNC,catalog alternate; value and package matched
+100nF,C10,Module1b:C10,C1525,CL05B104KA5NNNC,Inherited catalog selection; quote and stock review required
+100pF,C11,Module1b:C11,C1546,0402CG101J500NT,catalog alternate; value and package matched
+1nF,C12,Module1b:C12,C1523,0402B102K500NT,catalog alternate; value and package matched
+4.7uF,C13,Module1b:C13,C23733,CL05A475MP5NRNC,catalog alternate; value and package matched
+4.7uF,C14,Module1b:C14,C23733,CL05A475MP5NRNC,catalog alternate; value and package matched
+1uF,C15,Module1b:C15,C52923,CL05A105KO5NNNC,Inherited catalog selection; quote and stock review required
+47nF,C16,Module1b:C16,C307434,CL05B473KO5NNNC,replacement for discontinued C26403; JLC sourcing review required
+15pF,C17,Module1b:C17,C1548,0402CG150J500NT,catalog alternate; value and package matched
+15pF,C18,Module1b:C18,C1548,0402CG150J500NT,catalog alternate; value and package matched
+10nF,C19,Module1b:C19,C15195,CL05B103KB5NNNC,Inherited catalog selection; quote and stock review required
+100nF,C2,Module1b:C2,C1525,CL05B104KA5NNNC,Inherited catalog selection; quote and stock review required
+4.7uF,C20,Module1b:C20,C23733,CL05A475MP5NRNC,catalog alternate; value and package matched
+10uF,C21,Module1b:C21,C19702,CL10A106KP8NNNC,Inherited catalog selection; quote and stock review required
+1.5pF,C22,Module1b:C22,C1552,CL05C1R5CB5NNNC,Inherited catalog selection; quote and stock review required
+1uF,C23,Module1b:C23,C52923,CL05A105KO5NNNC,Inherited catalog selection; quote and stock review required
+4.7uF,C24,Module1b:C24,C23733,CL05A475MP5NRNC,catalog alternate; value and package matched
+4.7uF,C25,Module1b:C25,C23733,CL05A475MP5NRNC,catalog alternate; value and package matched
+4.7uF,C26,Module1b:C26,C23733,CL05A475MP5NRNC,catalog alternate; value and package matched
+100nF,C3,Module1b:C3,C1525,CL05B104KA5NNNC,Inherited catalog selection; quote and stock review required
+100nF,C4,Module1b:C4,C1525,CL05B104KA5NNNC,Inherited catalog selection; quote and stock review required
+1pF,C5,Module1b:C5,C1550,0402CG1R0C500NT,catalog alternate; value and package matched
+15pF,C6,Module1b:C6,C1548,0402CG150J500NT,catalog alternate; value and package matched
+15pF,C7,Module1b:C7,C1548,0402CG150J500NT,catalog alternate; value and package matched
+1uF,C8,Module1b:C8,C52923,CL05A105KO5NNNC,Inherited catalog selection; quote and stock review required
+1pF,C9,Module1b:C9,C1550,0402CG1R0C500NT,catalog alternate; value and package matched
+BLUE,D1,Module1b:D1,C72041,19-217/BHC-ZL1M2RY/3T,catalog alternate; value and package matched
+ORANGE,D3,Module1b:D3,C375450,E6C0603SEAC1UDA,catalog SMT; 0603 orange alternate; Vf2V; polarity requires assembly preview check
+PMEG4010CEJ,D5,Module1b:D5,C50704,PMEG4010CEJ,Inherited catalog selection; quote and stock review required
+nice!view with 5-pin 2.54mm connector,DISP1,Module1b:DISP1,,nice!view with 5-pin 2.54mm connector,factory consignment and soldered header/module assembly quote required
+500mA hold,F1,Module1b:F1,C206938,0402L050SLKR,Inherited catalog selection; quote and stock review required
+9774020243,H1,Module1b:H1,,9774020243R,"factory global sourcing/consignment quote required; M2 H2mm, land OD5.3 NPTH3.0"
+9774020243,H2,Module1b:H2,,9774020243R,"factory global sourcing/consignment quote required; M2 H2mm, land OD5.3 NPTH3.0"
+9774020243,H3,Module1b:H3,,9774020243R,"factory global sourcing/consignment quote required; M2 H2mm, land OD5.3 NPTH3.0"
+9774020243,H4,Module1b:H4,,9774020243R,"factory global sourcing/consignment quote required; M2 H2mm, land OD5.3 NPTH3.0"
+USB_C_Receptacle_USB2.0,J1,Module1b:J1,C168688,918-418K2024S40000,mixed SMT contacts and plated shell slots; confirm factory solder process
+S2B-PH-SM4-TB(LF)(SN),J2,Module1b:J2,C295747,S2B-PH-SM4-TB(LF)(SN),catalog SMT
+3.9nH,L1,Module1b:L1,C14033,SDCL1005C3N9STDF,catalog alternate; value and package matched; RF components require host-board validation
+15nH,L2,Module1b:L2,C27143,SDCL1005C15NJTDF,catalog alternate; value and package matched; RF components require host-board validation
+10uH,L3,Module1b:L3,C87216,LBMF1608T100K,catalog SMT; 10uH 80mA 360mOhm; meets Nordic minimum current
+10uH,L4,Module1b:L4,C87216,LBMF1608T100K,catalog SMT; 10uH 80mA 360mOhm; meets Nordic minimum current
+5.1k,R10,Module1b:R10,C25905,0402WGF5101TCE,catalog value/package match; live JLC stock must be checked
+0R,R11,Module1b:R11,C17168,0402WGF0000TCE,catalog value/package match; live JLC stock must be checked
+2M,R12,Module1b:R12,C138014,RC0402FR-072ML,Inherited catalog selection; quote and stock review required
+2M,R2,Module1b:R2,C138014,RC0402FR-072ML,Inherited catalog selection; quote and stock review required
+2M,R3,Module1b:R3,C138014,RC0402FR-072ML,Inherited catalog selection; quote and stock review required
+10M,R4,Module1b:R4,C26082,0402WGF1005TCE,catalog value/package match; live JLC stock must be checked
+1.5k,R5,Module1b:R5,C25867,0402WGF1501TCE,catalog value/package match; live JLC stock must be checked
+10k,R6,Module1b:R6,C25744,0402WGF1002TCE,catalog value/package match; live JLC stock must be checked
+8.66k,R7,Module1b:R7,C185387,RC0402FR-078K66L,LCSC catalog; JLC sourcing confirmation required
+10k,R8,Module1b:R8,C25744,0402WGF1002TCE,catalog value/package match; live JLC stock must be checked
+5.1k,R9,Module1b:R9,C25905,0402WGF5101TCE,catalog value/package match; live JLC stock must be checked
+CPG135001S30,S1,Module1b:S1,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S10,Module1b:S10,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S11,Module1b:S11,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S12,Module1b:S12,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S2,Module1b:S2,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S3,Module1b:S3,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S4,Module1b:S4,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S5,Module1b:S5,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S6,Module1b:S6,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S7,Module1b:S7,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S8,Module1b:S8,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+CPG135001S30,S9,Module1b:S9,C5333465,CPG135001S30,JLC Standard PCBA; drawing matched
+MSK12C02,SW1,Module1b:SW1,C431540,MSK12C02,catalog SMT; drawing matched
+EVQPUA02K,SW2,Module1b:SW2,C128539,EVQPUA02K,catalog SMT; no-boss drawing matched
+nRF52840,U1,Module1b:U1,C1851953,NRF52840-QIAA-R7,catalog; legacy ordering variant; stock must be checked
+BQ24075RGT,U2,Module1b:U2,C15464,BQ24075RGTR,catalog; stock must be checked
+XC6220B331MR,U3,Module1b:U3,C86534,XC6220B331MR-G,Inherited catalog selection; quote and stock review required
+ESDR0502NMUTAG,U5,Module1b:U5,C327480,ESDR0502NMUTBG,catalog; stock must be checked
+32MHz,Y1,Module1b:Y1,C255896,Q22FA1280001800,Inherited catalog selection; quote and stock review required
+32.768 kHz,Y2,Module1b:Y2,C97607,"SC-20S,32.768kHz,20PPM,12.5pF",catalog SMT; original package and CL; effective load requires measurement

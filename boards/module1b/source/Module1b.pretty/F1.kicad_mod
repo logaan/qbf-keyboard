@@ -8,7 +8,7 @@
 	(property "Reference" "F1"
 		(at 0 -1.17 180)
 		(layer "Eco2.User")
-		(uuid "fc421b64-9f02-40c0-a3b5-947949ee8bab")
+		(uuid "692d5667-da5c-44af-b67c-704b9983369a")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0 1.17 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "707ba639-d1e4-4d07-acef-0fb4a3a79c73")
+		(uuid "0e3e6079-eb9f-4359-bb55-5420ada4fa35")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "395fb62f-c42e-4052-ba41-7843f5a2399c")
+		(uuid "cfbd2980-323d-407d-a7fd-3d9ac1c941a8")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "190078dd-b170-4222-8519-428a37c7d380")
+		(uuid "ac6e2cff-12d7-416c-8609-7fe0e61e05f1")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -195,7 +195,7 @@
 		(uuid "d525482e-5dc6-4c44-b919-a131777fba8e")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuse_0402_1005Metric.wrl"
+	(model "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuse_0402_1005Metric.step"
 		(offset
 			(xyz 0 0 0)
 		)

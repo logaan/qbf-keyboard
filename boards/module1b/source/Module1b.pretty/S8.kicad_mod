@@ -6,7 +6,7 @@
 	(property "Reference" "S8"
 		(at 0 -8.8 180)
 		(layer "F.Fab")
-		(uuid "5b04df52-979d-4c56-945a-1540af66cc3e")
+		(uuid "122f45f7-55f7-426e-94d0-024441fa1160")
 		(effects
 			(font
 				(size 1 1)
@@ -18,7 +18,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "edcbe969-7de7-454d-866b-ea4f97d02647")
+		(uuid "4fff9616-0d8b-4eca-893a-c39a744776a1")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -30,7 +30,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "c10ec249-3af8-4b15-b0ce-abc6dbeeb0f1")
+		(uuid "89f35418-15dd-4f11-8370-a58d81cbd316")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -42,7 +42,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "1f7b443d-0edd-45e8-9c9f-23555780c436")
+		(uuid "dfbbaa48-c905-4c22-b46d-366b4cfcfa2a")
 		(effects
 			(font
 				(size 1.27 1.27)

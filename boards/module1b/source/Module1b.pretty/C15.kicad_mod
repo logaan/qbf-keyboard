@@ -8,7 +8,7 @@
 	(property "Reference" "C15"
 		(at 0 0 90)
 		(layer "Eco2.User")
-		(uuid "2a74c838-5e12-415b-9f1d-f412959b9d3c")
+		(uuid "3b6fd7dc-61ac-47c2-a060-fd8790ec1b0e")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0 1.16 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "a0b90af0-1f5b-4d4b-a511-1a4851fa9cb5")
+		(uuid "7983e972-3e0a-457d-a0a3-f14ecebaad7d")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "3b27885a-8437-4517-b317-105396093573")
+		(uuid "e00ac8cb-6f9e-4e7f-93a5-33c43ff65abe")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "cf8d7227-a73e-4366-81e3-433689a34559")
+		(uuid "e63fb890-74bd-4de2-8b33-82324edd5334")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -208,7 +208,7 @@
 		(uuid "4fea8a52-577e-46c0-8234-4cc3465bf823")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.wrl"
+	(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step"
 		(offset
 			(xyz 0 0 0)
 		)

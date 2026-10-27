@@ -6,7 +6,7 @@
 	(property "Reference" "S10"
 		(at 0 -8.8 180)
 		(layer "F.Fab")
-		(uuid "fd5964fc-7ca8-401c-ad87-d7d769fc826b")
+		(uuid "a67c9bc2-a21d-4fb1-8916-ee6422ad9dd5")
 		(effects
 			(font
 				(size 1 1)
@@ -18,7 +18,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "7ff93b99-7a09-448c-9a4a-0af71da55fe2")
+		(uuid "dfc614e2-c96d-4968-828f-848ad6d05604")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -30,7 +30,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "4c480d97-5e51-4e3a-96a1-f31916c47618")
+		(uuid "cc93dcbf-3f19-4324-be05-1e678473be97")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -42,7 +42,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "99311f6a-224c-4149-89c1-aa4d1fd19321")
+		(uuid "cd776bf0-fdcb-4b61-abe7-ca88df530e65")
 		(effects
 			(font
 				(size 1.27 1.27)

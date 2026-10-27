@@ -69,8 +69,9 @@ def export():
         w=csv.writer(f);w.writerow(['Designator','Mid X','Mid Y','Layer','Rotation'])
         for c in sorted(components,key=lambda p:p['reference']):
             ref=c['reference']
-            if ref in ('AE1','NT1') or ref.startswith('TP'):continue
-            w.writerow([ref,f"{c['position'][0]-62.4:.6f}mm",f"{137.6-c['position'][1]:.6f}mm",'bottom' if c['side']=='B.Cu' else 'top',c['angle']%360])
+            if ref in ('AE1','NT1','DISP1') or ref.startswith('TP'):continue
+            w.writerow([ref,f"{c['assembly_center']['position'][0]-62.4:.6f}mm",f"{137.6-c['assembly_center']['position'][1]:.6f}mm",'bottom' if c['side']=='B.Cu' else 'top',c['angle']%360])
+    (folder/'custom-assembly-review.json').write_text(json.dumps({'status':'Factory quote and assembly review required','operations':[{'reference':'DISP1','operation':'Consigned nice!view and five-pin header assembly; excluded from automatic SMT CPL','display_center_board_mm':[100,75],'header_center_board_mm':[116.7,75]},{'reference':'H1,H2,H3,H4','operation':'Source and reflow Wurth 9774020243R M2 spacers; listed in candidate CPL'},{'reference':'U1','operation':'SWD program approved tested bootloader before display installation; image and fixture pending'},{'reference':'J1','operation':'Confirm soldering process for four plated USB shell slots'}]},indent=2)+'\n')
     for name in ('design.json','parts.json'):shutil.copy2(BASE/name,folder/name)
     shutil.copy2(SOURCE/'components.json',folder/'pin-map-and-placement.json')
     manifest={'status':'ENGINEERING REVIEW ONLY - NOT RELEASED FOR ORDER','checks':validation,'cpl_origin':'lower-left outline corner x62.4 y137.6; x right/y up; angles are KiCad angles, require JLC component-origin/rotation preview approval','files':{str(p.relative_to(folder)):digest(p) for p in sorted(folder.rglob('*')) if p.is_file() and p.name!='manifest.json'}}

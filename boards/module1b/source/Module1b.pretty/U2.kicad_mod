@@ -8,7 +8,7 @@
 	(property "Reference" "U2"
 		(at 0 0 180)
 		(layer "Eco2.User")
-		(uuid "473311b4-78a4-4475-ab73-f133b2cd08d0")
+		(uuid "236de130-3c5a-4280-b07c-e854be359cb3")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0 2.82 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "df9ad920-000d-4528-ae49-e4bc6a29dbae")
+		(uuid "7943ab59-b1dc-4ab3-b308-148f7bf464a2")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "36ade762-5a63-42dc-ad9b-37a40968c4fb")
+		(uuid "11d2e3c9-8386-48b9-8ce4-276295fcbd65")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "89e130d1-60f2-4899-8c75-edc291aeb204")
+		(uuid "755f7b83-a51f-4f00-b247-909351213b86")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -357,7 +357,7 @@
 		(uuid "0a2dcef2-f4fa-403a-9225-8dae005dca8c")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/WQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm.wrl"
+	(model "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/WQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

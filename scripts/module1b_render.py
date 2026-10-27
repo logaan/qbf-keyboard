@@ -1,9 +1,8 @@
 import hashlib,json,subprocess
 from pathlib import Path
 from PIL import Image,ImageDraw
-from attach_models import module_instances
 from anime_render import grade,renderer
-from toolchain import kicad_cli
+from toolchain import kicad_cli,kicad_python
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'boards/module1b'
 OUT=BASE/'generated'
@@ -13,10 +12,8 @@ PREV=OUT/'previews';PREV.mkdir(exist_ok=True)
 board=BASE/'source/module1b.kicad_pcb'
 def run(args,name):
     with (OUT/(name+'.log')).open('w') as f:subprocess.run([str(v) for v in args],stdout=f,stderr=subprocess.STDOUT,check=True,cwd=ROOT)
-spec=json.loads((BASE/'layout-reference.json').read_text());components=module_instances(spec,'module1')
-components['instances']=[i for i in components['instances'] if i['name'].startswith('key_') or i['name'] in ('display','display_socket')]
-components['limitations']=['Illustrative key/display assembly only; battery mounting unresolved and omitted','Some sockets, reset and power-switch bodies have no verified 3D model and are omitted','Display stack is inherited nominal envelope; supplier must verify clearance','Actual routed PCB and available manufacturer/package models are used']
-(NATIVE/'components.json').write_text(json.dumps(components,indent=2)+'\n')
+run([kicad_python(),ROOT/'scripts/module1b_render_components.py'],'render-components')
+components=json.loads((NATIVE/'components.json').read_text())
 cli=kicad_cli()
 run([cli,'pcb','export','glb','--force','--subst-models','--include-tracks','--include-pads','--include-zones','--include-soldermask','--user-origin','100x100mm','-o',NATIVE/'board.glb',board],'glb')
 for side in ('top','bottom'):

@@ -1,0 +1,605 @@
+{
+  "instances": [
+    {
+      "name": "key_r1_c1_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        -28.575000000000003,
+        23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r1_c1_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        -28.575000000000003,
+        23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.68,
+        0.79,
+        0.73
+      ]
+    },
+    {
+      "name": "key_r1_c2_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        -9.525,
+        23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r1_c2_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        -9.525,
+        23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.88,
+        0.85,
+        0.74
+      ]
+    },
+    {
+      "name": "key_r1_c3_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        9.525,
+        23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r1_c3_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        9.525,
+        23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.88,
+        0.85,
+        0.74
+      ]
+    },
+    {
+      "name": "key_r1_c4_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        28.575000000000003,
+        23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r1_c4_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        28.575000000000003,
+        23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.68,
+        0.79,
+        0.73
+      ]
+    },
+    {
+      "name": "key_r2_c1_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        -28.575000000000003,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r2_c1_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_1u_reference.wrl",
+      "position_mm": [
+        -28.575000000000003,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9428571428571428,
+        1,
+        1
+      ],
+      "color": [
+        0.68,
+        0.79,
+        0.73
+      ]
+    },
+    {
+      "name": "key_r2_c2_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        -9.525,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r2_c2_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_1u_reference.wrl",
+      "position_mm": [
+        -9.525,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9428571428571428,
+        1,
+        1
+      ],
+      "color": [
+        0.88,
+        0.85,
+        0.74
+      ]
+    },
+    {
+      "name": "key_r2_c3_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        9.525,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r2_c3_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_1u_reference.wrl",
+      "position_mm": [
+        9.525,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9428571428571428,
+        1,
+        1
+      ],
+      "color": [
+        0.88,
+        0.85,
+        0.74
+      ]
+    },
+    {
+      "name": "key_r2_c4_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        28.575000000000003,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r2_c4_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_1u_reference.wrl",
+      "position_mm": [
+        28.575000000000003,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9428571428571428,
+        1,
+        1
+      ],
+      "color": [
+        0.68,
+        0.79,
+        0.73
+      ]
+    },
+    {
+      "name": "key_r3_c1_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        -28.575000000000003,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r3_c1_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        -28.575000000000003,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.68,
+        0.79,
+        0.73
+      ]
+    },
+    {
+      "name": "key_r3_c2_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        -9.525,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r3_c2_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        -9.525,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.88,
+        0.85,
+        0.74
+      ]
+    },
+    {
+      "name": "key_r3_c3_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        9.525,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r3_c3_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        9.525,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.88,
+        0.85,
+        0.74
+      ]
+    },
+    {
+      "name": "key_r3_c4_switch",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/choc_reference.wrl",
+      "position_mm": [
+        28.575000000000003,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "key_r3_c4_cap",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/mbk_15u.wrl",
+      "position_mm": [
+        28.575000000000003,
+        -23.5,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": [
+        0.68,
+        0.79,
+        0.73
+      ]
+    },
+    {
+      "name": "display",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/nice_view_reference.wrl",
+      "position_mm": [
+        0,
+        25,
+        -1.6
+      ],
+      "rotation_degrees": [
+        180,
+        0,
+        180
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    },
+    {
+      "name": "display_socket",
+      "kind": "vrml",
+      "source": "ergogen-kikad/design/models/display_socket.wrl",
+      "position_mm": [
+        0,
+        25,
+        -1.6
+      ],
+      "rotation_degrees": [
+        180,
+        0,
+        180
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": null
+    }
+  ],
+  "preview_pcb_top_z_mm": 13,
+  "limitations": [
+    "Illustrative key/display assembly only; battery mounting unresolved and omitted",
+    "Socket, reset, power-switch, JST battery connector and 32 kHz crystal bodies have no available verified 3D model and are omitted",
+    "Display stack is inherited nominal envelope; supplier must verify clearance",
+    "Actual routed PCB and available manufacturer/package models are used"
+  ]
+}

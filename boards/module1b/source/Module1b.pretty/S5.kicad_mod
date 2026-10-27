@@ -6,7 +6,7 @@
 	(property "Reference" "S5"
 		(at 0 -8.8 180)
 		(layer "F.Fab")
-		(uuid "82e760f6-8a52-4b66-81be-b18631163b19")
+		(uuid "5fb38b9b-6e65-4d7c-a5ef-fcb4114e62cc")
 		(effects
 			(font
 				(size 1 1)
@@ -18,7 +18,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "6be9cc71-6009-46a1-a19d-b07e4a9567f1")
+		(uuid "81b9ec3d-e9b9-4b31-97a8-fa0eadf1a3ca")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -30,7 +30,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "74b12403-1b53-4d0b-921a-2fa1178c53b7")
+		(uuid "0a7ace5f-de3b-446b-babb-97265c79ecbe")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -42,7 +42,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "ee4a4a5a-fa5d-4277-9389-b66dc91d5b78")
+		(uuid "45fb11d2-ea8e-47b7-af2c-aac1677d6239")
 		(effects
 			(font
 				(size 1.27 1.27)

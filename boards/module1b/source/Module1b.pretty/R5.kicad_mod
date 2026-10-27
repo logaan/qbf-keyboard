@@ -8,7 +8,7 @@
 	(property "Reference" "R5"
 		(at 0 0 180)
 		(layer "Eco2.User")
-		(uuid "58efab41-c09d-459e-944c-99e56a1dd3c9")
+		(uuid "9e73b62b-ac45-489e-8e99-fc08ee550970")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0 1.17 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "c05c6743-7d25-4eba-8698-fed9929705b1")
+		(uuid "66df9924-c091-4d0b-8171-b5ecb83677bc")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "86a2adee-6e7e-44f6-9b28-eac74d1d376f")
+		(uuid "adf5a1e8-8bea-44c6-97ae-e7b4ca421bac")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "32409159-450b-44bf-90cb-568fc085fa9c")
+		(uuid "60146a24-dab2-4667-9725-5194ca1fcb5c")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -209,7 +209,7 @@
 		(uuid "cb63d0fb-f60d-4bc6-bcb6-0202547c7e2a")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.wrl"
+	(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step"
 		(offset
 			(xyz 0 0 0)
 		)

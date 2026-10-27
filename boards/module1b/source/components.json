@@ -12,7 +12,24 @@
       104.5,
       126.5
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          104.5,
+          126.5
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.5,
+        126.5
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "TP2",
@@ -27,7 +44,24 @@
       104.5,
       130.5
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          104.5,
+          130.5
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.5,
+        130.5
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "TP1",
@@ -42,7 +76,24 @@
       101.5,
       130.5
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          101.5,
+          130.5
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        101.5,
+        130.5
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "TP6",
@@ -57,7 +108,24 @@
       101.3,
       110.9
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          101.3,
+          110.9
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        101.3,
+        110.9
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "TP9",
@@ -72,7 +140,24 @@
       104.0,
       123.0
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          104.0,
+          123.0
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.0,
+        123.0
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "TP5",
@@ -87,7 +172,24 @@
       104.7,
       114.0
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          104.7,
+          114.0
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.7,
+        114.0
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "TP8",
@@ -102,7 +204,24 @@
       104.7,
       116.5
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          104.7,
+          116.5
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.7,
+        116.5
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "TP7",
@@ -117,7 +236,24 @@
       100.5,
       118.5
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          100.5,
+          118.5
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        100.5,
+        118.5
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "TP4",
@@ -132,7 +268,24 @@
       98.7,
       110.9
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          98.7,
+          110.9
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        98.7,
+        110.9
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C9",
@@ -148,7 +301,31 @@
       98.75,
       129.175
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          98.27,
+          129.175
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          99.23,
+          129.175
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        98.75,
+        129.175
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C16",
@@ -164,7 +341,31 @@
       94.8,
       122.425
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          94.8,
+          121.945
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          94.8,
+          122.905
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        94.8,
+        122.425
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "L1",
@@ -180,7 +381,31 @@
       98.62,
       130.54
     ],
-    "angle": 45.0
+    "angle": 45.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          98.277053,
+          130.882947
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          98.962947,
+          130.197053
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        98.62,
+        130.54
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "L2",
@@ -196,7 +421,31 @@
       94.35,
       119.35
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          94.35,
+          119.835
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          94.35,
+          118.865
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        94.35,
+        119.35
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "U1",
@@ -284,7 +533,535 @@
       100.0,
       124.8
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "A8",
+        "position": [
+          96.75,
+          123.55
+        ]
+      },
+      {
+        "number": "A10",
+        "position": [
+          96.75,
+          124.05
+        ]
+      },
+      {
+        "number": "A12",
+        "position": [
+          96.75,
+          124.55
+        ]
+      },
+      {
+        "number": "A14",
+        "position": [
+          96.75,
+          125.05
+        ]
+      },
+      {
+        "number": "A16",
+        "position": [
+          96.75,
+          125.55
+        ]
+      },
+      {
+        "number": "A18",
+        "position": [
+          96.75,
+          126.05
+        ]
+      },
+      {
+        "number": "A20",
+        "position": [
+          96.75,
+          126.55
+        ]
+      },
+      {
+        "number": "A22",
+        "position": [
+          96.75,
+          127.05
+        ]
+      },
+      {
+        "number": "A23",
+        "position": [
+          96.75,
+          127.55
+        ]
+      },
+      {
+        "number": "AA24",
+        "position": [
+          102.25,
+          128.05
+        ]
+      },
+      {
+        "number": "AB2",
+        "position": [
+          102.5,
+          122.05
+        ]
+      },
+      {
+        "number": "AC5",
+        "position": [
+          102.75,
+          122.8
+        ]
+      },
+      {
+        "number": "AC9",
+        "position": [
+          102.75,
+          123.8
+        ]
+      },
+      {
+        "number": "AC11",
+        "position": [
+          102.75,
+          124.3
+        ]
+      },
+      {
+        "number": "AC13",
+        "position": [
+          102.75,
+          124.8
+        ]
+      },
+      {
+        "number": "AC15",
+        "position": [
+          102.75,
+          125.3
+        ]
+      },
+      {
+        "number": "AC17",
+        "position": [
+          102.75,
+          125.8
+        ]
+      },
+      {
+        "number": "AC19",
+        "position": [
+          102.75,
+          126.3
+        ]
+      },
+      {
+        "number": "AC21",
+        "position": [
+          102.75,
+          126.8
+        ]
+      },
+      {
+        "number": "AC24",
+        "position": [
+          102.75,
+          128.05
+        ]
+      },
+      {
+        "number": "AD2",
+        "position": [
+          103.25,
+          122.05
+        ]
+      },
+      {
+        "number": "AD4",
+        "position": [
+          103.25,
+          122.55
+        ]
+      },
+      {
+        "number": "AD6",
+        "position": [
+          103.25,
+          123.05
+        ]
+      },
+      {
+        "number": "AD8",
+        "position": [
+          103.25,
+          123.55
+        ]
+      },
+      {
+        "number": "AD10",
+        "position": [
+          103.25,
+          124.05
+        ]
+      },
+      {
+        "number": "AD12",
+        "position": [
+          103.25,
+          124.55
+        ]
+      },
+      {
+        "number": "AD14",
+        "position": [
+          103.25,
+          125.05
+        ]
+      },
+      {
+        "number": "AD16",
+        "position": [
+          103.25,
+          125.55
+        ]
+      },
+      {
+        "number": "AD18",
+        "position": [
+          103.25,
+          126.05
+        ]
+      },
+      {
+        "number": "AD20",
+        "position": [
+          103.25,
+          126.55
+        ]
+      },
+      {
+        "number": "AD22",
+        "position": [
+          103.25,
+          127.05
+        ]
+      },
+      {
+        "number": "AD23",
+        "position": [
+          103.25,
+          127.55
+        ]
+      },
+      {
+        "number": "B1",
+        "position": [
+          97.25,
+          121.55
+        ]
+      },
+      {
+        "number": "B3",
+        "position": [
+          97.25,
+          122.3
+        ]
+      },
+      {
+        "number": "B5",
+        "position": [
+          97.25,
+          122.8
+        ]
+      },
+      {
+        "number": "B7",
+        "position": [
+          97.25,
+          123.3
+        ]
+      },
+      {
+        "number": "B9",
+        "position": [
+          97.25,
+          123.8
+        ]
+      },
+      {
+        "number": "B11",
+        "position": [
+          97.25,
+          124.3
+        ]
+      },
+      {
+        "number": "B13",
+        "position": [
+          97.25,
+          124.8
+        ]
+      },
+      {
+        "number": "B15",
+        "position": [
+          97.25,
+          125.3
+        ]
+      },
+      {
+        "number": "B17",
+        "position": [
+          97.25,
+          125.8
+        ]
+      },
+      {
+        "number": "B19",
+        "position": [
+          97.25,
+          126.3
+        ]
+      },
+      {
+        "number": "B24",
+        "position": [
+          97.25,
+          128.05
+        ]
+      },
+      {
+        "number": "C1",
+        "position": [
+          97.75,
+          121.55
+        ]
+      },
+      {
+        "number": "D2",
+        "position": [
+          98.0,
+          122.05
+        ]
+      },
+      {
+        "number": "D23",
+        "position": [
+          98.0,
+          127.55
+        ]
+      },
+      {
+        "number": "E24",
+        "position": [
+          98.25,
+          128.05
+        ]
+      },
+      {
+        "number": "EP",
+        "position": [
+          100.0,
+          124.8
+        ]
+      },
+      {
+        "number": "F2",
+        "position": [
+          98.5,
+          122.05
+        ]
+      },
+      {
+        "number": "F23",
+        "position": [
+          98.5,
+          127.55
+        ]
+      },
+      {
+        "number": "G1",
+        "position": [
+          98.75,
+          121.55
+        ]
+      },
+      {
+        "number": "H2",
+        "position": [
+          99.0,
+          122.05
+        ]
+      },
+      {
+        "number": "H23",
+        "position": [
+          99.0,
+          127.55
+        ]
+      },
+      {
+        "number": "J1",
+        "position": [
+          99.25,
+          121.55
+        ]
+      },
+      {
+        "number": "J24",
+        "position": [
+          99.25,
+          128.05
+        ]
+      },
+      {
+        "number": "K2",
+        "position": [
+          99.5,
+          122.05
+        ]
+      },
+      {
+        "number": "L1",
+        "position": [
+          99.75,
+          121.55
+        ]
+      },
+      {
+        "number": "L24",
+        "position": [
+          99.75,
+          128.05
+        ]
+      },
+      {
+        "number": "M2",
+        "position": [
+          100.0,
+          122.05
+        ]
+      },
+      {
+        "number": "N1",
+        "position": [
+          100.25,
+          121.55
+        ]
+      },
+      {
+        "number": "N24",
+        "position": [
+          100.25,
+          128.05
+        ]
+      },
+      {
+        "number": "P2",
+        "position": [
+          100.5,
+          122.05
+        ]
+      },
+      {
+        "number": "P23",
+        "position": [
+          100.5,
+          127.55
+        ]
+      },
+      {
+        "number": "R1",
+        "position": [
+          100.75,
+          121.55
+        ]
+      },
+      {
+        "number": "R24",
+        "position": [
+          100.75,
+          128.05
+        ]
+      },
+      {
+        "number": "T2",
+        "position": [
+          101.0,
+          122.05
+        ]
+      },
+      {
+        "number": "T23",
+        "position": [
+          101.0,
+          127.55
+        ]
+      },
+      {
+        "number": "U1",
+        "position": [
+          101.25,
+          121.55
+        ]
+      },
+      {
+        "number": "U24",
+        "position": [
+          101.25,
+          128.05
+        ]
+      },
+      {
+        "number": "V23",
+        "position": [
+          101.5,
+          127.55
+        ]
+      },
+      {
+        "number": "W1",
+        "position": [
+          101.75,
+          121.55
+        ]
+      },
+      {
+        "number": "W24",
+        "position": [
+          101.75,
+          128.05
+        ]
+      },
+      {
+        "number": "Y2",
+        "position": [
+          102.0,
+          122.05
+        ]
+      },
+      {
+        "number": "Y23",
+        "position": [
+          102.0,
+          127.55
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        100.0,
+        124.8
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "J1",
@@ -312,7 +1089,129 @@
       80.0,
       138.475
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "A1",
+        "position": [
+          76.8,
+          131.475
+        ]
+      },
+      {
+        "number": "A1",
+        "position": [
+          83.2,
+          131.475
+        ]
+      },
+      {
+        "number": "A4",
+        "position": [
+          77.6,
+          131.475
+        ]
+      },
+      {
+        "number": "A4",
+        "position": [
+          82.4,
+          131.475
+        ]
+      },
+      {
+        "number": "A5",
+        "position": [
+          81.25,
+          131.475
+        ]
+      },
+      {
+        "number": "A6",
+        "position": [
+          80.25,
+          131.475
+        ]
+      },
+      {
+        "number": "A7",
+        "position": [
+          79.75,
+          131.475
+        ]
+      },
+      {
+        "number": "A8",
+        "position": [
+          78.75,
+          131.475
+        ]
+      },
+      {
+        "number": "B5",
+        "position": [
+          78.25,
+          131.475
+        ]
+      },
+      {
+        "number": "B6",
+        "position": [
+          79.25,
+          131.475
+        ]
+      },
+      {
+        "number": "B7",
+        "position": [
+          80.75,
+          131.475
+        ]
+      },
+      {
+        "number": "B8",
+        "position": [
+          81.758,
+          131.475
+        ]
+      },
+      {
+        "number": "S1",
+        "position": [
+          74.4247,
+          132.375
+        ]
+      },
+      {
+        "number": "S2",
+        "position": [
+          74.4247,
+          136.275
+        ]
+      },
+      {
+        "number": "S3",
+        "position": [
+          85.5753,
+          132.375
+        ]
+      },
+      {
+        "number": "S4",
+        "position": [
+          85.5753,
+          136.275
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        80.0026,
+        134.875
+      ],
+      "method": "Bounding-box center of actual exported USB STEP body",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C12",
@@ -328,7 +1227,31 @@
       100.45,
       129.8
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          100.45,
+          129.32
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          100.45,
+          130.28
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        100.45,
+        129.8
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C5",
@@ -344,7 +1267,31 @@
       97.01,
       130.69
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          97.01,
+          130.21
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          97.01,
+          131.17
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        97.01,
+        130.69
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C2",
@@ -360,7 +1307,31 @@
       104.7,
       127.55
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          105.18,
+          127.55
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          104.22,
+          127.55
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.7,
+        127.55
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R9",
@@ -376,7 +1347,31 @@
       78.0,
       128.0
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          78.51,
+          128.0
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          77.49,
+          128.0
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        78.0,
+        128.0
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R3",
@@ -392,7 +1387,31 @@
       104.9,
       129.9
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          105.41,
+          129.9
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          104.39,
+          129.9
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.9,
+        129.9
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "Y2",
@@ -408,7 +1427,31 @@
       98.25,
       118.6
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          97.55,
+          118.6
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          98.95,
+          118.6
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        98.25,
+        118.6
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C18",
@@ -424,7 +1467,31 @@
       99.9,
       118.4
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          99.9,
+          117.92
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          99.9,
+          118.88
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        99.9,
+        118.4
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C8",
@@ -440,7 +1507,31 @@
       101.1,
       120.725
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          101.58,
+          120.725
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          100.62,
+          120.725
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        101.1,
+        120.725
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C13",
@@ -456,7 +1547,31 @@
       103.15,
       120.3
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          103.15,
+          120.78
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          103.15,
+          119.82
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        103.15,
+        120.3
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C6",
@@ -472,7 +1587,31 @@
       94.53,
       129.9
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          94.05,
+          129.9
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          95.01,
+          129.9
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        94.53,
+        129.9
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C14",
@@ -488,7 +1627,31 @@
       104.5,
       121.125
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          104.5,
+          121.605
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          104.5,
+          120.645
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.5,
+        121.125
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C22",
@@ -504,7 +1667,31 @@
       95.19,
       132.05
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          95.67,
+          132.05
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          94.71,
+          132.05
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        95.19,
+        132.05
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C17",
@@ -520,7 +1707,31 @@
       96.6,
       118.4
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          96.6,
+          117.92
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          96.6,
+          118.88
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        96.6,
+        118.4
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C1",
@@ -536,7 +1747,31 @@
       96.55,
       120.275
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          96.55,
+          119.795
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          96.55,
+          120.755
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        96.55,
+        120.275
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "L3",
@@ -552,7 +1787,31 @@
       95.425,
       119.8
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          95.425,
+          119.0125
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          95.425,
+          120.5875
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        95.425,
+        119.8
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "D1",
@@ -568,7 +1827,31 @@
       105.7,
       112.5
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          105.7,
+          111.7125
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          105.7,
+          113.2875
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        105.7,
+        112.5
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R7",
@@ -584,7 +1867,31 @@
       99.425,
       119.8
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          98.915,
+          119.8
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          99.935,
+          119.8
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        99.425,
+        119.8
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R5",
@@ -600,7 +1907,31 @@
       104.0,
       112.3
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          103.49,
+          112.3
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          104.51,
+          112.3
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.0,
+        112.3
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C19",
@@ -616,7 +1947,31 @@
       103.45,
       130.2
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          103.45,
+          130.68
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          103.45,
+          129.72
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        103.45,
+        130.2
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "NT1",
@@ -632,7 +1987,31 @@
       98.5,
       127.1
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          98.5,
+          127.25
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          98.5,
+          126.95
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        98.5,
+        127.1
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C11",
@@ -648,7 +2027,31 @@
       96.875,
       129.175
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          97.355,
+          129.175
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          96.395,
+          129.175
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        96.875,
+        129.175
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C7",
@@ -664,7 +2067,31 @@
       94.375,
       125.975
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          94.375,
+          126.455
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          94.375,
+          125.495
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        94.375,
+        125.975
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "Y1",
@@ -682,7 +2109,45 @@
       94.825,
       128.175
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          94.275,
+          128.875
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          94.275,
+          127.475
+        ]
+      },
+      {
+        "number": "3",
+        "position": [
+          95.375,
+          127.475
+        ]
+      },
+      {
+        "number": "4",
+        "position": [
+          95.375,
+          128.875
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        94.825,
+        128.175
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C3",
@@ -698,7 +2163,31 @@
       95.475,
       125.975
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          95.475,
+          125.495
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          95.475,
+          126.455
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        95.475,
+        125.975
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C4",
@@ -714,7 +2203,31 @@
       104.7,
       125.05
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          104.22,
+          125.05
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          105.18,
+          125.05
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.7,
+        125.05
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R4",
@@ -730,7 +2243,31 @@
       104.9,
       130.9
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          104.39,
+          130.9
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          105.41,
+          130.9
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.9,
+        130.9
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "D3",
@@ -746,7 +2283,31 @@
       94.3,
       112.5
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          94.3,
+          111.7125
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          94.3,
+          113.2875
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        94.3,
+        112.5
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C10",
@@ -762,7 +2323,31 @@
       97.5,
       120.275
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          97.5,
+          120.755
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          97.5,
+          119.795
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        97.5,
+        120.275
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "L4",
@@ -778,7 +2363,31 @@
       103.125,
       118.825
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          103.9125,
+          118.825
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          102.3375,
+          118.825
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        103.125,
+        118.825
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C25",
@@ -794,7 +2403,31 @@
       100.825,
       118.4
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          100.825,
+          118.88
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          100.825,
+          117.92
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        100.825,
+        118.4
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C20",
@@ -810,7 +2443,31 @@
       104.95,
       117.8
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          104.95,
+          118.28
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          104.95,
+          117.32
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.95,
+        117.8
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R10",
@@ -826,7 +2483,31 @@
       82.0,
       128.0
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          82.0,
+          127.49
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          82.0,
+          128.51
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        82.0,
+        128.0
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C15",
@@ -842,7 +2523,31 @@
       95.725,
       122.425
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          95.725,
+          121.945
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          95.725,
+          122.905
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        95.725,
+        122.425
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S1",
@@ -858,7 +2563,31 @@
       71.425,
       76.5
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          65.475,
+          79.775
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          67.675,
+          68.225
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        66.57499999999999,
+        74.0
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S2",
@@ -874,7 +2603,31 @@
       90.475,
       76.5
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          84.525,
+          79.775
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          86.725,
+          68.225
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        85.625,
+        74.0
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "SW1",
@@ -891,7 +2644,38 @@
       120.0,
       134.0
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          122.25,
+          132.265
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          119.25,
+          132.265
+        ]
+      },
+      {
+        "number": "3",
+        "position": [
+          117.75,
+          132.265
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        120.0,
+        134.0
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C23",
@@ -907,7 +2691,31 @@
       98.05,
       117.425
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          98.53,
+          117.425
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          97.57,
+          117.425
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        98.05,
+        117.425
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R12",
@@ -923,7 +2731,31 @@
       104.9,
       128.9
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          104.39,
+          128.9
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          105.41,
+          128.9
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.9,
+        128.9
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "H3",
@@ -938,7 +2770,45 @@
       70.5,
       134.6
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          68.425,
+          134.6
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          70.5,
+          132.525
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          70.5,
+          136.675
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          72.575,
+          134.6
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        70.5,
+        134.6
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S5",
@@ -954,7 +2824,31 @@
       71.425,
       100.0
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          65.475,
+          103.275
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          67.675,
+          91.725
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        66.57499999999999,
+        97.5
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "AE1",
@@ -969,7 +2863,24 @@
       94.71,
       131.45
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          94.71,
+          131.45
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        94.71,
+        131.45
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C26",
@@ -985,7 +2896,31 @@
       94.4,
       114.65
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          93.92,
+          114.65
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          94.88,
+          114.65
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        94.4,
+        114.65
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "D5",
@@ -1001,7 +2936,31 @@
       101.25,
       115.8
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          101.25,
+          116.95
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          101.25,
+          114.65
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        101.25,
+        115.8
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S8",
@@ -1017,7 +2976,31 @@
       128.575,
       100.0
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          122.625,
+          103.275
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          124.825,
+          91.725
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        123.725,
+        97.5
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "SW2",
@@ -1033,7 +3016,45 @@
       134.0,
       111.0
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          133.15,
+          113.625
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          133.15,
+          108.375
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          134.85,
+          113.625
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          134.85,
+          108.375
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        134.0,
+        111.0
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S7",
@@ -1049,7 +3070,31 @@
       109.525,
       100.0
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          103.575,
+          103.275
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          105.775,
+          91.725
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.67500000000001,
+        97.5
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "H4",
@@ -1064,7 +3109,45 @@
       129.5,
       134.6
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          127.425,
+          134.6
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          129.5,
+          132.525
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          129.5,
+          136.675
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          131.575,
+          134.6
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        129.5,
+        134.6
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C21",
@@ -1080,7 +3163,31 @@
       103.125,
       117.55
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          103.9,
+          117.55
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          102.35,
+          117.55
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        103.125,
+        117.55
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S12",
@@ -1096,7 +3203,31 @@
       128.575,
       123.5
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          134.525,
+          120.225
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          132.325,
+          131.775
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        133.425,
+        126.0
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "C24",
@@ -1112,7 +3243,31 @@
       99.825,
       114.15
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          99.825,
+          113.67
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          99.825,
+          114.63
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        99.825,
+        114.15
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "U5",
@@ -1132,7 +3287,59 @@
       100.9,
       113.05
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          101.299998,
+          113.375001
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          100.9,
+          113.375001
+        ]
+      },
+      {
+        "number": "3",
+        "position": [
+          100.499998,
+          113.375001
+        ]
+      },
+      {
+        "number": "4",
+        "position": [
+          100.499998,
+          112.724999
+        ]
+      },
+      {
+        "number": "5",
+        "position": [
+          100.9,
+          112.724999
+        ]
+      },
+      {
+        "number": "6",
+        "position": [
+          101.299998,
+          112.724999
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        100.9,
+        113.05
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S10",
@@ -1148,7 +3355,31 @@
       90.475,
       123.5
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          84.525,
+          126.775
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          86.725,
+          115.225
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        85.625,
+        121.0
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "H2",
@@ -1163,7 +3394,45 @@
       129.5,
       65.4
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          127.425,
+          65.4
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          129.5,
+          63.325
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          129.5,
+          67.475
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          131.575,
+          65.4
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        129.5,
+        65.4
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R8",
@@ -1179,7 +3448,31 @@
       94.4,
       115.575
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          94.91,
+          115.575
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          93.89,
+          115.575
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        94.4,
+        115.575
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S6",
@@ -1195,7 +3488,31 @@
       90.475,
       100.0
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          84.525,
+          103.275
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          86.725,
+          91.725
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        85.625,
+        97.5
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R2",
@@ -1211,7 +3528,31 @@
       104.0,
       113.275
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          103.49,
+          113.275
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          104.51,
+          113.275
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.0,
+        113.275
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S9",
@@ -1227,7 +3568,31 @@
       71.425,
       123.5
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          65.475,
+          126.775
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          67.675,
+          115.225
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        66.57499999999999,
+        121.0
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "U3",
@@ -1246,7 +3611,52 @@
       103.8,
       115.3
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          102.7,
+          116.25
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          102.7,
+          115.3
+        ]
+      },
+      {
+        "number": "3",
+        "position": [
+          102.7,
+          114.35
+        ]
+      },
+      {
+        "number": "4",
+        "position": [
+          104.9,
+          114.35
+        ]
+      },
+      {
+        "number": "5",
+        "position": [
+          104.9,
+          116.25
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        103.8,
+        115.3
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "J2",
@@ -1263,7 +3673,45 @@
       77.0,
       111.0
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          79.85,
+          112.0
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          79.85,
+          110.0
+        ]
+      },
+      {
+        "number": "MP",
+        "position": [
+          74.1,
+          114.35
+        ]
+      },
+      {
+        "number": "MP",
+        "position": [
+          74.1,
+          107.65
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        76.4,
+        111.0
+      ],
+      "method": "Housing outline center: local (0,0.6), transformed to actual bottom-side board coordinates",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S3",
@@ -1279,7 +3727,31 @@
       109.525,
       76.5
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          103.575,
+          79.775
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          105.775,
+          68.225
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        104.67500000000001,
+        74.0
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "DISP1",
@@ -1298,7 +3770,52 @@
       100.0,
       75.0
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          116.7,
+          80.08
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          116.7,
+          77.54
+        ]
+      },
+      {
+        "number": "3",
+        "position": [
+          116.7,
+          75.0
+        ]
+      },
+      {
+        "number": "4",
+        "position": [
+          116.7,
+          72.46
+        ]
+      },
+      {
+        "number": "5",
+        "position": [
+          116.7,
+          69.92
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        100.0,
+        75.0
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S4",
@@ -1314,7 +3831,31 @@
       128.575,
       76.5
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          122.625,
+          79.775
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          124.825,
+          68.225
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        123.725,
+        74.0
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R11",
@@ -1330,7 +3871,31 @@
       95.22,
       131.17
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          95.73,
+          131.17
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          94.71,
+          131.17
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        95.22,
+        131.17
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "F1",
@@ -1346,7 +3911,31 @@
       99.825,
       116.35
     ],
-    "angle": 90.0
+    "angle": 90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          99.825,
+          116.835
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          99.825,
+          115.865
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        99.825,
+        116.35
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "U2",
@@ -1377,7 +3966,136 @@
       97.35,
       114.9
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          95.9125,
+          115.65
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          95.9125,
+          115.15
+        ]
+      },
+      {
+        "number": "3",
+        "position": [
+          95.9125,
+          114.65
+        ]
+      },
+      {
+        "number": "4",
+        "position": [
+          95.9125,
+          114.15
+        ]
+      },
+      {
+        "number": "5",
+        "position": [
+          96.6,
+          113.4625
+        ]
+      },
+      {
+        "number": "6",
+        "position": [
+          97.1,
+          113.4625
+        ]
+      },
+      {
+        "number": "7",
+        "position": [
+          97.6,
+          113.4625
+        ]
+      },
+      {
+        "number": "8",
+        "position": [
+          98.1,
+          113.4625
+        ]
+      },
+      {
+        "number": "9",
+        "position": [
+          98.7875,
+          114.15
+        ]
+      },
+      {
+        "number": "10",
+        "position": [
+          98.7875,
+          114.65
+        ]
+      },
+      {
+        "number": "11",
+        "position": [
+          98.7875,
+          115.15
+        ]
+      },
+      {
+        "number": "12",
+        "position": [
+          98.7875,
+          115.65
+        ]
+      },
+      {
+        "number": "13",
+        "position": [
+          98.1,
+          116.3375
+        ]
+      },
+      {
+        "number": "14",
+        "position": [
+          97.6,
+          116.3375
+        ]
+      },
+      {
+        "number": "15",
+        "position": [
+          97.1,
+          116.3375
+        ]
+      },
+      {
+        "number": "16",
+        "position": [
+          96.6,
+          116.3375
+        ]
+      },
+      {
+        "number": "17",
+        "position": [
+          97.35,
+          114.9
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        97.35,
+        114.9
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "R6",
@@ -1393,7 +4111,31 @@
       94.4,
       116.525
     ],
-    "angle": 180.0
+    "angle": 180.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          94.91,
+          116.525
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          93.89,
+          116.525
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        94.4,
+        116.525
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "H1",
@@ -1408,7 +4150,45 @@
       70.5,
       65.4
     ],
-    "angle": 0.0
+    "angle": 0.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          68.425,
+          65.4
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          70.5,
+          63.325
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          70.5,
+          67.475
+        ]
+      },
+      {
+        "number": "1",
+        "position": [
+          72.575,
+          65.4
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        70.5,
+        65.4
+      ],
+      "method": "Footprint package origin; supplier preview required",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   },
   {
     "reference": "S11",
@@ -1424,6 +4204,30 @@
       109.525,
       123.5
     ],
-    "angle": -90.0
+    "angle": -90.0,
+    "pad_positions": [
+      {
+        "number": "1",
+        "position": [
+          115.475,
+          120.225
+        ]
+      },
+      {
+        "number": "2",
+        "position": [
+          113.275,
+          131.775
+        ]
+      }
+    ],
+    "assembly_center": {
+      "position": [
+        114.375,
+        126.0
+      ],
+      "method": "World-coordinate terminal midpoint, matching socket fabrication body center",
+      "status": "Candidate; JLC package origin and rotation preview required"
+    }
   }
 ]

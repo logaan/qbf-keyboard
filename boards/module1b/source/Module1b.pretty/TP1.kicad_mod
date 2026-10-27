@@ -8,7 +8,7 @@
 	(property "Reference" "TP1"
 		(at 0 -0.425 180)
 		(layer "Eco1.User")
-		(uuid "a6f4acca-8b9d-48d1-bc35-26953c66ae24")
+		(uuid "07e44289-7a8e-4d12-8b0d-c3a02178cfcf")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0 1.55 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "dcdaec8d-f2fc-41eb-8297-86f9660236de")
+		(uuid "40ad7e64-2397-45f4-ac20-222fde7f9d82")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "58024240-ee5e-4ecb-85bf-e2ab3ce5757c")
+		(uuid "8883ae64-2a19-48bd-a518-f64d63acb6ac")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -44,7 +44,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "bebd4d2d-3c7a-44fe-97d3-0f1fa22fe3aa")
+		(uuid "8afe06dc-fea6-40b5-a766-39a26e236ed8")
 		(effects
 			(font
 				(size 1.27 1.27)

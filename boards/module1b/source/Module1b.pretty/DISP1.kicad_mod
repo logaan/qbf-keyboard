@@ -6,7 +6,7 @@
 	(property "Reference" "DISP1"
 		(at 0 -20 180)
 		(layer "F.Fab")
-		(uuid "0cd71cb9-f42c-4ebb-8f99-4dcd777441b6")
+		(uuid "349b0997-f804-41b8-abfc-9fd411fb0e28")
 		(effects
 			(font
 				(size 1 1)
@@ -18,7 +18,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "00dec999-7e90-4469-88da-b5ed3d1c7b3c")
+		(uuid "e7391c2f-3b55-4959-9f44-aee66f2b9701")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -30,7 +30,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "b4272c52-f65a-4b85-8f8a-1acc0a44ab0c")
+		(uuid "84dd5a15-1a02-4837-99d9-7afe26cc1109")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -42,7 +42,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "45b7ffda-967c-4687-9b94-1af1083091f0")
+		(uuid "723b7768-a042-4242-92f7-a8280078d62a")
 		(effects
 			(font
 				(size 1.27 1.27)

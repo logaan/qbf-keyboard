@@ -8,7 +8,7 @@
 	(property "Reference" "D1"
 		(at 0 -1.43 0)
 		(layer "Eco2.User")
-		(uuid "96eb0482-3ca4-44c5-8970-ce2fb5f91d0d")
+		(uuid "b48fc0d6-1269-4ad1-bb2b-f0044e8fb6f7")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0 1.43 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "ecfc63bb-4a7d-4d22-9192-02e1c02c84bb")
+		(uuid "098bdfa0-9c80-434c-94e3-297341c0ebac")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "bb2fc70a-cd95-45e5-bac0-976298a365f2")
+		(uuid "385d2573-729f-42c5-a31a-b9c01b293aa4")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "a16884c2-cfa3-4026-b8be-3dd2b3c7eb1e")
+		(uuid "c73f4432-796e-431e-bcc9-5b74e5392e02")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -218,7 +218,7 @@
 		(uuid "67f2d378-00dc-42d5-9279-3741999fa56c")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.wrl"
+	(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step"
 		(offset
 			(xyz 0 0 0)
 		)

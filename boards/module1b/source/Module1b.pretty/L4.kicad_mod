@@ -8,7 +8,7 @@
 	(property "Reference" "L4"
 		(at -0.01 0 0)
 		(layer "Eco2.User")
-		(uuid "502d93d5-53c0-4cd0-a00e-26dc18d51e8d")
+		(uuid "27679fc4-dc85-4376-b624-62d48a173c52")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0 1.43 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "1e96052d-06c9-41e1-af56-864280ae000c")
+		(uuid "f7d65a2c-f3e1-4c3f-ad52-ed2df9859414")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "6f7a3e79-b519-4db8-9c8f-4c1d75e57a38")
+		(uuid "f9a548ae-b2d9-46c7-8093-48e19620ebbb")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "fa2f1d13-0223-4632-889a-0919ab55e117")
+		(uuid "eff753bf-5b54-4b89-8195-f407af5a5f1b")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -208,7 +208,7 @@
 		(uuid "5cc3fa75-2868-490e-ab07-a2aa26f28ee8")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_0603_1608Metric.wrl"
+	(model "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_0603_1608Metric.step"
 		(offset
 			(xyz 0 0 0)
 		)

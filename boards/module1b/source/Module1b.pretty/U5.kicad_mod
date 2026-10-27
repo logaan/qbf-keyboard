@@ -6,7 +6,7 @@
 	(property "Reference" "U5"
 		(at 0 0 -90)
 		(layer "Eco2.User")
-		(uuid "9e64edcd-2390-4138-8b71-676f54bf9a44")
+		(uuid "db433a1e-5224-4a57-b0cc-04a9e0749a3b")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -18,7 +18,7 @@
 		(at 0 -2 180)
 		(layer "Dwgs.User")
 		(hide yes)
-		(uuid "dcaceb90-73a1-446f-aa9e-0d4d1570ea81")
+		(uuid "d39291a7-087d-429f-8729-d93edb192327")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -30,7 +30,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "d08fa010-c77d-48ba-92be-c5524d27601d")
+		(uuid "3d763303-a81c-4db8-a28b-99a55cd32d6f")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -41,7 +41,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "2927e45d-3d64-4b7f-abaf-ecd0f847fa57")
+		(uuid "59138fab-f97a-4290-b843-c5a43bd7d34f")
 		(effects
 			(font
 				(size 1.27 1.27)

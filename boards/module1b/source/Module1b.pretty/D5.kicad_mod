@@ -8,7 +8,7 @@
 	(property "Reference" "D5"
 		(at 0 0 180)
 		(layer "Eco2.User")
-		(uuid "6d6da6bb-2368-41c8-a86f-1e5786a9d9aa")
+		(uuid "8e60db34-b620-445c-9abf-8276e0cdd67c")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0.1 1.9 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "07c6d9c0-31cf-4ca4-af2d-cde87d77dafd")
+		(uuid "2592772f-1d82-44c8-a2db-755ad7d6b58b")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "944409bb-74d3-481f-af4a-ca0a607cdd77")
+		(uuid "87946da5-66ea-4cb6-8a39-5c45a73c1ca4")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "2cb980bd-1c15-4a46-8ed8-cd805212a284")
+		(uuid "db833114-c540-409a-af4b-550a10e15d8f")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -253,7 +253,7 @@
 		(uuid "8f80e016-83f7-4851-ba92-9d72a280a5ee")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323F.wrl"
+	(model "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323F.step"
 		(offset
 			(xyz 0 0 0)
 		)

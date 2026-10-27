@@ -8,7 +8,7 @@
 	(property "Reference" "Y1"
 		(at 0 0 -90)
 		(layer "Eco2.User")
-		(uuid "2634add6-bbbe-4071-ac55-f17b06d1be79")
+		(uuid "0f3c7390-c20d-40d4-bc0c-5157c43f2053")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0 2 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "4363a126-e5c1-48ff-91df-90c8c6acd42a")
+		(uuid "0ef27133-8640-43ff-adab-310ec97b0358")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "7c281702-9eae-4eb6-bc73-4fc8320e8c29")
+		(uuid "228514cb-803a-4d7c-892a-4bce3131861e")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "052cf5dc-8c4c-40de-a5f5-f7aacaf57eff")
+		(uuid "5e64425b-e934-445b-866b-0e9b9484711b")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -269,23 +269,12 @@
 		(uuid "f2c43eeb-76da-49f4-b8e6-cd74ebb3190b")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_2016-4Pin_2.0x1.6mm.wrl"
+	(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_2016-4Pin_2.0x1.6mm.step"
 		(offset
 			(xyz 0 0 0)
 		)
 		(scale
 			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
-	)
-	(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_SeikoEpson_FA238V-4Pin_3.2x2.5mm.wrl"
-		(offset
-			(xyz 0 0 0)
-		)
-		(scale
-			(xyz 0.625 0.64 1)
 		)
 		(rotate
 			(xyz 0 0 0)

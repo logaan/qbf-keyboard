@@ -9,7 +9,7 @@
 	(property "Reference" "U1"
 		(at 0 -4.5 0)
 		(layer "F.Fab")
-		(uuid "dd5be33f-4e1a-41af-96e0-bed7e3b75215")
+		(uuid "8c0cc326-3f3c-4405-9a89-fb2df0e108df")
 		(effects
 			(font
 				(size 1 1)
@@ -21,7 +21,7 @@
 		(at 0.03 5.72 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "4424b7cb-f31c-4af2-9bec-d0e6d04c017a")
+		(uuid "6f9de78d-8a86-4987-b62b-a68b1efcebbd")
 		(effects
 			(font
 				(size 1 1)
@@ -33,7 +33,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "972c1f98-4ba2-42d0-b421-f5c3ec6feef1")
+		(uuid "e764eb10-f0da-4f74-8b1c-3eedaf877d05")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -44,7 +44,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "5ddea844-a918-49a0-b042-3d59072d687f")
+		(uuid "245e1087-c49b-4594-96c0-b524871e9199")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -826,7 +826,7 @@
 		(uuid "6c5f257f-dba0-49ff-818a-94641b745876")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/Nordic_AQFN-73-1EP_7x7mm_P0.5mm.wrl"
+	(model "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/Nordic_AQFN-73-1EP_7x7mm_P0.5mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

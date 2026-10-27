@@ -8,7 +8,7 @@
 	(property "Reference" "U3"
 		(at 0 -0.05 180)
 		(layer "Eco2.User")
-		(uuid "1caf19d3-fb5f-4bc3-96cc-e44aec4c9041")
+		(uuid "eee4f9ef-9ce3-4e8c-a7e8-863d049210e9")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0 2.9 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "bf4d5ba9-1aa7-4501-8ba5-4a2a7ce4675c")
+		(uuid "ae2d477d-db92-42be-892f-29596313169c")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "bf05e54a-c5d9-4ee0-bd85-f94826e665e6")
+		(uuid "385008a5-20b9-483a-a685-c1fc539e7b60")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "b84d88ce-e597-42b9-9e20-68bab264bbd1")
+		(uuid "be8080b6-9acc-4ac7-9e14-902bf445f668")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -234,7 +234,7 @@
 		(uuid "210b172c-b965-4a60-99f4-39f3cf0b0a90")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.wrl"
+	(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step"
 		(offset
 			(xyz 0 0 0)
 		)

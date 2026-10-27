@@ -1,0 +1,18 @@
+{
+  "board_sha256": "6438f103dc5758f1f34a0626f62f8772cb4e2dc65cc8301f98851f0af3e5adcb",
+  "limitations": [
+    "Illustrative key/display assembly only; battery mounting unresolved and omitted",
+    "Socket, reset, power-switch, JST battery connector and 32 kHz crystal bodies have no available verified 3D model and are omitted",
+    "Display stack is inherited nominal envelope; supplier must verify clearance",
+    "Actual routed PCB and available manufacturer/package models are used"
+  ],
+  "images": {
+    "angled.png": "9c638fba1a7067d6545144e86dff183e897b8fdd0a89717d51cd4072f7c3cda6",
+    "anime-module1b-pair.png": "20ef14030727dd0cdbbe5c14a6ee643938815a7e732cc5838ea42ca8289bb0f2",
+    "cap-free.png": "6faaa7a7bbea13656f77ecabade163155515eec77c260369aa7bda81d64fdb47",
+    "pair-layer.png": "81a8801bc0386d78d7f3bfd8f00c9d7ab4007257698312cc6355c4f0fe406b8a",
+    "pcb-bottom.png": "558b75cbaf64d4329a2c1164b8bd40d87d8b49473820d3dd7ccaa44cf0793d20",
+    "pcb-top.png": "858ef282d5965082dacbed1a5d2abd27e6a8bcc49ebbb761b7e08ba5ab46917c",
+    "underside.png": "942538ea1a02d31d3c3f71a223012368069c67cef39deefbcf3c4c1a601de8cc"
+  }
+}

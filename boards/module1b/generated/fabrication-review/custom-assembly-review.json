@@ -1,0 +1,29 @@
+{
+  "status": "Factory quote and assembly review required",
+  "operations": [
+    {
+      "reference": "DISP1",
+      "operation": "Consigned nice!view and five-pin header assembly; excluded from automatic SMT CPL",
+      "display_center_board_mm": [
+        100,
+        75
+      ],
+      "header_center_board_mm": [
+        116.7,
+        75
+      ]
+    },
+    {
+      "reference": "H1,H2,H3,H4",
+      "operation": "Source and reflow Wurth 9774020243R M2 spacers; listed in candidate CPL"
+    },
+    {
+      "reference": "U1",
+      "operation": "SWD program approved tested bootloader before display installation; image and fixture pending"
+    },
+    {
+      "reference": "J1",
+      "operation": "Confirm soldering process for four plated USB shell slots"
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 	(property "Reference" "Y2"
 		(at 0 0 180)
 		(layer "Eco2.User")
-		(uuid "37fddf44-1379-42ce-869c-ad210ad66594")
+		(uuid "b3aa17c1-7a63-479e-b201-80caa142571a")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -20,7 +20,7 @@
 		(at 0 1.8 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "ed22d6da-2378-426e-b728-80f3d00593ef")
+		(uuid "1267a347-e491-4954-a5e4-101e51f77d20")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "dc80c639-2c74-492a-9d29-d94849a84347")
+		(uuid "d22b81be-861c-41c7-838d-dd2a1470eb6b")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "058cdadd-e8e1-40a0-b873-eac12a454cd7")
+		(uuid "6ff6df06-bf17-4a87-b740-a1fac01e0d56")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -229,17 +229,6 @@
 	)
 	(embedded_fonts no)
 	(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_2012-2Pin_2.0x1.2mm.wrl"
-		(offset
-			(xyz 0 0 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
-	)
-	(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_MicroCrystal_CM9V-T1A-2Pin_1.6x1.0mm.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

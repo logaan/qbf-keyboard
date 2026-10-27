@@ -6,7 +6,7 @@
 	(property "Reference" "S7"
 		(at 0 -8.8 180)
 		(layer "F.Fab")
-		(uuid "7fc399df-eeed-4143-b8fc-1b125057ad16")
+		(uuid "c079921e-9061-4a85-a1b7-86582f95e767")
 		(effects
 			(font
 				(size 1 1)
@@ -18,7 +18,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "a0b1d8c4-1ddc-48ad-9750-2a8712614bee")
+		(uuid "59366148-6822-4269-ad35-bc7b65c17f38")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -30,7 +30,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "490aa664-14ec-49f5-bf58-89471507d996")
+		(uuid "88e5ac42-1b27-4801-8639-494c1c49fb6d")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -42,7 +42,7 @@
 		(at 0 0 180)
 		(layer "B.Fab")
 		(hide yes)
-		(uuid "75695dd8-79f3-43bb-9e03-a6c9841aaba2")
+		(uuid "5fef698a-7b59-49fe-83e1-4e62e80650d9")
 		(effects
 			(font
 				(size 1.27 1.27)

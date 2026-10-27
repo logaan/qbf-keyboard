@@ -8,7 +8,7 @@
 		(at -0.015 3.925 0)
 		(unlocked yes)
 		(layer "Eco2.User")
-		(uuid "a2d67f41-a77a-418c-b150-e35a934f183c")
+		(uuid "e1e51dfc-c79f-4676-a850-c9841c5a2af8")
 		(effects
 			(font
 				(size 0.3 0.3)
@@ -21,7 +21,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "05852e3c-caef-4100-b6a9-af47cd825544")
+		(uuid "e7b27012-7d49-43d6-a61d-52ff376b9eae")
 		(effects
 			(font
 				(size 1 1)
@@ -33,7 +33,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "64b915b2-37c0-4b21-b41c-f1bad2977fd9")
+		(uuid "9fdd2780-c6f6-445e-925f-a36e30c2490f")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -44,7 +44,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "3bcfa7d4-1fdc-42e3-a38f-d7ae688a93ab")
+		(uuid "1c12b649-87ac-4c0c-8c5b-de1b3d3f44c8")
 		(effects
 			(font
 				(size 1.27 1.27)

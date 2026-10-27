@@ -1,0 +1,277 @@
+{
+  "U1": {
+    "mpn": "NRF52840-QIAA-R7",
+    "lcsc": "C1851953",
+    "status": "catalog; legacy ordering variant; stock must be checked"
+  },
+  "U2": {
+    "mpn": "BQ24075RGTR",
+    "lcsc": "C15464",
+    "status": "catalog; stock must be checked"
+  },
+  "U5": {
+    "mpn": "ESDR0502NMUTBG",
+    "lcsc": "C327480",
+    "status": "catalog; stock must be checked"
+  },
+  "R7": {
+    "mpn": "RC0402FR-078K66L",
+    "lcsc": "C185387",
+    "status": "LCSC catalog; JLC sourcing confirmation required"
+  },
+  "J1": {
+    "mpn": "918-418K2024S40000",
+    "lcsc": "C168688",
+    "status": "mixed SMT contacts and plated shell slots; confirm factory solder process"
+  },
+  "J2": {
+    "mpn": "S2B-PH-SM4-TB(LF)(SN)",
+    "lcsc": "C295747",
+    "status": "catalog SMT"
+  },
+  "SW1": {
+    "mpn": "MSK12C02",
+    "lcsc": "C431540",
+    "status": "catalog SMT; drawing matched"
+  },
+  "SW2": {
+    "mpn": "EVQPUA02K",
+    "lcsc": "C128539",
+    "status": "catalog SMT; no-boss drawing matched"
+  },
+  "DISP1": {
+    "mpn": "nice!view with 5-pin 2.54mm connector",
+    "lcsc": "",
+    "status": "factory consignment and soldered header/module assembly quote required"
+  },
+  "S1": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S2": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S3": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S4": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S5": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S6": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S7": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S8": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S9": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S10": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S11": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "S12": {
+    "mpn": "CPG135001S30",
+    "lcsc": "C5333465",
+    "status": "JLC Standard PCBA; drawing matched"
+  },
+  "H1": {
+    "mpn": "9774020243R",
+    "lcsc": "",
+    "status": "factory global sourcing/consignment quote required; M2 H2mm, land OD5.3 NPTH3.0"
+  },
+  "H2": {
+    "mpn": "9774020243R",
+    "lcsc": "",
+    "status": "factory global sourcing/consignment quote required; M2 H2mm, land OD5.3 NPTH3.0"
+  },
+  "H3": {
+    "mpn": "9774020243R",
+    "lcsc": "",
+    "status": "factory global sourcing/consignment quote required; M2 H2mm, land OD5.3 NPTH3.0"
+  },
+  "H4": {
+    "mpn": "9774020243R",
+    "lcsc": "",
+    "status": "factory global sourcing/consignment quote required; M2 H2mm, land OD5.3 NPTH3.0"
+  },
+  "C1": {
+    "mpn": "CL05A475MP5NRNC",
+    "lcsc": "C23733",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C5": {
+    "mpn": "0402CG1R0C500NT",
+    "lcsc": "C1550",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C6": {
+    "mpn": "0402CG150J500NT",
+    "lcsc": "C1548",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C7": {
+    "mpn": "0402CG150J500NT",
+    "lcsc": "C1548",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C9": {
+    "mpn": "0402CG1R0C500NT",
+    "lcsc": "C1550",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C11": {
+    "mpn": "0402CG101J500NT",
+    "lcsc": "C1546",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C12": {
+    "mpn": "0402B102K500NT",
+    "lcsc": "C1523",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C13": {
+    "mpn": "CL05A475MP5NRNC",
+    "lcsc": "C23733",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C14": {
+    "mpn": "CL05A475MP5NRNC",
+    "lcsc": "C23733",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C17": {
+    "mpn": "0402CG150J500NT",
+    "lcsc": "C1548",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C18": {
+    "mpn": "0402CG150J500NT",
+    "lcsc": "C1548",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C20": {
+    "mpn": "CL05A475MP5NRNC",
+    "lcsc": "C23733",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C24": {
+    "mpn": "CL05A475MP5NRNC",
+    "lcsc": "C23733",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C25": {
+    "mpn": "CL05A475MP5NRNC",
+    "lcsc": "C23733",
+    "status": "catalog alternate; value and package matched"
+  },
+  "C26": {
+    "mpn": "CL05A475MP5NRNC",
+    "lcsc": "C23733",
+    "status": "catalog alternate; value and package matched"
+  },
+  "D1": {
+    "mpn": "19-217/BHC-ZL1M2RY/3T",
+    "lcsc": "C72041",
+    "status": "catalog alternate; value and package matched"
+  },
+  "L1": {
+    "mpn": "SDCL1005C3N9STDF",
+    "lcsc": "C14033",
+    "status": "catalog alternate; value and package matched; RF components require host-board validation"
+  },
+  "L2": {
+    "mpn": "SDCL1005C15NJTDF",
+    "lcsc": "C27143",
+    "status": "catalog alternate; value and package matched; RF components require host-board validation"
+  },
+  "L3": {
+    "mpn": "LBMF1608T100K",
+    "lcsc": "C87216",
+    "status": "catalog SMT; 10uH 80mA 360mOhm; meets Nordic minimum current"
+  },
+  "L4": {
+    "mpn": "LBMF1608T100K",
+    "lcsc": "C87216",
+    "status": "catalog SMT; 10uH 80mA 360mOhm; meets Nordic minimum current"
+  },
+  "Y2": {
+    "mpn": "SC-20S,32.768kHz,20PPM,12.5pF",
+    "lcsc": "C97607",
+    "status": "catalog SMT; original package and CL; effective load requires measurement"
+  },
+  "D3": {
+    "mpn": "E6C0603SEAC1UDA",
+    "lcsc": "C375450",
+    "status": "catalog SMT; 0603 orange alternate; Vf2V; polarity requires assembly preview check"
+  },
+  "R4": {
+    "mpn": "0402WGF1005TCE",
+    "lcsc": "C26082",
+    "status": "catalog value/package match; live JLC stock must be checked"
+  },
+  "R5": {
+    "mpn": "0402WGF1501TCE",
+    "lcsc": "C25867",
+    "status": "catalog value/package match; live JLC stock must be checked"
+  },
+  "R6": {
+    "mpn": "0402WGF1002TCE",
+    "lcsc": "C25744",
+    "status": "catalog value/package match; live JLC stock must be checked"
+  },
+  "R8": {
+    "mpn": "0402WGF1002TCE",
+    "lcsc": "C25744",
+    "status": "catalog value/package match; live JLC stock must be checked"
+  },
+  "R9": {
+    "mpn": "0402WGF5101TCE",
+    "lcsc": "C25905",
+    "status": "catalog value/package match; live JLC stock must be checked"
+  },
+  "R10": {
+    "mpn": "0402WGF5101TCE",
+    "lcsc": "C25905",
+    "status": "catalog value/package match; live JLC stock must be checked"
+  },
+  "R11": {
+    "mpn": "0402WGF0000TCE",
+    "lcsc": "C17168",
+    "status": "catalog value/package match; live JLC stock must be checked"
+  },
+  "C16": {
+    "mpn": "CL05B473KO5NNNC",
+    "lcsc": "C307434",
+    "status": "replacement for discontinued C26403; JLC sourcing review required"
+  }
+}
